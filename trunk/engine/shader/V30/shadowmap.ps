@@ -1,0 +1,13 @@
+#include "System_PS_Var.inc"
+
+float4 ShadowAlphaDepthPS(float2 tex : TEXCOORD0, float2 depth : TEXCOORD1) : COLOR0
+{
+	float alpha = tex2D(Sampler0, tex).a;
+	clip(alpha-0.2f);
+    return depth.x / depth.y;
+}
+
+float4 ShadowDepthPS(float2 tex : TEXCOORD0, float2 depth : TEXCOORD1) : COLOR0
+{
+    return depth.x / depth.y;
+}

@@ -1,0 +1,1229 @@
+--gac_gas_require "framework/text_filter_mgr/TextFilterMgr"
+--local CCofc = class()
+--local CTextFilterMgr = CTextFilterMgr
+--local CofcBasicSql = CreateDbBox(...)
+--
+--
+--local StmtDef = {
+--	"_SelectCofcId",
+--	[[
+--		select c_uId from tbl_member_cofc where cs_uId = ?
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+----- @brief 得到玩家所在的商会id
+----- @param [player_id] 该玩家的id，缺省为当前玩家
+----- @return 商会的id，失败返回nil
+--function CofcBasicSql.GetCofcID(player_id)
+--	local ret = 0
+--	local tbl = CCofc._SelectCofcId:ExecSql("n", player_id)
+--	if tbl:GetRowNum() > 0 then 
+--		ret = tbl:GetData(0, 0)
+--	end
+--	return ret
+--end
+--------------------------------------------------------------------------------------
+--local StmtDef = {
+--	"_SelectCofcInfoByCofcId",
+--	[[
+--		select c_sName, c_dtCreateTime, c_uLevel, c_uMoney, c_sPurpose
+--			from tbl_cofc where c_uId = ?
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+----- @brief 根据商会id得到商会的信息
+----- @param cofc_id 要查找的商会id
+----- @return 商会的信息，失败返回nil
+--function CofcBasicSql.GetCofcInfo(cofc_id)
+--	cofc_id = tonumber(cofc_id)
+--	local ret = nil
+--	if cofc_id ~= nil and cofc_id > 0 then
+--		local tbl = CCofc._SelectCofcInfoByCofcId:ExecSql("s[32]s[32]nns[100]", cofc_id)
+--		if tbl:GetRowNum() > 0 then
+--			ret = tbl:ToTable(true)
+--		end
+--		tbl:Release()
+--	end
+--	return ret
+--end
+--------------------------------------------------------------------------------------
+--local StmtDef = {
+--	"_SelectCofcInfoByUid",
+--	[[
+--		select c_sName, c_dtCreateTime, c_uLevel, c_uMoney, c_sPurpose
+--			from tbl_cofc where c_uId = 
+--				(select c_uId from tbl_member_cofc where cs_uId = ?)
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+----- @brief 根据玩家id得到所在的商会信息
+----- @param [player_id] 玩家id，缺省为当前玩家
+----- @return 商会信息，失败返回nil
+--function CofcBasicSql.GetCofcInfoByUid(player_id)
+--	local ret = nil
+--	local tbl = CCofc._SelectCofcInfoByUid:ExecSql("s[32]s[32]nns[100]", player_id)
+--	ret = tbl:GetRow(0, "c_sName", "c_dtCreateTime", "c_uLevel", "c_uMoney", "c_sPurpose")
+--	tbl:Release()
+--	return ret
+--end
+--------------------------------------------------------------------------------------
+--local StmtDef = {
+--	"_GetMemberInfoByUid",
+--	[[
+--		select cs_uId, c_uId, mc_uPosition, mc_uProffer, mc_dtJoinTime 
+--			from tbl_member_cofc where c_uId=?;
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+----- @brief 根据角色id返回在商会成员表中的信息
+----- @param player_id 角色id
+----- @return 商会成员表中的信息，失败返回nil
+--function CofcBasicSql.GetMemberInfoByUid(player_id)
+--	player_id = tonumber(player_id)
+--	if player_id == nil then
+--		return nil
+--	end
+--	local tbl = CCofc._GetMemberInfoByUid:ExecSql('s[32]', player_id)
+--	local ret = tbl:GetRow(0, "cs_uId", "c_uId", "mc_uPosition", "mc_uProffer", "mc_dtJoinTime")
+--	tbl:Release()
+--	return ret
+--end
+--------------------------------------------------------------------------------------
+--local StmtDef = {
+--	"_GetMemberCount",
+--	[[
+--		select count(*) from tbl_member_cofc where c_uId=?
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+----- @brief 得到商会的成员数
+--function CofcBasicSql.GetMemberCount(cofc_id)
+--	cofc_id = tonumber(cofc_id)
+--	if cofc_id == nil or cofc_id == 0 then
+--		return 0
+--	end
+--	local tbl = CCofc._GetMemberCount:ExecSql("n", cofc_id)
+--	if tbl:GetRowNum() > 0 then
+--		return tbl:GetData(0, 0)
+--	end
+--	return 0
+--end
+--------------------------------------------------------------------------------------
+--local StmtDef = {
+--	"_GetCofcMemberIDList",
+--	[[
+--		select cofc.cs_uId from tbl_member_cofc as cofc,tbl_char_onlinetime as online 
+--		where cofc.cs_uId = online.cs_uId 
+--		and		online.co_uOnServerId <> 0
+--		and		cofc.c_uId = ?
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+----- @brief 得到商会在线的人数
+--function CofcBasicSql.GetOnLineMemberCount(cofc_id)
+--	local tbl = CCofc._GetCofcMemberIDList:ExecSql("n", cofc_id)
+--	local counter = 0
+--	if tbl:GetRowNum() > 0 then 
+--		counter = tbl:GetNumber(0,0)
+--	end
+--	return counter
+--end
+--------------------------------------------------------------------------------------
+--local StmtDef = {
+--	"_CountCofcName",
+--	[[
+--		select count(*) from tbl_cofc where c_sName = ?
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+----- @brief 判断给定名称的商会是否存在
+----- @param cofc_name 商会的名称
+----- @return 是否存在
+--function CofcBasicSql.IsExistByName(cofc_name)
+--	if cofc_name == nil or type(cofc_name) ~= "string" or #cofc_name == 0 then
+--		return false
+--	end
+--	local ret = false
+--	local tbl = CCofc._CountCofcName:ExecSql("n", cofc_name)
+--	if tbl:GetData(0, 0) ~= 0 then
+--		ret = true
+--	end
+--	tbl:Release()
+--	return ret
+--end
+--------------------------------------------------------------------------------------
+--local StmtDef = {
+--	"_AddCofcStatic",
+--	[[
+--		insert into tbl_cofc(c_sName, c_dtCreateTime) values (?, now())
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+----- @brief 添加商会的静态信息
+----- @param cofc_name 商会名称
+----- @return 所建立的商会id，失败返回nil
+--function CofcBasicSql.AddCofcStatic(cofc_name)
+--	CCofc._AddCofcStatic:ExecSql('', cofc_name)
+--	if g_DbChannelMgr:LastAffectedRowNum() <= 0 then
+--		CancelTran()
+--		return nil
+--	else
+--		return g_DbChannelMgr:LastInsertId()
+--	end
+--end
+--------------------------------------------------------------------------------------
+--local StmtDef = {
+--	"_AddCofcMember",
+--	[[
+--		insert into tbl_member_cofc(c_uId, cs_uId, mc_uPosition, mc_dtJoinTime)
+--			values(?, ?, ?, now())
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+----- @brief 向商会添加成员
+----- @param cofc_id 商会id
+----- @param player_id 玩家id
+----- @param position 地位身份
+----- @return 操作是否成功
+--function CofcBasicSql.AddCofcMember(cofc_id, player_id, position)
+--	cofc_id = tonumber(cofc_id)
+--	player_id = tonumber(player_id)
+--	if cofc_id == nil or player_id == nil then
+--		return false
+--	end
+--	CCofc._AddCofcMember:ExecSql('', cofc_id, player_id, position)
+--	if g_DbChannelMgr:LastAffectedRowNum() <= 0 then
+--		CancelTran()
+--		return false
+--	else
+--		return true
+--	end
+--end
+--------------------------------------------------------------------------------------
+--local StmtDef = {
+--	"_GetMemberNum",
+--	[[
+--		select count(*) from tbl_member_cofc where c_uId = ?;
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+----- @brief 得到商会成员个数
+----- @param cofc_id 商会id
+----- @return 商会成员个数，操作失败返回nil
+--function CofcBasicSql.GetMemberNum(cofc_id)
+--	cofc_id = tonumber(cofc_id)
+--	if cofc_id == nil then
+--		return nil
+--	end
+--	local tbl = CCofc._GetMemberNum:ExecSql('n', cofc_id)
+--	local ret = tbl:GetData(0, 0)
+--	tbl:Release()
+--	return ret
+--end
+--------------------------------------------------------------------------------------
+--local StmtDef = {
+--	"_DropCofc",
+--	[[
+--		delete from tbl_cofc where c_uId = ?
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+----- @brief 删除商会
+----- @param cofc_id 要删除的商会id
+----- @return 是否成功删除
+--function CofcBasicSql.DropCofc(cofc_id)
+--	cofc_id = tonumber(cofc_id)
+--	if cofc_id == nil then
+--		return false
+--	end
+--	CCofc._DropCofc:ExecSql('', cofc_id)
+--	return g_DbChannelMgr:LastAffectedRowNum() > 0
+--end
+--------------------------------------------------------------------------------------
+--local StmtDef = {
+--	"_GetMemberIdByPosition",
+--	[[
+--		select cs_uId from tbl_member_cofc where c_uId=? and mc_uPosition=?
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+----- @brief 查找商会中给定身份的玩家id
+----- @return 失败返回nil
+--function CofcBasicSql.GetMemberIdByPosition(cofc_id, position)
+--	cofc_id = tonumber(cofc_id)
+--	local ret = nil
+--	if cofc_id == nil or cofc_id == 0 or position == nil or #position == 0 then
+--		return ret
+--	end
+--	local tbl = CCofc._GetMemberIdByPosition:ExecSql('n', cofc_id, position)
+--	if tbl:GetRowNum() >= 1 then
+--		ret = tbl:GetData(0, 0)
+--	end
+--	tbl:Release()
+--	return ret
+--end
+--------------------------------------------------------------------------------------
+--local StmtDef = {
+--	"_DropMember",
+--	[[
+--		delete from tbl_member_cofc where c_uId = ? and cs_uId = ?;
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+----- @brief 删除商会成员
+----- @param cofc_id 商会id
+----- @param player_id 要删除的成员id
+----- @return 是否成功删除
+--function CofcBasicSql.DropMember(cofcId, self_playerId,dest_playerId)
+--	local cofc_id = tonumber(cofcId)
+--	local self_player_id = tonumber(self_playerId)
+--	local dest_player_id = tonumber(dest_playerId)
+--
+--	if cofc_id == nil or self_player_id == nil or dest_player_id == nil then
+--	--	MsgToConn(Conn, 110017, "参数错误")
+--		return 110017
+--	end
+--	local position_my = CofcBasicSql.GetPosition(self_player_id)
+--	local position_dest = CofcBasicSql.GetPosition(dest_player_id)
+--	if position_my == nil or (position_my ~= "会长" and position_my ~= "副会长") then
+--		--MsgToConn(Conn, 110018, "权限不足")
+--		return 110018
+--	end
+--	local memberNum = CofcBasicSql.GetMemberNum(cofc_id)
+--	-- 以下断言我的身份为会长或副会长
+--	if position_dest == "会长" then
+--		if position_my ~= "会长" then
+--			-- 会长删除自己会有权限转移问题
+--			local successor = CofcBasicSql.GetMemberIdByPosition(cofc_id, "副会长")
+--			if successor == nil then
+--				successor = CofcBasicSql.GetMemberIdByPosition(cofc_id, "主管")
+--				if successor == nil and memberNum > 1 then
+--				--	MsgToConn(Conn, 110019, "您是会长，没有接班人之前不能删除自己")
+--					return 110019
+--				end
+--			end
+--			CCofc._DropMember:ExecSql('', cofc_id, dest_player_id)
+--			if g_DbChannelMgr:LastAffectedRowNum() <= 0 then
+--				CancelTran()
+--			--	MsgToConn(Conn, 110020, "删除会长失败")
+--				return 110020
+--			end
+--			if successor ~= nil then
+--				CCofc._ChangePosition:ExecSql('', "会长", successor, cofc_id)
+--				if g_DbChannelMgr:LastAffectedRowNum() <= 0 then
+--					CancelTran()
+--			--		MsgToConn(Conn, 110021, "新接班人建立失败")
+--					return 110021
+--				end
+--			-- 没有成员时商会也删除
+--			elseif memberNum == 1 then
+--				CCofc._DropMember:ExecSql('', cofc_id, dest_player_id)
+--				if g_DbChannelMgr:LastAffectedRowNum() > 0 then
+--					CofcBasicSql.DropCofc(cofc_id)
+--					if g_DbChannelMgr:LastAffectedRowNum() <= 0 then
+--						CancelTran()
+--					--	MsgToConn(Conn, 110022, "操作失败")
+--						return 110022
+--					end
+--				end
+--			end
+--			return true
+--		else
+--		--	MsgToConn(Conn, 110023, "权限不足，您不能删除会长")
+--			return 110023
+--		end
+--	end
+--	
+--	-- 删除成员
+--	CCofc._DropMember:ExecSql('', cofc_id, dest_player_id)
+--	if g_DbChannelMgr:LastAffectedRowNum() <= 0 then
+--		CancelTran()
+--	--	MsgToConn(Conn, 11001, "操作失败")
+--		return 110022
+--	-- 没有成员时商会也删除
+--	elseif CofcBasicSql.GetMemberNum(cofc_id) == 1 then
+--		CCofc._DropMember:ExecSql('', cofc_id, dest_player_id)
+--		if g_DbChannelMgr:LastAffectedRowNum() > 0 then
+--			CofcBasicSql.DropCofc(cofc_id)
+--			if g_DbChannelMgr:LastAffectedRowNum() <= 0 then
+--				CancelTran()
+--			--	MsgToConn(Conn, 11001, "操作失败")
+--				return 110022
+--			end
+--		end
+--	end
+----	MsgToConn(Conn, 11001, "操作成功")
+--	return true
+--end
+--------------------------------------------------------------------------------------
+--local StmtDef = {
+--	"_AddLogs",
+--	[[
+--		insert into tbl_log_cofc(c_uId, lc_sContent, lc_Type, lc_dtCreateTime) 
+--			values(?, ?, ?, now())
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+----- @brief 记录商会日志
+----- @param cofc_id 商会id
+----- @param message 玩家id
+----- @param index 日志的类型
+----- @return 操作是否成功
+--function CofcBasicSql.AddLog(cofc_id, message, index)
+--	cofc_id = tonumber(cofc_id)
+--	if cofc_id == nil then
+--		return false
+--	end
+--	CCofc._AddLogs:ExecSql('', cofc_id, message, index or 0)
+--	if g_DbChannelMgr:LastAffectedRowNum() <= 0 then
+--		CancelTran()
+--		return false
+--	else
+--		return true
+--	end
+--end
+--------------------------------------------------------------------------------------
+--local StmtDef = {
+--	"_SelectLogs",
+--	[[
+--		select lc_sContent,lc_Type,unix_timestamp(lc_dtCreateTime) from tbl_log_cofc where c_uId = ? and lc_Type = ?
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+--
+--local StmtDef = {
+--	"_SelectLogsAll",
+--	[[
+--		select lc_sContent,lc_Type,unix_timestamp(lc_dtCreateTime) from tbl_log_cofc where c_uId = ?
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+--
+----- @brief 得到商会日志
+----- @param cofc_id 商会的id
+----- @param index 日志类型
+----- @param [limit] 最多查出的日志数
+----- @return 查出的日志条数，失败返回0
+--function CofcBasicSql.GetLog(data)
+--	local logType = data["logType"]
+--	local playerId = data["playerId"]
+--	local tbl = {}
+--	if IsNumber(logType) and IsNumber(logType) then
+--		local cofc_id = CofcBasicSql.GetCofcID(playerId)
+--		if cofc_id == nil then
+--			return 0
+--		end
+--		if logType == 4 then
+--			local res = CCofc._SelectLogsAll:ExecSql("s[100]nn",cofc_id)
+--			if nil ~= res and res:GetRowNum()>0 then
+--				for i = 1,res:GetRowNum() do
+--					table.insert(tbl,res:GetRow(i-1))
+--				end
+--			end
+--		else
+--			local res = CCofc._SelectLogs:ExecSql("s[100]nn",cofc_id,logType)
+--			if nil ~= res and res:GetRowNum()>0 then
+--				for i = 1,res:GetRowNum() do
+--					table.insert(tbl,res:GetRow(i-1))
+--				end
+--			end
+--		end
+--		return tbl
+--	end
+--end
+--------------------------------------------------------------------------------------
+--local StmtDef = {
+--			"QueryPlayerIdByCofcId",
+--			[[
+--				select cs_uId from tbl_member_cofc where c_uId = ?
+--			]]
+--}
+--DefineSql (StmtDef,CCofc )
+--
+-----@brief 通过商会ID获得商会里所有玩家的ID
+-----@param cofc_id 商会的ID
+--function CofcBasicSql.GetAllPlayerIDByCofcID(cofc_id)
+--	assert(IsNumber(cofc_id))
+--	local result_list = CCofc.QueryPlayerIdByCofcId:ExecSql("n",cofc_id)
+--	local member = result_list:GetCol(0)
+--	result_list:Release()
+--	return member
+--end
+--
+--local StmtDef = {
+--			"GetCofcOnlineCharId",
+--			[[
+--				select 
+--					mc.cs_uId 
+--				from 
+--					tbl_member_cofc as mc, tbl_char_onlinetime as co 
+--				where 
+--					mc.cs_uId = co.cs_uId and mc.c_uId = ? and co.co_uOnServerId <> 0
+--			]]
+--}
+--DefineSql (StmtDef,CCofc )
+--
+-----@brief 通过商会ID获得商会里所有在线玩家的ID
+-----@param cofc_id 商会的ID
+--function CofcBasicSql.GetCofcOnlineCharId(cofc_id)
+--	assert(IsNumber(cofc_id))
+--	local result_list = CCofc.GetCofcOnlineCharId:ExecSql("n",cofc_id)
+--	local member = result_list:GetCol(0)
+--	result_list:Release()
+--	return member
+--end
+--
+--
+--------------------------------------------------------------------------------------
+--local StmtDef = {
+--	"_ModifyPurpose",
+--	[[
+--		update tbl_cofc set c_sPurpose=? where c_uId=?
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+----- @brief 修改商会宗旨
+----- @param [purpose] 新的商会宗旨，默认nil表示商会宗旨为空
+----- @return 操作是否成功
+--function CofcBasicSql.ModifyPurpose(data)
+--	local playerId = data["player_id"]
+--	local propose = data["propose"]
+--	local cofc_id = CofcBasicSql.GetCofcID(playerId)
+--	if cofc_id == nil then
+--		return false
+--	end
+--	if propose == nil then
+--		propose = ""
+--	elseif #propose > 200 then
+--		return false
+--	end
+--	
+--	CCofc._ModifyPurpose:ExecSql("", propose, cofc_id)
+--	local ret = false
+--	if g_DbChannelMgr:LastAffectedRowNum() > 0 then
+--		ret = true
+--	end
+--	return ret
+--end
+--------------------------------------------------------------------------------------
+--local StmtDef = {
+--	"_GetMemberList",
+--	[[
+--		-- 角色id，角色名，商会中的职位，等级，种族，职业
+--		select 
+--			tms.cs_uId, tc.c_sName, tms.mc_uPosition, tcb.cb_uLevel, '种族未知', tcs.cs_uClass 
+--		from 
+--			tbl_member_cofc as tms, 
+--			tbl_char_static as tcs, 
+--			tbl_char_basic as tcb, 
+--			tbl_char as tc
+--		where 
+--			tms.c_uId=?
+--			and tms.cs_uId=tcs.cs_uId 
+--			and tms.cs_uId=tcb.cs_uId 
+--			and tms.cs_uId=tc.cs_uId
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+--
+--local StmtDef = {
+--		"SelectFriendColorInfo",
+--		[[
+--		-- 心情寄语, 状态,心情
+--			select
+--				fi_sFellStatement,
+--				fi_sFirstNewest,
+--				fi_uFellState
+--			from
+--				tbl_friends_info
+--			where
+--				cs_uId = ?
+--		]]
+--}
+--DefineSql( StmtDef, CCofc )
+--
+----- @brief 向客户端发送商会成员的信息列表
+----- @param cofc_id 商会id
+----- @return 成功发送的信息数
+----- @remark 发送客户端的信息包格式为{角色id，角色名，商会中的职位，等级，种族，职业,心情寄语, 状态,心情，玩家是否在线}
+--function CofcBasicSql.SendMemberList(cofc_id)
+--	local playerInfo = {}
+--	cofc_id = tonumber(cofc_id)
+--	if cofc_id == nil then
+--		return playerInfo
+--	end
+--	
+--	local tbl = CCofc._GetMemberList:ExecSql("ns[16]s[32]ns[32]n", cofc_id)
+--	if tbl ~= nil and tbl:GetRowNum() > 0 then
+--		for i = 1,tbl:GetRowNum() do
+--			local playerTbl = {}
+--			local playerColorInfo = CCofc.SelectFriendColorInfo:ExecSql("s[32]s[255]n",tbl:GetData(i-1,0))
+--			local fellStatement = ""
+--			local first_newest = ""
+--			local fellstate = 0
+--			if playerColorInfo ~= nil and playerColorInfo:GetRowNum() > 0 then
+--				fellStatement = playerColorInfo:GetData(0,0)
+--				first_newest = playerColorInfo:GetData(0,1)
+--				fellstate= playerColorInfo:GetData(0,2)
+--			end
+--			playerColorInfo:Release()
+--			playerTbl[1] = tbl:GetData(i-1,0)
+--			playerTbl[2] = tbl:GetData(i-1,1)
+--			playerTbl[3] = tbl:GetData(i-1,2)
+--			playerTbl[4] = tbl:GetData(i-1,3)
+--			playerTbl[5] = tbl:GetData(i-1,4)
+--			playerTbl[6] = tbl:GetData(i-1,5)
+--			playerTbl[7] = fellStatement
+--			playerTbl[8] = first_newest
+--			playerTbl[9] = fellstate
+--			table.insert(playerInfo,playerTbl)
+--		end
+--	end
+--	tbl:Release()
+--	return playerInfo
+--end
+--------------------------------------------------------------------------------------
+--local StmtDef = {
+--	"_GetRequestList",
+--	[[
+--		-- 玩家信息id, 玩家姓名, 等级, 种族, 职业, 引荐人, 描述
+--		select trc.cs_uId, tc1.c_sName, tcb.cb_uLevel, '种族未知', tcs.cs_uClass, tc2.c_sName, trc.rc_sExtraInfo
+--		from 
+--		tbl_request_cofc as trc, 
+--		tbl_char_static as tcs, 
+--		tbl_char_basic as tcb, 
+--		tbl_char as tc1,
+--		tbl_char as tc2
+--		where trc.c_uId=?
+--		and trc.cs_uId=tcs.cs_uId 
+--		and trc.cs_uId=tcb.cs_uId 
+--		and trc.cs_uId=tc1.cs_uId
+--		and trc.rc_uRecomId = tc2.cs_uId
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+----- @brief 向客户端发送商会申请加入的信息列表
+----- @param cofc_id 商会id
+----- @return 成功发送的信息数
+----- @remark 发送客户端的信息包格式为{玩家信息id, 玩家姓名, 等级, 种族, 职业, 引荐人, 描述}
+--function CofcBasicSql.SendRequestList(cofc_id)
+--
+--	cofc_id = tonumber(cofc_id)
+--	local res = {}
+--	if cofc_id == nil then
+--		return res
+--	end
+--	
+--	local tbl = CCofc._GetRequestList:ExecSql("ns[18]ns[32]ns[18]s[100]", cofc_id)
+--	if nil ~= tbl and tbl:GetRowNum() > 0 then
+--		for i = 1,tbl:GetRowNum() do
+--			table.insert(res,tbl:GetRow(i-1))
+--		end
+--	end
+--	return res
+--end
+--------------------------------------------------------------------------------------
+--local StmtDef = {
+--	"_GetPopularOfDay",
+--	[[
+--		select dpc_uPopular from tbl_day_popular_cofc 
+--		where c_uId=? and dpc_uYear=year(?) and dpc_uDayOfYear=dayofyear(?);
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+----- @brief 得到商会的人气值
+----- @param cofc_id 商会的id
+----- @param [date] 字符串日期，或者整数的日期偏移，如0表示今天，-1表示昨天，默认nil为今天
+----- @return 商会的人气值，失败返回0
+--function CofcBasicSql.GetPopularOfDay(cofc_id, date)
+--	cofc_id = tonumber(cofc_id)
+--	local nDate = tonumber(date)
+--	local ret = 0
+--	if cofc_id ~= nil then
+--		if date == nil then
+--			date = "now()"
+--		elseif nDate ~= nil then
+--			date = "adddate(now(), interval " .. tostring(date) .. " day)"
+--		end
+--		local tbl = CCofc._GetPopularOfDay:ExecSql("n", cofc_id, date, date)
+--		if tbl:GetRowNum() ~= 0 then
+--			ret = tbl:GetData(0, 0)
+--		end
+--		tbl:Release()
+--	end
+--	return ret
+--end
+--------------------------------------------------------------------------------------
+--local StmtDef = {
+--	"_GetPopularOfWeek",
+--	[[
+--		select sum(dpc_uPopular) from tbl_day_popular_cofc 
+--		where c_uId=? and dpc_uYear=year(?) and dpc_uWeekOfYear=weekofyear(?)
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+----- @brief 得到商会的人气值
+----- @param cofc_id 商会的id
+----- @param [week] 字符串日期，或者整数的星期偏移，如0表示本周，-1表示上周，默认nil为本周
+----- @return 商会的人气值，失败返回0
+--function CofcBasicSql.GetPopularOfWeek(cofc_id, week)
+--	cofc_id = tonumber(cofc_id)
+--	local nWeek = tonumber(week)
+--	local ret = 0
+--	if cofc_id ~= nil then
+--		if week == nil then
+--			week = "now()"
+--		elseif nWeek ~= nil then
+--			week = "adddate(now(), interval " .. tostring(week) .. " week)"
+--		end
+--		local tbl = CCofc._GetPopularOfWeek:ExecSql("n", cofc_id, date, date)
+--		if tbl:GetRowNum() ~= 0 then
+--			ret = tbl:GetData(0, 0)
+--		end
+--		tbl:Release()
+--	end
+--	return ret
+--end
+--------------------------------------------------------------------------------------
+--local StmtDef = {
+--	"_AddPopularToday",
+--	[[
+--		update tbl_day_popular_cofc set dpc_uPopular=dpc_uPopular+?
+--		where c_uId=? 
+--		and dpc_uYear=year(now()) and dpc_uDayOfYear=dayofyear(now()) and dpc_uWeekOfYear=weekofyear(now())
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+--local StmtDef = {
+--	"_SetPopularToday",
+--	[[
+--		insert into tbl_day_popular_cofc(dpc_uPopular, c_uId, dpc_uYear, dpc_uDayOfYear)
+--		values (?, ?, year(now()), dayofyear(now()))
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+----- @brief 给商会增加人气值
+----- @param cofc_id 商会id
+----- @param delta 友好度的增量
+----- @return 是否操作成功
+----- @remark 本函数会自动处理每日第一条记录的插入
+--function CofcBasicSql.AddPopularToday(cofc_id, delta)
+--	cofc_id = tonumber(cofc_id)
+--	delta = tonumber(delta)
+--	if cofc_id == nil or delta == nil then
+--		return false
+--	elseif delta == 0 then
+--		return true
+--	end
+--	local ret = false
+--	local tbl = CCofc._AddPopularToday:ExecSql('', delta, cofc_id)
+--	if g_DbChannelMgr:LastAffectedRowNum() ~= 0 then
+--		ret = true
+--	else
+--		tbl:Release()
+--		tbl = CCofc._SetPopularToday('', delta, cofc_id)
+--		if g_DbChannelMgr:LastAffectedRowNum() ~= 0 then
+--			ret = true
+--		else
+--			CancelTran()
+--			ret = false
+--		end
+--	end
+--	tbl:Release()
+--	return ret
+--end
+--------------------------------------------------------------------------------------
+----- @brief 创建商会
+----- @param cofc_name 商会的名称
+----- @return 是否创建成功
+--function CofcBasicSql.AddCofc(data)
+--	local player_id = data["playerId"]
+--	local cofc_name = data["cofcName"]
+--	local textFltMgr = CTextFilterMgr:new()
+--	
+--	cofc_name = textFltMgr:RemoveTab1(cofc_name)
+--	if "" == cofc_name then
+--		return false,110072
+--	end
+--	
+--	if #cofc_name > 32 then
+--		--MsgToConn(Conn, 11001, "商会名称长度不能大于32！")
+--		return false,110011
+--	end
+--	if CofcBasicSql.IsExistByName(cofc_name) then
+--		--MsgToConn(Conn, 11001,"商会已经存在") --商会已经存在
+--		return false,110012
+--	end
+--	if CofcBasicSql.GetCofcID(player_id) ~= 0 then
+--		--MsgToConn(Conn, 11001,"已经参加了其他商会，不能重复加入") 
+--		return false,110013
+--	end
+--	-- 建立商会
+--	local cofc_id = CofcBasicSql.AddCofcStatic(cofc_name);
+--	if cofc_id == nil then
+--		return false,nil
+--	end
+--	-- 把自己加入商会并设置为会长身份
+--	if not CofcBasicSql.AddCofcMember(cofc_id, player_id, "会长") then
+--		return false,nil
+--	end
+--	-- Log
+--	local ex = RequireDbBox("Exchanger")
+--	CofcBasicSql.AddLog(cofc_id, "本商会成立，由" .. ex.getPlayerNameById(player_id) .. "创建", 0)
+--	CofcBasicSql.DeleteRequest(player_id)
+--	return true,cofc_id
+--end
+--------------------------------------------------------------------------------------
+----- @brief 退出商会
+----- @param player_id 角色Id
+----- @return 是否退出成功的标志
+--function CofcBasicSql.LeaveCofc(data)
+--	local player_id = data["player_id"]
+----根据角色id返回在商会成员表中的信息
+--	local info = CofcBasicSql.GetMemberInfoByUid(player_id)
+----得到商会的成员数
+--	local memberCount = CofcBasicSql.GetMemberCount(CofcBasicSql.GetCofcID(player_id))
+--	if info == nil then
+--		--MsgToConn(Conn, 110014, "没有您的商会成员信息")
+--		return 110014
+--	elseif info.mc_uPosition.value == "会长" and memberCount > 1 then
+--		--MsgToConn(Conn, 110015, "您是会长，不能退会。请先转移会长")
+--		return 110015
+--	end
+---- 删除商会成员
+--	result = CofcBasicSql.DropMember(info.c_uId.value, player_id,player_id)
+--	if IsNumber(result) then
+--		--MsgToConn(Conn, 110016, "退出不成功！")
+--		return result
+--	end
+--	return true
+--end
+--------------------------------------------------------------------------------------
+----- @brief 由科技id查表得到科技信息
+----- @param tech_id 科技id
+----- @return {id=x, name=x, ....}，失败返回nil
+--function CofcBasicSql.GetTechInfoByTechId(tech_id)
+--	return nil
+--end
+--------------------------------------------------------------------------------------
+--local StmtDef = {
+--	"_GetCofcList",
+--	[[
+--		select tc.c_uId, tc.c_sName, count(tmc.cs_uId) 
+--		from tbl_cofc as tc, tbl_member_cofc as tmc 
+--		where tc.c_uId=tmc.c_uId 
+--		group by tc.c_uId
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+----- @brief 得到给定npc的商会列表
+----- @param npc_id npc_id，将由该npc所处的国家进行过滤，因为角色表现在没有国家信息暂时先不做过滤
+--function CofcBasicSql.SendCofcList(data)
+--	local npc_id = data["npc_id"]
+--	local res = {}
+--	if npc_id == nil then
+--		return false
+--	end
+--	local tbl = CCofc._GetCofcList:ExecSql('ns[32]n')
+--	if tbl ~= nil and tbl:GetRowNum()>0 then
+--		for i = 1,tbl:GetRowNum() do
+--			table.insert(res,tbl:GetRow(i-1))
+--		end
+--	end
+--	return res
+--end
+--------------------------------------------------------------------------------------
+--local StmtDef = {
+--	"_AlreadyRequest",
+--	[[
+--		select count(*) from tbl_request_cofc where cs_uId=? and c_uId=? 
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+----- @brief 判断给定的玩家是否已经加入了给定的商会
+--function CofcBasicSql.IsAlreadyRequest(player_id, cofc_id)
+--	player_id = tonumber(player_id)
+--	cofc_id = tonumber(cofc_id)
+--	if player_id == nil or player_id == 0 or cofc_id == nil or cofc_id == 0 then
+--		return false
+--	end
+--	local tbl = CCofc._AlreadyRequest:ExecSql("n", player_id, cofc_id)
+--	local already_request = tbl:GetData(0, 0)
+--	tbl:Release()
+--	if already_request == 0 then
+--		return false
+--	else
+--		return true
+--	end
+--end
+--------------------------------------------------------------------------------------
+--local StmtDef = {
+--	"_AddRequest",
+--	[[
+--		replace into tbl_request_cofc(cs_uId, c_uId, rc_uRecomId, rc_dtRequestTime, rc_sExtraInfo) 
+--		values(?, ?, ?, now(), ?)
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+----- @brief 申请加入商会
+--function CofcBasicSql.RequestJoin(data)
+--	local cofc_id = data["cofc_id"] 
+--	local desc = data["desc"]
+--	local player_id = data["player_id"]
+--	if cofc_id == nil or cofc_id == 0 then
+--		return 110017
+--	end
+--	
+--	local IsJoinCofc = CofcBasicSql.GetCofcID(player_id)
+--	if IsJoinCofc ~= 0 then
+--		return 110029
+--	end
+--	CCofc._AddRequest:ExecSql("", player_id, cofc_id, player_id, desc or "")
+--	if g_DbChannelMgr:LastAffectedRowNum() <= 0 then
+--		CancelTran()
+--		return 110027
+--	end
+--	local ex = RequireDbBox("Exchanger")
+--	CofcBasicSql.AddLog(cofc_id, "玩家" .. ex.getPlayerNameById(player_id) .. "申请加入本商会", 0)
+--	return true
+--end
+--------------------------------------------------------------------------------------
+----- @brief 引荐加入商会
+--function CofcBasicSql.IntroduceJoin(data)
+--	local player_name = data["player_name"] 
+--	local desc = data["desc"]
+--	local playerId = data["player_id"]
+--
+--	local Exchanger = RequireDbBox("Exchanger")
+--	local player_id = Exchanger.getPlayerIdByName(player_name)
+--
+--	if player_id == nil or player_id == 0 then
+--	--	MsgToConn(Conn, 11001, "参数错误")
+--		return 110017
+--	end
+--	
+--	local cofc_id =  CofcBasicSql.GetCofcID(player_id)
+--	if cofc_id == nil or cofc_id == 0 then
+--	--	MsgToConn(Conn, 11001, "您还没有加入商会，不能引荐其他玩家")
+--		return 110039
+--	end
+--	
+--	if CofcBasicSql.GetCofcID(player_id) ~= 0 then
+--	--	MsgToConn(Conn, 11001, "该玩家已经加入其他商会了")
+--		return 110040
+--	end
+----	if CofcBasicSql.IsAlreadyRequest(player_id, cofc_id) then
+----		return true
+----	end
+--	CCofc._AddRequest:ExecSql("", player_id, cofc_id, playerId, desc or "")
+--	if g_DbChannelMgr:LastAffectedRowNum() <= 0 then
+--		CancelTran()
+--	--	MsgToConn(Conn, 11001, "引荐加入商会失败")
+--		return 110041
+--	end
+--	
+--	--MsgToConn(Conn, 11001, "引荐加入商会成功")
+--	return 110042
+--end
+--------------------------------------------------------------------------------------
+--local StmtDef = {
+--	"_RefuseRequest",
+--	[[
+--		delete from tbl_request_cofc where c_uId=? and cs_uId=?
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+----- @brief 拒绝申请入会申请
+--function CofcBasicSql.RefuseRequest(cofc_id, player_id)
+--	cofc_id = tonumber(cofc_id)
+--	player_id = tonumber(player_id)
+--	if cofc_id == nil or cofc_id == 0 or player_id == nil or player_id == 0 then
+--		return fase
+--	end
+--	local tbl = CCofc._GetPosition:ExecSql('s[32]', player_id)
+--	if tbl:GetRowNum() >= 0 then
+--		CCofc._RefuseRequest:ExecSql('', cofc_id, player_id)
+--		if g_DbChannelMgr:LastAffectedRowNum() <= 0 then
+--			CancelTran()
+--			return false
+--		end
+--		return true
+--	end
+--end
+--------------------------------------------------------------------------------------
+--local StmtDef = {
+--	"_DeleteRequest",
+--	[[
+--		delete from tbl_request_cofc where cs_uId = ?
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+----- @brief 删除入会申请
+--function CofcBasicSql.DeleteRequest(player_id)
+--	player_id = tonumber(player_id)
+--	if player_id == nil or player_id == 0 then
+--		return fase
+--	end
+--	CCofc._DeleteRequest:ExecSql('',player_id)
+--	return g_DbChannelMgr:LastAffectedRowNum()
+--end
+--------------------------------------------------------------------------------------
+----- @brief 同意入会申请
+--function CofcBasicSql.ApproveJoinCofC(data)
+--	local player_id = data["playerId"]
+--	local self_Id = data["self_Id"]
+--	local position_my = CofcBasicSql.GetPosition(self_Id)
+--	
+--	if position_my ~= "会长" and position_my ~= "副会长" then
+--		--MsgToConn(Conn, 11001, "您无操作权限")
+--		return 110030
+--	end
+--
+--	local player_cofc_id = CofcBasicSql.GetCofcID(player_id)
+--	if 0 ~= player_cofc_id then
+--		return 110040
+--	end
+--	
+--	local cofc_id = CofcBasicSql.GetCofcID(self_Id)
+--	if CofcBasicSql.RefuseRequest(cofc_id, player_id) then
+--		local ret = CofcBasicSql.AddCofcMember(cofc_id, player_id, '会员')
+--		local memberList = nil
+--		local requestList = nil
+--		if ret then
+--			memberList = CofcBasicSql.SendMemberList(cofc_id)
+--			requestList = CofcBasicSql.SendRequestList(cofc_id)
+--		end
+--		local ex = RequireDbBox("Exchanger")
+--		local self_name = ex.getPlayerNameById(self_Id)
+--		local player_name = ex.getPlayerNameById(player_id)
+--		if position_my == "会长"  then
+--			CofcBasicSql.AddLog(cofc_id, "会长" .. self_name .. "将玩家" .. player_name .. "加入商会", 0)
+--		elseif position_my == "会长"  then
+--			CofcBasicSql.AddLog(cofc_id, "副会长" .. self_name .. "将玩家" .. player_name .. "加入商会", 0)
+--		end
+--		local tbl = CCofc._SelectCofcInfoByCofcId:ExecSql("s[32]s[32]nns[100]", cofc_id)
+--		local cofcName = ""
+--		if tbl ~= nil and tbl:GetRowNum() ~= 0 then
+--			cofcName = tbl:GetData(0,0)
+--		end
+--		return memberList,requestList,cofc_id,cofcName
+--	else
+--		return false
+--	end
+--end
+--------------------------------------------------------------------------------------
+----- @brief 拒绝入会申请
+--function CofcBasicSql.RefuseJoinCofC(data)
+--	local player_id = data["playerId"]
+--	local self_Id = data["self_Id"]
+--	local position_my = CofcBasicSql.GetPosition(self_Id)
+--	if position_my ~= "会长" and position_my ~= "副会长" then
+--		--MsgToConn(Conn, 11001, "您无操作权限")
+--		return 110030
+--	end
+--
+--	local cofc_id = CofcBasicSql.GetCofcID(self_Id)
+--	local ret = CofcBasicSql.RefuseRequest(cofc_id, player_id)
+--	if ret then
+--		local memberList = CofcBasicSql.SendMemberList(cofc_id)
+--		local requestList = CofcBasicSql.SendRequestList(cofc_id)
+--		return memberList,requestList
+--	else 
+--		return false
+--	end
+--end
+--------------------------------------------------------------------------------------
+--local StmtDef = {
+--	"_GetPosition",
+--	[[
+--		select mc_uPosition from tbl_member_cofc where cs_uId=?
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+----- @brief 得到玩家在商会中的职位
+----- @return 失败返回nil
+--function CofcBasicSql.GetPosition(player_id)
+--	player_id = tonumber(player_id)
+--	if player_id == nil or player_id == 0 then
+--		return nil
+--	end
+--	local tbl = CCofc._GetPosition:ExecSql('s[32]', player_id)
+--	if tbl:GetRowNum() == 0 then
+--		return nil
+--	else
+--		return tbl:GetData(0, 0)
+--	end
+--end
+--------------------------------------------------------------------------------------
+--local StmtDef = {
+--	"_ChangePosition",
+--	[[
+--		update tbl_member_cofc set mc_uPosition=? where cs_uId=? and c_uId=?
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+--local StmtDef = {
+--	"_ClearPosition",
+--	-- 将给定商会的给定职位全部设置为会员
+--	[[
+--		update tbl_member_cofc set mc_uPosition="会员" where mc_uPosition=? and c_uId=? 
+--	]]
+--}
+--DefineSql(StmtDef, CCofc)
+----- @brief 修改会员职位,参数：玩家信息id，新的职位
+--function CofcBasicSql.ChangeCofCMemberPos(data)
+--	local player_id = data["playerId"] 
+--	local position_new = data["position"]
+--	local self_Id = data["self_Id"]
+--
+--	if position_new ~= "会长" and position_new ~= "副会长" and position_new ~= "主管" and position_new ~= "会员" then
+--	--	MsgToConn(Conn, 11001, "不能设置意外的职位")
+--		return 110031
+--	end
+--	
+--	if position_new == nil or #position_new > 32 then
+--	--	MsgToConn(Conn, 11001, "职位描述太长")
+--		return 110032
+--	end
+--
+--	if player_id == nil or player_id == 0 then
+----		MsgToConn(Conn, 11001, "参数错误，目标玩家id无效")
+--		return 110033
+--	end
+--	
+--	local cofc_id = CofcBasicSql.GetCofcID(self_Id)
+--	if cofc_id == nil or cofc_id == 0 then 
+--	--	MsgToConn(Conn, 11001, "您无权限修改，因您未加入任何商会")
+--		return 110034
+--	end
+--	
+--	if self_Id == player_id then
+--		--MsgToConn(Conn, 11001, "不能修改自己的职位")
+--		return 110035
+--	end
+--	
+--	local position_my = CofcBasicSql.GetPosition(self_Id)
+--	local position_old = CofcBasicSql.GetPosition(player_id)
+--	if position_new == position_old then
+--		--MsgToConn(Conn, 11001, "职位修改成功")
+--		return 110036
+--	end
+--	
+--	if position_my == "会长" then
+--		-- 会长转移
+--		if position_new == "会长" then
+--			-- 清掉自己的会长身份
+--			CCofc._ClearPosition:ExecSql("", "会长", cofc_id)
+--			-- 任命别人为会长
+--			CCofc._ChangePosition:ExecSql("", "会长", player_id, cofc_id)
+--			if g_DbChannelMgr:LastAffectedRowNum() <= 0 then
+--				CancelTran()
+--		--		MsgToConn(Conn, 11001, "职位修改失败")
+--				return 110037
+--			end
+--			local memberList = CofcBasicSql.SendMemberList(cofc_id)
+--			return true,memberList
+--		-- 副会长的任命
+--		elseif position_new == "副会长" then
+--			-- 清掉原来的副会长
+--			CCofc._ClearPosition:ExecSql("", "副会长", cofc_id)
+--			-- 任命新的副会长
+--			CCofc._ChangePosition:ExecSql("", "副会长", player_id, cofc_id)
+--			if g_DbChannelMgr:LastAffectedRowNum() <= 0 then
+--				CancelTran()
+--			--	MsgToConn(Conn, 11001, "职位修改失败")
+--				return 110037
+--			end
+--			local memberList = CofcBasicSql.SendMemberList(cofc_id)
+--			return true,memberList
+--		-- 主管的任命
+--		elseif position_new == "主管" then
+--			-- 清掉原来的主管
+--			CCofc._ClearPosition:ExecSql("", "主管", cofc_id)
+--			-- 任命新的主管
+--			CCofc._ChangePosition:ExecSql("", "主管", player_id, cofc_id)
+--			if g_DbChannelMgr:LastAffectedRowNum() <= 0 then
+--				CancelTran()
+--			--	MsgToConn(Conn, 11001, "职位修改失败")
+--				return 110037
+--			end
+--			local memberList = CofcBasicSql.SendMemberList(cofc_id)
+--			return true,memberList
+--		-- 会员的任命
+--		else -- position_dest == "会员"
+--			CCofc._ChangePosition:ExecSql("", "会员", player_id, cofc_id)
+--			if g_DbChannelMgr:LastAffectedRowNum() <= 0 then
+--				CancelTran()
+--			--	MsgToConn(Conn, 11001, "职位修改失败")
+--				return 110037
+--			end
+--			local memberList = CofcBasicSql.SendMemberList(cofc_id)
+--			return true,memberList
+--		end
+--	elseif position_my == "副会长" then
+--		if position_old == "会员" and position_new == "主管" then
+--			-- 清掉原来的主管
+--			CCofc._ClearPosition:ExecSql("", "主管", cofc_id)
+--			-- 任命新的主管
+--			CCofc._ChangePosition:ExecSql("", "主管", player_id, cofc_id)
+--			if g_DbChannelMgr:LastAffectedRowNum() <= 0 then
+--				CancelTran()
+--			--	MsgToConn(Conn, 11001, "职位修改失败")
+--				return 110037
+--			end
+--			local memberList = CofcBasicSql.SendMemberList(cofc_id)
+--			return true,memberList
+--		elseif position_old == "主管" and position_new == "会员" then
+--			-- 清掉原来的主管
+--			CCofc._ClearPosition:ExecSql("", "主管", cofc_id)
+--			local memberList = CofcBasicSql.SendMemberList(cofc_id)
+--			return true,memberList
+--		end
+--	end
+--	--MsgToConn(Conn, 11001, "您无操作权限，职位修改失败")
+--	return 110038
+--end
+--
+--------------------------------------------------------------------------------
+----- @brief 打开商会成员面板，得到相关信息
+--function CofcBasicSql.GetCofCMembersInfo(data)
+--	local playerId = data["player_id"]
+--	local cofc_id = CofcBasicSql.GetCofcID(playerId)
+--	local memberList = CofcBasicSql.SendMemberList(cofc_id)
+--	local requestList = CofcBasicSql.SendRequestList(cofc_id)
+--	return memberList,requestList
+--end
+--------------------------------------------------------------------------------
+--function CofcBasicSql.KickOutCofCMember(data)
+--	local player_id = data["playerId"] 
+--	local self_Id = data["self_Id"]
+--	
+--	local cofc_id = CofcBasicSql.GetCofcID(self_Id)
+--	local ret  = CofcBasicSql.DropMember(cofc_id,self_Id, player_id)
+--
+--	if ret == true then
+--		local memberList = CofcBasicSql.SendMemberList(cofc_id)
+--		return memberList
+--	else
+--		return ret
+--	end
+--end
+-------------------------------------------------------------------------------
+----- @brief 得到商会相关信息
+--function CofcBasicSql.GetCofcInfoSet(data)
+--	local playerId = data["playerId"]
+--	local npc_id = data["npc_id"]
+--	-- 由npc_id获得cofc_id，暂时先取自己的工会id
+--	local cofc_id = CofcBasicSql.GetCofcID(playerId)
+--	local info = CofcBasicSql.GetCofcInfo(cofc_id)
+--
+--	if info ~= nil then
+--		local position = CofcBasicSql.GetPosition(playerId)
+--		local memberCount = CofcBasicSql.GetMemberCount(cofc_id)
+--		local onlineMemberCount = CofcBasicSql.GetOnLineMemberCount(cofc_id)
+--		return info,position,memberCount,onlineMemberCount
+--	end
+--end
+--------------------------------------------------------------------------------
+--
+--return CofcBasicSql

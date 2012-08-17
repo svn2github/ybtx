@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Stack">
+      <UniqueIdentifier>{75df880d-a4fe-4d40-98d8-65f55518a8fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Memory">
+      <UniqueIdentifier>{86de8158-ee9f-46d4-9a77-5df74d15d8d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Memory\多线程">
+      <UniqueIdentifier>{43f29182-7192-458a-b1db-fcb2582ab2cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Memory\分配器">
+      <UniqueIdentifier>{cf166b32-d8fd-4975-a140-813ab4df02a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Memory\分配器\dlmalloc">
+      <UniqueIdentifier>{91bc3304-20ff-4d97-a6a1-be7961a01dc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Error">
+      <UniqueIdentifier>{706a264c-4b3e-429a-8610-9b3dca1089e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Time">
+      <UniqueIdentifier>{ea33a6be-3086-4093-87d0-c174754c23a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utf">
+      <UniqueIdentifier>{69310478-6c3f-4b4f-9f35-5e9694bc23fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Guid">
+      <UniqueIdentifier>{7df37f67-3c7a-41a2-9f3e-b952d1b5b098}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Xml">
+      <UniqueIdentifier>{c3ef35d8-205b-4751-9fab-fb9ae0695663}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Thread">
+      <UniqueIdentifier>{141a72eb-5a66-4051-854d-73e0eab4296f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base">
+      <UniqueIdentifier>{74482861-e06f-4efa-900f-d75237a3eab3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script">
+      <UniqueIdentifier>{81a8c413-9676-4a14-92cc-61d1f014de98}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CCallStackInfo.cpp">
+      <Filter>Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="CMapFile.cpp">
+      <Filter>Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="CMapFileMgr.cpp">
+      <Filter>Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="CStackFrame.cpp">
+      <Filter>Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="CStackFrameMgr.cpp">
+      <Filter>Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="CStackFrameSet.cpp">
+      <Filter>Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="StackWalkHelper.cpp">
+      <Filter>Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="CMallocObject.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="CMemCallStackInfo.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="CMemCallStackInfoMgr.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="CMemCallStackInfoSet.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="CMemoryLeakageMgr.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="MemoryHelper.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="SqrAlloc.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="CMemJob.cpp">
+      <Filter>Memory\多线程</Filter>
+    </ClCompile>
+    <ClCompile Include="CMemThread.cpp">
+      <Filter>Memory\多线程</Filter>
+    </ClCompile>
+    <ClCompile Include="CMemThreadMgr.cpp">
+      <Filter>Memory\多线程</Filter>
+    </ClCompile>
+    <ClCompile Include="CCompactAllocPool.cpp">
+      <Filter>Memory\分配器</Filter>
+    </ClCompile>
+    <ClCompile Include="CSqrAllocPool.cpp">
+      <Filter>Memory\分配器</Filter>
+    </ClCompile>
+    <ClCompile Include="CSqrAllocPoolMgr.cpp">
+      <Filter>Memory\分配器</Filter>
+    </ClCompile>
+    <ClCompile Include="CThreadAllocPool.cpp">
+      <Filter>Memory\分配器</Filter>
+    </ClCompile>
+    <ClCompile Include="dlmalloc.c">
+      <Filter>Memory\分配器\dlmalloc</Filter>
+    </ClCompile>
+    <ClCompile Include="CArtError.cpp">
+      <Filter>Error</Filter>
+    </ClCompile>
+    <ClCompile Include="CErrLog.cpp">
+      <Filter>Error</Filter>
+    </ClCompile>
+    <ClCompile Include="CErrLogCompress.cpp">
+      <Filter>Error</Filter>
+    </ClCompile>
+    <ClCompile Include="CErrLogEncrypt.cpp">
+      <Filter>Error</Filter>
+    </ClCompile>
+    <ClCompile Include="CErrLogJob.cpp">
+      <Filter>Error</Filter>
+    </ClCompile>
+    <ClCompile Include="CErrLogMgr.cpp">
+      <Filter>Error</Filter>
+    </ClCompile>
+    <ClCompile Include="CErrLogThreadMgr.cpp">
+      <Filter>Error</Filter>
+    </ClCompile>
+    <ClCompile Include="CError.cpp">
+      <Filter>Error</Filter>
+    </ClCompile>
+    <ClCompile Include="CJmpStack.cpp">
+      <Filter>Error</Filter>
+    </ClCompile>
+    <ClCompile Include="CLogOwner.cpp">
+      <Filter>Error</Filter>
+    </ClCompile>
+    <ClCompile Include="ErrLogHelper.cpp">
+      <Filter>Error</Filter>
+    </ClCompile>
+    <ClCompile Include="ExpHelper.cpp">
+      <Filter>Error</Filter>
+    </ClCompile>
+    <ClCompile Include="CTimeCheckPoint.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeHelper.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="UtfCvs.cpp">
+      <Filter>Utf</Filter>
+    </ClCompile>
+    <ClCompile Include="GuidHelper.cpp">
+      <Filter>Guid</Filter>
+    </ClCompile>
+    <ClCompile Include="CXmlConfig.cpp">
+      <Filter>Xml</Filter>
+    </ClCompile>
+    <ClCompile Include="CLock.cpp">
+      <Filter>Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="CThreadWatcherMap.cpp">
+      <Filter>Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadHelper.cpp">
+      <Filter>Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseHelper.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="CBaseObject.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="CBaseRefObject.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="CDynamicObject.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="CShareObject.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="CStaticObject.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\sdk\inc\CCallStackInfo.h">
+      <Filter>Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="CMapFile.h">
+      <Filter>Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CMapFileMgr.h">
+      <Filter>Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="CStackFrame.h">
+      <Filter>Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="CStackFrameMgr.h">
+      <Filter>Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="CStackFrameSet.h">
+      <Filter>Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CStackString.h">
+      <Filter>Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="StackWalkHelper.h">
+      <Filter>Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CMallocObject.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CMallocPool.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="CMemCallStackInfo.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="CMemCallStackInfoMgr.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="CMemCallStackInfoSet.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="CMemoryCookie.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="CMemoryLeakageMgr.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CMemPool.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\Memory.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\MemoryHelper.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SqrAlloc.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TMallocAllocator.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TMallocPoolAllocator.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TMemPoolAllocator.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="CMemJob.h">
+      <Filter>Memory\多线程</Filter>
+    </ClInclude>
+    <ClInclude Include="CMemThread.h">
+      <Filter>Memory\多线程</Filter>
+    </ClInclude>
+    <ClInclude Include="CMemThreadMgr.h">
+      <Filter>Memory\多线程</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCompactAllocPool.h">
+      <Filter>Memory\分配器</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSqrAllocPool.h">
+      <Filter>Memory\分配器</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSqrAllocPoolMgr.h">
+      <Filter>Memory\分配器</Filter>
+    </ClInclude>
+    <ClInclude Include="CThreadAllocPool.h">
+      <Filter>Memory\分配器</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\ISqrAllocPool.h">
+      <Filter>Memory\分配器</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TSqrAllocator.h">
+      <Filter>Memory\分配器</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TSqrAllocObject.h">
+      <Filter>Memory\分配器</Filter>
+    </ClInclude>
+    <ClInclude Include="dlmalloc.h">
+      <Filter>Memory\分配器\dlmalloc</Filter>
+    </ClInclude>
+    <ClInclude Include="CArtError.h">
+      <Filter>Error</Filter>
+    </ClInclude>
+    <ClInclude Include="CErrLog.h">
+      <Filter>Error</Filter>
+    </ClInclude>
+    <ClInclude Include="CErrLogCompress.h">
+      <Filter>Error</Filter>
+    </ClInclude>
+    <ClInclude Include="CErrLogEncrypt.h">
+      <Filter>Error</Filter>
+    </ClInclude>
+    <ClInclude Include="CErrLogJob.h">
+      <Filter>Error</Filter>
+    </ClInclude>
+    <ClInclude Include="CErrLogMgr.h">
+      <Filter>Error</Filter>
+    </ClInclude>
+    <ClInclude Include="CErrLogThreadMgr.h">
+      <Filter>Error</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CError.h">
+      <Filter>Error</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CJmpStack.h">
+      <Filter>Error</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CLogOwner.h">
+      <Filter>Error</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\ErrLogDefs.h">
+      <Filter>Error</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\ErrLogHelper.h">
+      <Filter>Error</Filter>
+    </ClInclude>
+    <ClInclude Include="ErrLogTypes.h">
+      <Filter>Error</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\ExpHelper.h">
+      <Filter>Error</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CTimeCheckPoint.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TimeHelper.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\UtfCvs.h">
+      <Filter>Utf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\GuidHelper.h">
+      <Filter>Guid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\GuidTypes.h">
+      <Filter>Guid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CXmlConfig.h">
+      <Filter>Xml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CLock.h">
+      <Filter>Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\CThreadWatcherMap.h">
+      <Filter>Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\ThreadHelper.h">
+      <Filter>Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\ThreadTypes.h">
+      <Filter>Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TTlsPtr.h">
+      <Filter>Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\Base.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\BaseDefs.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\BaseHelper.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\BaseTypes.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CompileTimeHelper.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CBaseObject.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CBaseRefObject.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CDynamicObject.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CShareObject.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CStaticObject.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\Module.h" />
+    <ClInclude Include="..\..\sdk\inc\ModuleDefs.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\sdk\inc\TSqrAllocator.inl">
+      <Filter>Memory\分配器</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\TSqrAllocObject.inl">
+      <Filter>Memory\分配器</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\CXmlConfig.inl">
+      <Filter>Xml</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\CLock.inl">
+      <Filter>Thread</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\ThreadHelper.inl">
+      <Filter>Thread</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\TTlsPtr.inl">
+      <Filter>Thread</Filter>
+    </None>
+  </ItemGroup>
+</Project>

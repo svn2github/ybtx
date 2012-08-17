@@ -1,0 +1,2 @@
+
+COreAreaScene = class(CSceneBase)

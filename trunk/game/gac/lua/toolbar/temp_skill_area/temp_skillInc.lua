@@ -1,0 +1,1 @@
+CTempSkill = class( SQRDialog )

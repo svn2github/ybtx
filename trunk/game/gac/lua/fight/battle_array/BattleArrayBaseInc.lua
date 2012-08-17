@@ -1,0 +1,1 @@
+CBattleArrayBase = class()

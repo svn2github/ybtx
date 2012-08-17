@@ -1,0 +1,26 @@
+199899
+tbl_log_player_giver	165	1
+tbl_log_event_type	165	12
+tbl_log_item_static	21	16	新充能晶石（神圣）	1	
+tbl_log_item_del	165	21	tbl_log_item_del
+tbl_log_quest_finish	166	补给魔法井（神圣）
+tbl_log_player_taker	166	1
+tbl_log_event_type	166	42
+tbl_log_item_static	22	6	粗制肩甲	1	41feb01a781dd2a9452bfbbe48b00804
+tbl_log_player	167	1
+tbl_log_item_binding	167	22	2
+tbl_log_item_armor	168	22	1	2	15	11	11	0	0	战神
+tbl_log_player	168	1
+tbl_log_item_equip_advance	169	22	0	0	0	0	0	0	0	地	0	0	0	0	0	0	生命物理				
+tbl_log_player	169	1
+tbl_log_item_equip_durability	170	22	15	15
+tbl_log_player	170	1
+tbl_log_item_taker	166	22
+tbl_log_level	166	2
+tbl_log_experience	166	1	300	313	2884bea25e4d6211b57737d25389e76e
+tbl_log_soul	166	1	0	298	624ca84ed2a431f896470f225b2fa79c
+tbl_log_item	171	22
+tbl_log_equip_puton	171	14
+tbl_log_player	171	1
+tbl_log_char_fighting_evaluation	172	1	6.2749999427795
+tbl_log_level	172	2

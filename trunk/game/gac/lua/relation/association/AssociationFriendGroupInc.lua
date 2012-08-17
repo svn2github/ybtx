@@ -1,0 +1,1 @@
+CAssociationCreateFriendGroupWnd = class(SQRDialog)

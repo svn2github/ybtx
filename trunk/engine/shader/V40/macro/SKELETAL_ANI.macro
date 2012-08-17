@@ -1,0 +1,21 @@
+float3 position;\
+float3 normal;\
+float2x4 m = mWorldMatrixArray[i.BlendIndices[0]];\
+float4 dq0 = m[0];\
+float4 dq;\
+float2x4 Vec = m*i.BlendWeights[0];\
+m = mWorldMatrixArray[i.BlendIndices[1]];\
+dq = m[0];\
+Vec += sign(dot( dq0, dq))*m*i.BlendWeights[1];\
+m = mWorldMatrixArray[i.BlendIndices[2]];\
+dq = m[0];\
+Vec += sign(dot( dq0, dq))*m*i.BlendWeights[2];\
+m = mWorldMatrixArray[i.BlendIndices[3]];\
+dq = m[0];\
+Vec += sign(dot( dq0, dq))*m*i.BlendWeights[3];\
+float len = length(Vec[0]) ;\
+Vec = Vec / len ; \
+position = i.pos  + 2.0 * cross(Vec[0].wzy, cross(Vec[0].wzy, i.pos ) + Vec[0].x * i.pos) ;\
+position += 2.0 * (Vec[0].x * Vec[1].xyz - Vec[1].w * Vec[0].wzy + cross(Vec[0].wzy, Vec[1].xyz));\
+normal = i.normal +  2.0 * cross(Vec[0].wzy, cross(Vec[0].wzy, i.normal ) + Vec[0].x * i.normal) ;
+

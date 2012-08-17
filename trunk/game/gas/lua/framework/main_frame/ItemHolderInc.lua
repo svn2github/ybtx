@@ -1,0 +1,1 @@
+CItemHolder = class(CTick)

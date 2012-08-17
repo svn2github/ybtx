@@ -1,0 +1,1 @@
+CWarZoneSelWnd = class( SQRDialog )

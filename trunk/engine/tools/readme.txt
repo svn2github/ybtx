@@ -1,0 +1,12 @@
+DbPerfTester	数据库压力测试工具
+EffectEditor	特效编辑器
+EngineTester	引擎单元测试工具
+GUIEditor	图形界面编辑器
+MakePackage	文件打包工具
+MakePatch	补丁制作工具
+MapEditor	地图编辑器
+ModelEditor	模型编辑器
+Plugin		3dmax和maya模型和动画导出插件
+TextureEditor	贴图编辑器
+TileEditor	图素编辑器
+Xml2Lua		Excel文件(xml格式的)到lua文件的转换工具

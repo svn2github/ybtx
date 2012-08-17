@@ -1,0 +1,1 @@
+CWarZoneScene = class(CSceneBase)

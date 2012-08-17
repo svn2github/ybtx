@@ -1,0 +1,1 @@
+CRandomGameMgr = class()

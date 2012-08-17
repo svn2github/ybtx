@@ -1,0 +1,923 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="EditorCtrl">
+      <UniqueIdentifier>{695a1c7e-9405-45f7-9ce8-b4b18319700c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\PathSet">
+      <UniqueIdentifier>{3afd81cc-ce17-4cc4-b1fd-4fcef43d2592}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\VideoSetting">
+      <UniqueIdentifier>{ebf1eb70-f6b4-49f9-86fb-316b52fc1c03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\SceneState">
+      <UniqueIdentifier>{f74591ff-78de-42a1-832a-aac712b7ae6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\BasicView">
+      <UniqueIdentifier>{9fe46d80-5bfa-4bd0-97e4-d286260f6e2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\PortraitView">
+      <UniqueIdentifier>{86177cb7-aded-404d-ba32-af218ae15647}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\ReadPkg">
+      <UniqueIdentifier>{dc891d64-4b5e-41f5-9534-0b164ef682c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\Log">
+      <UniqueIdentifier>{82ce791a-f97e-4b1d-bf10-0c53dc1b0514}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\FProcess">
+      <UniqueIdentifier>{ccd3797f-a2bb-4ed0-bb20-3a4672072aea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\KeyFrame">
+      <UniqueIdentifier>{9e0a1537-7831-493e-8f0c-cb895cc6d3f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\GroundSpeed">
+      <UniqueIdentifier>{249bb46e-f567-43e3-9b34-d66511c3f5f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\FrameScale">
+      <UniqueIdentifier>{2ebd32f9-2503-4e2a-a769-4ec7f7143ba5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\LightParameter">
+      <UniqueIdentifier>{8978400c-892b-4a76-ab32-e0dbd70212dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\FogParameter">
+      <UniqueIdentifier>{f233c5cc-d836-4b3f-a333-b4fd8ff3634e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\Color">
+      <UniqueIdentifier>{9e119187-5a17-4692-9d33-560511ccb2b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\ProgressEx">
+      <UniqueIdentifier>{a65cd424-dc0f-4cae-b436-932d7e3c202c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\HDRSetting">
+      <UniqueIdentifier>{13f2e4a3-d135-410f-ba1d-8ad8924f0d69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\PickColor">
+      <UniqueIdentifier>{9b584e53-64a2-4733-9605-9182f9eacc5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\EffectCtrl">
+      <UniqueIdentifier>{22cd850b-67b4-4d53-b7f2-e057f514b377}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\EffectCtrl\EfxFileCtrl">
+      <UniqueIdentifier>{bb017acc-d6f3-4cb6-8a5b-5780e8e69c9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\EffectCtrl\EfxEditPropCtrl">
+      <UniqueIdentifier>{f9b01607-3f5a-4bd0-a745-e332dbe8d616}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\EffectCtrl\EfxTrack">
+      <UniqueIdentifier>{0501dbdb-af53-4cc4-ad42-37fe772af56a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\EffectCtrl\EfxKeyUint">
+      <UniqueIdentifier>{9ad93bfb-764b-4e54-849a-b53ef48318c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\MapEffectCtrl">
+      <UniqueIdentifier>{76d2ed3e-4e55-44ed-af8d-2a56c8f8e94c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\AnimationGroupEditCtrl">
+      <UniqueIdentifier>{736b5a8e-e3ee-475b-bbeb-00fb286772b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\PieceUnitEditCtrl">
+      <UniqueIdentifier>{202678fc-7036-4f43-a7ed-70422940faef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\PieceGroupEditCtrl">
+      <UniqueIdentifier>{29616d6f-48b2-4afe-ac95-cfdd21bee5dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\AutoPropToCtrl">
+      <UniqueIdentifier>{e4c5a47b-4d10-40a6-bcfc-0281a063c2a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\AutoPropToCtrl\Element">
+      <UniqueIdentifier>{36626a53-d3e2-4a71-8735-7d5c68b3cf7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\BoneList">
+      <UniqueIdentifier>{1be4f875-978d-458a-aa43-f67f46ae8d3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\LightView">
+      <UniqueIdentifier>{2ecd757c-8893-43b8-9e09-949d55d6f3b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\PropCtrl">
+      <UniqueIdentifier>{294aee6e-6643-4c8d-b85e-f098cfe025ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\BoneBoxList">
+      <UniqueIdentifier>{2f242b1f-c5fd-4304-909f-02bab8236851}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\BoneBoxEdit">
+      <UniqueIdentifier>{4ca68c3c-4562-40bd-943b-d72e621590ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCtrl\ColorAnimCtrl">
+      <UniqueIdentifier>{29422a2e-fab9-4170-9378-8c86d5ce6b43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorDlg">
+      <UniqueIdentifier>{b2ec423b-4395-4f16-a9ff-5f2bc7943513}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorDlg\PathSet">
+      <UniqueIdentifier>{73c6598e-c3f2-4da8-aaf7-31d3238114fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorDlg\VideoSet">
+      <UniqueIdentifier>{5a2ad307-2d25-4e4e-af34-a049047d9b5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorDlg\FProcess">
+      <UniqueIdentifier>{a033d056-90bb-48bf-b3e0-18947d0b481d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorComponent">
+      <UniqueIdentifier>{d7ce731b-a861-4eb7-b15c-7393cd3655eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorComponent\CameraCom">
+      <UniqueIdentifier>{88463868-f222-46a0-964e-209d447b9038}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorComponent\BoundingBoxCom">
+      <UniqueIdentifier>{29bbfb1e-af6f-407c-99d4-79e4ba65e54a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorComponent\SkeletonCom">
+      <UniqueIdentifier>{2ada519b-78c0-4ad6-abd7-9fffd8b09fd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapEditor">
+      <UniqueIdentifier>{84b8b30e-e3dc-4e74-93ff-28a2289e3a26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapEditor\BasicView">
+      <UniqueIdentifier>{86313bbb-36d5-4ec4-8119-f0d5aaf5940a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapEditor\GridView">
+      <UniqueIdentifier>{e3af15cb-1a43-4483-b642-71a4a5d36567}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapEditor\RecordView">
+      <UniqueIdentifier>{aba21e60-6f5f-4b10-8ecf-87f5ba9900bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapEditor\SetView">
+      <UniqueIdentifier>{62d113f0-b2a2-46a4-98da-60ea2a910672}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapEditor\TileView">
+      <UniqueIdentifier>{ddd00ec1-4c1c-4af7-a20a-33eacb8fd98e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapEditor\TextureView">
+      <UniqueIdentifier>{eae62225-fb28-44f0-bde0-869846e95120}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapEditor\NewDlg">
+      <UniqueIdentifier>{477c0183-dbaa-4bc4-919d-5c82b17e18bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapEditor\NewMapView">
+      <UniqueIdentifier>{2125187e-c241-40c8-b9aa-8f2a70c05c68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapEditor\ExternMapView">
+      <UniqueIdentifier>{4915e5d2-ea6e-4506-9923-366de87bab01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapEditor\BlockView">
+      <UniqueIdentifier>{89a11048-d039-4a9a-81ac-293780f7a04b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapEditor\AudioView">
+      <UniqueIdentifier>{dff5f357-0de5-4736-8d28-34437c372804}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapEditor\AudioView\CueList">
+      <UniqueIdentifier>{9e6c162b-ea0b-41bf-b0b5-2c3954d19fa4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapEditor\AudioView\AmbientAudio">
+      <UniqueIdentifier>{3be15ee6-a065-49bb-9dcb-4ad21895ed38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapEditor\LightEffectView">
+      <UniqueIdentifier>{65c4ec86-ff3c-4d8d-baf4-27f13a1ee908}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Helper">
+      <UniqueIdentifier>{e06073c5-9d23-4b3d-95c2-5d4993507324}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Helper\BasicProp">
+      <UniqueIdentifier>{d025cd18-cdf4-4084-b9f9-d0ce201c0517}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{227786ce-06be-4fbc-b7c9-d427edbee254}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TEST">
+      <UniqueIdentifier>{e9957334-7b5c-4e33-b4b2-0d4d4c700bfe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TEST\UITest">
+      <UniqueIdentifier>{f328dcdf-0755-433a-aaf2-c47956c61f91}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AssemblyInfo.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CUIBase.cpp">
+      <Filter>EditorCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="PathSetCtrl\CPathSetCtrl.cpp">
+      <Filter>EditorCtrl\PathSet</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoSetCtrl\CVideoSettingCtrl.cpp">
+      <Filter>EditorCtrl\VideoSetting</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneStateCtrl\CSceneStateCtrl.cpp">
+      <Filter>EditorCtrl\SceneState</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewCtrl\CViewCtrl.cpp">
+      <Filter>EditorCtrl\BasicView</Filter>
+    </ClCompile>
+    <ClCompile Include="PortraitViewCtrl\CPortraitViewCtrl.cpp">
+      <Filter>EditorCtrl\PortraitView</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadPkgViewCtrl\CReadPkgCtrl.cpp">
+      <Filter>EditorCtrl\ReadPkg</Filter>
+    </ClCompile>
+    <ClCompile Include="LogCtrl\CLogCtrl.cpp">
+      <Filter>EditorCtrl\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="FProcessCtrl\CFProcessCtrl.cpp">
+      <Filter>EditorCtrl\FProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyFrameCtrl\CKeyFrameCtrl.cpp">
+      <Filter>EditorCtrl\KeyFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="GroundSpeedCtrl\CGroundSpeedCtrl.cpp">
+      <Filter>EditorCtrl\GroundSpeed</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameScaleCtrl\CFrameScaleCtrl.cpp">
+      <Filter>EditorCtrl\FrameScale</Filter>
+    </ClCompile>
+    <ClCompile Include="LightParameterCtrl\CLightParameterCtrl.cpp">
+      <Filter>EditorCtrl\LightParameter</Filter>
+    </ClCompile>
+    <ClCompile Include="FogParameterCtrl\CFogParameterCtrl.cpp">
+      <Filter>EditorCtrl\FogParameter</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorCtrl\CColorCtrl.cpp">
+      <Filter>EditorCtrl\Color</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessCtrlEx\CProcessCtrlEx.cpp">
+      <Filter>EditorCtrl\ProgressEx</Filter>
+    </ClCompile>
+    <ClCompile Include="HDRSettingCtrl\CHDRSettingCtrl.cpp">
+      <Filter>EditorCtrl\HDRSetting</Filter>
+    </ClCompile>
+    <ClCompile Include="PickColorCtrl\CPowerColorPickerCtrl.cpp">
+      <Filter>EditorCtrl\PickColor</Filter>
+    </ClCompile>
+    <ClCompile Include="CLRStringHelper.cpp">
+      <Filter>EditorCtrl\EffectCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="CEfxFileCtrl.cpp">
+      <Filter>EditorCtrl\EffectCtrl\EfxFileCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="CEfxEditProp.cpp">
+      <Filter>EditorCtrl\EffectCtrl\EfxEditPropCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectTrack\CEfxTrackCtrl.cpp">
+      <Filter>EditorCtrl\EffectCtrl\EfxTrack</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectKeyUint\CEfxKeyUintCtrl.cpp">
+      <Filter>EditorCtrl\EffectCtrl\EfxKeyUint</Filter>
+    </ClCompile>
+    <ClCompile Include="MapEffectCtrl\CMapEffectCtrl.cpp">
+      <Filter>EditorCtrl\MapEffectCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationGroupEditCtrl\CAnimationGroupEditCtrl.cpp">
+      <Filter>EditorCtrl\AnimationGroupEditCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="PieceUnitEditCtrl\CPieceUnitEditCtrl.cpp">
+      <Filter>EditorCtrl\PieceUnitEditCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="PieceGroupEditCtrl\CPieceGroupEditCtrl.cpp">
+      <Filter>EditorCtrl\PieceGroupEditCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="AutoPropToCtrl\AutoDataUintCtrl.cpp">
+      <Filter>EditorCtrl\AutoPropToCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="AutoPropToCtrl\AutoPropToCtrl.cpp">
+      <Filter>EditorCtrl\AutoPropToCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseDataCtrl\BoolEditCtrl.cpp">
+      <Filter>EditorCtrl\AutoPropToCtrl\Element</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseDataCtrl\ComBoEditCtrl.cpp">
+      <Filter>EditorCtrl\AutoPropToCtrl\Element</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseDataCtrl\CueListDialog.cpp">
+      <Filter>EditorCtrl\AutoPropToCtrl\Element</Filter>
+    </ClCompile>
+    <ClCompile Include="CUIPropBase.cpp">
+      <Filter>EditorCtrl\AutoPropToCtrl\Element</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseDataCtrl\EStrMapEditCtrl.cpp">
+      <Filter>EditorCtrl\AutoPropToCtrl\Element</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseDataCtrl\MaxMinNumEditDialog.cpp">
+      <Filter>EditorCtrl\AutoPropToCtrl\Element</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseDataCtrl\NumEditCtrl.cpp">
+      <Filter>EditorCtrl\AutoPropToCtrl\Element</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseDataCtrl\NumMapEditCtrl.cpp">
+      <Filter>EditorCtrl\AutoPropToCtrl\Element</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseDataCtrl\SingleStringEditCtrl.cpp">
+      <Filter>EditorCtrl\AutoPropToCtrl\Element</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseDataCtrl\Vector3EditCtrl.cpp">
+      <Filter>EditorCtrl\AutoPropToCtrl\Element</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseDataCtrl\Vector3EditDialog.cpp">
+      <Filter>EditorCtrl\AutoPropToCtrl\Element</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseDataCtrl\Vector3MapCtrl.cpp">
+      <Filter>EditorCtrl\AutoPropToCtrl\Element</Filter>
+    </ClCompile>
+    <ClCompile Include="BoneListCtrl\CBoneListCtrl.cpp">
+      <Filter>EditorCtrl\BoneList</Filter>
+    </ClCompile>
+    <ClCompile Include="LightViewCtrl\CLightView.cpp">
+      <Filter>EditorCtrl\LightView</Filter>
+    </ClCompile>
+    <ClCompile Include="PropCtrl\CPropCtrl.cpp">
+      <Filter>EditorCtrl\PropCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="BoneBoxListCtrl\CBoneBoxListCtrl.cpp">
+      <Filter>EditorCtrl\BoneBoxList</Filter>
+    </ClCompile>
+    <ClCompile Include="BoneBoxEditCtrl\CBoneBoxEditCtrl.cpp">
+      <Filter>EditorCtrl\BoneBoxEdit</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorAnimCtrl\CColorAnimCtrl.cpp">
+      <Filter>EditorCtrl\ColorAnimCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="PathSetDlg\CPathSetDlg.cpp">
+      <Filter>EditorDlg\PathSet</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoSetDlg\CVideoSetDlg.cpp">
+      <Filter>EditorDlg\VideoSet</Filter>
+    </ClCompile>
+    <ClCompile Include="FProcessDlg\CFProcessDlg.cpp">
+      <Filter>EditorDlg\FProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="CBaseComponent.cpp">
+      <Filter>EditorComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="CContextCom.cpp">
+      <Filter>EditorComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraCom\CCameraBaseCom.cpp">
+      <Filter>EditorComponent\CameraCom</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraCom\CFPSCameraCom.cpp">
+      <Filter>EditorComponent\CameraCom</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraCom\CFREECameraCom.cpp">
+      <Filter>EditorComponent\CameraCom</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraCom\CRTSCameraCom.cpp">
+      <Filter>EditorComponent\CameraCom</Filter>
+    </ClCompile>
+    <ClCompile Include="BoundingBoxPropCom\CBoundingBoxPropCom.cpp">
+      <Filter>EditorComponent\BoundingBoxCom</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletonPropCom\CSkeletonPropCom.cpp">
+      <Filter>EditorComponent\SkeletonCom</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletonPropCom\SaveControl.cpp">
+      <Filter>EditorComponent\SkeletonCom</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletonPropCom\SizeControl.cpp">
+      <Filter>EditorComponent\SkeletonCom</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicPanelCtrl\CBasicPanel.cpp">
+      <Filter>MapEditor\BasicView</Filter>
+    </ClCompile>
+    <ClCompile Include="GridPanelCtrl\CGridPanel.cpp">
+      <Filter>MapEditor\GridView</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordCtrl\CRecordPanel.cpp">
+      <Filter>MapEditor\RecordView</Filter>
+    </ClCompile>
+    <ClCompile Include="SetViewCtrl\CSetViewCtrl.cpp">
+      <Filter>MapEditor\SetView</Filter>
+    </ClCompile>
+    <ClCompile Include="TileViewCtrl\CTileViewCtrl.cpp">
+      <Filter>MapEditor\TileView</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureViewCtrl\CTextureViewCltr.cpp">
+      <Filter>MapEditor\TextureView</Filter>
+    </ClCompile>
+    <ClCompile Include="NewMapDlg\CNewMapDlg.cpp">
+      <Filter>MapEditor\NewDlg</Filter>
+    </ClCompile>
+    <ClCompile Include="NewMapCtrl\CNewMapCtrl.cpp">
+      <Filter>MapEditor\NewMapView</Filter>
+    </ClCompile>
+    <ClCompile Include="ExMapCtrl\CExMapCtrl.cpp">
+      <Filter>MapEditor\ExternMapView</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockViewCtrl\CBlockViewCtrl.cpp">
+      <Filter>MapEditor\BlockView</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioView\AudioViewCtrl.cpp">
+      <Filter>MapEditor\AudioView</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioView\CueListCtrl.cpp">
+      <Filter>MapEditor\AudioView\CueList</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioView\AmbientAudioCtrl.cpp">
+      <Filter>MapEditor\AudioView\AmbientAudio</Filter>
+    </ClCompile>
+    <ClCompile Include="LightEffect\CLightEffectPanel.cpp">
+      <Filter>MapEditor\LightEffectView</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorUIHelper.cpp">
+      <Filter>Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicPropSet\CAudioProp.cpp">
+      <Filter>Helper\BasicProp</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicPropSet\CBaseProp.cpp">
+      <Filter>Helper\BasicProp</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicPropSet\CLightProp.cpp">
+      <Filter>Helper\BasicProp</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicPropSet\CModelProp.cpp">
+      <Filter>Helper\BasicProp</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicPropSet\CSceneProp.cpp">
+      <Filter>Helper\BasicProp</Filter>
+    </ClCompile>
+    <ClCompile Include="ClrCmd.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="TestCtrl\CTestUI.cpp">
+      <Filter>TEST\UITest</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicPropSet\TestProp.cpp">
+      <Filter>TEST\UITest</Filter>
+    </ClCompile>
+    <ClCompile Include="Stdafx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CUIBase.h">
+      <Filter>EditorCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="PathSetCtrl\CPathSetCtrl.h">
+      <Filter>EditorCtrl\PathSet</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoSetCtrl\CVideoSettingCtrl.h">
+      <Filter>EditorCtrl\VideoSetting</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneStateCtrl\CSceneStateCtrl.h">
+      <Filter>EditorCtrl\SceneState</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewCtrl\CViewCtrl.h">
+      <Filter>EditorCtrl\BasicView</Filter>
+    </ClInclude>
+    <ClInclude Include="PortraitViewCtrl\CPortraitViewCtrl.h">
+      <Filter>EditorCtrl\PortraitView</Filter>
+    </ClInclude>
+    <ClInclude Include="ReadPkgViewCtrl\CReadPkgCtrl.h">
+      <Filter>EditorCtrl\ReadPkg</Filter>
+    </ClInclude>
+    <ClInclude Include="LogCtrl\CLogCtrl.h">
+      <Filter>EditorCtrl\Log</Filter>
+    </ClInclude>
+    <ClInclude Include="FProcessCtrl\CFProcessCtrl.h">
+      <Filter>EditorCtrl\FProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyFrameCtrl\CKeyFrameCtrl.h">
+      <Filter>EditorCtrl\KeyFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="GroundSpeedCtrl\CGroundSpeedCtrl.h">
+      <Filter>EditorCtrl\GroundSpeed</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameScaleCtrl\CFrameScaleCtrl.h">
+      <Filter>EditorCtrl\FrameScale</Filter>
+    </ClInclude>
+    <ClInclude Include="LightParameterCtrl\CLightParameterCtrl.h">
+      <Filter>EditorCtrl\LightParameter</Filter>
+    </ClInclude>
+    <ClInclude Include="FogParameterCtrl\CFogParameterCtrl.h">
+      <Filter>EditorCtrl\FogParameter</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorCtrl\CColorCtrl.h">
+      <Filter>EditorCtrl\Color</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessCtrlEx\CProcessCtrlEx.h">
+      <Filter>EditorCtrl\ProgressEx</Filter>
+    </ClInclude>
+    <ClInclude Include="HDRSettingCtrl\CHDRSettingCtrl.h">
+      <Filter>EditorCtrl\HDRSetting</Filter>
+    </ClInclude>
+    <ClInclude Include="PickColorCtrl\CPowerColorPickerCtrl.h">
+      <Filter>EditorCtrl\PickColor</Filter>
+    </ClInclude>
+    <ClInclude Include="CLRStringHelper.h">
+      <Filter>EditorCtrl\EffectCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="CEfxFileCtrl.h">
+      <Filter>EditorCtrl\EffectCtrl\EfxFileCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="CEfxEditProp.h">
+      <Filter>EditorCtrl\EffectCtrl\EfxEditPropCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectTrack\CEfxTrackCtrl.h">
+      <Filter>EditorCtrl\EffectCtrl\EfxTrack</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectKeyUint\CEfxKeyUintCtrl.h">
+      <Filter>EditorCtrl\EffectCtrl\EfxKeyUint</Filter>
+    </ClInclude>
+    <ClInclude Include="MapEffectCtrl\CMapEffectCtrl.h">
+      <Filter>EditorCtrl\MapEffectCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationGroupEditCtrl\CAnimationGroupEditCtrl.h">
+      <Filter>EditorCtrl\AnimationGroupEditCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="PieceUnitEditCtrl\CPieceUnitEditCtrl.h">
+      <Filter>EditorCtrl\PieceUnitEditCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="PieceGroupEditCtrl\CPieceGroupEditCtrl.h">
+      <Filter>EditorCtrl\PieceGroupEditCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="AutoPropToCtrl\AutoDataUintCtrl.h">
+      <Filter>EditorCtrl\AutoPropToCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="AutoPropToCtrl\AutoPropToCtrl.h">
+      <Filter>EditorCtrl\AutoPropToCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseDataCtrl\BoolEditCtrl.h">
+      <Filter>EditorCtrl\AutoPropToCtrl\Element</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseDataCtrl\ComBoEditCtrl.h">
+      <Filter>EditorCtrl\AutoPropToCtrl\Element</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseDataCtrl\CueListDialog.h">
+      <Filter>EditorCtrl\AutoPropToCtrl\Element</Filter>
+    </ClInclude>
+    <ClInclude Include="CUIPropBase.h">
+      <Filter>EditorCtrl\AutoPropToCtrl\Element</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseDataCtrl\EStrMapEditCtrl.h">
+      <Filter>EditorCtrl\AutoPropToCtrl\Element</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseDataCtrl\MaxMinNumEditDialog.h">
+      <Filter>EditorCtrl\AutoPropToCtrl\Element</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseDataCtrl\NumEditCtrl.h">
+      <Filter>EditorCtrl\AutoPropToCtrl\Element</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseDataCtrl\NumMapEditCtrl.h">
+      <Filter>EditorCtrl\AutoPropToCtrl\Element</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseDataCtrl\SingleStringEditCtrl.h">
+      <Filter>EditorCtrl\AutoPropToCtrl\Element</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseDataCtrl\Vector3EditCtrl.h">
+      <Filter>EditorCtrl\AutoPropToCtrl\Element</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseDataCtrl\Vector3EditDialog.h">
+      <Filter>EditorCtrl\AutoPropToCtrl\Element</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseDataCtrl\Vector3MapCtrl.h">
+      <Filter>EditorCtrl\AutoPropToCtrl\Element</Filter>
+    </ClInclude>
+    <ClInclude Include="BoneListCtrl\CBoneListCtrl.h">
+      <Filter>EditorCtrl\BoneList</Filter>
+    </ClInclude>
+    <ClInclude Include="LightViewCtrl\CLightView.h">
+      <Filter>EditorCtrl\LightView</Filter>
+    </ClInclude>
+    <ClInclude Include="PropCtrl\CPropCtrl.h">
+      <Filter>EditorCtrl\PropCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="BoneBoxListCtrl\CBoneBoxListCtrl.h">
+      <Filter>EditorCtrl\BoneBoxList</Filter>
+    </ClInclude>
+    <ClInclude Include="BoneBoxEditCtrl\CBoneBoxEditCtrl.h">
+      <Filter>EditorCtrl\BoneBoxEdit</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorAnimCtrl\CColorAnimCtrl.h">
+      <Filter>EditorCtrl\ColorAnimCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="PathSetDlg\CPathSetDlg.h">
+      <Filter>EditorDlg\PathSet</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoSetDlg\CVideoSetDlg.h">
+      <Filter>EditorDlg\VideoSet</Filter>
+    </ClInclude>
+    <ClInclude Include="FProcessDlg\CFProcessDlg.h">
+      <Filter>EditorDlg\FProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="CBaseComponent.h">
+      <Filter>EditorComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="CContextCom.h">
+      <Filter>EditorComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraCom\CCameraBaseCom.h">
+      <Filter>EditorComponent\CameraCom</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraCom\CFPSCameraCom.h">
+      <Filter>EditorComponent\CameraCom</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraCom\CFREECameraCom.h">
+      <Filter>EditorComponent\CameraCom</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraCom\CRTSCameraCom.h">
+      <Filter>EditorComponent\CameraCom</Filter>
+    </ClInclude>
+    <ClInclude Include="BoundingBoxPropCom\CBoundingBoxPropCom.h">
+      <Filter>EditorComponent\BoundingBoxCom</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletonPropCom\CSkeletonPropCom.h">
+      <Filter>EditorComponent\SkeletonCom</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletonPropCom\SaveControl.h">
+      <Filter>EditorComponent\SkeletonCom</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletonPropCom\SizeControl.h">
+      <Filter>EditorComponent\SkeletonCom</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicPanelCtrl\CBasicPanel.h">
+      <Filter>MapEditor\BasicView</Filter>
+    </ClInclude>
+    <ClInclude Include="GridPanelCtrl\CGridPanel.h">
+      <Filter>MapEditor\GridView</Filter>
+    </ClInclude>
+    <ClInclude Include="RecordCtrl\CRecordPanel.h">
+      <Filter>MapEditor\RecordView</Filter>
+    </ClInclude>
+    <ClInclude Include="SetViewCtrl\CSetViewCtrl.h">
+      <Filter>MapEditor\SetView</Filter>
+    </ClInclude>
+    <ClInclude Include="TileViewCtrl\CTileViewCtrl.h">
+      <Filter>MapEditor\TileView</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureViewCtrl\CTextureViewCltr.h">
+      <Filter>MapEditor\TextureView</Filter>
+    </ClInclude>
+    <ClInclude Include="NewMapDlg\CNewMapDlg.h">
+      <Filter>MapEditor\NewDlg</Filter>
+    </ClInclude>
+    <ClInclude Include="NewMapCtrl\CNewMapCtrl.h">
+      <Filter>MapEditor\NewMapView</Filter>
+    </ClInclude>
+    <ClInclude Include="ExMapCtrl\CExMapCtrl.h">
+      <Filter>MapEditor\ExternMapView</Filter>
+    </ClInclude>
+    <ClInclude Include="BlockViewCtrl\CBlockViewCtrl.h">
+      <Filter>MapEditor\BlockView</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioView\AudioViewCtrl.h">
+      <Filter>MapEditor\AudioView</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioView\CueListCtrl.h">
+      <Filter>MapEditor\AudioView\CueList</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioView\AmbientAudioCtrl.h">
+      <Filter>MapEditor\AudioView\AmbientAudio</Filter>
+    </ClInclude>
+    <ClInclude Include="LightEffect\CLightEffectPanel.h">
+      <Filter>MapEditor\LightEffectView</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorUIHelper.h">
+      <Filter>Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicPropSet\CAudioProp.h">
+      <Filter>Helper\BasicProp</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicPropSet\CBaseProp.h">
+      <Filter>Helper\BasicProp</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicPropSet\CLightProp.h">
+      <Filter>Helper\BasicProp</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicPropSet\CModelProp.h">
+      <Filter>Helper\BasicProp</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicPropSet\CPropChinese.h">
+      <Filter>Helper\BasicProp</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicPropSet\CSceneProp.h">
+      <Filter>Helper\BasicProp</Filter>
+    </ClInclude>
+    <ClInclude Include="ClrCmd.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="ClrMsgDefine.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\dthelp.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenDirectoryDialog\OpenDirectoryDialog.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="TestCtrl\CTestUI.h">
+      <Filter>TEST\UITest</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicPropSet\TestProp.h">
+      <Filter>TEST\UITest</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PathSetCtrl\CPathSetCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VideoSetCtrl\CVideoSettingCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SceneStateCtrl\CSceneStateCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewCtrl\CViewCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PortraitViewCtrl\CPortraitViewCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReadPkgViewCtrl\CReadPkgCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogCtrl\CLogCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FProcessCtrl\CFProcessCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KeyFrameCtrl\CKeyFrameCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroundSpeedCtrl\CGroundSpeedCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrameScaleCtrl\CFrameScaleCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LightParameterCtrl\CLightParameterCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FogParameterCtrl\CFogParameterCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorCtrl\CColorCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessCtrlEx\CProcessCtrlEx.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HDRSettingCtrl\CHDRSettingCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PickColorCtrl\CPowerColorPickerCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CEfxFileCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CEfxEditProp.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EffectTrack\CEfxTrackCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EffectKeyUint\CEfxKeyUintCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapEffectCtrl\CMapEffectCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnimationGroupEditCtrl\CAnimationGroupEditCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PieceUnitEditCtrl\CPieceUnitEditCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PieceGroupEditCtrl\CPieceGroupEditCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AutoPropToCtrl\AutoDataUintCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AutoPropToCtrl\AutoPropToCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDataCtrl\BoolEditCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDataCtrl\ComBoEditCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDataCtrl\CueListDialog.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDataCtrl\EStrMapEditCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDataCtrl\MaxMinNumEditDialog.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDataCtrl\NumEditCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDataCtrl\NumMapEditCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDataCtrl\SingleStringEditCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDataCtrl\Vector3EditCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDataCtrl\Vector3EditDialog.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDataCtrl\Vector3MapCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BoneListCtrl\CBoneListCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LightViewCtrl\CLightView.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropCtrl\CPropCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BoneBoxListCtrl\CBoneBoxListCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BoneBoxEditCtrl\CBoneBoxEditCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorAnimCtrl\CColorAnimCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PathSetDlg\CPathSetDlg.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VideoSetDlg\CVideoSetDlg.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FProcessDlg\CFProcessDlg.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SkeletonPropCom\SaveControl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SkeletonPropCom\SizeControl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BasicPanelCtrl\CBasicPanel.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridPanelCtrl\CGridPanel.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecordCtrl\CRecordPanel.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetViewCtrl\CSetViewCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileViewCtrl\CTileViewCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextureViewCtrl\CTextureViewCltr.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewMapDlg\CNewMapDlg.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewMapCtrl\CNewMapCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExMapCtrl\CExMapCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BlockViewCtrl\CBlockViewCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AudioView\AudioViewCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AudioView\CueListCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AudioView\AmbientAudioCtrl.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LightEffect\CLightEffectPanel.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestCtrl\CTestUI.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

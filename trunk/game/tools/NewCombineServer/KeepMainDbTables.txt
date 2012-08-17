@@ -1,0 +1,3 @@
+tbl_server	tbl_war_zone	tbl_conf_server	tbl_scene_distribute
+tbl_log_event
+#第一行为游戏库中只保留一区的表，第二行为游戏log库只保留一区的表

@@ -1,0 +1,1 @@
+CKillMonsCreateBoss = class()

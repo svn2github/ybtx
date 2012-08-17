@@ -1,0 +1,1 @@
+CTongBuyResWnd  = class(SQRDialog, CTongBase)

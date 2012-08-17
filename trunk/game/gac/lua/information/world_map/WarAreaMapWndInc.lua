@@ -1,0 +1,1 @@
+CWarAreaMapBG = class( SQRDialog )

@@ -1,0 +1,1 @@
+CDynImageMgr = class()

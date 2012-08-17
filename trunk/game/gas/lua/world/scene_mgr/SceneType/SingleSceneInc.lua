@@ -1,0 +1,1 @@
+CSingleScene = class(CSceneBase)

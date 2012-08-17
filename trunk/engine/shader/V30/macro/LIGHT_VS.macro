@@ -1,0 +1,1 @@
+Lighting(position, normal, gMatAmbient, gMatDiffuse, output.Diffuse, output.Specular);

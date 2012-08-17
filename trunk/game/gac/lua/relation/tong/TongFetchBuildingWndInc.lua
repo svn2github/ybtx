@@ -1,0 +1,1 @@
+CTongFetchBuildingWnd = class(SQRDialog, CTongBase)

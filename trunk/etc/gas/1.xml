@@ -1,0 +1,7 @@
+<instance_config>
+
+	<!-- 子lua虚拟机的数量-->
+	<!--就算是在开发期，这个数字也必须大于1，否则一些隐藏的时序bug无法发现-->
+	<child_vm_num>2</child_vm_num>
+
+</instance_config>

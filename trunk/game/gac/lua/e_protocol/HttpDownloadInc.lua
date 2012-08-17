@@ -1,0 +1,2 @@
+HttpDownload = class(IPipeHandler)
+

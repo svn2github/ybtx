@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="框架">
+      <UniqueIdentifier>{984e18b8-6364-46b4-aeb0-ba184c516482}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="框架\战斗">
+      <UniqueIdentifier>{acce0972-1265-46e0-be92-3ca0013fd06b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="连接">
+      <UniqueIdentifier>{8e2ed630-be84-47ec-a0b7-c93c74a36d84}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameStr.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="RegistStrShell.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="CFighterStress.cpp">
+      <Filter>框架\战斗</Filter>
+    </ClCompile>
+    <ClCompile Include="CConnMgrStrHandler.cpp">
+      <Filter>连接</Filter>
+    </ClCompile>
+    <ClCompile Include="CStrMsgDispatcher.cpp">
+      <Filter>连接</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="RegistStrShell.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="CFighterStress.h">
+      <Filter>框架\战斗</Filter>
+    </ClInclude>
+    <ClInclude Include="CConnMgrStrHandler.h">
+      <Filter>连接</Filter>
+    </ClInclude>
+    <ClInclude Include="CStrCharacterMsgDispatch.h">
+      <Filter>连接</Filter>
+    </ClInclude>
+    <ClInclude Include="CStrFighterMsgDispatch.h">
+      <Filter>连接</Filter>
+    </ClInclude>
+    <ClInclude Include="CStrMsgDispatcher.h">
+      <Filter>连接</Filter>
+    </ClInclude>
+    <ClInclude Include="IScriptConnMgrStressHandler.h">
+      <Filter>连接</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

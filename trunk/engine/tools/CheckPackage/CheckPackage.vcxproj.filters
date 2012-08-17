@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Main">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ResProcess">
+      <UniqueIdentifier>{4a171f86-fecd-4928-b676-a45ccc400433}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ResProcess\Processor">
+      <UniqueIdentifier>{aed333cf-9596-464e-b447-f9ccb4f8f294}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ResProcess\Processor\CoderProcessor">
+      <UniqueIdentifier>{9febb0be-735c-439c-aa38-9a8d5c7de48a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CheckPackage.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckPkgFlow.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="CResProcessorMgr.cpp">
+      <Filter>ResProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="CSimCloth.cpp">
+      <Filter>ResProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="CAgpProcessor.cpp">
+      <Filter>ResProcess\Processor</Filter>
+    </ClCompile>
+    <ClCompile Include="CAraProcessor.cpp">
+      <Filter>ResProcess\Processor</Filter>
+    </ClCompile>
+    <ClCompile Include="CAreProcessor.cpp">
+      <Filter>ResProcess\Processor</Filter>
+    </ClCompile>
+    <ClCompile Include="CArpProcessor.cpp">
+      <Filter>ResProcess\Processor</Filter>
+    </ClCompile>
+    <ClCompile Include="CArsProcessor.cpp">
+      <Filter>ResProcess\Processor</Filter>
+    </ClCompile>
+    <ClCompile Include="CDftProcessor.cpp">
+      <Filter>ResProcess\Processor</Filter>
+    </ClCompile>
+    <ClCompile Include="CLuaProcessor.cpp">
+      <Filter>ResProcess\Processor</Filter>
+    </ClCompile>
+    <ClCompile Include="CMapProcessor.cpp">
+      <Filter>ResProcess\Processor</Filter>
+    </ClCompile>
+    <ClCompile Include="SMapProcessor.cpp">
+      <Filter>ResProcess\Processor</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoderProcessor.cpp">
+      <Filter>ResProcess\Processor\CoderProcessor</Filter>
+    </ClCompile>
+    <ClCompile Include="CGuiProcessor.cpp">
+      <Filter>ResProcess\Processor\CoderProcessor</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CheckPkgFlow.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="CResProcessorMgr.h">
+      <Filter>ResProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="CSimCloth.h">
+      <Filter>ResProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="IResProcessorMgr.h">
+      <Filter>ResProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="CAgpProcessor.h">
+      <Filter>ResProcess\Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="CAraProcessor.h">
+      <Filter>ResProcess\Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="CAreProcessor.h">
+      <Filter>ResProcess\Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="CArpProcessor.h">
+      <Filter>ResProcess\Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="CArsProcessor.h">
+      <Filter>ResProcess\Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="CDftProcessor.h">
+      <Filter>ResProcess\Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="CLuaProcessor.h">
+      <Filter>ResProcess\Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="CMapProcessor.h">
+      <Filter>ResProcess\Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="SMapProcessor.h">
+      <Filter>ResProcess\Processor</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoderProcessor.h">
+      <Filter>ResProcess\Processor\CoderProcessor</Filter>
+    </ClInclude>
+    <ClInclude Include="CGuiProcessor.h">
+      <Filter>ResProcess\Processor\CoderProcessor</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

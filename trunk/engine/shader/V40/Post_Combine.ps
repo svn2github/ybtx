@@ -1,0 +1,19 @@
+float fExposure : register(c2);                        // A user configurable bias to under/over expose the image
+float fScaler : register(c3);                          // Blend scaler
+
+sampler source0 : register(s0);
+sampler source1 : register(s1);
+
+//------------------------------------------------------------------
+// COMBINE
+// combine the original scene with bloomed scene
+//------------------------------------------------------------------
+float4 Combine( float2 t : TEXCOORD0 ) : COLOR0													
+{																									
+	float4 color = tex2D( source0, t );															
+  float4 blur  = tex2D(source1, t);
+	float4 final = (1 - fScaler) * color + fScaler * blur;																	
+	color = final * fExposure;																						
+
+	return color;																						
+};

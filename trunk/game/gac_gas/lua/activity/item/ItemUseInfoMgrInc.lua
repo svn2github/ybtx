@@ -1,0 +1,1 @@
+CItemUseInfoMgr = class()

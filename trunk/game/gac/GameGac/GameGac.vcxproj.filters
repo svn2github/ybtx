@@ -1,0 +1,731 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="框架">
+      <UniqueIdentifier>{2620bb8f-1792-4c42-8ce4-cd161d85d473}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="特效">
+      <UniqueIdentifier>{2fbc8ea9-b721-4540-9452-87ec42c64144}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="特效\内存池">
+      <UniqueIdentifier>{0e5182ba-0518-4d4d-9948-7e213350a301}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="战斗">
+      <UniqueIdentifier>{4cab60d9-b723-4959-87a8-c57b5c94324d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="战斗\魔法">
+      <UniqueIdentifier>{e4ebce73-fc07-475f-af7e-103371cbe9da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="战斗\效果">
+      <UniqueIdentifier>{7e4eb1cd-4f97-49a0-98ec-b16b262535b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="战斗\效果\操作">
+      <UniqueIdentifier>{389a1135-05e4-4495-93bc-aa3209e4a3ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="战斗\效果\操作\条件">
+      <UniqueIdentifier>{d85ecf34-a798-4632-91f1-74fa975d423b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="战斗\属性">
+      <UniqueIdentifier>{746a98db-6126-49df-91a1-676f0401a7a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="战斗\技能">
+      <UniqueIdentifier>{9dbca115-7116-4f58-9424-5af79a059cf1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="战斗\状态">
+      <UniqueIdentifier>{87431cf6-aa76-4c59-905c-3fc9a108bc70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="战斗\流程">
+      <UniqueIdentifier>{df58a950-2cb0-4d82-9168-b53560080e9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="战斗\公共">
+      <UniqueIdentifier>{7f09c90e-ea8d-4fc5-8e7b-528d3f6577b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="战斗\普攻">
+      <UniqueIdentifier>{f00a910e-ae8c-4936-a291-467a7e8392c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="战斗\对象">
+      <UniqueIdentifier>{8df7c77c-a6f5-401c-8e5b-9814bbabd6d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="战斗\队伍">
+      <UniqueIdentifier>{159062b8-d2dd-4918-b4d6-d40f3b6baa1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="战斗\爆魂">
+      <UniqueIdentifier>{f395fb1c-da53-4483-bb87-8b759497a981}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="动作">
+      <UniqueIdentifier>{3ef06dcb-b4fa-4f11-9d12-f71dc696315d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="连接">
+      <UniqueIdentifier>{9fe193a7-7b54-45f1-948e-aad755c15020}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="游戏实体">
+      <UniqueIdentifier>{9ba5f781-a893-4a4d-90ef-3ce114002e49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="交互对象">
+      <UniqueIdentifier>{10853068-222d-46c3-b19e-a2347884e2ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="音效">
+      <UniqueIdentifier>{53859648-9188-496b-bb2e-82e41ba81639}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="反外挂">
+      <UniqueIdentifier>{91e0d0d3-4dc0-4921-a34a-05a169f91d97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="界面">
+      <UniqueIdentifier>{ca2d331a-0706-4bb6-ae00-305f90b6cd14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="界面\地图">
+      <UniqueIdentifier>{63eea527-2745-42d4-9d60-5b199417e313}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="界面\公告板">
+      <UniqueIdentifier>{41714c58-123e-4f4d-abc1-86e0c318fe37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="界面\血条">
+      <UniqueIdentifier>{446bcdfd-7331-4538-b112-92a1aa994d9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景">
+      <UniqueIdentifier>{3d33d951-d043-456a-91b0-f675e5928251}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="角色">
+      <UniqueIdentifier>{f5af4f60-57a3-40c4-9b72-1867b7e65a5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="模型">
+      <UniqueIdentifier>{90944122-2299-46ce-89f8-382ec9a8f686}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CGameClientProxyBank.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="CppGameClient.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="GameGac.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="RegistGacShell.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="RunExe.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="CDisplayHurt.cpp">
+      <Filter>特效</Filter>
+    </ClCompile>
+    <ClCompile Include="FXPlayer.cpp">
+      <Filter>特效</Filter>
+    </ClCompile>
+    <ClCompile Include="CFXMallocObject.cpp">
+      <Filter>特效\内存池</Filter>
+    </ClCompile>
+    <ClCompile Include="CAureMagicClient.cpp">
+      <Filter>战斗\魔法</Filter>
+    </ClCompile>
+    <ClCompile Include="CBarrierMagicClient.cpp">
+      <Filter>战斗\魔法</Filter>
+    </ClCompile>
+    <ClCompile Include="CBattleArrayMagicClient.cpp">
+      <Filter>战斗\魔法</Filter>
+    </ClCompile>
+    <ClCompile Include="CBulletMagicClient.cpp">
+      <Filter>战斗\魔法</Filter>
+    </ClCompile>
+    <ClCompile Include="CMagicClient.cpp">
+      <Filter>战斗\魔法</Filter>
+    </ClCompile>
+    <ClCompile Include="CMoveMagicClient.cpp">
+      <Filter>战斗\魔法</Filter>
+    </ClCompile>
+    <ClCompile Include="CPositionMagicClient.cpp">
+      <Filter>战斗\魔法</Filter>
+    </ClCompile>
+    <ClCompile Include="CShockWaveMagicClient.cpp">
+      <Filter>战斗\魔法</Filter>
+    </ClCompile>
+    <ClCompile Include="CTransferableMagicClient.cpp">
+      <Filter>战斗\魔法</Filter>
+    </ClCompile>
+    <ClCompile Include="CMagicEffClient.cpp">
+      <Filter>战斗\效果</Filter>
+    </ClCompile>
+    <ClCompile Include="CMagicOpClient.cpp">
+      <Filter>战斗\效果\操作</Filter>
+    </ClCompile>
+    <ClCompile Include="MagicConds_Function.cpp">
+      <Filter>战斗\效果\操作\条件</Filter>
+    </ClCompile>
+    <ClCompile Include="CFighterAgileInfoClient.cpp">
+      <Filter>战斗\属性</Filter>
+    </ClCompile>
+    <ClCompile Include="CRelationMgrClient.cpp">
+      <Filter>战斗\属性</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoolDownMgrClient.cpp">
+      <Filter>战斗\技能</Filter>
+    </ClCompile>
+    <ClCompile Include="CSkillClient.cpp">
+      <Filter>战斗\技能</Filter>
+    </ClCompile>
+    <ClCompile Include="CSkillCondMgrClient.cpp">
+      <Filter>战斗\技能</Filter>
+    </ClCompile>
+    <ClCompile Include="CAllStateMgrClient.cpp">
+      <Filter>战斗\状态</Filter>
+    </ClCompile>
+    <ClCompile Include="CMagicStateClient.cpp">
+      <Filter>战斗\状态</Filter>
+    </ClCompile>
+    <ClCompile Include="COtherStateClient.cpp">
+      <Filter>战斗\状态</Filter>
+    </ClCompile>
+    <ClCompile Include="CTplStateCfgClient.cpp">
+      <Filter>战斗\状态</Filter>
+    </ClCompile>
+    <ClCompile Include="CCastingProccessClient.cpp">
+      <Filter>战斗\流程</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgCalcClient.cpp">
+      <Filter>战斗\公共</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgCalcFunctionClient.cpp">
+      <Filter>战斗\公共</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadSkillGac.cpp">
+      <Filter>战斗\公共</Filter>
+    </ClCompile>
+    <ClCompile Include="CNormalAttackCfgClient.cpp">
+      <Filter>战斗\普攻</Filter>
+    </ClCompile>
+    <ClCompile Include="CNormalAttackClient.cpp">
+      <Filter>战斗\普攻</Filter>
+    </ClCompile>
+    <ClCompile Include="CFighterDirector.cpp">
+      <Filter>战斗\对象</Filter>
+    </ClCompile>
+    <ClCompile Include="CFighterFollower.cpp">
+      <Filter>战斗\对象</Filter>
+    </ClCompile>
+    <ClCompile Include="CFighterVariantCallback.cpp">
+      <Filter>战斗\对象</Filter>
+    </ClCompile>
+    <ClCompile Include="CFighterViewInfo.cpp">
+      <Filter>战斗\对象</Filter>
+    </ClCompile>
+    <ClCompile Include="CTeamClientManager.cpp">
+      <Filter>战斗\队伍</Filter>
+    </ClCompile>
+    <ClCompile Include="CBurstSoulCfgClient.cpp">
+      <Filter>战斗\爆魂</Filter>
+    </ClCompile>
+    <ClCompile Include="CActorCfgClient.cpp">
+      <Filter>动作</Filter>
+    </ClCompile>
+    <ClCompile Include="CActorDirector.cpp">
+      <Filter>动作</Filter>
+    </ClCompile>
+    <ClCompile Include="CActorFollower.cpp">
+      <Filter>动作</Filter>
+    </ClCompile>
+    <ClCompile Include="CActorIntObjClient.cpp">
+      <Filter>动作</Filter>
+    </ClCompile>
+    <ClCompile Include="CActorVariantCallback.cpp">
+      <Filter>动作</Filter>
+    </ClCompile>
+    <ClCompile Include="CCharAniController.cpp">
+      <Filter>动作</Filter>
+    </ClCompile>
+    <ClCompile Include="CDirectionMgr.cpp">
+      <Filter>动作</Filter>
+    </ClCompile>
+    <ClCompile Include="CFacialAniCfgMgr.cpp">
+      <Filter>动作</Filter>
+    </ClCompile>
+    <ClCompile Include="CFacialCfg.cpp">
+      <Filter>动作</Filter>
+    </ClCompile>
+    <ClCompile Include="CFacingMgr.cpp">
+      <Filter>动作</Filter>
+    </ClCompile>
+    <ClCompile Include="CNPCGazedAtMgr.cpp">
+      <Filter>动作</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderLinkMgr.cpp">
+      <Filter>动作</Filter>
+    </ClCompile>
+    <ClCompile Include="CClientApexMsgDispatcher.cpp">
+      <Filter>连接</Filter>
+    </ClCompile>
+    <ClCompile Include="CClientCharacterMsgDispatcher.cpp">
+      <Filter>连接</Filter>
+    </ClCompile>
+    <ClCompile Include="CClientFighterMsgDispatcher.cpp">
+      <Filter>连接</Filter>
+    </ClCompile>
+    <ClCompile Include="CClientMsgDispatcher.cpp">
+      <Filter>连接</Filter>
+    </ClCompile>
+    <ClCompile Include="CConnMgrClientHandler.cpp">
+      <Filter>连接</Filter>
+    </ClCompile>
+    <ClCompile Include="CEntityClient.cpp">
+      <Filter>游戏实体</Filter>
+    </ClCompile>
+    <ClCompile Include="CEntityClientCreator.cpp">
+      <Filter>游戏实体</Filter>
+    </ClCompile>
+    <ClCompile Include="CEntityClientManager.cpp">
+      <Filter>游戏实体</Filter>
+    </ClCompile>
+    <ClCompile Include="CEntityVariantCallback.cpp">
+      <Filter>游戏实体</Filter>
+    </ClCompile>
+    <ClCompile Include="CIntObjClient.cpp">
+      <Filter>交互对象</Filter>
+    </ClCompile>
+    <ClCompile Include="CFxSoundPlayer.cpp">
+      <Filter>音效</Filter>
+    </ClCompile>
+    <ClCompile Include="CSoundCDTimeMgr.cpp">
+      <Filter>音效</Filter>
+    </ClCompile>
+    <ClCompile Include="CSoundConfig.cpp">
+      <Filter>音效</Filter>
+    </ClCompile>
+    <ClCompile Include="CSoundPlayer.cpp">
+      <Filter>音效</Filter>
+    </ClCompile>
+    <ClCompile Include="CApexClient.cpp">
+      <Filter>反外挂</Filter>
+    </ClCompile>
+    <ClCompile Include="CBigMap.cpp">
+      <Filter>界面\地图</Filter>
+    </ClCompile>
+    <ClCompile Include="CCommpressFile.cpp">
+      <Filter>界面\地图</Filter>
+    </ClCompile>
+    <ClCompile Include="CSmallMap.cpp">
+      <Filter>界面\地图</Filter>
+    </ClCompile>
+    <ClCompile Include="CSmallMapCoder.cpp">
+      <Filter>界面\地图</Filter>
+    </ClCompile>
+    <ClCompile Include="CWorldMap.cpp">
+      <Filter>界面\地图</Filter>
+    </ClCompile>
+    <ClCompile Include="CDirectionInfo.cpp">
+      <Filter>界面\公告板</Filter>
+    </ClCompile>
+    <ClCompile Include="CBloodRenderDialogPool.cpp">
+      <Filter>界面\血条</Filter>
+    </ClCompile>
+    <ClCompile Include="CBloodRenderMallocObject.cpp">
+      <Filter>界面\血条</Filter>
+    </ClCompile>
+    <ClCompile Include="CBloodTypeCfg.cpp">
+      <Filter>界面\血条</Filter>
+    </ClCompile>
+    <ClCompile Include="HeadBlood.cpp">
+      <Filter>界面\血条</Filter>
+    </ClCompile>
+    <ClCompile Include="CGameSceneHandler.cpp">
+      <Filter>场景</Filter>
+    </ClCompile>
+    <ClCompile Include="CAutoTracker.cpp">
+      <Filter>角色</Filter>
+    </ClCompile>
+    <ClCompile Include="CCharacterDirector.cpp">
+      <Filter>角色</Filter>
+    </ClCompile>
+    <ClCompile Include="CCharacterFollower.cpp">
+      <Filter>角色</Filter>
+    </ClCompile>
+    <ClCompile Include="CCharacterFollowerVariantCallback.cpp">
+      <Filter>角色</Filter>
+    </ClCompile>
+    <ClCompile Include="CCharacterVariantHandler.cpp">
+      <Filter>角色</Filter>
+    </ClCompile>
+    <ClCompile Include="ICharacterFollowerCallbackHandler.cpp">
+      <Filter>角色</Filter>
+    </ClCompile>
+    <ClCompile Include="CModelInfoClient.cpp">
+      <Filter>模型</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CGameClientProxyBank.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="CppGameClient.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="RegistGacShell.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="RunExe.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="CDisplayHurt.h">
+      <Filter>特效</Filter>
+    </ClInclude>
+    <ClInclude Include="CEffectUnitHandler.h">
+      <Filter>特效</Filter>
+    </ClInclude>
+    <ClInclude Include="FXPlayer.h">
+      <Filter>特效</Filter>
+    </ClInclude>
+    <ClInclude Include="CFXMallocObject.h">
+      <Filter>特效\内存池</Filter>
+    </ClInclude>
+    <ClInclude Include="TFXAllocator.h">
+      <Filter>特效\内存池</Filter>
+    </ClInclude>
+    <ClInclude Include="CAureMagicClient.h">
+      <Filter>战斗\魔法</Filter>
+    </ClInclude>
+    <ClInclude Include="CBarrierMagicClient.h">
+      <Filter>战斗\魔法</Filter>
+    </ClInclude>
+    <ClInclude Include="CBattleArrayMagicClient.h">
+      <Filter>战斗\魔法</Filter>
+    </ClInclude>
+    <ClInclude Include="CBulletMagicClient.h">
+      <Filter>战斗\魔法</Filter>
+    </ClInclude>
+    <ClInclude Include="CMagicClient.h">
+      <Filter>战斗\魔法</Filter>
+    </ClInclude>
+    <ClInclude Include="CMoveMagicClient.h">
+      <Filter>战斗\魔法</Filter>
+    </ClInclude>
+    <ClInclude Include="CPositionMagicClient.h">
+      <Filter>战斗\魔法</Filter>
+    </ClInclude>
+    <ClInclude Include="CShockWaveMagicClient.h">
+      <Filter>战斗\魔法</Filter>
+    </ClInclude>
+    <ClInclude Include="CTransferableMagicClient.h">
+      <Filter>战斗\魔法</Filter>
+    </ClInclude>
+    <ClInclude Include="CMagicEffClient.h">
+      <Filter>战斗\效果</Filter>
+    </ClInclude>
+    <ClInclude Include="CMagicOpClient.h">
+      <Filter>战斗\效果\操作</Filter>
+    </ClInclude>
+    <ClInclude Include="CMagicCondClient.h">
+      <Filter>战斗\效果\操作\条件</Filter>
+    </ClInclude>
+    <ClInclude Include="MagicConds_Function.h">
+      <Filter>战斗\效果\操作\条件</Filter>
+    </ClInclude>
+    <ClInclude Include="MagicConds_TestValue.h">
+      <Filter>战斗\效果\操作\条件</Filter>
+    </ClInclude>
+    <ClInclude Include="AgilePropertyClient.h">
+      <Filter>战斗\属性</Filter>
+    </ClInclude>
+    <ClInclude Include="CFighterAgileInfoClient.h">
+      <Filter>战斗\属性</Filter>
+    </ClInclude>
+    <ClInclude Include="CRelationMgrClient.h">
+      <Filter>战斗\属性</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoolDownMgrClient.h">
+      <Filter>战斗\技能</Filter>
+    </ClInclude>
+    <ClInclude Include="CSkillClient.h">
+      <Filter>战斗\技能</Filter>
+    </ClInclude>
+    <ClInclude Include="CSkillCondMgrClient.h">
+      <Filter>战斗\技能</Filter>
+    </ClInclude>
+    <ClInclude Include="CSkillMgrClient.h">
+      <Filter>战斗\技能</Filter>
+    </ClInclude>
+    <ClInclude Include="CAllStateMgrClient.h">
+      <Filter>战斗\状态</Filter>
+    </ClInclude>
+    <ClInclude Include="CMagicStateClient.h">
+      <Filter>战斗\状态</Filter>
+    </ClInclude>
+    <ClInclude Include="COtherStateClient.h">
+      <Filter>战斗\状态</Filter>
+    </ClInclude>
+    <ClInclude Include="CTplStateCfgClient.h">
+      <Filter>战斗\状态</Filter>
+    </ClInclude>
+    <ClInclude Include="CCastingProccessClient.h">
+      <Filter>战斗\流程</Filter>
+    </ClInclude>
+    <ClInclude Include="CFightCallbackData.h">
+      <Filter>战斗\公共</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadSkillGac.h">
+      <Filter>战斗\公共</Filter>
+    </ClInclude>
+    <ClInclude Include="CNormalAttackCfgClient.h">
+      <Filter>战斗\普攻</Filter>
+    </ClInclude>
+    <ClInclude Include="CNormalAttackClient.h">
+      <Filter>战斗\普攻</Filter>
+    </ClInclude>
+    <ClInclude Include="CFighterDirector.h">
+      <Filter>战斗\对象</Filter>
+    </ClInclude>
+    <ClInclude Include="CFighterFollower.h">
+      <Filter>战斗\对象</Filter>
+    </ClInclude>
+    <ClInclude Include="CFighterVariantCallback.h">
+      <Filter>战斗\对象</Filter>
+    </ClInclude>
+    <ClInclude Include="CFighterViewInfo.h">
+      <Filter>战斗\对象</Filter>
+    </ClInclude>
+    <ClInclude Include="IFighterDirectorHandler.h">
+      <Filter>战斗\对象</Filter>
+    </ClInclude>
+    <ClInclude Include="IFighterFollowerHandler.h">
+      <Filter>战斗\对象</Filter>
+    </ClInclude>
+    <ClInclude Include="CTeamClientManager.h">
+      <Filter>战斗\队伍</Filter>
+    </ClInclude>
+    <ClInclude Include="ITeamClientManagerHandler.h">
+      <Filter>战斗\队伍</Filter>
+    </ClInclude>
+    <ClInclude Include="CBurstSoulCfgClient.h">
+      <Filter>战斗\爆魂</Filter>
+    </ClInclude>
+    <ClInclude Include="CActorCfgClient.h">
+      <Filter>动作</Filter>
+    </ClInclude>
+    <ClInclude Include="CActorClient.h">
+      <Filter>动作</Filter>
+    </ClInclude>
+    <ClInclude Include="CActorDirector.h">
+      <Filter>动作</Filter>
+    </ClInclude>
+    <ClInclude Include="CActorFollower.h">
+      <Filter>动作</Filter>
+    </ClInclude>
+    <ClInclude Include="CActorIntObjClient.h">
+      <Filter>动作</Filter>
+    </ClInclude>
+    <ClInclude Include="CActorVariantCallback.h">
+      <Filter>动作</Filter>
+    </ClInclude>
+    <ClInclude Include="CCharAniController.h">
+      <Filter>动作</Filter>
+    </ClInclude>
+    <ClInclude Include="CDirectionMgr.h">
+      <Filter>动作</Filter>
+    </ClInclude>
+    <ClInclude Include="CFacialAniCfgMgr.h">
+      <Filter>动作</Filter>
+    </ClInclude>
+    <ClInclude Include="CFacialCfg.h">
+      <Filter>动作</Filter>
+    </ClInclude>
+    <ClInclude Include="CFacingMgr.h">
+      <Filter>动作</Filter>
+    </ClInclude>
+    <ClInclude Include="CNPCGazedAtMgr.h">
+      <Filter>动作</Filter>
+    </ClInclude>
+    <ClInclude Include="CRenderLinkMgr.h">
+      <Filter>动作</Filter>
+    </ClInclude>
+    <ClInclude Include="IActorClientHandler.h">
+      <Filter>动作</Filter>
+    </ClInclude>
+    <ClInclude Include="IActorDirectorHandler.h">
+      <Filter>动作</Filter>
+    </ClInclude>
+    <ClInclude Include="IActorFollowerHandler.h">
+      <Filter>动作</Filter>
+    </ClInclude>
+    <ClInclude Include="IActorIntObjHandler.h">
+      <Filter>动作</Filter>
+    </ClInclude>
+    <ClInclude Include="IRenderObjClientHandler.h">
+      <Filter>动作</Filter>
+    </ClInclude>
+    <ClInclude Include="CClientApexMsgDispatcher.h">
+      <Filter>连接</Filter>
+    </ClInclude>
+    <ClInclude Include="CClientCharacterMsgDispatcher.h">
+      <Filter>连接</Filter>
+    </ClInclude>
+    <ClInclude Include="CClientFighterMsgDispatcher.h">
+      <Filter>连接</Filter>
+    </ClInclude>
+    <ClInclude Include="CClientMsgDispatcher.h">
+      <Filter>连接</Filter>
+    </ClInclude>
+    <ClInclude Include="CConnMgrClientHandler.h">
+      <Filter>连接</Filter>
+    </ClInclude>
+    <ClInclude Include="IScriptConnMgrClientHandler.h">
+      <Filter>连接</Filter>
+    </ClInclude>
+    <ClInclude Include="CEntityClient.h">
+      <Filter>游戏实体</Filter>
+    </ClInclude>
+    <ClInclude Include="CEntityClientCreator.h">
+      <Filter>游戏实体</Filter>
+    </ClInclude>
+    <ClInclude Include="CEntityClientManager.h">
+      <Filter>游戏实体</Filter>
+    </ClInclude>
+    <ClInclude Include="CEntityVariantCallback.h">
+      <Filter>游戏实体</Filter>
+    </ClInclude>
+    <ClInclude Include="IEntityClientManagerHandler.h">
+      <Filter>游戏实体</Filter>
+    </ClInclude>
+    <ClInclude Include="TEntityAdapterClient.h">
+      <Filter>游戏实体</Filter>
+    </ClInclude>
+    <ClInclude Include="TEntityTraitsClient.h">
+      <Filter>游戏实体</Filter>
+    </ClInclude>
+    <ClInclude Include="CIntObjClient.h">
+      <Filter>交互对象</Filter>
+    </ClInclude>
+    <ClInclude Include="IIntObjCallbackHandler.h">
+      <Filter>交互对象</Filter>
+    </ClInclude>
+    <ClInclude Include="IIntObjClientHandler.h">
+      <Filter>交互对象</Filter>
+    </ClInclude>
+    <ClInclude Include="TIntObjAdapterClient.h">
+      <Filter>交互对象</Filter>
+    </ClInclude>
+    <ClInclude Include="CFxSoundPlayer.h">
+      <Filter>音效</Filter>
+    </ClInclude>
+    <ClInclude Include="CSoundCDTimeMgr.h">
+      <Filter>音效</Filter>
+    </ClInclude>
+    <ClInclude Include="CSoundConfig.h">
+      <Filter>音效</Filter>
+    </ClInclude>
+    <ClInclude Include="CSoundPlayer.h">
+      <Filter>音效</Filter>
+    </ClInclude>
+    <ClInclude Include="CApexClient.h">
+      <Filter>反外挂</Filter>
+    </ClInclude>
+    <ClInclude Include="CBigMap.h">
+      <Filter>界面\地图</Filter>
+    </ClInclude>
+    <ClInclude Include="CCommpressFile.h">
+      <Filter>界面\地图</Filter>
+    </ClInclude>
+    <ClInclude Include="CSmallMap.h">
+      <Filter>界面\地图</Filter>
+    </ClInclude>
+    <ClInclude Include="CSmallMapCoder.h">
+      <Filter>界面\地图</Filter>
+    </ClInclude>
+    <ClInclude Include="CWorldMap.h">
+      <Filter>界面\地图</Filter>
+    </ClInclude>
+    <ClInclude Include="CDirectionInfo.h">
+      <Filter>界面\公告板</Filter>
+    </ClInclude>
+    <ClInclude Include="CBloodRenderDialogPool.h">
+      <Filter>界面\血条</Filter>
+    </ClInclude>
+    <ClInclude Include="CBloodRenderMallocObject.h">
+      <Filter>界面\血条</Filter>
+    </ClInclude>
+    <ClInclude Include="CBloodTypeCfg.h">
+      <Filter>界面\血条</Filter>
+    </ClInclude>
+    <ClInclude Include="HeadBlood.h">
+      <Filter>界面\血条</Filter>
+    </ClInclude>
+    <ClInclude Include="TBloodRenderAllocator.h">
+      <Filter>界面\血条</Filter>
+    </ClInclude>
+    <ClInclude Include="CGameSceneHandler.h">
+      <Filter>场景</Filter>
+    </ClInclude>
+    <ClInclude Include="CAutoTracker.h">
+      <Filter>角色</Filter>
+    </ClInclude>
+    <ClInclude Include="CCharacterDirector.h">
+      <Filter>角色</Filter>
+    </ClInclude>
+    <ClInclude Include="CCharacterFollower.h">
+      <Filter>角色</Filter>
+    </ClInclude>
+    <ClInclude Include="CCharacterFollowerVariantCallback.h">
+      <Filter>角色</Filter>
+    </ClInclude>
+    <ClInclude Include="CCharacterVariantHandler.h">
+      <Filter>角色</Filter>
+    </ClInclude>
+    <ClInclude Include="ICharacterDirectorCallbackHandler.h">
+      <Filter>角色</Filter>
+    </ClInclude>
+    <ClInclude Include="ICharacterDirectorHandler.h">
+      <Filter>角色</Filter>
+    </ClInclude>
+    <ClInclude Include="ICharacterFollowerCallbackHandler.h">
+      <Filter>角色</Filter>
+    </ClInclude>
+    <ClInclude Include="ICharacterFollowerHandler.h">
+      <Filter>角色</Filter>
+    </ClInclude>
+    <ClInclude Include="TCharacterAdapterClient.h">
+      <Filter>角色</Filter>
+    </ClInclude>
+    <ClInclude Include="CModelInfoClient.h">
+      <Filter>模型</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MagicConds_TestValue.inl">
+      <Filter>战斗\效果\操作\条件</Filter>
+    </None>
+    <None Include="COtherStateClient.inl">
+      <Filter>战斗\状态</Filter>
+    </None>
+    <None Include="CTplStateCfgClient.inl">
+      <Filter>战斗\状态</Filter>
+    </None>
+    <None Include="CClientApexMsgDispatcher.inl">
+      <Filter>连接</Filter>
+    </None>
+    <None Include="CClientCharacterMsgDispatcher.inl">
+      <Filter>连接</Filter>
+    </None>
+    <None Include="CClientFighterMsgDispatcher.inl">
+      <Filter>连接</Filter>
+    </None>
+    <None Include="CEntityClient.inl">
+      <Filter>游戏实体</Filter>
+    </None>
+    <None Include="TEntityAdapterClient.inl">
+      <Filter>游戏实体</Filter>
+    </None>
+    <None Include="TIntObjAdapterClient.inl">
+      <Filter>交互对象</Filter>
+    </None>
+    <None Include="CCharacterFollower.inl">
+      <Filter>角色</Filter>
+    </None>
+    <None Include="TCharacterAdapterClient.inl">
+      <Filter>角色</Filter>
+    </None>
+  </ItemGroup>
+</Project>

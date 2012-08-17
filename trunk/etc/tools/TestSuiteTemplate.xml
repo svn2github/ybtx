@@ -1,0 +1,30 @@
+<test_suite>
+	
+		<!--  需要运行的测试用例 -->
+		<name>CTestSuiteTripleBuffer</name>	
+   		<name>CTestSuiteAoi</name>
+		<name>CTestSuiteVariant</name>
+		<name>CTestSuiteScript</name>
+		<name>CTestSuiteMetaSceneServer</name>
+		<name>CTestSuitePatternCOR</name>
+		<name>CTestSuiteIniFile</name>
+		 
+		<name>CTestSuiteRpcCall</name>
+		
+		<name>CTestSuiteTickMgr</name>
+		<name>CTestSuitePkgFile</name>
+		 
+		<name>CTestSuiteNetwork</name>
+		<name>CTestSuiteDbThreadsMgr</name>
+		<name>CTestSuiteMetaSceneClient</name>
+		 
+		<name>CTestSuiteCoreObjectClient</name>
+		<name>CTestSuiteCoreObjectServer</name>
+
+		<name>CTestSuiteIDPtrMap</name>
+		<name>CTestSuiteRenderSlot</name>
+		
+		
+	
+</test_suite>
+

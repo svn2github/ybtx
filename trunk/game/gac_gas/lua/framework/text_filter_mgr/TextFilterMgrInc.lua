@@ -1,0 +1,1 @@
+CTextFilterMgr = class()

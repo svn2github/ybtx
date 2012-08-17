@@ -1,0 +1,173 @@
+<root>
+
+	<!--
+		进入玩家屏幕时候需要同步的状态信息
+	-->
+	<SyncPart>	
+		<staticroot>
+			<Res>
+				<HairResID/>
+				<FaceResID/>
+				<ShowArmet/>
+				<HeadIndexID/>
+				<BodyIndexID/>
+				<ShoulderIndexID/>
+				<ArmIndexID/>
+				<ShoeIndexID/>
+				<WeaponIndexID/>
+				<OffWeaponIndexID/>
+				<OffWeaponBigID/>
+				<WeaponPhase/>
+				<OffWeaponPhase/>
+				<HeadPhase/>
+				<BodyPhase/>
+				<ShoePhase/>
+				<ShoulderPhase/>
+				<ArmPhase/>
+				<BackIndexID/>
+				<HorseResID/>
+				<HandsBehaviorName/>
+				<HorseType/>
+				<BehaviorType/>
+			</Res>
+		</staticroot>	
+		<agileroot>	
+			<Actor>
+				<StateForce/>
+				<MoveState/>
+				<MoveDir/>
+				<DirForce/>
+				<DirGac2Gas/>
+				<ActionDir/>
+				<ActionRhythm/>
+				<ActionIndex/>
+				<HurtResult/>
+				<ActionState/>
+				<NAActionRhythm/>
+				<WalkBackRadius/>
+			</Actor>
+			<Attribute1>
+				<TargetID/>
+				<Speed/>
+				<Stealth/>
+				<BottomSize/>
+			</Attribute1>
+
+			
+			<CastingProcess>
+				<CastID/>
+				<CastTime/>
+				<GuessStartTime/>
+				<TargetIDOfCast/>
+				<uSkillID/>
+				<bIsFinish/>
+			</CastingProcess>
+			
+			<State type="Transit">
+				<Transit type="SubTree" name="AllState"/>
+				<Transit type="SubTree" name="MagicState"/>
+				<Transit type="SubTree" name="OtherState"/>
+			</State>
+			
+		</agileroot>		
+	</SyncPart>
+	
+	
+	<!--
+		进入右上角小地图范围之后，就需要向玩家同步的信息.
+		这个部分的同步范围是小地图，半径大约20米，比玩家屏幕视野要大的多，因此要节省使用
+		一些在进入玩家屏幕才需要看的信息，尽量不要放在这里。		
+	-->
+	
+	
+	<ViewPart>	
+		<staticroot>
+		
+			<Attribute>
+				<EntityID/>
+				<Type/>
+				<UserID/>
+				<CharID/>
+				<CharName/>
+				<CharAppellation1/>
+				<CharAppellation2/>
+				<Sex/>
+				<TeamID/>
+				<TroopID/>
+				<Camp/>
+				<BirthCamp/>
+				<GameCamp/>
+				<TongID/>
+				<TongName/>
+				<PkValue/>
+				<Level/>
+				<Class/>
+				<ArmyCorpsName/>
+			</Attribute>
+		</staticroot>
+		<agileroot>
+			<PKSwitch>
+				<PKSwitchType/>
+			</PKSwitch>
+			
+			<AgileValue>
+				<HealthPointAdder/>
+				<HealthPointMutiplier/>
+				<HealthPointAgile/>
+				<ConsumePointAdder/>
+				<ConsumePointMutiplier/>
+				<ConsumePointAgile/>
+			</AgileValue>
+			
+			<CtrlValue>
+				<Value/>
+				<ValueTypeID/>
+				<Set/>
+				<IsAlive/>
+			</CtrlValue>
+			
+		</agileroot>		
+	</ViewPart>
+	
+	
+	<SubTree>
+	
+		<AllState>
+			<CategoryId/>
+			<DynamicId/>
+			<Count/>
+			<Time/>
+			<GuessStartTime/>
+			<SkillLevel/>
+			<InstallerID/>
+			<CalcValue/>
+			<zzzzzStateIsSync/>
+			<zzzzzStateIsFinish/>
+		</AllState>
+		
+		<MagicState>
+			<CategoryId/>
+			<DynamicId/>
+			<Count/>
+			<Time/>
+			<GuessStartTime/>
+			<SkillLevel/>
+			<zzzzzStateIsSync/>
+			<zzzzzStateIsFinish/>
+		</MagicState>
+		
+		<OtherState>
+			<CategoryId/>
+			<DynamicId/>
+			<Count/>
+			<Time/>
+			<GuessStartTime/>
+			<SkillLevel/>
+			<zzzzzStateIsSync/>
+			<zzzzzStateIsFinish/>
+		</OtherState>
+		
+	</SubTree>	
+	
+	
+</root>

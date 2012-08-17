@@ -1,0 +1,22 @@
+float4 tcDownSampleOffsets[16] : register(c16);         // The sampling offsets used by 'DownSample' and 'BrightPass'
+
+sampler source0 : register(s0);
+
+//------------------------------------------------------------------
+// 4x4 DOWN-SAMPLING PIXEL SHADER
+//
+// Samples the input texture 16x according to the provided offsets
+// and then writes the average to the output texture
+//------------------------------------------------------------------
+float4 DownSample( float2 t : TEXCOORD0 ) : COLOR
+{
+    float4 average = { 0.0f, 0.0f, 0.0f, 0.0f };
+
+    for( int i = 0; i < 16; i++ )
+    {
+        average += tex2D( source0, t + float2(tcDownSampleOffsets[i].x, tcDownSampleOffsets[i].y) );
+    }
+    average *= ( 1.0f / 16.0f );
+
+    return average;
+}

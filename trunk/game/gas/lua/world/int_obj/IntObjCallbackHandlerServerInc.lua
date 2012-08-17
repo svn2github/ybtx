@@ -1,0 +1,2 @@
+
+CIntObjCallbackHandler = class( IIntObjCallbackHandlerServer )

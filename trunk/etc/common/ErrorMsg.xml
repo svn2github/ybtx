@@ -1,0 +1,9 @@
+<ErrorMsg>
+
+	<chinese_simplified>	发生未知的错误，这个错误很有可能是显卡和声卡等硬件的驱动程序的缺
+陷所致，请尝试更新您的电脑上的硬件设备的驱动程序来解决问题。</chinese_simplified>
+
+	<english>	And unknown error happened.This error are likely to be caused by hardware driver's
+fault.Please upgrade your hardware's(video card,sound card,etc) driver to solve the problem.</english>
+
+</ErrorMsg>

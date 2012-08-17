@@ -1,0 +1,46 @@
+--
+--function Gac2Gas:GetCofcTechnologyInfo(Conn)
+--	local Player = Conn.m_Player
+--	local uPlayerID = Player.m_uID
+--	local uCofcID = Player.m_Properties:GetCofcID()
+--	if uCofcID == 0 then
+--		return
+--	end
+--	--回调函数【高速逻辑】
+--	local function CallBack(info,curr_tech)
+--		for i=1,#info do
+--			Gas2Gac:ReturnGetCofcTechnologyInfo(Conn,info[i][1],info[i][3],info[i][2])
+--		end
+--		Gas2Gac:ReturnGetCofcTechnologyInfoEnd(Conn,curr_tech)
+--	end
+--	
+--  local parameters = {}
+--	parameters["uCofcID"]	= uCofcID
+--	local cofc_tech_box = "CofcTechDB"
+--	CallAccountManualTrans(Conn.m_Account, cofc_tech_box, "GetCofcTechnologyInfoDB", CallBack, parameters, uCofcID)
+--end
+--
+--function Gac2Gas:SetCofcCurrentTechnology(Conn,nIndex)
+--	local Player = Conn.m_Player
+--	local uPlayerID = Player.m_uID
+--	local uCofcID = Player.m_Properties:GetCofcID()
+--	if uCofcID == 0 then
+--		return
+--	end
+--	--回调函数【高速逻辑】
+--	local function CallBack(result,info,curr_tech)
+--			if result then
+--				for i=1,#info do
+--					Gas2Gac:ReturnGetCofcTechnologyInfo(Conn,info[i][1],info[i][3],info[i][2])
+--				end
+--				Gas2Gac:ReturnGetCofcTechnologyInfoEnd(Conn,curr_tech)
+--			end
+--	end
+--	
+--  local parameters = {}
+--	parameters["uCofcID"]	= uCofcID
+--	parameters["nIndex"]	= nIndex
+--	parameters["uPlayerID"]	= uPlayerID
+--	local tech_box = "CofcTechDB"
+--	CallAccountManualTrans(Conn.m_Account, tech_box, "UpdateCofcCurrentTechDB", CallBack, parameters, uCofcID)
+--end

@@ -1,0 +1,57 @@
+--gac_require "relation/tong/TongSellResWndInc"
+--
+--------帮会出售粮草面板------
+--
+--function CreateTongSellResWnd(Parent, flag)
+--	local Wnd = CTongSellResWnd:new()
+--	Wnd:Init(Parent, flag)
+--	return Wnd
+--end
+--
+--function CTongSellResWnd:Init(Parent, flag)
+--	self:CreateFromRes("TongSoldResWnd", Parent)
+--	self.m_TongName = self:GetDlgChild("TongName")
+--	self.m_Num = self:GetDlgChild("Num")
+--	self.m_Price = self:GetDlgChild("Price")
+--	self.m_SellNum = self:GetDlgChild("SoldNum")
+--	self.m_Gold = self:GetDlgChild("Gold")
+--	self.m_Silver = self:GetDlgChild("Silver")
+--	self.m_Copper = self:GetDlgChild("Copper")
+--	self.m_OkBtn = self:GetDlgChild("OkBtn")
+--	self.m_CancelBtn = self:GetDlgChild("CancelBtn")
+--	self.m_XBtn = self:GetDlgChild("XBtn")
+--	self.m_Flag = flag
+--	self:ShowWnd(false)
+--	g_ExcludeWndMgr:InitExcludeWnd(self, 2, false, nil, 1)
+--end
+--
+--function CTongSellResWnd:OpenPanel(TongId, flag)
+--	self.m_TongId = TongId
+--	self.m_Flag = flag
+--	Gac2Gas:GetTongSellResInfo(g_Conn, TongId, flag)
+--	self:ShowWnd(true)
+--end
+--
+----消息
+--function CTongSellResWnd:OnCtrlmsg(Child, uMsgID, uParam1, uParam2)
+--	if uMsgID == BUTTON_LCLICK then
+--		if Child == self.m_CancelBtn or Child == self.m_XBtn then
+--			self:ShowWnd(false)
+--		elseif(Child == self.m_OkBtn) then
+--			Gac2Gas:SellTongResource(g_Conn, self.m_TongId, self.m_Flag)
+--			self:ShowWnd(false)
+--		end
+--	end
+--end
+--
+--function CTongSellResWnd:ShowSellInfo(nPrice, nNum, nSellNum, nMoney, sTongName)
+--	self.m_Price:SetWndText(nPrice)
+--	self.m_Num:SetWndText(nNum)
+--	self.m_SellNum:SetWndText(nSellNum)
+--	self.m_Copper:SetWndText(nMoney %100)
+--	nMoney = math.floor(nMoney / 100)
+--	self.m_Silver:SetWndText(nMoney % 100)
+--	nMoney = math.floor(nMoney / 100)
+--	self.m_Gold:SetWndText(nMoney)
+--	self.m_TongName:SetWndText(sTongName)
+--end

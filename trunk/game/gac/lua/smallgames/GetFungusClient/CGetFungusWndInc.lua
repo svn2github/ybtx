@@ -1,0 +1,2 @@
+
+CGetFungusWnd = class(SQRDialog)

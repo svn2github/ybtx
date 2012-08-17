@@ -1,0 +1,94 @@
+199899
+tbl_log_char_static	1	2	兽人脸部05发色03	脸部03	脸部05	100	1	9	2	12-07-17 20:19:42
+tbl_log_char	1	HelloWorld
+tbl_log_item_static	1	6	见习兽人战士铠甲	1	tbl_log_item_static
+tbl_log_player	67	1
+tbl_log_item_binding	67	1	2
+tbl_log_item_armor	68	1	1	1	142	11	11	0	0	战神
+tbl_log_player	68	1
+tbl_log_item_equip_advance	69	1	0	0	0	0	0	0	0	风	0	0	0	0	0	0	生命物理				
+tbl_log_player	69	1
+tbl_log_item_equip_durability	70	1	18	18
+tbl_log_player	70	1
+tbl_log_player_taker	71	1
+tbl_log_event_type	71	23
+tbl_log_item_taker	71	1
+tbl_log_item	72	1
+tbl_log_equip_puton	72	4
+tbl_log_player	72	1
+tbl_log_item_static	2	5	见习兽族短斧	1	9360a8e7ea52bca3c237f363f64b99e8
+tbl_log_player	73	1
+tbl_log_item_binding	73	2	2
+tbl_log_item_weapon	74	2	1	1	17.4	1.8	25	0	战神
+tbl_log_player	74	1
+tbl_log_item_equip_advance	75	2	0	0	0	0	0	0	0	冰	0	0	0	0	0	0	物理攻击				
+tbl_log_player	75	1
+tbl_log_item_equip_durability	76	2	17	17
+tbl_log_player	76	1
+tbl_log_player_taker	77	1
+tbl_log_event_type	77	23
+tbl_log_item_taker	77	2
+tbl_log_item	78	2
+tbl_log_equip_puton	78	1
+tbl_log_player	78	1
+tbl_log_item_static	3	5	见习兽族劣斧	1	87f779c2033b6c31313ba6ade15350eb
+tbl_log_player	79	1
+tbl_log_item_binding	79	3	2
+tbl_log_item_weapon	80	3	1	1	17.4	1.8	25	0	战神
+tbl_log_player	80	1
+tbl_log_item_equip_advance	81	3	0	0	0	0	0	0	0	地	0	0	0	0	0	0	物理攻击				
+tbl_log_player	81	1
+tbl_log_item_equip_durability	82	3	16	16
+tbl_log_player	82	1
+tbl_log_player_taker	83	1
+tbl_log_event_type	83	23
+tbl_log_item_taker	83	3
+tbl_log_item	84	3
+tbl_log_equip_puton	84	2
+tbl_log_player	84	1
+tbl_log_item_static	4	6	见习兽人战士马靴	1	eaf126841b3258a54b50bc33293fab47
+tbl_log_player	85	1
+tbl_log_item_binding	85	4	2
+tbl_log_item_armor	86	4	1	1	15	11	10	0	0	法魔
+tbl_log_player	86	1
+tbl_log_item_equip_advance	87	4	0	0	0	0	0	0	0	火	0	0	0	0	0	0	生命法术				
+tbl_log_player	87	1
+tbl_log_item_equip_durability	88	4	16	16
+tbl_log_player	88	1
+tbl_log_player_taker	89	1
+tbl_log_event_type	89	23
+tbl_log_item_taker	89	4
+tbl_log_item	90	4
+tbl_log_equip_puton	90	7
+tbl_log_player	90	1
+tbl_log_item_static	5	24	一级佣兵荣誉宝箱	1	b271f8dbfc704b804537792eec818beb
+tbl_log_player	91	1
+tbl_log_item_binding	91	5	2
+tbl_log_player_taker	92	1
+tbl_log_event_type	92	69
+tbl_log_item_taker	92	5
+tbl_log_item_static	6	3	炭烧猪排	1	fd20ee9ede655d5dab97a192b79bc587
+tbl_log_player_taker	93	1
+tbl_log_event_type	93	69
+tbl_log_item_taker	93	6
+tbl_log_item_static	7	3	炭烧猪排	1	a668c33a0862d94050741b3731402fc8
+tbl_log_player_taker	94	1
+tbl_log_event_type	94	69
+tbl_log_item_taker	94	7
+tbl_log_item_static	8	3	炭烧猪排	1	192efa78373d8a357e2a7fd648614782
+tbl_log_player_taker	95	1
+tbl_log_event_type	95	69
+tbl_log_item_taker	95	8
+tbl_log_item_static	9	3	炭烧猪排	1	3fc4c159decdfb9d5a49be2270b89dd4
+tbl_log_player_taker	96	1
+tbl_log_event_type	96	69
+tbl_log_item_taker	96	9
+tbl_log_item_static	10	3	炭烧猪排	1	5d35c646fab6031f36a5acb08a49efcb
+tbl_log_player_taker	97	1
+tbl_log_event_type	97	69
+tbl_log_item_taker	97	10
+tbl_log_enter_scene	98
+tbl_log_level	98	1
+tbl_log_scene	98	神圣教廷树屋酒吧
+tbl_log_player	98	1
+tbl_log_char_login	99	1	1

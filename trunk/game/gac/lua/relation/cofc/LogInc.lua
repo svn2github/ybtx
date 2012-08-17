@@ -1,0 +1,1 @@
+CCofCLogWnd = class (SQRDialog)

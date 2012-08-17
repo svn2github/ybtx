@@ -1,0 +1,1037 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="File">
+      <UniqueIdentifier>{187c7158-0ad3-46fc-be7f-1b1887aea351}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="File\ChuckFile">
+      <UniqueIdentifier>{bb0e7c80-aab3-43f8-bf54-718b63447d71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="File\TableFile">
+      <UniqueIdentifier>{9687b3e7-b34d-4b35-83e6-7281d805c33f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tick">
+      <UniqueIdentifier>{4a3411f5-3ff1-4b08-9e1c-c088b56156fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Package">
+      <UniqueIdentifier>{dc8b9490-658f-4e08-90da-4340f7b477ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{0b655014-6054-4ae3-b3c6-24ccc04006f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pattern">
+      <UniqueIdentifier>{53842932-00f6-457f-bdb3-f6be269c0aa5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pointer">
+      <UniqueIdentifier>{b0c67130-aaa7-4dc9-9a20-1c5e9e98936b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Console">
+      <UniqueIdentifier>{6eba7111-f22f-47dd-90ce-6e90560bf870}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Log">
+      <UniqueIdentifier>{334b6672-4ef6-41f8-adb1-a341e22cd601}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Random">
+      <UniqueIdentifier>{9efeb4fc-938e-463f-9796-ab646e5f6b73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="String">
+      <UniqueIdentifier>{cf43e843-e05b-4dc7-9767-0cf2ce7b46dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script">
+      <UniqueIdentifier>{69549ab5-78b3-40a9-a3be-d35e4d3aa656}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Path">
+      <UniqueIdentifier>{856202c5-fc5a-4e7a-9a6b-727ba497807a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Trace">
+      <UniqueIdentifier>{db974fcd-f7a3-4665-a7c9-dc55a1c12178}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CodeCvs">
+      <UniqueIdentifier>{3c61ff01-c1a8-4d50-8be4-136f24a535fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Value">
+      <UniqueIdentifier>{76bfc9b7-b719-4763-bdcc-38634c4a2090}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Value\Variant">
+      <UniqueIdentifier>{cddc26db-2a37-40f5-bd83-4de5624372a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Value\Table">
+      <UniqueIdentifier>{ee2451b4-3e66-42a7-b532-8bfc70782920}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Value\ConstStr">
+      <UniqueIdentifier>{5ad64495-03be-43a4-b59c-9c8d979e69f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Misc">
+      <UniqueIdentifier>{92e3857b-b304-4d38-9d46-caacf60ad9d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Container">
+      <UniqueIdentifier>{fc4fb897-5845-470e-84af-ad5dc9129f70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Svn">
+      <UniqueIdentifier>{acaf79ee-2830-4d78-8fcf-e977986816d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sampler">
+      <UniqueIdentifier>{942a69f7-16f1-41f6-8c27-61a191e8117b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SamplerFactory">
+      <UniqueIdentifier>{dd1d0e23-6b19-4bd1-90f1-915bddf053ae}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\sdk\inc\CDataFileAllocator.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CDataFileMallocObject.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CDifFile.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CIniFile.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\COriFileOperate.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CrcFileCheck.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSvsFile.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="File\CTestSuiteIniFile.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IOriFileInterface.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCoder.h">
+      <Filter>File\ChuckFile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CDataChunk.h">
+      <Filter>File\ChuckFile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CFileFormatMgr.h">
+      <Filter>File\ChuckFile</Filter>
+    </ClInclude>
+    <ClInclude Include="File\CCurLangTxtTableFileImp.h">
+      <Filter>File\TableFile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CMultiLangTxtTableFile.h">
+      <Filter>File\TableFile</Filter>
+    </ClInclude>
+    <ClInclude Include="File\CMultiLangTxtTableFileImp.h">
+      <Filter>File\TableFile</Filter>
+    </ClInclude>
+    <ClInclude Include="File\CRowLeafNodeDataMeta.h">
+      <Filter>File\TableFile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRowTableFile.h">
+      <Filter>File\TableFile</Filter>
+    </ClInclude>
+    <ClInclude Include="File\CRowTableFileImp.h">
+      <Filter>File\TableFile</Filter>
+    </ClInclude>
+    <ClInclude Include="File\CRowTableFileKey.h">
+      <Filter>File\TableFile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRowTableFileNode.h">
+      <Filter>File\TableFile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CTableFileValue.h">
+      <Filter>File\TableFile</Filter>
+    </ClInclude>
+    <ClInclude Include="File\CTestSuiteTableFile.h">
+      <Filter>File\TableFile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CTxtTableFile.h">
+      <Filter>File\TableFile</Filter>
+    </ClInclude>
+    <ClInclude Include="File\CTxtTableFileImp.h">
+      <Filter>File\TableFile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TableFileHelper.h">
+      <Filter>File\TableFile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TBaseTableFile.h">
+      <Filter>File\TableFile</Filter>
+    </ClInclude>
+    <ClInclude Include="File\TBaseTableFileImp.h">
+      <Filter>File\TableFile</Filter>
+    </ClInclude>
+    <ClInclude Include="Tick\CTestSuiteTickMgr.h">
+      <Filter>Tick</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CTick.h">
+      <Filter>Tick</Filter>
+    </ClInclude>
+    <ClInclude Include="Tick\CTickImp.h">
+      <Filter>Tick</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CTickMallocAllocator.h">
+      <Filter>Tick</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CTickMallocObject.h">
+      <Filter>Tick</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CTickMgr.h">
+      <Filter>Tick</Filter>
+    </ClInclude>
+    <ClInclude Include="Tick\CTickQueue.h">
+      <Filter>Tick</Filter>
+    </ClInclude>
+    <ClInclude Include="Tick\CTickSlot.h">
+      <Filter>Tick</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TTickHandler.h">
+      <Filter>Tick</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CBufFile.h">
+      <Filter>Package</Filter>
+    </ClInclude>
+    <ClInclude Include="Package\CPackage.h">
+      <Filter>Package</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CPkgDirectory.h">
+      <Filter>Package</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CPkgFile.h">
+      <Filter>Package</Filter>
+    </ClInclude>
+    <ClInclude Include="Package\CReadThread.h">
+      <Filter>Package</Filter>
+    </ClInclude>
+    <ClInclude Include="Package\CTestSuitePkgFile.h">
+      <Filter>Package</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CWinPkgFile.h">
+      <Filter>Package</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\PkgCommon.h">
+      <Filter>Package</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\PkgStream.h">
+      <Filter>Package</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\Algorithm.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CAxisAlignedBox.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CBezierCurve.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CBezierMethod.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CBitset.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCircleMethod.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CColor.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CColor3.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CColor4.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CDir.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CGraphPath.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CHermiteCurve.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CLine.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CLineMethod.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\ClipStatus.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CMath.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CMathMallocObject.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CMatrix.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\COrientedBoundingBox.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CPlane.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CPos.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CQuaternion.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRectangle.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSphere.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CTinyVector.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CVector2.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CVector3.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CVector4.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\longint.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\MathAlgorithm.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\ModelHelper.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TGraph.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TPackedPos.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Pattern\CTestSuitePatternCOR.h">
+      <Filter>Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="Pattern\CTestSuitePatternDlg.h">
+      <Filter>Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CTrMsgBufferSwapper.h">
+      <Filter>Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CTrMsgMallocAllocator.h">
+      <Filter>Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CTrMsgMallocObject.h">
+      <Filter>Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CTrThreadMsgBuffer.h">
+      <Filter>Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\PatternCOR.h">
+      <Filter>Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\PatternDlg.h">
+      <Filter>Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\PatternMQ.h">
+      <Filter>Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\PatternRef.h">
+      <Filter>Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\PtRefProxy.h">
+      <Filter>Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TSingleton.h">
+      <Filter>Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TThreadMsgBuffer.h">
+      <Filter>Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TTrThreadMsgBuffer.h">
+      <Filter>Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRefObject.h">
+      <Filter>Pointer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TRefPointer.h">
+      <Filter>Pointer</Filter>
+    </ClInclude>
+    <ClInclude Include="Console\CConsole.h">
+      <Filter>Console</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\Console.h">
+      <Filter>Console</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CLog.h">
+      <Filter>Log</Filter>
+    </ClInclude>
+    <ClInclude Include="Log\CLogJob.h">
+      <Filter>Log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CLogMallocAllocator.h">
+      <Filter>Log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CLogMallocObject.h">
+      <Filter>Log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CLogThreadMgr.h">
+      <Filter>Log</Filter>
+    </ClInclude>
+    <ClInclude Include="Log\CSyncLog.h">
+      <Filter>Log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\LogHelper.h">
+      <Filter>Log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CQuickRand.h">
+      <Filter>Random</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TRandomMersenne.h">
+      <Filter>Random</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\uniform.h">
+      <Filter>Random</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\StringHelper.h">
+      <Filter>String</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CallBackHelper.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CallBackX.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\EFuncParamType.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TFuncCallHelper.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CPathMgr.h">
+      <Filter>Path</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCpuCheckPoint.h">
+      <Filter>Trace</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCpuUsage.h">
+      <Filter>Trace</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\DebugHelper.h">
+      <Filter>Trace</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TraceHelper.h">
+      <Filter>Trace</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CMd5Digester.h">
+      <Filter>CodeCvs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CodeCvs.h">
+      <Filter>CodeCvs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CompressBZIP2.h">
+      <Filter>CodeCvs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CompressGZIP.h">
+      <Filter>CodeCvs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CompressLZO.h">
+      <Filter>CodeCvs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CrcAlgorithm.h">
+      <Filter>CodeCvs</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeCvs\lzoconf.h">
+      <Filter>CodeCvs</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeCvs\lzodefs.h">
+      <Filter>CodeCvs</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeCvs\minilzo.h">
+      <Filter>CodeCvs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CValueMallocObject.h">
+      <Filter>Value</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TValueAllocator.h">
+      <Filter>Value</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CBaseCypherVariantInputStream.h">
+      <Filter>Value\Variant</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CBaseCypherVariantOutputStream.h">
+      <Filter>Value\Variant</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCypherVariant.h">
+      <Filter>Value\Variant</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCypherVariantCodeTable.h">
+      <Filter>Value\Variant</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCypherVariantHolder.h">
+      <Filter>Value\Variant</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCypherVariantMallocObject.h">
+      <Filter>Value\Variant</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCypherVariantStream.h">
+      <Filter>Value\Variant</Filter>
+    </ClInclude>
+    <ClInclude Include="Value\CTestSuiteVariant.h">
+      <Filter>Value\Variant</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CVariant.h">
+      <Filter>Value\Variant</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CVariantHolderDef.h">
+      <Filter>Value\Variant</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CVariantMallocObject.h">
+      <Filter>Value\Variant</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CVariantSyncStream.h">
+      <Filter>Value\Variant</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CypherVariantDef.h">
+      <Filter>Value\Variant</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\ICypherVariantHolderHandler.h">
+      <Filter>Value\Variant</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TBaseVariant.h">
+      <Filter>Value\Variant</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TCypherVariantAllocator.h">
+      <Filter>Value\Variant</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TVariantAllocator.h">
+      <Filter>Value\Variant</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TVariantStream.h">
+      <Filter>Value\Variant</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TVariantTraits.h">
+      <Filter>Value\Variant</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\ValueVariantDef.h">
+      <Filter>Value\Variant</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\VariantTypes.h">
+      <Filter>Value\Variant</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CValueTable.h">
+      <Filter>Value\Table</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CValueTableData.h">
+      <Filter>Value\Table</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CConstString.h">
+      <Filter>Value\ConstStr</Filter>
+    </ClInclude>
+    <ClInclude Include="Value\CConstStringPool.h">
+      <Filter>Value\ConstStr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\ByteOrder.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CIdMaker.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CommonDefs.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\CommonTest.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCoordinateContainer.h">
+      <Filter>Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CIDMapMallocObject.h">
+      <Filter>Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CMemData.h">
+      <Filter>Container</Filter>
+    </ClInclude>
+    <ClInclude Include="Container\CTestSuiteIDPtrMap.h">
+      <Filter>Container</Filter>
+    </ClInclude>
+    <ClInclude Include="Container\CTestSuiteSafeContainer.h">
+      <Filter>Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SafeIterator.h">
+      <Filter>Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TBinaryHeap.h">
+      <Filter>Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TIDMapAllocator.h">
+      <Filter>Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TIDPtrMap.h">
+      <Filter>Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TIDPtrMapIter.h">
+      <Filter>Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TIDStack.h">
+      <Filter>Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TList.h">
+      <Filter>Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TObjectBank.h">
+      <Filter>Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TSafeContainerBase.h">
+      <Filter>Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TSafeList.h">
+      <Filter>Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TSafeMap.h">
+      <Filter>Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TSafeSet.h">
+      <Filter>Container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSvnControl.h">
+      <Filter>Svn</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CBaseSampler.h">
+      <Filter>Sampler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CBezierSampler.h">
+      <Filter>Sampler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCircleSampler.h">
+      <Filter>Sampler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CHermiteSampler.h">
+      <Filter>Sampler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CLineSampler.h">
+      <Filter>Sampler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSimBezierSampler.h">
+      <Filter>Sampler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSamplerFactory.h">
+      <Filter>SamplerFactory</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="File\CDataFileMallocObject.cpp">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="File\CDifFile.cpp">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="File\CIniFile.cpp">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="File\COriFileOperate.cpp">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="File\CrcFileCheck.cpp">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="File\CSvsFile.cpp">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="File\CTestSuiteIniFile.cpp">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="File\ChunkFile\CCoder.cpp">
+      <Filter>File\ChuckFile</Filter>
+    </ClCompile>
+    <ClCompile Include="File\ChunkFile\CDataChunk.cpp">
+      <Filter>File\ChuckFile</Filter>
+    </ClCompile>
+    <ClCompile Include="File\ChunkFile\CFileFormatMgr.cpp">
+      <Filter>File\ChuckFile</Filter>
+    </ClCompile>
+    <ClCompile Include="File\CCurLangTxtTableFileImp.cpp">
+      <Filter>File\TableFile</Filter>
+    </ClCompile>
+    <ClCompile Include="File\CMultiLangTxtTableFile.cpp">
+      <Filter>File\TableFile</Filter>
+    </ClCompile>
+    <ClCompile Include="File\CMultiLangTxtTableFileBaseInstance.cpp">
+      <Filter>File\TableFile</Filter>
+    </ClCompile>
+    <ClCompile Include="File\CMultiLangTxtTableFileImp.cpp">
+      <Filter>File\TableFile</Filter>
+    </ClCompile>
+    <ClCompile Include="File\CRowLeafNodeDataMeta.cpp">
+      <Filter>File\TableFile</Filter>
+    </ClCompile>
+    <ClCompile Include="File\CRowTableFile.cpp">
+      <Filter>File\TableFile</Filter>
+    </ClCompile>
+    <ClCompile Include="File\CRowTableFileImp.cpp">
+      <Filter>File\TableFile</Filter>
+    </ClCompile>
+    <ClCompile Include="File\CRowTableFileKey.cpp">
+      <Filter>File\TableFile</Filter>
+    </ClCompile>
+    <ClCompile Include="File\CRowTableFileNode.cpp">
+      <Filter>File\TableFile</Filter>
+    </ClCompile>
+    <ClCompile Include="File\CTableFileValue.cpp">
+      <Filter>File\TableFile</Filter>
+    </ClCompile>
+    <ClCompile Include="File\CTestSuiteTableFile.cpp">
+      <Filter>File\TableFile</Filter>
+    </ClCompile>
+    <ClCompile Include="File\CTxtTableFile.cpp">
+      <Filter>File\TableFile</Filter>
+    </ClCompile>
+    <ClCompile Include="File\CTxtTableFileImp.cpp">
+      <Filter>File\TableFile</Filter>
+    </ClCompile>
+    <ClCompile Include="File\TableFileHelper.cpp">
+      <Filter>File\TableFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Tick\CTestSuiteTickMgr.cpp">
+      <Filter>Tick</Filter>
+    </ClCompile>
+    <ClCompile Include="Tick\CTick.cpp">
+      <Filter>Tick</Filter>
+    </ClCompile>
+    <ClCompile Include="Tick\CTickImp.cpp">
+      <Filter>Tick</Filter>
+    </ClCompile>
+    <ClCompile Include="Tick\CTickMallocObject.cpp">
+      <Filter>Tick</Filter>
+    </ClCompile>
+    <ClCompile Include="Tick\CTickMgr.cpp">
+      <Filter>Tick</Filter>
+    </ClCompile>
+    <ClCompile Include="Tick\CTickSlot.cpp">
+      <Filter>Tick</Filter>
+    </ClCompile>
+    <ClCompile Include="Package\CPackage.cpp">
+      <Filter>Package</Filter>
+    </ClCompile>
+    <ClCompile Include="Package\CPkgDirectory.cpp">
+      <Filter>Package</Filter>
+    </ClCompile>
+    <ClCompile Include="Package\CPkgFile.cpp">
+      <Filter>Package</Filter>
+    </ClCompile>
+    <ClCompile Include="Package\CReadThread.cpp">
+      <Filter>Package</Filter>
+    </ClCompile>
+    <ClCompile Include="Package\CTestSuitePkgFile.cpp">
+      <Filter>Package</Filter>
+    </ClCompile>
+    <ClCompile Include="Package\CWinPkgFile.cpp">
+      <Filter>Package</Filter>
+    </ClCompile>
+    <ClCompile Include="Package\PkgCommon.cpp">
+      <Filter>Package</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\CAxisAlignedBox.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\CColor4.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\CGraphPath.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\CHermiteCurve.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\CMath.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\CMathMallocObject.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\CMatrix.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\COrientedBoundingBox.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\CQuaternion.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\CTinyVector.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\CVector3.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\CVector4.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\longint.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\MathAlgorithm.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\ModelHelper.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\TGraph.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Pattern\CTestSuitePatternCOR.cpp">
+      <Filter>Pattern</Filter>
+    </ClCompile>
+    <ClCompile Include="Pattern\CTestSuitePatternDlg.cpp">
+      <Filter>Pattern</Filter>
+    </ClCompile>
+    <ClCompile Include="Pattern\CTrMsgBufferSwapper.cpp">
+      <Filter>Pattern</Filter>
+    </ClCompile>
+    <ClCompile Include="Pattern\CTrMsgMallocObject.cpp">
+      <Filter>Pattern</Filter>
+    </ClCompile>
+    <ClCompile Include="Pattern\CTrThreadMsgBuffer.cpp">
+      <Filter>Pattern</Filter>
+    </ClCompile>
+    <ClCompile Include="Pattern\PatternCOR.cpp">
+      <Filter>Pattern</Filter>
+    </ClCompile>
+    <ClCompile Include="Pattern\PatternMQ.cpp">
+      <Filter>Pattern</Filter>
+    </ClCompile>
+    <ClCompile Include="Pattern\PtRefProxy.cpp">
+      <Filter>Pattern</Filter>
+    </ClCompile>
+    <ClCompile Include="Console\CConsole.cpp">
+      <Filter>Console</Filter>
+    </ClCompile>
+    <ClCompile Include="Log\CLog.cpp">
+      <Filter>Log</Filter>
+    </ClCompile>
+    <ClCompile Include="Log\CLogJob.cpp">
+      <Filter>Log</Filter>
+    </ClCompile>
+    <ClCompile Include="Log\CLogMallocObject.cpp">
+      <Filter>Log</Filter>
+    </ClCompile>
+    <ClCompile Include="Log\CLogThreadMgr.cpp">
+      <Filter>Log</Filter>
+    </ClCompile>
+    <ClCompile Include="Log\CSyncLog.cpp">
+      <Filter>Log</Filter>
+    </ClCompile>
+    <ClCompile Include="Log\LogHelper.cpp">
+      <Filter>Log</Filter>
+    </ClCompile>
+    <ClCompile Include="Random\TRandomMersenne.cpp">
+      <Filter>Random</Filter>
+    </ClCompile>
+    <ClCompile Include="Random\uniform.cpp">
+      <Filter>Random</Filter>
+    </ClCompile>
+    <ClCompile Include="String\StringHelper.cpp">
+      <Filter>String</Filter>
+    </ClCompile>
+    <ClCompile Include="Script\CallBackHelper.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="Path\CPathMgr.cpp">
+      <Filter>Path</Filter>
+    </ClCompile>
+    <ClCompile Include="Trace\CCpuCheckPoint.cpp">
+      <Filter>Trace</Filter>
+    </ClCompile>
+    <ClCompile Include="Trace\CCpuUsage.cpp">
+      <Filter>Trace</Filter>
+    </ClCompile>
+    <ClCompile Include="Trace\DebugHelper.cpp">
+      <Filter>Trace</Filter>
+    </ClCompile>
+    <ClCompile Include="Trace\TraceHelper.cpp">
+      <Filter>Trace</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeCvs\CMd5Digester.cpp">
+      <Filter>CodeCvs</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeCvs\CodeCvs.cpp">
+      <Filter>CodeCvs</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeCvs\CompressBZIP2.cpp">
+      <Filter>CodeCvs</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeCvs\CompressGZIP.cpp">
+      <Filter>CodeCvs</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeCvs\CompressLZO.cpp">
+      <Filter>CodeCvs</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeCvs\CrcAlgorithm.cpp">
+      <Filter>CodeCvs</Filter>
+    </ClCompile>
+    <ClCompile Include="CodeCvs\minilzo.c">
+      <Filter>CodeCvs</Filter>
+    </ClCompile>
+    <ClCompile Include="Value\CValueMallocObject.cpp">
+      <Filter>Value</Filter>
+    </ClCompile>
+    <ClCompile Include="Value\CCypherVariant.cpp">
+      <Filter>Value\Variant</Filter>
+    </ClCompile>
+    <ClCompile Include="Value\CCypherVariantCodeTable.cpp">
+      <Filter>Value\Variant</Filter>
+    </ClCompile>
+    <ClCompile Include="Value\CCypherVariantHolder.cpp">
+      <Filter>Value\Variant</Filter>
+    </ClCompile>
+    <ClCompile Include="value\CCypherVariantMallocObject.cpp">
+      <Filter>Value\Variant</Filter>
+    </ClCompile>
+    <ClCompile Include="Value\CTestSuiteVariant.cpp">
+      <Filter>Value\Variant</Filter>
+    </ClCompile>
+    <ClCompile Include="Value\CVariant.cpp">
+      <Filter>Value\Variant</Filter>
+    </ClCompile>
+    <ClCompile Include="Value\CVariantMallocObject.cpp">
+      <Filter>Value\Variant</Filter>
+    </ClCompile>
+    <ClCompile Include="Value\CValueTable.cpp">
+      <Filter>Value\Table</Filter>
+    </ClCompile>
+    <ClCompile Include="Value\CValueTableData.cpp">
+      <Filter>Value\Table</Filter>
+    </ClCompile>
+    <ClCompile Include="Value\CConstString.cpp">
+      <Filter>Value\ConstStr</Filter>
+    </ClCompile>
+    <ClCompile Include="Value\CConstStringPool.cpp">
+      <Filter>Value\ConstStr</Filter>
+    </ClCompile>
+    <ClCompile Include="Misc\Common.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="Container\CIDMapMallocObject.cpp">
+      <Filter>Container</Filter>
+    </ClCompile>
+    <ClCompile Include="Container\CTestSuiteIDPtrMap.cpp">
+      <Filter>Container</Filter>
+    </ClCompile>
+    <ClCompile Include="Container\CTestSuiteSafeContainer.cpp">
+      <Filter>Container</Filter>
+    </ClCompile>
+    <ClCompile Include="Svn\CSvnControl.cpp">
+      <Filter>Svn</Filter>
+    </ClCompile>
+    <ClCompile Include="Sampler\CBaseSampler.cpp">
+      <Filter>Sampler</Filter>
+    </ClCompile>
+    <ClCompile Include="Sampler\CBezierSampler.cpp">
+      <Filter>Sampler</Filter>
+    </ClCompile>
+    <ClCompile Include="Sampler\CCircleSampler.cpp">
+      <Filter>Sampler</Filter>
+    </ClCompile>
+    <ClCompile Include="Sampler\CHermiteSampler.cpp">
+      <Filter>Sampler</Filter>
+    </ClCompile>
+    <ClCompile Include="Sampler\CLineSampler.cpp">
+      <Filter>Sampler</Filter>
+    </ClCompile>
+    <ClCompile Include="Sampler\CSimBezierSampler.cpp">
+      <Filter>Sampler</Filter>
+    </ClCompile>
+    <ClCompile Include="SamplerFactory\CSamplerFactory.cpp">
+      <Filter>SamplerFactory</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="File\TBaseTableFile.inl">
+      <Filter>File\TableFile</Filter>
+    </None>
+    <None Include="File\TBaseTableFileImp.inl">
+      <Filter>File\TableFile</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\CColor.inl">
+      <Filter>Math</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\CColor4.inl">
+      <Filter>Math</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\CVector4.inl">
+      <Filter>Math</Filter>
+    </None>
+    <None Include="Math\TGraph.inl">
+      <Filter>Math</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\TPackedPos.inl">
+      <Filter>Math</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\PatternRef.inl">
+      <Filter>Pattern</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\PtRefProxy.inl">
+      <Filter>Pattern</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\TThreadMsgBuffer.inl">
+      <Filter>Pattern</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\TTrThreadMsgBuffer.inl">
+      <Filter>Pattern</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\CCypherVariant.inl">
+      <Filter>Value\Variant</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\CCypherVariantHolder.inl">
+      <Filter>Value\Variant</Filter>
+    </None>
+    <None Include="Value\TBaseVariant.inl">
+      <Filter>Value\Variant</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\TVariantStream.inl">
+      <Filter>Value\Variant</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\CMemData.inl">
+      <Filter>Container</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\SafeIterator.inl">
+      <Filter>Container</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\TBinaryHeap.inl">
+      <Filter>Container</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\TIDPtrMap.inl">
+      <Filter>Container</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\TIDPtrMapIter.inl">
+      <Filter>Container</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\TIDStack.inl">
+      <Filter>Container</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\TObjectBank.inl">
+      <Filter>Container</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\TSafeContainerBase.inl">
+      <Filter>Container</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\TSafeList.inl">
+      <Filter>Container</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\TSafeMap.inl">
+      <Filter>Container</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\TSafeSet.inl">
+      <Filter>Container</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,11 @@
+±‡∫≈: 553043245
+–≈œ¢: SetRoleName
+∂—’ª: 
+#0LogErr=[C]
+#1SetRoleName@game/gas/lua/framework/main_frame/ConnServer.lua:9
+#2callback@game/gas/lua/entrance/login/LoginServer.lua:196
+#3(trunk)@engine/lua/server/OnHandleDbCallback.lua:4
+#4Run=[C]
+#5Run@engine/lua/server/CoreServer.lua:27
+#6(trunk):2
+

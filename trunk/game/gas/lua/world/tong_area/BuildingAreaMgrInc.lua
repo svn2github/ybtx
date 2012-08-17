@@ -1,0 +1,1 @@
+CBuildingAreaMgr = class()

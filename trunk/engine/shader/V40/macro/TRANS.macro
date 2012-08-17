@@ -1,0 +1,3 @@
+	float dis = length(output.pos.xy / output.pos.w );\
+	dis = pow(dis * 2.0, 2);\
+	output.Diffuse.a = saturate(dis);

@@ -1,0 +1,6 @@
+<directory>
+	<!-- ³ÌÐò½Å±¾Â·¾¶-->
+	<script_path>
+		<path>game/tools/NewSceneEditor/lua/?.lua</path>
+	</script_path>
+</directory> 

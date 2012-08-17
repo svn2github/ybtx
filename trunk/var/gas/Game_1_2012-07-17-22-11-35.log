@@ -1,0 +1,26 @@
+199899
+tbl_log_player_taker	175	1
+tbl_log_event_type	175	59
+tbl_log_level	175	2
+tbl_log_experience	175	1	28	641	8412098bc115841d743e13eba183eb78
+tbl_log_item_static	23	3	Ê÷ÎÝ½¬¹û	1	44c8eed7e1c8e1e15048feb21c32e1e0
+tbl_log_player_taker	176	1
+tbl_log_event_type	176	22
+tbl_log_item_taker	176	23
+tbl_log_player_taker	177	1
+tbl_log_event_type	177	104
+tbl_log_soul	177	1	42	340	70cfbc65518b5263d2c59b96b6a8accc
+tbl_log_service_online_num	178	1	1
+tbl_log_service_scene_online_num	178	1	1	ÉñÊ¥½ÌÍ¢Ê÷ÎÝ¾Æ°É	1
+tbl_log_item_static	24	3	Ê÷ÎÝ½¬¹û	1	52b221116c229608717abda1c7ff5975
+tbl_log_player_taker	179	1
+tbl_log_event_type	179	22
+tbl_log_item_taker	179	24
+tbl_log_item_static	25	3	Ê÷ÎÝ½¬¹û	1	339b10688fc6ea656b9538f5d688a930
+tbl_log_player_taker	180	1
+tbl_log_event_type	180	22
+tbl_log_item_taker	180	25
+tbl_log_player_giver	181	1
+tbl_log_event_type	181	9
+tbl_log_item_static	11	3	Ê÷ÎÝ½¬¹û	1	
+tbl_log_item_del	181	11	9cd0dcb9c23bde45a6a2be179004237b

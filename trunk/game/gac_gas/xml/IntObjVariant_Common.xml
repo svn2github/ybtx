@@ -1,0 +1,39 @@
+<root>
+	
+	<SyncPart>
+		<staticroot>
+		</staticroot>
+		<agileroot>
+			<Attribute1>
+				<BottomSize/>
+			</Attribute1>
+			<Actor>
+				<DirForce/>
+				<ActionDir/>
+			</Actor>
+		</agileroot>
+	</SyncPart>
+	
+	<ViewPart>	
+		<staticroot>
+			<Attribute>
+				<EntityID/>
+				<Type/>
+				<CharName/>
+				<ModelName/>
+				<CanUseState/>
+				<ActionNum/>
+				<DropOwnerId/>
+				<DropTime/>
+				<BelongToTeam/>
+				<ResourceCount/>
+				<DuelWinCount/>
+				<CreatorName/>
+				<BornAction/>
+			</Attribute>
+		</staticroot>		
+		<agileroot>		
+		</agileroot>		
+	</ViewPart>
+	
+</root>

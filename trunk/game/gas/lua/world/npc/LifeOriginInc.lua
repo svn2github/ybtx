@@ -1,0 +1,1 @@
+LifeOrigin = class()

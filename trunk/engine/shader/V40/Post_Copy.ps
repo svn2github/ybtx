@@ -1,0 +1,6 @@
+sampler source0 : register(s0);
+
+float4 Copy(float2 t : TEXCOORD0) : COLOR
+{
+    return tex2D(source0, t);
+}

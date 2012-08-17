@@ -1,0 +1,10 @@
+199899
+tbl_log_item	162	20
+tbl_log_equip_puton	162	5
+tbl_log_player	162	1
+tbl_log_item_static	21	16	新充能晶石（神圣）	1	c87e8cb5f38ef2551f5e342a27f18de2
+tbl_log_player	163	1
+tbl_log_item_binding	163	21	2
+tbl_log_player_taker	164	1
+tbl_log_event_type	164	43
+tbl_log_item_taker	164	21

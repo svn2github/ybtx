@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E6159D22-6907-4CA8-9B1B-2FE319150653}</ProjectGuid>
+    <RootNamespace>Scene</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../../bin/$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../../bin/$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\include;..\..\sdk\inc;..\..\..\implib\inc;..\CoreCommon;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/Oy- %(AdditionalOptions)</AdditionalOptions>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\..\include;..\..\sdk\inc;..\..\..\implib\inc;..\CoreCommon;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CAsynFunParamsMgr.cpp" />
+    <ClCompile Include="CCameraConfig.cpp" />
+    <ClCompile Include="CSceneBase.cpp" />
+    <ClCompile Include="CSceneDebugHelper.cpp" />
+    <ClCompile Include="CSceneMallocObject.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="CEnvMapWaterEffect.cpp" />
+    <ClCompile Include="CTexAniWaterEffect.cpp" />
+    <ClCompile Include="CWaterEffect.cpp" />
+    <ClCompile Include="CWaterMgr.cpp" />
+    <ClCompile Include="CWaterRegion.cpp" />
+    <ClCompile Include="CWaterRegionMesh.cpp" />
+    <ClCompile Include="CWaterSurface.cpp" />
+    <ClCompile Include="CWaterCoder.cpp" />
+    <ClCompile Include="CTerrain.cpp" />
+    <ClCompile Include="CTerrainMgr.cpp" />
+    <ClCompile Include="CTerrainCoder.cpp" />
+    <ClCompile Include="CSkyBox.cpp" />
+    <ClCompile Include="CSkyMgr.cpp" />
+    <ClCompile Include="CLogicData.cpp" />
+    <ClCompile Include="CLogicDataMgr.cpp" />
+    <ClCompile Include="CTreeScene.cpp" />
+    <ClCompile Include="CQuadScene.cpp" />
+    <ClCompile Include="CCameraController.cpp" />
+    <ClCompile Include="CCameraPath.cpp" />
+    <ClCompile Include="CFPSCameraCtrller.cpp" />
+    <ClCompile Include="CFreeCameraCtrller.cpp" />
+    <ClCompile Include="CRTSCameraCtrller.cpp" />
+    <ClCompile Include="CTPSCameraCtrller.cpp" />
+    <ClCompile Include="CModelInst.cpp" />
+    <ClCompile Include="CSceneConfig.cpp" />
+    <ClCompile Include="CBaseScene.cpp" />
+    <ClCompile Include="CElementManager.cpp" />
+    <ClCompile Include="CRegion.cpp" />
+    <ClCompile Include="CEffectAsynFun.cpp" />
+    <ClCompile Include="CEffectPlayer.cpp" />
+    <ClCompile Include="CGuiHandler.cpp" />
+    <ClCompile Include="CLapseDeleteQueue.cpp" />
+    <ClCompile Include="CRenderObject.cpp" />
+    <ClCompile Include="CRenderObjectAsynFun.cpp" />
+    <ClCompile Include="CRenderScene.cpp" />
+    <ClCompile Include="CRenderSystem.cpp" />
+    <ClCompile Include="CSceneLoadProcess.cpp" />
+    <ClCompile Include="CWater.cpp" />
+    <ClCompile Include="CObjectDialog.cpp" />
+    <ClCompile Include="CRenderDialog.cpp" />
+    <ClCompile Include="CRenderAudio.cpp" />
+    <ClCompile Include="CRenderLight.cpp" />
+    <ClCompile Include="CRenderModel.cpp" />
+    <ClCompile Include="CClientSceneQuery.cpp" />
+    <ClCompile Include="CRenderRegionEffect.cpp" />
+    <ClCompile Include="CDataScene.cpp" />
+    <ClCompile Include="CBakedColorData.cpp" />
+    <ClCompile Include="CMetaRegion.cpp" />
+    <ClCompile Include="CMetaStaticData.cpp" />
+    <ClCompile Include="CShadowedGrids.cpp" />
+    <ClCompile Include="CLogicDataCoder.cpp" />
+    <ClCompile Include="CSceneManagerClient.cpp" />
+    <ClCompile Include="CTerrainModelCoder.cpp" />
+    <ClCompile Include="CSceneAmpCoder.cpp" />
+    <ClCompile Include="CSceneArgCoder.cpp" />
+    <ClCompile Include="CSceneArsCoder.cpp" />
+    <ClCompile Include="CSceneClientCoder.cpp" />
+    <ClCompile Include="CDebugText.cpp" />
+    <ClCompile Include="CRenderDebugFun.cpp" />
+    <ClCompile Include="CSceneBlockDebug.cpp" />
+    <ClCompile Include="CSceneBoxDeubg.cpp" />
+    <ClCompile Include="CSceneGridDeubg.cpp" />
+    <ClCompile Include="CFontCfg.cpp" />
+    <ClCompile Include="CLangCfg.cpp" />
+    <ClCompile Include="CEffectLoader.cpp" />
+    <ClCompile Include="CMetaGridMgr.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\sdk\inc\CAsynFunParamsMgr.h" />
+    <ClInclude Include="..\..\sdk\inc\CCameraConfig.h" />
+    <ClInclude Include="..\..\sdk\inc\CSceneBase.h" />
+    <ClInclude Include="..\..\sdk\inc\CSceneClassDefine.h" />
+    <ClInclude Include="..\..\sdk\inc\CSceneCommon.h" />
+    <ClInclude Include="..\..\sdk\inc\CSceneDebugHelper.h" />
+    <ClInclude Include="..\..\sdk\inc\CSceneMallocObject.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="CEnvMapWaterEffect.h" />
+    <ClInclude Include="CTexAniWaterEffect.h" />
+    <ClInclude Include="..\..\sdk\inc\CWaterEffect.h" />
+    <ClInclude Include="..\..\sdk\inc\CWaterMgr.h" />
+    <ClInclude Include="..\..\sdk\inc\CWaterRegion.h" />
+    <ClInclude Include="..\..\sdk\inc\CWaterRegionMesh.h" />
+    <ClInclude Include="..\..\sdk\inc\CWaterSurface.h" />
+    <ClInclude Include="CWaterCoder.h" />
+    <ClInclude Include="..\..\sdk\inc\CTerrain.h" />
+    <ClInclude Include="..\..\sdk\inc\CTerrainMgr.h" />
+    <ClInclude Include="CTerrainCoder.h" />
+    <ClInclude Include="..\..\sdk\inc\CSkyBox.h" />
+    <ClInclude Include="..\..\sdk\inc\CSkyMgr.h" />
+    <ClInclude Include="..\..\sdk\inc\CLogicData.h" />
+    <ClInclude Include="..\..\sdk\inc\CLogicDataMgr.h" />
+    <ClInclude Include="..\..\sdk\inc\CTreeScene.h" />
+    <ClInclude Include="..\..\sdk\inc\CQuadScene.h" />
+    <ClInclude Include="..\..\sdk\inc\CCameraController.h" />
+    <ClInclude Include="..\..\sdk\inc\CCameraPath.h" />
+    <ClInclude Include="..\..\sdk\inc\CFPSCameraCtrller.h" />
+    <ClInclude Include="..\..\sdk\inc\CFreeCameraCtrller.h" />
+    <ClInclude Include="..\..\sdk\inc\CRTSCameraCtrller.h" />
+    <ClInclude Include="..\..\sdk\inc\CTPSCameraCtrller.h" />
+    <ClInclude Include="..\..\sdk\inc\CModelInst.h" />
+    <ClInclude Include="..\..\sdk\inc\CSceneConfig.h" />
+    <ClInclude Include="..\..\sdk\inc\CBaseScene.h" />
+    <ClInclude Include="..\..\sdk\inc\CElementManager.h" />
+    <ClInclude Include="CRegion.h" />
+    <ClInclude Include="..\..\sdk\inc\CSceneQuery.h" />
+    <ClInclude Include="CEffectAsynFun.h" />
+    <ClInclude Include="..\..\sdk\inc\CEffectPlayer.h" />
+    <ClInclude Include="..\..\sdk\inc\CGuiHandler.h" />
+    <ClInclude Include="..\..\sdk\inc\CLapseDeleteQueue.h" />
+    <ClInclude Include="..\..\sdk\inc\CRenderObject.h" />
+    <ClInclude Include="CRenderObjectAsynFun.h" />
+    <ClInclude Include="CRenderRegion.h" />
+    <ClInclude Include="..\..\sdk\inc\CRenderScene.h" />
+    <ClInclude Include="..\..\sdk\inc\CRenderSystem.h" />
+    <ClInclude Include="CSceneLoadProcess.h" />
+    <ClInclude Include="CWater.h" />
+    <ClInclude Include="..\..\sdk\inc\CObjectDialog.h" />
+    <ClInclude Include="..\..\sdk\inc\CRenderDialog.h" />
+    <ClInclude Include="CRenderAudio.h" />
+    <ClInclude Include="CRenderLight.h" />
+    <ClInclude Include="..\..\sdk\inc\CRenderModel.h" />
+    <ClInclude Include="CClientSceneQuery.h" />
+    <ClInclude Include="CRenderRegionEffect.h" />
+    <ClInclude Include="..\..\sdk\inc\CDataScene.h" />
+    <ClInclude Include="CBakedColorData.h" />
+    <ClInclude Include="CMetaGridMgr.h" />
+    <ClInclude Include="CMetaRegion.h" />
+    <ClInclude Include="CMetaStaticData.h" />
+    <ClInclude Include="CShadowedGrids.h" />
+    <ClInclude Include="..\..\sdk\inc\RegionLightParam.h" />
+    <ClInclude Include="CLogicDataCoder.h" />
+    <ClInclude Include="..\..\sdk\inc\CSceneManagerClient.h" />
+    <ClInclude Include="CTerrainModelCoder.h" />
+    <ClInclude Include="CSceneAmpCoder.h" />
+    <ClInclude Include="CSceneArgCoder.h" />
+    <ClInclude Include="CSceneArsCoder.h" />
+    <ClInclude Include="CSceneClientCoder.h" />
+    <ClInclude Include="..\..\sdk\inc\CDebugText.h" />
+    <ClInclude Include="..\..\sdk\inc\CRenderDebugFun.h" />
+    <ClInclude Include="..\..\sdk\inc\CSceneBlockDebug.h" />
+    <ClInclude Include="..\..\sdk\inc\CSceneBoxDeubg.h" />
+    <ClInclude Include="..\..\sdk\inc\CSceneGridDeubg.h" />
+    <ClInclude Include="..\..\sdk\inc\CFontCfg.h" />
+    <ClInclude Include="..\..\sdk\inc\CLangCfg.h" />
+    <ClInclude Include="..\..\sdk\inc\CEffectLoader.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

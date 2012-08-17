@@ -1,0 +1,25 @@
+<directory>
+	
+	<default>
+		<!-- 可以设定相对路径，以游戏的根目录作为参照目录 -->
+		
+		<!-- 美术资源路径 -->
+		<res_path>../resbin</res_path>
+		
+		<!-- 策划配置文档路径 -->
+		<setting_path>../cfg/data/tgt</setting_path>
+	
+		<!-- 脚本运行路径 -->
+		<script_path>./</script_path>
+		
+		<!--XML 源代码路径 -->
+		<xml_path>./</xml_path>
+	
+		<!--GUI 资源路径 -->
+		<gui_path>../cfg/gui</gui_path>
+	
+		<!--语言包路径-->
+		<lang_path>../cfg/lang</lang_path>
+	</default>
+
+</directory> 

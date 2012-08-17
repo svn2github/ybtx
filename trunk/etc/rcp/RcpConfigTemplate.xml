@@ -1,0 +1,19 @@
+<config>
+
+	<!-- 基础帧率的周期，单位为毫秒-->
+	<base_tick_cyc>33</base_tick_cyc>
+	
+	<console_config>
+		<!--是否显示控制台-->
+		<show>1</show>
+		<title>rcp</title>
+		<!--启动后是否自动最小化控制台窗口,仅在windows系统下有效-->
+		<auto_minimize>1</auto_minimize>
+	</console_config>
+
+	
+	<!-- 选择开启Debuger或者Profiler,两者只能开启一个 -->	
+	<enable_script_helper>debuger</enable_script_helper>
+	<!-- <enable_script_helper>profiler</enable_script_helper>  -->
+
+</config>

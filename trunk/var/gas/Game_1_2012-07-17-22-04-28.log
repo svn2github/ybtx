@@ -1,0 +1,27 @@
+199899
+tbl_log_quest_finish	141	美人与酒(神圣)
+tbl_log_player_taker	141	1
+tbl_log_event_type	141	42
+tbl_log_level	141	1
+tbl_log_money	141	1	50	2	50	tbl_log_money
+tbl_log_level	141	1
+tbl_log_experience	141	1	253	253	tbl_log_experience
+tbl_log_soul	141	1	0	0	tbl_log_soul
+tbl_log_char_fighting_evaluation	142	1	5.0999999427795
+tbl_log_level	142	1
+tbl_log_player_taker	143	1
+tbl_log_event_type	143	59
+tbl_log_level	143	1
+tbl_log_experience	143	1	26	279	366739bf84137c7a73d45d05c46c5ead
+tbl_log_item_static	11	3	树屋浆果	1	9d34a3c3891633f94cf8cb6cf902e7ed
+tbl_log_player_taker	144	1
+tbl_log_event_type	144	22
+tbl_log_item_taker	144	11
+tbl_log_item_static	12	3	树屋浆果	1	08d835b9ca3e2d1ed6e430205505f427
+tbl_log_player_taker	145	1
+tbl_log_event_type	145	22
+tbl_log_item_taker	145	12
+tbl_log_item_static	13	3	树屋浆果	1	7308128c257b53be6ef134a7a31b3768
+tbl_log_player_taker	146	1
+tbl_log_event_type	146	22
+tbl_log_item_taker	146	13

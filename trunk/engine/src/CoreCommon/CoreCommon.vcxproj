@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0C39D001-BE9A-43B7-A06F-25B2B4159553}</ProjectGuid>
+    <RootNamespace>CoreCommon</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../../bin/$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../../bin/$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\..\include;..\..\sdk\inc;..\..\..\implib\inc;..\..\..\implib\inc\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)CoreCommon.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/Oy- %(AdditionalOptions)</AdditionalOptions>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\..\include;..\..\sdk\inc;..\..\..\implib\inc;..\..\..\implib\inc\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_LIB;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)CoreCommon.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="BaseGac2GasPrtl.h" />
+    <ClInclude Include="..\..\sdk\inc\CMsgMallocObject.h" />
+    <ClInclude Include="PrtlGac2GasGenericDcl.h" />
+    <ClInclude Include="PrtlGac2GasGenericDef.h" />
+    <ClInclude Include="PrtlGac2GasObjectDcl.h" />
+    <ClInclude Include="PrtlGac2GasObjectDef.h" />
+    <ClInclude Include="PrtlGac2GasSegment.h" />
+    <ClInclude Include="PrtlGas2GacGenericDcl.h" />
+    <ClInclude Include="PrtlGas2GacGenericDef.h" />
+    <ClInclude Include="PrtlGas2GacObjectDcl.h" />
+    <ClInclude Include="PrtlGas2GacObjectDef.h" />
+    <ClInclude Include="PrtlGas2GacSegment.h" />
+    <ClInclude Include="..\..\sdk\inc\TBasePrtlMsg.h" />
+    <ClInclude Include="..\..\sdk\inc\TMsgAllocator.h" />
+    <ClInclude Include="..\..\sdk\inc\TMsgDispatcher.h" />
+    <ClInclude Include="..\..\sdk\inc\TMsgHandler.h" />
+    <ClInclude Include="..\..\sdk\inc\TMsgHandlerContainer.h" />
+    <ClInclude Include="BarrierManager.h" />
+    <ClInclude Include="CAStarData.h" />
+    <ClInclude Include="CAStarDataMgr.h" />
+    <ClInclude Include="CDumpEndDrawLine.h" />
+    <ClInclude Include="..\..\sdk\inc\CFindPathAllocator.h" />
+    <ClInclude Include="..\..\sdk\inc\CFindPathMallocObject.h" />
+    <ClInclude Include="CLinkRegionMgr.h" />
+    <ClInclude Include="CLinkRegionNode.h" />
+    <ClInclude Include="CNode.h" />
+    <ClInclude Include="CPath.h" />
+    <ClInclude Include="CPathDirect.h" />
+    <ClInclude Include="CPathDirectNode.h" />
+    <ClInclude Include="CPathFinding.h" />
+    <ClInclude Include="DrawLine.h" />
+    <ClInclude Include="..\..\sdk\inc\FindPathDefs.h" />
+    <ClInclude Include="..\..\sdk\inc\IPathFinding.h" />
+    <ClInclude Include="MapInfoManager.h" />
+    <ClInclude Include="..\..\sdk\inc\CAsyncContext.h" />
+    <ClInclude Include="..\..\sdk\inc\CoreCommon.h" />
+    <ClInclude Include="..\..\sdk\inc\CoreCommonDef.h" />
+    <ClInclude Include="..\..\include\CoreCommonTest.h" />
+    <ClInclude Include="..\..\sdk\inc\ISend.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="..\..\sdk\inc\TApp.h" />
+    <ClInclude Include="..\..\sdk\inc\TAppConfig.h" />
+    <ClInclude Include="..\..\sdk\inc\TAppHandler.h" />
+    <ClInclude Include="..\..\sdk\inc\TAppWithConsole.h" />
+    <ClInclude Include="..\..\sdk\inc\TCoreApp.h" />
+    <ClInclude Include="..\..\sdk\inc\TExpSafeApp.h" />
+    <ClInclude Include="..\..\sdk\inc\TPart.h" />
+    <ClInclude Include="..\..\sdk\inc\TWhole.h" />
+    <ClInclude Include="..\..\sdk\inc\CCoreSceneMallocObject.h" />
+    <ClInclude Include="CDynamicBarrierInfo.h" />
+    <ClInclude Include="IDynamicBarrierInfo.h" />
+    <ClInclude Include="..\..\sdk\inc\TCoreScene.h" />
+    <ClInclude Include="..\..\sdk\inc\TCoreSceneAllocator.h" />
+    <ClInclude Include="..\..\sdk\inc\TCoreSceneMgr.h" />
+    <ClInclude Include="..\..\sdk\inc\CConnMallocObject.h" />
+    <ClInclude Include="..\..\sdk\inc\CExpCounter.h" />
+    <ClInclude Include="CSlowSigner.h" />
+    <ClInclude Include="..\..\sdk\inc\TClientMsgRegister.h" />
+    <ClInclude Include="..\..\sdk\inc\TConnAllocator.h" />
+    <ClInclude Include="..\..\sdk\inc\TConnection.h" />
+    <ClInclude Include="..\..\sdk\inc\TConnectionMgr.h" />
+    <ClInclude Include="..\..\sdk\inc\TConnMgrHandler.h" />
+    <ClInclude Include="..\..\sdk\inc\CCoreObjMallocObject.h" />
+    <ClInclude Include="CLogCoreObject.h" />
+    <ClInclude Include="..\..\sdk\inc\CoreObjectCommon.h" />
+    <ClInclude Include="..\..\sdk\inc\CoreObjectDefs.h" />
+    <ClInclude Include="MoveCallArgs.h" />
+    <ClInclude Include="TBindObject.h" />
+    <ClInclude Include="..\..\sdk\inc\TCoreObjAllocator.h" />
+    <ClInclude Include="..\..\sdk\inc\TCoreObject.h" />
+    <ClInclude Include="TObjMoveState.h" />
+    <ClInclude Include="TBaseCOEvent.h" />
+    <ClInclude Include="TCOEventMoveBegan.h" />
+    <ClInclude Include="TCOEventMoveEnded.h" />
+    <ClInclude Include="TCOEventMovePathChanged.h" />
+    <ClInclude Include="TCOEventPosChanged.h" />
+    <ClInclude Include="CCoreMsg.h" />
+    <ClInclude Include="CCoreMsgMallocObject.h" />
+    <ClInclude Include="CCoreMsgMgr.h" />
+    <ClInclude Include="CCoreSigMsgMgr.h" />
+    <ClInclude Include="CCoreThreadMsg.h" />
+    <ClInclude Include="TCoreMsgAllocator.h" />
+    <ClInclude Include="..\..\sdk\inc\CAppEvent.h" />
+    <ClInclude Include="..\..\sdk\inc\CAppThreadEvent.h" />
+    <ClInclude Include="CCoreMsgAppEvent.h" />
+    <ClInclude Include="CCoreThreadMsgAppEvent.h" />
+    <ClInclude Include="..\..\sdk\inc\TState.h" />
+    <ClInclude Include="..\..\sdk\inc\TStateEvent.h" />
+    <ClInclude Include="..\..\sdk\inc\TStateMachine.h" />
+    <ClInclude Include="..\..\sdk\inc\TStateMachineTraits.h" />
+    <ClInclude Include="..\..\sdk\inc\TStateTransitItem.h" />
+    <ClInclude Include="..\..\sdk\inc\TStateTransitTable.h" />
+    <ClInclude Include="..\..\sdk\inc\CFindPathMgrTemplate.h" />
+    <ClInclude Include="..\..\sdk\inc\CMetaSceneMallocObject.h" />
+    <ClInclude Include="CPathTransformer.h" />
+    <ClInclude Include="..\..\sdk\inc\CPixelPath.h" />
+    <ClInclude Include="..\..\sdk\inc\TMetaScene.h" />
+    <ClInclude Include="..\..\sdk\inc\TMetaSceneAllocator.h" />
+    <ClInclude Include="..\..\sdk\inc\TMetaSceneMgr.h" />
+    <ClInclude Include="..\..\sdk\inc\CDistortedTick.h" />
+    <ClInclude Include="..\..\sdk\inc\CDistortedTimeAllocator.h" />
+    <ClInclude Include="..\..\sdk\inc\CDistortedTimeMallocObject.h" />
+    <ClInclude Include="CDistortedTimeObj.h" />
+    <ClInclude Include="CDistortedTimeScene.h" />
+    <ClInclude Include="CRenderSlot.h" />
+    <ClInclude Include="CTestSuiteRenderSlot.h" />
+    <ClInclude Include="..\..\sdk\inc\IDistortedTime.h" />
+    <ClInclude Include="..\..\sdk\inc\TDistortedTickHandler.h" />
+    <ClInclude Include="TTimeSystem.h" />
+    <ClInclude Include="..\..\include\CFileWatcherAdapter.h" />
+    <ClInclude Include="..\..\sdk\inc\CFileWatcherData.h" />
+    <ClInclude Include="..\..\include\CFileWatcherThread.h" />
+    <ClInclude Include="CObjVarDef.h" />
+    <ClInclude Include="..\..\sdk\inc\CObjVarDefCfg.h" />
+    <ClInclude Include="TRootVariantPoolMgr.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CMsgMallocObject.cpp" />
+    <ClCompile Include="BarrierManager.cpp" />
+    <ClCompile Include="CAStarData.cpp" />
+    <ClCompile Include="CAStarDataMgr.cpp" />
+    <ClCompile Include="CFindPathMallocObject.cpp" />
+    <ClCompile Include="CLinkRegionMgr.cpp" />
+    <ClCompile Include="CLinkRegionNode.cpp" />
+    <ClCompile Include="CNode.cpp" />
+    <ClCompile Include="CPath.cpp" />
+    <ClCompile Include="CPathDirect.cpp" />
+    <ClCompile Include="CPathDirectNode.cpp" />
+    <ClCompile Include="CPathFinding.cpp" />
+    <ClCompile Include="DrawLine.cpp" />
+    <ClCompile Include="MapInfoManager.cpp" />
+    <ClCompile Include="CAsyncContext.cpp" />
+    <ClCompile Include="CoreCommon.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="CCoreSceneMallocObject.cpp" />
+    <ClCompile Include="CDynamicBarrierInfo.cpp" />
+    <ClCompile Include="CConnMallocObject.cpp" />
+    <ClCompile Include="CExpCounter.cpp" />
+    <ClCompile Include="CSlowSigner.cpp" />
+    <ClCompile Include="CLogCoreObject.cpp" />
+    <ClCompile Include="CoreObjectCommon.cpp" />
+    <ClCompile Include="CCoreMsg.cpp" />
+    <ClCompile Include="CCoreMsgMallocObject.cpp" />
+    <ClCompile Include="CCoreMsgMgr.cpp" />
+    <ClCompile Include="CCoreSigMsgMgr.cpp" />
+    <ClCompile Include="CCoreThreadMsg.cpp" />
+    <ClCompile Include="CAppEvent.cpp" />
+    <ClCompile Include="CAppThreadEvent.cpp" />
+    <ClCompile Include="CCoreMsgAppEvent.cpp" />
+    <ClCompile Include="CCoreThreadMsgAppEvent.cpp" />
+    <ClCompile Include="CMetaSceneMallocObject.cpp" />
+    <ClCompile Include="CPathTransformer.cpp" />
+    <ClCompile Include="CPixelPath.cpp" />
+    <ClCompile Include="CDistortedTick.cpp" />
+    <ClCompile Include="CDistortedTimeMallocObject.cpp" />
+    <ClCompile Include="CDistortedTimeObj.cpp" />
+    <ClCompile Include="CDistortedTimeScene.cpp" />
+    <ClCompile Include="CRenderSlot.cpp" />
+    <ClCompile Include="CTestSuiteRenderSlot.cpp" />
+    <ClCompile Include="CFileWatcherData.cpp" />
+    <ClCompile Include="CFileWatcherThread.cpp" />
+    <ClCompile Include="CCoreObjMallocObject.cpp" />
+    <ClCompile Include="CObjVarDef.cpp" />
+    <ClCompile Include="CObjVarDefCfg.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\sdk\inc\TMsgDispatcher.inl" />
+    <None Include="..\..\sdk\inc\TMsgDispatcher_inl.inl" />
+    <None Include="..\..\sdk\inc\TMsgHandler.inl" />
+    <None Include="..\..\sdk\inc\TMsgHandlerContainer.inl" />
+    <None Include="..\..\sdk\inc\TMsgHandlerContainer_inl.inl" />
+    <None Include="CAStarData.inl" />
+    <None Include="CNode.inl" />
+    <None Include="CPath.inl" />
+    <None Include="MapInfoManager.inl" />
+    <None Include="..\..\sdk\inc\CoreCommon.inl" />
+    <None Include="TApp.inl" />
+    <None Include="TAppConfig.inl" />
+    <None Include="..\..\sdk\inc\TAppConfig_inl.inl" />
+    <None Include="TAppWithConsole.inl" />
+    <None Include="TCoreApp.inl" />
+    <None Include="TExpSafeApp.inl" />
+    <None Include="TPart.inl" />
+    <None Include="TWhole.inl" />
+    <None Include="TCoreScene.inl" />
+    <None Include="TCoreSceneMgr.inl" />
+    <None Include="CSlowSigner.inl" />
+    <None Include="TClientMsgRegister.inl" />
+    <None Include="TConnection.inl" />
+    <None Include="TConnection_inl.inl" />
+    <None Include="..\..\sdk\inc\TConnectionMgr.inl" />
+    <None Include="TBindObject.inl" />
+    <None Include="TCoreObject.inl" />
+    <None Include="TObjMoveState.inl" />
+    <None Include="TBaseCOEvent.inl" />
+    <None Include="TCOEventMoveBegan.inl" />
+    <None Include="TCOEventMoveEnded.inl" />
+    <None Include="TCOEventMovePathChanged.inl" />
+    <None Include="TCOEventPosChanged.inl" />
+    <None Include="TMetaScene.inl" />
+    <None Include="TMetaSceneMgr.inl" />
+    <None Include="CDistortedTimeObj.inl" />
+    <None Include="TTimeSystem.inl" />
+    <None Include="TRootVariantPoolMgr.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ResDll\ResDll.vcxproj">
+      <Project>{02722504-f9fc-42a0-8d4d-493fd9fc2c63}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,105 @@
+###############################################################
+# Debug or Release Version?
+# 每日编译会修改BUILD_FLAG, BUILD_FLAG必须注释掉
+# 如果想手工make的话，可以把注释去掉，但是不要提交到svn上
+#BUILD_FLAG:=Debug
+BUILD_FLAG:=Release
+PLATFORM:=redhat
+###############################################################
+# Directory settings..
+
+ENGINE_DIR:=engine
+GAME_DIR:=game
+IMPLIB_DIR:=implib
+BIN_DIR:=bin
+LIB_DIR:=engine/sdk/lib
+
+HOME_DIR:=$(CURDIR)
+
+# String tables
+STR_ARCH:=Creating archive file...
+STR_SHARED:=Creating share object...
+STR_COPY:=Copying file ING...
+STR_COMPILE:=Compiling... 
+STR_CLEAN:=Removing binary files...
+
+
+ifeq ($(BUILD_FLAG), Debug)
+	OPTIMIZED_FLAG:= #
+else
+	OPTIMIZED_FLAG:=-O2 -fno-omit-frame-pointer
+endif
+
+COMMON_COMPILE_FLAG:=-pipe -rdynamic -finput-charset=GBK -fexec-charset=GBK $(YBTX_ENV) -ggdb #-pg -g
+
+#由于没有类似vs的根据库的依赖关系自动调整编译顺序的功能，linux的所有库都必须是动态库
+
+GCC:=gcc $(COMMON_COMPILE_FLAG)
+CC:=g++ $(COMMON_COMPILE_FLAG) -Wall -Werror -Wno-multichar -Wno-deprecated -Wno-sign-compare -Wno-strict-aliasing
+
+# Make tool
+MAKE:=make
+# tools to make a archive file. use "s" option, equl to ranlib.
+AR:=ar crs
+# echo
+ECHO:=echo
+# copy
+CP:=cp
+# remove
+RM:=rm
+
+COMMON_MODULE_FLAG:= -c -fpic -D_VERBOSE_ -march=core2 -mfpmath=sse #-D_GLIBCXX_DEBUG
+
+ifeq ($(BUILD_FLAG), Debug)
+	CMODULE:=-D_DEBUG $(COMMON_MODULE_FLAG) $(OPTIMIZED_FLAG)
+else
+	CMODULE:=-DNDEBUG $(COMMON_MODULE_FLAG) $(OPTIMIZED_FLAG)
+endif
+
+# Options to build a normal executable file.
+CNORMAL:=-Wl,-rpath,. -Wl,--export-dynamic -o
+# Options to build a shared object
+CSHARED:=-shared -o
+
+SRC_HOME:=.
+
+LIB_PTHREAD:=-lpthread
+LIB_DYNAMIC:=-ldl
+LIB_UTIL:=-lutil
+
+LIB_UNWIND:=-lunwind
+
+LIB_LUA:=-llua
+
+.PHONY:clean all tags
+.DEFAULT:all
+
+%.o:%.c
+	@$(ECHO) $(STR_COMPILE): $< 
+	@$(GCC) $(CMODULE) $< $(INCLUDE)
+%.o:%.cpp
+	@$(ECHO) $(STR_COMPILE): $< 
+	@$(CC) $(CMODULE) $< $(INCLUDE)
+%.d:%.cpp
+	@$(CC) -MM $(INCLUDE) $< > $@.tmp;\
+	sed  's,\($*\)\.o[ :]*,\1.o $@ : ,g' < $@.tmp > $@;\
+	rm -f $@.tmp
+%.d:%.c
+	@$(CC) -MM $(INCLUDE) $< > $@.tmp;\
+	sed  's,\($*\)\.o[ :]*,\1.o $@ : ,g' < $@.tmp > $@;\
+	rm -f $@.tmp
+
+all:
+
+DEPENDENCIES = $(subst ../,, $(MODULES))
+
+	#ctags -f $(ROOT_DIR)/tags -R --langmap=c++:+.inl $(ROOT_DIR)/ ;
+tags:
+	ctags -f $(ROOT_DIR)/tags -R --langmap=c++:+.inl $(ROOT_DIR)/ ;
+	ctags -R --langmap=c++:+.inl -f $(ROOT_DIR)/stl /usr/include/c++/4.1.2/bits/;
+
+delcr:
+	@for i in $(MODULES); do \
+		find $$i -regex "\(.*\.h\)\|\(.*\.cpp\)" -print0 | xargs -0 sed -i 's///g'; \
+	done;
+

@@ -1,0 +1,14 @@
+#include "System_PS_Var.inc"
+
+
+float4 PS_Main(PS_INPUT i) : COLOR0
+{
+    float3  s = 1.0; //影子变换需要
+    float4  rgba =  tex2D(Sampler0, i.text0);
+    SYS_PS_SHADOW_TRAN
+    float isShadow = s < 1.0;
+    float3 diffuse = i.Diffuse.rgb * 2.0;
+    // TNND, 没法用if
+    s = isShadow * max(min(diffuse, s), s * diffuse) + (1.0 - isShadow) * diffuse;
+    return  float4(rgba.rgb*s , rgba.a * i.Diffuse.a);
+}

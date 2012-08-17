@@ -1,0 +1,2 @@
+CStockOrderlistWnd = class (SQRDialog)
+

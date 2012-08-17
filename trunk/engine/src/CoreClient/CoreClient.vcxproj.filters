@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="框架">
+      <UniqueIdentifier>{a2d4c344-88d4-4ab9-b6b0-18d606570e91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="框架\安全">
+      <UniqueIdentifier>{56d45ad8-235c-435e-91f7-b8bbbf641b55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="框架\调试信息">
+      <UniqueIdentifier>{8ce4713e-303c-463e-8269-782a4ac83411}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景数据">
+      <UniqueIdentifier>{31bfa28b-9aa4-4163-a7c3-2a659782e928}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="主窗口">
+      <UniqueIdentifier>{289eed71-f9cf-4caf-91f3-df3f1a4c8d56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景实例">
+      <UniqueIdentifier>{e288ce35-3830-488a-b606-77f7a1d7772e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="时间">
+      <UniqueIdentifier>{3478a22e-bf49-4388-a516-dea24888df98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="对象">
+      <UniqueIdentifier>{12eaf9b0-0232-430c-8302-8ef4b384f64c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="对象\回调接口">
+      <UniqueIdentifier>{3f78e31a-d768-411b-ae03-b2eaaea6d3b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="对象\回调事件">
+      <UniqueIdentifier>{647ec7b3-6dee-4123-83c4-2e2171110911}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="对象\主动对象">
+      <UniqueIdentifier>{9cb359be-72d8-4bcf-88b2-6d9f69c20d51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="对象\表演对象">
+      <UniqueIdentifier>{d2348684-2d60-4a6d-b858-d7432a5c794a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="对象\跟随对象">
+      <UniqueIdentifier>{786398c8-fc99-4b2b-a32a-24dbaa71968b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="对象\跟随对象\命令延迟">
+      <UniqueIdentifier>{3cd4508e-cf36-4bb1-98ff-243c3ad9f8d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="连接">
+      <UniqueIdentifier>{ca9eaf04-5c6c-4fc3-9273-fb8279de54f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="数据同步">
+      <UniqueIdentifier>{90676ddd-1a57-456d-a66b-4fba138f0551}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CAppClient.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="CAppConfigClient.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="CClientProxyBank.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="CLanguageSetting.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderSystemClient.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneConfigClient.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="CTraitsClient.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="IAppClientHandler.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="AntiDebug.cpp">
+      <Filter>框架\安全</Filter>
+    </ClCompile>
+    <ClCompile Include="CScenePositionDebug.cpp">
+      <Filter>框架\调试信息</Filter>
+    </ClCompile>
+    <ClCompile Include="CTestSuiteMetaSceneClient.cpp">
+      <Filter>场景数据</Filter>
+    </ClCompile>
+    <ClCompile Include="CErrNotifyIcon.cpp">
+      <Filter>主窗口</Filter>
+    </ClCompile>
+    <ClCompile Include="CIme.cpp">
+      <Filter>主窗口</Filter>
+    </ClCompile>
+    <ClCompile Include="CMainWnd.cpp">
+      <Filter>主窗口</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreSceneClient.cpp">
+      <Filter>场景实例</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreSceneMgrClient.cpp">
+      <Filter>场景实例</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scene\CMetaSceneClient.cpp">
+      <Filter>场景实例</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Scene\CMetaSceneMgrClient.cpp">
+      <Filter>场景实例</Filter>
+    </ClCompile>
+    <ClCompile Include="CDistortedTimeObjClient.cpp">
+      <Filter>时间</Filter>
+    </ClCompile>
+    <ClCompile Include="CDistortedTimeSceneClient.cpp">
+      <Filter>时间</Filter>
+    </ClCompile>
+    <ClCompile Include="CFrameRateAdviser.cpp">
+      <Filter>时间</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderTime.cpp">
+      <Filter>时间</Filter>
+    </ClCompile>
+    <ClCompile Include="CServerTimeGuesser.cpp">
+      <Filter>时间</Filter>
+    </ClCompile>
+    <ClCompile Include="CTimeSystemClient.cpp">
+      <Filter>时间</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreObjectClient.cpp">
+      <Filter>对象</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjMoveStateClient.cpp">
+      <Filter>对象</Filter>
+    </ClCompile>
+    <ClCompile Include="CoreObjectClientCommon.cpp">
+      <Filter>对象</Filter>
+    </ClCompile>
+    <ClCompile Include="CCOEventPositionSet.cpp">
+      <Filter>对象\回调事件</Filter>
+    </ClCompile>
+    <ClCompile Include="CCOEventWayPointChanged.cpp">
+      <Filter>对象\回调事件</Filter>
+    </ClCompile>
+    <ClCompile Include="COEventClient.cpp">
+      <Filter>对象\回调事件</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreObjectDirector.cpp">
+      <Filter>对象\主动对象</Filter>
+    </ClCompile>
+    <ClCompile Include="CDirObjActiveState.cpp">
+      <Filter>对象\主动对象</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreObjectPerformer.cpp">
+      <Filter>对象\表演对象</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreObjectFollower.cpp">
+      <Filter>对象\跟随对象</Filter>
+    </ClCompile>
+    <ClCompile Include="CFolMovement.cpp">
+      <Filter>对象\跟随对象</Filter>
+    </ClCompile>
+    <ClCompile Include="CFolObjFollowState.cpp">
+      <Filter>对象\跟随对象</Filter>
+    </ClCompile>
+    <ClCompile Include="CDelayedObjCmdMgr.cpp">
+      <Filter>对象\跟随对象\命令延迟</Filter>
+    </ClCompile>
+    <ClCompile Include="CFastObjCmd.cpp">
+      <Filter>对象\跟随对象\命令延迟</Filter>
+    </ClCompile>
+    <ClCompile Include="CSlowObjCmd.cpp">
+      <Filter>对象\跟随对象\命令延迟</Filter>
+    </ClCompile>
+    <ClCompile Include="CConnClient.cpp">
+      <Filter>连接</Filter>
+    </ClCompile>
+    <ClCompile Include="CConnMgrClient.cpp">
+      <Filter>连接</Filter>
+    </ClCompile>
+    <ClCompile Include="CTestSuiteConnClient.cpp">
+      <Filter>连接</Filter>
+    </ClCompile>
+    <ClCompile Include="NetworkAdaptersHelper.cpp">
+      <Filter>连接</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\sdk\inc\CSyncVariantClient.cpp">
+      <Filter>数据同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncVariantClientHolder.cpp">
+      <Filter>数据同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncVariantClientHolderPool.cpp">
+      <Filter>数据同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CVariantNotifier.cpp">
+      <Filter>数据同步</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\sdk\inc\CAppClient.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CAppConfigClient.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="CClientProxyBank.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CLanguageSetting.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRenderSystemClient.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSceneConfigClient.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CTraitsClient.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IAppClientHandler.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\AntiDebug.h">
+      <Filter>框架\安全</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CScenePositionDebug.h">
+      <Filter>框架\调试信息</Filter>
+    </ClInclude>
+    <ClInclude Include="CTestSuiteMetaSceneClient.h">
+      <Filter>场景数据</Filter>
+    </ClInclude>
+    <ClInclude Include="CErrNotifyIcon.h">
+      <Filter>主窗口</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CIme.h">
+      <Filter>主窗口</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CMainWnd.h">
+      <Filter>主窗口</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IMainWndHandler.h">
+      <Filter>主窗口</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCoreSceneClient.h">
+      <Filter>场景实例</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCoreSceneMgrClient.h">
+      <Filter>场景实例</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CMetaSceneClient.h">
+      <Filter>场景实例</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CMetaSceneMgrClient.h">
+      <Filter>场景实例</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\ICoreSceneClientHandler.h">
+      <Filter>场景实例</Filter>
+    </ClInclude>
+    <ClInclude Include="CDistortedTimeObjClient.h">
+      <Filter>时间</Filter>
+    </ClInclude>
+    <ClInclude Include="CDistortedTimeSceneClient.h">
+      <Filter>时间</Filter>
+    </ClInclude>
+    <ClInclude Include="CFrameRateAdviser.h">
+      <Filter>时间</Filter>
+    </ClInclude>
+    <ClInclude Include="CRenderTime.h">
+      <Filter>时间</Filter>
+    </ClInclude>
+    <ClInclude Include="CServerTimeGuesser.h">
+      <Filter>时间</Filter>
+    </ClInclude>
+    <ClInclude Include="CTimeSystemClient.h">
+      <Filter>时间</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCoreObjectClient.h">
+      <Filter>对象</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjMoveStateClient.h">
+      <Filter>对象</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreObjectClientCommon.h">
+      <Filter>对象</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CoreObjectClientDefs.h">
+      <Filter>对象</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\ICoreObjectClientHandler.h">
+      <Filter>对象\回调接口</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\ICoreObjectDirectorHandler.h">
+      <Filter>对象\回调接口</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\ICoreObjectFollowerHandler.h">
+      <Filter>对象\回调接口</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\ICoreObjectPerformerHandler.h">
+      <Filter>对象\回调接口</Filter>
+    </ClInclude>
+    <ClInclude Include="CCOEventPositionSet.h">
+      <Filter>对象\回调事件</Filter>
+    </ClInclude>
+    <ClInclude Include="CCOEventWayPointChanged.h">
+      <Filter>对象\回调事件</Filter>
+    </ClInclude>
+    <ClInclude Include="COEventClient.h">
+      <Filter>对象\回调事件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCoreObjectDirector.h">
+      <Filter>对象\主动对象</Filter>
+    </ClInclude>
+    <ClInclude Include="CDirObjActiveState.h">
+      <Filter>对象\主动对象</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCoreObjectPerformer.h">
+      <Filter>对象\表演对象</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCoreObjectFollower.h">
+      <Filter>对象\跟随对象</Filter>
+    </ClInclude>
+    <ClInclude Include="CFolMovement.h">
+      <Filter>对象\跟随对象</Filter>
+    </ClInclude>
+    <ClInclude Include="CFolObjFollowState.h">
+      <Filter>对象\跟随对象</Filter>
+    </ClInclude>
+    <ClInclude Include="CDelayedObjCmdMgr.h">
+      <Filter>对象\跟随对象\命令延迟</Filter>
+    </ClInclude>
+    <ClInclude Include="CFastObjCmd.h">
+      <Filter>对象\跟随对象\命令延迟</Filter>
+    </ClInclude>
+    <ClInclude Include="CSlowObjCmd.h">
+      <Filter>对象\跟随对象\命令延迟</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CConnClient.h">
+      <Filter>连接</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CConnMgrClient.h">
+      <Filter>连接</Filter>
+    </ClInclude>
+    <ClInclude Include="CTestSuiteConnClient.h">
+      <Filter>连接</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IConnMgrClientHandler.h">
+      <Filter>连接</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\NetworkAdaptersHelper.h">
+      <Filter>连接</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSyncVariantClient.h">
+      <Filter>数据同步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSyncVariantClientHolder.h">
+      <Filter>数据同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CSyncVariantClientHolderPool.h">
+      <Filter>数据同步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CVariantNotifier.h">
+      <Filter>数据同步</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CCoreObjectFollower.inl">
+      <Filter>对象\跟随对象</Filter>
+    </None>
+    <None Include="CDelayedObjCmdMgr.inl">
+      <Filter>对象\跟随对象\命令延迟</Filter>
+    </None>
+    <None Include="CFastObjCmd.inl">
+      <Filter>对象\跟随对象\命令延迟</Filter>
+    </None>
+    <None Include="CSlowObjCmd.inl">
+      <Filter>对象\跟随对象\命令延迟</Filter>
+    </None>
+    <None Include="CConnClient.inl">
+      <Filter>连接</Filter>
+    </None>
+    <None Include="CSyncVariantClientHolder.inl">
+      <Filter>数据同步</Filter>
+    </None>
+  </ItemGroup>
+</Project>

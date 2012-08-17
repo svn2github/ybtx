@@ -1,0 +1,1 @@
+--CTongFetchResWnd  = class(SQRDialog, CTongBase)

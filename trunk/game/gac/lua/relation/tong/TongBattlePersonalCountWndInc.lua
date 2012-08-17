@@ -1,0 +1,1 @@
+CTongBattlePersonalCountWnd = class(SQRDialog, CTongBase)

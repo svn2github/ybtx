@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="接口">
+      <UniqueIdentifier>{8409f8c8-c9ae-4236-8c18-2ea265fbda02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="同步">
+      <UniqueIdentifier>{62bc3159-ab51-4335-ac5b-a581bac2dd40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="同步\加解密">
+      <UniqueIdentifier>{ed0f9a9a-037d-43d3-a800-7fe3ec034460}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="框架">
+      <UniqueIdentifier>{93cd052a-a457-4b08-97fa-2474d82027e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="公共">
+      <UniqueIdentifier>{86087713-6d7b-4247-b332-f5e39bade1d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="异步">
+      <UniqueIdentifier>{0ec14684-b7f4-46b3-a1d6-ecdcc1813e88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="异步\多线程">
+      <UniqueIdentifier>{7e876aa6-8764-4b50-85c5-3037bfef9358}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\sdk\inc\IMulticast.h">
+      <Filter>接口</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IPipe.h">
+      <Filter>接口</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IPipeHandler.h">
+      <Filter>接口</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IPipeModule.h">
+      <Filter>接口</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IPipeReactor.h">
+      <Filter>接口</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\PipeTypes.h">
+      <Filter>接口</Filter>
+    </ClInclude>
+    <ClInclude Include="CCompressedDataHeader.h">
+      <Filter>同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CDataFlowCounter.h">
+      <Filter>同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CMulticast.h">
+      <Filter>同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CPipeCallback.h">
+      <Filter>同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CPipeState.h">
+      <Filter>同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CPipeState_Busy.h">
+      <Filter>同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CPipeState_Connected.h">
+      <Filter>同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CPipeState_Connecting.h">
+      <Filter>同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CPipeState_Disconnected.h">
+      <Filter>同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CPipeState_Listening.h">
+      <Filter>同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CSyncPipe.h">
+      <Filter>同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CSyncPipeInBuffer.h">
+      <Filter>同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CSyncPipeOutBuffer.h">
+      <Filter>同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CSyncPipeReactor.h">
+      <Filter>同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CByteDecoder.h">
+      <Filter>同步\加解密</Filter>
+    </ClInclude>
+    <ClInclude Include="CByteEncoder.h">
+      <Filter>同步\加解密</Filter>
+    </ClInclude>
+    <ClInclude Include="CTestSuiteEnDecoder.h">
+      <Filter>同步\加解密</Filter>
+    </ClInclude>
+    <ClInclude Include="Network.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\NetworkDefs.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="CNetworkMallocObject.h">
+      <Filter>公共</Filter>
+    </ClInclude>
+    <ClInclude Include="CPipeEventObject.h">
+      <Filter>公共</Filter>
+    </ClInclude>
+    <ClInclude Include="CPipeModule.h">
+      <Filter>公共</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\NetworkHelper.h">
+      <Filter>公共</Filter>
+    </ClInclude>
+    <ClInclude Include="TNetworkAllocator.h">
+      <Filter>公共</Filter>
+    </ClInclude>
+    <ClInclude Include="CAsynMulticast.h">
+      <Filter>异步</Filter>
+    </ClInclude>
+    <ClInclude Include="CAsynPipe.h">
+      <Filter>异步</Filter>
+    </ClInclude>
+    <ClInclude Include="CAsynPipeInBuffer.h">
+      <Filter>异步</Filter>
+    </ClInclude>
+    <ClInclude Include="CAsynPipeReactor.h">
+      <Filter>异步</Filter>
+    </ClInclude>
+    <ClInclude Include="CAsynPipeHandler.h">
+      <Filter>异步\多线程</Filter>
+    </ClInclude>
+    <ClInclude Include="CPipeJob.h">
+      <Filter>异步\多线程</Filter>
+    </ClInclude>
+    <ClInclude Include="CPipeResult.h">
+      <Filter>异步\多线程</Filter>
+    </ClInclude>
+    <ClInclude Include="CPipeThread.h">
+      <Filter>异步\多线程</Filter>
+    </ClInclude>
+    <ClInclude Include="CPipeThreadMgr.h">
+      <Filter>异步\多线程</Filter>
+    </ClInclude>
+    <ClInclude Include="CPipeTrMsgBufferSwapper.h">
+      <Filter>异步\多线程</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CDataFlowCounter.cpp">
+      <Filter>同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CMulticast.cpp">
+      <Filter>同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CPipeCallback.cpp">
+      <Filter>同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CPipeState.cpp">
+      <Filter>同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CPipeState_Busy.cpp">
+      <Filter>同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CPipeState_Connected.cpp">
+      <Filter>同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CPipeState_Connecting.cpp">
+      <Filter>同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CPipeState_Disconnected.cpp">
+      <Filter>同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CPipeState_Listening.cpp">
+      <Filter>同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncPipe.cpp">
+      <Filter>同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncPipeInBuffer.cpp">
+      <Filter>同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncPipeOutBuffer.cpp">
+      <Filter>同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncPipeReactor.cpp">
+      <Filter>同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CByteDecoder.cpp">
+      <Filter>同步\加解密</Filter>
+    </ClCompile>
+    <ClCompile Include="CByteEncoder.cpp">
+      <Filter>同步\加解密</Filter>
+    </ClCompile>
+    <ClCompile Include="CTestSuiteEnDecoder.cpp">
+      <Filter>同步\加解密</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="CNetworkMallocObject.cpp">
+      <Filter>公共</Filter>
+    </ClCompile>
+    <ClCompile Include="CPipeEventObject.cpp">
+      <Filter>公共</Filter>
+    </ClCompile>
+    <ClCompile Include="CPipeModule.cpp">
+      <Filter>公共</Filter>
+    </ClCompile>
+    <ClCompile Include="IPipeHandler.cpp">
+      <Filter>公共</Filter>
+    </ClCompile>
+    <ClCompile Include="NetworkHelper.cpp">
+      <Filter>公共</Filter>
+    </ClCompile>
+    <ClCompile Include="CAsynMulticast.cpp">
+      <Filter>异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CAsynPipe.cpp">
+      <Filter>异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CAsynPipeInBuffer.cpp">
+      <Filter>异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CAsynPipeReactor.cpp">
+      <Filter>异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CAsynPipeHandler.cpp">
+      <Filter>异步\多线程</Filter>
+    </ClCompile>
+    <ClCompile Include="CPipeJob.cpp">
+      <Filter>异步\多线程</Filter>
+    </ClCompile>
+    <ClCompile Include="CPipeResult.cpp">
+      <Filter>异步\多线程</Filter>
+    </ClCompile>
+    <ClCompile Include="CPipeThread.cpp">
+      <Filter>异步\多线程</Filter>
+    </ClCompile>
+    <ClCompile Include="CPipeThreadMgr.cpp">
+      <Filter>异步\多线程</Filter>
+    </ClCompile>
+    <ClCompile Include="CPipeTrMsgBufferSwapper.cpp">
+      <Filter>异步\多线程</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CSyncPipe.inl">
+      <Filter>同步</Filter>
+    </None>
+    <None Include="CByteDecoder.inl">
+      <Filter>同步\加解密</Filter>
+    </None>
+    <None Include="CByteEncoder.inl">
+      <Filter>同步\加解密</Filter>
+    </None>
+    <None Include="CPipeJob.inl">
+      <Filter>异步\多线程</Filter>
+    </None>
+    <None Include="CPipeResult.inl">
+      <Filter>异步\多线程</Filter>
+    </None>
+  </ItemGroup>
+</Project>

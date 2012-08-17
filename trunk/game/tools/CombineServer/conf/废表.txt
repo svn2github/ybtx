@@ -1,0 +1,16 @@
+tbl_scene_boss_state;
+tbl_area_fb_quest;
+tbl_log_tong_taker;
+tbl_log_tong_giver;
+tbl_log_service_begin
+tbl_log_service_end
+tbl_log_service_crash
+tbl_log_enter_world
+tbl_log_leave_world
+tbl_log_travel
+tbl_log_change_scene
+tbl_sample_scene_pop
+tbl_log_quest_create
+tbl_log_equip_destroy
+
+mysql> select auto_increment from information_schema.tables where table_name='tbl_test';

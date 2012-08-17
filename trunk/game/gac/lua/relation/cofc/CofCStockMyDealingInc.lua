@@ -1,0 +1,1 @@
+CofCStockMyDealingWnd = class(SQRDialog)

@@ -1,0 +1,2 @@
+
+CGetHorseMedicineWnd = class(SQRDialog)

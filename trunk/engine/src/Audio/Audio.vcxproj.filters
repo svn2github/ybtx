@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Core">
+      <UniqueIdentifier>{03bfb396-6a3e-44c9-ae25-3cb1ac3b21ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\XACT">
+      <UniqueIdentifier>{ec8a0f21-0688-43c8-b7de-0a9379933c09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{f38d343b-684b-41d8-bc9a-3e8f8cdb75e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Implement">
+      <UniqueIdentifier>{fb93d16a-600b-4783-ac07-b6294c2a9020}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Misc">
+      <UniqueIdentifier>{480075f1-0bb2-491f-ab36-1384f321fedc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Misc\资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="Malloc">
+      <UniqueIdentifier>{694c28ac-6ed7-427a-a54d-985da3c56a6b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CAudioAdapterInfo.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="CAudioEngine.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="CCue.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="CCueProperty.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="CSoundBank.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="CWave.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="CWaveProperty.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="CWindowsVersionEnum.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundState.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="XACTAudioEngine.h">
+      <Filter>Core\XACT</Filter>
+    </ClInclude>
+    <ClInclude Include="XACTCue.h">
+      <Filter>Core\XACT</Filter>
+    </ClInclude>
+    <ClInclude Include="XACTSoundBank.h">
+      <Filter>Core\XACT</Filter>
+    </ClInclude>
+    <ClInclude Include="XACTWave.h">
+      <Filter>Core\XACT</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IAudioEmitter.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IAudioListener.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\IAudioModule.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IAudioPlayer.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IAudioSystem.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="CAudioEmitter.h">
+      <Filter>Implement</Filter>
+    </ClInclude>
+    <ClInclude Include="CAudioListener.h">
+      <Filter>Implement</Filter>
+    </ClInclude>
+    <ClInclude Include="CAudioModule.h">
+      <Filter>Implement</Filter>
+    </ClInclude>
+    <ClInclude Include="CAudioPlayer.h">
+      <Filter>Implement</Filter>
+    </ClInclude>
+    <ClInclude Include="CAudioSystem.h">
+      <Filter>Implement</Filter>
+    </ClInclude>
+    <ClInclude Include="CAudioPkgChecker.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CAudioMallocObject.h">
+      <Filter>Malloc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CAudioEngine.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="CCue.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="CSoundBank.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="CWave.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="XACTAudioEngine.cpp">
+      <Filter>Core\XACT</Filter>
+    </ClCompile>
+    <ClCompile Include="XACTCue.cpp">
+      <Filter>Core\XACT</Filter>
+    </ClCompile>
+    <ClCompile Include="XACTSoundBank.cpp">
+      <Filter>Core\XACT</Filter>
+    </ClCompile>
+    <ClCompile Include="XACTWave.cpp">
+      <Filter>Core\XACT</Filter>
+    </ClCompile>
+    <ClCompile Include="CAudioEmitter.cpp">
+      <Filter>Implement</Filter>
+    </ClCompile>
+    <ClCompile Include="CAudioListener.cpp">
+      <Filter>Implement</Filter>
+    </ClCompile>
+    <ClCompile Include="CAudioModule.cpp">
+      <Filter>Implement</Filter>
+    </ClCompile>
+    <ClCompile Include="CAudioPlayer.cpp">
+      <Filter>Implement</Filter>
+    </ClCompile>
+    <ClCompile Include="CAudioSystem.cpp">
+      <Filter>Implement</Filter>
+    </ClCompile>
+    <ClCompile Include="CAudioPkgChecker.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="CAudioMallocObject.cpp">
+      <Filter>Malloc</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Audio.rc">
+      <Filter>Misc\资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

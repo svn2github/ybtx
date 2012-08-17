@@ -1,0 +1,2 @@
+
+CScopesExplorationScene = class(CSceneBase)

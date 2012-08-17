@@ -1,0 +1,1 @@
+drop table tbl_secret_key;

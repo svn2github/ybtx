@@ -1,0 +1,3 @@
+	position = mul(float4(position, 1.0f), i.MatWorld); \
+	normal = mul(normal , i.MatWorld); \
+	normal = normalize(normal);

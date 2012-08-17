@@ -1,0 +1,97 @@
+﻿<main_config>
+	<!-- 游戏中计时器的最高精度，单位为毫秒，也是客户端渲染的帧周期，还是主角对象移动的最小时间粒度-->
+	<base_tick_cyc>2</base_tick_cyc>
+		
+	<!--网络多线程的数目-->
+	<net_thread_num>0</net_thread_num>
+		
+	<!--对连接错误的容忍程度-->
+	<conn_max_exp>0</conn_max_exp>
+			
+	<window_config>
+		<title>佣兵天下</title>
+	</window_config>
+	
+	<tg_config>
+		<port_name>\\.\COM40</port_name>
+	</tg_config>
+
+	<!-- 是否显示控制台窗口，打开控制台窗口会造成标准输出被重定向到控制台-->
+	<console_config>
+		<!--是否显示控制台-->
+		<show>1</show>
+		<title>gac</title>
+		<!--启动后是否自动最小化控制台窗口,仅在windows系统下有效-->
+		<auto_minimize>1</auto_minimize>
+	</console_config>
+	
+	<!-- 系统相关设置 -->
+	<system_config>
+		<!-- 选择开启Debuger或者Profiler,两者只能开启一个 -->	
+		<enable_script_helper>debuger</enable_script_helper>
+		<!-- <enable_script_helper>profiler</enable_script_helper>  -->
+	
+		<!-- 封包是否加密,gac与gas的封包加密开关必须一致，否则无法建立连接 -->
+		<encrypt>1</encrypt>
+	
+		<!-- 如果core_dump_msg内容为空，则不处理结构化异常 -->
+		<core_dump_msg>	非常遗憾地通知您，程序内部发生了错误，导致游戏无法继续运行。
+		这个错误已经被记录到您的游戏安装根目录下，名为%s。
+    		为了能够尽快解决您遇上的问题，请将这个错误文件email给客服人员，
+		感谢您的支持和合作！</core_dump_msg>
+		<extrainfo></extrainfo>
+
+		<!-- log目录路径 -->
+		<log_path>var/gac/log/</log_path>
+
+		<!--setting文件路径-->
+		<ini_path>var/gac/setting.ini</ini_path>
+
+		<!-- 界面资源文件 -->
+		<gui_res>tgt/Layout</gui_res>
+
+		<!--界面 特效文件-->
+		<gui_fx>fx/setting/mapfx_ui.efx</gui_fx>
+
+		<!-- 表情资源文件 -->
+		<emt_res>tgt/TexFont/EmoticonCfg.xml</emt_res>
+		
+		<!--ybtx game icon文件-->
+		<app_icon>image/ico/game.ico</app_icon>
+
+		<fgrendercyc>33</fgrendercyc>			<!--前台时的渲染周期-->
+ 		<bgrendercyc>1000</bgrendercyc>			<!--非前台时的渲染周期 -->
+		<skip_frame_waittime>100</skip_frame_waittime> 	<!-- 等多久跳帧 -->
+	</system_config>
+	
+	
+		<!-- 指定步长和时间进行垃圾回收-->
+	<collectgarbage>
+		<interval>30</interval>
+		<step>20</step>
+		<callback_ratio>1</callback_ratio>
+		<normal_unpack_ratio>5</normal_unpack_ratio>
+		<serial_unpack_ratio>20</serial_unpack_ratio>
+	</collectgarbage>
+
+	<!-- 为测试机器配置选项 -->
+	<testing_config>
+		<!-- 表明是否为测试客户端，如果是，则引擎发生异常会把错误信息传给客户端-->
+		<testing_client>1</testing_client>
+		<!-- 表示出错之后是否弹出对话框显示，如果不是testing client，此选项无效-->
+		<err_msg_show>0</err_msg_show>
+	
+    </testing_config>
+
+	<gui_config>
+		<!-- 拖拽的容错距离 -->
+		<dragResponseDis>6</dragResponseDis>
+	</gui_config>
+    
+	<!--是否打开pkg file使用开关，如果打开了，但是使用的是包外的数据，那么关闭写log功能-->
+	<pkg_file_used>1</pkg_file_used>
+
+	<!--是否打开reload开关，如果打开了，更改配置表，lua代码都会提示reload-->
+	<Reload>0</Reload>
+
+</main_config>

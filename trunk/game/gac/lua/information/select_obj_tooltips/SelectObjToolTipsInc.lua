@@ -1,0 +1,1 @@
+CSelectObjTooltips = class(SQRDialog)

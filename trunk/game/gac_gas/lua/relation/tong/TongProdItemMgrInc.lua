@@ -1,0 +1,1 @@
+CTongProdItemInfoMgr = class()

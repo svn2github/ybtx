@@ -1,0 +1,1317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="LogicalLevel">
+      <UniqueIdentifier>{03146b7c-7c1a-4328-94e6-99542cb5d53b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Utility">
+      <UniqueIdentifier>{1cb0c3be-1b03-4a8e-a6ae-aced6afbe05a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\PostProcess">
+      <UniqueIdentifier>{c9d1165c-80c8-4bb1-90e4-e86b7da79893}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Model">
+      <UniqueIdentifier>{e956b02c-25db-421d-ae57-56333a519cfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Model\Animation">
+      <UniqueIdentifier>{e872678f-4d34-4b54-bf44-f4fb5a6bcb80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Model\Animation\Mesh">
+      <UniqueIdentifier>{2343f6cd-d0a2-4011-a49f-4b7f4cec578b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Model\Node">
+      <UniqueIdentifier>{3e5a4b59-882d-4b8c-a6e3-1ec3d69abffc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Model\Node\Camera">
+      <UniqueIdentifier>{ff362b83-4fde-4b8c-855f-301dc62bc0b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Renderer">
+      <UniqueIdentifier>{ed238ac8-96bf-44d6-b8a0-2e70db238e67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Renderer\Filter">
+      <UniqueIdentifier>{294173df-1b3e-4a4d-9944-72b63ab3f58b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Renderer\Filter\Special">
+      <UniqueIdentifier>{0916f032-a73c-429b-9671-561685a6989a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Renderer\Filter\Alpha">
+      <UniqueIdentifier>{9f2ac855-ade9-458f-ab85-0696f78d60e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Renderer\Filter\Shadow">
+      <UniqueIdentifier>{2d6de9e5-d881-4f1b-8568-c586d1ba45b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Renderer\Filter\Shadow\Tools">
+      <UniqueIdentifier>{bf14c51d-9f6b-48af-9aba-b6a77763619c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Renderer\Filter\System">
+      <UniqueIdentifier>{e8ea910a-c47d-4c83-8c91-6668c5ad7826}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Renderer\GeometryBatch">
+      <UniqueIdentifier>{ad438997-40a9-4eed-80c2-a29e9245a1c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Renderer\GeometryBatch\BatchBuffer">
+      <UniqueIdentifier>{abc16dfa-d10d-4b60-a4fa-99620b0b45a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Lighting">
+      <UniqueIdentifier>{fbe7af2f-dd6c-48d7-a632-fa79657ea433}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Interface">
+      <UniqueIdentifier>{4632c2c7-bf68-436c-9b11-0e633c964127}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Font">
+      <UniqueIdentifier>{7abc98da-ee5f-48df-89c4-c7b89c13621d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Main">
+      <UniqueIdentifier>{a4f79e8b-2998-4be0-919c-12e4de187a5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Main\Texture">
+      <UniqueIdentifier>{ab10e9fd-de31-4dd1-b276-7bcaf4ec5ee2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Main\Buffer">
+      <UniqueIdentifier>{a360de6a-67d0-48a4-8943-5951ed117ab4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Main\RenderTarget">
+      <UniqueIdentifier>{6097cf55-962c-4e0f-a730-654337fd1959}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Main\TextureNew">
+      <UniqueIdentifier>{7fa7b3ba-129d-44f3-a019-fdc3489caf88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Main\TextureNew\Impl">
+      <UniqueIdentifier>{aaab558c-f595-4dce-860c-d21a685ce260}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Main\TextureNew\AnimTex">
+      <UniqueIdentifier>{8819ab62-70d2-438c-b455-5f176b287c5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\SyncSystem">
+      <UniqueIdentifier>{b7ad535d-c01c-431f-a323-65713a74c6c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\RenderStage">
+      <UniqueIdentifier>{36fee186-61a6-4850-9967-313e3593d43c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\RenderStage\FixStage">
+      <UniqueIdentifier>{1d7be1a1-3631-40ae-a64c-7fcc9ce16a9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\RenderStage\Coder">
+      <UniqueIdentifier>{e569bb5b-21d4-4a8a-bcbf-e58bfaea2d8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\RenderStage\Shader">
+      <UniqueIdentifier>{beeca8f9-357d-4dd4-b625-120b3400d372}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\RenderStage\Shader\NewFilter1">
+      <UniqueIdentifier>{d5993ad9-60b0-4849-86d5-9a7df180d9dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Time">
+      <UniqueIdentifier>{1c97e1a0-d06b-4189-90a9-2c00711d598c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Coder">
+      <UniqueIdentifier>{73cb9fd3-1a72-430d-b375-6078d2144ad7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Coder\Common">
+      <UniqueIdentifier>{0ffcc234-2ad7-4e05-ad49-d5c57e2a4f1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\Coder\Texture">
+      <UniqueIdentifier>{3e57bbf5-36f9-4cec-966e-8833fa51ccd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\RenderSpace">
+      <UniqueIdentifier>{8057bc45-5c89-4d1b-b8f2-e056609c850e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LogicalLevel\DebugHelper">
+      <UniqueIdentifier>{a9f753f7-7897-49a8-af87-dd502e64c013}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PhysicalLevel">
+      <UniqueIdentifier>{1f18cefb-664d-42a9-926e-49f7e8173160}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PhysicalLevel\DX9%28March 2008%29">
+      <UniqueIdentifier>{4f79644c-75ce-4d47-b528-672cccfab234}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PhysicalLevel\DX9%28March 2008%29\D3D9_Utility">
+      <UniqueIdentifier>{9661eca4-237c-42f8-a81d-949b455bed8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PhysicalLevel\DX9%28March 2008%29\D3D9_Utility\TextureCoder">
+      <UniqueIdentifier>{a15cc96b-7a07-44fd-9d84-b7683a6eb6f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PhysicalLevel\DX9%28March 2008%29\Buffer">
+      <UniqueIdentifier>{7ca4c932-75e3-4cfd-9a48-f7da2e5e0b83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PhysicalLevel\DX9%28March 2008%29\Texture">
+      <UniqueIdentifier>{edacfaec-5620-43e2-bc53-71810f218d77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PhysicalLevel\DX9%28March 2008%29\Shader">
+      <UniqueIdentifier>{b57563e2-1aff-47b4-948a-781802f459a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PhysicalLevel\DX9%28March 2008%29\TextureNew">
+      <UniqueIdentifier>{ed41a7fa-497e-44ff-8a48-2ad62591fc76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PhysicalLevel\DX9%28March 2008%29\TextureNew\Impl">
+      <UniqueIdentifier>{6f5b4e8c-ded3-4094-9b62-62139bd78240}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PhysicalLevel\DX10%28未完成%29">
+      <UniqueIdentifier>{02cca9b0-f638-4c25-8a82-bdaf4feebe46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PhysicalLevel\DX10%28未完成%29\Buffer">
+      <UniqueIdentifier>{8b9fb691-a9b6-4134-ac83-2c63a5baad76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PhysicalLevel\DX10%28未完成%29\D3D10_Utility">
+      <UniqueIdentifier>{41884049-bc0b-4c61-b8a6-2438242b22f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PhysicalLevel\DX10%28未完成%29\Shader">
+      <UniqueIdentifier>{e61e78c6-8e56-406e-b6f8-384ddaecb3ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PhysicalLevel\DX10%28未完成%29\Texture">
+      <UniqueIdentifier>{6db5e332-2ea7-4624-bfb6-65cd306451c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PhysicalLevel\OpenGL%28未完成%29">
+      <UniqueIdentifier>{0b5c9ba0-da51-4a24-9bd1-a1c5e490c511}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CComputerInfo.cpp">
+      <Filter>LogicalLevel\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraphicExp.cpp">
+      <Filter>LogicalLevel\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="CHardwareCapacity.cpp">
+      <Filter>LogicalLevel\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicUtil.cpp">
+      <Filter>LogicalLevel\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>LogicalLevel\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="CBloomTarget.cpp">
+      <Filter>LogicalLevel\PostProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="CPostEffect.cpp">
+      <Filter>LogicalLevel\PostProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="CPostEffectLoader.cpp">
+      <Filter>LogicalLevel\PostProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="CPostEffectPass.cpp">
+      <Filter>LogicalLevel\PostProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="CPostProcessManager.cpp">
+      <Filter>LogicalLevel\PostProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="CScreenAlignedQuad.cpp">
+      <Filter>LogicalLevel\PostProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="CMatrixUnit.cpp">
+      <Filter>LogicalLevel\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="CPieceGroup.cpp">
+      <Filter>LogicalLevel\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderMatrix.cpp">
+      <Filter>LogicalLevel\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderPiece.cpp">
+      <Filter>LogicalLevel\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="CSimCloth.cpp">
+      <Filter>LogicalLevel\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="CAnimation.cpp">
+      <Filter>LogicalLevel\Model\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="CAnimationController.cpp">
+      <Filter>LogicalLevel\Model\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="CAnimationGroup.cpp">
+      <Filter>LogicalLevel\Model\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="CSkeletal.cpp">
+      <Filter>LogicalLevel\Model\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="CSkeletalFrame.cpp">
+      <Filter>LogicalLevel\Model\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="CSkeletalMask.cpp">
+      <Filter>LogicalLevel\Model\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="CCPUSkeletalMesh.cpp">
+      <Filter>LogicalLevel\Model\Animation\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="CMesh.cpp">
+      <Filter>LogicalLevel\Model\Animation\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="CMeshLevel.cpp">
+      <Filter>LogicalLevel\Model\Animation\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="CSkeletalMesh.cpp">
+      <Filter>LogicalLevel\Model\Animation\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="CStaticMesh.cpp">
+      <Filter>LogicalLevel\Model\Animation\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="CVertexAniMesh.cpp">
+      <Filter>LogicalLevel\Model\Animation\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="CBaseModel.cpp">
+      <Filter>LogicalLevel\Model\Node</Filter>
+    </ClCompile>
+    <ClCompile Include="CModel.cpp">
+      <Filter>LogicalLevel\Model\Node</Filter>
+    </ClCompile>
+    <ClCompile Include="CNodeController.cpp">
+      <Filter>LogicalLevel\Model\Node</Filter>
+    </ClCompile>
+    <ClCompile Include="CCamera.cpp">
+      <Filter>LogicalLevel\Model\Node\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="CFrustum.cpp">
+      <Filter>LogicalLevel\Model\Node\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="CDynamicVB.cpp">
+      <Filter>LogicalLevel\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="CFilterNode.cpp">
+      <Filter>LogicalLevel\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderCommand.cpp">
+      <Filter>LogicalLevel\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="CRendererBase.cpp">
+      <Filter>LogicalLevel\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderFilter.cpp">
+      <Filter>LogicalLevel\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderGroup.cpp">
+      <Filter>LogicalLevel\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderList.cpp">
+      <Filter>LogicalLevel\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="CRefractFilter.cpp">
+      <Filter>LogicalLevel\Renderer\Filter\Special</Filter>
+    </ClCompile>
+    <ClCompile Include="CShowPassFilter.cpp">
+      <Filter>LogicalLevel\Renderer\Filter\Special</Filter>
+    </ClCompile>
+    <ClCompile Include="CAlphaFilter.cpp">
+      <Filter>LogicalLevel\Renderer\Filter\Alpha</Filter>
+    </ClCompile>
+    <ClCompile Include="CPortraitTransFilter.cpp">
+      <Filter>LogicalLevel\Renderer\Filter\Alpha</Filter>
+    </ClCompile>
+    <ClCompile Include="CNoneShadowFilter.cpp">
+      <Filter>LogicalLevel\Renderer\Filter\Shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlaneShadowFilter.cpp">
+      <Filter>LogicalLevel\Renderer\Filter\Shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="CProjectShadowFilter.cpp">
+      <Filter>LogicalLevel\Renderer\Filter\Shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="CReceiveShadowFilter.cpp">
+      <Filter>LogicalLevel\Renderer\Filter\Shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="CShadowFilter.cpp">
+      <Filter>LogicalLevel\Renderer\Filter\Shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="CShadowMapFilter.cpp">
+      <Filter>LogicalLevel\Renderer\Filter\Shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="CShadowClipper.cpp">
+      <Filter>LogicalLevel\Renderer\Filter\Shadow\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="CShadowMatrixBuilder.cpp">
+      <Filter>LogicalLevel\Renderer\Filter\Shadow\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="CAlphaShadowFilter.cpp">
+      <Filter>LogicalLevel\Renderer\Filter\System</Filter>
+    </ClCompile>
+    <ClCompile Include="CDefaultFilter.cpp">
+      <Filter>LogicalLevel\Renderer\Filter\System</Filter>
+    </ClCompile>
+    <ClCompile Include="CVertexDeclFilter.cpp">
+      <Filter>LogicalLevel\Renderer\Filter\System</Filter>
+    </ClCompile>
+    <ClCompile Include="CBatchFilter.cpp">
+      <Filter>LogicalLevel\Renderer\GeometryBatch</Filter>
+    </ClCompile>
+    <ClCompile Include="CGeometryBatch.cpp">
+      <Filter>LogicalLevel\Renderer\GeometryBatch</Filter>
+    </ClCompile>
+    <ClCompile Include="CGeometryInstance.cpp">
+      <Filter>LogicalLevel\Renderer\GeometryBatch</Filter>
+    </ClCompile>
+    <ClCompile Include="CAnimationBatch.cpp">
+      <Filter>LogicalLevel\Renderer\GeometryBatch\BatchBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="CMeshBatch.cpp">
+      <Filter>LogicalLevel\Renderer\GeometryBatch\BatchBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="CModifyBatch.cpp">
+      <Filter>LogicalLevel\Renderer\GeometryBatch\BatchBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderInstBatch.cpp">
+      <Filter>LogicalLevel\Renderer\GeometryBatch\BatchBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderStateBatch.cpp">
+      <Filter>LogicalLevel\Renderer\GeometryBatch\BatchBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="CLight.cpp">
+      <Filter>LogicalLevel\Lighting</Filter>
+    </ClCompile>
+    <ClCompile Include="CLightSystem.cpp">
+      <Filter>LogicalLevel\Lighting</Filter>
+    </ClCompile>
+    <ClCompile Include="CDistanceFont.cpp">
+      <Filter>LogicalLevel\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="CFontBase.cpp">
+      <Filter>LogicalLevel\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="CFontListContainer.cpp">
+      <Filter>LogicalLevel\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="CFontMgr.cpp">
+      <Filter>LogicalLevel\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="CFontRenderer.cpp">
+      <Filter>LogicalLevel\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="CGdiFont.cpp">
+      <Filter>LogicalLevel\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderFont.cpp">
+      <Filter>LogicalLevel\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="CTextureFont.cpp">
+      <Filter>LogicalLevel\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="CTextureFontDef.cpp">
+      <Filter>LogicalLevel\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="CTextureFontMgr.cpp">
+      <Filter>LogicalLevel\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\sdk\inc\RenderTextParam.cpp">
+      <Filter>LogicalLevel\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="CDataSources.cpp">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="CDynamicPool.cpp">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraphic.cpp">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraphicMallocObject.cpp">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="CParamsBufferMgr.cpp">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderable.cpp">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderOperation.cpp">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderPipeline.cpp">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderStyle.cpp">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="CResourceContainer.cpp">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="CResUnitGroup.cpp">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="CSkeletalsMgr.cpp">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="CVertexDeclaration.cpp">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicBase.cpp">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="IDName.cpp">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="CTextureQualityMgr.cpp">
+      <Filter>LogicalLevel\Main\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="CHardwareBuffer.cpp">
+      <Filter>LogicalLevel\Main\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="CHardwareBufferMgr.cpp">
+      <Filter>LogicalLevel\Main\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="CIndexHardwareBuffer.cpp">
+      <Filter>LogicalLevel\Main\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="CShadowBuffer.cpp">
+      <Filter>LogicalLevel\Main\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="CVertexHardwareBuffer.cpp">
+      <Filter>LogicalLevel\Main\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderTarget.cpp">
+      <Filter>LogicalLevel\Main\RenderTarget</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderTexture.cpp">
+      <Filter>LogicalLevel\Main\RenderTarget</Filter>
+    </ClCompile>
+    <ClCompile Include="CViewport.cpp">
+      <Filter>LogicalLevel\Main\RenderTarget</Filter>
+    </ClCompile>
+    <ClCompile Include="CWindowTarget.cpp">
+      <Filter>LogicalLevel\Main\RenderTarget</Filter>
+    </ClCompile>
+    <ClCompile Include="CTexFmtMapper.cpp">
+      <Filter>LogicalLevel\Main\TextureNew</Filter>
+    </ClCompile>
+    <ClCompile Include="CTexture.cpp">
+      <Filter>LogicalLevel\Main\TextureNew</Filter>
+    </ClCompile>
+    <ClCompile Include="CTexture2D.cpp">
+      <Filter>LogicalLevel\Main\TextureNew</Filter>
+    </ClCompile>
+    <ClCompile Include="CTexture3D.cpp">
+      <Filter>LogicalLevel\Main\TextureNew</Filter>
+    </ClCompile>
+    <ClCompile Include="CTextureCube.cpp">
+      <Filter>LogicalLevel\Main\TextureNew</Filter>
+    </ClCompile>
+    <ClCompile Include="CTextureImp.cpp">
+      <Filter>LogicalLevel\Main\TextureNew</Filter>
+    </ClCompile>
+    <ClCompile Include="CTexture2DImp.cpp">
+      <Filter>LogicalLevel\Main\TextureNew\Impl</Filter>
+    </ClCompile>
+    <ClCompile Include="CFrameAnimTex.cpp">
+      <Filter>LogicalLevel\Main\TextureNew\AnimTex</Filter>
+    </ClCompile>
+    <ClCompile Include="CGridAnimTex.cpp">
+      <Filter>LogicalLevel\Main\TextureNew\AnimTex</Filter>
+    </ClCompile>
+    <ClCompile Include="SyncSystem.cpp">
+      <Filter>LogicalLevel\SyncSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="CModifyRS.cpp">
+      <Filter>LogicalLevel\RenderStage</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderStyleEx.cpp">
+      <Filter>LogicalLevel\RenderStage</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderStyleInst.cpp">
+      <Filter>LogicalLevel\RenderStage</Filter>
+    </ClCompile>
+    <ClCompile Include="CShaderCompiler.cpp">
+      <Filter>LogicalLevel\RenderStage</Filter>
+    </ClCompile>
+    <ClCompile Include="CShaderState.cpp">
+      <Filter>LogicalLevel\RenderStage</Filter>
+    </ClCompile>
+    <ClCompile Include="CStageNode.cpp">
+      <Filter>LogicalLevel\RenderStage</Filter>
+    </ClCompile>
+    <ClCompile Include="CStageNodeInst.cpp">
+      <Filter>LogicalLevel\RenderStage</Filter>
+    </ClCompile>
+    <ClCompile Include="CColorStage.cpp">
+      <Filter>LogicalLevel\RenderStage\FixStage</Filter>
+    </ClCompile>
+    <ClCompile Include="CFixStage.cpp">
+      <Filter>LogicalLevel\RenderStage\FixStage</Filter>
+    </ClCompile>
+    <ClCompile Include="CSamplerStage.cpp">
+      <Filter>LogicalLevel\RenderStage\FixStage</Filter>
+    </ClCompile>
+    <ClCompile Include="CTextureStage.cpp">
+      <Filter>LogicalLevel\RenderStage\FixStage</Filter>
+    </ClCompile>
+    <ClCompile Include="CUVCtrlStage.cpp">
+      <Filter>LogicalLevel\RenderStage\FixStage</Filter>
+    </ClCompile>
+    <ClCompile Include="CColorStageCoder.cpp">
+      <Filter>LogicalLevel\RenderStage\Coder</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderStyleCoder.cpp">
+      <Filter>LogicalLevel\RenderStage\Coder</Filter>
+    </ClCompile>
+    <ClCompile Include="CSamplerStageCoder.cpp">
+      <Filter>LogicalLevel\RenderStage\Coder</Filter>
+    </ClCompile>
+    <ClCompile Include="CTextureStageCoder.cpp">
+      <Filter>LogicalLevel\RenderStage\Coder</Filter>
+    </ClCompile>
+    <ClCompile Include="CUVCtrlStageCoder.cpp">
+      <Filter>LogicalLevel\RenderStage\Coder</Filter>
+    </ClCompile>
+    <ClCompile Include="CGpuProgram.cpp">
+      <Filter>LogicalLevel\RenderStage\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="CGpuProgramMgr.cpp">
+      <Filter>LogicalLevel\RenderStage\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="CShaderConstParams.cpp">
+      <Filter>LogicalLevel\RenderStage\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Coder\CAgpCoder.cpp">
+      <Filter>LogicalLevel\Coder</Filter>
+    </ClCompile>
+    <ClCompile Include="Coder\CAniCoder.cpp">
+      <Filter>LogicalLevel\Coder</Filter>
+    </ClCompile>
+    <ClCompile Include="Coder\CMeshCoder.cpp">
+      <Filter>LogicalLevel\Coder</Filter>
+    </ClCompile>
+    <ClCompile Include="Coder\CModCoder.cpp">
+      <Filter>LogicalLevel\Coder</Filter>
+    </ClCompile>
+    <ClCompile Include="Coder\CPieceCoder.cpp">
+      <Filter>LogicalLevel\Coder</Filter>
+    </ClCompile>
+    <ClCompile Include="CPieceRenderStyleCoder.cpp">
+      <Filter>LogicalLevel\Coder</Filter>
+    </ClCompile>
+    <ClCompile Include="Coder\CRsCoder.cpp">
+      <Filter>LogicalLevel\Coder</Filter>
+    </ClCompile>
+    <ClCompile Include="Coder\CSkeCoder.cpp">
+      <Filter>LogicalLevel\Coder</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoderNameHelper.cpp">
+      <Filter>LogicalLevel\Coder\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="CRefCoder.cpp">
+      <Filter>LogicalLevel\Coder\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="CRsRefCoder.cpp">
+      <Filter>LogicalLevel\Coder\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="CTexRefCoder.cpp">
+      <Filter>LogicalLevel\Coder\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="CFrameAnimTexCoder.cpp">
+      <Filter>LogicalLevel\Coder\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="CGridAnimTexCoder.cpp">
+      <Filter>LogicalLevel\Coder\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="CJPGDecoder.cpp">
+      <Filter>LogicalLevel\Coder\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="CTexture2DCoder.cpp">
+      <Filter>LogicalLevel\Coder\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="CTexture3DCoder.cpp">
+      <Filter>LogicalLevel\Coder\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="CTextureCoder.cpp">
+      <Filter>LogicalLevel\Coder\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="CTextureCubeCoder.cpp">
+      <Filter>LogicalLevel\Coder\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="CCtrlNode.cpp">
+      <Filter>LogicalLevel\RenderSpace</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderNode.cpp">
+      <Filter>LogicalLevel\RenderSpace</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderSpace.cpp">
+      <Filter>LogicalLevel\RenderSpace</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderSpaceNode.cpp">
+      <Filter>LogicalLevel\RenderSpace</Filter>
+    </ClCompile>
+    <ClCompile Include="CDebugHelper.cpp">
+      <Filter>LogicalLevel\DebugHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic_dx9\CDx9DataSources.cpp">
+      <Filter>PhysicalLevel\DX9%28March 2008%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic_dx9\CDx9MainWindow.cpp">
+      <Filter>PhysicalLevel\DX9%28March 2008%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic_dx9\CDx9RenderPipeline.cpp">
+      <Filter>PhysicalLevel\DX9%28March 2008%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic_dx9\CDx9VertexDeclaration.cpp">
+      <Filter>PhysicalLevel\DX9%28March 2008%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic_dx9\CDx9WindowTarget.cpp">
+      <Filter>PhysicalLevel\DX9%28March 2008%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic_dx9\CDx9Adapter.cpp">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\D3D9_Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic_dx9\CDx9DeviceCapacity.cpp">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\D3D9_Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic_dx9\CDx9DDSTextureCoder.cpp">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\D3D9_Utility\TextureCoder</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic_dx9\CDx9TextureCoder.cpp">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\D3D9_Utility\TextureCoder</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic_dx9\CDx9IndexHardwareBuffer.cpp">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic_dx9\CDx9VertexHardwareBuffer.cpp">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic_dx9\CDx9DepthTexture.cpp">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic_dx9\CDx9RenderTexture.cpp">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic_dx9\CDx9Texture.cpp">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic_dx9\CDx9EffectProgram.cpp">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic_dx9\CDx9FragmentProgram.cpp">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic_dx9\CDx9GpuProgram.cpp">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic_dx9\CDx9GPUProgramMgr.cpp">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic_dx9\CDx9GpuProgramParameters.cpp">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic_dx9\CDX9ShaderMacro.cpp">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic_dx9\CDx9VertexProgram.cpp">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic_dx9\CDx9TexFmtMapper.cpp">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\TextureNew</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic_dx9\CDx9Texture3D.cpp">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\TextureNew</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic_dx9\CDx9TextureCube.cpp">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\TextureNew</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphic_dx9\CDx9Texture2DImp.cpp">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\TextureNew\Impl</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\sdk\inc\CComputerInfo.h">
+      <Filter>LogicalLevel\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CGraphicExp.h">
+      <Filter>LogicalLevel\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CHardwareCapacity.h">
+      <Filter>LogicalLevel\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\GraphicTest.h">
+      <Filter>LogicalLevel\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\GraphicUtil.h">
+      <Filter>LogicalLevel\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IDName.h">
+      <Filter>LogicalLevel\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>LogicalLevel\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TSafeBuffer.h">
+      <Filter>LogicalLevel\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CBloomTarget.h">
+      <Filter>LogicalLevel\PostProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="CPostEffect.h">
+      <Filter>LogicalLevel\PostProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="CPostEffectLoader.h">
+      <Filter>LogicalLevel\PostProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="CPostEffectPass.h">
+      <Filter>LogicalLevel\PostProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CPostProcessManager.h">
+      <Filter>LogicalLevel\PostProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="CScreenAlignedQuad.h">
+      <Filter>LogicalLevel\PostProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CMatrixUnit.h">
+      <Filter>LogicalLevel\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CPieceGroup.h">
+      <Filter>LogicalLevel\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRenderMatrix.h">
+      <Filter>LogicalLevel\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRenderPiece.h">
+      <Filter>LogicalLevel\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="CSimCloth.h">
+      <Filter>LogicalLevel\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CAnimation.h">
+      <Filter>LogicalLevel\Model\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CAnimationController.h">
+      <Filter>LogicalLevel\Model\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CAnimationGroup.h">
+      <Filter>LogicalLevel\Model\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSkeletal.h">
+      <Filter>LogicalLevel\Model\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSkeletalFrame.h">
+      <Filter>LogicalLevel\Model\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="CCPUSkeletalMesh.h">
+      <Filter>LogicalLevel\Model\Animation\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CMesh.h">
+      <Filter>LogicalLevel\Model\Animation\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CMeshLevel.h">
+      <Filter>LogicalLevel\Model\Animation\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CMeshLoader.h">
+      <Filter>LogicalLevel\Model\Animation\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSkeletalMesh.h">
+      <Filter>LogicalLevel\Model\Animation\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CStaticMesh.h">
+      <Filter>LogicalLevel\Model\Animation\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CVertexAniMesh.h">
+      <Filter>LogicalLevel\Model\Animation\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CBaseModel.h">
+      <Filter>LogicalLevel\Model\Node</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CModel.h">
+      <Filter>LogicalLevel\Model\Node</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CNodeController.h">
+      <Filter>LogicalLevel\Model\Node</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCamera.h">
+      <Filter>LogicalLevel\Model\Node\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CFrustum.h">
+      <Filter>LogicalLevel\Model\Node\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSkeletalMask.h">
+      <Filter>LogicalLevel\Model\Node\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CDynamicVB.h">
+      <Filter>LogicalLevel\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CFilterNode.h">
+      <Filter>LogicalLevel\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRenderCommand.h">
+      <Filter>LogicalLevel\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRendererBase.h">
+      <Filter>LogicalLevel\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRenderFilter.h">
+      <Filter>LogicalLevel\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRenderGroup.h">
+      <Filter>LogicalLevel\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRenderList.h">
+      <Filter>LogicalLevel\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="CRefractFilter.h">
+      <Filter>LogicalLevel\Renderer\Filter\Special</Filter>
+    </ClInclude>
+    <ClInclude Include="CShowPassFilter.h">
+      <Filter>LogicalLevel\Renderer\Filter\Special</Filter>
+    </ClInclude>
+    <ClInclude Include="CAlphaFilter.h">
+      <Filter>LogicalLevel\Renderer\Filter\Alpha</Filter>
+    </ClInclude>
+    <ClInclude Include="CPortraitTransFilter.h">
+      <Filter>LogicalLevel\Renderer\Filter\Alpha</Filter>
+    </ClInclude>
+    <ClInclude Include="CNoneShadowFilter.h">
+      <Filter>LogicalLevel\Renderer\Filter\Shadow</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlaneShadowFilter.h">
+      <Filter>LogicalLevel\Renderer\Filter\Shadow</Filter>
+    </ClInclude>
+    <ClInclude Include="CProjectShadowFilter.h">
+      <Filter>LogicalLevel\Renderer\Filter\Shadow</Filter>
+    </ClInclude>
+    <ClInclude Include="CReceiveShadowFilter.h">
+      <Filter>LogicalLevel\Renderer\Filter\Shadow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CShadowFilter.h">
+      <Filter>LogicalLevel\Renderer\Filter\Shadow</Filter>
+    </ClInclude>
+    <ClInclude Include="CShadowHeader.h">
+      <Filter>LogicalLevel\Renderer\Filter\Shadow</Filter>
+    </ClInclude>
+    <ClInclude Include="CShadowMapFilter.h">
+      <Filter>LogicalLevel\Renderer\Filter\Shadow</Filter>
+    </ClInclude>
+    <ClInclude Include="CShadowClipper.h">
+      <Filter>LogicalLevel\Renderer\Filter\Shadow\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="CShadowMatrixBuilder.h">
+      <Filter>LogicalLevel\Renderer\Filter\Shadow\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="CAlphaShadowFilter.h">
+      <Filter>LogicalLevel\Renderer\Filter\System</Filter>
+    </ClInclude>
+    <ClInclude Include="CDefaultFilter.h">
+      <Filter>LogicalLevel\Renderer\Filter\System</Filter>
+    </ClInclude>
+    <ClInclude Include="CVertexDeclFilter.h">
+      <Filter>LogicalLevel\Renderer\Filter\System</Filter>
+    </ClInclude>
+    <ClInclude Include="CBatchFilter.h">
+      <Filter>LogicalLevel\Renderer\GeometryBatch</Filter>
+    </ClInclude>
+    <ClInclude Include="CGeometryBatch.h">
+      <Filter>LogicalLevel\Renderer\GeometryBatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CGeometryInstance.h">
+      <Filter>LogicalLevel\Renderer\GeometryBatch</Filter>
+    </ClInclude>
+    <ClInclude Include="CAnimationBatch.h">
+      <Filter>LogicalLevel\Renderer\GeometryBatch\BatchBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="CMeshBatch.h">
+      <Filter>LogicalLevel\Renderer\GeometryBatch\BatchBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="CModifyBatch.h">
+      <Filter>LogicalLevel\Renderer\GeometryBatch\BatchBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="CRenderInstBatch.h">
+      <Filter>LogicalLevel\Renderer\GeometryBatch\BatchBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="CRenderStateBatch.h">
+      <Filter>LogicalLevel\Renderer\GeometryBatch\BatchBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CLight.h">
+      <Filter>LogicalLevel\Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CLightSystem.h">
+      <Filter>LogicalLevel\Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IEffectGraphic.h">
+      <Filter>LogicalLevel\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IGraphic.h">
+      <Filter>LogicalLevel\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IModelHandler.h">
+      <Filter>LogicalLevel\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IProcessCallBack.h">
+      <Filter>LogicalLevel\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\ISpaceNodeHandler.h">
+      <Filter>LogicalLevel\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="CDistanceFont.h">
+      <Filter>LogicalLevel\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="CFontBase.h">
+      <Filter>LogicalLevel\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CFontListContainer.h">
+      <Filter>LogicalLevel\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CFontMgr.h">
+      <Filter>LogicalLevel\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="CFontRenderer.h">
+      <Filter>LogicalLevel\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="CGdiFont.h">
+      <Filter>LogicalLevel\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRenderFont.h">
+      <Filter>LogicalLevel\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="CTextureFont.h">
+      <Filter>LogicalLevel\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CTextureFontDef.h">
+      <Filter>LogicalLevel\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CTextureFontMgr.h">
+      <Filter>LogicalLevel\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\RenderTextParam.h">
+      <Filter>LogicalLevel\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CDataSources.h">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CDynamicPool.h">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\CGraphic.h">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CGraphicMallocObject.h">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CParamsBufferMgr.h">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CPostFilter.h">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRenderable.h">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRenderOperation.h">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRenderPipeline.h">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRenderStyle.h">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CResourceContainer.h">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CResUnitGroup.h">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSkeletalsMgr.h">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CVertexDeclaration.h">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="DisplayMode.h">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\FilterDefine.h">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\GraphicBase.h">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\GraphicClassDefine.h">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\GraphicDefs.h">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\GraphicRenderStyle.h">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\GraphicRes.h">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\RenderSettings.h">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\RTTFormat.h">
+      <Filter>LogicalLevel\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CTextureQualityMgr.h">
+      <Filter>LogicalLevel\Main\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\ITexture.h">
+      <Filter>LogicalLevel\Main\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CHardwareBuffer.h">
+      <Filter>LogicalLevel\Main\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CHardwareBufferMgr.h">
+      <Filter>LogicalLevel\Main\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CIndexHardwareBuffer.h">
+      <Filter>LogicalLevel\Main\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CShadowBuffer.h">
+      <Filter>LogicalLevel\Main\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CVertexHardwareBuffer.h">
+      <Filter>LogicalLevel\Main\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRenderTarget.h">
+      <Filter>LogicalLevel\Main\RenderTarget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRenderTexture.h">
+      <Filter>LogicalLevel\Main\RenderTarget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CViewport.h">
+      <Filter>LogicalLevel\Main\RenderTarget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CWindowTarget.h">
+      <Filter>LogicalLevel\Main\RenderTarget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CTexFmtMapper.h">
+      <Filter>LogicalLevel\Main\TextureNew</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CTexture.h">
+      <Filter>LogicalLevel\Main\TextureNew</Filter>
+    </ClInclude>
+    <ClInclude Include="CTexture2D.h">
+      <Filter>LogicalLevel\Main\TextureNew</Filter>
+    </ClInclude>
+    <ClInclude Include="CTexture3D.h">
+      <Filter>LogicalLevel\Main\TextureNew</Filter>
+    </ClInclude>
+    <ClInclude Include="CTextureCube.h">
+      <Filter>LogicalLevel\Main\TextureNew</Filter>
+    </ClInclude>
+    <ClInclude Include="CTextureImp.h">
+      <Filter>LogicalLevel\Main\TextureNew</Filter>
+    </ClInclude>
+    <ClInclude Include="CTexture2DImp.h">
+      <Filter>LogicalLevel\Main\TextureNew\Impl</Filter>
+    </ClInclude>
+    <ClInclude Include="CFrameAnimTex.h">
+      <Filter>LogicalLevel\Main\TextureNew\AnimTex</Filter>
+    </ClInclude>
+    <ClInclude Include="CGridAnimTex.h">
+      <Filter>LogicalLevel\Main\TextureNew\AnimTex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SyncSystem.h">
+      <Filter>LogicalLevel\SyncSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CModifyRS.h">
+      <Filter>LogicalLevel\RenderStage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRenderStyleEx.h">
+      <Filter>LogicalLevel\RenderStage</Filter>
+    </ClInclude>
+    <ClInclude Include="CRenderStyleInst.h">
+      <Filter>LogicalLevel\RenderStage</Filter>
+    </ClInclude>
+    <ClInclude Include="CShaderCompiler.h">
+      <Filter>LogicalLevel\RenderStage</Filter>
+    </ClInclude>
+    <ClInclude Include="CShaderState.h">
+      <Filter>LogicalLevel\RenderStage</Filter>
+    </ClInclude>
+    <ClInclude Include="CStageNode.h">
+      <Filter>LogicalLevel\RenderStage</Filter>
+    </ClInclude>
+    <ClInclude Include="CStageNodeInst.h">
+      <Filter>LogicalLevel\RenderStage</Filter>
+    </ClInclude>
+    <ClInclude Include="CColorStage.h">
+      <Filter>LogicalLevel\RenderStage\FixStage</Filter>
+    </ClInclude>
+    <ClInclude Include="CFixStage.h">
+      <Filter>LogicalLevel\RenderStage\FixStage</Filter>
+    </ClInclude>
+    <ClInclude Include="CSamplerStage.h">
+      <Filter>LogicalLevel\RenderStage\FixStage</Filter>
+    </ClInclude>
+    <ClInclude Include="CTextureStage.h">
+      <Filter>LogicalLevel\RenderStage\FixStage</Filter>
+    </ClInclude>
+    <ClInclude Include="CUVCtrlStage.h">
+      <Filter>LogicalLevel\RenderStage\FixStage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CColorStageCoder.h">
+      <Filter>LogicalLevel\RenderStage\Coder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRenderStyleCoder.h">
+      <Filter>LogicalLevel\RenderStage\Coder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSamplerStageCoder.h">
+      <Filter>LogicalLevel\RenderStage\Coder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CTextureStageCoder.h">
+      <Filter>LogicalLevel\RenderStage\Coder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CUVCtrlStageCoder.h">
+      <Filter>LogicalLevel\RenderStage\Coder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CGpuProgram.h">
+      <Filter>LogicalLevel\RenderStage\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CGpuProgramMgr.h">
+      <Filter>LogicalLevel\RenderStage\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CGpuProgramParameters.h">
+      <Filter>LogicalLevel\RenderStage\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CShaderConstParams.h">
+      <Filter>LogicalLevel\RenderStage\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IRenderTime.h">
+      <Filter>LogicalLevel\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Coder\CAgpCoder.h">
+      <Filter>LogicalLevel\Coder</Filter>
+    </ClInclude>
+    <ClInclude Include="Coder\CAniCoder.h">
+      <Filter>LogicalLevel\Coder</Filter>
+    </ClInclude>
+    <ClInclude Include="Coder\CMeshCoder.h">
+      <Filter>LogicalLevel\Coder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CModCoder.h">
+      <Filter>LogicalLevel\Coder</Filter>
+    </ClInclude>
+    <ClInclude Include="Coder\CPieceCoder.h">
+      <Filter>LogicalLevel\Coder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CPieceRenderStyleCoder.h">
+      <Filter>LogicalLevel\Coder</Filter>
+    </ClInclude>
+    <ClInclude Include="Coder\CRsCoder.h">
+      <Filter>LogicalLevel\Coder</Filter>
+    </ClInclude>
+    <ClInclude Include="Coder\CSkeCoder.h">
+      <Filter>LogicalLevel\Coder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCoderNameHelper.h">
+      <Filter>LogicalLevel\Coder\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRefCoder.h">
+      <Filter>LogicalLevel\Coder\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRsRefCoder.h">
+      <Filter>LogicalLevel\Coder\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CTexRefCoder.h">
+      <Filter>LogicalLevel\Coder\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="CFrameAnimTexCoder.h">
+      <Filter>LogicalLevel\Coder\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="CGridAnimTexCoder.h">
+      <Filter>LogicalLevel\Coder\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CJPGDecoder.h">
+      <Filter>LogicalLevel\Coder\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="CTexture2DCoder.h">
+      <Filter>LogicalLevel\Coder\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="CTexture3DCoder.h">
+      <Filter>LogicalLevel\Coder\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="CTextureCoder.h">
+      <Filter>LogicalLevel\Coder\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="CTextureCubeCoder.h">
+      <Filter>LogicalLevel\Coder\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCtrlNode.h">
+      <Filter>LogicalLevel\RenderSpace</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRenderNode.h">
+      <Filter>LogicalLevel\RenderSpace</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRenderSpace.h">
+      <Filter>LogicalLevel\RenderSpace</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRenderSpaceNode.h">
+      <Filter>LogicalLevel\RenderSpace</Filter>
+    </ClInclude>
+    <ClInclude Include="CDebugHelper.h">
+      <Filter>LogicalLevel\DebugHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic_dx9\CDx9DataSources.h">
+      <Filter>PhysicalLevel\DX9%28March 2008%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic_dx9\CDx9MainWindow.h">
+      <Filter>PhysicalLevel\DX9%28March 2008%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic_dx9\CDx9RenderPipeline.h">
+      <Filter>PhysicalLevel\DX9%28March 2008%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic_dx9\CDx9VertexDeclaration.h">
+      <Filter>PhysicalLevel\DX9%28March 2008%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic_dx9\CDx9WindowTarget.h">
+      <Filter>PhysicalLevel\DX9%28March 2008%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic_dx9\Dx9Base.h">
+      <Filter>PhysicalLevel\DX9%28March 2008%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic_dx9\CDx9Adapter.h">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\D3D9_Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic_dx9\CDx9DeviceCapacity.h">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\D3D9_Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic_dx9\CDx9DDSTextureCoder.h">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\D3D9_Utility\TextureCoder</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic_dx9\CDx9TextureCoder.h">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\D3D9_Utility\TextureCoder</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic_dx9\CDx9IndexHardwareBuffer.h">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic_dx9\CDx9VertexHardwareBuffer.h">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic_dx9\CDx9DepthTexture.h">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic_dx9\CDx9RenderTexture.h">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic_dx9\CDx9Texture.h">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic_dx9\CDx9EffectProgram.h">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic_dx9\CDx9FragmentProgram.h">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic_dx9\CDx9GpuProgram.h">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic_dx9\CDx9GPUProgramMgr.h">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic_dx9\CDx9GpuProgramParameters.h">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic_dx9\CDx9ShaderMacro.h">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic_dx9\CDx9VertexProgram.h">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic_dx9\CDx9TexFmtMapper.h">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\TextureNew</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic_dx9\CDx9Texture3D.h">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\TextureNew</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic_dx9\CDx9TextureCube.h">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\TextureNew</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphic_dx9\CDx9Texture2DImp.h">
+      <Filter>PhysicalLevel\DX9%28March 2008%29\TextureNew\Impl</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,1 @@
+CJiFenWnd = class (SQRDialog)

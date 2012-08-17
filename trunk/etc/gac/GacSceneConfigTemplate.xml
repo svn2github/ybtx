@@ -1,0 +1,55 @@
+﻿<scene_config>
+	<!-- 摄像机设置-->
+	<camera_config>		
+		<!--自由视角-->
+		<mode_path>etc/gac/GacCameraConfig.xml</mode_path>
+		<freecamera>1</freecamera>
+	</camera_config>
+	
+	<!-- 图形相关设置 -->
+	<graph_config>
+		<lockratio>1</lockratio> 	<!-- 是否强行锁定-->
+		<definition>1.0</definition>    <!-- 清晰度-->
+		<showfps>0</showfps>		<!-- 是否显示FPS -->
+		<shader_map>0</shader_map> 	<!-- 是否启动Shader地表 -->
+		<bloom>0</bloom>		<!-- 是否开启全屏泛光 -->
+		<refract>0</refract>		<!-- 空气折射-->
+		<baking>1</baking>		<!-- 是否开启烘焙 -->
+		<effectlevel>1.0</effectlevel>  <!-- 特效细节0.1~1.0f -->
+		<bcamerashake>1</bcamerashake>	<!-- 是否打开镜头振动 -->
+		<vsynchronize>0</vsynchronize> 	<!-- 是否开启垂直同步 -->		
+		<antialias>0</antialias>	<!--反锯齿:0无2低4高-->
+		<shadow>1</shadow>		<!--阴影: 0无1投影2SM-->
+		<water>1</water>		<!--水面质量: 0:纹理动画1美术设定2实时反射-->
+		<texquality>0</texquality> 	<!--纹理质量: 0:最好，以此类推-->
+ 		<fullscreen>1</fullscreen>	<!--是否全屏-->
+ 		<uiscale>1.0</uiscale>		<!--GUI缩放 0.68~1.32 -->
+		<color_depth>32</color_depth>	<!--色深: 32或16-->
+ 		<tex_h_mem>96</tex_h_mem>	<!--高质量纹理需求的显存-->
+ 		<tex_m_mem>48</tex_m_mem>	<!--中质量纹理需求的显存-->
+		<max_shader>4</max_shader>
+		<max_vid_mem>0</max_vid_mem>
+		<min_fog_dist>0</min_fog_dist>	<!--强制设置雾的起始位置,0代表不设置，单位：米-->
+		<max_fog_dist>0</max_fog_dist><!--强制设置雾的终止位置,0代表不设置，单位：米-->
+	</graph_config>
+
+	<!--音频相关设置-->
+	<audio_config>
+		<music>0.5</music>		<!--音乐-->
+		<effect>0.8</effect>		<!--音效-->
+		<ambient>0.8</ambient>		<!--环境-->
+		<voice>1</voice>			<!--语音-->
+	</audio_config>
+	
+	<!-- 系统相关设置 -->
+	<system_config>
+		<!--截图保存路径-->
+		<screenshot>var/gac/screenshot/</screenshot>
+	
+		<!--低端配置水面纹理-->
+		<lake_tex num="30">tile/water/lake/lake_</lake_tex>
+
+		<!--Shader文件路径-->
+		<shader_path>engine/shader</shader_path>
+	</system_config>
+</scene_config>

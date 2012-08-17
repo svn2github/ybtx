@@ -1,0 +1,713 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FF66DDDF-2D34-4B47-BBA4-BD0659B8F41A}</ProjectGuid>
+    <RootNamespace>sqr_tools</RootNamespace>
+    <Keyword>ManagedCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CLRSupport>true</CLRSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>true</CLRSupport>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../../bin/$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../../bin/$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\;..\..\tdk\inc;..\..\sdk\inc;..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>tinyxml.lib;cppunit.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\implib\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\tdk\inc;.\;..\..\sdk\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>tinyxml.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\implib\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="System.Data">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="System.Xml">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="System.Design">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.ico" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="CUIBase.cpp" />
+    <ClCompile Include="PathSetCtrl\CPathSetCtrl.cpp" />
+    <ClCompile Include="VideoSetCtrl\CVideoSettingCtrl.cpp" />
+    <ClCompile Include="SceneStateCtrl\CSceneStateCtrl.cpp" />
+    <ClCompile Include="ViewCtrl\CViewCtrl.cpp" />
+    <ClCompile Include="PortraitViewCtrl\CPortraitViewCtrl.cpp" />
+    <ClCompile Include="ReadPkgViewCtrl\CReadPkgCtrl.cpp" />
+    <ClCompile Include="LogCtrl\CLogCtrl.cpp" />
+    <ClCompile Include="FProcessCtrl\CFProcessCtrl.cpp" />
+    <ClCompile Include="KeyFrameCtrl\CKeyFrameCtrl.cpp" />
+    <ClCompile Include="GroundSpeedCtrl\CGroundSpeedCtrl.cpp" />
+    <ClCompile Include="FrameScaleCtrl\CFrameScaleCtrl.cpp" />
+    <ClCompile Include="LightParameterCtrl\CLightParameterCtrl.cpp" />
+    <ClCompile Include="FogParameterCtrl\CFogParameterCtrl.cpp" />
+    <ClCompile Include="ColorCtrl\CColorCtrl.cpp" />
+    <ClCompile Include="ProcessCtrlEx\CProcessCtrlEx.cpp" />
+    <ClCompile Include="HDRSettingCtrl\CHDRSettingCtrl.cpp" />
+    <ClCompile Include="PickColorCtrl\CPowerColorPickerCtrl.cpp" />
+    <ClCompile Include="CLRStringHelper.cpp" />
+    <ClCompile Include="CEfxFileCtrl.cpp" />
+    <ClCompile Include="CEfxEditProp.cpp" />
+    <ClCompile Include="EffectTrack\CEfxTrackCtrl.cpp" />
+    <ClCompile Include="EffectKeyUint\CEfxKeyUintCtrl.cpp" />
+    <ClCompile Include="MapEffectCtrl\CMapEffectCtrl.cpp" />
+    <ClCompile Include="AnimationGroupEditCtrl\CAnimationGroupEditCtrl.cpp" />
+    <ClCompile Include="PieceUnitEditCtrl\CPieceUnitEditCtrl.cpp" />
+    <ClCompile Include="PieceGroupEditCtrl\CPieceGroupEditCtrl.cpp" />
+    <ClCompile Include="AutoPropToCtrl\AutoDataUintCtrl.cpp" />
+    <ClCompile Include="AutoPropToCtrl\AutoPropToCtrl.cpp" />
+    <ClCompile Include="BaseDataCtrl\BoolEditCtrl.cpp" />
+    <ClCompile Include="BaseDataCtrl\ComBoEditCtrl.cpp" />
+    <ClCompile Include="BaseDataCtrl\CueListDialog.cpp" />
+    <ClCompile Include="CUIPropBase.cpp" />
+    <ClCompile Include="BaseDataCtrl\EStrMapEditCtrl.cpp" />
+    <ClCompile Include="BaseDataCtrl\MaxMinNumEditDialog.cpp" />
+    <ClCompile Include="BaseDataCtrl\NumEditCtrl.cpp" />
+    <ClCompile Include="BaseDataCtrl\NumMapEditCtrl.cpp" />
+    <ClCompile Include="BaseDataCtrl\SingleStringEditCtrl.cpp" />
+    <ClCompile Include="BaseDataCtrl\Vector3EditCtrl.cpp" />
+    <ClCompile Include="BaseDataCtrl\Vector3EditDialog.cpp" />
+    <ClCompile Include="BaseDataCtrl\Vector3MapCtrl.cpp" />
+    <ClCompile Include="BoneListCtrl\CBoneListCtrl.cpp" />
+    <ClCompile Include="LightViewCtrl\CLightView.cpp" />
+    <ClCompile Include="PropCtrl\CPropCtrl.cpp" />
+    <ClCompile Include="BoneBoxListCtrl\CBoneBoxListCtrl.cpp" />
+    <ClCompile Include="BoneBoxEditCtrl\CBoneBoxEditCtrl.cpp" />
+    <ClCompile Include="ColorAnimCtrl\CColorAnimCtrl.cpp" />
+    <ClCompile Include="PathSetDlg\CPathSetDlg.cpp" />
+    <ClCompile Include="VideoSetDlg\CVideoSetDlg.cpp" />
+    <ClCompile Include="FProcessDlg\CFProcessDlg.cpp" />
+    <ClCompile Include="CBaseComponent.cpp" />
+    <ClCompile Include="CContextCom.cpp" />
+    <ClCompile Include="CameraCom\CCameraBaseCom.cpp" />
+    <ClCompile Include="CameraCom\CFPSCameraCom.cpp" />
+    <ClCompile Include="CameraCom\CFREECameraCom.cpp" />
+    <ClCompile Include="CameraCom\CRTSCameraCom.cpp" />
+    <ClCompile Include="BoundingBoxPropCom\CBoundingBoxPropCom.cpp" />
+    <ClCompile Include="SkeletonPropCom\CSkeletonPropCom.cpp" />
+    <ClCompile Include="SkeletonPropCom\SaveControl.cpp" />
+    <ClCompile Include="SkeletonPropCom\SizeControl.cpp" />
+    <ClCompile Include="BasicPanelCtrl\CBasicPanel.cpp" />
+    <ClCompile Include="GridPanelCtrl\CGridPanel.cpp" />
+    <ClCompile Include="RecordCtrl\CRecordPanel.cpp" />
+    <ClCompile Include="SetViewCtrl\CSetViewCtrl.cpp" />
+    <ClCompile Include="TileViewCtrl\CTileViewCtrl.cpp" />
+    <ClCompile Include="TextureViewCtrl\CTextureViewCltr.cpp" />
+    <ClCompile Include="NewMapDlg\CNewMapDlg.cpp" />
+    <ClCompile Include="NewMapCtrl\CNewMapCtrl.cpp" />
+    <ClCompile Include="ExMapCtrl\CExMapCtrl.cpp" />
+    <ClCompile Include="BlockViewCtrl\CBlockViewCtrl.cpp" />
+    <ClCompile Include="AudioView\AudioViewCtrl.cpp" />
+    <ClCompile Include="AudioView\CueListCtrl.cpp" />
+    <ClCompile Include="AudioView\AmbientAudioCtrl.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="LightEffect\CLightEffectPanel.cpp" />
+    <ClCompile Include="EditorUIHelper.cpp" />
+    <ClCompile Include="BasicPropSet\CAudioProp.cpp" />
+    <ClCompile Include="BasicPropSet\CBaseProp.cpp" />
+    <ClCompile Include="BasicPropSet\CLightProp.cpp" />
+    <ClCompile Include="BasicPropSet\CModelProp.cpp" />
+    <ClCompile Include="BasicPropSet\CSceneProp.cpp" />
+    <ClCompile Include="ClrCmd.cpp" />
+    <ClCompile Include="TestCtrl\CTestUI.cpp" />
+    <ClCompile Include="BasicPropSet\TestProp.cpp" />
+    <ClCompile Include="Stdafx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CUIBase.h" />
+    <ClInclude Include="PathSetCtrl\CPathSetCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="VideoSetCtrl\CVideoSettingCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="SceneStateCtrl\CSceneStateCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="ViewCtrl\CViewCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="PortraitViewCtrl\CPortraitViewCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="ReadPkgViewCtrl\CReadPkgCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="LogCtrl\CLogCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="FProcessCtrl\CFProcessCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="KeyFrameCtrl\CKeyFrameCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="GroundSpeedCtrl\CGroundSpeedCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="FrameScaleCtrl\CFrameScaleCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="LightParameterCtrl\CLightParameterCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="FogParameterCtrl\CFogParameterCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="ColorCtrl\CColorCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="ProcessCtrlEx\CProcessCtrlEx.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="HDRSettingCtrl\CHDRSettingCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="PickColorCtrl\CPowerColorPickerCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="CLRStringHelper.h" />
+    <ClInclude Include="CEfxFileCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="CEfxEditProp.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="EffectTrack\CEfxTrackCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="EffectKeyUint\CEfxKeyUintCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="MapEffectCtrl\CMapEffectCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="AnimationGroupEditCtrl\CAnimationGroupEditCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="PieceUnitEditCtrl\CPieceUnitEditCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="PieceGroupEditCtrl\CPieceGroupEditCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="AutoPropToCtrl\AutoDataUintCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="AutoPropToCtrl\AutoPropToCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="BaseDataCtrl\BoolEditCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="BaseDataCtrl\ComBoEditCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="BaseDataCtrl\CueListDialog.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CUIPropBase.h" />
+    <ClInclude Include="BaseDataCtrl\EStrMapEditCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="BaseDataCtrl\MaxMinNumEditDialog.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="BaseDataCtrl\NumEditCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="BaseDataCtrl\NumMapEditCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="BaseDataCtrl\SingleStringEditCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="BaseDataCtrl\Vector3EditCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="BaseDataCtrl\Vector3EditDialog.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="BaseDataCtrl\Vector3MapCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="BoneListCtrl\CBoneListCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="LightViewCtrl\CLightView.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="PropCtrl\CPropCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="BoneBoxListCtrl\CBoneBoxListCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="BoneBoxEditCtrl\CBoneBoxEditCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="ColorAnimCtrl\CColorAnimCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="PathSetDlg\CPathSetDlg.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="VideoSetDlg\CVideoSetDlg.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="FProcessDlg\CFProcessDlg.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="CBaseComponent.h" />
+    <ClInclude Include="CContextCom.h" />
+    <ClInclude Include="CameraCom\CCameraBaseCom.h" />
+    <ClInclude Include="CameraCom\CFPSCameraCom.h" />
+    <ClInclude Include="CameraCom\CFREECameraCom.h" />
+    <ClInclude Include="CameraCom\CRTSCameraCom.h" />
+    <ClInclude Include="BoundingBoxPropCom\CBoundingBoxPropCom.h" />
+    <ClInclude Include="SkeletonPropCom\CSkeletonPropCom.h" />
+    <ClInclude Include="SkeletonPropCom\SaveControl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="SkeletonPropCom\SizeControl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="BasicPanelCtrl\CBasicPanel.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="GridPanelCtrl\CGridPanel.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="RecordCtrl\CRecordPanel.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="SetViewCtrl\CSetViewCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="TileViewCtrl\CTileViewCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="TextureViewCtrl\CTextureViewCltr.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="NewMapDlg\CNewMapDlg.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="NewMapCtrl\CNewMapCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="ExMapCtrl\CExMapCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="BlockViewCtrl\CBlockViewCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="AudioView\AudioViewCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="AudioView\CueListCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="AudioView\AmbientAudioCtrl.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="LightEffect\CLightEffectPanel.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="EditorUIHelper.h" />
+    <ClInclude Include="BasicPropSet\CAudioProp.h" />
+    <ClInclude Include="BasicPropSet\CBaseProp.h" />
+    <ClInclude Include="BasicPropSet\CLightProp.h" />
+    <ClInclude Include="BasicPropSet\CModelProp.h" />
+    <ClInclude Include="BasicPropSet\CPropChinese.h" />
+    <ClInclude Include="BasicPropSet\CSceneProp.h" />
+    <ClInclude Include="ClrCmd.h" />
+    <ClInclude Include="ClrMsgDefine.h" />
+    <ClInclude Include="..\..\tdk\inc\dthelp.h" />
+    <ClInclude Include="OpenDirectoryDialog\OpenDirectoryDialog.h" />
+    <ClInclude Include="TestCtrl\CTestUI.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="BasicPropSet\TestProp.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PathSetCtrl\CPathSetCtrl.resx">
+      <DependentUpon>CPathSetCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VideoSetCtrl\CVideoSettingCtrl.resx">
+      <DependentUpon>CVideoSettingCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SceneStateCtrl\CSceneStateCtrl.resx">
+      <DependentUpon>CSceneStateCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewCtrl\CViewCtrl.resx">
+      <DependentUpon>CViewCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PortraitViewCtrl\CPortraitViewCtrl.resx">
+      <DependentUpon>CPortraitViewCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReadPkgViewCtrl\CReadPkgCtrl.resx">
+      <DependentUpon>CReadPkgCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogCtrl\CLogCtrl.resx">
+      <DependentUpon>CLogCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FProcessCtrl\CFProcessCtrl.resx">
+      <DependentUpon>CFProcessCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KeyFrameCtrl\CKeyFrameCtrl.resx">
+      <DependentUpon>CKeyFrameCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroundSpeedCtrl\CGroundSpeedCtrl.resx">
+      <DependentUpon>CGroundSpeedCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrameScaleCtrl\CFrameScaleCtrl.resx">
+      <DependentUpon>CFrameScaleCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LightParameterCtrl\CLightParameterCtrl.resx">
+      <DependentUpon>CLightParameterCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FogParameterCtrl\CFogParameterCtrl.resx">
+      <DependentUpon>CFogParameterCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorCtrl\CColorCtrl.resx">
+      <DependentUpon>CColorCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessCtrlEx\CProcessCtrlEx.resx">
+      <DependentUpon>CProcessCtrlEx.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HDRSettingCtrl\CHDRSettingCtrl.resx">
+      <DependentUpon>CHDRSettingCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PickColorCtrl\CPowerColorPickerCtrl.resx">
+      <DependentUpon>CPowerColorPickerCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CEfxFileCtrl.resx">
+      <DependentUpon>CEfxFileCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CEfxEditProp.resx">
+      <DependentUpon>CEfxEditProp.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EffectTrack\CEfxTrackCtrl.resx">
+      <DependentUpon>CEfxTrackCtrl.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EffectKeyUint\CEfxKeyUintCtrl.resx">
+      <DependentUpon>CEfxKeyUintCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapEffectCtrl\CMapEffectCtrl.resx">
+      <DependentUpon>CMapEffectCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnimationGroupEditCtrl\CAnimationGroupEditCtrl.resx">
+      <DependentUpon>CAnimationGroupEditCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PieceUnitEditCtrl\CPieceUnitEditCtrl.resx">
+      <DependentUpon>CPieceUnitEditCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PieceGroupEditCtrl\CPieceGroupEditCtrl.resx">
+      <DependentUpon>CPieceGroupEditCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AutoPropToCtrl\AutoDataUintCtrl.resx">
+      <DependentUpon>AutoDataUintCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AutoPropToCtrl\AutoPropToCtrl.resx">
+      <DependentUpon>AutoPropToCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDataCtrl\BoolEditCtrl.resx">
+      <DependentUpon>BoolEditCtrl.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDataCtrl\ComBoEditCtrl.resx">
+      <DependentUpon>ComBoEditCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDataCtrl\CueListDialog.resx">
+      <DependentUpon>CueListDialog.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDataCtrl\EStrMapEditCtrl.resx">
+      <DependentUpon>EStrMapEditCtrl.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDataCtrl\MaxMinNumEditDialog.resx">
+      <DependentUpon>MaxMinNumEditDialog.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDataCtrl\NumEditCtrl.resx">
+      <DependentUpon>NumEditCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDataCtrl\NumMapEditCtrl.resx">
+      <DependentUpon>NumMapEditCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDataCtrl\SingleStringEditCtrl.resx">
+      <DependentUpon>SingleStringEditCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDataCtrl\Vector3EditCtrl.resx">
+      <DependentUpon>Vector3EditCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDataCtrl\Vector3EditDialog.resx">
+      <DependentUpon>Vector3EditDialog.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseDataCtrl\Vector3MapCtrl.resx">
+      <DependentUpon>Vector3MapCtrl.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BoneListCtrl\CBoneListCtrl.resx">
+      <DependentUpon>CBoneListCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LightViewCtrl\CLightView.resx">
+      <DependentUpon>CLightView.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropCtrl\CPropCtrl.resx">
+      <DependentUpon>CPropCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BoneBoxListCtrl\CBoneBoxListCtrl.resx">
+      <DependentUpon>CBoneBoxListCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BoneBoxEditCtrl\CBoneBoxEditCtrl.resx">
+      <DependentUpon>CBoneBoxEditCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ColorAnimCtrl\CColorAnimCtrl.resx">
+      <DependentUpon>CColorAnimCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PathSetDlg\CPathSetDlg.resx">
+      <DependentUpon>CPathSetDlg.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VideoSetDlg\CVideoSetDlg.resx">
+      <DependentUpon>CVideoSetDlg.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FProcessDlg\CFProcessDlg.resx">
+      <DependentUpon>CFProcessDlg.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SkeletonPropCom\SaveControl.resx">
+      <DependentUpon>SaveControl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SkeletonPropCom\SizeControl.resx">
+      <DependentUpon>SizeControl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BasicPanelCtrl\CBasicPanel.resx">
+      <DependentUpon>CBasicPanel.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GridPanelCtrl\CGridPanel.resx">
+      <DependentUpon>CGridPanel.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecordCtrl\CRecordPanel.resx">
+      <DependentUpon>CRecordPanel.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetViewCtrl\CSetViewCtrl.resx">
+      <DependentUpon>CSetViewCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TileViewCtrl\CTileViewCtrl.resx">
+      <DependentUpon>CTileViewCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextureViewCtrl\CTextureViewCltr.resx">
+      <DependentUpon>CTextureViewCltr.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewMapDlg\CNewMapDlg.resx">
+      <DependentUpon>CNewMapDlg.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewMapCtrl\CNewMapCtrl.resx">
+      <DependentUpon>CNewMapCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExMapCtrl\CExMapCtrl.resx">
+      <DependentUpon>CExMapCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BlockViewCtrl\CBlockViewCtrl.resx">
+      <DependentUpon>CBlockViewCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AudioView\AudioViewCtrl.resx">
+      <DependentUpon>AudioViewCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AudioView\CueListCtrl.resx">
+      <DependentUpon>CueListCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AudioView\AmbientAudioCtrl.resx">
+      <DependentUpon>AmbientAudioCtrl.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LightEffect\CLightEffectPanel.resx">
+      <DependentUpon>CLightEffectPanel.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestCtrl\CTestUI.resx">
+      <DependentUpon>CTestUI.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\GUI\GUI.vcxproj">
+      <Project>{9aa43a8b-5d5c-45db-bfa3-66a1cacf065d}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Scene\Scene.vcxproj">
+      <Project>{e6159d22-6907-4ca8-9b1b-2fe319150653}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Video\Video.vcxproj">
+      <Project>{73d4cb86-ccc1-41b7-9cc5-a89dc4fde9a5}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\EditorUnit\EditorUnit.vcxproj">
+      <Project>{b82b50e9-0169-4143-a663-dbf7426cb5ba}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="app.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

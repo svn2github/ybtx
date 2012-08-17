@@ -1,0 +1,5 @@
+server.sql
+tbl_var_server
+tbl_war_zone
+
+sort.sql里的表全部清空

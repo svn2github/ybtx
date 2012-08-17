@@ -1,0 +1,86 @@
+@charset "utf-8";
+/* CSS Document */
+ul { 
+	list-style: none outside none; 
+	line-height: 31px;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+width: 130px;
+		 border-left: 0 none;
+		 border-color:#A0B3C2 -moz-use-text-color #A0B3C2 #A0B3C2;
+}
+
+.other {
+background: url("/img/rank_top.jpg") repeat-x scroll 0 0 #e6eff8;
+}
+.item{
+	border-width: 1px 0 1px 1px;
+	border-style: solid none solid solid;
+	text-align: center;
+	list-style-type: none;
+	float:left;
+	font-size: 14px;
+	line-height: 29px;
+	text-align: center;
+}
+
+.current {
+	background: url("/img/square_tab1.jpg") no-repeat scroll right top #F9FBFE;
+	border-bottom: 0 none;
+	color: #2b2b2b;
+	font-weight: bold;
+	height: 30px;
+}
+
+.item1{
+	background-position: 0 0;
+	border-left: 0 none;
+	width: 131px;
+}
+
+
+.item2{
+	background-position: 0 -29px;
+	width: 131px;
+}
+
+.item3{
+	background-position: 0 -58px;
+	width: 131px;
+}
+
+.item4{
+	background-position: 0 -87px;
+	width: 131px;
+}
+
+.item5{
+	background-position: 0 -116px;
+	width: 131px;
+}
+
+.item6{
+	background-position: 0 -145px;
+	width: 131px;
+}
+
+.item7{
+	background-position: 0 -145px;
+	width: 131px;
+}
+
+.AutoNewline
+{
+	word-break: break-all;
+}
+
+#wrap
+{
+	white-space: normal;
+	word-break:break-all;
+	overflow:hidden;
+	width: 380px;
+}

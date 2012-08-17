@@ -1,0 +1,1 @@
+alter table tbl_member_tong add column mt_uTongProffer bigint    unsigned 	not null default 0 after mt_uPorfferExpend;

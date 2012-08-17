@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A3EC0030-35AE-49C6-9C66-7EA4BEC33046}</ProjectGuid>
+    <RootNamespace>CoreClient</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../../bin/$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../../bin/$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\include;..\..\sdk\inc;..\..\..\implib\inc;..\CoreCommon;..\..\..\implib\inc\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)CoreClient.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\..\include;..\..\sdk\inc;..\..\..\implib\inc;..\CoreCommon;..\..\..\implib\inc\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)CoreClient.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CAppClient.cpp" />
+    <ClCompile Include="CAppConfigClient.cpp" />
+    <ClCompile Include="CClientProxyBank.cpp" />
+    <ClCompile Include="CLanguageSetting.cpp" />
+    <ClCompile Include="CRenderSystemClient.cpp" />
+    <ClCompile Include="CSceneConfigClient.cpp" />
+    <ClCompile Include="CTraitsClient.cpp" />
+    <ClCompile Include="IAppClientHandler.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="AntiDebug.cpp" />
+    <ClCompile Include="CScenePositionDebug.cpp" />
+    <ClCompile Include="CTestSuiteMetaSceneClient.cpp" />
+    <ClCompile Include="CErrNotifyIcon.cpp" />
+    <ClCompile Include="CIme.cpp" />
+    <ClCompile Include="CMainWnd.cpp" />
+    <ClCompile Include="CCoreSceneClient.cpp" />
+    <ClCompile Include="CCoreSceneMgrClient.cpp" />
+    <ClCompile Include="..\Scene\CMetaSceneClient.cpp" />
+    <ClCompile Include="..\Scene\CMetaSceneMgrClient.cpp" />
+    <ClCompile Include="CDistortedTimeObjClient.cpp" />
+    <ClCompile Include="CDistortedTimeSceneClient.cpp" />
+    <ClCompile Include="CFrameRateAdviser.cpp" />
+    <ClCompile Include="CRenderTime.cpp" />
+    <ClCompile Include="CServerTimeGuesser.cpp" />
+    <ClCompile Include="CTimeSystemClient.cpp" />
+    <ClCompile Include="CCoreObjectClient.cpp" />
+    <ClCompile Include="CObjMoveStateClient.cpp" />
+    <ClCompile Include="CoreObjectClientCommon.cpp" />
+    <ClCompile Include="CCOEventPositionSet.cpp" />
+    <ClCompile Include="CCOEventWayPointChanged.cpp" />
+    <ClCompile Include="COEventClient.cpp" />
+    <ClCompile Include="CCoreObjectDirector.cpp" />
+    <ClCompile Include="CDirObjActiveState.cpp" />
+    <ClCompile Include="CCoreObjectPerformer.cpp" />
+    <ClCompile Include="CCoreObjectFollower.cpp" />
+    <ClCompile Include="CFolMovement.cpp" />
+    <ClCompile Include="CFolObjFollowState.cpp" />
+    <ClCompile Include="CDelayedObjCmdMgr.cpp" />
+    <ClCompile Include="CFastObjCmd.cpp" />
+    <ClCompile Include="CSlowObjCmd.cpp" />
+    <ClCompile Include="CConnClient.cpp" />
+    <ClCompile Include="CConnMgrClient.cpp" />
+    <ClCompile Include="CTestSuiteConnClient.cpp" />
+    <ClCompile Include="NetworkAdaptersHelper.cpp" />
+    <ClCompile Include="..\..\sdk\inc\CSyncVariantClient.cpp" />
+    <ClCompile Include="CSyncVariantClientHolder.cpp" />
+    <ClCompile Include="CSyncVariantClientHolderPool.cpp" />
+    <ClCompile Include="CVariantNotifier.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\sdk\inc\CAppClient.h" />
+    <ClInclude Include="..\..\sdk\inc\CAppConfigClient.h" />
+    <ClInclude Include="CClientProxyBank.h" />
+    <ClInclude Include="..\..\sdk\inc\CLanguageSetting.h" />
+    <ClInclude Include="..\..\sdk\inc\CRenderSystemClient.h" />
+    <ClInclude Include="..\..\sdk\inc\CSceneConfigClient.h" />
+    <ClInclude Include="..\..\sdk\inc\CTraitsClient.h" />
+    <ClInclude Include="..\..\sdk\inc\IAppClientHandler.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="..\..\sdk\inc\AntiDebug.h" />
+    <ClInclude Include="..\..\sdk\inc\CScenePositionDebug.h" />
+    <ClInclude Include="CTestSuiteMetaSceneClient.h" />
+    <ClInclude Include="CErrNotifyIcon.h" />
+    <ClInclude Include="..\..\sdk\inc\CIme.h" />
+    <ClInclude Include="..\..\sdk\inc\CMainWnd.h" />
+    <ClInclude Include="..\..\sdk\inc\IMainWndHandler.h" />
+    <ClInclude Include="..\..\sdk\inc\CCoreSceneClient.h" />
+    <ClInclude Include="..\..\sdk\inc\CCoreSceneMgrClient.h" />
+    <ClInclude Include="..\..\sdk\inc\CMetaSceneClient.h" />
+    <ClInclude Include="..\..\sdk\inc\CMetaSceneMgrClient.h" />
+    <ClInclude Include="..\..\sdk\inc\ICoreSceneClientHandler.h" />
+    <ClInclude Include="CDistortedTimeObjClient.h" />
+    <ClInclude Include="CDistortedTimeSceneClient.h" />
+    <ClInclude Include="CFrameRateAdviser.h" />
+    <ClInclude Include="CRenderTime.h" />
+    <ClInclude Include="CServerTimeGuesser.h" />
+    <ClInclude Include="CTimeSystemClient.h" />
+    <ClInclude Include="..\..\sdk\inc\CCoreObjectClient.h" />
+    <ClInclude Include="CObjMoveStateClient.h" />
+    <ClInclude Include="CoreObjectClientCommon.h" />
+    <ClInclude Include="..\..\sdk\inc\CoreObjectClientDefs.h" />
+    <ClInclude Include="..\..\sdk\inc\ICoreObjectClientHandler.h" />
+    <ClInclude Include="..\..\sdk\inc\ICoreObjectDirectorHandler.h" />
+    <ClInclude Include="..\..\sdk\inc\ICoreObjectFollowerHandler.h" />
+    <ClInclude Include="..\..\sdk\inc\ICoreObjectPerformerHandler.h" />
+    <ClInclude Include="CCOEventPositionSet.h" />
+    <ClInclude Include="CCOEventWayPointChanged.h" />
+    <ClInclude Include="COEventClient.h" />
+    <ClInclude Include="..\..\sdk\inc\CCoreObjectDirector.h" />
+    <ClInclude Include="CDirObjActiveState.h" />
+    <ClInclude Include="..\..\sdk\inc\CCoreObjectPerformer.h" />
+    <ClInclude Include="..\..\sdk\inc\CCoreObjectFollower.h" />
+    <ClInclude Include="CFolMovement.h" />
+    <ClInclude Include="CFolObjFollowState.h" />
+    <ClInclude Include="CDelayedObjCmdMgr.h" />
+    <ClInclude Include="CFastObjCmd.h" />
+    <ClInclude Include="CSlowObjCmd.h" />
+    <ClInclude Include="..\..\sdk\inc\CConnClient.h" />
+    <ClInclude Include="..\..\sdk\inc\CConnMgrClient.h" />
+    <ClInclude Include="CTestSuiteConnClient.h" />
+    <ClInclude Include="..\..\sdk\inc\IConnMgrClientHandler.h" />
+    <ClInclude Include="..\..\sdk\inc\NetworkAdaptersHelper.h" />
+    <ClInclude Include="..\..\sdk\inc\CSyncVariantClient.h" />
+    <ClInclude Include="..\..\sdk\inc\CSyncVariantClientHolder.h" />
+    <ClInclude Include="CSyncVariantClientHolderPool.h" />
+    <ClInclude Include="..\..\sdk\inc\CVariantNotifier.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CCoreObjectFollower.inl" />
+    <None Include="CDelayedObjCmdMgr.inl" />
+    <None Include="CFastObjCmd.inl" />
+    <None Include="CSlowObjCmd.inl" />
+    <None Include="CConnClient.inl" />
+    <None Include="CSyncVariantClientHolder.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Scene\Scene.vcxproj">
+      <Project>{e6159d22-6907-4ca8-9b1b-2fe319150653}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\YY\YY.vcxproj">
+      <Project>{fe1871b8-696c-4001-aa05-6bdfd1f63a8d}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

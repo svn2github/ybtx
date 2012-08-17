@@ -1,0 +1,1 @@
+CCofCStockFinancialWnd = class(SQRDialog)

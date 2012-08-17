@@ -1,0 +1,1 @@
+drop table tbl_tong_get_proffer_time_temp;

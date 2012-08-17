@@ -1,0 +1,1 @@
+CDirectionInfo = class(CDirectionInfo)

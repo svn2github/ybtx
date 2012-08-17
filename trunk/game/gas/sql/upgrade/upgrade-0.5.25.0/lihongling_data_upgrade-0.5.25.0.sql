@@ -1,0 +1,1 @@
+update tbl_item_static set is_uType = 1 where is_uType = 16 and is_sName = "ÁéÄñÏ²Èµ";

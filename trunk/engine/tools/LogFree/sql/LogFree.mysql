@@ -1,0 +1,92 @@
+drop database IF EXISTS LogFree_WAN;
+create database  IF not EXISTS LogFree_WAN default charset = binary;
+
+use LogFree_WAN;
+
+create table tbl_last_action_time(
+	lat_dtDateTime datetime not null
+)engine = myisam;
+
+create table tbl_log_info(
+	error_code int unsigned not null,
+	error_title varchar(256) not null,
+	error_type varchar(32) not null,
+	error_stack text not null,
+	error_extra text not null,
+	error_owner varchar(32) not null default 'Œ¥÷∏≈…',
+	error_status tinyint unsigned not null default 0,
+	owner_desc text NOT NULL,
+	primary key(error_code),
+	key(error_title)
+)engine = Myisam ;
+
+create table tbl_guid_info(
+	guid varchar(40) not null,
+	name varchar(128) not null default "None",
+	is_special_client tinyint not null default '0',
+	primary key (guid),
+	key(name),
+	key(is_special_client)
+)engine = Myisam ;
+
+create table tbl_hardware_info(
+	guid varchar(40) not null,
+	os varchar(256) default '',
+	hd varchar(256) default '',
+	cpu varchar(256) default '',
+	video varchar(256) default '',
+	dx varchar(256) default '',
+	mem varchar(256) default '',
+	D3D_Desc varchar(256) default '',
+	D3D_Mem varchar(256) default '',
+	key (guid)
+)engine = MyIsam ;
+	
+
+create table tbl_client_log_common(
+	error_code int unsigned not null,
+	happened_time datetime not null,
+	urs varchar(32) default "None",
+	role_name varchar(32) default "None",
+	serverip  varchar(32) default "None",
+	server_guid varchar(40) default "None",
+	client_guid varchar(40) not null,
+	conn_guid   varchar(40) default "None",
+	times int unsigned not null,
+	version int unsigned not null,
+	network tinyint(3) unsigned NOT NULL DEFAULT '0',
+	log_msg	text,
+	key(urs),
+	key(role_name),
+	key(server_guid),
+	key(conn_guid),
+	unique key ukey1 (`client_guid`, `error_code`, `times`),
+	foreign key (error_code) references tbl_log_info(error_code) on delete cascade on update cascade,
+	foreign key (client_guid) references tbl_guid_info(guid) on delete cascade on update cascade
+)engine = Myisam ;
+
+create table tbl_server_log_common(
+	error_code int unsigned not null,
+	happened_time datetime not null,
+	urs varchar(32) default "None",
+	role_name varchar(32) default "None",
+	remote_ip varchar(32) default "None",
+	server_guid varchar(40) not null ,
+	conn_guid varchar(40) default "None",
+	times int unsigned not null,
+	version int unsigned not null,
+	log_msg	text,
+	key(urs),
+	key(role_name),
+	key(conn_guid),
+	unique key ukey2 (`server_guid`, `error_code`, `times`),
+	foreign key (error_code) references tbl_log_info(error_code) on delete cascade on update cascade,
+	foreign key (server_guid) references tbl_guid_info(guid) on delete cascade on update cascade
+)engine = Myisam ;
+
+create table tbl_client_guid_info(
+	version int unsigned not null,
+	client_guid varchar(40) not null,
+	happen_time datetime not null,
+	primary key (`client_guid`)
+)engine = myisam;

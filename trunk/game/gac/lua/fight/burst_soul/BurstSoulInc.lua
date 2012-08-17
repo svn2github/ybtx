@@ -1,0 +1,1 @@
+CBurstSoul = class( SQRDialog )

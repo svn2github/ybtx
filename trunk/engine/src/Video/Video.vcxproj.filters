@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="VideoShow">
+      <UniqueIdentifier>{2145d8be-ab11-43ab-95e7-f11e8e1ff7f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WebBrowserControl">
+      <UniqueIdentifier>{22ebef67-7d5d-4069-b7a2-12e153864737}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FlashControl">
+      <UniqueIdentifier>{65f82187-d8ad-42be-a337-9d19304610b3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CAsyncio.cpp">
+      <Filter>VideoShow</Filter>
+    </ClCompile>
+    <ClCompile Include="CAsyncrdr.cpp">
+      <Filter>VideoShow</Filter>
+    </ClCompile>
+    <ClCompile Include="CBaseMovieImp.cpp">
+      <Filter>VideoShow</Filter>
+    </ClCompile>
+    <ClCompile Include="CDShowMovieImp.cpp">
+      <Filter>VideoShow</Filter>
+    </ClCompile>
+    <ClCompile Include="CMemdef.cpp">
+      <Filter>VideoShow</Filter>
+    </ClCompile>
+    <ClCompile Include="CMovie.cpp">
+      <Filter>VideoShow</Filter>
+    </ClCompile>
+    <ClCompile Include="CWebBrowser.cpp">
+      <Filter>WebBrowserControl</Filter>
+    </ClCompile>
+    <ClCompile Include="CWebBrowserATL.cpp">
+      <Filter>WebBrowserControl</Filter>
+    </ClCompile>
+    <ClCompile Include="CWebSite.cpp">
+      <Filter>WebBrowserControl</Filter>
+    </ClCompile>
+    <ClCompile Include="CWebSiteATL.cpp">
+      <Filter>WebBrowserControl</Filter>
+    </ClCompile>
+    <ClCompile Include="IWebBrowserEventProc.cpp">
+      <Filter>WebBrowserControl</Filter>
+    </ClCompile>
+    <ClCompile Include="CFlashPlayer.cpp">
+      <Filter>FlashControl</Filter>
+    </ClCompile>
+    <ClCompile Include="CFlashTmpFile.cpp">
+      <Filter>FlashControl</Filter>
+    </ClCompile>
+    <ClCompile Include="CFindWindow.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CAsyncio.h">
+      <Filter>VideoShow</Filter>
+    </ClInclude>
+    <ClInclude Include="CAsyncrdr.h">
+      <Filter>VideoShow</Filter>
+    </ClInclude>
+    <ClInclude Include="CBaseMovieImp.h">
+      <Filter>VideoShow</Filter>
+    </ClInclude>
+    <ClInclude Include="CDShowMovieImp.h">
+      <Filter>VideoShow</Filter>
+    </ClInclude>
+    <ClInclude Include="CMemdef.h">
+      <Filter>VideoShow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CMovie.h">
+      <Filter>VideoShow</Filter>
+    </ClInclude>
+    <ClInclude Include="CMoviehelper.h">
+      <Filter>VideoShow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CWebBrowser.h">
+      <Filter>WebBrowserControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CWebBrowserATL.h">
+      <Filter>WebBrowserControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CWebSite.h">
+      <Filter>WebBrowserControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CWebSiteATL.h">
+      <Filter>WebBrowserControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IWebBrowserEventProc.h">
+      <Filter>WebBrowserControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CFlashPlayer.h">
+      <Filter>FlashControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CFlashTmpFile.h">
+      <Filter>FlashControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\Flashhandler.h">
+      <Filter>FlashControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\FlashSite.h">
+      <Filter>FlashControl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CFindWindow.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

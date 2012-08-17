@@ -1,0 +1,28 @@
+199899
+tbl_log_char_fighting_evaluation	186	1	6.2749999427795
+tbl_log_level	186	2
+tbl_log_player_taker	187	1
+tbl_log_event_type	187	59
+tbl_log_level	187	2
+tbl_log_experience	187	1	140	781	5788a350a2b56687d0b496a2369cbc2b
+tbl_log_quest_finish	188	火甲虫的气魂击杀（神圣）
+tbl_log_player_taker	188	1
+tbl_log_event_type	188	42
+tbl_log_item_static	29	1	b天下	1	b34ce076ad1164edb42f7841644662f1
+tbl_log_item_taker	188	29
+tbl_log_item_static	30	6	粗制护手	1	af2294edc1ec5e55f751d9e95e29d873
+tbl_log_player	189	1
+tbl_log_item_binding	189	30	2
+tbl_log_item_armor	190	30	1	2	15	11	11	0	0	法魔
+tbl_log_player	190	1
+tbl_log_item_equip_advance	191	30	0	0	0	0	0	0	0	地	0	0	0	0	0	0	生命法术				
+tbl_log_player	191	1
+tbl_log_item_equip_durability	192	30	15	15
+tbl_log_player	192	1
+tbl_log_item_taker	188	30
+tbl_log_player	193	1
+tbl_log_level	193	3
+tbl_log_event_type	193	241
+tbl_log_level	188	3
+tbl_log_experience	188	1	480	4	efa7fd95c665af04218e940ab32c48c3
+tbl_log_soul	188	1	0	597	b8406ff29d541f11169e4402a1e79585

@@ -1,0 +1,1 @@
+CPublicAreaSceneMgr = class()

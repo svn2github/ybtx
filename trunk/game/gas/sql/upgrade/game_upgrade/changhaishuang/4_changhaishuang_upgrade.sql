@@ -1,0 +1,1 @@
+drop table if exists tbl_del_item_id_temp;

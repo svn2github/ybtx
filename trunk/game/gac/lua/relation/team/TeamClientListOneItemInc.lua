@@ -1,0 +1,1 @@
+CTeamListOneItem = class(SQRDialog)

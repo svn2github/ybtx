@@ -1,0 +1,18 @@
+#include "System_PS_Var.inc"
+float4	 gTextureFactor : register( c19 );
+
+float4 StoneLight_MainOne( PS_INPUT In ) : COLOR0		
+{
+	float4 texColor0 = tex2D(Sampler0, In.text0) * gTextureFactor;
+	float4 texColor1 = tex2D(Sampler1, In.text1);
+	float4 texColor2 = tex2D(Sampler2, In.text0) + texColor1 + texColor0;
+
+    float3 s = 1.0f;
+    SYS_PS_SHADOW_TRAN
+    s = max(s * In.Diffuse.rgb * 2.0f, gGlobalShadowColor.rgb);
+
+	texColor2 *= s;
+	texColor2.a = texColor1.a;
+
+	return texColor2;
+}

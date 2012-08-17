@@ -1,0 +1,179 @@
+* {
+	font-size: 12px;
+}
+h1, h2 {
+	width:703px;
+	height:20px;
+	padding:0px;
+	padding-top:5px;
+	margin-bottom:0px;
+	font-size: 12px;
+	border: #6a90b4 solid 1px;
+	border-bottom: 0px;
+	background: url(/css/head_back.gif) repeat-x;
+	text-align:center;
+	color:#333333;
+}
+.form_table {
+	border-collapse:collapse;
+	border-spacing: 0px;
+	width: 705px;
+	padding:0px;
+	margin:0px;
+	border-color:#aeaeb0;
+	border-style:solid;
+	border-width:0px 0px 0px 1px;
+}
+
+.form_table th {
+	width: 250px;
+	height:30px;
+	padding: 0px;
+	font-weight:normal;
+	text-align: right;
+	vertical-align: middle;
+	color:#333333;
+	border-color:#aeaeb0;
+	border-style:solid;
+	border-width:0px 1px 1px 0px;
+}
+
+.form_table td {
+	height:30px;
+	padding: 0px;
+	vertical-align: middle;
+	border-color:#aeaeb0;
+	border-style:solid;
+	border-width:0px 1px 1px 0px;
+}
+
+.info_table {
+	border-collapse:collapse;
+	border-spacing: 0px;
+	width: 705px;
+	padding:0px;
+	margin:0px;
+	border-color:#aeaeb0;
+	border-style:solid;
+	border-width:0px 0px 0px 1px;
+}
+
+.info_table th {
+	width: 250px;
+	height:30px;
+	padding: 0px;
+	font-weight:normal;
+	text-align: right;
+	vertical-align: middle;
+	background: #cde4f6;
+	color: #333333;
+	border-color:#aeaeb0;
+	border-style:solid;
+	border-width:0px 1px 1px 0px;
+}
+
+.info_table td {
+	height:30px;
+	padding: 0px;
+	padding-left: 5px;
+	vertical-align: middle;
+	border-color:#aeaeb0;
+	border-style:solid;
+	border-width:0px 1px 1px 0px;
+}
+
+.list_table {
+	border-collapse:collapse;
+	border-spacing: 0px;
+	width: 705px;
+	padding:0px;
+	margin:0px;
+	border-color:#aeaeb0;
+	border-style:solid;
+	border-width:0px 0px 0px 1px;
+}
+
+.list_table th {
+	background: #cde4f6;
+	color: #333333;
+	padding:5px 3px;
+	border-color:#aeaeb0;
+	border-style:solid;
+	border-width:0px 1px 1px 0px;
+}
+
+.list_table td {
+	border-color:#aeaeb0;
+	border-style:solid;
+	border-width:0px 1px 1px 0px;
+	padding:0px 3px;
+	vertical-align: middle;
+	height:30px;
+}
+
+.list_table tr:hover td {
+	background: #ebe9e9;
+}
+
+.list_table tr.even td {
+}
+
+.list_table tr th.order {
+	cursor: pointer;
+	background: url(/css/OrderDefault.gif) right no-repeat #cde4f6;
+}
+.list_table tr th.order:hover, .list_table tr th.asc, .list_table tr th.desc:hover {
+	cursor: pointer;
+	background: url(/css/OrderAsc.gif) right no-repeat #cde4f6;
+}
+.list_table tr th.asc:hover, .list_table tr th.desc {
+	cursor: pointer;
+	background: url(/css/OrderDesc.gif) right no-repeat #cde4f6;
+}
+.list_table tr th div.filter {
+	position:absolute;
+	width: inherit;
+	padding: 3px;
+	margin-left: -4px;
+	text-align: left;
+	font-weight: normal;
+	background: #cde4f6;
+	border:#aeaeb0 solid 1px;
+	border-top:0px;
+}
+.list_table tr th div.filter a {
+	color: #333333;
+}
+
+.log_info {
+	background: #cde4f6;
+	display: none;
+	position: absolute;
+	padding: 5px;
+	border:#aeaeb0 solid 1px;
+}
+
+.notice {
+	width:693px;
+	padding:5px;
+	border:1px solid #aeaeb0;
+}
+
+input[type=text] {
+	width: 200px;
+}
+input[type=checkbox] {
+	width: 10px;
+	height: 10px;
+}
+textarea {
+	width: 400px;
+	height: 70px;
+}
+
+img {
+	max-width:703px;
+	border-color:#aeaeb0;
+	border-style:solid;
+	border-width:0px 1px 1px 1px;
+}

@@ -1,0 +1,1 @@
+CFlowerInfoMgr = class()

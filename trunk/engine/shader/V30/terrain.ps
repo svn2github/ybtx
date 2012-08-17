@@ -1,0 +1,10 @@
+#include "System_PS_Var.inc"
+
+float4 Terrain_PS(PS_INPUT i) : COLOR0
+{
+	float3	s = 1.0f; //影子变换需要
+    float3 rgb = tex2D(Sampler0, i.text0); 
+    rgb = rgb * (1-i.Diffuse.a) + i.Diffuse.a*tex2D(Sampler0, i.text1);
+	SYS_PS_SHADOW_TRAN
+    return  float4(rgb*i.Diffuse.rgb*2.0f*s,1.0f);
+}

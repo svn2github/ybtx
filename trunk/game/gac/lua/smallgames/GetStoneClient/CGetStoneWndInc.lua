@@ -1,0 +1,3 @@
+
+CGetStoneWnd = class(SQRDialog)
+

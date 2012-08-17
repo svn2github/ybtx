@@ -1,0 +1,37 @@
+199899
+tbl_log_item_static	18	3	树屋浆果	1	03bf254980c22867793ff0eefeb992e6
+tbl_log_player_taker	152	1
+tbl_log_event_type	152	22
+tbl_log_item_taker	152	18
+tbl_log_service_online_num	153	1	1
+tbl_log_service_scene_online_num	153	1	1	神圣教廷树屋酒吧	1
+tbl_log_player_taker	154	1
+tbl_log_event_type	154	104
+tbl_log_soul	154	1	125	298	e3623af708201ef513839b62d188d8d1
+tbl_log_player_taker	155	1
+tbl_log_event_type	155	59
+tbl_log_level	155	1
+tbl_log_experience	155	1	208	487	18a2966c65aae2f34a49eab21a05f40b
+tbl_log_quest_finish	156	初学战斗（神圣）
+tbl_log_player_taker	156	1
+tbl_log_event_type	156	42
+tbl_log_item_static	19	1	a佣兵	1	983ea5f4e96b1b65a863df591eb0b2b0
+tbl_log_item_taker	156	19
+tbl_log_item_static	20	6	粗制皮带	1	cce8be5de7baf643be4a4ae5b05502e5
+tbl_log_player	157	1
+tbl_log_item_binding	157	20	2
+tbl_log_item_armor	158	20	1	1	73	12	12	0	0	战神
+tbl_log_player	158	1
+tbl_log_item_equip_advance	159	20	0	0	0	0	0	0	0	地	0	0	0	0	0	0	生命物理				
+tbl_log_player	159	1
+tbl_log_item_equip_durability	160	20	15	15
+tbl_log_player	160	1
+tbl_log_item_taker	156	20
+tbl_log_level	156	1
+tbl_log_money	156	1	45	2	95	6b7ee6ab183ba6d9b052b26a795217db
+tbl_log_player	161	1
+tbl_log_level	161	2
+tbl_log_event_type	161	241
+tbl_log_level	156	2
+tbl_log_experience	156	1	480	13	b5017f3f712a24cc6d2b7a81bf852c03
+tbl_log_soul	156	1	0	298	8480abf96a8e1d7b0eb63a1fa4e45dc7

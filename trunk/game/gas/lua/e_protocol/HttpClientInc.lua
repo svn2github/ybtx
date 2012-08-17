@@ -1,0 +1,2 @@
+HttpClient = class(IPipeHandler)
+

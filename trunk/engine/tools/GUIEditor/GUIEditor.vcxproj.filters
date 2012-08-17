@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files\Image">
+      <UniqueIdentifier>{5b3b5160-453f-4b4b-99b6-e3a16b749eb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PathBrowser">
+      <UniqueIdentifier>{eb855022-8776-4f83-ae7c-eb64f81ea8ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUIResData">
+      <UniqueIdentifier>{4389bf8f-4e4a-4667-970f-71c7de1e9b98}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CBasePropList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CEmoticonEditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CEmoticonRender.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CFileLoad.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CFlashEditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CFlashRender.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGuiFxPlayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CMsgEffectList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CTexFontEditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CTexFontRender.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CWndGroup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CWndImageList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CWndImageProp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CWndProp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GUIEditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GUIEditorDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GUIEditorHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectSound.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeCtrlEx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WndAreaRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WndStyle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WndStyleEditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WndStyleRender.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PathBrowser\CEditorConfig.cpp">
+      <Filter>PathBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="PathBrowser\DirectoryDialog.cpp">
+      <Filter>PathBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="PathBrowser\PathBrowser.cpp">
+      <Filter>PathBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="GUIPicSaver.cpp">
+      <Filter>GUIResData</Filter>
+    </ClCompile>
+    <ClCompile Include="GUIResWinData.cpp">
+      <Filter>GUIResData</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CBasePropList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CEditCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CEmoticonEditor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CEmoticonRender.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CFileLoad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CFlashEditor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CFlashRender.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGuiFxPlayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CMsgEffectList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CTexFontEditor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CTexFontRender.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CWndGroup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CWndImageList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CWndImageProp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CWndProp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GUIEditor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GUIEditorDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GUIEditorHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IGUIManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectSound.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\GUI\SQRGUIManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeCtrlEx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WndAreaRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WndStyle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WndStyleEditor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WndStyleRender.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PathBrowser\CEditorConfig.h">
+      <Filter>PathBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="PathBrowser\DirectoryDialog.h">
+      <Filter>PathBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="PathBrowser\pathbrowser.h">
+      <Filter>PathBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="PathBrowser\PathBrowserRes.h">
+      <Filter>PathBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="GUIPicSaver.h">
+      <Filter>GUIResData</Filter>
+    </ClInclude>
+    <ClInclude Include="GUIResWinData.h">
+      <Filter>GUIResData</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Chart.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Chart.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\clock.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\cur00001.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\cwnd.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\editor_t.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\editor_w.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\GUIEditor.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\GUIEditor.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ico00001.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\icon2.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\rich.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Rich.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\spin1.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\sqrwnd.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Texture.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\texture1.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Wnd.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\WndGroupNor.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\WndGroupSel.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\wndmove1.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Arrow.cur">
+      <Filter>Resource Files\Image</Filter>
+    </None>
+    <None Include="res\Arrow.ico">
+      <Filter>Resource Files\Image</Filter>
+    </None>
+    <None Include="res\bitmap1.bmp">
+      <Filter>Resource Files\Image</Filter>
+    </None>
+    <None Include="res\Button.cur">
+      <Filter>Resource Files\Image</Filter>
+    </None>
+    <None Include="res\Button.ico">
+      <Filter>Resource Files\Image</Filter>
+    </None>
+    <None Include="res\CheckButton.cur">
+      <Filter>Resource Files\Image</Filter>
+    </None>
+    <None Include="res\CheckButton.ico">
+      <Filter>Resource Files\Image</Filter>
+    </None>
+    <None Include="res\ComboBox.cur">
+      <Filter>Resource Files\Image</Filter>
+    </None>
+    <None Include="res\ComboBox.ico">
+      <Filter>Resource Files\Image</Filter>
+    </None>
+    <None Include="res\Edit.cur">
+      <Filter>Resource Files\Image</Filter>
+    </None>
+    <None Include="res\Edit.ico">
+      <Filter>Resource Files\Image</Filter>
+    </None>
+    <None Include="res\Icon.cur">
+      <Filter>Resource Files\Image</Filter>
+    </None>
+    <None Include="res\Icon.ico">
+      <Filter>Resource Files\Image</Filter>
+    </None>
+    <None Include="res\icon5.ico">
+      <Filter>Resource Files\Image</Filter>
+    </None>
+    <None Include="res\List.cur">
+      <Filter>Resource Files\Image</Filter>
+    </None>
+    <None Include="res\List.ico">
+      <Filter>Resource Files\Image</Filter>
+    </None>
+    <None Include="res\ListCtrl.cur">
+      <Filter>Resource Files\Image</Filter>
+    </None>
+    <None Include="res\ListCtrl.ico">
+      <Filter>Resource Files\Image</Filter>
+    </None>
+    <None Include="res\Progress.cur">
+      <Filter>Resource Files\Image</Filter>
+    </None>
+    <None Include="res\Progress.ico">
+      <Filter>Resource Files\Image</Filter>
+    </None>
+    <None Include="res\Scroll.cur">
+      <Filter>Resource Files\Image</Filter>
+    </None>
+    <None Include="res\Scroll.ico">
+      <Filter>Resource Files\Image</Filter>
+    </None>
+    <None Include="res\Spin.cur">
+      <Filter>Resource Files\Image</Filter>
+    </None>
+    <None Include="res\Spin.ico">
+      <Filter>Resource Files\Image</Filter>
+    </None>
+    <None Include="res\Static.cur">
+      <Filter>Resource Files\Image</Filter>
+    </None>
+    <None Include="res\Static.ico">
+      <Filter>Resource Files\Image</Filter>
+    </None>
+    <None Include="res\TreeCtrl.cur">
+      <Filter>Resource Files\Image</Filter>
+    </None>
+    <None Include="res\TreeCtrl.ico">
+      <Filter>Resource Files\Image</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GUIEditor.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,1 @@
+CMouseSettingMsgBox = class(SQRDialog)

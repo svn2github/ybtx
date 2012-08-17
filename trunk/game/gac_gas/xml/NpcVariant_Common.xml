@@ -1,0 +1,180 @@
+<root>
+	
+	<SyncPart>
+		<staticroot>
+			<MasterRes>
+				<bIsShadow/>
+				<MasterClass/>
+				<MasterSex/>
+				<HairResID/>
+				<FaceResID/>
+				<WeaponIndexID/>
+				<OffWeaponIndexID/>
+				<OffWeaponBigID/>
+				<HorseResID/>
+				<HandsBehaviorName/>
+				<HorseType/>
+				<BehaviorType/>
+				<HeadResID/>
+				<BodyResID/>
+				<ArmResID/>
+				<ShoeResID/>
+				<ShoulderResID/>
+				<WeaponResID/>
+				<OffWeaponResID/>
+				<BackResID/>
+				<WeaponPhase/>
+				<OffWeaponPhase/>
+				<HeadPhase/>
+				<BodyPhase/>
+				<ShoePhase/>
+				<ShoulderPhase/>
+				<ArmPhase/>
+			</MasterRes>
+		</staticroot>
+		<agileroot>
+			<Actor>
+				<StateForce/>
+				<MoveState/>
+				<MoveDir/>
+				<DirForce/>
+				<DirGac2Gas/>
+				<ActionDir/>
+				<ActionRhythm/>
+				<ActionIndex/>
+				<HurtResult/>
+				<ActionState/>
+				<NAActionRhythm/>
+				<WalkBackRadius/>
+			</Actor>
+			
+			<Attribute1>
+				<TargetID/>
+				<Speed/>
+				<MaterialNum/>
+				<ExpOwnerID/>
+				<BottomSize/>
+			</Attribute1>
+			
+			<Alert>
+				<AlertTargetID/>
+				<AlertAction/>
+			</Alert>
+
+			<CastingProcess>
+				<CastID/>
+				<CastTime/>
+				<GuessStartTime/>
+				<TargetIDOfCast/>
+				<uSkillID/>
+				<bIsFinish/>
+			</CastingProcess>
+			
+			<State type="Transit">
+				<Transit type="SubTree" name="AllState"/>
+				<Transit type="SubTree" name="MagicState"/>
+				<Transit type="SubTree" name="OtherState"/>
+			</State>
+			
+		</agileroot>
+	</SyncPart>
+	
+	
+	<ViewPart>
+		<staticroot>
+		
+			<Attribute>
+				<EntityID/>
+				<NpcType/>
+				<NpcAIType/>
+				<BeActiveNpc/>
+				<AttackType/>
+				<Camp/>
+				<BirthCamp/>
+				<GameCamp/>
+				<Level/>
+				<Class/>
+				<Sex/>
+				<Type/>
+				<CharName/>
+				<RealName/>
+				<DropOwnerId/>
+				<DropTime/>
+				<BelongToTeam/>
+				<ShowInClient/>
+				<FightDir/>
+			</Attribute>
+			
+		</staticroot>
+		<agileroot>
+			<Master>
+				<MasterID/>
+				<MasterTeamID/>
+				<MasterTroopID/>
+				<MasterTongID/>
+			</Master>
+			<PKSwitch>
+				<PKSwitchType/>
+				<ZoneType/>
+			</PKSwitch>
+			
+			<AgileValue>
+				<HealthPointAdder/>
+				<HealthPointMutiplier/>
+				<HealthPointAgile/>
+				<ConsumePointAdder/>
+				<ConsumePointMutiplier/>
+				<ConsumePointAgile/>
+			</AgileValue>
+			
+			<CtrlValue>
+				<Value/>
+				<ValueTypeID/>
+				<Set/>
+				<IsAlive/>
+			</CtrlValue>
+			
+		</agileroot>
+	</ViewPart>
+	
+	
+	<SubTree>
+	
+		<AllState>
+			<CategoryId/>
+			<DynamicId/>
+			<Count/>
+			<Time/>
+			<GuessStartTime/>
+			<SkillLevel/>
+			<InstallerID/>
+			<CalcValue/>
+			<zzzzzStateIsSync/>
+			<zzzzzStateIsFinish/>
+		</AllState>
+		
+		<MagicState>
+			<CategoryId/>
+			<DynamicId/>
+			<Count/>
+			<Time/>
+			<GuessStartTime/>
+			<SkillLevel/>
+			<zzzzzStateIsSync/>
+			<zzzzzStateIsFinish/>
+		</MagicState>
+		
+		<OtherState>
+			<CategoryId/>
+			<DynamicId/>
+			<Count/>
+			<Time/>
+			<GuessStartTime/>
+			<SkillLevel/>
+			<zzzzzStateIsSync/>
+			<zzzzzStateIsFinish/>
+		</OtherState>
+		
+	</SubTree>
+	
+</root>

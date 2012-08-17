@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Main">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Win32">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="DirectX9">
+      <UniqueIdentifier>{84195807-8440-4a3b-b870-f6d0020733ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{239018ca-fb52-4bd3-a8ad-04c7787063e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImageSplitter">
+      <UniqueIdentifier>{594325f8-f757-409c-ac29-704cfa3fa4fe}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Win32.cpp">
+      <Filter>Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectX9.cpp">
+      <Filter>DirectX9</Filter>
+    </ClCompile>
+    <ClCompile Include="ConfigFileParser.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="PathHelper.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="DefaultIndexGenerator.cpp">
+      <Filter>ImageSplitter</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageSplitter.cpp">
+      <Filter>ImageSplitter</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Win32.h">
+      <Filter>Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX9.h">
+      <Filter>DirectX9</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseDefs.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigFileParser.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="PathHelper.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultIndexGenerator.h">
+      <Filter>ImageSplitter</Filter>
+    </ClInclude>
+    <ClInclude Include="IIndexGenerator.h">
+      <Filter>ImageSplitter</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageSplitter.h">
+      <Filter>ImageSplitter</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

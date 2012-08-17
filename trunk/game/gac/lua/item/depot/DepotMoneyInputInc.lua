@@ -1,0 +1,1 @@
+CDepotMoneyInput = class( SQRDialog )

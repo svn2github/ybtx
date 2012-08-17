@@ -1,0 +1,1 @@
+CWarZoneBasic = class()

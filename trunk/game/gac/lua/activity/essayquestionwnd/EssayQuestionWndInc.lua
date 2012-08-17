@@ -1,0 +1,4 @@
+--CEssayQuestionWnd=class(SQRDialog)
+----CAnswerRightWnd = class(SQRDialog)
+----CAnswerWrongWnd = class(SQRDialog)
+--CEssayQuestionAns = class( SQRDialog)

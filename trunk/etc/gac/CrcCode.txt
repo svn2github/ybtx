@@ -1,0 +1,14 @@
+../../res/role.pkg	4294951014
+../../res/effect.pkg	4294912726
+../../res/terrain.pkg	4294959610
+../../res/item.pkg	4294913998
+../../res/scene.pkg	4294907994
+../../res/guires.pkg	4294917552
+../../res/ske.pkg	4294915912
+../../res/common.pkg	4294921981
+../../gui.pkg	4294962867
+../../config.pkg	4294922881
+../../other.pkg	4294902790
+../../logic.pkg	4294962792
+../../library.pkg	4294964135
+../../lang/chinese_simple.pkg	4294946686

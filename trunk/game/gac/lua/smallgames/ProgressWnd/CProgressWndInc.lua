@@ -1,0 +1,1 @@
+CProgressWnd = class(SQRDialog)

@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="lua">
+      <UniqueIdentifier>{87dfbee4-5ea0-47ff-a936-4cf6a6e8b635}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="技能">
+      <UniqueIdentifier>{15cd8175-3ca9-4108-980e-998e32b707d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="技能\效果">
+      <UniqueIdentifier>{e4137faa-7046-4553-bd70-e3bbbad4ffb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="技能\公共">
+      <UniqueIdentifier>{bcb4a7a9-5f57-4b0c-b32e-e6e90c7f0e96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="技能\状态">
+      <UniqueIdentifier>{3e134a21-00b0-4850-8aed-cbbe0917977f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="技能\魔法">
+      <UniqueIdentifier>{ad3cdd7e-83d6-47b5-a1ab-a5d12825cb96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="技能\流程">
+      <UniqueIdentifier>{a09d118a-f749-4221-a7fa-52ddef3cdac9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="技能\普攻">
+      <UniqueIdentifier>{b53dd3bf-1db4-427c-b557-3224f947e060}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="技能\技能">
+      <UniqueIdentifier>{6537d03a-8e38-41d0-8cdf-bf8c6678e005}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="技能\天赋">
+      <UniqueIdentifier>{98c2e564-9cfd-43e5-9337-248d997e9027}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="技能\属性">
+      <UniqueIdentifier>{0e58296c-7b2e-4807-8f70-ac3e0db426be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NPC">
+      <UniqueIdentifier>{a22e6349-624e-4101-a6ed-20cbf0fda594}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="界面">
+      <UniqueIdentifier>{213074b6-14fe-47ff-96ab-0d8aa6dbb4df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="框架">
+      <UniqueIdentifier>{9490e2ef-be6f-4c14-8f48-9c28a8cbd6eb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lua\CoreServer.lua">
+      <Filter>lua</Filter>
+    </None>
+    <None Include="lua\LoadCheckModule.lua">
+      <Filter>lua</Filter>
+    </None>
+    <None Include="lua\ThreadCoreServer.lua">
+      <Filter>lua</Filter>
+    </None>
+    <None Include="CCfgColChecker.inl">
+      <Filter>技能\公共</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CheckSkillCfg.cpp">
+      <Filter>技能</Filter>
+    </ClCompile>
+    <ClCompile Include="CBaseMagicOp.cpp">
+      <Filter>技能\效果</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgMagicEffCheck.cpp">
+      <Filter>技能\效果</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgMagicOp.cpp">
+      <Filter>技能\效果</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgColChecker.cpp">
+      <Filter>技能\公共</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgRelChecker.cpp">
+      <Filter>技能\公共</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgSkillBaseCheck.cpp">
+      <Filter>技能\公共</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgTempVarCheck.cpp">
+      <Filter>技能\公共</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgAllStateCheck.cpp">
+      <Filter>技能\状态</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgCumuliTriggerStateCheck.cpp">
+      <Filter>技能\状态</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgDamageChangeStateCheck.cpp">
+      <Filter>技能\状态</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgForceNoSaveState.cpp">
+      <Filter>技能\状态</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgMagicStateCheck.cpp">
+      <Filter>技能\状态</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgSpecialStateCheck.cpp">
+      <Filter>技能\状态</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgTriggerStateCheck.cpp">
+      <Filter>技能\状态</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgAureMagicCheck.cpp">
+      <Filter>技能\魔法</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgBarrierMagicCheck.cpp">
+      <Filter>技能\魔法</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgBattleArrayMagicCheck.cpp">
+      <Filter>技能\魔法</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgBulletMagicCheck.cpp">
+      <Filter>技能\魔法</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgBurstSoulCheck.cpp">
+      <Filter>技能\魔法</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgMoveMagicCheck.cpp">
+      <Filter>技能\魔法</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgPositionMagicCheck.cpp">
+      <Filter>技能\魔法</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgShockWaveMagicCheck.cpp">
+      <Filter>技能\魔法</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgTotemMagicCheck.cpp">
+      <Filter>技能\魔法</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgTransMagicCheck.cpp">
+      <Filter>技能\魔法</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgProcessCheck.cpp">
+      <Filter>技能\流程</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgNormalAttackCheck.cpp">
+      <Filter>技能\普攻</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgSkillCheck.cpp">
+      <Filter>技能\技能</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgSkillReplaceCheck.cpp">
+      <Filter>技能\技能</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgTalentEffCheck.cpp">
+      <Filter>技能\天赋</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgPropertyCheck.cpp">
+      <Filter>技能\属性</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgNPCAIBaseDataCheck.cpp">
+      <Filter>NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgNPCFighterBaseDataCheck.cpp">
+      <Filter>NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgNPCResCommonCheck.cpp">
+      <Filter>NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgNpcServerBaseData.cpp">
+      <Filter>NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgServantDataCheck.cpp">
+      <Filter>NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgSkillRuleCheck.cpp">
+      <Filter>NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckNPCCfg.cpp">
+      <Filter>NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="CNpcEnmityTargetFilterDataCheck.cpp">
+      <Filter>NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgBaseCheck.cpp">
+      <Filter>技能\公共</Filter>
+    </ClCompile>
+    <ClCompile Include="CCfgBloodCheck.cpp">
+      <Filter>界面</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckBloodCfg.cpp">
+      <Filter>界面</Filter>
+    </ClCompile>
+    <ClCompile Include="CCustomerCheck.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckConfig.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="CRecordHelp.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="CRecordManager.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="CServerCheck.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="RegistGacShell.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="RegistGasShell.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="RegistShellCommon.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptMgr.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CheckSkillCfg.h">
+      <Filter>技能</Filter>
+    </ClInclude>
+    <ClInclude Include="CBaseMagicOp.h">
+      <Filter>技能\效果</Filter>
+    </ClInclude>
+    <ClInclude Include="CCfgMagicEffCheck.h">
+      <Filter>技能\效果</Filter>
+    </ClInclude>
+    <ClInclude Include="CCfgMagicOp.h">
+      <Filter>技能\效果</Filter>
+    </ClInclude>
+    <ClInclude Include="CCfgColChecker.h">
+      <Filter>技能\公共</Filter>
+    </ClInclude>
+    <ClInclude Include="CCfgRelChecker.h">
+      <Filter>技能\公共</Filter>
+    </ClInclude>
+    <ClInclude Include="CCfgSkillBaseCheck.h">
+      <Filter>技能\公共</Filter>
+    </ClInclude>
+    <ClInclude Include="CCfgTempVarCheck.h">
+      <Filter>技能\公共</Filter>
+    </ClInclude>
+    <ClInclude Include="CCfgAllStateCheck.h">
+      <Filter>技能\状态</Filter>
+    </ClInclude>
+    <ClInclude Include="CCfgForceNoSaveState.h">
+      <Filter>技能\状态</Filter>
+    </ClInclude>
+    <ClInclude Include="CCfgAllMagicCheck.h">
+      <Filter>技能\魔法</Filter>
+    </ClInclude>
+    <ClInclude Include="CCfgProcessCheck.h">
+      <Filter>技能\流程</Filter>
+    </ClInclude>
+    <ClInclude Include="CCfgNormalAttackCheck.h">
+      <Filter>技能\普攻</Filter>
+    </ClInclude>
+    <ClInclude Include="CCfgSkillCheck.h">
+      <Filter>技能\技能</Filter>
+    </ClInclude>
+    <ClInclude Include="CCfgSkillReplaceCheck.h">
+      <Filter>技能\技能</Filter>
+    </ClInclude>
+    <ClInclude Include="CCfgTalentEffCheck.h">
+      <Filter>技能\天赋</Filter>
+    </ClInclude>
+    <ClInclude Include="CCfgPropertyCheck.h">
+      <Filter>技能\属性</Filter>
+    </ClInclude>
+    <ClInclude Include="CCfgNPCAIBaseDataCheck.h">
+      <Filter>NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="CCfgNPCFighterBaseDataCheck.h">
+      <Filter>NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="CCfgNPCResCommonCheck.h">
+      <Filter>NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="CCfgNpcServerBaseData.h">
+      <Filter>NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="CCfgServantDataCheck.h">
+      <Filter>NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="CCfgSkillRuleCheck.h">
+      <Filter>NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="CheckNPCCfg.h">
+      <Filter>NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="CNpcEnmityTargetFilterDataCheck.h">
+      <Filter>NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="CCfgBaseCheck.h">
+      <Filter>技能\公共</Filter>
+    </ClInclude>
+    <ClInclude Include="CCfgBloodCheck.h">
+      <Filter>界面</Filter>
+    </ClInclude>
+    <ClInclude Include="CheckBloodCfg.h">
+      <Filter>界面</Filter>
+    </ClInclude>
+    <ClInclude Include="CCustomerCheck.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="CRecordHelp.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="CRecordManager.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="CScriptMgr.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="CServerCheck.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="RegistGacShell.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="RegistGasShell.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="RegistShellCommon.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

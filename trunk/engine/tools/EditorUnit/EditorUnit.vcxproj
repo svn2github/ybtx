@@ -1,0 +1,608 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B82B50E9-0169-4143-A663-DBF7426CB5BA}</ProjectGuid>
+    <RootNamespace>EditorUnit</RootNamespace>
+    <Keyword>MFCDLLProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>false</CLRSupport>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../../bin/$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../../bin/$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>..\..\include;..\..\SDK\INC;..\..\tools\EditorUnit;..\..\..\engine\src\CoreRender;..\..\..\implib\inc;..\..\TDK\INC;..\CoreCommon;..\..\src\Effect;..\..\..\engine\src\Graphic\Coder;..\..\..\engine\src\Scene;..\..\..\engine\src\Graphic;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ResourceOutputFileName>
+      </ResourceOutputFileName>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+      <AdditionalLibraryDirectories>..\..\..\implib\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ClCompile>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>..\..\include;..\..\SDK\INC;..\..\tools\EditorUnit;..\..\..\engine\src\CoreRender;..\..\..\implib\inc;..\..\TDK\INC;..\CoreCommon;..\..\..\implib\inc\tinyxml;..\..\src\Effect;..\..\..\engine\src\Graphic\Coder;..\..\..\engine\src\Graphic;..\..\..\engine\src\Scene;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="System.Data">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CEditObserver.cpp" />
+    <ClCompile Include="CEditorCore.cpp" />
+    <ClCompile Include="CEditSubject.cpp" />
+    <ClCompile Include="CDemoCoder.cpp" />
+    <ClCompile Include="CEditModCoder.cpp" />
+    <ClCompile Include="CEditFormatBase.cpp" />
+    <ClCompile Include="CEditModFormat.cpp" />
+    <ClCompile Include="CEditRsFormat.cpp" />
+    <ClCompile Include="CEditTexFormat.cpp" />
+    <ClCompile Include="CEditCameraFilter.cpp" />
+    <ClCompile Include="CEditCameraShake.cpp" />
+    <ClCompile Include="CEditCombination.cpp" />
+    <ClCompile Include="CEditDynamicLight.cpp" />
+    <ClCompile Include="CEditEffect.cpp" />
+    <ClCompile Include="CEditEffectGroup.cpp" />
+    <ClCompile Include="CEditEffectManager.cpp" />
+    <ClCompile Include="CEditEffectProp.cpp" />
+    <ClCompile Include="CEditEffectTrack.cpp" />
+    <ClCompile Include="CEditFlareSprite.cpp" />
+    <ClCompile Include="CEditLeading.cpp" />
+    <ClCompile Include="CEditLighting.cpp" />
+    <ClCompile Include="CEditModelConsole.cpp" />
+    <ClCompile Include="CEditModelRenderStyle.cpp" />
+    <ClCompile Include="CEditNull.cpp" />
+    <ClCompile Include="CEditParticleSystem.cpp" />
+    <ClCompile Include="CEditPolyTrail.cpp" />
+    <ClCompile Include="CEditShake.cpp" />
+    <ClCompile Include="CEditSprite.cpp" />
+    <ClCompile Include="CEditTDimAudio.cpp" />
+    <ClCompile Include="CEditUnitPropHelp.cpp" />
+    <ClCompile Include="Scene\CEditDataScene.cpp" />
+    <ClCompile Include="CEditTreeScene.cpp" />
+    <ClCompile Include="Scene\CEditTerrainMgr.cpp" />
+    <ClCompile Include="CEditTerrainNode.cpp" />
+    <ClCompile Include="Scene\CEditWaterMgr.cpp" />
+    <ClCompile Include="Scene\CEditSkyMgr.cpp" />
+    <ClCompile Include="Scene\CEditLogicData.cpp" />
+    <ClCompile Include="Scene\CEditLogicDataMgr.cpp" />
+    <ClCompile Include="Scene\CEditBlockDebugNode.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="SceneCoder\ybtx_gac_coder\ybtx_gac_coder.cpp" />
+    <ClCompile Include="CEditAnimate.cpp" />
+    <ClCompile Include="CEditAnimationsRes.cpp" />
+    <ClCompile Include="CEditDataSources.cpp" />
+    <ClCompile Include="CEditInfo.cpp" />
+    <ClCompile Include="CEditMesh.cpp" />
+    <ClCompile Include="CEditModel.cpp" />
+    <ClCompile Include="CEditNullTexture.cpp" />
+    <ClCompile Include="CEditPieceGroup.cpp" />
+    <ClCompile Include="CEditPixelFillEffectPass.cpp" />
+    <ClCompile Include="CEditPostProcessManager.cpp" />
+    <ClCompile Include="CEditRenderPipeline.cpp" />
+    <ClCompile Include="CEditRenderStyle.cpp" />
+    <ClCompile Include="CEditSkeletal.cpp" />
+    <ClCompile Include="CEditSkeletalsMgr.cpp" />
+    <ClCompile Include="CEditTexture.cpp" />
+    <ClCompile Include="CameraCtrl\CFPSCamDelegate.cpp" />
+    <ClCompile Include="CameraCtrl\CFREECamDelegate.cpp" />
+    <ClCompile Include="CameraCtrl\CRecordCamDelegate.cpp" />
+    <ClCompile Include="CameraCtrl\CRTSCamDelegate.cpp" />
+    <ClCompile Include="CameraCtrl\CTPSCamDelegate.cpp" />
+    <ClCompile Include="CLODBuilder.cpp" />
+    <ClCompile Include="IBReBuilder.cpp" />
+    <ClCompile Include="LightSettingHandler.cpp" />
+    <ClCompile Include="CurvePatch\CoordinateAxis.cpp" />
+    <ClCompile Include="CurvePatch\CEditBezierCurve.cpp" />
+    <ClCompile Include="CurvePatch\CEditBezierPatch.cpp" />
+    <ClCompile Include="CurvePatch\BezierControlPoint.cpp" />
+    <ClCompile Include="CurvePatch\CEditCurveRender.cpp" />
+    <ClCompile Include="CFileProcessMgr\CFileProcessMgr.cpp" />
+    <ClCompile Include="CFileProcessMgr\CTaskProcess.cpp" />
+    <ClCompile Include="CFileProcessMgr\CAgpFileProcesser.cpp" />
+    <ClCompile Include="CFileProcessMgr\CFxFileProcesser.cpp" />
+    <ClCompile Include="CFileProcessMgr\CModFileProcesser.cpp" />
+    <ClCompile Include="CFileProcessMgr\CRsFileProcesser.cpp" />
+    <ClCompile Include="CFileProcessMgr\CSkeFileProcesser.cpp" />
+    <ClCompile Include="Line\CEditLine.cpp" />
+    <ClCompile Include="Line\CEditDashed.cpp" />
+    <ClCompile Include="Line\CEditDirctionLine.cpp" />
+    <ClCompile Include="Circle\CEditCircle.cpp" />
+    <ClCompile Include="CTargetController.cpp" />
+    <ClCompile Include="EditorExpMgr.cpp" />
+    <ClCompile Include="CCtrlBase.cpp" />
+    <ClCompile Include="CCtrlBaseObserver.cpp" />
+    <ClCompile Include="CCtrlImpFactory.cpp" />
+    <ClCompile Include="PathManager\CPathManager.cpp" />
+    <ClCompile Include="LogImp\CLogImp.cpp" />
+    <ClCompile Include="VideoSettingImp\CVideoSettingImp.cpp" />
+    <ClCompile Include="SceneStateImp\CSceneStateImp.cpp" />
+    <ClCompile Include="ReadPkgCtrl\ReadPkgCtrlImp.cpp" />
+    <ClCompile Include="FileProcessCtrl\FileProcessCtrlImp.cpp" />
+    <ClCompile Include="ProgressCtrl\CProgressCtrlImp.cpp" />
+    <ClCompile Include="GroundSpeedCtrl\CGridNode.cpp" />
+    <ClCompile Include="GroundSpeedCtrl\CGroundSettingCtrlImp.cpp" />
+    <ClCompile Include="KeyFrameCtrl\CKeyFrameCtrlImp.cpp" />
+    <ClCompile Include="FrameScaleCtrl\CFrameScaleCtrlImp.cpp" />
+    <ClCompile Include="FrameScaleCtrl\CFrameScaleDelegate.cpp" />
+    <ClCompile Include="FogParameterCtrl\CFogParameterCtrlImp.cpp" />
+    <ClCompile Include="LightParameterCtrl\CLightParameterCtrlImp.cpp" />
+    <ClCompile Include="HDRSettingCtrl\CHDRSettingCtrlImp.cpp" />
+    <ClCompile Include="PickColorCtrl\PowerColorPickerImp.cpp" />
+    <ClCompile Include="CCoreViewImp.cpp" />
+    <ClCompile Include="IModelViewHelp.cpp" />
+    <ClCompile Include="CEfxFileCtrlImp.cpp" />
+    <ClCompile Include="CAutoSearchFile.cpp" />
+    <ClCompile Include="CEfxEditPropImp.cpp" />
+    <ClCompile Include="CEfxTrackCtrlImp.cpp" />
+    <ClCompile Include="CEfxKeyUintCtrlImp.cpp" />
+    <ClCompile Include="PortraitView\CPortraitView.cpp" />
+    <ClCompile Include="PortraitView\PortraitViewCtrlImp.cpp" />
+    <ClCompile Include="PieceUnitEditCtrl\CPieceUnitEditImp.cpp" />
+    <ClCompile Include="AnimationGroupEditCtrl\CAnimationGroupEditImp.cpp" />
+    <ClCompile Include="PieceGroupEditCtrl\CPieceGroupEditImp.cpp" />
+    <ClCompile Include="BoundingBoxEditCtrl\CBoundingBoxDelegate.cpp" />
+    <ClCompile Include="BoundingBoxEditCtrl\CBoundingBoxEditImp.cpp" />
+    <ClCompile Include="SkeletonEditCtrl\CSkeletonDelegate.cpp" />
+    <ClCompile Include="SkeletonEditCtrl\CSkeletonEditImp.cpp" />
+    <ClCompile Include="AutoDataHelper.cpp" />
+    <ClCompile Include="AutoPropData.cpp" />
+    <ClCompile Include="AutoPropToCtrlImp.cpp" />
+    <ClCompile Include="BoolEditCtrlImp.cpp" />
+    <ClCompile Include="CCtrlPropBase.cpp" />
+    <ClCompile Include="ComBoEditCtrlImp.cpp" />
+    <ClCompile Include="EStrMapEditCtrlImp.cpp" />
+    <ClCompile Include="NumEditCtrlImp.cpp" />
+    <ClCompile Include="NumMapEditCtrlImp.cpp" />
+    <ClCompile Include="SingleStringEditCtrlImp.cpp" />
+    <ClCompile Include="Vector3EditCtrlImp.cpp" />
+    <ClCompile Include="Vector3MapCtrlImp.cpp" />
+    <ClCompile Include="BoneListCtrl\CBoneListCtrlImp.cpp" />
+    <ClCompile Include="LightView\CLightViewImp.cpp" />
+    <ClCompile Include="ColorCtrl\CColorCtrlImp.cpp" />
+    <ClCompile Include="BoneBoxListCtrl\CBoneBoxListCtrlImp.cpp" />
+    <ClCompile Include="BoneListCtrl\CBoneBoxListDelegate.cpp" />
+    <ClCompile Include="BoneBoxEditCtrl\CBoneBoxEditCtrlImp.cpp" />
+    <ClCompile Include="BoneBoxEditCtrl\CBoneBoxEditDelegate.cpp" />
+    <ClCompile Include="ColorAnimCtrl\CColorAnimImp.cpp" />
+    <ClCompile Include="ColorAnimCtrl\ColorAnimTypes\ColorAnimTypes.cpp" />
+    <ClCompile Include="PropCtrl\CAudioPropCtrlImp.cpp" />
+    <ClCompile Include="PropCtrl\CBasePropCtrlImp.cpp" />
+    <ClCompile Include="PropCtrl\CLightPropCtrlImp.cpp" />
+    <ClCompile Include="PropCtrl\CModelPropCtrlImp.cpp" />
+    <ClCompile Include="PropCtrl\CPropCtrlImp.cpp" />
+    <ClCompile Include="PropCtrl\CScenePropCtrlImp.cpp" />
+    <ClCompile Include="CEditorConfig.cpp" />
+    <ClCompile Include="CEditorDevConfig.cpp" />
+    <ClCompile Include="CEditSceneConfig.cpp" />
+    <ClCompile Include="CEditContext.cpp" />
+    <ClCompile Include="CEditToolApp.cpp" />
+    <ClCompile Include="CEventCollector.cpp" />
+    <ClCompile Include="CEventDelegate.cpp" />
+    <ClCompile Include="CEventOwner.cpp" />
+    <ClCompile Include="CEventState.cpp" />
+    <ClCompile Include="CHotKeyMap.cpp" />
+    <ClCompile Include="CMsg.cpp" />
+    <ClCompile Include="EditGuiMgr\EditGuiMgr.cpp" />
+    <ClCompile Include="ContextCtrl\CContextCtrl.cpp" />
+    <ClCompile Include="CameraCtrl\CFPSCameraCtrl.cpp" />
+    <ClCompile Include="CameraCtrl\CFREECameraCtrl.cpp" />
+    <ClCompile Include="CameraCtrl\CRTSCameraCtrl.cpp" />
+    <ClCompile Include="CEditSet.cpp" />
+    <ClCompile Include="RecordCtrl\CRecordCtrlImp.cpp" />
+    <ClCompile Include="GridCtrl\CGridCtrlImp.cpp" />
+    <ClCompile Include="TileViewCtrl\TileViewCtrlImp.cpp" />
+    <ClCompile Include="TextureViewCtrl\TextureViewCtrlImp.cpp" />
+    <ClCompile Include="SetViewCtrl\SetViewCtrlImp.cpp" />
+    <ClCompile Include="MapEffectCtrl\MapEffectCtrlImp.cpp" />
+    <ClCompile Include="BlockViewCtrl\BlockViewCtrlImp.cpp" />
+    <ClCompile Include="AudioViewCtrl\AudioViewCtrlImp.cpp" />
+    <ClCompile Include="AudioViewCtrl\CueListCtrlImp.cpp" />
+    <ClCompile Include="AudioViewCtrl\AmbientAudioCtrlImp.cpp" />
+    <ClCompile Include="Brush\BaseBrush.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="Brush\BaseBrushDraw.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="Brush\CircleBrushImp.cpp" />
+    <ClCompile Include="Brush\RegularGridBrushImp.cpp" />
+    <ClCompile Include="Brush\SquareBrushImp.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="Brush\BrushGridHepler.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="Brush\TerrainTextureBrush.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="Brush\TerrainTextureData.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="Brush\TerrainBlockBrush.cpp" />
+    <ClCompile Include="CTerrainOperate.cpp" />
+    <ClCompile Include="Brush\TerrainGridBrush.cpp" />
+    <ClCompile Include="Brush\TerrainModelBrush.cpp" />
+    <ClCompile Include="CCallBackCmd.cpp" />
+    <ClCompile Include="CCombinCmd.cpp" />
+    <ClCompile Include="Cmd.cpp" />
+    <ClCompile Include="CmdMgr.cpp" />
+    <ClCompile Include="CTempCmdPool.cpp" />
+    <ClCompile Include="CTemporaryCmd.cpp" />
+    <ClCompile Include="MapCommand\CmdBornObject.cpp" />
+    <ClCompile Include="MapCommand\CmdDeleteObject.cpp" />
+    <ClCompile Include="MapCommand\CmdPlaceObject.cpp" />
+    <ClCompile Include="MapCommand\CmdSetSingleTexture.cpp" />
+    <ClCompile Include="MapCommand\CmdSetTerrainBlock.cpp" />
+    <ClCompile Include="MapCommand\CmdSetTerrainHeight.cpp" />
+    <ClCompile Include="MapCommand\CmdSetVertexAlpha.cpp" />
+    <ClCompile Include="MapCommand\CmdSetVertexHeight.cpp" />
+    <ClCompile Include="MapCommand\CmdSetWaterHeight.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\tdk\inc\CEditObserver.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditorClassPre.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditorCore.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditSubject.h" />
+    <ClInclude Include="CDemoCoder.h" />
+    <ClInclude Include="CEditModCoder.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditFormatBase.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditModFormat.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditRsFormat.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditTexFormat.h" />
+    <ClInclude Include="CEditCameraFilter.h" />
+    <ClInclude Include="CEditCameraShake.h" />
+    <ClInclude Include="CEditCombination.h" />
+    <ClInclude Include="CEditDynamicLight.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditEffect.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditEffectBase.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditEffectGroup.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditEffectManager.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditEffectProp.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditEffectTrack.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditEfffectClassDefine.h" />
+    <ClInclude Include="CEditFlareSprite.h" />
+    <ClInclude Include="CEditLeading.h" />
+    <ClInclude Include="CEditLighting.h" />
+    <ClInclude Include="CEditModelConsole.h" />
+    <ClInclude Include="CEditModelRenderStyle.h" />
+    <ClInclude Include="CEditNull.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditParticleSystem.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditPolyTrail.h" />
+    <ClInclude Include="CEditShake.h" />
+    <ClInclude Include="CEditSprite.h" />
+    <ClInclude Include="CEditTDimAudio.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditUnitPropHelp.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditDataScene.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditTreeScene.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditTerrainMgr.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditTerrainNode.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditWaterMgr.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditSkyMgr.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditLogicData.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditLogicDataMgr.h" />
+    <ClInclude Include="CEditBlockDebugNode.h" />
+    <ClInclude Include="SceneCoder\ybtx_gac_coder\ybtx_gac_coder.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditAnimate.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditAnimationsRes.h" />
+    <ClInclude Include="CEditDataSources.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditInfo.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditMesh.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditModel.h" />
+    <ClInclude Include="CEditNullTexture.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditPieceGroup.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditPixelFillEffectPass.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditPostProcessManager.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditRenderPipeline.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditRenderStyle.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditSkeletal.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditSkeletalsMgr.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditTexture.h" />
+    <ClInclude Include="..\..\tdk\inc\CameraCtrl\CFPSCamDelegate.h" />
+    <ClInclude Include="..\..\tdk\inc\CameraCtrl\CFREECamDelegate.h" />
+    <ClInclude Include="..\..\tdk\inc\CameraCtrl\CRecordCamDelegate.h" />
+    <ClInclude Include="..\..\tdk\inc\CameraCtrl\CRTSCamDelegate.h" />
+    <ClInclude Include="..\..\tdk\inc\CameraCtrl\CTPSCamDelegate.h" />
+    <ClInclude Include="..\..\tdk\inc\CLODBuilder.h" />
+    <ClInclude Include="..\..\tdk\inc\CtrlImpHelper.h" />
+    <ClInclude Include="..\..\tdk\inc\IBReBuilder.h" />
+    <ClInclude Include="..\..\tdk\inc\LightSettingHandler.h" />
+    <ClInclude Include="..\..\tdk\inc\CurvePatch\CoordinateAxis.h" />
+    <ClInclude Include="..\..\tdk\inc\CurvePatch\CEditBezierCurve.h" />
+    <ClInclude Include="..\..\tdk\inc\CurvePatch\CEditBezierPatch.h" />
+    <ClInclude Include="..\..\tdk\inc\CurvePatch\BezierControlPoint.h" />
+    <ClInclude Include="..\..\tdk\inc\CurvePatch\CEditCurveRender.h" />
+    <ClInclude Include="..\..\tdk\inc\CFileProcessMgr\CFileProcessMgr.h" />
+    <ClInclude Include="..\..\tdk\inc\CFileProcessMgr\CTaskProcess.h" />
+    <ClInclude Include="..\..\tdk\inc\IProgressCallback.h" />
+    <ClInclude Include="..\..\tdk\inc\CFileProcessMgr\CAgpFileProcesser.h" />
+    <ClInclude Include="CFileProcessMgr\CFxFileProcesser.h" />
+    <ClInclude Include="..\..\tdk\inc\CFileProcessMgr\CModFileProcesser.h" />
+    <ClInclude Include="..\..\tdk\inc\CFileProcessMgr\CRsFileProcesser.h" />
+    <ClInclude Include="..\..\tdk\inc\CFileProcessMgr\CSkeFileProcesser.h" />
+    <ClInclude Include="..\..\tdk\inc\Line\CEditLine.h" />
+    <ClInclude Include="..\..\tdk\inc\Line\CEditDashed.h" />
+    <ClInclude Include="..\..\tdk\inc\Line\CEditDirctionLine.h" />
+    <ClInclude Include="..\..\tdk\inc\Circle\CEditCircle.h" />
+    <ClInclude Include="..\..\tdk\inc\CTargetController.h" />
+    <ClInclude Include="..\..\tdk\inc\EditorExp.h" />
+    <ClInclude Include="..\..\tdk\inc\EditorExpMgr.h" />
+    <ClInclude Include="..\..\tdk\inc\CCtrlBase.h" />
+    <ClInclude Include="..\..\tdk\inc\CCtrlBaseObserver.h" />
+    <ClInclude Include="CCtrlImpFactory.h" />
+    <ClInclude Include="..\..\tdk\inc\PathManager\CPathManager.h" />
+    <ClInclude Include="..\..\tdk\inc\LogImp\CLogImp.h" />
+    <ClInclude Include="..\..\tdk\inc\VideoSettingImp\CVideoSettingImp.h" />
+    <ClInclude Include="..\..\tdk\inc\SceneStateImp\CSceneStateImp.h" />
+    <ClInclude Include="..\..\tdk\inc\ReadPkgCtrl\ReadPkgCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\FileProcessCtrl\FileProcessCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\ProgressCtrl\CProgressCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\GroundSpeedCtrl\CGridNode.h" />
+    <ClInclude Include="..\..\tdk\inc\GroundSpeedCtrl\CGroundSettingCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\KeyFrameCtrl\CKeyFrameCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\FrameScaleCtrl\CFrameScaleCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\FrameScaleCtrl\CFrameScaleDelegate.h" />
+    <ClInclude Include="..\..\tdk\inc\FogParameterCtrl\CFogParameterCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\LightParameterCtrl\CLightParameterCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\HDRSettingCtrl\CHDRSettingCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\PickColorCtrl\PowerColorPickerImp.h" />
+    <ClInclude Include="..\..\tdk\inc\CCoreViewImp.h" />
+    <ClInclude Include="..\..\tdk\inc\ICtrlImpFactory.h" />
+    <ClInclude Include="..\..\tdk\inc\IModelViewHelp.h" />
+    <ClInclude Include="..\..\tdk\inc\CEfxFileCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\CAutoSearchFile.h" />
+    <ClInclude Include="..\..\tdk\inc\CEfxEditPropImp.h" />
+    <ClInclude Include="..\..\tdk\inc\CEfxTrackCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\CEfxKeyUintCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\PortraitView\CPortraitView.h" />
+    <ClInclude Include="..\..\tdk\inc\PortraitView\PortraitViewCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\PieceUnitEditCtrl\CPieceUnitEditImp.h" />
+    <ClInclude Include="..\..\tdk\inc\AnimationGroupEditCtrl\CAnimationGroupEditImp.h" />
+    <ClInclude Include="..\..\tdk\inc\PieceGroupEditCtrl\CPieceGroupEditImp.h" />
+    <ClInclude Include="..\..\tdk\inc\BoundingBoxEditCtrl\CBoundingBoxDelegate.h" />
+    <ClInclude Include="..\..\tdk\inc\BoundingBoxEditCtrl\CBoundingBoxEditImp.h" />
+    <ClInclude Include="..\..\tdk\inc\SkeletonEditCtrl\CSkeletonDelegate.h" />
+    <ClInclude Include="..\..\tdk\inc\SkeletonEditCtrl\CSkeletonEditImp.h" />
+    <ClInclude Include="..\..\tdk\inc\AutoDataHelper.h" />
+    <ClInclude Include="..\..\tdk\inc\AutoPropData.h" />
+    <ClInclude Include="..\..\tdk\inc\AutoPropToCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\BoolEditCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\CCtrlPropBase.h" />
+    <ClInclude Include="..\..\tdk\inc\ComBoEditCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\EStrMapEditCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\NumEditCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\NumMapEditCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\SingleStringEditCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\Vector3EditCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\Vector3MapCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\BoneListCtrl\CBoneListCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\LightView\CLightViewImp.h" />
+    <ClInclude Include="..\..\tdk\inc\ColorCtrl\CColorCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\BoneBoxListCtrl\CBoneBoxListCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\BoneBoxListCtrl\CBoneBoxListDelegate.h" />
+    <ClInclude Include="..\..\tdk\inc\BoneBoxEditCtrl\CBoneBoxEditCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\BoneBoxEditCtrl\CBoneBoxEditDelegate.h" />
+    <ClInclude Include="..\..\tdk\inc\ColorAnimCtrl\CColorAnimImp.h" />
+    <ClInclude Include="ColorAnimCtrl\ColorAnimTypes\ColorAnimTypes.h" />
+    <ClInclude Include="..\..\tdk\inc\PropCtrl\CAudioPropCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\PropCtrl\CBasePropCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\PropCtrl\CLightPropCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\PropCtrl\CModelPropCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\PropCtrl\CPropCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\PropCtrl\CScenePropCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditorConfig.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditorDevConfig.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditSceneConfig.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditContext.h" />
+    <ClInclude Include="CEditToolApp.h" />
+    <ClInclude Include="ContextMsg.h" />
+    <ClInclude Include="..\..\tdk\inc\IApplication.h" />
+    <ClInclude Include="..\..\tdk\inc\CEventCollector.h" />
+    <ClInclude Include="..\..\tdk\inc\CEventDelegate.h" />
+    <ClInclude Include="..\..\tdk\inc\CEventOwner.h" />
+    <ClInclude Include="..\..\tdk\inc\CEventState.h" />
+    <ClInclude Include="CHotKeyMap.h" />
+    <ClInclude Include="..\..\tdk\inc\CMsg.h" />
+    <ClInclude Include="..\..\tdk\inc\CMsgDefine.h" />
+    <ClInclude Include="..\..\tdk\inc\EditGuiMgr\EditGuiMgr.h" />
+    <ClInclude Include="..\..\tdk\inc\ContextCtrl\CContextCtrl.h" />
+    <ClInclude Include="..\..\tdk\inc\CameraCtrl\CFPSCameraCtrl.h" />
+    <ClInclude Include="..\..\tdk\inc\CameraCtrl\CFREECameraCtrl.h" />
+    <ClInclude Include="..\..\tdk\inc\CameraCtrl\CRTSCameraCtrl.h" />
+    <ClInclude Include="..\..\tdk\inc\CEditSet.h" />
+    <ClInclude Include="..\..\tdk\inc\RecordCtrl\CRecordCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\CRecordStruct.h" />
+    <ClInclude Include="..\..\tdk\inc\GridCtrl\CGridCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\TileViewCtrl\TileViewCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\TextureViewCtrl\TextureViewCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\SetViewCtrl\SetViewCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\MapEffectCtrl\MapEffectCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\BlockViewCtrl\BlockViewCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\AudioViewCtrl\AudioViewCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\AudioViewCtrl\CueListCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\AudioViewCtrl\AmbientAudioCtrlImp.h" />
+    <ClInclude Include="..\..\tdk\inc\Brush\BaseBrush.h" />
+    <ClInclude Include="..\..\tdk\inc\Brush\BaseBrushEnum.h" />
+    <ClInclude Include="..\..\tdk\inc\Brush\BaseBrushDraw.h" />
+    <ClInclude Include="..\..\tdk\inc\Brush\CircleBrushImp.h" />
+    <ClInclude Include="..\..\tdk\inc\Brush\RegularGridBrushImp.h" />
+    <ClInclude Include="..\..\tdk\inc\Brush\SquareBrushImp.h" />
+    <ClInclude Include="..\..\tdk\inc\Brush\BrushGridHepler.h" />
+    <ClInclude Include="..\..\tdk\inc\Brush\TerrainTextureBrush.h" />
+    <ClInclude Include="..\..\tdk\inc\Brush\TerrainTextureData.h" />
+    <ClInclude Include="..\..\tdk\inc\Brush\TerrainBlockBrush.h" />
+    <ClInclude Include="..\..\tdk\inc\CTerrainOperate.h" />
+    <ClInclude Include="..\..\tdk\inc\Brush\TerrainGridBrush.h" />
+    <ClInclude Include="..\..\tdk\inc\Brush\TerrainModelBrush.h" />
+    <ClInclude Include="..\..\tdk\inc\CCallBackCmd.h" />
+    <ClInclude Include="..\..\tdk\inc\CCombinCmd.h" />
+    <ClInclude Include="..\..\tdk\inc\Cmd.h" />
+    <ClInclude Include="..\..\tdk\inc\CmdMgr.h" />
+    <ClInclude Include="..\..\tdk\inc\CTempCmdPool.h" />
+    <ClInclude Include="..\..\tdk\inc\CTemporaryCmd.h" />
+    <ClInclude Include="MapCommand\CmdBornObject.h" />
+    <ClInclude Include="MapCommand\CmdDeleteObject.h" />
+    <ClInclude Include="MapCommand\CmdPlaceObject.h" />
+    <ClInclude Include="MapCommand\CmdSetSingleTexture.h" />
+    <ClInclude Include="MapCommand\CmdSetTerrainBlock.h" />
+    <ClInclude Include="MapCommand\CmdSetTerrainHeight.h" />
+    <ClInclude Include="MapCommand\CmdSetVertexAlpha.h" />
+    <ClInclude Include="MapCommand\CmdSetVertexHeight.h" />
+    <ClInclude Include="MapCommand\CmdSetWaterHeight.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Effect\Effect.vcxproj">
+      <Project>{90857b41-653b-40a4-83cd-a652d0358fd0}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Graphic\Graphic.vcxproj">
+      <Project>{f7055aa1-7ad3-436d-81ec-73d1f637d6a5}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\GUI\GUI.vcxproj">
+      <Project>{9aa43a8b-5d5c-45db-bfa3-66a1cacf065d}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Module\Module.vcxproj">
+      <Project>{c347d3b0-2850-4745-b68f-0ab03a51e06c}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Scene\Scene.vcxproj">
+      <Project>{e6159d22-6907-4ca8-9b1b-2fe319150653}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Video\Video.vcxproj">
+      <Project>{73d4cb86-ccc1-41b7-9cc5-a89dc4fde9a5}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="\company\ybtx\programmer\trunk\engine\tdk\inc\ViewDlgCtrl\ViewDlgCtrl.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
