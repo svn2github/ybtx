@@ -1,1 +1,0 @@
-CMarket = class()

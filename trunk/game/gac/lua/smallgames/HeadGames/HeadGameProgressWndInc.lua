@@ -1,1 +1,0 @@
-CHeadProgressWnd = class(SQRDialog)

@@ -1,1 +1,0 @@
-CDisplayCommon = class ()

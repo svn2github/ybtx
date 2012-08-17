@@ -1,1 +1,0 @@
-CTongMonsAttackStationMgr = class()

@@ -1,1 +1,0 @@
-CClickPicWnd = class(SQRDialog)

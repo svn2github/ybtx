@@ -1,2 +1,0 @@
-
-void RemoveReg(void);

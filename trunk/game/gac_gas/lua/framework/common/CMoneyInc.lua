@@ -1,1 +1,0 @@
-CMoney = class()

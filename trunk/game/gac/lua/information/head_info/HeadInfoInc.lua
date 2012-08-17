@@ -1,1 +1,0 @@
-CHeadInfo    = class(CRenderDialog)

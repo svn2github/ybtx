@@ -1,1 +1,0 @@
-CJFSCountScoreWnd = class(SQRDialog)

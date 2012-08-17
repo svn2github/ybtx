@@ -1,1 +1,0 @@
-delete from tbl_freeze_account;

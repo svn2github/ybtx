@@ -1,1 +1,0 @@
-TeamClientMgrHandler = class( ITeamClientManagerHandler )

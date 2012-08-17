@@ -1,1 +1,0 @@
-CPanelMenuWnd = class(SQRDialog)

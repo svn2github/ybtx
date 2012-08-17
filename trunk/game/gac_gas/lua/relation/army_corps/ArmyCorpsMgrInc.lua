@@ -1,1 +1,0 @@
-CArmyCorpsMgr = class()

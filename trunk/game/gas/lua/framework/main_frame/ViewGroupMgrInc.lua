@@ -1,1 +1,0 @@
-CViewGroupMgr = class()

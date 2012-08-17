@@ -1,1 +1,0 @@
-CRobResScene = class(CSceneBase)

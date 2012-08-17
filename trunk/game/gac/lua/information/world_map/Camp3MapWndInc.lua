@@ -1,1 +1,0 @@
-CCamp3MapBG = class( SQRDialog )

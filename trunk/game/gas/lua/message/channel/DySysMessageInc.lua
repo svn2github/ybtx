@@ -1,1 +1,0 @@
-CDySysMsg = class()

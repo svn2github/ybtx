@@ -1,1 +1,0 @@
-CGameCampMgr = class()

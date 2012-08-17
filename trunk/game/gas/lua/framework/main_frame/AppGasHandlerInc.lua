@@ -1,1 +1,0 @@
-CAppGasHandler = class(IAppServerHandler)

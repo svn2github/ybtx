@@ -1,1 +1,0 @@
-CCoreWarZone = class()

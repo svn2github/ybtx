@@ -1,1 +1,0 @@
-CMercenaryMonsterScene = class(CSceneBase)

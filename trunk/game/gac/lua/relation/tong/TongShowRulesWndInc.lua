@@ -1,1 +1,0 @@
---CShowRulesWnd = class(SQRDialog)

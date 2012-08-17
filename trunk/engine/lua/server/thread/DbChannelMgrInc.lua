@@ -1,2 +1,0 @@
-CDbChannelMgr = class(IDbThreadScriptHandler)
-

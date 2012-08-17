@@ -1,1 +1,0 @@
-CLiveSkillDesWnd = class(SQRDialog)

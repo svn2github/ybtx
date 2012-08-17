@@ -1,4 +1,0 @@
-
-
-void RegBash(void);
-

@@ -1,1 +1,0 @@
-CPlayerActionWnd = class(SQRDialog)

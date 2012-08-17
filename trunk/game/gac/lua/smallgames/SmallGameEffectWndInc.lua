@@ -1,1 +1,0 @@
-CSmallGameEffectWnd = class(CRenderDialog)

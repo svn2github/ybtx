@@ -1,2 +1,0 @@
---CTongViewResOrderWnd  = class(SQRDialog, CTongBase)
---CTongBuyResOrderListItem	= class(SQRDialog)

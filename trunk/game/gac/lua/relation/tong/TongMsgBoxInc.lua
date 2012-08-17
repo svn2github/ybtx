@@ -1,1 +1,0 @@
-CTongInputBoxWnd	= class(SQRDialog)

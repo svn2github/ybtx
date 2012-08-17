@@ -1,1 +1,0 @@
-CTongCreateWnd  = class(SQRDialog, CTongBase)

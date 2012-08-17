@@ -1,2 +1,0 @@
-HttpDownload = class(IPipeHandler)
-

@@ -1,1 +1,0 @@
-CRideCamelWnd = class(SQRDialog)

@@ -1,1 +1,0 @@
-CWarZoneLifeTrees = class()

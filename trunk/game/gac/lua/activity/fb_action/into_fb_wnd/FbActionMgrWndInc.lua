@@ -1,1 +1,0 @@
-CFbActionMgrWnd = class(SQRDialog)

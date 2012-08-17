@@ -1,1 +1,0 @@
-CSmallGameBase = class()

@@ -1,1 +1,0 @@
-CBagShapeEffectWnd =  class( SQRDialog )

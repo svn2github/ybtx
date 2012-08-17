@@ -1,2 +1,0 @@
-
-CCountRecord = class()

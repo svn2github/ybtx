@@ -1,1 +1,0 @@
---CTongMyResOrderWnd  = class(SQRDialog, CTongBase)

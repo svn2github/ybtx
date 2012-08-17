@@ -1,1 +1,0 @@
-CLiveSkillProdMainWnd = class(SQRDialog)

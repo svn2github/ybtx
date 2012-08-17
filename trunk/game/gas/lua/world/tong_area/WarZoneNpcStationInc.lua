@@ -1,1 +1,0 @@
-CWarZoneNpcStation = class()

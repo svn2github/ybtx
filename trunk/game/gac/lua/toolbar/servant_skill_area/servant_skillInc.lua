@@ -1,1 +1,0 @@
-CServantSkill = class( SQRDialog )

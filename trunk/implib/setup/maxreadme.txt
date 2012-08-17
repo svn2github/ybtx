@@ -1,1 +1,0 @@
-BonePro3 CharacterStudio 3.2

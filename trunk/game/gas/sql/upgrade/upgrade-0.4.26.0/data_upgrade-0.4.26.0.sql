@@ -1,1 +1,0 @@
-update tbl_item_static set is_sName = "用兵探险装备包裹" where is_sName = "用兵探险装备包裹（法系）" and is_uType = 24;

@@ -1,6 +1,0 @@
-#!/bin/bash
-
-readonly CombineLogFile="Combine.log"
-readonly ExcelSqlDir="../sql"
-readonly MysqlPasswd="1"
-

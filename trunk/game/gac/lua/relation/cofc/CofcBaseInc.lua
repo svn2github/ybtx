@@ -1,1 +1,0 @@
-CofcBase = class()

@@ -1,1 +1,0 @@
-CTongRobResourceMgr = class()

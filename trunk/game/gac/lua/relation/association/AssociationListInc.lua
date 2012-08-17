@@ -1,1 +1,0 @@
-CAssociationListWnd = class(SQRDialog)

@@ -1,1 +1,0 @@
-CTstMakeMgr = class()

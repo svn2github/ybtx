@@ -1,1 +1,0 @@
-CAssociationMgr = class()

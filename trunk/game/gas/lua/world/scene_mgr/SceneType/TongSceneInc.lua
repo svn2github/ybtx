@@ -1,2 +1,0 @@
-
-CTongScene = class(CSceneBase)

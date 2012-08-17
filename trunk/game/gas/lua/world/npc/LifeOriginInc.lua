@@ -1,1 +1,0 @@
-LifeOrigin = class()

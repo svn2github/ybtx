@@ -1,1 +1,0 @@
-CIntObjServerMgr = class()

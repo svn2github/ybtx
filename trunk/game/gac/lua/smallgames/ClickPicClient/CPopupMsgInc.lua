@@ -1,1 +1,0 @@
-CPopupMsg = class()

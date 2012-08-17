@@ -1,2 +1,0 @@
-function jj
-  k = nil

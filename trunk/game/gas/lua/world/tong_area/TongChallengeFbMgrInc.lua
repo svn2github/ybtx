@@ -1,1 +1,0 @@
-CTongChallengeFbMgr = class()

@@ -1,1 +1,0 @@
-CLoginWaitingQueue = class(SQRDialog)

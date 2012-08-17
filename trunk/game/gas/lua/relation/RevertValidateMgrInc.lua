@@ -1,1 +1,0 @@
-RevertValidateMgr = class()

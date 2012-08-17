@@ -1,1 +1,0 @@
-CStmtObj = class()

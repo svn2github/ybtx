@@ -1,1 +1,0 @@
-CAssociationBase = class()

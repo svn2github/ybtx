@@ -1,3 +1,0 @@
-float shadow = tex2Dproj(ShadowSampler, i.text7);\
-float3 shadowColor = lerp(gGlobalShadowColor.rgb, float3(1,1,1), shadow);\
-s = clamp(s * shadowColor, gGlobalShadowColor.rgb, float3(1,1,1));

@@ -1,2 +1,0 @@
-
-CScene = class(CSceneBase)

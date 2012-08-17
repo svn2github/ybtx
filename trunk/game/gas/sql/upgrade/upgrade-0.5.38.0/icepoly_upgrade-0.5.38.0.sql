@@ -1,1 +1,0 @@
-delete from tbl_market_purchasing_cfg_info;

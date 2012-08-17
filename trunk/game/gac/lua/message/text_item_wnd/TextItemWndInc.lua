@@ -1,1 +1,0 @@
-CTextItemWnd = class(SQRDialog)

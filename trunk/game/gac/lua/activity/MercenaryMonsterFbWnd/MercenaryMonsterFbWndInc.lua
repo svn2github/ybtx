@@ -1,1 +1,0 @@
-CMercenaryMonsterFbWnd = class(SQRDialog)

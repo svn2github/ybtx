@@ -1,1 +1,0 @@
-g_ObjectEvent = {}

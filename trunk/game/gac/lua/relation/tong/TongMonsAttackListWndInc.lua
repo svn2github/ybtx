@@ -1,1 +1,0 @@
-CTongMonsAttackListWnd = class(SQRDialog, CTongBase)

@@ -1,1 +1,0 @@
-CColorMgr = class()

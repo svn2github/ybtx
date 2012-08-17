@@ -1,2 +1,0 @@
-#帮会资源点临时信息表
-alter table tbl_tong_rob_resource_temp drop foreign key tbl_tong_rob_resource_temp_ibfk_1;

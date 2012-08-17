@@ -1,1 +1,0 @@
-CAppGacHandler = class (IAppClientHandler)

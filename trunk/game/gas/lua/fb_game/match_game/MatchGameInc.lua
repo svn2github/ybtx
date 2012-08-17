@@ -1,2 +1,0 @@
-
-CMatchGame = class()

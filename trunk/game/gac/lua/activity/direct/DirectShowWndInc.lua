@@ -1,1 +1,0 @@
-CDirectShowWnd = class(SQRDialog)

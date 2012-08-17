@@ -1,1 +1,0 @@
-CDaDuoBaoScene = class(CSceneBase)

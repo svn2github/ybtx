@@ -1,1 +1,0 @@
-CCofc = class()
