@@ -1,0 +1,1 @@
+ alter table tbl_server_attribute drop foreign key tbl_server_attribute_ibfk_1;

@@ -1,0 +1,1 @@
+RevertValidateMgr = class()

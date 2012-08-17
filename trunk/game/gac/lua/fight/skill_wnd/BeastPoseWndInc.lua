@@ -1,0 +1,1 @@
+CBeastPoseWnd = class(SQRDialog)

@@ -1,0 +1,3 @@
+position = mul(float4(position, 1.0f), g_mWorld ); \
+normal = mul(normal , g_mWorld ); \
+normal = normalize(normal);

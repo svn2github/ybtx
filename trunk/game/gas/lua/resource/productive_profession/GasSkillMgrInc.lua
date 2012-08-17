@@ -1,0 +1,1 @@
+CGasSkillMgr = class()

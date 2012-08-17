@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\XMLParser">
+      <UniqueIdentifier>{612cc058-ccd1-4e2a-a1f7-491c8a0ad29c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Control">
+      <UniqueIdentifier>{609b6c49-9e24-48ab-b3c0-cbeb3005443d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BaseData">
+      <UniqueIdentifier>{856aae19-eee1-4dd4-b307-def54f507573}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Misc">
+      <UniqueIdentifier>{88f7156d-5a2a-4f29-a2d8-6ac5ff71367c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GUIEffect">
+      <UniqueIdentifier>{10c99cbf-9721-4274-be32-30af9d43ed5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Corder">
+      <UniqueIdentifier>{4ef8776e-a4d9-49a6-ad80-f0cd50288a50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CallBack">
+      <UniqueIdentifier>{4d1fd9a0-2383-430b-abd9-64196910724d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\XMLParser">
+      <UniqueIdentifier>{f029ec37-bb85-42f6-b5b1-ff86aa9ff732}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Control">
+      <UniqueIdentifier>{bf0ef121-ea55-4caf-b08c-8443b4f6c11c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BaseData">
+      <UniqueIdentifier>{fa0a4ced-176e-4a09-b953-de873553408b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Misc">
+      <UniqueIdentifier>{b9eb7beb-fce2-46e9-9288-317be6585ad5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GUIEffect">
+      <UniqueIdentifier>{5d95165e-7dcc-4076-a2d1-e46689a9882f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Corder">
+      <UniqueIdentifier>{4e5e27aa-9a31-4d90-951b-36d02b1a991b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\CallBack">
+      <UniqueIdentifier>{ae06b93a-9e21-4003-ba66-3435eca3772a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GUILayoutHandler.cpp">
+      <Filter>Source Files\XMLParser</Filter>
+    </ClCompile>
+    <ClCompile Include="GUIStuffParser.cpp">
+      <Filter>Source Files\XMLParser</Filter>
+    </ClCompile>
+    <ClCompile Include="GUIXmlParser.cpp">
+      <Filter>Source Files\XMLParser</Filter>
+    </ClCompile>
+    <ClCompile Include="GUIXmlResSaver.cpp">
+      <Filter>Source Files\XMLParser</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRButton.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRChart.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRCheckButton.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRClock.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRComboBox.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRControl.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRDialog.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="SQREdit.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRFlashWnd.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRIcon.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRItemWnd.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRListCtrl.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRProgress.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRRichText.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRRichToolTip.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRRootWnd.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRScrollBar.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRSpin.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRStatic.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRTipHolder.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRToolTip.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRTreeCtrl.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRVideo.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRWebBrowser.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRWnd.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRWndEx.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRWndOffSet.cpp">
+      <Filter>Source Files\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="GUIBase.cpp">
+      <Filter>Source Files\BaseData</Filter>
+    </ClCompile>
+    <ClCompile Include="GUISize.cpp">
+      <Filter>Source Files\BaseData</Filter>
+    </ClCompile>
+    <ClCompile Include="GUITextUtils.cpp">
+      <Filter>Source Files\BaseData</Filter>
+    </ClCompile>
+    <ClCompile Include="MsgBox.cpp">
+      <Filter>Source Files\BaseData</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRWndDef.cpp">
+      <Filter>Source Files\BaseData</Filter>
+    </ClCompile>
+    <ClCompile Include="TipHandler.cpp">
+      <Filter>Source Files\BaseData</Filter>
+    </ClCompile>
+    <ClCompile Include="CGUICameraCtrller.cpp">
+      <Filter>Source Files\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="FlashDataManager.cpp">
+      <Filter>Source Files\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="GUIRenderTask.cpp">
+      <Filter>Source Files\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRFlashLayer.cpp">
+      <Filter>Source Files\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRGUIMallocObject.cpp">
+      <Filter>Source Files\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRGUIManager.cpp">
+      <Filter>Source Files\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRGUIStyles.cpp">
+      <Filter>Source Files\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRWndClass.cpp">
+      <Filter>Source Files\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRGUIEffectHandler.cpp">
+      <Filter>Source Files\GUIEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRGUIShapeEffect.cpp">
+      <Filter>Source Files\GUIEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="SQRGUITransparentEffect.cpp">
+      <Filter>Source Files\GUIEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="CGuiBaseCoder.cpp">
+      <Filter>Source Files\Corder</Filter>
+    </ClCompile>
+    <ClCompile Include="CGuiCoder.cpp">
+      <Filter>Source Files\Corder</Filter>
+    </ClCompile>
+    <ClCompile Include="CWebBrowserCallBack.cpp">
+      <Filter>Source Files\CallBack</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\sdk\inc\GUILayoutHandler.h">
+      <Filter>Header Files\XMLParser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\GUIStuffParser.h">
+      <Filter>Header Files\XMLParser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\GUIXmlHandler.h">
+      <Filter>Header Files\XMLParser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\GUIXmlParser.h">
+      <Filter>Header Files\XMLParser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\GUIXmlResSaver.h">
+      <Filter>Header Files\XMLParser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\MsgBox.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRButton.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRChart.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRCheckButton.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRClock.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRComboBox.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRControl.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRDialog.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQREdit.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRFlashWnd.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRIcon.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRItemWnd.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRListCtrl.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRProgress.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRRichText.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRRichToolTip.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRRootWnd.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRScrollBar.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRSpin.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRStatic.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRTipHolder.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRToolTip.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRTreeCtrl.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRVideo.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRWebBrowser.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRWnd.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRWndEx.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRWndOffSet.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TreeNode.h">
+      <Filter>Header Files\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\GUIBase.h">
+      <Filter>Header Files\BaseData</Filter>
+    </ClInclude>
+    <ClInclude Include="GUISize.h">
+      <Filter>Header Files\BaseData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\GUITextureHelper.h">
+      <Filter>Header Files\BaseData</Filter>
+    </ClInclude>
+    <ClInclude Include="GUITextUtils.h">
+      <Filter>Header Files\BaseData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRWndDef.h">
+      <Filter>Header Files\BaseData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TipHandler.h">
+      <Filter>Header Files\BaseData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CGUICameraCtrller.h">
+      <Filter>Header Files\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\FlashDataManager.h">
+      <Filter>Header Files\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\GUIRenderTask.h">
+      <Filter>Header Files\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IGUIManager.h">
+      <Filter>Header Files\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRFlashLayer.h">
+      <Filter>Header Files\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRGUIMallocObject.h">
+      <Filter>Header Files\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="SQRGUIManager.h">
+      <Filter>Header Files\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRGUIStyles.h">
+      <Filter>Header Files\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRWndClass.h">
+      <Filter>Header Files\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRGUIEffectBase.h">
+      <Filter>Header Files\GUIEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRGUIEffectHandler.h">
+      <Filter>Header Files\GUIEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRGUIShapeEffect.h">
+      <Filter>Header Files\GUIEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\SQRGUITransparentEffect.h">
+      <Filter>Header Files\GUIEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CGuiBaseCoder.h">
+      <Filter>Header Files\Corder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CGuiCoder.h">
+      <Filter>Header Files\Corder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CWebBrowserCallBack.h">
+      <Filter>Header Files\CallBack</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Debug\BuildLog.htm" />
+  </ItemGroup>
+</Project>

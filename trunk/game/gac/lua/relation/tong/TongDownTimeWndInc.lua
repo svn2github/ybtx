@@ -1,0 +1,1 @@
+CTongDownTimeWnd = class(SQRDialog, CTongBase)

@@ -1,0 +1,134 @@
+<main_config>
+
+	<!-- 基础帧率的周期，单位为毫秒-->
+	<base_tick_cyc>20</base_tick_cyc>
+
+	<!--单位秒-->
+	<log_mem_interval>10</log_mem_interval>
+	
+	<!--网络多线程的数目-->
+	<net_thread_num>2</net_thread_num>
+		
+	<db_conn_num_per_vm>2</db_conn_num_per_vm>
+
+	<!--服务器对连接的容忍程度-->
+	<conn_max_exp>100</conn_max_exp>
+	
+	<follower_delay>150</follower_delay>
+
+	<!-- 选择开启Debuger或者Profiler,两者只能开启一个 -->	
+	<enable_script_helper>debuger</enable_script_helper>
+	<!-- <enable_script_helper>profiler</enable_script_helper>  -->
+
+	<check_infinite_loop>1</check_infinite_loop>
+	
+	<deploy_filename>GasDeployConfig</deploy_filename>
+	
+	<!-- 指定步长和时间进行垃圾回收-->
+	<collectgarbage>
+		
+		<interval>100</interval>
+		<step>20</step>
+		<callback_ratio>0.005</callback_ratio>
+		<normal_unpack_ratio>0.1</normal_unpack_ratio>
+		<serial_unpack_ratio>1</serial_unpack_ratio>
+		
+		<child_vm>
+			<interval>100</interval>
+			<step>20</step>
+			<callback_ratio>0.005</callback_ratio>
+			<normal_unpack_ratio>0.1</normal_unpack_ratio>
+			<serial_unpack_ratio>1</serial_unpack_ratio>
+		</child_vm>
+		
+	</collectgarbage>
+	
+	
+	<console_config>
+		<!--是否显示控制台-->
+		<show>1</show>
+		<title>gas</title>
+		<!--启动后是否自动最小化控制台窗口,仅在windows系统下有效-->
+		<auto_minimize>1</auto_minimize>
+	</console_config>
+
+	<!-- log目录路径 -->
+	<log_path>var/gas/log</log_path>
+
+	
+	<!--服务器端超时时间-->
+	<Conn_Time_Out>180</Conn_Time_Out>
+	
+	
+	<!-- TripleBuffer初始化预先分配的对象数目 -->	
+	<TripleBuffer_Init_DataNum>100000</TripleBuffer_Init_DataNum>
+
+	<!-- 客户端发上来的时间戳的误差累计上限,单位为毫秒 -->	
+	<ClientTimeStampErrorThreshold>22500</ClientTimeStampErrorThreshold>
+	<!-- 客户端在两个时间戳之间发送移动Step命令的上限系数 (即速度为1时两个时间戳内最大的step次数. 时间戳间隔为45秒,速度为6,默认每秒最多发送270个step命令) -->	
+	<MaxStepCommandRate>6</MaxStepCommandRate>
+	
+	<!-- 用于设置配置表路径 -->
+	<language_folder>chinese_simple</language_folder>
+
+	<!-- 用于设置原始语言包路径，不要改 -->
+	<original_language_folder>chinese_simple</original_language_folder>
+
+	<!--是否打开pkg file使用开关，如果打开了，但是使用的是包外的数据，那么关闭写log功能-->
+	<pkg_file_used>1</pkg_file_used>
+		
+	<!--是否打开reload开关，如果打开了，更改配置表，lua代码都会提示reload-->
+	<reload>0</reload>
+
+	<!-- MegaLog 时间间隔，表明mega log重置间隔时间 -->
+	<mega_log_interval>60000</mega_log_interval>
+	
+	<mega_log_maxsize>2000000</mega_log_maxsize>
+
+	<!--是否为测试服务端，如果是那么出错的时候就弹出错误-->
+	<TestingServer>0</TestingServer>
+	
+	<!-- 所有游戏逻辑有关的配置项都放在LogicConfig之下 -->
+	<ShellConfig>
+	
+		<!-- 数值安全检测开关 -->
+		<Check_Skill_Value_Safe>1</Check_Skill_Value_Safe>
+
+	
+		<!--NpcAI相关死循环检测开关-->
+		<AI_Infinite_Check>
+		
+			<!--状态机防死循环开关 【1：检测】 【0：不检测】-->
+			<State_Machine_Prevent_Cyc>1</State_Machine_Prevent_Cyc>
+			<!--状态机死循环检测步长-->
+			<State_Machine_Prevent_Cyc_Step>1000</State_Machine_Prevent_Cyc_Step>
+			<!--循环时间间隔限制，单位是微妙-->
+			<State_Machine_Prevent_Cyc_Time_Limit>1500</State_Machine_Prevent_Cyc_Time_Limit>
+		
+			<!--防止状态内调用移动死循环开关 【1：检测】 【0：不检测】 -->
+			<State_Move_Prevent_Cyc>1</State_Move_Prevent_Cyc>
+			<!--移动死循环检测步长-->
+			<State_Move_Prevent_Cyc_Step>1000</State_Move_Prevent_Cyc_Step>
+			<!--循环时间间隔限制，单位是微妙-->
+			<State_Move_Prevent_Cyc_Time_Limit>1500</State_Move_Prevent_Cyc_Time_Limit>
+		
+			<!-- NpcAI的仇恨检测开关 -->
+			<AI_Enmity_Check>1</AI_Enmity_Check>
+		
+		</AI_Infinite_Check>	
+	
+		<Aoi_Setting>
+			<PlayerViewAoiEyeSight>20</PlayerViewAoiEyeSight>
+			<PlayerAoiSize>0.5</PlayerAoiSize>
+			<PlayerAoiStealth>0</PlayerAoiStealth>
+			<PlayerAoiKeenness>0</PlayerAoiKeenness>
+			<PlayerAoiViewGroup>0</PlayerAoiViewGroup>
+			<PlayerSleepDimSize>1</PlayerSleepDimSize>
+			<NpcSleepDimEyeSigh>30</NpcSleepDimEyeSigh>
+		</Aoi_Setting>
+		
+	</ShellConfig>
+	
+	
+
+</main_config>

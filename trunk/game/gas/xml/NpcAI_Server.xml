@@ -1,0 +1,496 @@
+<root>
+	
+	<SubMachine Name="通用战斗状态机">
+		<Item Current="LockEnemy">
+			<Transit Event="OnDead" Next="ExitSubMachine"/>
+			<Transit Event="OnDestoryBegin" Next="ExitSubMachine"/>
+			<Transit Event="OnBeginAttackEnemy" Next="AttackEnemy"/>
+			<Transit Event="OnEnemyLost" Next="ExitSubMachine"/>
+		</Item>
+		<Item Current="ChaseEnemy">
+			<Transit Event="OnDead" Next="ExitSubMachine"/>
+			<Transit Event="OnDestoryBegin" Next="ExitSubMachine"/>
+			<Transit Event="OnBeginAttackEnemy" Next="AttackEnemy"/>
+			<Transit Event="OnEnterAttackEnemyState" Next="AttackEnemy"/>
+			<Transit Event="OnEnemyLost" Next="ChaseBack"/>
+		</Item>
+		<Item Current="AttackEnemy">
+			<Transit Event="OnDead" Next="ExitSubMachine"/>
+			<Transit Event="OnDestoryBegin" Next="ExitSubMachine"/>
+			<Transit Event="OnEnemyLost" Next="ChaseBack"/>
+			<Transit Event="OnEnemyOutOfAttackRange" Next="ChaseEnemy"/>
+			<Transit Event="OnTargetChange" Next="ChaseEnemy"/>
+		</Item>
+		<Item Current="ChaseBack">
+			<Transit Event="OnDead" Next="ExitSubMachine"/>
+			<Transit Event="OnDestoryBegin" Next="ExitSubMachine"/>
+			<Transit Event="OnExitChaseBack" Next="ExitSubMachine"/>
+		</Item>
+		<Item Current="ExitSubMachine"/>
+	</SubMachine>
+	
+	<SubMachine Name="箭塔战斗状态机">
+		<Item Current="TowerLockEnemy">
+			<Transit Event="OnDead" Next="ExitSubMachine"/>
+			<Transit Event="OnDestoryBegin" Next="ExitSubMachine"/>
+			<Transit Event="OnBeginAttackEnemy" Next="AttackEnemy"/>
+			<Transit Event="OnEnemyLost" Next="TowerLeaveBattle"/>
+		</Item>
+		<Item Current="AttackEnemy">
+			<Transit Event="OnDead" Next="ExitSubMachine"/>
+			<Transit Event="OnDestoryBegin" Next="ExitSubMachine"/>
+			<Transit Event="OnEnemyLost" Next="TowerLeaveBattle"/>
+			<Transit Event="OnEnemyOutOfAttackRange" Next="TowerLeaveBattle"/>
+		</Item>
+			<Item Current="TowerLeaveBattle">
+			<Transit Event="OnDead" Next="ExitSubMachine"/>
+			<Transit Event="OnDestoryBegin" Next="ExitSubMachine"/>
+			<Transit Event="OnExitTowerAttackSubMachine" Next="ExitSubMachine"/>
+		</Item>
+		<Item Current="ExitSubMachine"/>
+	</SubMachine>
+	
+	<SubMachine Name="个性">
+		<Item Current="InitPersonality">
+			<Transit Event="OnCoward" Next="CowardState"/>
+			<Transit Event="OnLike" Next="LikeState"/>
+			<Transit Event="OnAttract" Next="AttractState"/>
+			<Transit Event="OnAbhor" Next="AbhorState"/>
+			<Transit Event="OnSleepy" Next="SleepyState"/>
+			<Transit Event="OnGreet" Next="GreetState" />
+			<Transit Event="OnExitSubMachine" Next="ExitSubMachine"/>
+		</Item>
+		<Item Current="LikeState">
+			<Transit Event="OnExitNature" Next="ExitSubMachine"/>
+			<Transit Event="OnNpcNature2NormalAttack" Next="通用战斗状态机"/>
+			<Transit Event="OnEnterPersonality" Next="InitPersonality"/>
+		</Item>
+		<Item Current="AttractState">
+			<Transit Event="OnExitNature" Next="ExitSubMachine"/>
+			<Transit Event="OnNpcNature2NormalAttack" Next="通用战斗状态机"/>
+			<Transit Event="OnEnterPersonality" Next="InitPersonality"/>
+		</Item>
+		<Item Current="SleepyState">
+			<Transit Event="OnExitNature" Next="ExitSubMachine"/>
+			<Transit Event="OnPlayerInSight" Next="ExitSubMachine"/>
+			<Transit Event="OnNpcNature2NormalAttack" Next="通用战斗状态机"/>
+			<Transit Event="OnEnterPersonality" Next="InitPersonality"/>
+		</Item>
+		<Item Current="CowardState">
+			<Transit Event="OnExitNature" Next="ExitSubMachine"/>
+			<Transit Event="OnNpcNature2NormalAttack" Next="通用战斗状态机"/>
+			<Transit Event="OnEnterPersonality" Next="InitPersonality"/>
+		</Item>
+		<Item Current="AbhorState">
+			<Transit Event="OnExitNature" Next="ExitSubMachine"/>
+			<Transit Event="OnNpcNature2NormalAttack" Next="通用战斗状态机"/>
+			<Transit Event="OnEnterPersonality" Next="InitPersonality"/>
+		</Item>
+		<Item Current="GreetState">
+			<Transit Event="OnExitNature" Next="ExitSubMachine"/>
+			<Transit Event="OnNpcNature2NormalAttack" Next="通用战斗状态机"/>
+			<Transit Event="OnEnterPersonality" Next="InitPersonality"/>
+		</Item>
+		<Item Current="通用战斗状态机" />
+		<Item Current="个性" />
+		<Item Current="ExitSubMachine"/>
+	</SubMachine>
+
+	<SubMachine Name="被动挨打">
+		<Item Current="NpcSleep">
+			<Transit Event="OnNpcSleepEnd" Next="ExitSubMachine"/>
+		</Item>
+		<Item Current="ExitSubMachine"/>
+	</SubMachine>
+	
+	<SubMachine Name="Npc休眠">
+		<Item Current="NpcSleep">
+			<Transit Event="OnNpcSleepEnd" Next="ExitSubMachine"/>
+		</Item>
+		<Item Current="ExitSubMachine"/>
+	</SubMachine>
+
+	<SubMachine Name="表情响应">
+		<Item Current="FacialState">
+			<Transit Event="OnFacialCold" Next="FacialColdState"/>
+			<Transit Event="OnExitSubMachine" Next="ExitSubMachine"/>	
+		</Item>
+		<Item Current="FacialColdState">
+			<Transit Event="OnBeAttacked" Next="ExitSubMachine"/>	
+			<Transit Event="OnExitSubMachine" Next="ExitSubMachine"/>	
+		</Item>
+		<Item Current="ExitSubMachine"/>
+	</SubMachine>
+
+	<AI Name="被打不反击">
+		<Item Current="Wander">
+			<Transit Event="OnFacialActionHappened" Next="表情响应"/>
+			<Transit Event="OnEnterPersonality" Next="个性"/>
+			<Transit Event="OnBeAttacked" Next="被动挨打"/>
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+		</Item>
+		<Item Current="被动挨打" />
+		<Item Current="个性" />
+		<Item Current="表情响应" />
+		<Item Current="DeathOrDestoryState" />
+	</AI>
+	
+	<AI Name="任务NPC支持巡逻">
+		<Item Current="Task">
+			<Transit Event="OnFacialActionHappened" Next="表情响应"/>
+			<Transit Event="OnEnterPersonality" Next="个性"/>
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+			<Transit Event="OnMoveToDest" Next="PatrolForNpc"/>
+			<Transit Event="OnTaskDialogAllEnd" Next="PatrolForNpc"/>
+			<Transit Event="OnNpcSleepBegin" Next="Npc休眠"/>
+		</Item>
+		<Item Current="PatrolForNpc">
+			<Transit Event="OnEnterPersonality" Next="个性"/>
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+			<Transit Event="OnTaskDialogBegin" Next="Task"/>
+			<Transit Event="OnPatrolStateEnd" Next="Task"/>
+			<Transit Event="OnNpcSleepBegin" Next="Npc休眠"/>
+		</Item>
+		<Item Current="个性" />
+		<Item Current="表情响应" />
+		<Item Current="DeathOrDestoryState" />
+		<Item Current="Npc休眠" />
+	</AI>
+	
+	<AI Name="普通怪主动支持巡逻">
+		<Item Current="ActiveState">
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+			<Transit Event="OnMoveToDest" Next="PatrolForNpc"/>
+			<Transit Event="OnBeginAttack" Next="通用战斗状态机"/>
+			<Transit Event="OnBeAttacked" Next="通用战斗状态机"/>
+			<Transit Event="OnEnterPersonality" Next="个性"/>
+			<Transit Event="OnNpcSleepBegin" Next="Npc休眠"/>
+		</Item>
+		<Item Current="PatrolForNpc">
+			<Transit Event="OnEnterPersonality" Next="个性"/>
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+			<Transit Event="OnBeginAttack" Next="通用战斗状态机"/>
+			<Transit Event="OnBeAttacked" Next="通用战斗状态机"/>
+			<Transit Event="OnPatrolStateEnd" Next="ActiveState"/>
+			<Transit Event="OnNpcSleepBegin" Next="Npc休眠"/>
+		</Item>
+		<Item Current="个性" />
+		<Item Current="通用战斗状态机" />
+		<Item Current="DeathOrDestoryState" />
+		<Item Current="Npc休眠" />
+	</AI>
+
+	<AI Name="普通怪主动支持巡逻可见Npc">
+		<Item Current="ActiveState">
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+			<Transit Event="OnMoveToDest" Next="PatrolForNpc"/>
+			<Transit Event="OnBeginAttack" Next="通用战斗状态机"/>
+			<Transit Event="OnBeAttacked" Next="通用战斗状态机"/>
+			<Transit Event="OnEnterPersonality" Next="个性"/>
+			<Transit Event="OnNpcSleepBegin" Next="Npc休眠"/>
+		</Item>
+		<Item Current="PatrolForNpc">
+			<Transit Event="OnEnterPersonality" Next="个性"/>
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+			<Transit Event="OnBeginAttack" Next="通用战斗状态机"/>
+			<Transit Event="OnBeAttacked" Next="通用战斗状态机"/>
+			<Transit Event="OnPatrolStateEnd" Next="ActiveState"/>
+			<Transit Event="OnNpcSleepBegin" Next="Npc休眠"/>
+		</Item>
+		<Item Current="个性" />
+		<Item Current="通用战斗状态机" />
+		<Item Current="DeathOrDestoryState" />
+		<Item Current="Npc休眠" />
+	</AI>
+
+	<AI Name="普通怪被动支持巡逻">
+		<Item Current="Wander">
+			<Transit Event="OnFacialActionHappened" Next="表情响应"/>
+			<Transit Event="OnEnterPersonality" Next="个性"/>
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+			<Transit Event="OnMoveToDest" Next="PatrolForNpc"/>
+			<Transit Event="OnBeAttacked" Next="通用战斗状态机"/>
+			<Transit Event="OnNpcSleepBegin" Next="Npc休眠"/>
+		</Item>
+		<Item Current="PatrolForNpc">
+			<Transit Event="OnEnterPersonality" Next="个性"/>
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+			<Transit Event="OnBeAttacked" Next="通用战斗状态机"/>
+			<Transit Event="OnPatrolStateEnd" Next="Wander"/>
+			<Transit Event="OnNpcSleepBegin" Next="Npc休眠"/>
+		</Item>
+		<Item Current="通用战斗状态机" />
+		<Item Current="DeathOrDestoryState" />
+		<Item Current="个性" />
+		<Item Current="表情响应" />
+		<Item Current="Npc休眠" />
+	</AI>
+	
+	<AI Name="箭塔AI">
+		<Item Current="TowerWander">
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+			<Transit Event="OnBeginAttack" Next="箭塔战斗状态机"/>
+			<Transit Event="OnBeAttacked" Next="箭塔战斗状态机"/>
+		</Item>
+		<Item Current="DeathOrDestoryState" />
+		<Item Current="箭塔战斗状态机" />
+	</AI>
+	
+	<AI Name="魔法阵">
+		<Item Current="TowerWander">
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+			<Transit Event="OnBeginAttack" Next="箭塔战斗状态机"/>
+			<Transit Event="OnBeAttacked" Next="箭塔战斗状态机"/>
+		</Item>
+		<Item Current="DeathOrDestoryState" />
+		<Item Current="箭塔战斗状态机" />
+	</AI>
+	
+	<AI Name="图腾">
+		<Item Current="Idle">
+			<Transit Event="OnCharacterInSight" Next="TotemCaughtCharacter"/>
+			<Transit Event="OnCharacterOutOfSight" Next="TotemLostCharacter"/>
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+		</Item>
+		<Item Current="TotemCaughtCharacter">
+			<Transit Event="OnCharacterInSight" Next="TotemCaughtCharacter"/>
+			<Transit Event="OnCharacterOutOfSight" Next="TotemLostCharacter"/>
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+		</Item>
+		<Item Current="TotemLostCharacter">
+			<Transit Event="OnCharacterInSight" Next="TotemCaughtCharacter"/>
+			<Transit Event="OnCharacterOutOfSight" Next="TotemLostCharacter"/>
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+		</Item>
+		<Item Current="DeathOrDestoryState" />
+	</AI>
+	
+	<AI Name="召唤兽">
+		<Item Current="ServantDefenseState">
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+			<Transit Event="OnServantDoAttack" Next="通用战斗状态机"/>
+			<Transit Event="OnBeAttacked" Next="通用战斗状态机"/>
+		</Item>
+		<Item Current="DeathOrDestoryState"/>
+		<Item Current="通用战斗状态机"/>
+	</AI>
+	
+	<AI Name="军械兽">
+		<Item Current="ServantDefenseState">
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+			<Transit Event="OnServantDoAttack" Next="通用战斗状态机"/>
+			<Transit Event="OnBeAttacked" Next="通用战斗状态机"/>
+		</Item>
+		<Item Current="DeathOrDestoryState"/>
+		<Item Current="通用战斗状态机"/>
+	</AI>
+	
+	<AI Name="怪物卡">
+		<Item Current="ServantActiveState">
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+			<Transit Event="OnServantDoAttack" Next="通用战斗状态机"/>
+			<Transit Event="OnBeAttacked" Next="通用战斗状态机"/>
+		</Item>
+		<Item Current="DeathOrDestoryState"/>
+		<Item Current="通用战斗状态机"/>
+	</AI>
+	
+	<AI Name="宠物">
+		<Item Current="ServantPassivityState">
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+		</Item>
+		<Item Current="DeathOrDestoryState"/>
+	</AI>
+	
+	<AI Name="移动炮台">
+		<Item Current="ServantPassivityState">
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+		</Item>
+		<Item Current="DeathOrDestoryState"/>
+	</AI>
+	
+	<AI Name="战斗坐骑">
+		<Item Current="Idle"/>
+	</AI>
+	
+	<AI Name="物件Npc">
+		<Item Current="Building">
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+		</Item>
+		<Item Current="DeathOrDestoryState"/>
+	</AI>
+	
+	<AI Name="运输车">
+		<Item Current="DoNothingState">
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+		</Item>
+		<Item Current="DeathOrDestoryState"/>
+	</AI>
+	
+	<AI Name="Boss主动支持巡逻">
+		<Item Current="ActiveBossInit">
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+			<Transit Event="OnMoveToDest" Next="BossPatrol"/>
+			<Transit Event="OnBeginAttack" Next="通用战斗状态机"/>
+			<Transit Event="OnBeAttacked" Next="通用战斗状态机"/>
+			<Transit Event="OnNpcSleepBegin" Next="Npc休眠"/>
+		</Item>
+		<Item Current="BossPatrol">
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+			<Transit Event="OnBeginAttack" Next="通用战斗状态机"/>
+			<Transit Event="OnBeAttacked" Next="通用战斗状态机"/>
+			<Transit Event="OnPatrolStateEnd" Next="ActiveBossInit"/>
+			<Transit Event="OnNpcSleepBegin" Next="Npc休眠"/>
+		</Item>
+		<Item Current="通用战斗状态机" />
+		<Item Current="DeathOrDestoryState" />
+		<Item Current="Npc休眠" />
+	</AI>
+	
+	<AI Name="Boss被动支持巡逻">
+		<Item Current="PassivityBossInit">
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+			<Transit Event="OnMoveToDest" Next="BossPatrol"/>
+			<Transit Event="OnBeAttacked" Next="通用战斗状态机"/>
+			<Transit Event="OnNpcSleepBegin" Next="Npc休眠"/>
+		</Item>
+		<Item Current="BossPatrol">
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+			<Transit Event="OnBeAttacked" Next="通用战斗状态机"/>
+			<Transit Event="OnPatrolStateEnd" Next="PassivityBossInit"/>
+			<Transit Event="OnNpcSleepBegin" Next="Npc休眠"/>
+		</Item>
+		<Item Current="通用战斗状态机" />
+		<Item Current="DeathOrDestoryState" />
+		<Item Current="Npc休眠" />
+	</AI>
+	
+	<AI Name="Boss小弟">
+		<Item Current="ServantDefenseState">
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+			<Transit Event="OnServantDoAttack" Next="通用战斗状态机"/>
+			<Transit Event="OnBeAttacked" Next="通用战斗状态机"/>
+		</Item>
+		<Item Current="DeathOrDestoryState"/>
+		<Item Current="通用战斗状态机"/>
+	</AI>
+	
+	<AI Name="剧场Npc">
+		<Item Current="Theater">
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+		</Item>
+		<Item Current="DeathOrDestoryState"/>
+	</AI>
+	
+	<AI Name="虚拟Npc支持巡逻">
+		<Item Current="Idle">
+			<Transit Event="OnMoveToDest" Next="PatrolForGroupLeader"/>
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+		</Item>
+		<Item Current="PatrolForGroupLeader">
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+		</Item>
+		<Item Current="DeathOrDestoryState"/>
+	</AI>
+	
+	<AI Name="群组成员被动怪">
+		<Item Current="Idle">
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+			<Transit Event="OnMemberMoveTo" Next="PatrolForGroupMember"/>
+			<Transit Event="OnBeAttacked" Next="通用战斗状态机"/>
+		</Item>
+		<Item Current="PatrolForGroupMember">
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+			<Transit Event="OnBeAttacked" Next="通用战斗状态机"/>
+			<Transit Event="OnStop" Next="DeathOrDestoryState"/>
+		</Item>
+		<Item Current="通用战斗状态机"/>
+		<Item Current="DeathOrDestoryState"/>
+	</AI>
+	
+	<AI Name="群组成员主动怪">
+		<Item Current="Idle">
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+			<Transit Event="OnMemberMoveTo" Next="PatrolForGroupMember"/>
+			<Transit Event="OnBeAttacked" Next="通用战斗状态机"/>
+		</Item>
+		<Item Current="PatrolForGroupMember">
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+			<Transit Event="OnBeginAttack" Next="通用战斗状态机"/>
+			<Transit Event="OnBeAttacked" Next="通用战斗状态机"/>
+		</Item>
+		<Item Current="通用战斗状态机" />
+		<Item Current="DeathOrDestoryState" />
+	</AI>
+	
+	<AI Name="被打不还手不转向非任务Npc">
+		<Item Current="Idle">
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+			<Transit Event="OnMoveToDest" Next="PatrolForNpc"/>
+			<Transit Event="OnNpcSleepBegin" Next="Npc休眠"/>
+		</Item>
+		<Item Current="PatrolForNpc">
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+			<Transit Event="OnNpcSleepBegin" Next="Npc休眠"/>
+		</Item>
+		<Item Current="DeathOrDestoryState" />
+		<Item Current="Npc休眠" />
+	</AI>
+	
+	<AI Name="逃跑AI">
+		<Item Current="EscapeState">
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+		</Item>
+		<Item Current="DeathOrDestoryState"/>
+	</AI>
+	
+	<AI Name="跟随宠物">
+		<Item Current="LittlePet">
+			<Transit Event="OnDead" Next="DeathOrDestoryState"/>
+			<Transit Event="OnDestoryBegin" Next="DeathOrDestoryState"/>
+		</Item>
+		<Item Current="DeathOrDestoryState"/>
+	</AI>
+
+</root>
+
+
+
+
+

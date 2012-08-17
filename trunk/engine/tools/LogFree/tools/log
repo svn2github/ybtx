@@ -1,0 +1,9 @@
+X-Powered-By: PHP/5.1.6
+Content-type: text/html
+
+insert ignore into tbl_guid_info set guid='82f2bbfc-3194-4909-afbf-b2efa5be6694', name='127.0.0.1' 
+insert ignore into tbl_guid_info set guid='c3bf6ba6-bcde-40d1-8444-d5efa7a6e95a', name='127.0.0.1' 
+insert ignore into tbl_guid_info set guid='c6c73e74-c379-4feb-99c9-720c0f21c629', name='127.0.0.1' 
+insert ignore into tbl_guid_info set guid='852cba64-0730-404e-921b-d543fad9a61f', name='ybtx\n' 
+insert into tbl_server_log_common set error_code = '', happened_time = '', server_guid='852cba64-0730-404e-921b-d543fad9a61f', log_msg='53043245 	2010-6-7-13:0:26	1	[Client Addr:127.0.0.1 1231] [Conn Guid:efd54484-a6a7-5ae9-a66b-bfc3debcd140] [RoleName:xcvxsd] [Server Addr:127.0.0.1 52520] [UserName:tangliult]	Hello World'
+insert into tbl_server_log_common set error_code = '', happened_time = '', server_guid='852cba64-0730-404e-921b-d543fad9a61f', log_msg='53043245 	2010-6-7-13:1:21	2	[Client Addr:127.0.0.1 1234] [Conn Guid:0c72c999-210f-29c6-743e-c7c679c3eb4f] [RoleName:aslkdjflk] [Server Addr:127.0.0.1 52520] [UserName:tangliu]	Hi Hi  '

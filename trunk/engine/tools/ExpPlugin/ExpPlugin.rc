@@ -1,0 +1,353 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\ExpPlugin.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#include ""PathBrowser\\PathBrowser.rc""\r\n"
+    "#include ""ProgressDialog\\ProgressDialog.rc""\r\n"
+    "#include ""ParaAdapterCtrl\\ParaAdapterCtrl.rc""\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "CompanyName", "TODO: <Company name>"
+            VALUE "FileDescription", "TODO: <File description>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "ExpPlugin.dll"
+            VALUE "LegalCopyright", "TODO: (c) <Company name>.  All rights reserved."
+            VALUE "OriginalFilename", "ExpPlugin.dll"
+            VALUE "ProductName", "TODO: <Product name>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 936
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PIECEPROP DIALOGEX 0, 0, 188, 231
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,131,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,131,22,50,13
+    EDITTEXT        IDC_WEIGHTPERVERTEX,97,7,22,12,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN1,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,109,7,11,14
+    LTEXT           "顶点允许绑定的骨骼数量",IDC_STATIC,7,10,89,8
+    EDITTEXT        IDC_FRAMEPERSAMPLE,97,21,22,12,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN2,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,109,21,11,14
+    LTEXT           "顶点动画每隔多少帧取样",IDC_STATIC,7,23,89,8
+    CONTROL         "",IDC_EXPTYPESELECT,"SysListView32",LVS_REPORT | LVS_SORTASCENDING | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,50,174,173
+    CONTROL         "光滑所有面",IDC_SMOOTH_ALL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,37,100,10
+    PUSHBUTTON      "设置路径组",IDC_SETPATHBTN,131,36,50,13
+END
+
+IDD_SKELETALPROP DIALOGEX 0, 0, 247, 30
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "导出骨架文件"
+FONT 8, "MS Shell Dlg", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,96,1,43,12
+    EDITTEXT        IDC_ANINAME,4,1,85,12
+    CONTROL         "根骨骼缩放",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,15,57,10
+    CONTROL         "导出所有帧",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,89,15,65,10
+    CONTROL         "压缩骨骼",IDC_CHECK4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,183,15,51,10
+END
+
+IDD_SOFTBODYPROP DIALOGEX 0, 0, 186, 95
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,24,50,14
+END
+
+IDD_SOFTCLOTH DIALOGEX 0, 0, 152, 273
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "软布"
+FONT 8, "MS Shell Dlg", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,103,256,43,12
+    GROUPBOX        "导出大小 (顶点数)",IDC_STATIC,5,4,142,30
+    LTEXT           "宽",IDC_STATIC,12,17,12,11
+    LTEXT           "高",IDC_STATIC,77,17,10,11
+    EDITTEXT        IDC_CLOTHPROP_WIDTH,25,16,45,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_CLOTHPROP_HEIGHT,91,16,46,12,ES_AUTOHSCROLL
+    GROUPBOX        "参数",IDC_STATIC,5,87,141,151
+    LTEXT           "重力加速度",IDC_STATIC,11,100,42,11
+    EDITTEXT        IDC_CLOTHPROP_GRAVITY,65,98,62,12,ES_AUTOHSCROLL
+    LTEXT           "空气阻力",IDC_STATIC,11,116,42,11
+    EDITTEXT        IDC_CLOTHPROP_GASSFORCE,65,114,62,12,ES_AUTOHSCROLL
+    LTEXT           "拉伸比例上限",IDC_STATIC,11,148,50,11
+    EDITTEXT        IDC_CLOTHPROP_LONGRATIO,65,146,62,12,ES_AUTOHSCROLL
+    LTEXT           "%",IDC_STATIC,132,146,12,11
+    LTEXT           "压缩比例下限",IDC_STATIC,11,162,50,11
+    EDITTEXT        IDC_CLOTHPROP_SHORTRATIO,65,162,62,12,ES_AUTOHSCROLL
+    LTEXT           "%",IDC_STATIC,131,162,12,11
+    LTEXT           "弹簧系数",IDC_STATIC,11,132,42,11
+    EDITTEXT        IDC_CLOTHPROP_COEFFICIENTK,65,130,62,12,ES_AUTOHSCROLL
+    GROUPBOX        "质点质量",IDC_STATIC,5,177,141,61
+    LTEXT           "o----o----A----o----o |   /  |   /  |  /  |   /  | o----o----o----o----o |   /  |   /  |  /  |   /  | o----o----B----o----C",IDC_STATIC,11,190,66,42
+    LTEXT           "A",IDC_STATIC,84,190,8,11
+    EDITTEXT        IDC_CLOTHPROP_MASSA,93,190,42,12,ES_AUTOHSCROLL
+    LTEXT           "B",IDC_STATIC,84,204,8,11
+    EDITTEXT        IDC_CLOTHPROP_MASSB,93,204,42,12,ES_AUTOHSCROLL
+    LTEXT           "C",IDC_STATIC,84,218,8,11
+    EDITTEXT        IDC_CLOTHPROP_MASSC,93,218,42,12,ES_AUTOHSCROLL
+    GROUPBOX        "风力",IDC_STATIC,5,38,142,45
+    LTEXT           "静止",IDC_STATIC,12,51,20,11
+    LTEXT           "动态",IDC_STATIC,75,51,16,11
+    EDITTEXT        IDC_CLOTHPROP_WINDMIN,34,50,36,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_CLOTHPROP_WINDMAX,105,50,32,12,ES_AUTOHSCROLL
+    LTEXT           "风速",IDC_STATIC,12,67,20,11
+    EDITTEXT        IDC_CLOTHPROP_WINDPASS,34,66,36,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_CLOTHPROP_WINDMAXH,105,65,32,12,ES_AUTOHSCROLL
+    LTEXT           "纵",IDC_STATIC,94,51,8,11
+    LTEXT           "横",IDC_STATIC,94,66,8,11
+    CONTROL         "横向",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,4,242,72,10
+END
+
+IDD_BONEFIX DIALOGEX 0, 0, 184, 125
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Bond结构自动调正"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,123,99,50,14
+    EDITTEXT        IDC_EDIT_BONE_MALE,30,21,128,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_BONE_FEMALE,30,52,128,12,ES_AUTOHSCROLL
+    LTEXT           "骨架结构自动调整",IDC_STATIC,7,5,130,10
+    LTEXT           "主角 左",IDC_STATIC,2,22,26,10
+    CONTROL         "Radio1",IDC_BONE_RADIO2,"Button",BS_AUTORADIOBUTTON | WS_GROUP,162,52,11,12
+    EDITTEXT        IDC_EDIT_BONE_PARENT,30,82,57,13,ES_AUTOHSCROLL
+    LTEXT           "-> 左",IDC_STATIC,10,83,20,11
+    CONTROL         "自动调整",IDC_BONE_CHECK3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,102,59,8
+    LTEXT           "右",IDC_STATIC,19,38,9,10
+    EDITTEXT        IDC_EDIT_BONE_MALE2,30,36,128,13,ES_AUTOHSCROLL
+    LTEXT           "NPC 左",IDC_STATIC,3,53,25,10
+    EDITTEXT        IDC_EDIT_BONE_FEMALE2,30,66,128,12,ES_AUTOHSCROLL
+    LTEXT           "右",IDC_STATIC,19,68,9,10
+    EDITTEXT        IDC_EDIT_BONE_PARENT2,99,82,59,13,ES_AUTOHSCROLL
+    LTEXT           "右",IDC_STATIC,89,83,8,11
+    CONTROL         "Radio1",IDC_BONE_RADIO1,"Button",BS_AUTORADIOBUTTON | WS_GROUP,162,22,11,12
+END
+
+IDD_PIECECOMPRESS DIALOGEX 0, 0, 189, 222
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选择PIECE是否压缩"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,79,5,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,132,5,50,14
+    CONTROL         "",IDC_EXPLIST,"SysListView32",LVS_REPORT | LVS_SORTASCENDING | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,21,175,194
+END
+
+IDD_AGPPROP DIALOGEX 0, 0, 245, 30
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "导出动作文件并把此文件加入动作包列表内"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,189,2,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,189,16,50,14
+    EDITTEXT        IDC_ANIFILENAME,58,2,107,12,ES_AUTOHSCROLL
+    LTEXT           "动作文件名是:",IDC_STATIC,3,3,52,8
+    CONTROL         "导出所有帧",IDC_CHECK_IS_EXPALL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,11,20,69,8
+    CONTROL         "压缩骨骼",IDC_CHECK_IS_CP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,82,19,48,10
+END
+
+IDD_SKEINFODLG DIALOGEX 0, 0, 210, 17
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "请输入骨架ske的名字"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,138,2,67,14
+    EDITTEXT        IDC_SKENAMEEDIT,4,2,130,13,ES_AUTOHSCROLL
+END
+
+IDD_PATHLOGDLG DIALOGEX 0, 0, 394, 97
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,0,83,50,14
+    PUSHBUTTON      "取消",IDCANCEL,51,83,50,14
+    LISTBOX         IDC_PATHLOGLIST,0,0,393,80,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_PIECEPROP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 181
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 224
+    END
+
+    IDD_SKELETALPROP, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 241
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 25
+    END
+
+    IDD_SOFTBODYPROP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_SOFTCLOTH, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 146
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 268
+    END
+
+    IDD_PIECECOMPRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 182
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 215
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// HTML
+//
+
+IDR_HTML_BONEFIX        HTML                    "BoneFix.htm"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_EXP_DESCRIPTION     "Export Model File"
+    IDS_PROGRESS_MSG        "Export Model File..."
+    IDS_PIECECLASS          "CPieceExp"
+    IDS_SKELETALCLASS       "CSkeletalExp"
+    IDS_SOFTBODYCLASS       "CSoftBodyExp"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "res\ExpPlugin.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+//#include "PathBrowser\PathBrowser.rc"
+//#include "ProgressDialog\ProgressDialog.rc"
+//#include "ParaAdapterCtrl\ParaAdapterCtrl.rc"
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

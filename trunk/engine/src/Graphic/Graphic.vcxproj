@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F7055AA1-7AD3-436D-81EC-73D1F637D6A5}</ProjectGuid>
+    <RootNamespace>Graphic</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../../bin/$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../../bin/$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\include;..\..\sdk\inc;..\..\..\implib\inc;..\Common;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/Oy- %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>..\..\..\implib\inc;..\..\include;..\..\sdk\inc;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CComputerInfo.cpp" />
+    <ClCompile Include="CGraphicExp.cpp" />
+    <ClCompile Include="CHardwareCapacity.cpp" />
+    <ClCompile Include="GraphicUtil.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="CBloomTarget.cpp" />
+    <ClCompile Include="CPostEffect.cpp" />
+    <ClCompile Include="CPostEffectLoader.cpp" />
+    <ClCompile Include="CPostEffectPass.cpp" />
+    <ClCompile Include="CPostProcessManager.cpp" />
+    <ClCompile Include="CScreenAlignedQuad.cpp" />
+    <ClCompile Include="CMatrixUnit.cpp" />
+    <ClCompile Include="CPieceGroup.cpp" />
+    <ClCompile Include="CRenderMatrix.cpp" />
+    <ClCompile Include="CRenderPiece.cpp" />
+    <ClCompile Include="CSimCloth.cpp" />
+    <ClCompile Include="CAnimation.cpp" />
+    <ClCompile Include="CAnimationController.cpp" />
+    <ClCompile Include="CAnimationGroup.cpp" />
+    <ClCompile Include="CSkeletal.cpp" />
+    <ClCompile Include="CSkeletalFrame.cpp" />
+    <ClCompile Include="CSkeletalMask.cpp" />
+    <ClCompile Include="CCPUSkeletalMesh.cpp" />
+    <ClCompile Include="CMesh.cpp" />
+    <ClCompile Include="CMeshLevel.cpp" />
+    <ClCompile Include="CSkeletalMesh.cpp" />
+    <ClCompile Include="CStaticMesh.cpp" />
+    <ClCompile Include="CVertexAniMesh.cpp" />
+    <ClCompile Include="CBaseModel.cpp" />
+    <ClCompile Include="CModel.cpp" />
+    <ClCompile Include="CNodeController.cpp" />
+    <ClCompile Include="CCamera.cpp" />
+    <ClCompile Include="CFrustum.cpp" />
+    <ClCompile Include="CDynamicVB.cpp" />
+    <ClCompile Include="CFilterNode.cpp" />
+    <ClCompile Include="CRenderCommand.cpp" />
+    <ClCompile Include="CRendererBase.cpp" />
+    <ClCompile Include="CRenderFilter.cpp" />
+    <ClCompile Include="CRenderGroup.cpp" />
+    <ClCompile Include="CRenderList.cpp" />
+    <ClCompile Include="CRefractFilter.cpp" />
+    <ClCompile Include="CShowPassFilter.cpp" />
+    <ClCompile Include="CAlphaFilter.cpp" />
+    <ClCompile Include="CPortraitTransFilter.cpp" />
+    <ClCompile Include="CNoneShadowFilter.cpp" />
+    <ClCompile Include="CPlaneShadowFilter.cpp" />
+    <ClCompile Include="CProjectShadowFilter.cpp" />
+    <ClCompile Include="CReceiveShadowFilter.cpp" />
+    <ClCompile Include="CShadowFilter.cpp" />
+    <ClCompile Include="CShadowMapFilter.cpp" />
+    <ClCompile Include="CShadowClipper.cpp" />
+    <ClCompile Include="CShadowMatrixBuilder.cpp" />
+    <ClCompile Include="CAlphaShadowFilter.cpp" />
+    <ClCompile Include="CDefaultFilter.cpp" />
+    <ClCompile Include="CVertexDeclFilter.cpp" />
+    <ClCompile Include="CBatchFilter.cpp" />
+    <ClCompile Include="CGeometryBatch.cpp" />
+    <ClCompile Include="CGeometryInstance.cpp" />
+    <ClCompile Include="CAnimationBatch.cpp" />
+    <ClCompile Include="CMeshBatch.cpp" />
+    <ClCompile Include="CModifyBatch.cpp" />
+    <ClCompile Include="CRenderInstBatch.cpp" />
+    <ClCompile Include="CRenderStateBatch.cpp" />
+    <ClCompile Include="CLight.cpp" />
+    <ClCompile Include="CLightSystem.cpp" />
+    <ClCompile Include="CDistanceFont.cpp" />
+    <ClCompile Include="CFontBase.cpp" />
+    <ClCompile Include="CFontListContainer.cpp" />
+    <ClCompile Include="CFontMgr.cpp" />
+    <ClCompile Include="CFontRenderer.cpp" />
+    <ClCompile Include="CGdiFont.cpp" />
+    <ClCompile Include="CRenderFont.cpp" />
+    <ClCompile Include="CTextureFont.cpp" />
+    <ClCompile Include="CTextureFontDef.cpp" />
+    <ClCompile Include="CTextureFontMgr.cpp" />
+    <ClCompile Include="..\..\sdk\inc\RenderTextParam.cpp" />
+    <ClCompile Include="CDataSources.cpp" />
+    <ClCompile Include="CDynamicPool.cpp" />
+    <ClCompile Include="CGraphic.cpp" />
+    <ClCompile Include="CGraphicMallocObject.cpp" />
+    <ClCompile Include="CParamsBufferMgr.cpp" />
+    <ClCompile Include="CRenderable.cpp" />
+    <ClCompile Include="CRenderOperation.cpp" />
+    <ClCompile Include="CRenderPipeline.cpp" />
+    <ClCompile Include="CRenderStyle.cpp" />
+    <ClCompile Include="CResourceContainer.cpp" />
+    <ClCompile Include="CResUnitGroup.cpp" />
+    <ClCompile Include="CSkeletalsMgr.cpp" />
+    <ClCompile Include="CVertexDeclaration.cpp" />
+    <ClCompile Include="GraphicBase.cpp" />
+    <ClCompile Include="IDName.cpp" />
+    <ClCompile Include="CTextureQualityMgr.cpp" />
+    <ClCompile Include="CHardwareBuffer.cpp" />
+    <ClCompile Include="CHardwareBufferMgr.cpp" />
+    <ClCompile Include="CIndexHardwareBuffer.cpp" />
+    <ClCompile Include="CShadowBuffer.cpp" />
+    <ClCompile Include="CVertexHardwareBuffer.cpp" />
+    <ClCompile Include="CRenderTarget.cpp" />
+    <ClCompile Include="CRenderTexture.cpp" />
+    <ClCompile Include="CViewport.cpp" />
+    <ClCompile Include="CWindowTarget.cpp" />
+    <ClCompile Include="CTexFmtMapper.cpp" />
+    <ClCompile Include="CTexture.cpp" />
+    <ClCompile Include="CTexture2D.cpp" />
+    <ClCompile Include="CTexture3D.cpp" />
+    <ClCompile Include="CTextureCube.cpp" />
+    <ClCompile Include="CTextureImp.cpp" />
+    <ClCompile Include="CTexture2DImp.cpp" />
+    <ClCompile Include="CFrameAnimTex.cpp" />
+    <ClCompile Include="CGridAnimTex.cpp" />
+    <ClCompile Include="SyncSystem.cpp" />
+    <ClCompile Include="CModifyRS.cpp" />
+    <ClCompile Include="CRenderStyleEx.cpp" />
+    <ClCompile Include="CRenderStyleInst.cpp" />
+    <ClCompile Include="CShaderCompiler.cpp" />
+    <ClCompile Include="CShaderState.cpp" />
+    <ClCompile Include="CStageNode.cpp" />
+    <ClCompile Include="CStageNodeInst.cpp" />
+    <ClCompile Include="CColorStage.cpp" />
+    <ClCompile Include="CFixStage.cpp" />
+    <ClCompile Include="CSamplerStage.cpp" />
+    <ClCompile Include="CTextureStage.cpp" />
+    <ClCompile Include="CUVCtrlStage.cpp" />
+    <ClCompile Include="CColorStageCoder.cpp" />
+    <ClCompile Include="CRenderStyleCoder.cpp" />
+    <ClCompile Include="CSamplerStageCoder.cpp" />
+    <ClCompile Include="CTextureStageCoder.cpp" />
+    <ClCompile Include="CUVCtrlStageCoder.cpp" />
+    <ClCompile Include="CGpuProgram.cpp" />
+    <ClCompile Include="CGpuProgramMgr.cpp" />
+    <ClCompile Include="CShaderConstParams.cpp" />
+    <ClCompile Include="Coder\CAgpCoder.cpp" />
+    <ClCompile Include="Coder\CAniCoder.cpp" />
+    <ClCompile Include="Coder\CMeshCoder.cpp" />
+    <ClCompile Include="Coder\CModCoder.cpp" />
+    <ClCompile Include="Coder\CPieceCoder.cpp" />
+    <ClCompile Include="CPieceRenderStyleCoder.cpp" />
+    <ClCompile Include="Coder\CRsCoder.cpp" />
+    <ClCompile Include="Coder\CSkeCoder.cpp" />
+    <ClCompile Include="CCoderNameHelper.cpp" />
+    <ClCompile Include="CRefCoder.cpp" />
+    <ClCompile Include="CRsRefCoder.cpp" />
+    <ClCompile Include="CTexRefCoder.cpp" />
+    <ClCompile Include="CFrameAnimTexCoder.cpp" />
+    <ClCompile Include="CGridAnimTexCoder.cpp" />
+    <ClCompile Include="CJPGDecoder.cpp" />
+    <ClCompile Include="CTexture2DCoder.cpp" />
+    <ClCompile Include="CTexture3DCoder.cpp" />
+    <ClCompile Include="CTextureCoder.cpp" />
+    <ClCompile Include="CTextureCubeCoder.cpp" />
+    <ClCompile Include="CCtrlNode.cpp" />
+    <ClCompile Include="CRenderNode.cpp" />
+    <ClCompile Include="CRenderSpace.cpp" />
+    <ClCompile Include="CRenderSpaceNode.cpp" />
+    <ClCompile Include="CDebugHelper.cpp" />
+    <ClCompile Include="Graphic_dx9\CDx9DataSources.cpp" />
+    <ClCompile Include="Graphic_dx9\CDx9MainWindow.cpp" />
+    <ClCompile Include="Graphic_dx9\CDx9RenderPipeline.cpp" />
+    <ClCompile Include="Graphic_dx9\CDx9VertexDeclaration.cpp" />
+    <ClCompile Include="Graphic_dx9\CDx9WindowTarget.cpp" />
+    <ClCompile Include="Graphic_dx9\CDx9Adapter.cpp" />
+    <ClCompile Include="Graphic_dx9\CDx9DeviceCapacity.cpp" />
+    <ClCompile Include="Graphic_dx9\CDx9DDSTextureCoder.cpp" />
+    <ClCompile Include="Graphic_dx9\CDx9TextureCoder.cpp" />
+    <ClCompile Include="Graphic_dx9\CDx9IndexHardwareBuffer.cpp" />
+    <ClCompile Include="Graphic_dx9\CDx9VertexHardwareBuffer.cpp" />
+    <ClCompile Include="Graphic_dx9\CDx9DepthTexture.cpp" />
+    <ClCompile Include="Graphic_dx9\CDx9RenderTexture.cpp" />
+    <ClCompile Include="Graphic_dx9\CDx9Texture.cpp" />
+    <ClCompile Include="Graphic_dx9\CDx9EffectProgram.cpp" />
+    <ClCompile Include="Graphic_dx9\CDx9FragmentProgram.cpp" />
+    <ClCompile Include="Graphic_dx9\CDx9GpuProgram.cpp" />
+    <ClCompile Include="Graphic_dx9\CDx9GPUProgramMgr.cpp" />
+    <ClCompile Include="Graphic_dx9\CDx9GpuProgramParameters.cpp" />
+    <ClCompile Include="Graphic_dx9\CDX9ShaderMacro.cpp" />
+    <ClCompile Include="Graphic_dx9\CDx9VertexProgram.cpp" />
+    <ClCompile Include="Graphic_dx9\CDx9TexFmtMapper.cpp" />
+    <ClCompile Include="Graphic_dx9\CDx9Texture3D.cpp" />
+    <ClCompile Include="Graphic_dx9\CDx9TextureCube.cpp" />
+    <ClCompile Include="Graphic_dx9\CDx9Texture2DImp.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\sdk\inc\CComputerInfo.h" />
+    <ClInclude Include="..\..\sdk\inc\CGraphicExp.h" />
+    <ClInclude Include="..\..\sdk\inc\CHardwareCapacity.h" />
+    <ClInclude Include="..\..\include\GraphicTest.h" />
+    <ClInclude Include="..\..\sdk\inc\GraphicUtil.h" />
+    <ClInclude Include="..\..\sdk\inc\IDName.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="..\..\sdk\inc\TSafeBuffer.h" />
+    <ClInclude Include="..\..\sdk\inc\CBloomTarget.h" />
+    <ClInclude Include="CPostEffect.h" />
+    <ClInclude Include="CPostEffectLoader.h" />
+    <ClInclude Include="CPostEffectPass.h" />
+    <ClInclude Include="..\..\sdk\inc\CPostProcessManager.h" />
+    <ClInclude Include="CScreenAlignedQuad.h" />
+    <ClInclude Include="..\..\sdk\inc\CMatrixUnit.h" />
+    <ClInclude Include="..\..\sdk\inc\CPieceGroup.h" />
+    <ClInclude Include="..\..\sdk\inc\CRenderMatrix.h" />
+    <ClInclude Include="..\..\sdk\inc\CRenderPiece.h" />
+    <ClInclude Include="CSimCloth.h" />
+    <ClInclude Include="..\..\sdk\inc\CAnimation.h" />
+    <ClInclude Include="..\..\sdk\inc\CAnimationController.h" />
+    <ClInclude Include="..\..\sdk\inc\CAnimationGroup.h" />
+    <ClInclude Include="..\..\sdk\inc\CSkeletal.h" />
+    <ClInclude Include="..\..\sdk\inc\CSkeletalFrame.h" />
+    <ClInclude Include="CCPUSkeletalMesh.h" />
+    <ClInclude Include="..\..\sdk\inc\CMesh.h" />
+    <ClInclude Include="..\..\sdk\inc\CMeshLevel.h" />
+    <ClInclude Include="..\..\sdk\inc\CMeshLoader.h" />
+    <ClInclude Include="..\..\sdk\inc\CSkeletalMesh.h" />
+    <ClInclude Include="..\..\sdk\inc\CStaticMesh.h" />
+    <ClInclude Include="..\..\sdk\inc\CVertexAniMesh.h" />
+    <ClInclude Include="..\..\sdk\inc\CBaseModel.h" />
+    <ClInclude Include="..\..\sdk\inc\CModel.h" />
+    <ClInclude Include="..\..\sdk\inc\CNodeController.h" />
+    <ClInclude Include="..\..\sdk\inc\CCamera.h" />
+    <ClInclude Include="..\..\sdk\inc\CFrustum.h" />
+    <ClInclude Include="..\..\sdk\inc\CSkeletalMask.h" />
+    <ClInclude Include="..\..\sdk\inc\CDynamicVB.h" />
+    <ClInclude Include="..\..\sdk\inc\CFilterNode.h" />
+    <ClInclude Include="..\..\sdk\inc\CRenderCommand.h" />
+    <ClInclude Include="..\..\sdk\inc\CRendererBase.h" />
+    <ClInclude Include="..\..\sdk\inc\CRenderFilter.h" />
+    <ClInclude Include="..\..\sdk\inc\CRenderGroup.h" />
+    <ClInclude Include="..\..\sdk\inc\CRenderList.h" />
+    <ClInclude Include="CRefractFilter.h" />
+    <ClInclude Include="CShowPassFilter.h" />
+    <ClInclude Include="CAlphaFilter.h" />
+    <ClInclude Include="CPortraitTransFilter.h" />
+    <ClInclude Include="CNoneShadowFilter.h" />
+    <ClInclude Include="CPlaneShadowFilter.h" />
+    <ClInclude Include="CProjectShadowFilter.h" />
+    <ClInclude Include="CReceiveShadowFilter.h" />
+    <ClInclude Include="..\..\sdk\inc\CShadowFilter.h" />
+    <ClInclude Include="CShadowHeader.h" />
+    <ClInclude Include="CShadowMapFilter.h" />
+    <ClInclude Include="CShadowClipper.h" />
+    <ClInclude Include="CShadowMatrixBuilder.h" />
+    <ClInclude Include="CAlphaShadowFilter.h" />
+    <ClInclude Include="CDefaultFilter.h" />
+    <ClInclude Include="CVertexDeclFilter.h" />
+    <ClInclude Include="CBatchFilter.h" />
+    <ClInclude Include="CGeometryBatch.h" />
+    <ClInclude Include="..\..\sdk\inc\CGeometryInstance.h" />
+    <ClInclude Include="CAnimationBatch.h" />
+    <ClInclude Include="CMeshBatch.h" />
+    <ClInclude Include="CModifyBatch.h" />
+    <ClInclude Include="CRenderInstBatch.h" />
+    <ClInclude Include="CRenderStateBatch.h" />
+    <ClInclude Include="..\..\sdk\inc\CLight.h" />
+    <ClInclude Include="..\..\sdk\inc\CLightSystem.h" />
+    <ClInclude Include="..\..\sdk\inc\IEffectGraphic.h" />
+    <ClInclude Include="..\..\sdk\inc\IGraphic.h" />
+    <ClInclude Include="..\..\sdk\inc\IModelHandler.h" />
+    <ClInclude Include="..\..\sdk\inc\IProcessCallBack.h" />
+    <ClInclude Include="..\..\sdk\inc\ISpaceNodeHandler.h" />
+    <ClInclude Include="CDistanceFont.h" />
+    <ClInclude Include="CFontBase.h" />
+    <ClInclude Include="..\..\sdk\inc\CFontListContainer.h" />
+    <ClInclude Include="..\..\sdk\inc\CFontMgr.h" />
+    <ClInclude Include="CFontRenderer.h" />
+    <ClInclude Include="CGdiFont.h" />
+    <ClInclude Include="..\..\sdk\inc\CRenderFont.h" />
+    <ClInclude Include="CTextureFont.h" />
+    <ClInclude Include="..\..\sdk\inc\CTextureFontDef.h" />
+    <ClInclude Include="..\..\sdk\inc\CTextureFontMgr.h" />
+    <ClInclude Include="..\..\sdk\inc\RenderTextParam.h" />
+    <ClInclude Include="..\..\sdk\inc\CDataSources.h" />
+    <ClInclude Include="..\..\sdk\inc\CDynamicPool.h" />
+    <ClInclude Include="..\..\include\CGraphic.h" />
+    <ClInclude Include="..\..\sdk\inc\CGraphicMallocObject.h" />
+    <ClInclude Include="..\..\sdk\inc\CParamsBufferMgr.h" />
+    <ClInclude Include="..\..\sdk\inc\CPostFilter.h" />
+    <ClInclude Include="..\..\sdk\inc\CRenderable.h" />
+    <ClInclude Include="..\..\sdk\inc\CRenderOperation.h" />
+    <ClInclude Include="..\..\sdk\inc\CRenderPipeline.h" />
+    <ClInclude Include="..\..\sdk\inc\CRenderStyle.h" />
+    <ClInclude Include="..\..\sdk\inc\CResourceContainer.h" />
+    <ClInclude Include="..\..\sdk\inc\CResUnitGroup.h" />
+    <ClInclude Include="..\..\sdk\inc\CSkeletalsMgr.h" />
+    <ClInclude Include="..\..\sdk\inc\CVertexDeclaration.h" />
+    <ClInclude Include="DisplayMode.h" />
+    <ClInclude Include="..\..\sdk\inc\FilterDefine.h" />
+    <ClInclude Include="..\..\sdk\inc\GraphicBase.h" />
+    <ClInclude Include="..\..\sdk\inc\GraphicClassDefine.h" />
+    <ClInclude Include="..\..\sdk\inc\GraphicDefs.h" />
+    <ClInclude Include="..\..\sdk\inc\GraphicRenderStyle.h" />
+    <ClInclude Include="..\..\sdk\inc\GraphicRes.h" />
+    <ClInclude Include="..\..\sdk\inc\RenderSettings.h" />
+    <ClInclude Include="..\..\sdk\inc\RTTFormat.h" />
+    <ClInclude Include="..\..\sdk\inc\CTextureQualityMgr.h" />
+    <ClInclude Include="..\..\sdk\inc\ITexture.h" />
+    <ClInclude Include="..\..\sdk\inc\CHardwareBuffer.h" />
+    <ClInclude Include="..\..\sdk\inc\CHardwareBufferMgr.h" />
+    <ClInclude Include="..\..\sdk\inc\CIndexHardwareBuffer.h" />
+    <ClInclude Include="..\..\sdk\inc\CShadowBuffer.h" />
+    <ClInclude Include="..\..\sdk\inc\CVertexHardwareBuffer.h" />
+    <ClInclude Include="..\..\sdk\inc\CRenderTarget.h" />
+    <ClInclude Include="..\..\sdk\inc\CRenderTexture.h" />
+    <ClInclude Include="..\..\sdk\inc\CViewport.h" />
+    <ClInclude Include="..\..\sdk\inc\CWindowTarget.h" />
+    <ClInclude Include="..\..\sdk\inc\CTexFmtMapper.h" />
+    <ClInclude Include="..\..\sdk\inc\CTexture.h" />
+    <ClInclude Include="CTexture2D.h" />
+    <ClInclude Include="CTexture3D.h" />
+    <ClInclude Include="CTextureCube.h" />
+    <ClInclude Include="CTextureImp.h" />
+    <ClInclude Include="CTexture2DImp.h" />
+    <ClInclude Include="CFrameAnimTex.h" />
+    <ClInclude Include="CGridAnimTex.h" />
+    <ClInclude Include="..\..\sdk\inc\SyncSystem.h" />
+    <ClInclude Include="..\..\sdk\inc\CModifyRS.h" />
+    <ClInclude Include="..\..\sdk\inc\CRenderStyleEx.h" />
+    <ClInclude Include="CRenderStyleInst.h" />
+    <ClInclude Include="CShaderCompiler.h" />
+    <ClInclude Include="CShaderState.h" />
+    <ClInclude Include="CStageNode.h" />
+    <ClInclude Include="CStageNodeInst.h" />
+    <ClInclude Include="CColorStage.h" />
+    <ClInclude Include="CFixStage.h" />
+    <ClInclude Include="CSamplerStage.h" />
+    <ClInclude Include="CTextureStage.h" />
+    <ClInclude Include="CUVCtrlStage.h" />
+    <ClInclude Include="..\..\sdk\inc\CColorStageCoder.h" />
+    <ClInclude Include="..\..\sdk\inc\CRenderStyleCoder.h" />
+    <ClInclude Include="..\..\sdk\inc\CSamplerStageCoder.h" />
+    <ClInclude Include="..\..\sdk\inc\CTextureStageCoder.h" />
+    <ClInclude Include="..\..\sdk\inc\CUVCtrlStageCoder.h" />
+    <ClInclude Include="..\..\sdk\inc\CGpuProgram.h" />
+    <ClInclude Include="..\..\sdk\inc\CGpuProgramMgr.h" />
+    <ClInclude Include="..\..\sdk\inc\CGpuProgramParameters.h" />
+    <ClInclude Include="..\..\sdk\inc\CShaderConstParams.h" />
+    <ClInclude Include="..\..\sdk\inc\IRenderTime.h" />
+    <ClInclude Include="Coder\CAgpCoder.h" />
+    <ClInclude Include="Coder\CAniCoder.h" />
+    <ClInclude Include="Coder\CMeshCoder.h" />
+    <ClInclude Include="..\..\sdk\inc\CModCoder.h" />
+    <ClInclude Include="Coder\CPieceCoder.h" />
+    <ClInclude Include="..\..\sdk\inc\CPieceRenderStyleCoder.h" />
+    <ClInclude Include="Coder\CRsCoder.h" />
+    <ClInclude Include="Coder\CSkeCoder.h" />
+    <ClInclude Include="..\..\sdk\inc\CCoderNameHelper.h" />
+    <ClInclude Include="..\..\sdk\inc\CRefCoder.h" />
+    <ClInclude Include="..\..\sdk\inc\CRsRefCoder.h" />
+    <ClInclude Include="..\..\sdk\inc\CTexRefCoder.h" />
+    <ClInclude Include="CFrameAnimTexCoder.h" />
+    <ClInclude Include="CGridAnimTexCoder.h" />
+    <ClInclude Include="..\..\sdk\inc\CJPGDecoder.h" />
+    <ClInclude Include="CTexture2DCoder.h" />
+    <ClInclude Include="CTexture3DCoder.h" />
+    <ClInclude Include="CTextureCoder.h" />
+    <ClInclude Include="CTextureCubeCoder.h" />
+    <ClInclude Include="..\..\sdk\inc\CCtrlNode.h" />
+    <ClInclude Include="..\..\sdk\inc\CRenderNode.h" />
+    <ClInclude Include="..\..\sdk\inc\CRenderSpace.h" />
+    <ClInclude Include="..\..\sdk\inc\CRenderSpaceNode.h" />
+    <ClInclude Include="CDebugHelper.h" />
+    <ClInclude Include="Graphic_dx9\CDx9DataSources.h" />
+    <ClInclude Include="Graphic_dx9\CDx9MainWindow.h" />
+    <ClInclude Include="Graphic_dx9\CDx9RenderPipeline.h" />
+    <ClInclude Include="Graphic_dx9\CDx9VertexDeclaration.h" />
+    <ClInclude Include="Graphic_dx9\CDx9WindowTarget.h" />
+    <ClInclude Include="Graphic_dx9\Dx9Base.h" />
+    <ClInclude Include="Graphic_dx9\CDx9Adapter.h" />
+    <ClInclude Include="Graphic_dx9\CDx9DeviceCapacity.h" />
+    <ClInclude Include="Graphic_dx9\CDx9DDSTextureCoder.h" />
+    <ClInclude Include="Graphic_dx9\CDx9TextureCoder.h" />
+    <ClInclude Include="Graphic_dx9\CDx9IndexHardwareBuffer.h" />
+    <ClInclude Include="Graphic_dx9\CDx9VertexHardwareBuffer.h" />
+    <ClInclude Include="Graphic_dx9\CDx9DepthTexture.h" />
+    <ClInclude Include="Graphic_dx9\CDx9RenderTexture.h" />
+    <ClInclude Include="Graphic_dx9\CDx9Texture.h" />
+    <ClInclude Include="Graphic_dx9\CDx9EffectProgram.h" />
+    <ClInclude Include="Graphic_dx9\CDx9FragmentProgram.h" />
+    <ClInclude Include="Graphic_dx9\CDx9GpuProgram.h" />
+    <ClInclude Include="Graphic_dx9\CDx9GPUProgramMgr.h" />
+    <ClInclude Include="Graphic_dx9\CDx9GpuProgramParameters.h" />
+    <ClInclude Include="Graphic_dx9\CDx9ShaderMacro.h" />
+    <ClInclude Include="Graphic_dx9\CDx9VertexProgram.h" />
+    <ClInclude Include="Graphic_dx9\CDx9TexFmtMapper.h" />
+    <ClInclude Include="Graphic_dx9\CDx9Texture3D.h" />
+    <ClInclude Include="Graphic_dx9\CDx9TextureCube.h" />
+    <ClInclude Include="Graphic_dx9\CDx9Texture2DImp.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.vcxproj">
+      <Project>{90036735-3231-45a0-965f-3b5467d34fe3}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,20 @@
+<?php
+$db_host='10.10.43.142';
+$db_user='root';
+$db_pass='1';
+$db_name='LogFree';
+
+$client_select_info = "select li.error_code, li.error_title, gi.name, clc.happened_time, clc.urs, clc.role_name, clc.serverip, clc.server_guid, clc.client_guid, clc.conn_guid , clc.log_msg, clc.version ";
+$client_count_info = "select count(*) ";
+$client_from_info = "from tbl_client_log_common clc, tbl_log_info li, tbl_guid_info gi ";
+$client_where_info = "where li.error_code = clc.error_code and gi.guid = clc.client_guid "; 
+$client_order_info = "order by happened_time desc ";
+
+$server_count_info = "select count(*) ";
+$server_select_info = "select li.error_code, li.error_title, gi.name, slc.happened_time, slc.urs, slc.role_name, slc.remote_ip, slc.server_guid, slc.conn_guid, slc.log_msg, slc.version ";
+$server_from_info = "from tbl_server_log_common slc, tbl_log_info li, tbl_guid_info gi ";
+$server_where_info = "where li.error_code = slc.error_code and gi.guid = slc.server_guid ";
+$server_order_info = "order by happened_time desc";
+
+$log_free_name='in_or_out';
+?>

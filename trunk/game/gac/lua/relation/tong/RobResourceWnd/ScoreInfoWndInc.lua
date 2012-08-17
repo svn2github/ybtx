@@ -1,0 +1,1 @@
+CRobResScoreInfoWnd = class(SQRDialog)

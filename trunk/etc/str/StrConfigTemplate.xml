@@ -1,0 +1,43 @@
+<main_config>
+
+	<!-- 游戏中计时器的最高精度，单位为毫秒，也是客户端渲染的帧周期，还是主角对象移动的最小时间粒度-->
+	<base_tick_cyc>33</base_tick_cyc>
+	<skip_frame_waittime>100</skip_frame_waittime>
+	
+	<!-- 对连接的错误容忍程度 -->
+	<conn_max_exp>0</conn_max_exp>	
+		
+	<!--网络多线程的数目-->
+	<net_thread_num>0</net_thread_num>
+	
+	<console_config>
+		<!--是否显示控制台-->
+		<show>1</show>
+		<title>str</title>
+		<!--启动后是否自动最小化控制台窗口,仅在windows系统下有效-->
+		<auto_minimize>0</auto_minimize>
+	</console_config>
+
+	<system_config>
+		<!-- 优先读文件还是优先读包, 0.文件, 1.包 -->
+		<read_first>0</read_first>
+	</system_config>
+
+	<!-- 选择开启Debuger或者Profiler,两者只能开启一个 -->	
+	<enable_script_helper>debuger</enable_script_helper>
+	<!-- <enable_script_helper>profiler</enable_script_helper>  -->
+
+	
+	<!-- 如果core_dump_msg内容为空，则不处理结构化异常 -->
+	<core_dump_msg>	非常遗憾地通知您，程序内部发生了错误，导致游戏无法继续运行。
+这个错误已经被记录到您的游戏安装根目录下，名为%s。
+    为了能够尽快解决您遇上的问题，请将这个错误文件email给客服人员，
+感谢您的支持和合作！</core_dump_msg>
+    
+	<!-- log目录路径 -->
+	<log_path>var/gac/log</log_path>
+
+	<!-- 用于设置配置表路径 -->
+	<language_id>0</language_id>
+
+</main_config>

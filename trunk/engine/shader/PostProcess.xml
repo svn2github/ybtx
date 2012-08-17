@@ -1,0 +1,30 @@
+﻿<PostProcess>
+    <!--这个系统保留, 必须有-->
+    <RenderTexture name="default" relWidth="1.0" relHeight="1.0" format="X8R8G8B8" depth="false"/>
+    <!--下面是中间处理用的-->
+    <RenderTexture name="rt0" relWidth="0.25" relHeight="0.25" format="X8R8G8B8" depth="false"/>
+    <RenderTexture name="rt1" relWidth="0.25" relHeight="0.25" format="X8R8G8B8" depth="false"/>
+
+    <PostEffect name="Bloom" reset = "true">
+	<!--bright pass-->
+        <Pass target="rt0" clear="false" effectId="13">
+            <Source name="default"/>
+        </Pass>
+        <!--blur horizontal-->
+        <Pass target="rt1" clear="false" effectId="15">
+            <Source name="rt0"/>
+        </Pass>
+        <!--blur vertical-->
+        <Pass target="rt0" clear="false" effectId="14">
+            <Source name="rt1"/>
+        </Pass>
+        <!--blend-->
+        <Pass target="none" clear="false" effectId="16">
+            <Source name="default"/>
+            <Source name="rt0"/>
+        </Pass>
+    </PostEffect>
+
+    <PostEffect name="Refract" reset = "true">
+    </PostEffect>
+</PostProcess>

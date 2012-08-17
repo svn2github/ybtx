@@ -1,0 +1,1 @@
+CTstBagMgr = class()

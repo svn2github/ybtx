@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C347D3B0-2850-4745-B68F-0AB03A51E06C}</ProjectGuid>
+    <RootNamespace>Debug</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../../bin/$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../../bin/$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\engine\sdk\inc;..\..\include;..\..\sdk\inc;..\..\..\implib\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;MODULE_EXPORTS;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>dbghelp.lib;tinyxml.lib;psapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\implib\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapExports>true</MapExports>
+      <SubSystem>Windows</SubSystem>
+      <BaseAddress>
+      </BaseAddress>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/Oy- %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\engine\sdk\inc;..\..\include;..\..\sdk\inc;..\..\..\implib\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_USRDLL;MODULE_EXPORTS;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>dbghelp.lib;tinyxml.lib;psapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\implib\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapExports>true</MapExports>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <BaseAddress>
+      </BaseAddress>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CCallStackInfo.cpp" />
+    <ClCompile Include="CMapFile.cpp" />
+    <ClCompile Include="CMapFileMgr.cpp" />
+    <ClCompile Include="CStackFrame.cpp" />
+    <ClCompile Include="CStackFrameMgr.cpp" />
+    <ClCompile Include="CStackFrameSet.cpp" />
+    <ClCompile Include="StackWalkHelper.cpp" />
+    <ClCompile Include="CMallocObject.cpp" />
+    <ClCompile Include="CMemCallStackInfo.cpp" />
+    <ClCompile Include="CMemCallStackInfoMgr.cpp" />
+    <ClCompile Include="CMemCallStackInfoSet.cpp" />
+    <ClCompile Include="CMemoryLeakageMgr.cpp" />
+    <ClCompile Include="Memory.cpp" />
+    <ClCompile Include="MemoryHelper.cpp" />
+    <ClCompile Include="SqrAlloc.cpp" />
+    <ClCompile Include="CMemJob.cpp" />
+    <ClCompile Include="CMemThread.cpp" />
+    <ClCompile Include="CMemThreadMgr.cpp" />
+    <ClCompile Include="CCompactAllocPool.cpp" />
+    <ClCompile Include="CSqrAllocPool.cpp" />
+    <ClCompile Include="CSqrAllocPoolMgr.cpp" />
+    <ClCompile Include="CThreadAllocPool.cpp" />
+    <ClCompile Include="dlmalloc.c">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MaxSpeed</Optimization>
+      <WholeProgramOptimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</WholeProgramOptimization>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ProgramDatabase</DebugInformationFormat>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+      <WholeProgramOptimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</WholeProgramOptimization>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="CArtError.cpp" />
+    <ClCompile Include="CErrLog.cpp" />
+    <ClCompile Include="CErrLogCompress.cpp" />
+    <ClCompile Include="CErrLogEncrypt.cpp" />
+    <ClCompile Include="CErrLogJob.cpp" />
+    <ClCompile Include="CErrLogMgr.cpp" />
+    <ClCompile Include="CErrLogThreadMgr.cpp" />
+    <ClCompile Include="CError.cpp" />
+    <ClCompile Include="CJmpStack.cpp" />
+    <ClCompile Include="CLogOwner.cpp" />
+    <ClCompile Include="ErrLogHelper.cpp" />
+    <ClCompile Include="ExpHelper.cpp" />
+    <ClCompile Include="CTimeCheckPoint.cpp" />
+    <ClCompile Include="TimeHelper.cpp" />
+    <ClCompile Include="UtfCvs.cpp" />
+    <ClCompile Include="GuidHelper.cpp" />
+    <ClCompile Include="CXmlConfig.cpp" />
+    <ClCompile Include="CLock.cpp" />
+    <ClCompile Include="CThreadWatcherMap.cpp" />
+    <ClCompile Include="ThreadHelper.cpp" />
+    <ClCompile Include="BaseHelper.cpp" />
+    <ClCompile Include="CBaseObject.cpp" />
+    <ClCompile Include="CBaseRefObject.cpp" />
+    <ClCompile Include="CDynamicObject.cpp" />
+    <ClCompile Include="CShareObject.cpp" />
+    <ClCompile Include="CStaticObject.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\sdk\inc\CCallStackInfo.h" />
+    <ClInclude Include="CMapFile.h" />
+    <ClInclude Include="..\..\sdk\inc\CMapFileMgr.h" />
+    <ClInclude Include="CStackFrame.h" />
+    <ClInclude Include="CStackFrameMgr.h" />
+    <ClInclude Include="CStackFrameSet.h" />
+    <ClInclude Include="..\..\sdk\inc\CStackString.h" />
+    <ClInclude Include="StackWalkHelper.h" />
+    <ClInclude Include="..\..\sdk\inc\CMallocObject.h" />
+    <ClInclude Include="..\..\sdk\inc\CMallocPool.h" />
+    <ClInclude Include="CMemCallStackInfo.h" />
+    <ClInclude Include="CMemCallStackInfoMgr.h" />
+    <ClInclude Include="CMemCallStackInfoSet.h" />
+    <ClInclude Include="CMemoryCookie.h" />
+    <ClInclude Include="CMemoryLeakageMgr.h" />
+    <ClInclude Include="..\..\sdk\inc\CMemPool.h" />
+    <ClInclude Include="..\..\sdk\inc\Memory.h" />
+    <ClInclude Include="..\..\sdk\inc\MemoryHelper.h" />
+    <ClInclude Include="..\..\sdk\inc\SqrAlloc.h" />
+    <ClInclude Include="..\..\sdk\inc\TMallocAllocator.h" />
+    <ClInclude Include="..\..\sdk\inc\TMallocPoolAllocator.h" />
+    <ClInclude Include="..\..\sdk\inc\TMemPoolAllocator.h" />
+    <ClInclude Include="CMemJob.h" />
+    <ClInclude Include="CMemThread.h" />
+    <ClInclude Include="CMemThreadMgr.h" />
+    <ClInclude Include="..\..\sdk\inc\CCompactAllocPool.h" />
+    <ClInclude Include="..\..\sdk\inc\CSqrAllocPool.h" />
+    <ClInclude Include="..\..\sdk\inc\CSqrAllocPoolMgr.h" />
+    <ClInclude Include="CThreadAllocPool.h" />
+    <ClInclude Include="..\..\sdk\inc\ISqrAllocPool.h" />
+    <ClInclude Include="..\..\sdk\inc\TSqrAllocator.h" />
+    <ClInclude Include="..\..\sdk\inc\TSqrAllocObject.h" />
+    <ClInclude Include="dlmalloc.h" />
+    <ClInclude Include="CArtError.h" />
+    <ClInclude Include="CErrLog.h" />
+    <ClInclude Include="CErrLogCompress.h" />
+    <ClInclude Include="CErrLogEncrypt.h" />
+    <ClInclude Include="CErrLogJob.h" />
+    <ClInclude Include="CErrLogMgr.h" />
+    <ClInclude Include="CErrLogThreadMgr.h" />
+    <ClInclude Include="..\..\sdk\inc\CError.h" />
+    <ClInclude Include="..\..\sdk\inc\CJmpStack.h" />
+    <ClInclude Include="..\..\sdk\inc\CLogOwner.h" />
+    <ClInclude Include="..\..\sdk\inc\ErrLogDefs.h" />
+    <ClInclude Include="..\..\sdk\inc\ErrLogHelper.h" />
+    <ClInclude Include="ErrLogTypes.h" />
+    <ClInclude Include="..\..\sdk\inc\ExpHelper.h" />
+    <ClInclude Include="..\..\sdk\inc\CTimeCheckPoint.h" />
+    <ClInclude Include="..\..\sdk\inc\TimeHelper.h" />
+    <ClInclude Include="..\..\sdk\inc\UtfCvs.h" />
+    <ClInclude Include="..\..\sdk\inc\GuidHelper.h" />
+    <ClInclude Include="..\..\sdk\inc\GuidTypes.h" />
+    <ClInclude Include="..\..\sdk\inc\CXmlConfig.h" />
+    <ClInclude Include="..\..\sdk\inc\CLock.h" />
+    <ClInclude Include="..\..\include\CThreadWatcherMap.h" />
+    <ClInclude Include="..\..\sdk\inc\ThreadHelper.h" />
+    <ClInclude Include="..\..\sdk\inc\ThreadTypes.h" />
+    <ClInclude Include="..\..\sdk\inc\TTlsPtr.h" />
+    <ClInclude Include="..\..\sdk\inc\Base.h" />
+    <ClInclude Include="..\..\sdk\inc\BaseDefs.h" />
+    <ClInclude Include="..\..\sdk\inc\BaseHelper.h" />
+    <ClInclude Include="..\..\sdk\inc\BaseTypes.h" />
+    <ClInclude Include="..\..\sdk\inc\CompileTimeHelper.h" />
+    <ClInclude Include="..\..\sdk\inc\CBaseObject.h" />
+    <ClInclude Include="..\..\sdk\inc\CBaseRefObject.h" />
+    <ClInclude Include="..\..\sdk\inc\CDynamicObject.h" />
+    <ClInclude Include="..\..\sdk\inc\CShareObject.h" />
+    <ClInclude Include="..\..\sdk\inc\CStaticObject.h" />
+    <ClInclude Include="..\..\sdk\inc\Module.h" />
+    <ClInclude Include="..\..\sdk\inc\ModuleDefs.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\sdk\inc\TSqrAllocator.inl" />
+    <None Include="..\..\sdk\inc\TSqrAllocObject.inl" />
+    <None Include="..\..\sdk\inc\CXmlConfig.inl" />
+    <None Include="..\..\sdk\inc\CLock.inl" />
+    <None Include="..\..\sdk\inc\ThreadHelper.inl" />
+    <None Include="..\..\sdk\inc\TTlsPtr.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

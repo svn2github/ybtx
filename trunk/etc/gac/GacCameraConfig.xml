@@ -1,0 +1,115 @@
+<main_config>
+	
+	<!-- 摄像机设置 max:摄像机最远值,min:摄像机最近值-->
+	
+	<common>
+		<defdist>22</defdist>			<!--原来是40-->		
+		<minspeed>0.05</minspeed>		<!--米/秒-->
+	</common>
+
+	<camera_config_16_9>		
+		<ydegree>45</ydegree>	
+		<defdist>18</defdist>	
+		<far_dist>
+			<xdegree>45</xdegree>   	<!--摄像机角度-->
+			<fovdegree>45</fovdegree>	<!--摄像机视野夹角-->
+			<dist>22.5</dist>		<!--摄像机距离-->
+			<yoffset>-1.65</yoffset>	<!--观察点偏移(米)-->
+			<nearplan>0.1</nearplan>	<!--近剪裁面(米)-->
+		</far_dist>
+		
+		<near_dist>
+			<xdegree>22</xdegree>   	<!--摄像机角度-->
+			<fovdegree>45</fovdegree>	<!--摄像机视野夹角-->
+			<dist>7</dist>			<!--摄像机距离-->
+			<yoffset>1</yoffset>		<!--观察点偏移(米)-->
+			<nearplan>0.1</nearplan>	<!--近剪裁面(米)-->
+		</near_dist>
+		
+		<!--推动摄像机的速度-->
+		<camspeed>14</camspeed>     		<!--米/秒-->
+    
+		<!--摄像机缓冲参数-->
+		<maxhoffset>0</maxhoffset>		<!--米-->
+	</camera_config_16_9>
+	
+	<camera_config_16_10>		
+		<ydegree>45</ydegree>
+		<defdist>19</defdist>		
+		<far_dist>
+			<xdegree>45</xdegree>   	<!--摄像机角度-->
+			<fovdegree>45</fovdegree>	<!--摄像机视野夹角-->
+			<dist>24</dist>			<!--摄像机距离-->
+			<yoffset>-1.6</yoffset>		<!--观察点偏移(米)-->
+			<nearplan>0.1</nearplan>	<!--近剪裁面(米)-->
+		</far_dist>
+		
+		<near_dist>
+			<xdegree>22</xdegree>   	<!--摄像机角度-->
+			<fovdegree>45</fovdegree>	<!--摄像机视野夹角-->
+			<dist>7</dist>			<!--摄像机距离-->
+			<yoffset>1</yoffset>		<!--观察点偏移(米)-->
+			<nearplan>0.1</nearplan>	<!--近剪裁面(米)-->
+		</near_dist>
+		
+		<!--推动摄像机的速度-->
+		<camspeed>14</camspeed>     		<!--米/秒-->
+    
+		<!--摄像机缓冲参数-->
+		<maxhoffset>0</maxhoffset>		<!--米-->
+	</camera_config_16_10>
+	
+	<camera_config_4_3>		
+		<ydegree>45</ydegree>	
+		<defdist>21</defdist>	
+		<far_dist>
+			<xdegree>45</xdegree>   	<!--摄像机角度-->
+			<fovdegree>45</fovdegree>	<!--摄像机视野夹角-->
+			<dist>25.5</dist>		<!--摄像机距离-->
+			<yoffset>-1.5</yoffset>		<!--观察点偏移(米)-->
+			<nearplan>0.1</nearplan>	<!--近剪裁面(米)-->
+		</far_dist>
+		
+		<near_dist>
+			<xdegree>22</xdegree>   	<!--摄像机角度-->
+			<fovdegree>45</fovdegree>	<!--摄像机视野夹角-->
+			<dist>7</dist>			<!--摄像机距离-->
+			<yoffset>1</yoffset>		<!--观察点偏移(米)-->
+			<nearplan>0.1</nearplan>	<!--近剪裁面(米)-->
+		</near_dist>
+		
+		<!--推动摄像机的速度-->
+		<camspeed>14</camspeed>     		<!--米/秒-->
+    
+		<!--摄像机缓冲参数-->
+		<maxhoffset>0</maxhoffset>		<!--米-->
+	</camera_config_4_3>
+	
+	<camera_config_5_4>		
+		<ydegree>45</ydegree>	
+		<defdist>22</defdist>	
+		<far_dist>
+			<xdegree>45</xdegree>   	<!--摄像机角度-->
+			<fovdegree>45</fovdegree>	<!--摄像机视野夹角-->
+			<dist>26</dist>			<!--摄像机距离-->
+			<yoffset>-1.4</yoffset>		<!--观察点偏移(米)-->
+			<nearplan>0.1</nearplan>	<!--近剪裁面(米)-->
+		</far_dist>
+		
+		<near_dist>
+			<xdegree>22</xdegree>   	<!--摄像机角度-->
+			<fovdegree>45</fovdegree>	<!--摄像机视野夹角-->
+			<dist>7</dist>			<!--摄像机距离-->
+			<yoffset>1</yoffset>		<!--观察点偏移(米)-->
+			<nearplan>0.1</nearplan>	<!--近剪裁面(米)-->
+		</near_dist>
+		
+		<!--推动摄像机的速度-->
+		<camspeed>14</camspeed>     		<!--米/秒-->
+    
+		<!--摄像机缓冲参数-->
+		<maxhoffset>0</maxhoffset>		<!--米-->
+	</camera_config_5_4>
+	
+	
+</main_config>

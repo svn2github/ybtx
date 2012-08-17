@@ -1,0 +1,27 @@
+float3x4 HBloomWeights : register(c4);                 // Description of the sampling distribution used by
+float3x4 HBloomOffsets : register(c7);                 // the HorizontalBlur() function
+
+sampler source0 : register(s0);
+
+//------------------------------------------------------------------
+// HORIZONTAL BLUR
+//
+// Takes 9 samples from the down-sampled texture (4 either side and
+// one central) biased by the provided weights. Different weight
+// distributions will give more subtle/pronounced blurring.
+//------------------------------------------------------------------
+float4 HorizontalBlur( float2 t : TEXCOORD0 ) : COLOR
+{
+    float4 color = { 0.0f, 0.0f, 0.0f, 0.0f };
+    
+    for( int i = 0; i < 2; i++ )
+    {
+    	for ( int j = 0; j < 4; ++j )
+    	{
+       		color += tex2D( source0, t + float2( HBloomOffsets[i][j], 0.0f ) ) * HBloomWeights[i][j];
+      	}
+    }
+    color += tex2D( source0, t + float2( HBloomOffsets[2][0], 0.0f ) ) * HBloomWeights[2][0];
+    
+    return float4( color.rgb, 1.0f );
+}

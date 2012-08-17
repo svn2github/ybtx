@@ -1,0 +1,1 @@
+CDTSScoreInfoWnd = class(SQRDialog)

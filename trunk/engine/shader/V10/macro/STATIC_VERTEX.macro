@@ -1,0 +1,2 @@
+float3 position = i.pos; \
+float3 normal = i.normal;

@@ -1,0 +1,22 @@
+sampler envMap : register(s0);
+sampler waveMap0 : register(s1);
+sampler waveMap1 : register(s2);
+
+struct PS_IN
+{
+	float3 eyeDir	: TEXCOORD0;
+	float4 diffuse	: COLOR0;
+	float2 tex0		: TEXCOORD1;
+	float2 tex1		: TEXCOORD2;
+};
+
+float4 WaterPS(PS_IN input) : COLOR0
+{
+	float3 normal0 = tex2D(waveMap0, input.tex0);
+	float3 normal1 = tex2D(waveMap1, input.tex1);
+
+	// average the two normal vectors
+	float3 normal = normal0 + normal1 - 1.0f;
+	float3 cubeDir = reflect(input.eyeDir, normal.yzx);
+	return texCUBE(envMap, cubeDir) * input.diffuse;
+}

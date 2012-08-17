@@ -1,0 +1,1 @@
+CKillYingFengScene = class(CSceneBase)

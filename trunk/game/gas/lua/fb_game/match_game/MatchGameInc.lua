@@ -1,0 +1,2 @@
+
+CMatchGame = class()

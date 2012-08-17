@@ -1,0 +1,11 @@
+float shadow = 0.0f;\
+for (float x = -1.0f; x <= 1.0f; x += 1.0f)\
+{\
+    for(float y = -1.0f; y <= 1.0f; y += 1.0f)\
+    {\
+        float2 offset = float2(x, y) * 0.0009765625f * i.text7.w;\
+        shadow += tex2Dproj(ShadowSampler, float4(i.text7.xy + offset, i.text7.z, i.text7.w));\
+    }\
+}\
+shadow /= 9.0f;\
+s *= lerp(gGlobalShadowColor.rgb, float3(1,1,1), shadow);

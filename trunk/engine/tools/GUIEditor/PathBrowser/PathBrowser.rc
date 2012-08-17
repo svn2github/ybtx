@@ -1,0 +1,135 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "PathBrowserRes.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "PathBrowserRes.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_PathBrowser_DOWN_ICON           ICON                    "ICO\\arrow_down.ico"
+IDI_PathBrowser_UP_ICON             ICON                    "ICO\\arrow_up.ico"
+IDI_PathBrowser_ADD_ICON            ICON                    "ICO\\add.ico"
+IDI_PathBrowser_DEL_ICON            ICON                    "ICO\\ball_stop.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDC_PathBrowser_DIALOGBAR DIALOGEX 0, 0, 406, 213
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CAPTION | WS_SYSMENU
+CAPTION "Set Source Directories"
+FONT 8, "MS Shell Dlg", 400, 0, 0x0
+BEGIN
+    PUSHBUTTON      "Cancel",IDC_PathBrowser_Cancel,349,196,50,14
+    PUSHBUTTON      "OK",IDC_PathBrowser_OK,297,196,50,14
+    PUSHBUTTON      "Apply",IDC_PathBrowser_Save,245,196,50,14
+    PUSHBUTTON      "",IDC_PathBrowser_NEW,7,1,26,23,BS_ICON,WS_EX_TRANSPARENT | WS_EX_STATICEDGE
+    PUSHBUTTON      "",IDC_PathBrowser_DELETE,33,1,25,23,BS_ICON,WS_EX_TRANSPARENT | WS_EX_STATICEDGE
+    PUSHBUTTON      "",IDC_PathBrowser_UP,348,1,25,23,BS_ICON,WS_EX_TRANSPARENT | WS_EX_STATICEDGE
+    PUSHBUTTON      "",IDC_PathBrowser_DOWN,373,1,26,23,BS_ICON,WS_EX_TRANSPARENT | WS_EX_STATICEDGE
+    PUSHBUTTON      "...",IDC_PathBrowser_SETDIR,321,9,23,10,BS_FLAT,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_PathBrowser_PATHEDIT,147,7,174,12,ES_AUTOHSCROLL | ES_NOHIDESEL | NOT WS_VISIBLE | NOT WS_BORDER | NOT WS_TABSTOP,WS_EX_TRANSPARENT
+    LISTBOX         IDC_PathBrowser_DIR_LIST,7,25,392,168,LBS_HASSTRINGS | WS_VSCROLL | WS_TABSTOP,WS_EX_TRANSPARENT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDC_PathBrowser_DIALOGBAR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 399
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 210
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

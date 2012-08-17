@@ -1,0 +1,1 @@
+CFacialAction = class()

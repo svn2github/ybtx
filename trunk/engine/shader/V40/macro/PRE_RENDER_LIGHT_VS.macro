@@ -1,0 +1,2 @@
+output.Diffuse   = i.color0 + gMatEmissive;\
+output.Diffuse.a = gMatDiffuse.a;

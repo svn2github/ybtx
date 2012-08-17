@@ -1,0 +1,6 @@
+#include "stdafx.h"
+#include "CEditRenderScene.h"
+#include "CEditModel.h"
+#include "SyncSystem.h"
+#include "EditorExp.h"
+#include "TraceHelper.h"

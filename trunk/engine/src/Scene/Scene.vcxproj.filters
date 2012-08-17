@@ -1,0 +1,550 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="场景框架">
+      <UniqueIdentifier>{79b43e60-820f-4489-9bcd-1ef950902ab3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景框架\Utility">
+      <UniqueIdentifier>{68e83bdf-d890-4e2e-b55b-7d514305c23e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景框架\SceneElement">
+      <UniqueIdentifier>{ce3d96ed-b4ba-462c-9276-2c480a0efa26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景框架\SceneElement\Water">
+      <UniqueIdentifier>{2725e8ca-7f7e-4a85-af15-48b2c7c28112}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景框架\SceneElement\Water\Coder">
+      <UniqueIdentifier>{c83e08e1-bac1-495a-a107-71efc5dbff97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景框架\SceneElement\Terrain">
+      <UniqueIdentifier>{de3dcf54-2481-41ec-88a1-b9871f6b46e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景框架\SceneElement\Terrain\Coder">
+      <UniqueIdentifier>{af037d27-e421-47d8-aaa1-10c94d683f5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景框架\SceneElement\Sky">
+      <UniqueIdentifier>{9147715d-408d-4c3a-8869-f34f285b5ee1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景框架\SceneElement\Sky\Coder">
+      <UniqueIdentifier>{8496d271-f82e-48ab-a2e7-2a31129c9048}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景框架\SceneElement\Logic">
+      <UniqueIdentifier>{684b6fb4-f3a4-470f-a02c-350a7da918b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景框架\SceneElement\Logic\Coder">
+      <UniqueIdentifier>{921b2f79-f559-46d9-a840-1df2bd739c4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景框架\SceneElement\场景管理">
+      <UniqueIdentifier>{d305afb0-b87d-4591-9c76-6b1646452b81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景框架\SceneElement\场景管理\四叉树">
+      <UniqueIdentifier>{06b10c98-1e7d-4e85-bed7-957b14a1ac6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景框架\SceneElement\场景管理\八叉树">
+      <UniqueIdentifier>{e071fc84-9971-4c4d-ada4-298bbe65d7e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景框架\Controller">
+      <UniqueIdentifier>{0949a086-cdf1-477c-8f07-ff2c374c3e04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景框架\Controller\CameraController">
+      <UniqueIdentifier>{37d74f6f-f2b1-471e-a8f2-62a67397ecd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景框架\CModelEx">
+      <UniqueIdentifier>{b5ab1b77-12fe-412e-aadc-1fdafa94c34d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景框架\Config">
+      <UniqueIdentifier>{6a565d2c-3942-434d-8f2f-92a0fb1c050f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景框架\SceneMain">
+      <UniqueIdentifier>{0c0c79d4-99a4-4274-9beb-31995c3336ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景渲染">
+      <UniqueIdentifier>{fa706fab-2761-438b-9e21-c7111ebc970e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景渲染\Dialog">
+      <UniqueIdentifier>{c69cfe41-fbf6-404a-8b99-ac5d0f1c5ad0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景渲染\SceneObject">
+      <UniqueIdentifier>{503b1cd7-7ba3-47aa-a343-c936154e1cb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景渲染\Query">
+      <UniqueIdentifier>{9f6cf11d-6116-4504-994f-ad4b6102a4db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景渲染\RegionEffect">
+      <UniqueIdentifier>{fd76a65d-c3b0-4ecd-b546-0dd822c34373}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景数据">
+      <UniqueIdentifier>{c4babc6b-c42d-43b6-925d-54d6c9470ad6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景数据\Coder">
+      <UniqueIdentifier>{28c6e4f6-510b-4fe2-9a7e-6397e3406ff9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景数据\DataLoader">
+      <UniqueIdentifier>{60b0690f-55f6-424e-b5c3-d84c930b79d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景数据\DataLoader\CSceneManagerClient">
+      <UniqueIdentifier>{4ddd9e8f-d747-4b65-9c3e-e62c524cae1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景数据\DataLoader\CSceneManagerClient\SceneCoder">
+      <UniqueIdentifier>{3ac0fdc2-04d9-4153-9eae-37e04e504a7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="调试信息">
+      <UniqueIdentifier>{50c28412-2ce6-446c-8664-0b10caf27173}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="多国语言">
+      <UniqueIdentifier>{501f3227-27b2-4abd-b7fc-8af7a6d1cbdb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源加载">
+      <UniqueIdentifier>{0eb693a6-f3f3-4cad-a9d1-64e5a5445148}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CAsynFunParamsMgr.cpp">
+      <Filter>场景框架\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="CCameraConfig.cpp">
+      <Filter>场景框架\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneBase.cpp">
+      <Filter>场景框架\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneDebugHelper.cpp">
+      <Filter>场景框架\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneMallocObject.cpp">
+      <Filter>场景框架\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>场景框架\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="CEnvMapWaterEffect.cpp">
+      <Filter>场景框架\SceneElement\Water</Filter>
+    </ClCompile>
+    <ClCompile Include="CTexAniWaterEffect.cpp">
+      <Filter>场景框架\SceneElement\Water</Filter>
+    </ClCompile>
+    <ClCompile Include="CWaterEffect.cpp">
+      <Filter>场景框架\SceneElement\Water</Filter>
+    </ClCompile>
+    <ClCompile Include="CWaterMgr.cpp">
+      <Filter>场景框架\SceneElement\Water</Filter>
+    </ClCompile>
+    <ClCompile Include="CWaterRegion.cpp">
+      <Filter>场景框架\SceneElement\Water</Filter>
+    </ClCompile>
+    <ClCompile Include="CWaterRegionMesh.cpp">
+      <Filter>场景框架\SceneElement\Water</Filter>
+    </ClCompile>
+    <ClCompile Include="CWaterSurface.cpp">
+      <Filter>场景框架\SceneElement\Water</Filter>
+    </ClCompile>
+    <ClCompile Include="CWaterCoder.cpp">
+      <Filter>场景框架\SceneElement\Water\Coder</Filter>
+    </ClCompile>
+    <ClCompile Include="CTerrain.cpp">
+      <Filter>场景框架\SceneElement\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="CTerrainMgr.cpp">
+      <Filter>场景框架\SceneElement\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="CTerrainCoder.cpp">
+      <Filter>场景框架\SceneElement\Terrain\Coder</Filter>
+    </ClCompile>
+    <ClCompile Include="CSkyBox.cpp">
+      <Filter>场景框架\SceneElement\Sky</Filter>
+    </ClCompile>
+    <ClCompile Include="CSkyMgr.cpp">
+      <Filter>场景框架\SceneElement\Sky</Filter>
+    </ClCompile>
+    <ClCompile Include="CLogicData.cpp">
+      <Filter>场景框架\SceneElement\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="CLogicDataMgr.cpp">
+      <Filter>场景框架\SceneElement\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="CTreeScene.cpp">
+      <Filter>场景框架\SceneElement\场景管理</Filter>
+    </ClCompile>
+    <ClCompile Include="CQuadScene.cpp">
+      <Filter>场景框架\SceneElement\场景管理\四叉树</Filter>
+    </ClCompile>
+    <ClCompile Include="CCameraController.cpp">
+      <Filter>场景框架\Controller\CameraController</Filter>
+    </ClCompile>
+    <ClCompile Include="CCameraPath.cpp">
+      <Filter>场景框架\Controller\CameraController</Filter>
+    </ClCompile>
+    <ClCompile Include="CFPSCameraCtrller.cpp">
+      <Filter>场景框架\Controller\CameraController</Filter>
+    </ClCompile>
+    <ClCompile Include="CFreeCameraCtrller.cpp">
+      <Filter>场景框架\Controller\CameraController</Filter>
+    </ClCompile>
+    <ClCompile Include="CRTSCameraCtrller.cpp">
+      <Filter>场景框架\Controller\CameraController</Filter>
+    </ClCompile>
+    <ClCompile Include="CTPSCameraCtrller.cpp">
+      <Filter>场景框架\Controller\CameraController</Filter>
+    </ClCompile>
+    <ClCompile Include="CModelInst.cpp">
+      <Filter>场景框架\CModelEx</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneConfig.cpp">
+      <Filter>场景框架\Config</Filter>
+    </ClCompile>
+    <ClCompile Include="CBaseScene.cpp">
+      <Filter>场景框架\SceneMain</Filter>
+    </ClCompile>
+    <ClCompile Include="CElementManager.cpp">
+      <Filter>场景框架\SceneMain</Filter>
+    </ClCompile>
+    <ClCompile Include="CRegion.cpp">
+      <Filter>场景框架\SceneMain</Filter>
+    </ClCompile>
+    <ClCompile Include="CEffectAsynFun.cpp">
+      <Filter>场景渲染</Filter>
+    </ClCompile>
+    <ClCompile Include="CEffectPlayer.cpp">
+      <Filter>场景渲染</Filter>
+    </ClCompile>
+    <ClCompile Include="CGuiHandler.cpp">
+      <Filter>场景渲染</Filter>
+    </ClCompile>
+    <ClCompile Include="CLapseDeleteQueue.cpp">
+      <Filter>场景渲染</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderObject.cpp">
+      <Filter>场景渲染</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderObjectAsynFun.cpp">
+      <Filter>场景渲染</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderScene.cpp">
+      <Filter>场景渲染</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderSystem.cpp">
+      <Filter>场景渲染</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneLoadProcess.cpp">
+      <Filter>场景渲染</Filter>
+    </ClCompile>
+    <ClCompile Include="CWater.cpp">
+      <Filter>场景渲染</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjectDialog.cpp">
+      <Filter>场景渲染\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderDialog.cpp">
+      <Filter>场景渲染\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderAudio.cpp">
+      <Filter>场景渲染\SceneObject</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderLight.cpp">
+      <Filter>场景渲染\SceneObject</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderModel.cpp">
+      <Filter>场景渲染\SceneObject</Filter>
+    </ClCompile>
+    <ClCompile Include="CClientSceneQuery.cpp">
+      <Filter>场景渲染\Query</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderRegionEffect.cpp">
+      <Filter>场景渲染\RegionEffect</Filter>
+    </ClCompile>
+    <ClCompile Include="CDataScene.cpp">
+      <Filter>场景数据</Filter>
+    </ClCompile>
+    <ClCompile Include="CBakedColorData.cpp">
+      <Filter>场景数据\DataLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="CMetaRegion.cpp">
+      <Filter>场景数据\DataLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="CMetaStaticData.cpp">
+      <Filter>场景数据\DataLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="CShadowedGrids.cpp">
+      <Filter>场景数据\DataLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="CLogicDataCoder.cpp">
+      <Filter>场景数据\DataLoader\CSceneManagerClient</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneManagerClient.cpp">
+      <Filter>场景数据\DataLoader\CSceneManagerClient</Filter>
+    </ClCompile>
+    <ClCompile Include="CTerrainModelCoder.cpp">
+      <Filter>场景数据\DataLoader\CSceneManagerClient</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneAmpCoder.cpp">
+      <Filter>场景数据\DataLoader\CSceneManagerClient\SceneCoder</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneArgCoder.cpp">
+      <Filter>场景数据\DataLoader\CSceneManagerClient\SceneCoder</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneArsCoder.cpp">
+      <Filter>场景数据\DataLoader\CSceneManagerClient\SceneCoder</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneClientCoder.cpp">
+      <Filter>场景数据\DataLoader\CSceneManagerClient\SceneCoder</Filter>
+    </ClCompile>
+    <ClCompile Include="CDebugText.cpp">
+      <Filter>调试信息</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderDebugFun.cpp">
+      <Filter>调试信息</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneBlockDebug.cpp">
+      <Filter>调试信息</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneBoxDeubg.cpp">
+      <Filter>调试信息</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneGridDeubg.cpp">
+      <Filter>调试信息</Filter>
+    </ClCompile>
+    <ClCompile Include="CFontCfg.cpp">
+      <Filter>多国语言</Filter>
+    </ClCompile>
+    <ClCompile Include="CLangCfg.cpp">
+      <Filter>多国语言</Filter>
+    </ClCompile>
+    <ClCompile Include="CEffectLoader.cpp">
+      <Filter>资源加载</Filter>
+    </ClCompile>
+    <ClCompile Include="CMetaGridMgr.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\sdk\inc\CAsynFunParamsMgr.h">
+      <Filter>场景框架\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCameraConfig.h">
+      <Filter>场景框架\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSceneBase.h">
+      <Filter>场景框架\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSceneClassDefine.h">
+      <Filter>场景框架\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSceneCommon.h">
+      <Filter>场景框架\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSceneDebugHelper.h">
+      <Filter>场景框架\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSceneMallocObject.h">
+      <Filter>场景框架\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>场景框架\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="CEnvMapWaterEffect.h">
+      <Filter>场景框架\SceneElement\Water</Filter>
+    </ClInclude>
+    <ClInclude Include="CTexAniWaterEffect.h">
+      <Filter>场景框架\SceneElement\Water</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CWaterEffect.h">
+      <Filter>场景框架\SceneElement\Water</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CWaterMgr.h">
+      <Filter>场景框架\SceneElement\Water</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CWaterRegion.h">
+      <Filter>场景框架\SceneElement\Water</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CWaterRegionMesh.h">
+      <Filter>场景框架\SceneElement\Water</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CWaterSurface.h">
+      <Filter>场景框架\SceneElement\Water</Filter>
+    </ClInclude>
+    <ClInclude Include="CWaterCoder.h">
+      <Filter>场景框架\SceneElement\Water\Coder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CTerrain.h">
+      <Filter>场景框架\SceneElement\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CTerrainMgr.h">
+      <Filter>场景框架\SceneElement\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="CTerrainCoder.h">
+      <Filter>场景框架\SceneElement\Terrain\Coder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSkyBox.h">
+      <Filter>场景框架\SceneElement\Sky</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSkyMgr.h">
+      <Filter>场景框架\SceneElement\Sky</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CLogicData.h">
+      <Filter>场景框架\SceneElement\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CLogicDataMgr.h">
+      <Filter>场景框架\SceneElement\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CTreeScene.h">
+      <Filter>场景框架\SceneElement\场景管理</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CQuadScene.h">
+      <Filter>场景框架\SceneElement\场景管理\四叉树</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCameraController.h">
+      <Filter>场景框架\Controller\CameraController</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCameraPath.h">
+      <Filter>场景框架\Controller\CameraController</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CFPSCameraCtrller.h">
+      <Filter>场景框架\Controller\CameraController</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CFreeCameraCtrller.h">
+      <Filter>场景框架\Controller\CameraController</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRTSCameraCtrller.h">
+      <Filter>场景框架\Controller\CameraController</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CTPSCameraCtrller.h">
+      <Filter>场景框架\Controller\CameraController</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CModelInst.h">
+      <Filter>场景框架\CModelEx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSceneConfig.h">
+      <Filter>场景框架\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CBaseScene.h">
+      <Filter>场景框架\SceneMain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CElementManager.h">
+      <Filter>场景框架\SceneMain</Filter>
+    </ClInclude>
+    <ClInclude Include="CRegion.h">
+      <Filter>场景框架\SceneMain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSceneQuery.h">
+      <Filter>场景框架\SceneMain</Filter>
+    </ClInclude>
+    <ClInclude Include="CEffectAsynFun.h">
+      <Filter>场景渲染</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CEffectPlayer.h">
+      <Filter>场景渲染</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CGuiHandler.h">
+      <Filter>场景渲染</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CLapseDeleteQueue.h">
+      <Filter>场景渲染</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRenderObject.h">
+      <Filter>场景渲染</Filter>
+    </ClInclude>
+    <ClInclude Include="CRenderObjectAsynFun.h">
+      <Filter>场景渲染</Filter>
+    </ClInclude>
+    <ClInclude Include="CRenderRegion.h">
+      <Filter>场景渲染</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRenderScene.h">
+      <Filter>场景渲染</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRenderSystem.h">
+      <Filter>场景渲染</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneLoadProcess.h">
+      <Filter>场景渲染</Filter>
+    </ClInclude>
+    <ClInclude Include="CWater.h">
+      <Filter>场景渲染</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CObjectDialog.h">
+      <Filter>场景渲染\Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRenderDialog.h">
+      <Filter>场景渲染\Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="CRenderAudio.h">
+      <Filter>场景渲染\SceneObject</Filter>
+    </ClInclude>
+    <ClInclude Include="CRenderLight.h">
+      <Filter>场景渲染\SceneObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRenderModel.h">
+      <Filter>场景渲染\SceneObject</Filter>
+    </ClInclude>
+    <ClInclude Include="CClientSceneQuery.h">
+      <Filter>场景渲染\Query</Filter>
+    </ClInclude>
+    <ClInclude Include="CRenderRegionEffect.h">
+      <Filter>场景渲染\RegionEffect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CDataScene.h">
+      <Filter>场景数据</Filter>
+    </ClInclude>
+    <ClInclude Include="CBakedColorData.h">
+      <Filter>场景数据\DataLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="CMetaGridMgr.h">
+      <Filter>场景数据\DataLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="CMetaRegion.h">
+      <Filter>场景数据\DataLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="CMetaStaticData.h">
+      <Filter>场景数据\DataLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="CShadowedGrids.h">
+      <Filter>场景数据\DataLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\RegionLightParam.h">
+      <Filter>场景数据\DataLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="CLogicDataCoder.h">
+      <Filter>场景数据\DataLoader\CSceneManagerClient</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSceneManagerClient.h">
+      <Filter>场景数据\DataLoader\CSceneManagerClient</Filter>
+    </ClInclude>
+    <ClInclude Include="CTerrainModelCoder.h">
+      <Filter>场景数据\DataLoader\CSceneManagerClient</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneAmpCoder.h">
+      <Filter>场景数据\DataLoader\CSceneManagerClient\SceneCoder</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneArgCoder.h">
+      <Filter>场景数据\DataLoader\CSceneManagerClient\SceneCoder</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneArsCoder.h">
+      <Filter>场景数据\DataLoader\CSceneManagerClient\SceneCoder</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneClientCoder.h">
+      <Filter>场景数据\DataLoader\CSceneManagerClient\SceneCoder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CDebugText.h">
+      <Filter>调试信息</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CRenderDebugFun.h">
+      <Filter>调试信息</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSceneBlockDebug.h">
+      <Filter>调试信息</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSceneBoxDeubg.h">
+      <Filter>调试信息</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSceneGridDeubg.h">
+      <Filter>调试信息</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CFontCfg.h">
+      <Filter>多国语言</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CLangCfg.h">
+      <Filter>多国语言</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CEffectLoader.h">
+      <Filter>资源加载</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

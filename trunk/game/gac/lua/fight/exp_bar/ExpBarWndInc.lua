@@ -1,0 +1,1 @@
+CExpBar	= class( SQRDialog )

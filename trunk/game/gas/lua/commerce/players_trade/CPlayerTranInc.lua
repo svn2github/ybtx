@@ -1,0 +1,1 @@
+CPlayerTran = class()

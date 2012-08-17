@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{EA5681DC-7C25-49E9-B3B4-14F8955F2120}</ProjectGuid>
+    <RootNamespace>CheckConfig</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../../bin/$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../../bin/$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\engine\sdk\inc;..\..\..\engine\include;..\..\..\game\gac_gas\ComGacGas;..\..\..\implib\inc;..\..\..\implib\inc\tinyxml;..\..\..\game\gas\GameGas\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>cppunit.lib;Imm32.lib;ws2_32.lib;libmysql.lib;tinyxml.lib;thinkgear.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\implib\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\engine\sdk\inc;..\..\..\engine\include;..\..\..\game\gac_gas\ComGacGas;..\..\..\implib\inc;..\..\..\implib\inc\tinyxml;..\..\..\game\gas\GameGas\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>cppunit.lib;Imm32.lib;ws2_32.lib;libmysql.lib;tinyxml.lib;thinkgear.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\implib\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="lua\CoreServer.lua" />
+    <None Include="lua\LoadCheckModule.lua" />
+    <None Include="lua\ThreadCoreServer.lua" />
+    <None Include="CCfgColChecker.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CheckSkillCfg.cpp" />
+    <ClCompile Include="CBaseMagicOp.cpp" />
+    <ClCompile Include="CCfgMagicEffCheck.cpp" />
+    <ClCompile Include="CCfgMagicOp.cpp" />
+    <ClCompile Include="CCfgColChecker.cpp" />
+    <ClCompile Include="CCfgRelChecker.cpp" />
+    <ClCompile Include="CCfgSkillBaseCheck.cpp" />
+    <ClCompile Include="CCfgTempVarCheck.cpp" />
+    <ClCompile Include="CCfgAllStateCheck.cpp" />
+    <ClCompile Include="CCfgCumuliTriggerStateCheck.cpp" />
+    <ClCompile Include="CCfgDamageChangeStateCheck.cpp" />
+    <ClCompile Include="CCfgForceNoSaveState.cpp" />
+    <ClCompile Include="CCfgMagicStateCheck.cpp" />
+    <ClCompile Include="CCfgSpecialStateCheck.cpp" />
+    <ClCompile Include="CCfgTriggerStateCheck.cpp" />
+    <ClCompile Include="CCfgAureMagicCheck.cpp" />
+    <ClCompile Include="CCfgBarrierMagicCheck.cpp" />
+    <ClCompile Include="CCfgBattleArrayMagicCheck.cpp" />
+    <ClCompile Include="CCfgBulletMagicCheck.cpp" />
+    <ClCompile Include="CCfgBurstSoulCheck.cpp" />
+    <ClCompile Include="CCfgMoveMagicCheck.cpp" />
+    <ClCompile Include="CCfgPositionMagicCheck.cpp" />
+    <ClCompile Include="CCfgShockWaveMagicCheck.cpp" />
+    <ClCompile Include="CCfgTotemMagicCheck.cpp" />
+    <ClCompile Include="CCfgTransMagicCheck.cpp" />
+    <ClCompile Include="CCfgProcessCheck.cpp" />
+    <ClCompile Include="CCfgNormalAttackCheck.cpp" />
+    <ClCompile Include="CCfgSkillCheck.cpp" />
+    <ClCompile Include="CCfgSkillReplaceCheck.cpp" />
+    <ClCompile Include="CCfgTalentEffCheck.cpp" />
+    <ClCompile Include="CCfgPropertyCheck.cpp" />
+    <ClCompile Include="CCfgNPCAIBaseDataCheck.cpp" />
+    <ClCompile Include="CCfgNPCFighterBaseDataCheck.cpp" />
+    <ClCompile Include="CCfgNPCResCommonCheck.cpp" />
+    <ClCompile Include="CCfgNpcServerBaseData.cpp" />
+    <ClCompile Include="CCfgServantDataCheck.cpp" />
+    <ClCompile Include="CCfgSkillRuleCheck.cpp" />
+    <ClCompile Include="CheckNPCCfg.cpp" />
+    <ClCompile Include="CNpcEnmityTargetFilterDataCheck.cpp" />
+    <ClCompile Include="CCfgBaseCheck.cpp" />
+    <ClCompile Include="CCfgBloodCheck.cpp" />
+    <ClCompile Include="CheckBloodCfg.cpp" />
+    <ClCompile Include="CCustomerCheck.cpp" />
+    <ClCompile Include="CheckConfig.cpp" />
+    <ClCompile Include="CRecordHelp.cpp" />
+    <ClCompile Include="CRecordManager.cpp" />
+    <ClCompile Include="CServerCheck.cpp" />
+    <ClCompile Include="RegistGacShell.cpp" />
+    <ClCompile Include="RegistGasShell.cpp" />
+    <ClCompile Include="RegistShellCommon.cpp" />
+    <ClCompile Include="ScriptMgr.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CheckSkillCfg.h" />
+    <ClInclude Include="CBaseMagicOp.h" />
+    <ClInclude Include="CCfgMagicEffCheck.h" />
+    <ClInclude Include="CCfgMagicOp.h" />
+    <ClInclude Include="CCfgColChecker.h" />
+    <ClInclude Include="CCfgRelChecker.h" />
+    <ClInclude Include="CCfgSkillBaseCheck.h" />
+    <ClInclude Include="CCfgTempVarCheck.h" />
+    <ClInclude Include="CCfgAllStateCheck.h" />
+    <ClInclude Include="CCfgForceNoSaveState.h" />
+    <ClInclude Include="CCfgAllMagicCheck.h" />
+    <ClInclude Include="CCfgProcessCheck.h" />
+    <ClInclude Include="CCfgNormalAttackCheck.h" />
+    <ClInclude Include="CCfgSkillCheck.h" />
+    <ClInclude Include="CCfgSkillReplaceCheck.h" />
+    <ClInclude Include="CCfgTalentEffCheck.h" />
+    <ClInclude Include="CCfgPropertyCheck.h" />
+    <ClInclude Include="CCfgNPCAIBaseDataCheck.h" />
+    <ClInclude Include="CCfgNPCFighterBaseDataCheck.h" />
+    <ClInclude Include="CCfgNPCResCommonCheck.h" />
+    <ClInclude Include="CCfgNpcServerBaseData.h" />
+    <ClInclude Include="CCfgServantDataCheck.h" />
+    <ClInclude Include="CCfgSkillRuleCheck.h" />
+    <ClInclude Include="CheckNPCCfg.h" />
+    <ClInclude Include="CNpcEnmityTargetFilterDataCheck.h" />
+    <ClInclude Include="CCfgBaseCheck.h" />
+    <ClInclude Include="CCfgBloodCheck.h" />
+    <ClInclude Include="CheckBloodCfg.h" />
+    <ClInclude Include="CCustomerCheck.h" />
+    <ClInclude Include="CRecordHelp.h" />
+    <ClInclude Include="CRecordManager.h" />
+    <ClInclude Include="CScriptMgr.h" />
+    <ClInclude Include="CServerCheck.h" />
+    <ClInclude Include="RegistGacShell.h" />
+    <ClInclude Include="RegistGasShell.h" />
+    <ClInclude Include="RegistShellCommon.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\engine\src\Common\Common.vcxproj">
+      <Project>{90036735-3231-45a0-965f-3b5467d34fe3}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\engine\src\CoreCommon\CoreCommon.vcxproj">
+      <Project>{0c39d001-be9a-43b7-a06f-25b2b4159553}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\engine\src\CoreServer\CoreServer.vcxproj">
+      <Project>{3f31176f-c5dc-4d65-8f0f-62f70140673b}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\engine\src\Database\Database.vcxproj">
+      <Project>{f491a293-d068-4d13-a54e-b22e4cd5368c}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\engine\src\Module\Module.vcxproj">
+      <Project>{c347d3b0-2850-4745-b68f-0ab03a51e06c}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\engine\src\Network\Network.vcxproj">
+      <Project>{d691859c-84f0-49af-b80f-9ed712cd45a2}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\engine\src\Script\Script.vcxproj">
+      <Project>{46aead1f-9c4b-4459-bfbd-9aa9b59c11a0}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\engine\src\ShellCommon\ShellCommon.vcxproj">
+      <Project>{009541c9-d37f-4663-aeb0-14bd8671f30a}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\engine\src\ShellServer\ShellServer.vcxproj">
+      <Project>{12ea3bd5-05fc-4899-b7da-e95bdbe26bb5}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\engine\tools\RunModule\RunModule.vcxproj">
+      <Project>{65865bb2-5a1e-47bb-9dc3-2dfbe8dd54c9}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\engine\tools\RunScript\RunScript.vcxproj">
+      <Project>{e24722b6-f3e5-41b6-b870-b7d6fb0c9597}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gac_gas\ComGacGas\ComGacGas.vcxproj">
+      <Project>{67a10648-05f2-434b-943f-aa2b2879f317}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gas\GameGas\GameGas.vcxproj">
+      <Project>{b35ec23c-40dd-4a04-9ae2-812531428d56}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

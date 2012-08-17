@@ -1,0 +1,104 @@
+﻿<shader_config>
+  <!--写到这里可以加快编译速度-->
+  <include_config>
+    <include file="System_Var.inc" />
+    <include file="System_PS_Var.inc" />
+    <include file="Lighting.inc" />
+  </include_config>
+
+  <!--宏ID不能随意改动-->
+  <macro_config>
+    <macro ID = '0'     VS = 'STATIC_VERTEX.macro'  PS=''                     var = 'Static_Input.macro'     />
+    <macro ID = '256'   VS = 'LIGHT_MAP_VS.macro'   PS='LIGHT_MAP_PS.macro'   var = ''                       />
+    <macro ID = '512'   VS = 'SHADOW_MAP_VS.macro'  PS='SHADOW_MAP_PS.macro'  var = ''                       />
+    <macro ID = '1024'  VS = 'SKELETAL_ANI.macro'   PS=''                     var = 'SkeletalAni_Input.macro'/>
+    <macro ID = '2048'  VS = 'VERTEX_ANI.macro'     PS=''                     var = 'VertexAni_Input.macro'  />
+    <macro ID = '4096'  VS = 'INSTTRANS.macro'      PS=''                     var = 'DEFAULTTRANS.macro'     />
+    <macro ID = '8192'  VS = 'PRE_RENDER_LIGHT_VS.macro'  PS=''               var = 'LIGHT_VS.macro'         />
+  </macro_config>
+
+  <!--Group 范围 0~63 -->
+  <!--AutoMacro = 需要的macro ID 相加-->
+  <!--打开Group自动开关 会自动开启需要的功能-->
+
+  <!--Shader ID范围 0~255    -->
+  <!--当Group自动开关关闭 可以通过设定Shader ID + macro ID来手动激活对应功能-->
+  <!--ID   技术ID-->
+  <!--ShaderName 特效文件名-->
+  <!--Type 1: .vs文件； 2： .ps文件； .3：.fx文件-->
+  <!--Entry : ps、vs入口名；或者fx文件中的特效名-->
+  <!--Params : 需要被系统管理的变量声明,用“;”号分割，FX专用，暂时性的-->
+  <group_config>
+    
+    <!--系统VS 自动生成所有功能-->
+    <Group ID ='0' AutoMacro ='16128'>
+      <Shader ID='0'   ShaderName="Object.vs"       Type='1' Entry='VS_Main'/>
+      <Shader ID='0'   ShaderName="Object.ps"       Type='2' Entry='PS_Main'/>
+      <!--空气折射-->
+      <Shader ID='1'   ShaderName="AirRefract.vs"   Type="1" Entry="Air_Refract"/>
+      <Shader ID='3'   ShaderName='Reflect0.vs'     Type='1' Entry='VS_Reflect_0'/>
+      <Shader ID='6'   ShaderName='Reflect1.vs'     Type='1' Entry='VS_Reflect_1'/>
+      <Shader ID='12'  ShaderName='Reflect2.vs'     Type='1' Entry='VS_Reflect_2'/>
+      <Shader ID='24'  ShaderName='Reflect3.vs'     Type='1' Entry='VS_Reflect_3'/>
+      <Shader ID='4'   ShaderName='Sphere0.vs'      Type='1' Entry='VS_Sphere_0'/>
+      <Shader ID='8'   ShaderName='Sphere1.vs'      Type='1' Entry='VS_Sphere_1'/>
+      <Shader ID='16'  ShaderName='Sphere2.vs'      Type='1' Entry='VS_Sphere_2'/>
+      <Shader ID='32'  ShaderName='Sphere3.vs'      Type='1' Entry='VS_Sphere_3'/>
+    </Group>
+    
+    <!--地形Shader 自动生成阴影-->
+    <Group ID ='1' AutoMacro ='768'>
+      <!--地表VS-->
+      <Shader ID = '0'  ShaderName='terrain.vs'     Type='1' Entry='Terrain_VS'/>
+      <!--/无悬崖贴图-->
+      <Shader ID = '1'  ShaderName='terrain.ps'     Type='2' Entry='Terrain_PS'/>
+      <!--/悬崖贴图-->
+      <Shader ID = '2'  ShaderName='terrain_c.ps'   Type='2' Entry='Terrain_PS'/>
+      <!--/无悬崖贴图/LightMap-->
+      <Shader ID = '3'  ShaderName='terrain_l.ps'   Type='2' Entry='Terrain_PS'/>     
+      <!--/悬崖贴图/LightMap-->
+      <Shader ID = '4'  ShaderName='terrain_c_l.ps' Type='2' Entry='Terrain_PS'/>
+	</Group>
+
+    <!--GUI-->
+    <Group ID ='2' AutoMacro ='0'>
+      <Shader ID = '24' ShaderName='gui.ps' Type='2' Entry='Head_PS'/>
+      <Shader ID = '25' ShaderName='gui.ps' Type='2' Entry='SmallMap_PS'/>
+    </Group>
+
+    <Group ID ='3' AutoMacro ='512'>
+      <Shader ID = '1' ShaderName='StoneLight.ps'      Type='2' Entry='StoneLight_MainOne'/>
+      <Shader ID = '2' ShaderName='StoneHighLight.ps'  Type='2' Entry='StoneHighLight_MainOne'/>
+      <Shader ID = '3' ShaderName='CraveGlitter.ps'    Type='2' Entry='CraveGlitter_PS'/>
+    </Group>
+
+    <Group ID ='4' AutoMacro ='0'>
+      <!--文字-->
+      <Shader ID="1"   ShaderName="Font.fx" Type="2" Entry="GdiNormal"/>
+      <Shader ID="2"   ShaderName="Font.fx" Type="2" Entry="NormalPS" />
+      <Shader ID="3"   ShaderName="Font.fx" Type="2" Entry="BoldPS"   />
+      <!--水面Shader-->
+      <!-- Shader ID = "5" ShaderName="WaterReflect.fx" Type="3" Entry="WaterTech" Params="matWVP,eyePos"/ -->
+     	<!-- Shader ID = "6" ShaderName="WaterTexture.fx" Type="3" Entry="WaterTech" Params="matWVP"/ -->
+		  <Shader ID = "5" ShaderName="WaterReflect.vs" Type="1" Entry="WaterVS" />
+     	<Shader ID = "6" ShaderName="WaterReflect.ps" Type="2" Entry="WaterPS" />
+		      
+      <!--全屏泛光用 片段程序 开始-->
+      <!--Shader ID = "10" ShaderName="postprocess.fx" Type="3" Entry="CopyPass"       Params=""/ -->
+      <!--Shader ID = "11" ShaderName="postprocess.fx" Type="3" Entry="BrightPass"     Params=""/ -->
+      <!--Shader ID = "12" ShaderName="postprocess.fx" Type="3" Entry="DownSamplePass" Params=""/ -->
+      <!--Shader ID = "13" ShaderName="postprocess.fx" Type="3" Entry="BlurHPass"      Params=""/ -->
+      <!--Shader ID = "14" ShaderName="postprocess.fx" Type="3" Entry="BlurVPass"      Params=""/ -->
+      <!--Shader ID = "15" ShaderName="postprocess.fx" Type="3" Entry="CombinePass"    Params=""/ -->
+      
+      <Shader ID = "10" ShaderName = "Post_ScreenQuad.vs" 		Type = "1" Entry = "ScreenQuad" />
+      <Shader ID = "11" ShaderName = "Post_Copy.ps" 			Type = "2" Entry = "Copy" />
+      <Shader ID = "12" ShaderName = "Post_DownSample.ps" 		Type = "2" Entry = "DownSample" />
+      <Shader ID = "13" ShaderName = "Post_BrightPass.ps" 		Type = "2" Entry = "Brightpass" />
+      <Shader ID = "14" ShaderName = "Post_VerticalBlur.ps" 	Type = "2" Entry = "VerticalBlur" />
+      <Shader ID = "15" ShaderName = "Post_HorizontalBlur.ps" 	Type = "2" Entry = "HorizontalBlur" />
+      <Shader ID = "16" ShaderName = "Post_Combine.ps" 			Type = "2" Entry = "Combine" />
+
+    </Group>
+  </group_config>
+</shader_config>

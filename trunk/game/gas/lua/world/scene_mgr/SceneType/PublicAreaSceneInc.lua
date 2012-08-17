@@ -1,0 +1,1 @@
+CPublicAreaScene = class(CSceneBase)

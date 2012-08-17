@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Math">
+      <UniqueIdentifier>{e323ee22-f2ad-4794-9494-e33943d516e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MiscHelper">
+      <UniqueIdentifier>{1068025f-c912-455f-a615-5b079bbf4a55}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Math.hpp">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="MathHelper.hpp">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="PreDeclare.hpp">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.hpp">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="atomic.hpp">
+      <Filter>MiscHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="CpuInfo.hpp">
+      <Filter>MiscHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="GenTimer.h">
+      <Filter>MiscHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="thread.hpp">
+      <Filter>MiscHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="types.hpp">
+      <Filter>MiscHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="Util.hpp">
+      <Filter>MiscHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="kdtree.hpp" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CpuInfo.cpp">
+      <Filter>MiscHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="GenTimer.cpp">
+      <Filter>MiscHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="Util.cpp">
+      <Filter>MiscHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="KFontGen.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+  </ItemGroup>
+</Project>

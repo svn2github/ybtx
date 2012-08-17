@@ -1,0 +1,1 @@
+CTongFbMgr = class()

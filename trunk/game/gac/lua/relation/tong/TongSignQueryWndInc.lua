@@ -1,0 +1,2 @@
+--CTongSignQueryWnd = class(SQRDialog)
+--CTongSignQueryShowWnd = class(SQRDialog)

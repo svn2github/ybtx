@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="lua">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="lua\lua">
+      <UniqueIdentifier>{76f78dc7-aa91-4ccf-8bf3-014fc775ba26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lua\lua\c">
+      <UniqueIdentifier>{38f75f65-5db1-47b2-9c7c-0e08b85da74d}</UniqueIdentifier>
+      <Extensions>*.c</Extensions>
+    </Filter>
+    <Filter Include="lua\lua\h">
+      <UniqueIdentifier>{c32f2a3f-4650-4232-979c-6cc15f4434c5}</UniqueIdentifier>
+      <Extensions>*.h</Extensions>
+    </Filter>
+    <Filter Include="lua\profiler">
+      <UniqueIdentifier>{932db8b4-4394-489f-85b2-74f67f3a96d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Debuger">
+      <UniqueIdentifier>{232d1fa0-d93d-4910-9035-8e140c1f3740}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Serial">
+      <UniqueIdentifier>{682271c8-635c-4e8b-9f13-adca77523da4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Test">
+      <UniqueIdentifier>{f59628bb-934d-4191-9415-66a5eff47d85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{c26f8df2-9be0-484f-b805-81a46e9ec6c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Register">
+      <UniqueIdentifier>{067353fc-2c21-4c37-8a1f-548f84fc39b0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="lua\lapi.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lauxlib.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lbaselib.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lcoco.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lcode.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\ldblib.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\ldebug.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\ldo.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\ldump.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lfunc.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lgc.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\linit.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\liolib.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\llex.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lmathlib.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lmem.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\loadlib.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lobject.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lopcodes.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\loslib.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lparser.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lstate.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lstring.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lstrlib.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\ltable.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\ltablib.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\ltm.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lua.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\luac.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lundump.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lvm.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lzio.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\print.c">
+      <Filter>lua\lua\c</Filter>
+    </ClCompile>
+    <ClCompile Include="luaprofiler\clock.cpp">
+      <Filter>lua\profiler</Filter>
+    </ClCompile>
+    <ClCompile Include="luaprofiler\core.cpp">
+      <Filter>lua\profiler</Filter>
+    </ClCompile>
+    <ClCompile Include="luaprofiler\LuaProfiler.cpp">
+      <Filter>lua\profiler</Filter>
+    </ClCompile>
+    <ClCompile Include="luaprofiler\meter.cpp">
+      <Filter>lua\profiler</Filter>
+    </ClCompile>
+    <ClCompile Include="luaprofiler\stack.cpp">
+      <Filter>lua\profiler</Filter>
+    </ClCompile>
+    <ClCompile Include="CScriptDebuger.cpp">
+      <Filter>Debuger</Filter>
+    </ClCompile>
+    <ClCompile Include="CScriptDebugerMgr.cpp">
+      <Filter>Debuger</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptDebugHelper.cpp">
+      <Filter>Debuger</Filter>
+    </ClCompile>
+    <ClCompile Include="CScriptPackSerial.cpp">
+      <Filter>Serial</Filter>
+    </ClCompile>
+    <ClCompile Include="CScriptSerial.cpp">
+      <Filter>Serial</Filter>
+    </ClCompile>
+    <ClCompile Include="CScriptSerialPacker.cpp">
+      <Filter>Serial</Filter>
+    </ClCompile>
+    <ClCompile Include="CScriptSerialUnPacker.cpp">
+      <Filter>Serial</Filter>
+    </ClCompile>
+    <ClCompile Include="CScriptUnPackSerial.cpp">
+      <Filter>Serial</Filter>
+    </ClCompile>
+    <ClCompile Include="TestScriptClass.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="TestScriptType.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="TestSuiteScript.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="CBuf.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="CBufAcr.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="CRunScript.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="CScriptMallocObject.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptCommon.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptCppObj.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptDef.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="CClass.cpp">
+      <Filter>Register</Filter>
+    </ClCompile>
+    <ClCompile Include="CClassCallBack.cpp">
+      <Filter>Register</Filter>
+    </ClCompile>
+    <ClCompile Include="CDataType.cpp">
+      <Filter>Register</Filter>
+    </ClCompile>
+    <ClCompile Include="CScript.cpp">
+      <Filter>Register</Filter>
+    </ClCompile>
+    <ClCompile Include="CScriptData.cpp">
+      <Filter>Register</Filter>
+    </ClCompile>
+    <ClCompile Include="DataAccess.cpp">
+      <Filter>Register</Filter>
+    </ClCompile>
+    <ClCompile Include="DataMake.cpp">
+      <Filter>Register</Filter>
+    </ClCompile>
+    <ClCompile Include="DataPack.cpp">
+      <Filter>Register</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptCoroutine.cpp">
+      <Filter>Register</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptFileComm.cpp">
+      <Filter>Register</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptLog.cpp">
+      <Filter>Register</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptRegComm.cpp">
+      <Filter>Register</Filter>
+    </ClCompile>
+    <ClCompile Include="CCallBackProfiler.cpp">
+      <Filter>lua\profiler</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lua\lapi.h">
+      <Filter>lua\lua\h</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lauxlib.h">
+      <Filter>lua\lua\h</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lcoco.h">
+      <Filter>lua\lua\h</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lcode.h">
+      <Filter>lua\lua\h</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\ldebug.h">
+      <Filter>lua\lua\h</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\ldo.h">
+      <Filter>lua\lua\h</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lfunc.h">
+      <Filter>lua\lua\h</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lgc.h">
+      <Filter>lua\lua\h</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\llex.h">
+      <Filter>lua\lua\h</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\llimits.h">
+      <Filter>lua\lua\h</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lmem.h">
+      <Filter>lua\lua\h</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lobject.h">
+      <Filter>lua\lua\h</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lopcodes.h">
+      <Filter>lua\lua\h</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lparser.h">
+      <Filter>lua\lua\h</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lstate.h">
+      <Filter>lua\lua\h</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lstring.h">
+      <Filter>lua\lua\h</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\ltable.h">
+      <Filter>lua\lua\h</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\ltm.h">
+      <Filter>lua\lua\h</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lua.h">
+      <Filter>lua\lua\h</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\luaconf.h">
+      <Filter>lua\lua\h</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lualib.h">
+      <Filter>lua\lua\h</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lundump.h">
+      <Filter>lua\lua\h</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lvm.h">
+      <Filter>lua\lua\h</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lzio.h">
+      <Filter>lua\lua\h</Filter>
+    </ClInclude>
+    <ClInclude Include="luaprofiler\clock.h">
+      <Filter>lua\profiler</Filter>
+    </ClInclude>
+    <ClInclude Include="luaprofiler\core.h">
+      <Filter>lua\profiler</Filter>
+    </ClInclude>
+    <ClInclude Include="luaprofiler\GlobalState.h">
+      <Filter>lua\profiler</Filter>
+    </ClInclude>
+    <ClInclude Include="luaprofiler\LuaProfiler.h">
+      <Filter>lua\profiler</Filter>
+    </ClInclude>
+    <ClInclude Include="luaprofiler\meter.h">
+      <Filter>lua\profiler</Filter>
+    </ClInclude>
+    <ClInclude Include="luaprofiler\stack.h">
+      <Filter>lua\profiler</Filter>
+    </ClInclude>
+    <ClInclude Include="CScriptDebuger.h">
+      <Filter>Debuger</Filter>
+    </ClInclude>
+    <ClInclude Include="CScriptDebugerMgr.h">
+      <Filter>Debuger</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptDebugHelper.h">
+      <Filter>Debuger</Filter>
+    </ClInclude>
+    <ClInclude Include="CScriptPackSerial.h">
+      <Filter>Serial</Filter>
+    </ClInclude>
+    <ClInclude Include="CScriptSerial.h">
+      <Filter>Serial</Filter>
+    </ClInclude>
+    <ClInclude Include="CScriptSerialPacker.h">
+      <Filter>Serial</Filter>
+    </ClInclude>
+    <ClInclude Include="CScriptSerialUnPacker.h">
+      <Filter>Serial</Filter>
+    </ClInclude>
+    <ClInclude Include="CScriptUnPackSerial.h">
+      <Filter>Serial</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ScriptTest.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="TestScriptClass.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="TestScriptType.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="TestSuiteScript.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CallBackHelper.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="CBuf.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="CBufAcr.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="CRunScript.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CScriptAllocator.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CScriptMallocObject.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptCommon.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptCppObj.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\ScriptDef.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\ScriptHelper.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptKey.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TFuncCallHelper.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TScriptRefPtr.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="CBaseType.h">
+      <Filter>Register</Filter>
+    </ClInclude>
+    <ClInclude Include="CClass.h">
+      <Filter>Register</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CClassCallBack.h">
+      <Filter>Register</Filter>
+    </ClInclude>
+    <ClInclude Include="CDataType.h">
+      <Filter>Register</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CScript.h">
+      <Filter>Register</Filter>
+    </ClInclude>
+    <ClInclude Include="CScriptData.h">
+      <Filter>Register</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CScriptProc.h">
+      <Filter>Register</Filter>
+    </ClInclude>
+    <ClInclude Include="DataAccess.h">
+      <Filter>Register</Filter>
+    </ClInclude>
+    <ClInclude Include="DataMake.h">
+      <Filter>Register</Filter>
+    </ClInclude>
+    <ClInclude Include="DataPack.h">
+      <Filter>Register</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptCallBaseData.h">
+      <Filter>Register</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptCoroutine.h">
+      <Filter>Register</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptFileComm.h">
+      <Filter>Register</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptLog.h">
+      <Filter>Register</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptRegComm.h">
+      <Filter>Register</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\ScriptX.h">
+      <Filter>Register</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TFuncCall.h">
+      <Filter>Register</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TFuncCallCheck.h">
+      <Filter>Register</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TFuncCallDispatcher.h">
+      <Filter>Register</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCallBackProfiler.h">
+      <Filter>lua\profiler</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\sdk\inc\CClassCallBack.inl">
+      <Filter>Register</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\CScript.inl">
+      <Filter>Register</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\TFuncCall.inl">
+      <Filter>Register</Filter>
+    </None>
+  </ItemGroup>
+</Project>

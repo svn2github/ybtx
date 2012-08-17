@@ -1,0 +1,3 @@
+float3 position = i.pos0*Weight[0] + i.pos1*Weight[1]; \
+float3 normal = i.normal0*Weight[0] + i.normal1*Weight[1];
+

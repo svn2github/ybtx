@@ -1,0 +1,1 @@
+CNpcBornPointMgr = class()

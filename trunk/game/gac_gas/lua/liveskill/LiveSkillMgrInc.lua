@@ -1,0 +1,1 @@
+CLiveSkillMgr = class()

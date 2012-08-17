@@ -1,0 +1,13 @@
+
+readonly CombineLogFile="CombineServer.log"
+readonly MysqlHost="127.0.0.1"
+readonly MysqlUser="root"
+readonly MysqlPasswd="1"
+readonly EtcDir="./"
+readonly MysqldumpDir="/usr/bin"
+readonly CombineDB="ybtx"
+readonly CombineLogDB=${CombineDB}_log
+readonly MediDatabase="medi_database"
+readonly AllTables="AllTables.txt"
+readonly AllLogTables="AllLogTables.txt"
+

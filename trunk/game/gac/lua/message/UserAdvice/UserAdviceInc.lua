@@ -1,0 +1,1 @@
+CUserAdviceWnd = class( SQRDialog )

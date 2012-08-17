@@ -1,0 +1,1 @@
+CTongMgr = class()

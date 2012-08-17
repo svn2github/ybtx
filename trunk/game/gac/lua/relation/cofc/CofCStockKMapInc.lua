@@ -1,0 +1,1 @@
+CCofCStockKMapWnd	=	class(SQRDialog)

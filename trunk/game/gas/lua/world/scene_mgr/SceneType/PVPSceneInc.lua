@@ -1,0 +1,1 @@
+CPVPScene = class(CSceneBase)

@@ -1,0 +1,1 @@
+CLearnedSkillShowWnd = class(SQRDialog)

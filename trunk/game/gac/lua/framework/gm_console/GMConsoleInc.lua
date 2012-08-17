@@ -1,0 +1,1 @@
+GMConsole = class( SQRDialog )

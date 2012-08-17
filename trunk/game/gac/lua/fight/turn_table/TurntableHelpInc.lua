@@ -1,0 +1,2 @@
+
+turntablehelpWnd = class( SQRDialog )

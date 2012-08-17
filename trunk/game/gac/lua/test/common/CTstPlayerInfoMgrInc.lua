@@ -1,0 +1,1 @@
+CTstPlayerInfoMgr = class()

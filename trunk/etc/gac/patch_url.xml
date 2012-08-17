@@ -1,0 +1,25 @@
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<dl>
+	<config>
+		<bt>0</bt>
+		<first>1</first>
+		<bt_to>120</bt_to>
+		<http_to>50</http_to>
+		<http_ts>3</http_ts>
+	</config>
+	<cuc>
+		<url1>http://10.10.43.138/patch</url1>
+		<url2>http://10.10.43.142/patch</url2>
+	</cuc>
+	<telcom>
+		<url1>http://10.10.43.138/patch</url1>
+		<url2>http://10.10.43.142/patch</url2>
+		<url3>http://10.10.43.43/patch</url3>
+	</telcom>
+	<seed>
+		<url1>cnccd1.linekong.cn/xy/</url1>
+		<url2>cnccd2.linekong.cn/xy/</url2>
+	</seed>
+</dl>
+

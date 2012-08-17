@@ -1,0 +1,1 @@
+CTongChallengeStatisticsWnd = class(SQRDialog, CTongBase)

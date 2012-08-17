@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Public">
+      <UniqueIdentifier>{b98ab8f8-1774-4596-b546-5584411aa821}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private">
+      <UniqueIdentifier>{606cd90a-e053-406c-9264-6ac522cc8389}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\RenderAdapter">
+      <UniqueIdentifier>{1ce3b448-13b0-48ee-8163-7515348a222c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\sdk\inc\SQRYYCtrl.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Private</Filter>
+    </ClInclude>
+    <ClInclude Include="CDx9YYAdapter.h">
+      <Filter>Private\RenderAdapter</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SQRYYCtrl.cpp">
+      <Filter>Private</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Private</Filter>
+    </ClCompile>
+    <ClCompile Include="CDx9YYAdapter.cpp">
+      <Filter>Private\RenderAdapter</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

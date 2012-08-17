@@ -1,0 +1,1 @@
+CBuildingMgr = class()

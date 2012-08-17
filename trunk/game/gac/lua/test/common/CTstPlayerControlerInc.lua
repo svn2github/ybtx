@@ -1,0 +1,1 @@
+CTstPlayerControler = class()

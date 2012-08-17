@@ -1,0 +1,1 @@
+CTrapServerMgr = class()

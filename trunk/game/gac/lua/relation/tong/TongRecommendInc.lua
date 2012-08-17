@@ -1,0 +1,1 @@
+CTongRecommendWnd  = class(SQRDialog, CTongBase)

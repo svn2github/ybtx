@@ -1,0 +1,1538 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="EditClass">
+      <UniqueIdentifier>{068efb8a-76f8-4a91-ba5b-c0a60380b2ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditClass\FileCode">
+      <UniqueIdentifier>{7cff143a-57c9-456f-abb5-66fab8b5d530}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditClass\FileCode\EditFormat">
+      <UniqueIdentifier>{d36d6a4c-f112-403f-9eaa-e9aa54c19c4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditClass\EditEffect">
+      <UniqueIdentifier>{36a841cd-080c-4370-9402-0ac1be42cae7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditClass\EditEffect\Header Files">
+      <UniqueIdentifier>{2eedf7f0-ac5f-4d4f-8b4b-16874c8aac48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditClass\EditEffect\Source Files">
+      <UniqueIdentifier>{77717f16-51d1-46b0-a64a-372cd6813a1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditClass\EditScene">
+      <UniqueIdentifier>{15c015ae-05ee-45b4-82ff-5fadf0048796}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditClass\EditScene\EditTerrain">
+      <UniqueIdentifier>{be033741-89c2-4505-9581-d9dab6946cc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditClass\EditScene\EditWater">
+      <UniqueIdentifier>{8aec2e4f-dd71-4a64-9e65-de174c2de486}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditClass\EditScene\EditSky">
+      <UniqueIdentifier>{cd43a7b9-943d-4eac-bd21-69db34ffc00f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditClass\EditScene\EditLogic">
+      <UniqueIdentifier>{e7fc1fcd-4a2a-4812-ad5b-a2571a8e788a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditClass\EditScene\EditDebug">
+      <UniqueIdentifier>{f7e3abb0-916e-47d2-9165-3f03fb4bcd64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditClass\EditScene\SceneCoder">
+      <UniqueIdentifier>{7aa6277c-9b9d-45af-b850-942b0e94b137}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditClass\EditScene\SceneCoder\coder">
+      <UniqueIdentifier>{d261c2b7-f37e-44e5-a59f-3b140731632b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditClass\EditScene\SceneCoder\ybtx_gac_coder">
+      <UniqueIdentifier>{2244531e-be67-476d-8012-8672fae1c9ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditClass\EditScene\SceneCoder\ybtx_gac_coder\ybtx_mapeditor_coder">
+      <UniqueIdentifier>{fa09caf0-70c0-4006-b60f-fcf7c8549ac6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditClass\EditGraphic">
+      <UniqueIdentifier>{e29b6aeb-fce4-4985-b8b4-8a983e9843f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditClass\Camera">
+      <UniqueIdentifier>{a3a409ee-e4c0-404f-802b-3b170435fe96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UtilityClass">
+      <UniqueIdentifier>{cd7dfae8-519b-496a-ada2-40d620734b2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UtilityClass\CurvePatch">
+      <UniqueIdentifier>{fd54e468-866c-49ac-af99-f61bff271663}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UtilityClass\CurvePatch\CoordinateAxis">
+      <UniqueIdentifier>{27af1229-a2ed-4f8c-8d3c-3a78a0218c98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UtilityClass\CurvePatch\BezierCurve">
+      <UniqueIdentifier>{df22a907-03d2-4e13-b02a-0c3aceb60fd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UtilityClass\CurvePatch\BezierPatch">
+      <UniqueIdentifier>{2b851e54-b8da-4304-9bc5-5767cddd9c18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UtilityClass\CurvePatch\BezierControlPoint">
+      <UniqueIdentifier>{1841c533-5935-465d-b327-2efa9e38ee44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UtilityClass\CurvePatch\CurveRender">
+      <UniqueIdentifier>{f90dc30a-84f5-4729-91f1-e75dac47b9af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UtilityClass\CFileProcessMgr">
+      <UniqueIdentifier>{b2786ebd-c15c-46ab-a430-4fa5d1553bf6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UtilityClass\CFileProcessMgr\Processer">
+      <UniqueIdentifier>{e4876ff0-ac5b-43b7-8924-dca1744c630e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UtilityClass\Line">
+      <UniqueIdentifier>{c3ee27aa-1bed-4048-92c4-ba28df442755}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UtilityClass\Line\Dashed">
+      <UniqueIdentifier>{f6d7a0c7-7188-4a33-8154-8745e14631f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UtilityClass\Circle">
+      <UniqueIdentifier>{a614c725-9b7b-4b6d-a4d1-45fb42550649}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controller">
+      <UniqueIdentifier>{3eb54dfc-9be3-481a-8f13-09f1e0561fc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Exp">
+      <UniqueIdentifier>{068e618d-bd5d-4fe4-90eb-032b5f559d6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp">
+      <UniqueIdentifier>{2c970952-c168-48c2-8870-8a49e7fd29bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\PathManager">
+      <UniqueIdentifier>{ae25b5b5-21fa-4e4f-a6d8-feb970ffa183}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\PathManager\LogImp">
+      <UniqueIdentifier>{2143b784-c120-4e07-be09-975be3140771}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\VideoSettingCtrl">
+      <UniqueIdentifier>{fee49e98-6da1-4e37-b703-76e523491e30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\SceneStateCtrl">
+      <UniqueIdentifier>{b4fe7e56-c27b-45b8-b8db-5b8a27ea4f5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\ReadPkgCtrl">
+      <UniqueIdentifier>{d4e9fca0-a54e-4a82-b563-32e2c88efde5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\FileProcess">
+      <UniqueIdentifier>{14bdfa5e-02b9-46cc-83d9-4b8636bb017b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\ProgressCtrl">
+      <UniqueIdentifier>{e3d7831f-14b1-4725-9d43-a7f868efec39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\GroundSetting">
+      <UniqueIdentifier>{ca80faa4-df98-4897-ba53-a2558945adcb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\KeyFrame">
+      <UniqueIdentifier>{93286c03-c74a-451b-a259-89c2731fee57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\FrameScale">
+      <UniqueIdentifier>{b5906602-69ce-49a2-a14c-918e324346d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\FogParameter">
+      <UniqueIdentifier>{acc423be-765a-4cc5-bf8b-63675f26c904}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\LightParameter">
+      <UniqueIdentifier>{5024ade2-ed96-4478-ad5d-c39294134679}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\HDR">
+      <UniqueIdentifier>{28232b14-4190-4376-b4fd-cdc94172d6f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\PickColor">
+      <UniqueIdentifier>{98a78490-6656-4fb0-b3ef-f2dfbc5b3ab3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\CoreView">
+      <UniqueIdentifier>{e2d4eeab-5a5f-4a60-b417-9116431a8e4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\未分类">
+      <UniqueIdentifier>{e9025781-7c22-44f3-8904-f1a497a92351}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\EffectImp">
+      <UniqueIdentifier>{794ce15e-e11b-4de9-a2ad-ad9198f4c9b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\EffectImp\EfxFileCtrl">
+      <UniqueIdentifier>{77ab0336-2118-480b-b18c-0fe2c1bd341f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\EffectImp\EfxHelper">
+      <UniqueIdentifier>{299c08fa-7aa9-4d04-9c98-11bd55da143f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\EffectImp\EfxEditPropCtrl">
+      <UniqueIdentifier>{3924b06c-d4e1-4128-8114-4c1d2528d0e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\EffectImp\EfxTrack">
+      <UniqueIdentifier>{abe51493-426b-423b-b277-734c94fe82af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\EffectImp\EfxKeyUint">
+      <UniqueIdentifier>{4e772b61-dd79-4934-8202-0bcbd6ec885f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\PortraitView">
+      <UniqueIdentifier>{1751bd0c-08f7-4d31-9491-d4f4ef2bcfeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\PieceUnitEditCtrl">
+      <UniqueIdentifier>{bc2e8be4-4dd0-438e-8a74-31f02cf7b874}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\AnimationGroupEditCtrl">
+      <UniqueIdentifier>{b4f18fa0-4897-4985-b0bb-68bf97ae2ca7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\PieceGroupEditCtrl">
+      <UniqueIdentifier>{446ef282-d8e7-4535-bd26-83c244581697}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\BoundingBoxProp">
+      <UniqueIdentifier>{1d261b24-4b2e-4216-9056-0ae098f42c73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\SkeletonEditCtrl">
+      <UniqueIdentifier>{120ef3a3-d25a-4525-b9fd-9d72d3d7e8e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\AutoPropToCtrl">
+      <UniqueIdentifier>{65b49598-00ac-4cf1-9776-feb6f169cb22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\AutoPropToCtrl\Element">
+      <UniqueIdentifier>{8f472d86-d398-4173-8be8-9b8d587c6a13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\BoneList">
+      <UniqueIdentifier>{ec6ae2cf-bdda-4332-965e-e72a71ae63da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\LightView">
+      <UniqueIdentifier>{83014ce4-b677-490a-8570-651e6fee0fb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\Color">
+      <UniqueIdentifier>{5d5cd7cf-5d54-4d24-a98d-62675966d7b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\BoneBoxList">
+      <UniqueIdentifier>{cfd39823-2afa-4dee-ad7f-7ff4cf4728cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\BoneBoxEdit">
+      <UniqueIdentifier>{02584e83-a235-4968-b77d-c3ba34e0998d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\ColorAnimCtrl">
+      <UniqueIdentifier>{413e5d98-4eb7-4e71-a4a4-fc50db9fc433}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\ColorAnimCtrl\ColorAnimTypes">
+      <UniqueIdentifier>{f7cc4f11-dfa5-4050-8f91-7b66a548df85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditCtrlImp\PropCtrl">
+      <UniqueIdentifier>{4d9a3909-78e1-4085-bc60-bac869012ba0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Config">
+      <UniqueIdentifier>{b7acafa8-daf5-4ea7-bfaa-e6bedf0b85a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork">
+      <UniqueIdentifier>{ade5bac7-a3c4-421a-aeba-b523bf16386d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\MSG">
+      <UniqueIdentifier>{7ccb81aa-7f42-409a-9024-717bcea8519c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditGuiMgr">
+      <UniqueIdentifier>{9dfd4d71-ca43-4b9f-a66e-9613d5acb452}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ComCtrl">
+      <UniqueIdentifier>{b0ddab82-d141-4460-b812-2165107ec0f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ComCtrl\ContextCtrl">
+      <UniqueIdentifier>{bee20c79-ea44-4ef8-b46c-c4d2c694421e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ComCtrl\CameraCtrl">
+      <UniqueIdentifier>{dab0bdae-c135-4792-9fe0-75232160d074}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapEditor">
+      <UniqueIdentifier>{31721f8f-9865-48ed-9a43-69961a4afe28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapEditor\RecordCtrl">
+      <UniqueIdentifier>{25863ce9-c30d-42c8-9334-d9a9a07a8f5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapEditor\GridCtrl">
+      <UniqueIdentifier>{d77ca2db-d670-49c0-a91c-64fe262b3544}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapEditor\TileView">
+      <UniqueIdentifier>{8ee1ef66-7e0e-4e79-8e09-9337e1190739}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapEditor\TextureView">
+      <UniqueIdentifier>{ba358122-df28-4cb0-9680-6340d03904ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapEditor\SetView">
+      <UniqueIdentifier>{f2bb5538-bd77-4ea4-a917-97033a70b585}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapEditor\MapEffectCtrl">
+      <UniqueIdentifier>{95c1a889-20f5-43e4-b4ac-86aab9455e29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapEditor\BlockView">
+      <UniqueIdentifier>{1fa7b215-0eb6-4f36-b494-e5c893a097b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapEditor\AudioView">
+      <UniqueIdentifier>{7ddfb360-0d4c-41e8-b2e7-2530b3186a6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapEditor\AudioView\CueList">
+      <UniqueIdentifier>{6262a747-4f40-461e-8038-c65f3aca511e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapEditor\AudioView\AmbientAudio">
+      <UniqueIdentifier>{527e8186-925c-43e8-856d-a617f823cb40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Brush">
+      <UniqueIdentifier>{5b2403de-03f1-46e3-a6dc-511017237ca9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Brush\Draw">
+      <UniqueIdentifier>{33b6be82-657a-4641-a0e2-e0314764dce5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Brush\Pick">
+      <UniqueIdentifier>{02517266-2641-45b3-9230-4f58037a0d93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Brush\Texture">
+      <UniqueIdentifier>{e93443d7-51ac-4bfd-92cb-798845c0b4d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Brush\Block">
+      <UniqueIdentifier>{dcb1b807-6d68-416d-bc1f-85c9a3d3d3ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Brush\Grid">
+      <UniqueIdentifier>{275c9666-7d9a-4464-9c1d-d5edc5be43af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Brush\Effect">
+      <UniqueIdentifier>{169c98ca-6bcb-4552-98ec-2bdfeb9d4a7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Brush\Light">
+      <UniqueIdentifier>{716badd7-1978-46cf-90fd-fcd843db12d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Brush\Model">
+      <UniqueIdentifier>{31a191f1-aaa6-4bdb-87a2-c593b38d480f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Prop">
+      <UniqueIdentifier>{bb158d02-0885-4df0-99c6-5c6641ea01e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Command">
+      <UniqueIdentifier>{aa9b0cd3-dae9-487a-8ef9-28db4e488ebd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Command\TerrainCmd">
+      <UniqueIdentifier>{3dab8413-2d1f-4f54-9ac6-fcd476198a53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Command\WaterCmd">
+      <UniqueIdentifier>{6974f390-ff4d-4ed4-b078-423d34aa7d3e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CEditObserver.cpp">
+      <Filter>EditClass</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditorCore.cpp">
+      <Filter>EditClass</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditSubject.cpp">
+      <Filter>EditClass</Filter>
+    </ClCompile>
+    <ClCompile Include="CDemoCoder.cpp">
+      <Filter>EditClass\FileCode</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditModCoder.cpp">
+      <Filter>EditClass\FileCode</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditFormatBase.cpp">
+      <Filter>EditClass\FileCode\EditFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditModFormat.cpp">
+      <Filter>EditClass\FileCode\EditFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditRsFormat.cpp">
+      <Filter>EditClass\FileCode\EditFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditTexFormat.cpp">
+      <Filter>EditClass\FileCode\EditFormat</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditCameraFilter.cpp">
+      <Filter>EditClass\EditEffect\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditCameraShake.cpp">
+      <Filter>EditClass\EditEffect\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditCombination.cpp">
+      <Filter>EditClass\EditEffect\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditDynamicLight.cpp">
+      <Filter>EditClass\EditEffect\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditEffect.cpp">
+      <Filter>EditClass\EditEffect\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditEffectGroup.cpp">
+      <Filter>EditClass\EditEffect\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditEffectManager.cpp">
+      <Filter>EditClass\EditEffect\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditEffectProp.cpp">
+      <Filter>EditClass\EditEffect\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditEffectTrack.cpp">
+      <Filter>EditClass\EditEffect\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditFlareSprite.cpp">
+      <Filter>EditClass\EditEffect\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditLeading.cpp">
+      <Filter>EditClass\EditEffect\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditLighting.cpp">
+      <Filter>EditClass\EditEffect\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditModelConsole.cpp">
+      <Filter>EditClass\EditEffect\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditModelRenderStyle.cpp">
+      <Filter>EditClass\EditEffect\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditNull.cpp">
+      <Filter>EditClass\EditEffect\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditParticleSystem.cpp">
+      <Filter>EditClass\EditEffect\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditPolyTrail.cpp">
+      <Filter>EditClass\EditEffect\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditShake.cpp">
+      <Filter>EditClass\EditEffect\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditSprite.cpp">
+      <Filter>EditClass\EditEffect\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditTDimAudio.cpp">
+      <Filter>EditClass\EditEffect\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditUnitPropHelp.cpp">
+      <Filter>EditClass\EditEffect\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\CEditDataScene.cpp">
+      <Filter>EditClass\EditScene</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditTreeScene.cpp">
+      <Filter>EditClass\EditScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\CEditTerrainMgr.cpp">
+      <Filter>EditClass\EditScene\EditTerrain</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditTerrainNode.cpp">
+      <Filter>EditClass\EditScene\EditTerrain</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\CEditWaterMgr.cpp">
+      <Filter>EditClass\EditScene\EditWater</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\CEditSkyMgr.cpp">
+      <Filter>EditClass\EditScene\EditSky</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\CEditLogicData.cpp">
+      <Filter>EditClass\EditScene\EditLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\CEditLogicDataMgr.cpp">
+      <Filter>EditClass\EditScene\EditLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\CEditBlockDebugNode.cpp">
+      <Filter>EditClass\EditScene\EditDebug</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneCoder\ybtx_gac_coder\ybtx_gac_coder.cpp">
+      <Filter>EditClass\EditScene\SceneCoder\ybtx_gac_coder</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditAnimate.cpp">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditAnimationsRes.cpp">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditDataSources.cpp">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditInfo.cpp">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditMesh.cpp">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditModel.cpp">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditNullTexture.cpp">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditPieceGroup.cpp">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditPixelFillEffectPass.cpp">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditPostProcessManager.cpp">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditRenderPipeline.cpp">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditRenderStyle.cpp">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditSkeletal.cpp">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditSkeletalsMgr.cpp">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditTexture.cpp">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraCtrl\CFPSCamDelegate.cpp">
+      <Filter>EditClass\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraCtrl\CFREECamDelegate.cpp">
+      <Filter>EditClass\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraCtrl\CRecordCamDelegate.cpp">
+      <Filter>EditClass\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraCtrl\CRTSCamDelegate.cpp">
+      <Filter>EditClass\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraCtrl\CTPSCamDelegate.cpp">
+      <Filter>EditClass\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="CLODBuilder.cpp">
+      <Filter>UtilityClass</Filter>
+    </ClCompile>
+    <ClCompile Include="IBReBuilder.cpp">
+      <Filter>UtilityClass</Filter>
+    </ClCompile>
+    <ClCompile Include="LightSettingHandler.cpp">
+      <Filter>UtilityClass</Filter>
+    </ClCompile>
+    <ClCompile Include="CurvePatch\CoordinateAxis.cpp">
+      <Filter>UtilityClass\CurvePatch\CoordinateAxis</Filter>
+    </ClCompile>
+    <ClCompile Include="CurvePatch\CEditBezierCurve.cpp">
+      <Filter>UtilityClass\CurvePatch\BezierCurve</Filter>
+    </ClCompile>
+    <ClCompile Include="CurvePatch\CEditBezierPatch.cpp">
+      <Filter>UtilityClass\CurvePatch\BezierPatch</Filter>
+    </ClCompile>
+    <ClCompile Include="CurvePatch\BezierControlPoint.cpp">
+      <Filter>UtilityClass\CurvePatch\BezierControlPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="CurvePatch\CEditCurveRender.cpp">
+      <Filter>UtilityClass\CurvePatch\CurveRender</Filter>
+    </ClCompile>
+    <ClCompile Include="CFileProcessMgr\CFileProcessMgr.cpp">
+      <Filter>UtilityClass\CFileProcessMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CFileProcessMgr\CTaskProcess.cpp">
+      <Filter>UtilityClass\CFileProcessMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CFileProcessMgr\CAgpFileProcesser.cpp">
+      <Filter>UtilityClass\CFileProcessMgr\Processer</Filter>
+    </ClCompile>
+    <ClCompile Include="CFileProcessMgr\CFxFileProcesser.cpp">
+      <Filter>UtilityClass\CFileProcessMgr\Processer</Filter>
+    </ClCompile>
+    <ClCompile Include="CFileProcessMgr\CModFileProcesser.cpp">
+      <Filter>UtilityClass\CFileProcessMgr\Processer</Filter>
+    </ClCompile>
+    <ClCompile Include="CFileProcessMgr\CRsFileProcesser.cpp">
+      <Filter>UtilityClass\CFileProcessMgr\Processer</Filter>
+    </ClCompile>
+    <ClCompile Include="CFileProcessMgr\CSkeFileProcesser.cpp">
+      <Filter>UtilityClass\CFileProcessMgr\Processer</Filter>
+    </ClCompile>
+    <ClCompile Include="Line\CEditLine.cpp">
+      <Filter>UtilityClass\Line</Filter>
+    </ClCompile>
+    <ClCompile Include="Line\CEditDashed.cpp">
+      <Filter>UtilityClass\Line\Dashed</Filter>
+    </ClCompile>
+    <ClCompile Include="Line\CEditDirctionLine.cpp">
+      <Filter>UtilityClass\Line\Dashed</Filter>
+    </ClCompile>
+    <ClCompile Include="Circle\CEditCircle.cpp">
+      <Filter>UtilityClass\Circle</Filter>
+    </ClCompile>
+    <ClCompile Include="CTargetController.cpp">
+      <Filter>Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorExpMgr.cpp">
+      <Filter>Exp</Filter>
+    </ClCompile>
+    <ClCompile Include="CCtrlBase.cpp">
+      <Filter>EditCtrlImp</Filter>
+    </ClCompile>
+    <ClCompile Include="CCtrlBaseObserver.cpp">
+      <Filter>EditCtrlImp</Filter>
+    </ClCompile>
+    <ClCompile Include="CCtrlImpFactory.cpp">
+      <Filter>EditCtrlImp</Filter>
+    </ClCompile>
+    <ClCompile Include="PathManager\CPathManager.cpp">
+      <Filter>EditCtrlImp\PathManager</Filter>
+    </ClCompile>
+    <ClCompile Include="LogImp\CLogImp.cpp">
+      <Filter>EditCtrlImp\PathManager\LogImp</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoSettingImp\CVideoSettingImp.cpp">
+      <Filter>EditCtrlImp\VideoSettingCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneStateImp\CSceneStateImp.cpp">
+      <Filter>EditCtrlImp\SceneStateCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadPkgCtrl\ReadPkgCtrlImp.cpp">
+      <Filter>EditCtrlImp\ReadPkgCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="FileProcessCtrl\FileProcessCtrlImp.cpp">
+      <Filter>EditCtrlImp\FileProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgressCtrl\CProgressCtrlImp.cpp">
+      <Filter>EditCtrlImp\ProgressCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="GroundSpeedCtrl\CGridNode.cpp">
+      <Filter>EditCtrlImp\GroundSetting</Filter>
+    </ClCompile>
+    <ClCompile Include="GroundSpeedCtrl\CGroundSettingCtrlImp.cpp">
+      <Filter>EditCtrlImp\GroundSetting</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyFrameCtrl\CKeyFrameCtrlImp.cpp">
+      <Filter>EditCtrlImp\KeyFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameScaleCtrl\CFrameScaleCtrlImp.cpp">
+      <Filter>EditCtrlImp\FrameScale</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameScaleCtrl\CFrameScaleDelegate.cpp">
+      <Filter>EditCtrlImp\FrameScale</Filter>
+    </ClCompile>
+    <ClCompile Include="FogParameterCtrl\CFogParameterCtrlImp.cpp">
+      <Filter>EditCtrlImp\FogParameter</Filter>
+    </ClCompile>
+    <ClCompile Include="LightParameterCtrl\CLightParameterCtrlImp.cpp">
+      <Filter>EditCtrlImp\LightParameter</Filter>
+    </ClCompile>
+    <ClCompile Include="HDRSettingCtrl\CHDRSettingCtrlImp.cpp">
+      <Filter>EditCtrlImp\HDR</Filter>
+    </ClCompile>
+    <ClCompile Include="PickColorCtrl\PowerColorPickerImp.cpp">
+      <Filter>EditCtrlImp\PickColor</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreViewImp.cpp">
+      <Filter>EditCtrlImp\CoreView</Filter>
+    </ClCompile>
+    <ClCompile Include="IModelViewHelp.cpp">
+      <Filter>EditCtrlImp\未分类</Filter>
+    </ClCompile>
+    <ClCompile Include="CEfxFileCtrlImp.cpp">
+      <Filter>EditCtrlImp\EffectImp\EfxFileCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="CAutoSearchFile.cpp">
+      <Filter>EditCtrlImp\EffectImp\EfxHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="CEfxEditPropImp.cpp">
+      <Filter>EditCtrlImp\EffectImp\EfxEditPropCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="CEfxTrackCtrlImp.cpp">
+      <Filter>EditCtrlImp\EffectImp\EfxTrack</Filter>
+    </ClCompile>
+    <ClCompile Include="CEfxKeyUintCtrlImp.cpp">
+      <Filter>EditCtrlImp\EffectImp\EfxKeyUint</Filter>
+    </ClCompile>
+    <ClCompile Include="PortraitView\CPortraitView.cpp">
+      <Filter>EditCtrlImp\PortraitView</Filter>
+    </ClCompile>
+    <ClCompile Include="PortraitView\PortraitViewCtrlImp.cpp">
+      <Filter>EditCtrlImp\PortraitView</Filter>
+    </ClCompile>
+    <ClCompile Include="PieceUnitEditCtrl\CPieceUnitEditImp.cpp">
+      <Filter>EditCtrlImp\PieceUnitEditCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationGroupEditCtrl\CAnimationGroupEditImp.cpp">
+      <Filter>EditCtrlImp\AnimationGroupEditCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="PieceGroupEditCtrl\CPieceGroupEditImp.cpp">
+      <Filter>EditCtrlImp\PieceGroupEditCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="BoundingBoxEditCtrl\CBoundingBoxDelegate.cpp">
+      <Filter>EditCtrlImp\BoundingBoxProp</Filter>
+    </ClCompile>
+    <ClCompile Include="BoundingBoxEditCtrl\CBoundingBoxEditImp.cpp">
+      <Filter>EditCtrlImp\BoundingBoxProp</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletonEditCtrl\CSkeletonDelegate.cpp">
+      <Filter>EditCtrlImp\SkeletonEditCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletonEditCtrl\CSkeletonEditImp.cpp">
+      <Filter>EditCtrlImp\SkeletonEditCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="AutoDataHelper.cpp">
+      <Filter>EditCtrlImp\AutoPropToCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="AutoPropData.cpp">
+      <Filter>EditCtrlImp\AutoPropToCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="AutoPropToCtrlImp.cpp">
+      <Filter>EditCtrlImp\AutoPropToCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="BoolEditCtrlImp.cpp">
+      <Filter>EditCtrlImp\AutoPropToCtrl\Element</Filter>
+    </ClCompile>
+    <ClCompile Include="CCtrlPropBase.cpp">
+      <Filter>EditCtrlImp\AutoPropToCtrl\Element</Filter>
+    </ClCompile>
+    <ClCompile Include="ComBoEditCtrlImp.cpp">
+      <Filter>EditCtrlImp\AutoPropToCtrl\Element</Filter>
+    </ClCompile>
+    <ClCompile Include="EStrMapEditCtrlImp.cpp">
+      <Filter>EditCtrlImp\AutoPropToCtrl\Element</Filter>
+    </ClCompile>
+    <ClCompile Include="NumEditCtrlImp.cpp">
+      <Filter>EditCtrlImp\AutoPropToCtrl\Element</Filter>
+    </ClCompile>
+    <ClCompile Include="NumMapEditCtrlImp.cpp">
+      <Filter>EditCtrlImp\AutoPropToCtrl\Element</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleStringEditCtrlImp.cpp">
+      <Filter>EditCtrlImp\AutoPropToCtrl\Element</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector3EditCtrlImp.cpp">
+      <Filter>EditCtrlImp\AutoPropToCtrl\Element</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector3MapCtrlImp.cpp">
+      <Filter>EditCtrlImp\AutoPropToCtrl\Element</Filter>
+    </ClCompile>
+    <ClCompile Include="BoneListCtrl\CBoneListCtrlImp.cpp">
+      <Filter>EditCtrlImp\BoneList</Filter>
+    </ClCompile>
+    <ClCompile Include="LightView\CLightViewImp.cpp">
+      <Filter>EditCtrlImp\LightView</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorCtrl\CColorCtrlImp.cpp">
+      <Filter>EditCtrlImp\Color</Filter>
+    </ClCompile>
+    <ClCompile Include="BoneBoxListCtrl\CBoneBoxListCtrlImp.cpp">
+      <Filter>EditCtrlImp\BoneBoxList</Filter>
+    </ClCompile>
+    <ClCompile Include="BoneListCtrl\CBoneBoxListDelegate.cpp">
+      <Filter>EditCtrlImp\BoneBoxList</Filter>
+    </ClCompile>
+    <ClCompile Include="BoneBoxEditCtrl\CBoneBoxEditCtrlImp.cpp">
+      <Filter>EditCtrlImp\BoneBoxEdit</Filter>
+    </ClCompile>
+    <ClCompile Include="BoneBoxEditCtrl\CBoneBoxEditDelegate.cpp">
+      <Filter>EditCtrlImp\BoneBoxEdit</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorAnimCtrl\CColorAnimImp.cpp">
+      <Filter>EditCtrlImp\ColorAnimCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorAnimCtrl\ColorAnimTypes\ColorAnimTypes.cpp">
+      <Filter>EditCtrlImp\ColorAnimCtrl\ColorAnimTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="PropCtrl\CAudioPropCtrlImp.cpp">
+      <Filter>EditCtrlImp\PropCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="PropCtrl\CBasePropCtrlImp.cpp">
+      <Filter>EditCtrlImp\PropCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="PropCtrl\CLightPropCtrlImp.cpp">
+      <Filter>EditCtrlImp\PropCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="PropCtrl\CModelPropCtrlImp.cpp">
+      <Filter>EditCtrlImp\PropCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="PropCtrl\CPropCtrlImp.cpp">
+      <Filter>EditCtrlImp\PropCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="PropCtrl\CScenePropCtrlImp.cpp">
+      <Filter>EditCtrlImp\PropCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditorConfig.cpp">
+      <Filter>Config</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditorDevConfig.cpp">
+      <Filter>Config</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditSceneConfig.cpp">
+      <Filter>Config</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditContext.cpp">
+      <Filter>FrameWork</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditToolApp.cpp">
+      <Filter>FrameWork</Filter>
+    </ClCompile>
+    <ClCompile Include="CEventCollector.cpp">
+      <Filter>FrameWork\MSG</Filter>
+    </ClCompile>
+    <ClCompile Include="CEventDelegate.cpp">
+      <Filter>FrameWork\MSG</Filter>
+    </ClCompile>
+    <ClCompile Include="CEventOwner.cpp">
+      <Filter>FrameWork\MSG</Filter>
+    </ClCompile>
+    <ClCompile Include="CEventState.cpp">
+      <Filter>FrameWork\MSG</Filter>
+    </ClCompile>
+    <ClCompile Include="CHotKeyMap.cpp">
+      <Filter>FrameWork\MSG</Filter>
+    </ClCompile>
+    <ClCompile Include="CMsg.cpp">
+      <Filter>FrameWork\MSG</Filter>
+    </ClCompile>
+    <ClCompile Include="EditGuiMgr\EditGuiMgr.cpp">
+      <Filter>EditGuiMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="ContextCtrl\CContextCtrl.cpp">
+      <Filter>ComCtrl\ContextCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraCtrl\CFPSCameraCtrl.cpp">
+      <Filter>ComCtrl\CameraCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraCtrl\CFREECameraCtrl.cpp">
+      <Filter>ComCtrl\CameraCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraCtrl\CRTSCameraCtrl.cpp">
+      <Filter>ComCtrl\CameraCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditSet.cpp">
+      <Filter>MapEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="RecordCtrl\CRecordCtrlImp.cpp">
+      <Filter>MapEditor\RecordCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="GridCtrl\CGridCtrlImp.cpp">
+      <Filter>MapEditor\GridCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="TileViewCtrl\TileViewCtrlImp.cpp">
+      <Filter>MapEditor\TileView</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureViewCtrl\TextureViewCtrlImp.cpp">
+      <Filter>MapEditor\TextureView</Filter>
+    </ClCompile>
+    <ClCompile Include="SetViewCtrl\SetViewCtrlImp.cpp">
+      <Filter>MapEditor\SetView</Filter>
+    </ClCompile>
+    <ClCompile Include="MapEffectCtrl\MapEffectCtrlImp.cpp">
+      <Filter>MapEditor\MapEffectCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockViewCtrl\BlockViewCtrlImp.cpp">
+      <Filter>MapEditor\BlockView</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioViewCtrl\AudioViewCtrlImp.cpp">
+      <Filter>MapEditor\AudioView</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioViewCtrl\CueListCtrlImp.cpp">
+      <Filter>MapEditor\AudioView\CueList</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioViewCtrl\AmbientAudioCtrlImp.cpp">
+      <Filter>MapEditor\AudioView\AmbientAudio</Filter>
+    </ClCompile>
+    <ClCompile Include="Brush\BaseBrush.cpp">
+      <Filter>Brush</Filter>
+    </ClCompile>
+    <ClCompile Include="Brush\BaseBrushDraw.cpp">
+      <Filter>Brush\Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="Brush\CircleBrushImp.cpp">
+      <Filter>Brush\Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="Brush\RegularGridBrushImp.cpp">
+      <Filter>Brush\Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="Brush\SquareBrushImp.cpp">
+      <Filter>Brush\Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="Brush\BrushGridHepler.cpp">
+      <Filter>Brush\Pick</Filter>
+    </ClCompile>
+    <ClCompile Include="Brush\TerrainTextureBrush.cpp">
+      <Filter>Brush\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Brush\TerrainTextureData.cpp">
+      <Filter>Brush\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Brush\TerrainBlockBrush.cpp">
+      <Filter>Brush\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="CTerrainOperate.cpp">
+      <Filter>Brush\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="Brush\TerrainGridBrush.cpp">
+      <Filter>Brush\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="Brush\TerrainModelBrush.cpp">
+      <Filter>Brush\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="CCallBackCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="CCombinCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Cmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="CmdMgr.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="CTempCmdPool.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="CTemporaryCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="MapCommand\CmdBornObject.cpp">
+      <Filter>Command\TerrainCmd</Filter>
+    </ClCompile>
+    <ClCompile Include="MapCommand\CmdDeleteObject.cpp">
+      <Filter>Command\TerrainCmd</Filter>
+    </ClCompile>
+    <ClCompile Include="MapCommand\CmdPlaceObject.cpp">
+      <Filter>Command\TerrainCmd</Filter>
+    </ClCompile>
+    <ClCompile Include="MapCommand\CmdSetSingleTexture.cpp">
+      <Filter>Command\TerrainCmd</Filter>
+    </ClCompile>
+    <ClCompile Include="MapCommand\CmdSetTerrainBlock.cpp">
+      <Filter>Command\TerrainCmd</Filter>
+    </ClCompile>
+    <ClCompile Include="MapCommand\CmdSetTerrainHeight.cpp">
+      <Filter>Command\TerrainCmd</Filter>
+    </ClCompile>
+    <ClCompile Include="MapCommand\CmdSetVertexAlpha.cpp">
+      <Filter>Command\TerrainCmd</Filter>
+    </ClCompile>
+    <ClCompile Include="MapCommand\CmdSetVertexHeight.cpp">
+      <Filter>Command\TerrainCmd</Filter>
+    </ClCompile>
+    <ClCompile Include="MapCommand\CmdSetWaterHeight.cpp">
+      <Filter>Command\TerrainCmd</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\tdk\inc\CEditObserver.h">
+      <Filter>EditClass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditorClassPre.h">
+      <Filter>EditClass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditorCore.h">
+      <Filter>EditClass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditSubject.h">
+      <Filter>EditClass</Filter>
+    </ClInclude>
+    <ClInclude Include="CDemoCoder.h">
+      <Filter>EditClass\FileCode</Filter>
+    </ClInclude>
+    <ClInclude Include="CEditModCoder.h">
+      <Filter>EditClass\FileCode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditFormatBase.h">
+      <Filter>EditClass\FileCode\EditFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditModFormat.h">
+      <Filter>EditClass\FileCode\EditFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditRsFormat.h">
+      <Filter>EditClass\FileCode\EditFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditTexFormat.h">
+      <Filter>EditClass\FileCode\EditFormat</Filter>
+    </ClInclude>
+    <ClInclude Include="CEditCameraFilter.h">
+      <Filter>EditClass\EditEffect\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CEditCameraShake.h">
+      <Filter>EditClass\EditEffect\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CEditCombination.h">
+      <Filter>EditClass\EditEffect\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CEditDynamicLight.h">
+      <Filter>EditClass\EditEffect\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditEffect.h">
+      <Filter>EditClass\EditEffect\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditEffectBase.h">
+      <Filter>EditClass\EditEffect\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditEffectGroup.h">
+      <Filter>EditClass\EditEffect\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditEffectManager.h">
+      <Filter>EditClass\EditEffect\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditEffectProp.h">
+      <Filter>EditClass\EditEffect\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditEffectTrack.h">
+      <Filter>EditClass\EditEffect\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditEfffectClassDefine.h">
+      <Filter>EditClass\EditEffect\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CEditFlareSprite.h">
+      <Filter>EditClass\EditEffect\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CEditLeading.h">
+      <Filter>EditClass\EditEffect\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CEditLighting.h">
+      <Filter>EditClass\EditEffect\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CEditModelConsole.h">
+      <Filter>EditClass\EditEffect\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CEditModelRenderStyle.h">
+      <Filter>EditClass\EditEffect\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CEditNull.h">
+      <Filter>EditClass\EditEffect\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditParticleSystem.h">
+      <Filter>EditClass\EditEffect\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditPolyTrail.h">
+      <Filter>EditClass\EditEffect\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CEditShake.h">
+      <Filter>EditClass\EditEffect\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CEditSprite.h">
+      <Filter>EditClass\EditEffect\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CEditTDimAudio.h">
+      <Filter>EditClass\EditEffect\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditUnitPropHelp.h">
+      <Filter>EditClass\EditEffect\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditDataScene.h">
+      <Filter>EditClass\EditScene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditTreeScene.h">
+      <Filter>EditClass\EditScene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditTerrainMgr.h">
+      <Filter>EditClass\EditScene\EditTerrain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditTerrainNode.h">
+      <Filter>EditClass\EditScene\EditTerrain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditWaterMgr.h">
+      <Filter>EditClass\EditScene\EditWater</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditSkyMgr.h">
+      <Filter>EditClass\EditScene\EditSky</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditLogicData.h">
+      <Filter>EditClass\EditScene\EditLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditLogicDataMgr.h">
+      <Filter>EditClass\EditScene\EditLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="CEditBlockDebugNode.h">
+      <Filter>EditClass\EditScene\EditDebug</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneCoder\ybtx_gac_coder\ybtx_gac_coder.h">
+      <Filter>EditClass\EditScene\SceneCoder\ybtx_gac_coder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditAnimate.h">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditAnimationsRes.h">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClInclude>
+    <ClInclude Include="CEditDataSources.h">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditInfo.h">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditMesh.h">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditModel.h">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClInclude>
+    <ClInclude Include="CEditNullTexture.h">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditPieceGroup.h">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditPixelFillEffectPass.h">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditPostProcessManager.h">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditRenderPipeline.h">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditRenderStyle.h">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditSkeletal.h">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditSkeletalsMgr.h">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditTexture.h">
+      <Filter>EditClass\EditGraphic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CameraCtrl\CFPSCamDelegate.h">
+      <Filter>EditClass\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CameraCtrl\CFREECamDelegate.h">
+      <Filter>EditClass\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CameraCtrl\CRecordCamDelegate.h">
+      <Filter>EditClass\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CameraCtrl\CRTSCamDelegate.h">
+      <Filter>EditClass\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CameraCtrl\CTPSCamDelegate.h">
+      <Filter>EditClass\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CLODBuilder.h">
+      <Filter>UtilityClass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CtrlImpHelper.h">
+      <Filter>UtilityClass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\IBReBuilder.h">
+      <Filter>UtilityClass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\LightSettingHandler.h">
+      <Filter>UtilityClass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CurvePatch\CoordinateAxis.h">
+      <Filter>UtilityClass\CurvePatch\CoordinateAxis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CurvePatch\CEditBezierCurve.h">
+      <Filter>UtilityClass\CurvePatch\BezierCurve</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CurvePatch\CEditBezierPatch.h">
+      <Filter>UtilityClass\CurvePatch\BezierPatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CurvePatch\BezierControlPoint.h">
+      <Filter>UtilityClass\CurvePatch\BezierControlPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CurvePatch\CEditCurveRender.h">
+      <Filter>UtilityClass\CurvePatch\CurveRender</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CFileProcessMgr\CFileProcessMgr.h">
+      <Filter>UtilityClass\CFileProcessMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CFileProcessMgr\CTaskProcess.h">
+      <Filter>UtilityClass\CFileProcessMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\IProgressCallback.h">
+      <Filter>UtilityClass\CFileProcessMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CFileProcessMgr\CAgpFileProcesser.h">
+      <Filter>UtilityClass\CFileProcessMgr\Processer</Filter>
+    </ClInclude>
+    <ClInclude Include="CFileProcessMgr\CFxFileProcesser.h">
+      <Filter>UtilityClass\CFileProcessMgr\Processer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CFileProcessMgr\CModFileProcesser.h">
+      <Filter>UtilityClass\CFileProcessMgr\Processer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CFileProcessMgr\CRsFileProcesser.h">
+      <Filter>UtilityClass\CFileProcessMgr\Processer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CFileProcessMgr\CSkeFileProcesser.h">
+      <Filter>UtilityClass\CFileProcessMgr\Processer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\Line\CEditLine.h">
+      <Filter>UtilityClass\Line</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\Line\CEditDashed.h">
+      <Filter>UtilityClass\Line\Dashed</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\Line\CEditDirctionLine.h">
+      <Filter>UtilityClass\Line\Dashed</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\Circle\CEditCircle.h">
+      <Filter>UtilityClass\Circle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CTargetController.h">
+      <Filter>Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\EditorExp.h">
+      <Filter>Exp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\EditorExpMgr.h">
+      <Filter>Exp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CCtrlBase.h">
+      <Filter>EditCtrlImp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CCtrlBaseObserver.h">
+      <Filter>EditCtrlImp</Filter>
+    </ClInclude>
+    <ClInclude Include="CCtrlImpFactory.h">
+      <Filter>EditCtrlImp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\PathManager\CPathManager.h">
+      <Filter>EditCtrlImp\PathManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\LogImp\CLogImp.h">
+      <Filter>EditCtrlImp\PathManager\LogImp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\VideoSettingImp\CVideoSettingImp.h">
+      <Filter>EditCtrlImp\VideoSettingCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\SceneStateImp\CSceneStateImp.h">
+      <Filter>EditCtrlImp\SceneStateCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\ReadPkgCtrl\ReadPkgCtrlImp.h">
+      <Filter>EditCtrlImp\ReadPkgCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\FileProcessCtrl\FileProcessCtrlImp.h">
+      <Filter>EditCtrlImp\FileProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\ProgressCtrl\CProgressCtrlImp.h">
+      <Filter>EditCtrlImp\ProgressCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\GroundSpeedCtrl\CGridNode.h">
+      <Filter>EditCtrlImp\GroundSetting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\GroundSpeedCtrl\CGroundSettingCtrlImp.h">
+      <Filter>EditCtrlImp\GroundSetting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\KeyFrameCtrl\CKeyFrameCtrlImp.h">
+      <Filter>EditCtrlImp\KeyFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\FrameScaleCtrl\CFrameScaleCtrlImp.h">
+      <Filter>EditCtrlImp\FrameScale</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\FrameScaleCtrl\CFrameScaleDelegate.h">
+      <Filter>EditCtrlImp\FrameScale</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\FogParameterCtrl\CFogParameterCtrlImp.h">
+      <Filter>EditCtrlImp\FogParameter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\LightParameterCtrl\CLightParameterCtrlImp.h">
+      <Filter>EditCtrlImp\LightParameter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\HDRSettingCtrl\CHDRSettingCtrlImp.h">
+      <Filter>EditCtrlImp\HDR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\PickColorCtrl\PowerColorPickerImp.h">
+      <Filter>EditCtrlImp\PickColor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CCoreViewImp.h">
+      <Filter>EditCtrlImp\CoreView</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\ICtrlImpFactory.h">
+      <Filter>EditCtrlImp\未分类</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\IModelViewHelp.h">
+      <Filter>EditCtrlImp\未分类</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEfxFileCtrlImp.h">
+      <Filter>EditCtrlImp\EffectImp\EfxFileCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CAutoSearchFile.h">
+      <Filter>EditCtrlImp\EffectImp\EfxHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEfxEditPropImp.h">
+      <Filter>EditCtrlImp\EffectImp\EfxEditPropCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEfxTrackCtrlImp.h">
+      <Filter>EditCtrlImp\EffectImp\EfxTrack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEfxKeyUintCtrlImp.h">
+      <Filter>EditCtrlImp\EffectImp\EfxKeyUint</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\PortraitView\CPortraitView.h">
+      <Filter>EditCtrlImp\PortraitView</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\PortraitView\PortraitViewCtrlImp.h">
+      <Filter>EditCtrlImp\PortraitView</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\PieceUnitEditCtrl\CPieceUnitEditImp.h">
+      <Filter>EditCtrlImp\PieceUnitEditCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\AnimationGroupEditCtrl\CAnimationGroupEditImp.h">
+      <Filter>EditCtrlImp\AnimationGroupEditCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\PieceGroupEditCtrl\CPieceGroupEditImp.h">
+      <Filter>EditCtrlImp\PieceGroupEditCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\BoundingBoxEditCtrl\CBoundingBoxDelegate.h">
+      <Filter>EditCtrlImp\BoundingBoxProp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\BoundingBoxEditCtrl\CBoundingBoxEditImp.h">
+      <Filter>EditCtrlImp\BoundingBoxProp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\SkeletonEditCtrl\CSkeletonDelegate.h">
+      <Filter>EditCtrlImp\SkeletonEditCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\SkeletonEditCtrl\CSkeletonEditImp.h">
+      <Filter>EditCtrlImp\SkeletonEditCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\AutoDataHelper.h">
+      <Filter>EditCtrlImp\AutoPropToCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\AutoPropData.h">
+      <Filter>EditCtrlImp\AutoPropToCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\AutoPropToCtrlImp.h">
+      <Filter>EditCtrlImp\AutoPropToCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\BoolEditCtrlImp.h">
+      <Filter>EditCtrlImp\AutoPropToCtrl\Element</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CCtrlPropBase.h">
+      <Filter>EditCtrlImp\AutoPropToCtrl\Element</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\ComBoEditCtrlImp.h">
+      <Filter>EditCtrlImp\AutoPropToCtrl\Element</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\EStrMapEditCtrlImp.h">
+      <Filter>EditCtrlImp\AutoPropToCtrl\Element</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\NumEditCtrlImp.h">
+      <Filter>EditCtrlImp\AutoPropToCtrl\Element</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\NumMapEditCtrlImp.h">
+      <Filter>EditCtrlImp\AutoPropToCtrl\Element</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\SingleStringEditCtrlImp.h">
+      <Filter>EditCtrlImp\AutoPropToCtrl\Element</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\Vector3EditCtrlImp.h">
+      <Filter>EditCtrlImp\AutoPropToCtrl\Element</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\Vector3MapCtrlImp.h">
+      <Filter>EditCtrlImp\AutoPropToCtrl\Element</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\BoneListCtrl\CBoneListCtrlImp.h">
+      <Filter>EditCtrlImp\BoneList</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\LightView\CLightViewImp.h">
+      <Filter>EditCtrlImp\LightView</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\ColorCtrl\CColorCtrlImp.h">
+      <Filter>EditCtrlImp\Color</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\BoneBoxListCtrl\CBoneBoxListCtrlImp.h">
+      <Filter>EditCtrlImp\BoneBoxList</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\BoneBoxListCtrl\CBoneBoxListDelegate.h">
+      <Filter>EditCtrlImp\BoneBoxList</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\BoneBoxEditCtrl\CBoneBoxEditCtrlImp.h">
+      <Filter>EditCtrlImp\BoneBoxEdit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\BoneBoxEditCtrl\CBoneBoxEditDelegate.h">
+      <Filter>EditCtrlImp\BoneBoxEdit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\ColorAnimCtrl\CColorAnimImp.h">
+      <Filter>EditCtrlImp\ColorAnimCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorAnimCtrl\ColorAnimTypes\ColorAnimTypes.h">
+      <Filter>EditCtrlImp\ColorAnimCtrl\ColorAnimTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\PropCtrl\CAudioPropCtrlImp.h">
+      <Filter>EditCtrlImp\PropCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\PropCtrl\CBasePropCtrlImp.h">
+      <Filter>EditCtrlImp\PropCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\PropCtrl\CLightPropCtrlImp.h">
+      <Filter>EditCtrlImp\PropCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\PropCtrl\CModelPropCtrlImp.h">
+      <Filter>EditCtrlImp\PropCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\PropCtrl\CPropCtrlImp.h">
+      <Filter>EditCtrlImp\PropCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\PropCtrl\CScenePropCtrlImp.h">
+      <Filter>EditCtrlImp\PropCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditorConfig.h">
+      <Filter>Config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditorDevConfig.h">
+      <Filter>Config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditSceneConfig.h">
+      <Filter>Config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditContext.h">
+      <Filter>FrameWork</Filter>
+    </ClInclude>
+    <ClInclude Include="CEditToolApp.h">
+      <Filter>FrameWork</Filter>
+    </ClInclude>
+    <ClInclude Include="ContextMsg.h">
+      <Filter>FrameWork</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\IApplication.h">
+      <Filter>FrameWork</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEventCollector.h">
+      <Filter>FrameWork\MSG</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEventDelegate.h">
+      <Filter>FrameWork\MSG</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEventOwner.h">
+      <Filter>FrameWork\MSG</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEventState.h">
+      <Filter>FrameWork\MSG</Filter>
+    </ClInclude>
+    <ClInclude Include="CHotKeyMap.h">
+      <Filter>FrameWork\MSG</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CMsg.h">
+      <Filter>FrameWork\MSG</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CMsgDefine.h">
+      <Filter>FrameWork\MSG</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\EditGuiMgr\EditGuiMgr.h">
+      <Filter>EditGuiMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\ContextCtrl\CContextCtrl.h">
+      <Filter>ComCtrl\ContextCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CameraCtrl\CFPSCameraCtrl.h">
+      <Filter>ComCtrl\CameraCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CameraCtrl\CFREECameraCtrl.h">
+      <Filter>ComCtrl\CameraCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CameraCtrl\CRTSCameraCtrl.h">
+      <Filter>ComCtrl\CameraCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CEditSet.h">
+      <Filter>MapEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\RecordCtrl\CRecordCtrlImp.h">
+      <Filter>MapEditor\RecordCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CRecordStruct.h">
+      <Filter>MapEditor\RecordCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\GridCtrl\CGridCtrlImp.h">
+      <Filter>MapEditor\GridCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\TileViewCtrl\TileViewCtrlImp.h">
+      <Filter>MapEditor\TileView</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\TextureViewCtrl\TextureViewCtrlImp.h">
+      <Filter>MapEditor\TextureView</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\SetViewCtrl\SetViewCtrlImp.h">
+      <Filter>MapEditor\SetView</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\MapEffectCtrl\MapEffectCtrlImp.h">
+      <Filter>MapEditor\MapEffectCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\BlockViewCtrl\BlockViewCtrlImp.h">
+      <Filter>MapEditor\BlockView</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\AudioViewCtrl\AudioViewCtrlImp.h">
+      <Filter>MapEditor\AudioView</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\AudioViewCtrl\CueListCtrlImp.h">
+      <Filter>MapEditor\AudioView\CueList</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\AudioViewCtrl\AmbientAudioCtrlImp.h">
+      <Filter>MapEditor\AudioView\AmbientAudio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\Brush\BaseBrush.h">
+      <Filter>Brush</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\Brush\BaseBrushEnum.h">
+      <Filter>Brush</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\Brush\BaseBrushDraw.h">
+      <Filter>Brush\Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\Brush\CircleBrushImp.h">
+      <Filter>Brush\Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\Brush\RegularGridBrushImp.h">
+      <Filter>Brush\Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\Brush\SquareBrushImp.h">
+      <Filter>Brush\Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\Brush\BrushGridHepler.h">
+      <Filter>Brush\Pick</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\Brush\TerrainTextureBrush.h">
+      <Filter>Brush\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\Brush\TerrainTextureData.h">
+      <Filter>Brush\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\Brush\TerrainBlockBrush.h">
+      <Filter>Brush\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CTerrainOperate.h">
+      <Filter>Brush\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\Brush\TerrainGridBrush.h">
+      <Filter>Brush\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\Brush\TerrainModelBrush.h">
+      <Filter>Brush\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CCallBackCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CCombinCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\Cmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CmdMgr.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CTempCmdPool.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tdk\inc\CTemporaryCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="MapCommand\CmdBornObject.h">
+      <Filter>Command\TerrainCmd</Filter>
+    </ClInclude>
+    <ClInclude Include="MapCommand\CmdDeleteObject.h">
+      <Filter>Command\TerrainCmd</Filter>
+    </ClInclude>
+    <ClInclude Include="MapCommand\CmdPlaceObject.h">
+      <Filter>Command\TerrainCmd</Filter>
+    </ClInclude>
+    <ClInclude Include="MapCommand\CmdSetSingleTexture.h">
+      <Filter>Command\TerrainCmd</Filter>
+    </ClInclude>
+    <ClInclude Include="MapCommand\CmdSetTerrainBlock.h">
+      <Filter>Command\TerrainCmd</Filter>
+    </ClInclude>
+    <ClInclude Include="MapCommand\CmdSetTerrainHeight.h">
+      <Filter>Command\TerrainCmd</Filter>
+    </ClInclude>
+    <ClInclude Include="MapCommand\CmdSetVertexAlpha.h">
+      <Filter>Command\TerrainCmd</Filter>
+    </ClInclude>
+    <ClInclude Include="MapCommand\CmdSetVertexHeight.h">
+      <Filter>Command\TerrainCmd</Filter>
+    </ClInclude>
+    <ClInclude Include="MapCommand\CmdSetWaterHeight.h">
+      <Filter>Command\TerrainCmd</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,9 @@
+struct VS_INPUT{\
+	float3  pos             : POSITION;\
+	float3  normal		: NORMAL;\
+	float4	color0		: COLOR0;\
+    	float2  text[4]         : TEXCOORD0;\
+	float4  BlendWeights    : BLENDWEIGHT;\
+    	float4  BlendIndices    : BLENDINDICES;\
+	float4x4 MatWorld	: COLOR2;\
+};

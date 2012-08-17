@@ -1,0 +1,8 @@
+tbl_scene
+tbl_tong
+tbl_cofc
+tbl_char
+
+tbl_user_static
+tbl_user_basic
+tbl_log_user_static

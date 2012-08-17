@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3F31176F-C5DC-4D65-8F0F-62F70140673B}</ProjectGuid>
+    <RootNamespace>CoreServer</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../../bin/$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/Oy- %(AdditionalOptions)</AdditionalOptions>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\..\include;..\..\sdk\inc;..\..\..\implib\inc\;..\CoreCommon;..\..\..\implib\inc\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_LIB;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)CoreServer.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\..\include;..\..\sdk\inc;..\..\..\implib\inc\;..\CoreCommon;..\..\..\implib\inc\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)CoreServer.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CAppConfigServer.cpp" />
+    <ClCompile Include="CInstanceConfigServer.cpp" />
+    <ClCompile Include="CThreadWatcher.cpp" />
+    <ClCompile Include="IAppServerHandler.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="CCoreMsgSignal.cpp" />
+    <ClCompile Include="CCoreServerThread.cpp" />
+    <ClCompile Include="CSyncAppServer.cpp" />
+    <ClCompile Include="CSyncServerProxyBank.cpp" />
+    <ClCompile Include="CSyncServerTrMsgBufferMgrSwapper.cpp" />
+    <ClCompile Include="CSyncTimeSystemServer.cpp" />
+    <ClCompile Include="CSyncTraitsServer.cpp" />
+    <ClCompile Include="CAppServer.cpp" />
+    <ClCompile Include="CAsynServerProxyBank.cpp" />
+    <ClCompile Include="CAsynServerTrMsgBufferSwapper.cpp" />
+    <ClCompile Include="CAsynTimeSystemServer.cpp" />
+    <ClCompile Include="CCoreServerAppJob.cpp" />
+    <ClCompile Include="CCoreServerAppResult.cpp" />
+    <ClCompile Include="CCoreServerThreadMgr.cpp" />
+    <ClCompile Include="CTraitsServer.cpp" />
+    <ClCompile Include="CTestSuiteDbThreadsMgr.cpp" />
+    <ClCompile Include="CDbConnectionMgr.cpp" />
+    <ClCompile Include="CDbContext.cpp" />
+    <ClCompile Include="CDbResultParser.cpp" />
+    <ClCompile Include="CDbResultSet.cpp" />
+    <ClCompile Include="CDbThread.cpp" />
+    <ClCompile Include="CDbThreadMgr.cpp" />
+    <ClCompile Include="CMtDbMallocObject.cpp" />
+    <ClCompile Include="CQueryJob.cpp" />
+    <ClCompile Include="CQueryJobQueue.cpp" />
+    <ClCompile Include="CQueryJobSubQueue.cpp" />
+    <ClCompile Include="CQueryResultQueue.cpp" />
+    <ClCompile Include="CoreObjectServerCommon.cpp" />
+    <ClCompile Include="CCoreObjDistObserver.cpp" />
+    <ClCompile Include="CCoreObjTracer.cpp" />
+    <ClCompile Include="CMedObjFollowState.cpp" />
+    <ClCompile Include="CObjDestoryState.cpp" />
+    <ClCompile Include="CObjMoveStateServer.cpp" />
+    <ClCompile Include="CObjTransferState.cpp" />
+    <ClCompile Include="CoreObjectServerPosRelation.cpp" />
+    <ClCompile Include="CSyncCoreObjectCalculator.cpp" />
+    <ClCompile Include="CSyncCoreObjectDictator.cpp" />
+    <ClCompile Include="CSyncCoreObjectMediator.cpp" />
+    <ClCompile Include="CSyncCoreObjectServer.cpp" />
+    <ClCompile Include="CSyncWatchHandler.cpp" />
+    <ClCompile Include="CAOICmd.cpp" />
+    <ClCompile Include="CAoiSynceeObjHandler.cpp" />
+    <ClCompile Include="CAoiSyncerObjHandler.cpp" />
+    <ClCompile Include="CAoiViewObjHandler.cpp" />
+    <ClCompile Include="CBindObjectServer.cpp" />
+    <ClCompile Include="CCoreObjectCalculator.cpp" />
+    <ClCompile Include="CCoreObjectDictator.cpp" />
+    <ClCompile Include="CCoreObjectMediator.cpp" />
+    <ClCompile Include="CCoreObjectServer.cpp" />
+    <ClCompile Include="CCoreServerObjJob.cpp" />
+    <ClCompile Include="CCoreServerObjResult.cpp" />
+    <ClCompile Include="CTestSuiteConnServer.cpp" />
+    <ClCompile Include="CConnMgrServer.cpp" />
+    <ClCompile Include="CConnServer.cpp" />
+    <ClCompile Include="CCoreConnServerJob.cpp" />
+    <ClCompile Include="CCoreConnServerResult.cpp" />
+    <ClCompile Include="CMultiMsgSender.cpp" />
+    <ClCompile Include="CSynConnMgrServer.cpp" />
+    <ClCompile Include="CSynConnServer.cpp" />
+    <ClCompile Include="CSynMultiMsgSender.cpp" />
+    <ClCompile Include="CSyncMetaSceneMgrServer.cpp" />
+    <ClCompile Include="CSyncMetaSceneServer.cpp" />
+    <ClCompile Include="CTestSuiteMetaSceneServer.cpp" />
+    <ClCompile Include="CCoreServerSceneJob.cpp" />
+    <ClCompile Include="CMetaSceneMgrServer.cpp" />
+    <ClCompile Include="CMetaSceneServer.cpp" />
+    <ClCompile Include="CBaseAoiObj.cpp" />
+    <ClCompile Include="CQuadMallocObject.cpp" />
+    <ClCompile Include="CTestSuiteAoi.cpp" />
+    <ClCompile Include="CAsyAoiScene.cpp" />
+    <ClCompile Include="CAsyAoiSynceeObj.cpp" />
+    <ClCompile Include="CAsyAoiSyncerObj.cpp" />
+    <ClCompile Include="CAsyAoiViewObj.cpp" />
+    <ClCompile Include="CAoi2LogicThreadMsgBuffer.cpp" />
+    <ClCompile Include="CAoiJob.cpp" />
+    <ClCompile Include="CAoiResult.cpp" />
+    <ClCompile Include="CAoiThread.cpp" />
+    <ClCompile Include="CAoiThreadMgr.cpp" />
+    <ClCompile Include="CLogicThreadJob.cpp" />
+    <ClCompile Include="CLogicThreadResult.cpp" />
+    <ClCompile Include="CAsyAoiDimObj.cpp" />
+    <ClCompile Include="CAsyAoiDimScene.cpp" />
+    <ClCompile Include="CAoiShapeCache.cpp" />
+    <ClCompile Include="CSynAoiScene.cpp" />
+    <ClCompile Include="CSynAoiSynceeObj.cpp" />
+    <ClCompile Include="CSynAoiSyncerObj.cpp" />
+    <ClCompile Include="CSynAoiViewObj.cpp" />
+    <ClCompile Include="CSynAoiDimObj.cpp" />
+    <ClCompile Include="CSynAoiDimScene.cpp" />
+    <ClCompile Include="CAoiQuadNode.cpp" />
+    <ClCompile Include="CAoiQuadTree.cpp" />
+    <ClCompile Include="TravelAoiQuad.cpp" />
+    <ClCompile Include="QuadTreeFun.cpp" />
+    <ClCompile Include="CDimensionInfo.cpp" />
+    <ClCompile Include="CCoreSceneMgrServer.cpp" />
+    <ClCompile Include="CCoreSceneServer.cpp" />
+    <ClCompile Include="CCoreServerSceneResult.cpp" />
+    <ClCompile Include="CSyncCoreSceneMgrServer.cpp" />
+    <ClCompile Include="CSyncCoreSceneServer.cpp" />
+    <ClCompile Include="CAoiSceneHandler.cpp" />
+    <ClCompile Include="CSyncCoreMsgMgr.cpp" />
+    <ClCompile Include="SyncPatternCOR.cpp" />
+    <ClCompile Include="CMirrorBuffer.cpp" />
+    <ClCompile Include="CMirrorBufferData.cpp" />
+    <ClCompile Include="CMirrorMallocObject.cpp" />
+    <ClCompile Include="CTrMirrorBuffer.cpp" />
+    <ClCompile Include="CMirrorPatchCmd.cpp" />
+    <ClCompile Include="CMirrorRBPatch.cpp" />
+    <ClCompile Include="CMirrorRBPatchMgr.cpp" />
+    <ClCompile Include="CMirrorWBPatch.cpp" />
+    <ClCompile Include="CMirrorWBPatchMgr.cpp" />
+    <ClCompile Include="CTrDiscardedCmdMgr.cpp" />
+    <ClCompile Include="CMirrorQuadObject.cpp" />
+    <ClCompile Include="CRBQuadObject.cpp" />
+    <ClCompile Include="CWBQuadObject.cpp" />
+    <ClCompile Include="CCoreQuadNode.cpp" />
+    <ClCompile Include="CCoreQuadObject.cpp" />
+    <ClCompile Include="CCoreQuadScene.cpp" />
+    <ClCompile Include="CMirrorQuadScene.cpp" />
+    <ClCompile Include="CRBQuadScene.cpp" />
+    <ClCompile Include="CWBQuadScene.cpp" />
+    <ClCompile Include="CMirrorPosData.cpp" />
+    <ClCompile Include="CRBPosData.cpp" />
+    <ClCompile Include="CWBPosData.cpp" />
+    <ClCompile Include="CCoreTrMirrorBufferMgr.cpp" />
+    <ClCompile Include="CAsynCorePos.cpp" />
+    <ClCompile Include="CSyncCorePos.cpp" />
+    <ClCompile Include="CTrMirrorPosBuffer.cpp" />
+    <ClCompile Include="CAsynCoreQuadObject.cpp" />
+    <ClCompile Include="CAsynCoreQuadScene.cpp" />
+    <ClCompile Include="CSyncCoreQuadObject.cpp" />
+    <ClCompile Include="CSyncCoreQuadScene.cpp" />
+    <ClCompile Include="CTrMirrorQuadBuffer.cpp" />
+    <ClCompile Include="CTestSuiteTripleBuffer.cpp" />
+    <ClCompile Include="CAsynDistortedTimeObjServer.cpp" />
+    <ClCompile Include="CAsynDistortedTimeSceneServer.cpp" />
+    <ClCompile Include="CSyncDistortedTimeObjServer.cpp" />
+    <ClCompile Include="CSyncDistortedTimeSceneServer.cpp" />
+    <ClCompile Include="CMegaLog.cpp" />
+    <ClCompile Include="CMegaLogJob.cpp" />
+    <ClCompile Include="CMegaLogMallocObject.cpp" />
+    <ClCompile Include="CMegaLogMgr.cpp" />
+    <ClCompile Include="CSyncMegaLog.cpp" />
+    <ClCompile Include="CCacheVariantServer.cpp" />
+    <ClCompile Include="CCacheVariantServerHolder.cpp" />
+    <ClCompile Include="CCoreObjVariantSyncStreamJob.cpp" />
+    <ClCompile Include="CSyncVariantServer.cpp" />
+    <ClCompile Include="CSyncVariantServerHolder.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\sdk\inc\CAppConfigServer.h" />
+    <ClInclude Include="..\..\sdk\inc\CInstanceConfigServer.h" />
+    <ClInclude Include="..\..\include\CoreServerTest.h" />
+    <ClInclude Include="CThreadWatcher.h" />
+    <ClInclude Include="..\..\sdk\inc\IAppServerHandler.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="CCoreMsgSignal.h" />
+    <ClInclude Include="CCoreServerThread.h" />
+    <ClInclude Include="CSyncAppServer.h" />
+    <ClInclude Include="CSyncServerProxyBank.h" />
+    <ClInclude Include="..\..\sdk\inc\CSyncServerTrMsgBufferMgrSwapper.h" />
+    <ClInclude Include="CSyncTimeSystemServer.h" />
+    <ClInclude Include="..\..\sdk\inc\CSyncTraitsServer.h" />
+    <ClInclude Include="..\..\sdk\inc\CAppServer.h" />
+    <ClInclude Include="CAsynServerProxyBank.h" />
+    <ClInclude Include="..\..\sdk\inc\CAsynServerTrMsgBufferSwapper.h" />
+    <ClInclude Include="CAsynTimeSystemServer.h" />
+    <ClInclude Include="CCoreServerAppJob.h" />
+    <ClInclude Include="CCoreServerAppResult.h" />
+    <ClInclude Include="CCoreServerJob.h" />
+    <ClInclude Include="CCoreServerResult.h" />
+    <ClInclude Include="CCoreServerThreadMgr.h" />
+    <ClInclude Include="..\..\sdk\inc\CTraitsServer.h" />
+    <ClInclude Include="CTestSuiteDbThreadsMgr.h" />
+    <ClInclude Include="CDbConnectionMgr.h" />
+    <ClInclude Include="..\..\sdk\inc\CDbContext.h" />
+    <ClInclude Include="CDbResultParser.h" />
+    <ClInclude Include="..\..\sdk\inc\CDbResultSet.h" />
+    <ClInclude Include="CDbThread.h" />
+    <ClInclude Include="CDbThreadMgr.h" />
+    <ClInclude Include="CDbVariantBank.h" />
+    <ClInclude Include="..\..\sdk\inc\CMtDbMallocObject.h" />
+    <ClInclude Include="CQueryJob.h" />
+    <ClInclude Include="..\..\sdk\inc\TMtDbAllocator.h" />
+    <ClInclude Include="CQueryJobQueue.h" />
+    <ClInclude Include="CQueryJobSubQueue.h" />
+    <ClInclude Include="CQueryResultQueue.h" />
+    <ClInclude Include="..\..\sdk\inc\IDbConnectionMgr.h" />
+    <ClInclude Include="..\..\sdk\inc\IDbThreadMgr.h" />
+    <ClInclude Include="CoreObjectServerCommon.h" />
+    <ClInclude Include="..\..\sdk\inc\CoreObjectServerDefs.h" />
+    <ClInclude Include="TSendAdapter.h" />
+    <ClInclude Include="CCoreObjDistObserver.h" />
+    <ClInclude Include="CCoreObjTracer.h" />
+    <ClInclude Include="CMedObjFollowState.h" />
+    <ClInclude Include="CObjDestoryState.h" />
+    <ClInclude Include="CObjMoveStateServer.h" />
+    <ClInclude Include="CObjTransferState.h" />
+    <ClInclude Include="CoreObjectServerPosRelation.h" />
+    <ClInclude Include="CSyncCoreObjectCalculator.h" />
+    <ClInclude Include="CSyncCoreObjectDictator.h" />
+    <ClInclude Include="CSyncCoreObjectMediator.h" />
+    <ClInclude Include="CSyncCoreObjectServer.h" />
+    <ClInclude Include="CSyncWatchHandler.h" />
+    <ClInclude Include="ISyncObjPosObserverHandler.h" />
+    <ClInclude Include="SyncCoreObjEvent.h" />
+    <ClInclude Include="CAOICmd.h" />
+    <ClInclude Include="CAoiSynceeObjHandler.h" />
+    <ClInclude Include="CAoiSyncerObjHandler.h" />
+    <ClInclude Include="CAoiViewObjHandler.h" />
+    <ClInclude Include="CBindObjectServer.h" />
+    <ClInclude Include="..\..\sdk\inc\CCoreObjectCalculator.h" />
+    <ClInclude Include="..\..\sdk\inc\CCoreObjectDictator.h" />
+    <ClInclude Include="..\..\sdk\inc\CCoreObjectMediator.h" />
+    <ClInclude Include="..\..\sdk\inc\CCoreObjectServer.h" />
+    <ClInclude Include="CCoreServerObjJob.h" />
+    <ClInclude Include="CCoreServerObjResult.h" />
+    <ClInclude Include="..\..\sdk\inc\ICoreObjectCalculatorHandler.h" />
+    <ClInclude Include="..\..\sdk\inc\ICoreObjectDictatorHandler.h" />
+    <ClInclude Include="..\..\sdk\inc\ICoreObjectMediatorHandler.h" />
+    <ClInclude Include="..\..\sdk\inc\ICoreObjectServerHandler.h" />
+    <ClInclude Include="..\..\sdk\inc\IObjPosObserverHandler.h" />
+    <ClInclude Include="CTestSuiteConnServer.h" />
+    <ClInclude Include="..\..\sdk\inc\EBeginServiceResultEnum.h" />
+    <ClInclude Include="..\..\sdk\inc\CConnMgrServer.h" />
+    <ClInclude Include="..\..\sdk\inc\CConnServer.h" />
+    <ClInclude Include="CCoreConnServerJob.h" />
+    <ClInclude Include="CCoreConnServerResult.h" />
+    <ClInclude Include="..\..\sdk\inc\CMultiMsgSender.h" />
+    <ClInclude Include="..\..\sdk\inc\IConnMgrServerHandler.h" />
+    <ClInclude Include="CSynConnMgrServer.h" />
+    <ClInclude Include="CSynConnServer.h" />
+    <ClInclude Include="CSynMultiMsgSender.h" />
+    <ClInclude Include="CSyncMetaSceneMgrServer.h" />
+    <ClInclude Include="CSyncMetaSceneServer.h" />
+    <ClInclude Include="CTestSuiteMetaSceneServer.h" />
+    <ClInclude Include="..\..\sdk\inc\TBaseMetaSceneServer.h" />
+    <ClInclude Include="CCoreServerSceneJob.h" />
+    <ClInclude Include="..\..\sdk\inc\CMetaSceneMgrServer.h" />
+    <ClInclude Include="..\..\sdk\inc\CMetaSceneServer.h" />
+    <ClInclude Include="..\..\sdk\inc\AoiDef.h" />
+    <ClInclude Include="CBaseAoiObj.h" />
+    <ClInclude Include="CQuadMallocObject.h" />
+    <ClInclude Include="CTestSuiteAoi.h" />
+    <ClInclude Include="TQuadAllocator.h" />
+    <ClInclude Include="CAsyAoiScene.h" />
+    <ClInclude Include="CAsyAoiSynceeObj.h" />
+    <ClInclude Include="CAsyAoiSyncerObj.h" />
+    <ClInclude Include="CAsyAoiViewObj.h" />
+    <ClInclude Include="CAoi2LogicThreadMsgBuffer.h" />
+    <ClInclude Include="CAoiJob.h" />
+    <ClInclude Include="CAoiResult.h" />
+    <ClInclude Include="CAoiThread.h" />
+    <ClInclude Include="CAoiThreadMgr.h" />
+    <ClInclude Include="CLogicThreadJob.h" />
+    <ClInclude Include="CLogicThreadResult.h" />
+    <ClInclude Include="CAsyAoiDimObj.h" />
+    <ClInclude Include="CAsyAoiDimScene.h" />
+    <ClInclude Include="CAoiShape.h" />
+    <ClInclude Include="CAoiShapeCache.h" />
+    <ClInclude Include="CSynAoiScene.h" />
+    <ClInclude Include="CSynAoiSynceeObj.h" />
+    <ClInclude Include="CSynAoiSyncerObj.h" />
+    <ClInclude Include="CSynAoiViewObj.h" />
+    <ClInclude Include="CSynAoiDimObj.h" />
+    <ClInclude Include="CSynAoiDimScene.h" />
+    <ClInclude Include="CAoiQuadNode.h" />
+    <ClInclude Include="CAoiQuadTree.h" />
+    <ClInclude Include="CTraitsAoiQuad.h" />
+    <ClInclude Include="QuadTreeFun.h" />
+    <ClInclude Include="TQuadNode.h" />
+    <ClInclude Include="TQuadTree.h" />
+    <ClInclude Include="..\..\sdk\inc\CDimensionInfo.h" />
+    <ClInclude Include="..\..\sdk\inc\CCoreSceneMgrServer.h" />
+    <ClInclude Include="..\..\sdk\inc\CCoreSceneServer.h" />
+    <ClInclude Include="CCoreServerSceneResult.h" />
+    <ClInclude Include="..\..\sdk\inc\ICoreSceneServerHandler.h" />
+    <ClInclude Include="CSyncCoreSceneMgrServer.h" />
+    <ClInclude Include="CSyncCoreSceneServer.h" />
+    <ClInclude Include="CAoiSceneHandler.h" />
+    <ClInclude Include="CSyncCoreMsgMgr.h" />
+    <ClInclude Include="SyncPatternCOR.h" />
+    <ClInclude Include="CMirrorBuffer.h" />
+    <ClInclude Include="CMirrorBufferData.h" />
+    <ClInclude Include="CMirrorMallocObject.h" />
+    <ClInclude Include="CTrMirrorBuffer.h" />
+    <ClInclude Include="TMirrorBaseData.h" />
+    <ClInclude Include="CMirrorPatch.h" />
+    <ClInclude Include="CMirrorPatchCmd.h" />
+    <ClInclude Include="CMirrorRBPatch.h" />
+    <ClInclude Include="CMirrorRBPatchMgr.h" />
+    <ClInclude Include="CMirrorWBPatch.h" />
+    <ClInclude Include="CMirrorWBPatchMgr.h" />
+    <ClInclude Include="CTrDiscardedCmdMgr.h" />
+    <ClInclude Include="CMirrorQuadObject.h" />
+    <ClInclude Include="CRBQuadObject.h" />
+    <ClInclude Include="CWBQuadObject.h" />
+    <ClInclude Include="CCoreQuadNode.h" />
+    <ClInclude Include="CCoreQuadObject.h" />
+    <ClInclude Include="CCoreQuadScene.h" />
+    <ClInclude Include="CTraitsCoreQuad.h" />
+    <ClInclude Include="CMirrorQuadScene.h" />
+    <ClInclude Include="CRBQuadScene.h" />
+    <ClInclude Include="CWBQuadScene.h" />
+    <ClInclude Include="CMirrorPosData.h" />
+    <ClInclude Include="CRBPosData.h" />
+    <ClInclude Include="CWBPosData.h" />
+    <ClInclude Include="CCoreTrMirrorBufferMgr.h" />
+    <ClInclude Include="CAsynCorePos.h" />
+    <ClInclude Include="CSyncCorePos.h" />
+    <ClInclude Include="CTrMirrorPosBuffer.h" />
+    <ClInclude Include="CAsynCoreQuadObject.h" />
+    <ClInclude Include="CAsynCoreQuadScene.h" />
+    <ClInclude Include="CSyncCoreQuadObject.h" />
+    <ClInclude Include="CSyncCoreQuadScene.h" />
+    <ClInclude Include="CTrMirrorQuadBuffer.h" />
+    <ClInclude Include="CTestSuiteTripleBuffer.h" />
+    <ClInclude Include="CAsynDistortedTimeObjServer.h" />
+    <ClInclude Include="CAsynDistortedTimeSceneServer.h" />
+    <ClInclude Include="CSyncDistortedTimeObjServer.h" />
+    <ClInclude Include="CSyncDistortedTimeSceneServer.h" />
+    <ClInclude Include="..\..\sdk\inc\CMegaLog.h" />
+    <ClInclude Include="..\..\sdk\inc\CMegaLogAllocator.h" />
+    <ClInclude Include="CMegaLogJob.h" />
+    <ClInclude Include="..\..\sdk\inc\CMegaLogMallocObject.h" />
+    <ClInclude Include="CMegaLogMgr.h" />
+    <ClInclude Include="CSyncMegaLog.h" />
+    <ClInclude Include="CCacheVariantServer.h" />
+    <ClInclude Include="CCacheVariantServerHolder.h" />
+    <ClInclude Include="CCoreObjVariantSyncStreamJob.h" />
+    <ClInclude Include="..\..\sdk\inc\CSyncVariantServer.h" />
+    <ClInclude Include="..\..\sdk\inc\CSyncVariantServerHolder.h" />
+    <ClInclude Include="CVariantSyncStream.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CCoreServerJob.inl" />
+    <None Include="CCoreServerResult.inl" />
+    <None Include="CSyncCoreObjectMediator.inl" />
+    <None Include="CConnServer.inl" />
+    <None Include="TBaseMetaSceneServer.inl" />
+    <None Include="CAoiJob.inl" />
+    <None Include="CAoiResult.inl" />
+    <None Include="CLogicThreadJob.inl" />
+    <None Include="CLogicThreadResult.inl" />
+    <None Include="CAsyAoiDimScene.inl" />
+    <None Include="TQuadNode.inl" />
+    <None Include="TQuadTree.inl" />
+    <None Include="TMirrorBaseData.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,15 @@
+<dev_config>
+
+	<!-- CoreDump，在程序发生异常时候是否直接coredump -->
+	<catch_error>0</catch_error>
+	
+	<!-- errlog encrypt，如果程序记录err log，那么此选项设置在写log的时候是否加密-->
+	<errlog_encrypt>1</errlog_encrypt>
+
+	<!-- log_interval，表明log file重置间隔时间-->
+	<log_interval>-1</log_interval>
+	
+	<win_float_exception>1</win_float_exception>
+
+			
+</dev_config>

@@ -1,0 +1,26 @@
+float2 invViewSize : register(c0);
+float fBrightPassThreshold : register(c1);             // Values greater than this are accepted for the bright pass
+
+sampler source0 : register(s0);
+
+//------------------------------------------------------------------
+// BRIGHT PASS AND 2x2 DOWN-SAMPLING PIXEL SHADER
+//
+// performs the 2x2 down sample, and then accepts any pixels
+// that are greater or equal to the configured threshold
+//------------------------------------------------------------------
+float4 Brightpass( float2 t : TEXCOORD0 ) : COLOR
+{
+    float4 average = { 0.0f, 0.0f, 0.0f, 0.0f };
+    float2 offset = invViewSize.x * 0.125;
+    average += tex2D(source0, t + float2(offset.x, 0));
+    average += tex2D(source0, t + float2(-offset.x, 0));
+    average += tex2D(source0, t + float2(0, offset.y));
+    average += tex2D(source0, t + float2(0, -offset.y));
+    average *= 0.25f;
+    float luminance = max( average.r, max( average.g, average.b ) );
+    if( luminance < fBrightPassThreshold )
+        average = float4( 0.0f, 0.0f, 0.0f, 1.0f );
+
+    return average;
+}

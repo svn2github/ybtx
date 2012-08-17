@@ -1,0 +1,6 @@
+LIBRARY	Effect
+
+EXPORTS
+	CreateEffectClassDesc		@1
+SECTIONS
+	.data READ WRITE

@@ -1,0 +1,1 @@
+CTongBase  = class()

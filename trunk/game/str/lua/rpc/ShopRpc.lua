@@ -1,0 +1,36 @@
+local ChangeSceneFailedMsg = MsgTbl.ChangeSceneFailedMsg
+
+--function Gas2Gac:ChangeSceneErrMsg(Conn, str)
+--	PostConnMsg(Conn, ChangeSceneFailedMsg)
+--end
+
+-- {"RetCSMTotalNo",     "II"},                --物品列表总数目，参数：面板位置，物品总数目
+--  {"RetCSMOrderList",   "dIsssdIdd"},                --服务器端返回物品要显示的相关信息，参数：面板位置，订单ID，角色名称，物品类型，物品名称，价格，数目，终止时间, 物品id
+--  {"RetCSMOrderListEnd","I"},                --物品列表返回结束，参数：面板位置
+--  {"RetCSMBuyOrderFinishNum", "II"},				 --角色收购列表显示完成数目，参数：订单ID，完成数目
+--  {"RetCSMAddOrderSuc","Ib"},                 --添加物品订单成功,参数：面板位置，是否成功
+--  {"RetCSMCancelOrderSucc","Ib"},               --取消物品订单成功,参数：面板位置，是否成功
+--  {"RetCSMTakeAttachmentError", "b"},           --提取物品完成，参数：是否提取成功
+--  {"RetCSMPay2OrderError", "b"},                 -- 像收购者出售符合条件的物品
+--  {"RetCSMBuyOrderError", "I"},                --购买是否成功，参数：是否成功
+--  {"RetIfHaveItemToTake", ""},                 --收购物品订单中是否有可提取物品
+--  {"RetGetCSMRememberPrice", "II"},				--返回上次玩家出售或收购的物品价格，参数：面板no（出售还是收购面板），物品价格
+--  {"RetCloseCSMWnd", ""},
+--  
+--  
+--  
+--{"ReturnMyPurchasingInfoBegin",""}, --求购行
+--	{"ReturnMyPurchasingInfo","IsIII"},	--求购行
+--	{"ReturnMyPurchasingInfoEnd",""},		--求购行
+--	{"RetAddMyPurchasing","bI"},					--求购行
+--	{"RetCancelMyPurchasing","bI"},					--求购行
+--	{"ReturnPurchasingInfoBegin",""}, --求购行
+--	{"ReturnPurchasingInfo","IsIIIIs"},	--求购行
+--	{"ReturnPurchasingInfoEnd","I"},		--求购行
+--	{"ReturnSellGoods","b"},		--求购行
+--	{"ReturnFastSellItemInfoBegin",""}, --求购行
+--	{"ReturnFastSellItemInfo","sII"},	--求购行
+--	{"ReturnFastSellItemInfoEnd",""},		--求购行
+--	{"ReturnFastSellItemOrder","III"},
+--	{"ReturnFastSellItemOrderFail",""},
+--	{"GetAveragePriceByItemName","II"},

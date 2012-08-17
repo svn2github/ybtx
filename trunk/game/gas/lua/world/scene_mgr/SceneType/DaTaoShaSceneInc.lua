@@ -1,0 +1,2 @@
+
+CDaTaoShaScene = class(CSceneBase)

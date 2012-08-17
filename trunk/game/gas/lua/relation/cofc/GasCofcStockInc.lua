@@ -1,0 +1,1 @@
+CCofcStock = class()

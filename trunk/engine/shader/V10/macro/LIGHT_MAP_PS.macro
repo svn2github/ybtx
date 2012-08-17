@@ -1,0 +1,12 @@
+float shadow = 0.0f;\
+for (float x = -1.0f; x <= 1.0f; x += 1.0f)\
+{\
+    for(float y = -1.0f; y <= 1.0f; y += 1.0f)\
+    {\
+        float2 offset = float2(x, y) * 0.0009765625f * i.text7.w;\
+        float depth = tex2Dproj(ShadowSampler, float4(i.text7.xy + offset, i.text7.z, i.text7.w)).r;\
+        shadow += depth >= (i.text7.z / i.text7.w - 0.003f);\
+    }\
+}\
+shadow /= 9.0f;\
+return float4(lerp(i.Specular.rgb, float3(1,1,1), shadow), 1);

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{a2658a05-4b3b-494e-9a30-a5514c958500}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{9b17c770-e882-485b-9705-1bcb5a1caec3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="patcher">
+      <UniqueIdentifier>{bd78dd3d-b302-46b3-a2a8-ead6c035b631}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VerifyClient">
+      <UniqueIdentifier>{24684652-df4d-4460-9abc-1db8e98062c1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\sdk\inc\iasyncupdatehandler.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CMd5Algorithm.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeCvsProc.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\PatchCommonDef.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="PatchFileProcess.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="TraceLog.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="CAudioDiff.h">
+      <Filter>patcher</Filter>
+    </ClInclude>
+    <ClInclude Include="CBaseDiff.h">
+      <Filter>patcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\cpatcher.h">
+      <Filter>patcher</Filter>
+    </ClInclude>
+    <ClInclude Include="IDiff.h">
+      <Filter>patcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\VersionManager.h">
+      <Filter>patcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CVerifyClient.h">
+      <Filter>VerifyClient</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CodeCvsProc.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="PatchFileProcess.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="StringHelper.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="TraceLog.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="CAudioDiff.cpp">
+      <Filter>patcher</Filter>
+    </ClCompile>
+    <ClCompile Include="CBaseDiff.cpp">
+      <Filter>patcher</Filter>
+    </ClCompile>
+    <ClCompile Include="cpatcher.cpp">
+      <Filter>patcher</Filter>
+    </ClCompile>
+    <ClCompile Include="VersionManager.cpp">
+      <Filter>patcher</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

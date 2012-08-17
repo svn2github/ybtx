@@ -1,0 +1,2 @@
+
+CCountRecord = class()

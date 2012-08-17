@@ -1,0 +1,1208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="框架">
+      <UniqueIdentifier>{18adbb1a-44da-492c-8e54-57750ec2c26a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="框架\同步">
+      <UniqueIdentifier>{4935846a-a547-4d28-abcc-978715f7d454}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="框架\异步">
+      <UniqueIdentifier>{e1b17122-f927-4224-ae1d-da9ac2613288}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="异步数据库">
+      <UniqueIdentifier>{671a9304-6861-45a2-8776-561aebf86a7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="异步数据库\实现">
+      <UniqueIdentifier>{5e354064-978f-49e3-8ab9-3b9d76ae3338}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="异步数据库\实现\无锁队列">
+      <UniqueIdentifier>{4988d1b0-5455-495d-b216-c3c9bd4bcbb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="异步数据库\抽象">
+      <UniqueIdentifier>{3f046fb4-fbc9-4cb5-ad0f-033caac08ea2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="对象">
+      <UniqueIdentifier>{0178de82-faba-488c-b2e2-3309aa2b4607}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="对象\同步">
+      <UniqueIdentifier>{d7e31b43-4b0a-4fe3-958a-2b4b76443405}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="对象\同步\AOI相关">
+      <UniqueIdentifier>{aa931162-4c1f-415a-9f93-0c7c693c7153}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="对象\异步">
+      <UniqueIdentifier>{4f40b5a6-099b-493e-a480-d1bc7b57404c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="连接">
+      <UniqueIdentifier>{9bf5f951-3b52-4275-b5a1-6b652633a6e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="连接\异步">
+      <UniqueIdentifier>{eaeac6dc-5ab6-466d-bf9d-be68f85fb8ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="连接\同步">
+      <UniqueIdentifier>{73b4de7d-75f8-4e23-bc46-f97150f03da6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景数据">
+      <UniqueIdentifier>{4bc7433d-5d9c-4c9f-8800-890550fe81cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景数据\同步">
+      <UniqueIdentifier>{b7ea98f3-2753-4b72-bb37-8bfa6faa75af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景数据\异步">
+      <UniqueIdentifier>{41fe46c4-0f0e-423a-b99c-c5708c5e9633}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="兴趣区域">
+      <UniqueIdentifier>{cfb646f6-571c-476d-a1a4-61981acef3f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="兴趣区域\异步">
+      <UniqueIdentifier>{f9e1bfc4-5d06-446f-9244-12da3115fd85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="兴趣区域\异步\多线程">
+      <UniqueIdentifier>{e05ef0a4-99d8-42b4-b503-8993b63c569e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="兴趣区域\异步\分层">
+      <UniqueIdentifier>{2fbff83b-3566-44fc-bccd-031e55e0a0b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="兴趣区域\同步">
+      <UniqueIdentifier>{166bca67-7d2b-4413-b4e6-de490b388a7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="兴趣区域\同步\分层">
+      <UniqueIdentifier>{d78282a5-bfb8-4794-8c93-a641ddf80ce1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="兴趣区域\同步\四叉树">
+      <UniqueIdentifier>{e7d40b4b-d183-4c33-837f-4dd94b63739b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="兴趣区域\同步\四叉树\common">
+      <UniqueIdentifier>{c84eaa9e-a2a5-4718-946e-cbab6f01f6ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景实例">
+      <UniqueIdentifier>{54f6c242-cdcd-457a-803c-5664095bfac5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景实例\异步">
+      <UniqueIdentifier>{3aebc1ba-7ad5-441b-972b-45eb21450a84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景实例\同步">
+      <UniqueIdentifier>{a19bd322-dd4e-49dc-8d70-c2cfb60a26d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景实例\同步\AOI相关">
+      <UniqueIdentifier>{380c6d5b-6766-49cb-a7d1-1762bd9ba0f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="消息">
+      <UniqueIdentifier>{1ff8e278-bb40-4653-84a4-a55dfb2d7342}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="三倍缓冲">
+      <UniqueIdentifier>{0c0fc616-a399-432c-9281-6277532b2a31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="三倍缓冲\内部实现">
+      <UniqueIdentifier>{723432a6-5363-43c2-b78f-616fd87c9fc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="三倍缓冲\内部实现\common">
+      <UniqueIdentifier>{a76f642f-d4dc-426c-bf26-fc0c936bd168}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="三倍缓冲\内部实现\patch">
+      <UniqueIdentifier>{eaff802d-9457-4992-8ad2-3990a547a2ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="三倍缓冲\内部实现\quad">
+      <UniqueIdentifier>{ecb3f054-cd88-47ea-a02e-bfc650dab7e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="三倍缓冲\内部实现\quad\object">
+      <UniqueIdentifier>{956cd612-d9a1-4638-a7a3-a30e3a50ba2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="三倍缓冲\内部实现\quad\场景四叉树">
+      <UniqueIdentifier>{57417dd6-7fb6-4f34-89fc-0d7b32025a92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="三倍缓冲\内部实现\quad\scene">
+      <UniqueIdentifier>{3bc22868-8b02-4c95-a97f-73120580bc99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="三倍缓冲\内部实现\pos">
+      <UniqueIdentifier>{347cd542-759e-496e-b731-1bba327167aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="三倍缓冲\外部使用">
+      <UniqueIdentifier>{3851a17e-453f-40ae-bd9a-9da6c7a77683}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="三倍缓冲\外部使用\pos">
+      <UniqueIdentifier>{64ebd897-9a70-4814-bfae-1e67e1bd0743}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="三倍缓冲\外部使用\quad">
+      <UniqueIdentifier>{ed9e7088-c960-4d24-a02c-799d39924e43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="三倍缓冲\test">
+      <UniqueIdentifier>{af63a542-a915-4ff4-9bbb-f04682183513}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="时间">
+      <UniqueIdentifier>{3833ce03-2918-4ea7-ba50-c8c99d6d8375}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="时间\异步">
+      <UniqueIdentifier>{0bbdd253-70fd-482d-8ba3-2bb17510c9a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="时间\同步">
+      <UniqueIdentifier>{2ee9d4d7-4ab5-415e-a876-865073e70956}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="日志">
+      <UniqueIdentifier>{1c526631-67bc-4817-92a7-d5d4272e8f72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="数据同步">
+      <UniqueIdentifier>{235948af-69d3-4162-b601-870bcb9564e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="数据同步\同步">
+      <UniqueIdentifier>{ef78112e-5ad7-46c4-9519-8f3b28ab306e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="数据同步\异步">
+      <UniqueIdentifier>{bfbbeb5e-6ecd-4ef3-ac71-2c657174277a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CAppConfigServer.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="CInstanceConfigServer.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="CThreadWatcher.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="IAppServerHandler.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreMsgSignal.cpp">
+      <Filter>框架\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreServerThread.cpp">
+      <Filter>框架\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncAppServer.cpp">
+      <Filter>框架\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncServerProxyBank.cpp">
+      <Filter>框架\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncServerTrMsgBufferMgrSwapper.cpp">
+      <Filter>框架\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncTimeSystemServer.cpp">
+      <Filter>框架\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncTraitsServer.cpp">
+      <Filter>框架\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CAppServer.cpp">
+      <Filter>框架\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CAsynServerProxyBank.cpp">
+      <Filter>框架\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CAsynServerTrMsgBufferSwapper.cpp">
+      <Filter>框架\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CAsynTimeSystemServer.cpp">
+      <Filter>框架\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreServerAppJob.cpp">
+      <Filter>框架\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreServerAppResult.cpp">
+      <Filter>框架\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreServerThreadMgr.cpp">
+      <Filter>框架\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CTraitsServer.cpp">
+      <Filter>框架\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CTestSuiteDbThreadsMgr.cpp">
+      <Filter>异步数据库</Filter>
+    </ClCompile>
+    <ClCompile Include="CDbConnectionMgr.cpp">
+      <Filter>异步数据库\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="CDbContext.cpp">
+      <Filter>异步数据库\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="CDbResultParser.cpp">
+      <Filter>异步数据库\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="CDbResultSet.cpp">
+      <Filter>异步数据库\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="CDbThread.cpp">
+      <Filter>异步数据库\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="CDbThreadMgr.cpp">
+      <Filter>异步数据库\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="CMtDbMallocObject.cpp">
+      <Filter>异步数据库\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="CQueryJob.cpp">
+      <Filter>异步数据库\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="CQueryJobQueue.cpp">
+      <Filter>异步数据库\实现\无锁队列</Filter>
+    </ClCompile>
+    <ClCompile Include="CQueryJobSubQueue.cpp">
+      <Filter>异步数据库\实现\无锁队列</Filter>
+    </ClCompile>
+    <ClCompile Include="CQueryResultQueue.cpp">
+      <Filter>异步数据库\实现\无锁队列</Filter>
+    </ClCompile>
+    <ClCompile Include="CoreObjectServerCommon.cpp">
+      <Filter>对象</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreObjDistObserver.cpp">
+      <Filter>对象\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreObjTracer.cpp">
+      <Filter>对象\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CMedObjFollowState.cpp">
+      <Filter>对象\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjDestoryState.cpp">
+      <Filter>对象\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjMoveStateServer.cpp">
+      <Filter>对象\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjTransferState.cpp">
+      <Filter>对象\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CoreObjectServerPosRelation.cpp">
+      <Filter>对象\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncCoreObjectCalculator.cpp">
+      <Filter>对象\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncCoreObjectDictator.cpp">
+      <Filter>对象\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncCoreObjectMediator.cpp">
+      <Filter>对象\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncCoreObjectServer.cpp">
+      <Filter>对象\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncWatchHandler.cpp">
+      <Filter>对象\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CAOICmd.cpp">
+      <Filter>对象\同步\AOI相关</Filter>
+    </ClCompile>
+    <ClCompile Include="CAoiSynceeObjHandler.cpp">
+      <Filter>对象\同步\AOI相关</Filter>
+    </ClCompile>
+    <ClCompile Include="CAoiSyncerObjHandler.cpp">
+      <Filter>对象\同步\AOI相关</Filter>
+    </ClCompile>
+    <ClCompile Include="CAoiViewObjHandler.cpp">
+      <Filter>对象\同步\AOI相关</Filter>
+    </ClCompile>
+    <ClCompile Include="CBindObjectServer.cpp">
+      <Filter>对象\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreObjectCalculator.cpp">
+      <Filter>对象\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreObjectDictator.cpp">
+      <Filter>对象\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreObjectMediator.cpp">
+      <Filter>对象\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreObjectServer.cpp">
+      <Filter>对象\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreServerObjJob.cpp">
+      <Filter>对象\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreServerObjResult.cpp">
+      <Filter>对象\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CTestSuiteConnServer.cpp">
+      <Filter>连接</Filter>
+    </ClCompile>
+    <ClCompile Include="CConnMgrServer.cpp">
+      <Filter>连接\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CConnServer.cpp">
+      <Filter>连接\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreConnServerJob.cpp">
+      <Filter>连接\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreConnServerResult.cpp">
+      <Filter>连接\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CMultiMsgSender.cpp">
+      <Filter>连接\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSynConnMgrServer.cpp">
+      <Filter>连接\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSynConnServer.cpp">
+      <Filter>连接\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSynMultiMsgSender.cpp">
+      <Filter>连接\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncMetaSceneMgrServer.cpp">
+      <Filter>场景数据\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncMetaSceneServer.cpp">
+      <Filter>场景数据\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CTestSuiteMetaSceneServer.cpp">
+      <Filter>场景数据\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreServerSceneJob.cpp">
+      <Filter>场景数据\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CMetaSceneMgrServer.cpp">
+      <Filter>场景数据\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CMetaSceneServer.cpp">
+      <Filter>场景数据\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CBaseAoiObj.cpp">
+      <Filter>兴趣区域</Filter>
+    </ClCompile>
+    <ClCompile Include="CQuadMallocObject.cpp">
+      <Filter>兴趣区域</Filter>
+    </ClCompile>
+    <ClCompile Include="CTestSuiteAoi.cpp">
+      <Filter>兴趣区域</Filter>
+    </ClCompile>
+    <ClCompile Include="CAsyAoiScene.cpp">
+      <Filter>兴趣区域\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CAsyAoiSynceeObj.cpp">
+      <Filter>兴趣区域\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CAsyAoiSyncerObj.cpp">
+      <Filter>兴趣区域\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CAsyAoiViewObj.cpp">
+      <Filter>兴趣区域\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CAoi2LogicThreadMsgBuffer.cpp">
+      <Filter>兴趣区域\异步\多线程</Filter>
+    </ClCompile>
+    <ClCompile Include="CAoiJob.cpp">
+      <Filter>兴趣区域\异步\多线程</Filter>
+    </ClCompile>
+    <ClCompile Include="CAoiResult.cpp">
+      <Filter>兴趣区域\异步\多线程</Filter>
+    </ClCompile>
+    <ClCompile Include="CAoiThread.cpp">
+      <Filter>兴趣区域\异步\多线程</Filter>
+    </ClCompile>
+    <ClCompile Include="CAoiThreadMgr.cpp">
+      <Filter>兴趣区域\异步\多线程</Filter>
+    </ClCompile>
+    <ClCompile Include="CLogicThreadJob.cpp">
+      <Filter>兴趣区域\异步\多线程</Filter>
+    </ClCompile>
+    <ClCompile Include="CLogicThreadResult.cpp">
+      <Filter>兴趣区域\异步\多线程</Filter>
+    </ClCompile>
+    <ClCompile Include="CAsyAoiDimObj.cpp">
+      <Filter>兴趣区域\异步\分层</Filter>
+    </ClCompile>
+    <ClCompile Include="CAsyAoiDimScene.cpp">
+      <Filter>兴趣区域\异步\分层</Filter>
+    </ClCompile>
+    <ClCompile Include="CAoiShapeCache.cpp">
+      <Filter>兴趣区域\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSynAoiScene.cpp">
+      <Filter>兴趣区域\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSynAoiSynceeObj.cpp">
+      <Filter>兴趣区域\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSynAoiSyncerObj.cpp">
+      <Filter>兴趣区域\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSynAoiViewObj.cpp">
+      <Filter>兴趣区域\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSynAoiDimObj.cpp">
+      <Filter>兴趣区域\同步\分层</Filter>
+    </ClCompile>
+    <ClCompile Include="CSynAoiDimScene.cpp">
+      <Filter>兴趣区域\同步\分层</Filter>
+    </ClCompile>
+    <ClCompile Include="CAoiQuadNode.cpp">
+      <Filter>兴趣区域\同步\四叉树</Filter>
+    </ClCompile>
+    <ClCompile Include="CAoiQuadTree.cpp">
+      <Filter>兴趣区域\同步\四叉树</Filter>
+    </ClCompile>
+    <ClCompile Include="TravelAoiQuad.cpp">
+      <Filter>兴趣区域\同步\四叉树</Filter>
+    </ClCompile>
+    <ClCompile Include="QuadTreeFun.cpp">
+      <Filter>兴趣区域\同步\四叉树\common</Filter>
+    </ClCompile>
+    <ClCompile Include="CDimensionInfo.cpp">
+      <Filter>场景实例</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreSceneMgrServer.cpp">
+      <Filter>场景实例\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreSceneServer.cpp">
+      <Filter>场景实例\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreServerSceneResult.cpp">
+      <Filter>场景实例\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncCoreSceneMgrServer.cpp">
+      <Filter>场景实例\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncCoreSceneServer.cpp">
+      <Filter>场景实例\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CAoiSceneHandler.cpp">
+      <Filter>场景实例\同步\AOI相关</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncCoreMsgMgr.cpp">
+      <Filter>消息</Filter>
+    </ClCompile>
+    <ClCompile Include="SyncPatternCOR.cpp">
+      <Filter>消息</Filter>
+    </ClCompile>
+    <ClCompile Include="CMirrorBuffer.cpp">
+      <Filter>三倍缓冲\内部实现\common</Filter>
+    </ClCompile>
+    <ClCompile Include="CMirrorBufferData.cpp">
+      <Filter>三倍缓冲\内部实现\common</Filter>
+    </ClCompile>
+    <ClCompile Include="CMirrorMallocObject.cpp">
+      <Filter>三倍缓冲\内部实现\common</Filter>
+    </ClCompile>
+    <ClCompile Include="CTrMirrorBuffer.cpp">
+      <Filter>三倍缓冲\内部实现\common</Filter>
+    </ClCompile>
+    <ClCompile Include="CMirrorPatchCmd.cpp">
+      <Filter>三倍缓冲\内部实现\patch</Filter>
+    </ClCompile>
+    <ClCompile Include="CMirrorRBPatch.cpp">
+      <Filter>三倍缓冲\内部实现\patch</Filter>
+    </ClCompile>
+    <ClCompile Include="CMirrorRBPatchMgr.cpp">
+      <Filter>三倍缓冲\内部实现\patch</Filter>
+    </ClCompile>
+    <ClCompile Include="CMirrorWBPatch.cpp">
+      <Filter>三倍缓冲\内部实现\patch</Filter>
+    </ClCompile>
+    <ClCompile Include="CMirrorWBPatchMgr.cpp">
+      <Filter>三倍缓冲\内部实现\patch</Filter>
+    </ClCompile>
+    <ClCompile Include="CTrDiscardedCmdMgr.cpp">
+      <Filter>三倍缓冲\内部实现\patch</Filter>
+    </ClCompile>
+    <ClCompile Include="CMirrorQuadObject.cpp">
+      <Filter>三倍缓冲\内部实现\quad\object</Filter>
+    </ClCompile>
+    <ClCompile Include="CRBQuadObject.cpp">
+      <Filter>三倍缓冲\内部实现\quad\object</Filter>
+    </ClCompile>
+    <ClCompile Include="CWBQuadObject.cpp">
+      <Filter>三倍缓冲\内部实现\quad\object</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreQuadNode.cpp">
+      <Filter>三倍缓冲\内部实现\quad\场景四叉树</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreQuadObject.cpp">
+      <Filter>三倍缓冲\内部实现\quad\场景四叉树</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreQuadScene.cpp">
+      <Filter>三倍缓冲\内部实现\quad\场景四叉树</Filter>
+    </ClCompile>
+    <ClCompile Include="CMirrorQuadScene.cpp">
+      <Filter>三倍缓冲\内部实现\quad\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CRBQuadScene.cpp">
+      <Filter>三倍缓冲\内部实现\quad\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CWBQuadScene.cpp">
+      <Filter>三倍缓冲\内部实现\quad\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CMirrorPosData.cpp">
+      <Filter>三倍缓冲\内部实现\pos</Filter>
+    </ClCompile>
+    <ClCompile Include="CRBPosData.cpp">
+      <Filter>三倍缓冲\内部实现\pos</Filter>
+    </ClCompile>
+    <ClCompile Include="CWBPosData.cpp">
+      <Filter>三倍缓冲\内部实现\pos</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreTrMirrorBufferMgr.cpp">
+      <Filter>三倍缓冲\外部使用</Filter>
+    </ClCompile>
+    <ClCompile Include="CAsynCorePos.cpp">
+      <Filter>三倍缓冲\外部使用\pos</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncCorePos.cpp">
+      <Filter>三倍缓冲\外部使用\pos</Filter>
+    </ClCompile>
+    <ClCompile Include="CTrMirrorPosBuffer.cpp">
+      <Filter>三倍缓冲\外部使用\pos</Filter>
+    </ClCompile>
+    <ClCompile Include="CAsynCoreQuadObject.cpp">
+      <Filter>三倍缓冲\外部使用\quad</Filter>
+    </ClCompile>
+    <ClCompile Include="CAsynCoreQuadScene.cpp">
+      <Filter>三倍缓冲\外部使用\quad</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncCoreQuadObject.cpp">
+      <Filter>三倍缓冲\外部使用\quad</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncCoreQuadScene.cpp">
+      <Filter>三倍缓冲\外部使用\quad</Filter>
+    </ClCompile>
+    <ClCompile Include="CTrMirrorQuadBuffer.cpp">
+      <Filter>三倍缓冲\外部使用\quad</Filter>
+    </ClCompile>
+    <ClCompile Include="CTestSuiteTripleBuffer.cpp">
+      <Filter>三倍缓冲\test</Filter>
+    </ClCompile>
+    <ClCompile Include="CAsynDistortedTimeObjServer.cpp">
+      <Filter>时间\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CAsynDistortedTimeSceneServer.cpp">
+      <Filter>时间\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncDistortedTimeObjServer.cpp">
+      <Filter>时间\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncDistortedTimeSceneServer.cpp">
+      <Filter>时间\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CMegaLog.cpp">
+      <Filter>日志</Filter>
+    </ClCompile>
+    <ClCompile Include="CMegaLogJob.cpp">
+      <Filter>日志</Filter>
+    </ClCompile>
+    <ClCompile Include="CMegaLogMallocObject.cpp">
+      <Filter>日志</Filter>
+    </ClCompile>
+    <ClCompile Include="CMegaLogMgr.cpp">
+      <Filter>日志</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncMegaLog.cpp">
+      <Filter>日志</Filter>
+    </ClCompile>
+    <ClCompile Include="CCacheVariantServer.cpp">
+      <Filter>数据同步\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CCacheVariantServerHolder.cpp">
+      <Filter>数据同步\同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreObjVariantSyncStreamJob.cpp">
+      <Filter>数据同步\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncVariantServer.cpp">
+      <Filter>数据同步\异步</Filter>
+    </ClCompile>
+    <ClCompile Include="CSyncVariantServerHolder.cpp">
+      <Filter>数据同步\异步</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\sdk\inc\CAppConfigServer.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CInstanceConfigServer.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\CoreServerTest.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="CThreadWatcher.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IAppServerHandler.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoreMsgSignal.h">
+      <Filter>框架\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoreServerThread.h">
+      <Filter>框架\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CSyncAppServer.h">
+      <Filter>框架\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CSyncServerProxyBank.h">
+      <Filter>框架\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSyncServerTrMsgBufferMgrSwapper.h">
+      <Filter>框架\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CSyncTimeSystemServer.h">
+      <Filter>框架\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSyncTraitsServer.h">
+      <Filter>框架\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CAppServer.h">
+      <Filter>框架\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="CAsynServerProxyBank.h">
+      <Filter>框架\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CAsynServerTrMsgBufferSwapper.h">
+      <Filter>框架\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="CAsynTimeSystemServer.h">
+      <Filter>框架\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoreServerAppJob.h">
+      <Filter>框架\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoreServerAppResult.h">
+      <Filter>框架\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoreServerJob.h">
+      <Filter>框架\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoreServerResult.h">
+      <Filter>框架\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoreServerThreadMgr.h">
+      <Filter>框架\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CTraitsServer.h">
+      <Filter>框架\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="CTestSuiteDbThreadsMgr.h">
+      <Filter>异步数据库</Filter>
+    </ClInclude>
+    <ClInclude Include="CDbConnectionMgr.h">
+      <Filter>异步数据库\实现</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CDbContext.h">
+      <Filter>异步数据库\实现</Filter>
+    </ClInclude>
+    <ClInclude Include="CDbResultParser.h">
+      <Filter>异步数据库\实现</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CDbResultSet.h">
+      <Filter>异步数据库\实现</Filter>
+    </ClInclude>
+    <ClInclude Include="CDbThread.h">
+      <Filter>异步数据库\实现</Filter>
+    </ClInclude>
+    <ClInclude Include="CDbThreadMgr.h">
+      <Filter>异步数据库\实现</Filter>
+    </ClInclude>
+    <ClInclude Include="CDbVariantBank.h">
+      <Filter>异步数据库\实现</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CMtDbMallocObject.h">
+      <Filter>异步数据库\实现</Filter>
+    </ClInclude>
+    <ClInclude Include="CQueryJob.h">
+      <Filter>异步数据库\实现</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TMtDbAllocator.h">
+      <Filter>异步数据库\实现</Filter>
+    </ClInclude>
+    <ClInclude Include="CQueryJobQueue.h">
+      <Filter>异步数据库\实现\无锁队列</Filter>
+    </ClInclude>
+    <ClInclude Include="CQueryJobSubQueue.h">
+      <Filter>异步数据库\实现\无锁队列</Filter>
+    </ClInclude>
+    <ClInclude Include="CQueryResultQueue.h">
+      <Filter>异步数据库\实现\无锁队列</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IDbConnectionMgr.h">
+      <Filter>异步数据库\抽象</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IDbThreadMgr.h">
+      <Filter>异步数据库\抽象</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreObjectServerCommon.h">
+      <Filter>对象</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CoreObjectServerDefs.h">
+      <Filter>对象</Filter>
+    </ClInclude>
+    <ClInclude Include="TSendAdapter.h">
+      <Filter>对象</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoreObjDistObserver.h">
+      <Filter>对象\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoreObjTracer.h">
+      <Filter>对象\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CMedObjFollowState.h">
+      <Filter>对象\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjDestoryState.h">
+      <Filter>对象\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjMoveStateServer.h">
+      <Filter>对象\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjTransferState.h">
+      <Filter>对象\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreObjectServerPosRelation.h">
+      <Filter>对象\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CSyncCoreObjectCalculator.h">
+      <Filter>对象\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CSyncCoreObjectDictator.h">
+      <Filter>对象\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CSyncCoreObjectMediator.h">
+      <Filter>对象\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CSyncCoreObjectServer.h">
+      <Filter>对象\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CSyncWatchHandler.h">
+      <Filter>对象\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="ISyncObjPosObserverHandler.h">
+      <Filter>对象\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="SyncCoreObjEvent.h">
+      <Filter>对象\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CAOICmd.h">
+      <Filter>对象\同步\AOI相关</Filter>
+    </ClInclude>
+    <ClInclude Include="CAoiSynceeObjHandler.h">
+      <Filter>对象\同步\AOI相关</Filter>
+    </ClInclude>
+    <ClInclude Include="CAoiSyncerObjHandler.h">
+      <Filter>对象\同步\AOI相关</Filter>
+    </ClInclude>
+    <ClInclude Include="CAoiViewObjHandler.h">
+      <Filter>对象\同步\AOI相关</Filter>
+    </ClInclude>
+    <ClInclude Include="CBindObjectServer.h">
+      <Filter>对象\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCoreObjectCalculator.h">
+      <Filter>对象\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCoreObjectDictator.h">
+      <Filter>对象\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCoreObjectMediator.h">
+      <Filter>对象\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCoreObjectServer.h">
+      <Filter>对象\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoreServerObjJob.h">
+      <Filter>对象\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoreServerObjResult.h">
+      <Filter>对象\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\ICoreObjectCalculatorHandler.h">
+      <Filter>对象\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\ICoreObjectDictatorHandler.h">
+      <Filter>对象\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\ICoreObjectMediatorHandler.h">
+      <Filter>对象\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\ICoreObjectServerHandler.h">
+      <Filter>对象\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IObjPosObserverHandler.h">
+      <Filter>对象\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="CTestSuiteConnServer.h">
+      <Filter>连接</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\EBeginServiceResultEnum.h">
+      <Filter>连接</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CConnMgrServer.h">
+      <Filter>连接\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CConnServer.h">
+      <Filter>连接\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoreConnServerJob.h">
+      <Filter>连接\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoreConnServerResult.h">
+      <Filter>连接\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CMultiMsgSender.h">
+      <Filter>连接\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IConnMgrServerHandler.h">
+      <Filter>连接\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="CSynConnMgrServer.h">
+      <Filter>连接\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CSynConnServer.h">
+      <Filter>连接\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CSynMultiMsgSender.h">
+      <Filter>连接\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CSyncMetaSceneMgrServer.h">
+      <Filter>场景数据\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CSyncMetaSceneServer.h">
+      <Filter>场景数据\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CTestSuiteMetaSceneServer.h">
+      <Filter>场景数据\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TBaseMetaSceneServer.h">
+      <Filter>场景数据\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoreServerSceneJob.h">
+      <Filter>场景数据\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CMetaSceneMgrServer.h">
+      <Filter>场景数据\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CMetaSceneServer.h">
+      <Filter>场景数据\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\AoiDef.h">
+      <Filter>兴趣区域</Filter>
+    </ClInclude>
+    <ClInclude Include="CBaseAoiObj.h">
+      <Filter>兴趣区域</Filter>
+    </ClInclude>
+    <ClInclude Include="CQuadMallocObject.h">
+      <Filter>兴趣区域</Filter>
+    </ClInclude>
+    <ClInclude Include="CTestSuiteAoi.h">
+      <Filter>兴趣区域</Filter>
+    </ClInclude>
+    <ClInclude Include="TQuadAllocator.h">
+      <Filter>兴趣区域</Filter>
+    </ClInclude>
+    <ClInclude Include="CAsyAoiScene.h">
+      <Filter>兴趣区域\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="CAsyAoiSynceeObj.h">
+      <Filter>兴趣区域\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="CAsyAoiSyncerObj.h">
+      <Filter>兴趣区域\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="CAsyAoiViewObj.h">
+      <Filter>兴趣区域\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="CAoi2LogicThreadMsgBuffer.h">
+      <Filter>兴趣区域\异步\多线程</Filter>
+    </ClInclude>
+    <ClInclude Include="CAoiJob.h">
+      <Filter>兴趣区域\异步\多线程</Filter>
+    </ClInclude>
+    <ClInclude Include="CAoiResult.h">
+      <Filter>兴趣区域\异步\多线程</Filter>
+    </ClInclude>
+    <ClInclude Include="CAoiThread.h">
+      <Filter>兴趣区域\异步\多线程</Filter>
+    </ClInclude>
+    <ClInclude Include="CAoiThreadMgr.h">
+      <Filter>兴趣区域\异步\多线程</Filter>
+    </ClInclude>
+    <ClInclude Include="CLogicThreadJob.h">
+      <Filter>兴趣区域\异步\多线程</Filter>
+    </ClInclude>
+    <ClInclude Include="CLogicThreadResult.h">
+      <Filter>兴趣区域\异步\多线程</Filter>
+    </ClInclude>
+    <ClInclude Include="CAsyAoiDimObj.h">
+      <Filter>兴趣区域\异步\分层</Filter>
+    </ClInclude>
+    <ClInclude Include="CAsyAoiDimScene.h">
+      <Filter>兴趣区域\异步\分层</Filter>
+    </ClInclude>
+    <ClInclude Include="CAoiShape.h">
+      <Filter>兴趣区域\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CAoiShapeCache.h">
+      <Filter>兴趣区域\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CSynAoiScene.h">
+      <Filter>兴趣区域\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CSynAoiSynceeObj.h">
+      <Filter>兴趣区域\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CSynAoiSyncerObj.h">
+      <Filter>兴趣区域\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CSynAoiViewObj.h">
+      <Filter>兴趣区域\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CSynAoiDimObj.h">
+      <Filter>兴趣区域\同步\分层</Filter>
+    </ClInclude>
+    <ClInclude Include="CSynAoiDimScene.h">
+      <Filter>兴趣区域\同步\分层</Filter>
+    </ClInclude>
+    <ClInclude Include="CAoiQuadNode.h">
+      <Filter>兴趣区域\同步\四叉树</Filter>
+    </ClInclude>
+    <ClInclude Include="CAoiQuadTree.h">
+      <Filter>兴趣区域\同步\四叉树</Filter>
+    </ClInclude>
+    <ClInclude Include="CTraitsAoiQuad.h">
+      <Filter>兴趣区域\同步\四叉树</Filter>
+    </ClInclude>
+    <ClInclude Include="QuadTreeFun.h">
+      <Filter>兴趣区域\同步\四叉树\common</Filter>
+    </ClInclude>
+    <ClInclude Include="TQuadNode.h">
+      <Filter>兴趣区域\同步\四叉树\common</Filter>
+    </ClInclude>
+    <ClInclude Include="TQuadTree.h">
+      <Filter>兴趣区域\同步\四叉树\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CDimensionInfo.h">
+      <Filter>场景实例</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCoreSceneMgrServer.h">
+      <Filter>场景实例\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCoreSceneServer.h">
+      <Filter>场景实例\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoreServerSceneResult.h">
+      <Filter>场景实例\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\ICoreSceneServerHandler.h">
+      <Filter>场景实例\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="CSyncCoreSceneMgrServer.h">
+      <Filter>场景实例\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CSyncCoreSceneServer.h">
+      <Filter>场景实例\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CAoiSceneHandler.h">
+      <Filter>场景实例\同步\AOI相关</Filter>
+    </ClInclude>
+    <ClInclude Include="CSyncCoreMsgMgr.h">
+      <Filter>消息</Filter>
+    </ClInclude>
+    <ClInclude Include="SyncPatternCOR.h">
+      <Filter>消息</Filter>
+    </ClInclude>
+    <ClInclude Include="CMirrorBuffer.h">
+      <Filter>三倍缓冲\内部实现\common</Filter>
+    </ClInclude>
+    <ClInclude Include="CMirrorBufferData.h">
+      <Filter>三倍缓冲\内部实现\common</Filter>
+    </ClInclude>
+    <ClInclude Include="CMirrorMallocObject.h">
+      <Filter>三倍缓冲\内部实现\common</Filter>
+    </ClInclude>
+    <ClInclude Include="CTrMirrorBuffer.h">
+      <Filter>三倍缓冲\内部实现\common</Filter>
+    </ClInclude>
+    <ClInclude Include="TMirrorBaseData.h">
+      <Filter>三倍缓冲\内部实现\common</Filter>
+    </ClInclude>
+    <ClInclude Include="CMirrorPatch.h">
+      <Filter>三倍缓冲\内部实现\patch</Filter>
+    </ClInclude>
+    <ClInclude Include="CMirrorPatchCmd.h">
+      <Filter>三倍缓冲\内部实现\patch</Filter>
+    </ClInclude>
+    <ClInclude Include="CMirrorRBPatch.h">
+      <Filter>三倍缓冲\内部实现\patch</Filter>
+    </ClInclude>
+    <ClInclude Include="CMirrorRBPatchMgr.h">
+      <Filter>三倍缓冲\内部实现\patch</Filter>
+    </ClInclude>
+    <ClInclude Include="CMirrorWBPatch.h">
+      <Filter>三倍缓冲\内部实现\patch</Filter>
+    </ClInclude>
+    <ClInclude Include="CMirrorWBPatchMgr.h">
+      <Filter>三倍缓冲\内部实现\patch</Filter>
+    </ClInclude>
+    <ClInclude Include="CTrDiscardedCmdMgr.h">
+      <Filter>三倍缓冲\内部实现\patch</Filter>
+    </ClInclude>
+    <ClInclude Include="CMirrorQuadObject.h">
+      <Filter>三倍缓冲\内部实现\quad\object</Filter>
+    </ClInclude>
+    <ClInclude Include="CRBQuadObject.h">
+      <Filter>三倍缓冲\内部实现\quad\object</Filter>
+    </ClInclude>
+    <ClInclude Include="CWBQuadObject.h">
+      <Filter>三倍缓冲\内部实现\quad\object</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoreQuadNode.h">
+      <Filter>三倍缓冲\内部实现\quad\场景四叉树</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoreQuadObject.h">
+      <Filter>三倍缓冲\内部实现\quad\场景四叉树</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoreQuadScene.h">
+      <Filter>三倍缓冲\内部实现\quad\场景四叉树</Filter>
+    </ClInclude>
+    <ClInclude Include="CTraitsCoreQuad.h">
+      <Filter>三倍缓冲\内部实现\quad\场景四叉树</Filter>
+    </ClInclude>
+    <ClInclude Include="CMirrorQuadScene.h">
+      <Filter>三倍缓冲\内部实现\quad\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CRBQuadScene.h">
+      <Filter>三倍缓冲\内部实现\quad\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CWBQuadScene.h">
+      <Filter>三倍缓冲\内部实现\quad\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CMirrorPosData.h">
+      <Filter>三倍缓冲\内部实现\pos</Filter>
+    </ClInclude>
+    <ClInclude Include="CRBPosData.h">
+      <Filter>三倍缓冲\内部实现\pos</Filter>
+    </ClInclude>
+    <ClInclude Include="CWBPosData.h">
+      <Filter>三倍缓冲\内部实现\pos</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoreTrMirrorBufferMgr.h">
+      <Filter>三倍缓冲\外部使用</Filter>
+    </ClInclude>
+    <ClInclude Include="CAsynCorePos.h">
+      <Filter>三倍缓冲\外部使用\pos</Filter>
+    </ClInclude>
+    <ClInclude Include="CSyncCorePos.h">
+      <Filter>三倍缓冲\外部使用\pos</Filter>
+    </ClInclude>
+    <ClInclude Include="CTrMirrorPosBuffer.h">
+      <Filter>三倍缓冲\外部使用\pos</Filter>
+    </ClInclude>
+    <ClInclude Include="CAsynCoreQuadObject.h">
+      <Filter>三倍缓冲\外部使用\quad</Filter>
+    </ClInclude>
+    <ClInclude Include="CAsynCoreQuadScene.h">
+      <Filter>三倍缓冲\外部使用\quad</Filter>
+    </ClInclude>
+    <ClInclude Include="CSyncCoreQuadObject.h">
+      <Filter>三倍缓冲\外部使用\quad</Filter>
+    </ClInclude>
+    <ClInclude Include="CSyncCoreQuadScene.h">
+      <Filter>三倍缓冲\外部使用\quad</Filter>
+    </ClInclude>
+    <ClInclude Include="CTrMirrorQuadBuffer.h">
+      <Filter>三倍缓冲\外部使用\quad</Filter>
+    </ClInclude>
+    <ClInclude Include="CTestSuiteTripleBuffer.h">
+      <Filter>三倍缓冲\test</Filter>
+    </ClInclude>
+    <ClInclude Include="CAsynDistortedTimeObjServer.h">
+      <Filter>时间\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="CAsynDistortedTimeSceneServer.h">
+      <Filter>时间\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="CSyncDistortedTimeObjServer.h">
+      <Filter>时间\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CSyncDistortedTimeSceneServer.h">
+      <Filter>时间\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CMegaLog.h">
+      <Filter>日志</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CMegaLogAllocator.h">
+      <Filter>日志</Filter>
+    </ClInclude>
+    <ClInclude Include="CMegaLogJob.h">
+      <Filter>日志</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CMegaLogMallocObject.h">
+      <Filter>日志</Filter>
+    </ClInclude>
+    <ClInclude Include="CMegaLogMgr.h">
+      <Filter>日志</Filter>
+    </ClInclude>
+    <ClInclude Include="CSyncMegaLog.h">
+      <Filter>日志</Filter>
+    </ClInclude>
+    <ClInclude Include="CCacheVariantServer.h">
+      <Filter>数据同步\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CCacheVariantServerHolder.h">
+      <Filter>数据同步\同步</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoreObjVariantSyncStreamJob.h">
+      <Filter>数据同步\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSyncVariantServer.h">
+      <Filter>数据同步\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CSyncVariantServerHolder.h">
+      <Filter>数据同步\异步</Filter>
+    </ClInclude>
+    <ClInclude Include="CVariantSyncStream.h">
+      <Filter>数据同步\异步</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CCoreServerJob.inl">
+      <Filter>框架\异步</Filter>
+    </None>
+    <None Include="CCoreServerResult.inl">
+      <Filter>框架\异步</Filter>
+    </None>
+    <None Include="CSyncCoreObjectMediator.inl">
+      <Filter>对象\同步</Filter>
+    </None>
+    <None Include="CConnServer.inl">
+      <Filter>连接\异步</Filter>
+    </None>
+    <None Include="TBaseMetaSceneServer.inl">
+      <Filter>场景数据\同步</Filter>
+    </None>
+    <None Include="CAoiJob.inl">
+      <Filter>兴趣区域\异步\多线程</Filter>
+    </None>
+    <None Include="CAoiResult.inl">
+      <Filter>兴趣区域\异步\多线程</Filter>
+    </None>
+    <None Include="CLogicThreadJob.inl">
+      <Filter>兴趣区域\异步\多线程</Filter>
+    </None>
+    <None Include="CLogicThreadResult.inl">
+      <Filter>兴趣区域\异步\多线程</Filter>
+    </None>
+    <None Include="CAsyAoiDimScene.inl">
+      <Filter>兴趣区域\异步\分层</Filter>
+    </None>
+    <None Include="TQuadNode.inl">
+      <Filter>兴趣区域\同步\四叉树\common</Filter>
+    </None>
+    <None Include="TQuadTree.inl">
+      <Filter>兴趣区域\同步\四叉树\common</Filter>
+    </None>
+    <None Include="TMirrorBaseData.inl">
+      <Filter>三倍缓冲\内部实现\common</Filter>
+    </None>
+  </ItemGroup>
+</Project>

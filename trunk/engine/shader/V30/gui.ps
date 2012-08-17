@@ -1,0 +1,25 @@
+//输出的顶点形式
+struct PS_IN
+{
+     float4 pos       : POSITION;
+     float4 color0	  : COLOR0;
+     float2 tex0      : TEXCOORD0;
+     float2 tex1      : TEXCOORD1;   
+};
+sampler AlphaTexutre : register( s0 );
+sampler OgrTexture	 : register( s1 );
+
+float4 Head_PS(PS_IN In) : COLOR0
+{
+  return  float4(tex2D(OgrTexture, In.tex1).rgb,In.color0.a*tex2D(AlphaTexutre, In.tex0).a);
+}
+
+float4 SmallMap_PS(PS_IN In) : COLOR0
+{
+  float4 TColor = tex2D(AlphaTexutre, In.tex0);
+  float3 Color = tex2D(OgrTexture, In.tex1).rgb *(1 - TColor.a) + TColor.rgb*TColor.a;
+  if( TColor.a != 0.0)
+	  TColor.a = 1.0f;
+  return  float4(Color,In.color0.a * TColor.a);
+}
+ 

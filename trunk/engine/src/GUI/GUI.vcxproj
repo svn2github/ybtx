@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9AA43A8B-5D5C-45DB-BFA3-66A1CACF065D}</ProjectGuid>
+    <RootNamespace>GUI</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../../bin/$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../../bin/$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\include;..\..\sdk\inc;..\Common;..\..\..\implib\inc\tinyxml;..\..\..\implib\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;GUI_EXPORTS;_CRT_SECURE_NO_DEPRECATE;_STINT_MODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/Oy- %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>..\..\include;..\..\sdk\inc;..\Common;..\..\..\implib\inc\tinyxml;..\..\..\implib\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;GUI_EXPORTS;_CRT_SECURE_NO_DEPRECATE;_STINT_MODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="GUILayoutHandler.cpp" />
+    <ClCompile Include="GUIStuffParser.cpp" />
+    <ClCompile Include="GUIXmlParser.cpp" />
+    <ClCompile Include="GUIXmlResSaver.cpp" />
+    <ClCompile Include="SQRButton.cpp" />
+    <ClCompile Include="SQRChart.cpp" />
+    <ClCompile Include="SQRCheckButton.cpp" />
+    <ClCompile Include="SQRClock.cpp" />
+    <ClCompile Include="SQRComboBox.cpp" />
+    <ClCompile Include="SQRControl.cpp" />
+    <ClCompile Include="SQRDialog.cpp" />
+    <ClCompile Include="SQREdit.cpp" />
+    <ClCompile Include="SQRFlashWnd.cpp" />
+    <ClCompile Include="SQRIcon.cpp" />
+    <ClCompile Include="SQRItemWnd.cpp" />
+    <ClCompile Include="SQRListCtrl.cpp" />
+    <ClCompile Include="SQRProgress.cpp" />
+    <ClCompile Include="SQRRichText.cpp" />
+    <ClCompile Include="SQRRichToolTip.cpp" />
+    <ClCompile Include="SQRRootWnd.cpp" />
+    <ClCompile Include="SQRScrollBar.cpp" />
+    <ClCompile Include="SQRSpin.cpp" />
+    <ClCompile Include="SQRStatic.cpp" />
+    <ClCompile Include="SQRTipHolder.cpp" />
+    <ClCompile Include="SQRToolTip.cpp" />
+    <ClCompile Include="SQRTreeCtrl.cpp" />
+    <ClCompile Include="SQRVideo.cpp" />
+    <ClCompile Include="SQRWebBrowser.cpp" />
+    <ClCompile Include="SQRWnd.cpp" />
+    <ClCompile Include="SQRWndEx.cpp" />
+    <ClCompile Include="SQRWndOffSet.cpp" />
+    <ClCompile Include="GUIBase.cpp" />
+    <ClCompile Include="GUISize.cpp" />
+    <ClCompile Include="GUITextUtils.cpp" />
+    <ClCompile Include="MsgBox.cpp" />
+    <ClCompile Include="SQRWndDef.cpp" />
+    <ClCompile Include="TipHandler.cpp" />
+    <ClCompile Include="CGUICameraCtrller.cpp" />
+    <ClCompile Include="FlashDataManager.cpp" />
+    <ClCompile Include="GUIRenderTask.cpp" />
+    <ClCompile Include="SQRFlashLayer.cpp" />
+    <ClCompile Include="SQRGUIMallocObject.cpp" />
+    <ClCompile Include="SQRGUIManager.cpp" />
+    <ClCompile Include="SQRGUIStyles.cpp" />
+    <ClCompile Include="SQRWndClass.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="SQRGUIEffectHandler.cpp" />
+    <ClCompile Include="SQRGUIShapeEffect.cpp" />
+    <ClCompile Include="SQRGUITransparentEffect.cpp" />
+    <ClCompile Include="CGuiBaseCoder.cpp" />
+    <ClCompile Include="CGuiCoder.cpp" />
+    <ClCompile Include="CWebBrowserCallBack.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\sdk\inc\GUILayoutHandler.h" />
+    <ClInclude Include="..\..\sdk\inc\GUIStuffParser.h" />
+    <ClInclude Include="..\..\sdk\inc\GUIXmlHandler.h" />
+    <ClInclude Include="..\..\sdk\inc\GUIXmlParser.h" />
+    <ClInclude Include="..\..\sdk\inc\GUIXmlResSaver.h" />
+    <ClInclude Include="..\..\sdk\inc\MsgBox.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRButton.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRChart.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRCheckButton.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRClock.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRComboBox.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRControl.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRDialog.h" />
+    <ClInclude Include="..\..\sdk\inc\SQREdit.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRFlashWnd.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRIcon.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRItemWnd.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRListCtrl.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRProgress.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRRichText.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRRichToolTip.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRRootWnd.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRScrollBar.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRSpin.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRStatic.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRTipHolder.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRToolTip.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRTreeCtrl.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRVideo.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRWebBrowser.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRWnd.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRWndEx.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRWndOffSet.h" />
+    <ClInclude Include="..\..\sdk\inc\TreeNode.h" />
+    <ClInclude Include="..\..\sdk\inc\GUIBase.h" />
+    <ClInclude Include="GUISize.h" />
+    <ClInclude Include="..\..\sdk\inc\GUITextureHelper.h" />
+    <ClInclude Include="GUITextUtils.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRWndDef.h" />
+    <ClInclude Include="..\..\sdk\inc\TipHandler.h" />
+    <ClInclude Include="..\..\sdk\inc\CGUICameraCtrller.h" />
+    <ClInclude Include="..\..\sdk\inc\FlashDataManager.h" />
+    <ClInclude Include="..\..\sdk\inc\GUIRenderTask.h" />
+    <ClInclude Include="..\..\sdk\inc\IGUIManager.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRFlashLayer.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRGUIMallocObject.h" />
+    <ClInclude Include="SQRGUIManager.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRGUIStyles.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRWndClass.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRGUIEffectBase.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRGUIEffectHandler.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRGUIShapeEffect.h" />
+    <ClInclude Include="..\..\sdk\inc\SQRGUITransparentEffect.h" />
+    <ClInclude Include="..\..\sdk\inc\CGuiBaseCoder.h" />
+    <ClInclude Include="..\..\sdk\inc\CGuiCoder.h" />
+    <ClInclude Include="..\..\sdk\inc\CWebBrowserCallBack.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Debug\BuildLog.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.vcxproj">
+      <Project>{90036735-3231-45a0-965f-3b5467d34fe3}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Video\Video.vcxproj">
+      <Project>{73d4cb86-ccc1-41b7-9cc5-a89dc4fde9a5}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="\xproject\Sample\GraphicSample\GraphicSample.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

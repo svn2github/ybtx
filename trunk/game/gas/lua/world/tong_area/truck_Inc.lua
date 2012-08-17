@@ -1,0 +1,1 @@
+CTruck = class()

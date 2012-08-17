@@ -1,0 +1,2 @@
+CSmashInfoMgr = class()
+

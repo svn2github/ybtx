@@ -1,0 +1,523 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\TextureEditor.rc2""  // 非 Microsoft Visual C++ 编辑资源\r\n"
+    "#include ""afxres.rc""         // 标准组件\r\n"
+    "#include ""afxprint.rc""       // 打印/打印预览资源\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\TextureEditor.ico"
+IDR_TextureEditorTYPE   ICON                    "res\\TextureEditorDoc.ico"
+IDI_BMP                 ICON                    "res\\bmp.ico"
+IDI_TGA                 ICON                    "res\\tga.ico"
+IDI_TEX                 ICON                    "res\\tex.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    BUTTON      ID_FILE_AUTOBAT
+    SEPARATOR
+    BUTTON      ID_EDIT_ADDALPHA
+    BUTTON      ID_EDIT_ADDFRAME
+    BUTTON      ID_EDIT_SETFPS
+    BUTTON      ID_EDIT_FRAMEBLEND
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    BUTTON      ID_APP_ABOUT
+    BUTTON      ID_FILE_MAPTRANS
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "新建\tCtrl+N(&N)",              ID_FILE_NEW
+        MENUITEM "打开...\tCtrl+O(&O)",           ID_FILE_OPEN
+        MENUITEM "保存\tCtrl+S(&S)",              ID_FILE_SAVE
+        MENUITEM "另存为(&A)...",                  ID_FILE_SAVE_AS
+        MENUITEM "导出tga...",                    ID_EXPORT_TGA
+        MENUITEM "批量转换",                        ID_FILE_AUTOBAT
+        MENUITEM "Alpha通道批量生成...",              ID_ALPHA_GEN
+        MENUITEM "DDS自动批量转换",                   ID_DDSCONVERT
+        MENUITEM "转换小地图",                       ID_FILE_MAPTRANS
+        MENUITEM SEPARATOR
+        MENUITEM "打印...\tCtrl+P(&P)",           ID_FILE_PRINT
+        MENUITEM "打印预览(&V)",                    ID_FILE_PRINT_PREVIEW
+        MENUITEM "打印设置(&R)...",                 ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "最近的文件",                       ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                      ID_APP_EXIT
+    END
+    POPUP "编辑(&E)"
+    BEGIN
+        MENUITEM "加入ALPHA通道",                   ID_EDIT_ADDALPHA
+        MENUITEM "增加动画帧",                       ID_EDIT_ADDFRAME
+        MENUITEM "设置每秒帧数",                      ID_EDIT_SETFPS
+        MENUITEM "帧融合",                         ID_EDIT_FRAMEBLEND
+    END
+    POPUP "视图(&V)"
+    BEGIN
+        MENUITEM "工具栏(&T)",                     ID_VIEW_TOOLBAR
+        MENUITEM "状态栏(&S)",                     ID_VIEW_STATUS_BAR
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "关于 TextureEditor(&A)...",     ID_APP_ABOUT
+    END
+END
+
+IDR_MENU1 MENU 
+BEGIN
+    MENUITEM "view",                        0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 TextureEditor"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "TextureEditor Version 2.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2007",IDC_STATIC,40,23,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,16,WS_GROUP
+    LTEXT           "发布日期 2007.08.06",IDC_STATIC,40,36,119,8
+END
+
+IDD_SAVEFORMAT DIALOGEX 0, 0, 233, 50
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选择保存格式"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "DXT1",IDC_DXT1,"Button",BS_AUTORADIOBUTTON,8,6,33,10
+    CONTROL         "DXT5",IDC_DXT5,"Button",BS_AUTORADIOBUTTON,8,17,33,10
+    CONTROL         "RGB24",IDC_RGB24,"Button",BS_AUTORADIOBUTTON,42,6,37,10
+    CONTROL         "ARGB32",IDC_ARGB32,"Button",BS_AUTORADIOBUTTON,42,18,42,10
+    CONTROL         "R5G6B5",IDC_R5G6B5,"Button",BS_AUTORADIOBUTTON,85,6,41,10
+    CONTROL         "A4R4G4B4",IDC_A4R4G4B4,"Button",BS_AUTORADIOBUTTON,85,18,47,10
+    DEFPUSHBUTTON   "OK",IDOK,176,3,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,176,19,50,14
+    CONTROL         "启用MipMap",IDC_ENABLEMIP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,33,54,10
+    EDITTEXT        IDC_FRAMETIME,68,30,31,13,ES_AUTOHSCROLL
+    LTEXT           "毫秒/帧",IDC_FRAMESTATIC,100,35,28,8
+    CONTROL         "A8",IDC_A8,"Button",BS_AUTORADIOBUTTON,139,18,25,10
+END
+
+IDD_AUTOBAT DIALOGEX 0, 0, 240, 230
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "压缩",IDC_ATDXT1,"Button",BS_AUTORADIOBUTTON | WS_GROUP,12,101,28,10
+    CONTROL         "24位",IDC_ATRGB24,"Button",BS_AUTORADIOBUTTON,46,101,28,10
+    CONTROL         "16位",IDC_ATR5G6B5,"Button",BS_AUTORADIOBUTTON,80,101,32,10
+    CONTROL         "压缩",IDC_ATDXT5,"Button",BS_AUTORADIOBUTTON | WS_GROUP,128,101,29,10
+    CONTROL         "32位",IDC_ATARGB32,"Button",BS_AUTORADIOBUTTON,165,101,30,10
+    CONTROL         "16位",IDC_ATA4R4G4B4,"Button",BS_AUTORADIOBUTTON,197,101,30,10
+    DEFPUSHBUTTON   "OK",IDOK,128,207,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,183,207,50,14
+    GROUPBOX        "无ALPHA保存方式",IDC_STATIC,7,89,109,29
+    GROUPBOX        "带ALPHA保存方式",IDC_STATIC,123,89,110,29
+    LTEXT           "无压缩格式用于2D面板，压缩格式用于模型",IDC_STATIC,13,132,155,10
+    GROUPBOX        "建议",IDC_STATIC,7,122,226,24
+    CONTROL         "",IDC_PROGRESS,"msctls_progress32",WS_BORDER | 0x1,15,178,209,14
+    LTEXT           "",IDC_SAVEPROC,13,164,146,8
+    EDITTEXT        IDC_PICPATH,7,17,172,12,ES_AUTOHSCROLL,WS_EX_ACCEPTFILES
+    PUSHBUTTON      "浏览",IDC_PICBROWN,183,16,50,14
+    EDITTEXT        IDC_SAVEPATH,7,41,172,12,ES_AUTOHSCROLL,WS_EX_ACCEPTFILES
+    PUSHBUTTON      "浏览",IDC_SAVEBROWN,183,40,50,14
+    LTEXT           "图片文件目录",IDC_STATIC,7,9,55,8
+    LTEXT           "保存路径",IDC_STATIC,8,33,83,8
+    CONTROL         "启用MipMap",IDC_ENABLEMIP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,128,68,54,10
+    GROUPBOX        "存储格式",IDC_STATIC,7,56,109,30
+    COMBOBOX        IDC_COMBOSAVETYPE,13,67,96,84,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "转换进度",IDC_STATIC,7,150,226,49
+END
+
+IDD_GETINPUTSTR DIALOGEX 0, 0, 186, 17
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,131,1,50,13
+    EDITTEXT        IDC_EDIT1,2,1,125,13,ES_AUTOHSCROLL
+END
+
+IDD_DDSCONVERT DIALOGEX 0, 0, 254, 167
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,135,146,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,190,146,50,14
+    EDITTEXT        IDC_OLDPICPATH,14,30,172,12,ES_AUTOHSCROLL,WS_EX_ACCEPTFILES
+    PUSHBUTTON      "浏览",IDC_OLDPICBROWN,190,29,50,14
+    LTEXT           "图片文件目录：",IDC_STATIC,14,16,75,8
+    LTEXT           "等待转换",IDC_DDSTRANSINFO,13,99,225,34
+    GROUPBOX        "转换目录",IDC_STATIC,7,3,240,46
+    GROUPBOX        "转换选项",IDC_STATIC,7,52,240,28
+    GROUPBOX        "转换信息",IDC_STATIC,7,84,240,52
+    CONTROL         "保留原文件格式",IDC_RADIOKEEPORIGIN,"Button",BS_AUTORADIOBUTTON,163,64,77,10
+    CONTROL         "压缩 (带alpha:DXT5, 不带alpha:DXT1)",IDC_RADIOCOMPRESS,
+                    "Button",BS_AUTORADIOBUTTON,12,64,141,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "CompanyName", "TODO: <公司名>"
+            VALUE "FileDescription", "TODO: <文件说明>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "TextureEditor.exe"
+            VALUE "LegalCopyright", "TODO: (C) <公司名>。保留所有权利。"
+            VALUE "OriginalFilename", "TextureEditor.exe"
+            VALUE "ProductName", "TODO: <产品名>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "翻译", 0x804, 936
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_SAVEFORMAT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 226
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 43
+    END
+
+    IDD_AUTOBAT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 233
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 221
+    END
+
+    IDD_GETINPUTSTR, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 181
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 14
+    END
+
+    IDD_DDSCONVERT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 247
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 160
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "TextureEditor\n\nTextureEditor\n\n\nTextureEditor.Document\nTextureEditor.Document"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "TextureEditor"
+    AFX_IDS_IDLEMESSAGE     "就绪"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_FOMAT      "DXT1"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW             "创建新文档\n新建"
+    ID_FILE_OPEN            "打开现有文档\n打开"
+    ID_FILE_CLOSE           "关闭活动文档\n关闭"
+    ID_FILE_SAVE            "保存活动文档\n保存"
+    ID_FILE_SAVE_AS         "用新名称保存活动文档\n另存为"
+    ID_FILE_PAGE_SETUP      "更改打印选项\n页面设置"
+    ID_FILE_PRINT_SETUP     "更改打印机选项和打印选项\n打印设置"
+    ID_FILE_PRINT           "打印活动文档\n打印"
+    ID_FILE_PRINT_PREVIEW   "显示整页\n打印预览"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "显示程序信息、版本号和版权\n关于"
+    ID_APP_EXIT             "退出应用程序；提示保存文档\n退出"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "打开此文档"
+    ID_FILE_MRU_FILE2       "打开此文档"
+    ID_FILE_MRU_FILE3       "打开此文档"
+    ID_FILE_MRU_FILE4       "打开此文档"
+    ID_FILE_MRU_FILE5       "打开此文档"
+    ID_FILE_MRU_FILE6       "打开此文档"
+    ID_FILE_MRU_FILE7       "打开此文档"
+    ID_FILE_MRU_FILE8       "打开此文档"
+    ID_FILE_MRU_FILE9       "打开此文档"
+    ID_FILE_MRU_FILE10      "打开此文档"
+    ID_FILE_MRU_FILE11      "打开此文档"
+    ID_FILE_MRU_FILE12      "打开此文档"
+    ID_FILE_MRU_FILE13      "打开此文档"
+    ID_FILE_MRU_FILE14      "打开此文档"
+    ID_FILE_MRU_FILE15      "打开此文档"
+    ID_FILE_MRU_FILE16      "打开此文档"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_NEXT_PANE            "切换到下一个窗格\n下一窗格"
+    ID_PREV_PANE            "切换回上一个窗格\n上一窗格"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "将活动窗口拆分为多个窗格\n拆分"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_CLEAR           "清除选定内容\n清除"
+    ID_EDIT_CLEAR_ALL       "清除全部内容\n全部清除"
+    ID_EDIT_COPY            "复制选定内容并将其放到剪贴板上\n复制"
+    ID_EDIT_CUT             "剪切选定内容并将其放到剪贴板上\n剪切"
+    ID_EDIT_FIND            "查找指定的文本\n查找"
+    ID_EDIT_PASTE           "插入剪贴板内容\n粘贴"
+    ID_EDIT_REPEAT          "重复上一操作\n重复"
+    ID_EDIT_REPLACE         "用其他文本替换特定的文本\n替换"
+    ID_EDIT_SELECT_ALL      "选定整个文档\n全选"
+    ID_EDIT_UNDO            "撤消上一操作\n撤消"
+    ID_EDIT_REDO            "恢复上次撤消的操作\n重做"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "显示或隐藏工具栏\n切换工具栏"
+    ID_VIEW_STATUS_BAR      "显示或隐藏状态栏\n切换状态栏"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "更改窗口大小"
+    AFX_IDS_SCMOVE          "更改窗口位置"
+    AFX_IDS_SCMINIMIZE      "将窗口缩小为图标"
+    AFX_IDS_SCMAXIMIZE      "使窗口最大化显示"
+    AFX_IDS_SCNEXTWINDOW    "切换到下一个文档窗口"
+    AFX_IDS_SCPREVWINDOW    "切换到前一个文档窗口"
+    AFX_IDS_SCCLOSE         "关闭活动窗口并提示保存文档"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "将窗口恢复到正常大小"
+    AFX_IDS_SCTASKLIST      "激活任务列表"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "关闭打印预览模式\n取消预览"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_AUTOBAT         "批量转换\n批量转换\n"
+    ID_EDIT_ADDALPHA        "加入ALPHA通道\n加入ALPHA通道\n"
+    ID_EDIT_ADDFRAME        "增加动画帧\n增加动画帧\n"
+    ID_EDIT_SETFPS          "设置每秒帧数\n设置每秒帧数"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "res\TextureEditor.rc2"  // 非 Microsoft Visual C++ 编辑资源
+#include "afxres.rc"         // 标准组件
+#include "afxprint.rc"       // 打印/打印预览资源
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

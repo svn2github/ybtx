@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F79D37AA-A115-4DFF-A3E4-E884720E43B8}</ProjectGuid>
+    <RootNamespace>GacRunner</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../../bin/$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../../bin/$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/Oy- %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>../../../engine\include;../../../engine\sdk\inc;../../../game\gac_gas\ComGacGas;../../../game\gac_str\ComGacStr;../../../implib\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Winmm.lib;Imm32.lib;cppunit.lib;ws2_32.lib;d3d9.lib;d3dx9.lib;tinyxml.lib;AHClientInterface.lib;thinkgear.lib;Psapi.lib;STRMBASE.lib;strmiids.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).sso</OutputFile>
+      <AdditionalLibraryDirectories>../../../implib\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapExports>true</MapExports>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <BaseAddress>0x60000000</BaseAddress>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../../engine\include;../../../engine\sdk\inc;../../../game\gac_gas\ComGacGas;../../../game\gac_str\ComGacStr;../../../implib\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Winmm.lib;Imm32.lib;cppunit.lib;ws2_32.lib;d3d9.lib;d3dx9.lib;tinyxml.lib;AHClientInterface.lib;thinkgear.lib;Psapi.lib;strmiids.lib;strmbasd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).sso</OutputFile>
+      <AdditionalLibraryDirectories>../../../implib\lib\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapExports>true</MapExports>
+      <SubSystem>Windows</SubSystem>
+      <BaseAddress>0x60000000</BaseAddress>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CGameClientProxyBank.cpp" />
+    <ClCompile Include="CppGameClient.cpp" />
+    <ClCompile Include="GameGac.cpp" />
+    <ClCompile Include="RegistGacShell.cpp" />
+    <ClCompile Include="RunExe.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="CDisplayHurt.cpp" />
+    <ClCompile Include="FXPlayer.cpp" />
+    <ClCompile Include="CFXMallocObject.cpp" />
+    <ClCompile Include="CAureMagicClient.cpp" />
+    <ClCompile Include="CBarrierMagicClient.cpp" />
+    <ClCompile Include="CBattleArrayMagicClient.cpp" />
+    <ClCompile Include="CBulletMagicClient.cpp" />
+    <ClCompile Include="CMagicClient.cpp" />
+    <ClCompile Include="CMoveMagicClient.cpp" />
+    <ClCompile Include="CPositionMagicClient.cpp" />
+    <ClCompile Include="CShockWaveMagicClient.cpp" />
+    <ClCompile Include="CTransferableMagicClient.cpp" />
+    <ClCompile Include="CMagicEffClient.cpp" />
+    <ClCompile Include="CMagicOpClient.cpp" />
+    <ClCompile Include="MagicConds_Function.cpp" />
+    <ClCompile Include="CFighterAgileInfoClient.cpp" />
+    <ClCompile Include="CRelationMgrClient.cpp" />
+    <ClCompile Include="CCoolDownMgrClient.cpp" />
+    <ClCompile Include="CSkillClient.cpp" />
+    <ClCompile Include="CSkillCondMgrClient.cpp" />
+    <ClCompile Include="CAllStateMgrClient.cpp" />
+    <ClCompile Include="CMagicStateClient.cpp" />
+    <ClCompile Include="COtherStateClient.cpp" />
+    <ClCompile Include="CTplStateCfgClient.cpp" />
+    <ClCompile Include="CCastingProccessClient.cpp" />
+    <ClCompile Include="CCfgCalcClient.cpp" />
+    <ClCompile Include="CCfgCalcFunctionClient.cpp" />
+    <ClCompile Include="LoadSkillGac.cpp" />
+    <ClCompile Include="CNormalAttackCfgClient.cpp" />
+    <ClCompile Include="CNormalAttackClient.cpp" />
+    <ClCompile Include="CFighterDirector.cpp" />
+    <ClCompile Include="CFighterFollower.cpp" />
+    <ClCompile Include="CFighterVariantCallback.cpp" />
+    <ClCompile Include="CFighterViewInfo.cpp" />
+    <ClCompile Include="CTeamClientManager.cpp" />
+    <ClCompile Include="CBurstSoulCfgClient.cpp" />
+    <ClCompile Include="CActorCfgClient.cpp" />
+    <ClCompile Include="CActorDirector.cpp" />
+    <ClCompile Include="CActorFollower.cpp" />
+    <ClCompile Include="CActorIntObjClient.cpp" />
+    <ClCompile Include="CActorVariantCallback.cpp" />
+    <ClCompile Include="CCharAniController.cpp" />
+    <ClCompile Include="CDirectionMgr.cpp" />
+    <ClCompile Include="CFacialAniCfgMgr.cpp" />
+    <ClCompile Include="CFacialCfg.cpp" />
+    <ClCompile Include="CFacingMgr.cpp" />
+    <ClCompile Include="CNPCGazedAtMgr.cpp" />
+    <ClCompile Include="CRenderLinkMgr.cpp" />
+    <ClCompile Include="CClientApexMsgDispatcher.cpp" />
+    <ClCompile Include="CClientCharacterMsgDispatcher.cpp" />
+    <ClCompile Include="CClientFighterMsgDispatcher.cpp" />
+    <ClCompile Include="CClientMsgDispatcher.cpp" />
+    <ClCompile Include="CConnMgrClientHandler.cpp" />
+    <ClCompile Include="CEntityClient.cpp" />
+    <ClCompile Include="CEntityClientCreator.cpp" />
+    <ClCompile Include="CEntityClientManager.cpp" />
+    <ClCompile Include="CEntityVariantCallback.cpp" />
+    <ClCompile Include="CIntObjClient.cpp" />
+    <ClCompile Include="CFxSoundPlayer.cpp" />
+    <ClCompile Include="CSoundCDTimeMgr.cpp" />
+    <ClCompile Include="CSoundConfig.cpp" />
+    <ClCompile Include="CSoundPlayer.cpp" />
+    <ClCompile Include="CApexClient.cpp" />
+    <ClCompile Include="CBigMap.cpp" />
+    <ClCompile Include="CCommpressFile.cpp" />
+    <ClCompile Include="CSmallMap.cpp" />
+    <ClCompile Include="CSmallMapCoder.cpp" />
+    <ClCompile Include="CWorldMap.cpp" />
+    <ClCompile Include="CDirectionInfo.cpp" />
+    <ClCompile Include="CBloodRenderDialogPool.cpp" />
+    <ClCompile Include="CBloodRenderMallocObject.cpp" />
+    <ClCompile Include="CBloodTypeCfg.cpp" />
+    <ClCompile Include="HeadBlood.cpp" />
+    <ClCompile Include="CGameSceneHandler.cpp" />
+    <ClCompile Include="CAutoTracker.cpp" />
+    <ClCompile Include="CCharacterDirector.cpp" />
+    <ClCompile Include="CCharacterFollower.cpp" />
+    <ClCompile Include="CCharacterFollowerVariantCallback.cpp" />
+    <ClCompile Include="CCharacterVariantHandler.cpp" />
+    <ClCompile Include="ICharacterFollowerCallbackHandler.cpp" />
+    <ClCompile Include="CModelInfoClient.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CGameClientProxyBank.h" />
+    <ClInclude Include="CppGameClient.h" />
+    <ClInclude Include="RegistGacShell.h" />
+    <ClInclude Include="RunExe.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="CDisplayHurt.h" />
+    <ClInclude Include="CEffectUnitHandler.h" />
+    <ClInclude Include="FXPlayer.h" />
+    <ClInclude Include="CFXMallocObject.h" />
+    <ClInclude Include="TFXAllocator.h" />
+    <ClInclude Include="CAureMagicClient.h" />
+    <ClInclude Include="CBarrierMagicClient.h" />
+    <ClInclude Include="CBattleArrayMagicClient.h" />
+    <ClInclude Include="CBulletMagicClient.h" />
+    <ClInclude Include="CMagicClient.h" />
+    <ClInclude Include="CMoveMagicClient.h" />
+    <ClInclude Include="CPositionMagicClient.h" />
+    <ClInclude Include="CShockWaveMagicClient.h" />
+    <ClInclude Include="CTransferableMagicClient.h" />
+    <ClInclude Include="CMagicEffClient.h" />
+    <ClInclude Include="CMagicOpClient.h" />
+    <ClInclude Include="CMagicCondClient.h" />
+    <ClInclude Include="MagicConds_Function.h" />
+    <ClInclude Include="MagicConds_TestValue.h" />
+    <ClInclude Include="AgilePropertyClient.h" />
+    <ClInclude Include="CFighterAgileInfoClient.h" />
+    <ClInclude Include="CRelationMgrClient.h" />
+    <ClInclude Include="CCoolDownMgrClient.h" />
+    <ClInclude Include="CSkillClient.h" />
+    <ClInclude Include="CSkillCondMgrClient.h" />
+    <ClInclude Include="CSkillMgrClient.h" />
+    <ClInclude Include="CAllStateMgrClient.h" />
+    <ClInclude Include="CMagicStateClient.h" />
+    <ClInclude Include="COtherStateClient.h" />
+    <ClInclude Include="CTplStateCfgClient.h" />
+    <ClInclude Include="CCastingProccessClient.h" />
+    <ClInclude Include="CFightCallbackData.h" />
+    <ClInclude Include="LoadSkillGac.h" />
+    <ClInclude Include="CNormalAttackCfgClient.h" />
+    <ClInclude Include="CNormalAttackClient.h" />
+    <ClInclude Include="CFighterDirector.h" />
+    <ClInclude Include="CFighterFollower.h" />
+    <ClInclude Include="CFighterVariantCallback.h" />
+    <ClInclude Include="CFighterViewInfo.h" />
+    <ClInclude Include="IFighterDirectorHandler.h" />
+    <ClInclude Include="IFighterFollowerHandler.h" />
+    <ClInclude Include="CTeamClientManager.h" />
+    <ClInclude Include="ITeamClientManagerHandler.h" />
+    <ClInclude Include="CBurstSoulCfgClient.h" />
+    <ClInclude Include="CActorCfgClient.h" />
+    <ClInclude Include="CActorClient.h" />
+    <ClInclude Include="CActorDirector.h" />
+    <ClInclude Include="CActorFollower.h" />
+    <ClInclude Include="CActorIntObjClient.h" />
+    <ClInclude Include="CActorVariantCallback.h" />
+    <ClInclude Include="CCharAniController.h" />
+    <ClInclude Include="CDirectionMgr.h" />
+    <ClInclude Include="CFacialAniCfgMgr.h" />
+    <ClInclude Include="CFacialCfg.h" />
+    <ClInclude Include="CFacingMgr.h" />
+    <ClInclude Include="CNPCGazedAtMgr.h" />
+    <ClInclude Include="CRenderLinkMgr.h" />
+    <ClInclude Include="IActorClientHandler.h" />
+    <ClInclude Include="IActorDirectorHandler.h" />
+    <ClInclude Include="IActorFollowerHandler.h" />
+    <ClInclude Include="IActorIntObjHandler.h" />
+    <ClInclude Include="IRenderObjClientHandler.h" />
+    <ClInclude Include="CClientApexMsgDispatcher.h" />
+    <ClInclude Include="CClientCharacterMsgDispatcher.h" />
+    <ClInclude Include="CClientFighterMsgDispatcher.h" />
+    <ClInclude Include="CClientMsgDispatcher.h" />
+    <ClInclude Include="CConnMgrClientHandler.h" />
+    <ClInclude Include="IScriptConnMgrClientHandler.h" />
+    <ClInclude Include="CEntityClient.h" />
+    <ClInclude Include="CEntityClientCreator.h" />
+    <ClInclude Include="CEntityClientManager.h" />
+    <ClInclude Include="CEntityVariantCallback.h" />
+    <ClInclude Include="IEntityClientManagerHandler.h" />
+    <ClInclude Include="TEntityAdapterClient.h" />
+    <ClInclude Include="TEntityTraitsClient.h" />
+    <ClInclude Include="CIntObjClient.h" />
+    <ClInclude Include="IIntObjCallbackHandler.h" />
+    <ClInclude Include="IIntObjClientHandler.h" />
+    <ClInclude Include="TIntObjAdapterClient.h" />
+    <ClInclude Include="CFxSoundPlayer.h" />
+    <ClInclude Include="CSoundCDTimeMgr.h" />
+    <ClInclude Include="CSoundConfig.h" />
+    <ClInclude Include="CSoundPlayer.h" />
+    <ClInclude Include="CApexClient.h" />
+    <ClInclude Include="CBigMap.h" />
+    <ClInclude Include="CCommpressFile.h" />
+    <ClInclude Include="CSmallMap.h" />
+    <ClInclude Include="CSmallMapCoder.h" />
+    <ClInclude Include="CWorldMap.h" />
+    <ClInclude Include="CDirectionInfo.h" />
+    <ClInclude Include="CBloodRenderDialogPool.h" />
+    <ClInclude Include="CBloodRenderMallocObject.h" />
+    <ClInclude Include="CBloodTypeCfg.h" />
+    <ClInclude Include="HeadBlood.h" />
+    <ClInclude Include="TBloodRenderAllocator.h" />
+    <ClInclude Include="CGameSceneHandler.h" />
+    <ClInclude Include="CAutoTracker.h" />
+    <ClInclude Include="CCharacterDirector.h" />
+    <ClInclude Include="CCharacterFollower.h" />
+    <ClInclude Include="CCharacterFollowerVariantCallback.h" />
+    <ClInclude Include="CCharacterVariantHandler.h" />
+    <ClInclude Include="ICharacterDirectorCallbackHandler.h" />
+    <ClInclude Include="ICharacterDirectorHandler.h" />
+    <ClInclude Include="ICharacterFollowerCallbackHandler.h" />
+    <ClInclude Include="ICharacterFollowerHandler.h" />
+    <ClInclude Include="TCharacterAdapterClient.h" />
+    <ClInclude Include="CModelInfoClient.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MagicConds_TestValue.inl" />
+    <None Include="COtherStateClient.inl" />
+    <None Include="CTplStateCfgClient.inl" />
+    <None Include="CClientApexMsgDispatcher.inl" />
+    <None Include="CClientCharacterMsgDispatcher.inl" />
+    <None Include="CClientFighterMsgDispatcher.inl" />
+    <None Include="CEntityClient.inl" />
+    <None Include="TEntityAdapterClient.inl" />
+    <None Include="TIntObjAdapterClient.inl" />
+    <None Include="CCharacterFollower.inl" />
+    <None Include="TCharacterAdapterClient.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\engine\src\Common\Common.vcxproj">
+      <Project>{90036735-3231-45a0-965f-3b5467d34fe3}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\engine\src\CoreClient\CoreClient.vcxproj">
+      <Project>{a3ec0030-35ae-49c6-9c66-7ea4bec33046}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\engine\src\CoreCommon\CoreCommon.vcxproj">
+      <Project>{0c39d001-be9a-43b7-a06f-25b2b4159553}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\engine\src\Effect\Effect.vcxproj">
+      <Project>{90857b41-653b-40a4-83cd-a652d0358fd0}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\engine\src\Graphic\Graphic.vcxproj">
+      <Project>{f7055aa1-7ad3-436d-81ec-73d1f637d6a5}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\engine\src\GUI\GUI.vcxproj">
+      <Project>{9aa43a8b-5d5c-45db-bfa3-66a1cacf065d}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\engine\src\Module\Module.vcxproj">
+      <Project>{c347d3b0-2850-4745-b68f-0ab03a51e06c}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\engine\src\Network\Network.vcxproj">
+      <Project>{d691859c-84f0-49af-b80f-9ed712cd45a2}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\engine\src\Script\Script.vcxproj">
+      <Project>{46aead1f-9c4b-4459-bfbd-9aa9b59c11a0}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\engine\src\ShellClient\ShellClient.vcxproj">
+      <Project>{3887cc0d-2da7-4fed-892a-27de75410f28}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\engine\src\ShellCommon\ShellCommon.vcxproj">
+      <Project>{009541c9-d37f-4663-aeb0-14bd8671f30a}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\engine\src\Think\Think.vcxproj">
+      <Project>{be3593f6-7b49-4ef7-a363-0052c1bff3a4}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\engine\tools\RunModule\RunModule.vcxproj">
+      <Project>{65865bb2-5a1e-47bb-9dc3-2dfbe8dd54c9}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gac_gas\ComGacGas\ComGacGas.vcxproj">
+      <Project>{67a10648-05f2-434b-943f-aa2b2879f317}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\..\gac_str\ComGacStr\ComGacStr.vcxproj">
+      <Project>{c42b38eb-5606-4c26-8c36-eaece6130d12}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

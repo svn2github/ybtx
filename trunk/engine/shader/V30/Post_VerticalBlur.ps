@@ -1,0 +1,27 @@
+float3x4 VBloomWeights : register(c10);                 // Description of the sampling distribution used by
+float3x4 VBloomOffsets : register(c13);                 // the VerticalBlur() function
+
+sampler source0 : register(s0);
+   
+//------------------------------------------------------------------
+// VERTICAL BLUR
+//
+// Takes 9 samples from the down-sampled texture (4 above/below and
+// one central) biased by the provided weights. Different weight
+// distributions will give more subtle/pronounced blurring.
+//------------------------------------------------------------------
+float4 VerticalBlur( float2 t : TEXCOORD0 ) : COLOR
+{
+    float4 color = { 0.0f, 0.0f, 0.0f, 0.0f };
+    
+    for( int i = 0; i < 2; i++ )
+    {
+    	for ( int j = 0; j < 4; ++j )
+    	{
+        	color += (tex2D( source0, t + float2( 0.0f, VBloomOffsets[i][j] ) ) * VBloomWeights[i][j] );
+        }
+    }
+    color += (tex2D( source0, t + float2( 0.0f, VBloomOffsets[2][0] ) ) * VBloomWeights[2][0] );
+    
+    return float4( color.rgb, 1.0f );
+}

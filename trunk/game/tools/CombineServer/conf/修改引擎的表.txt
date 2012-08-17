@@ -1,0 +1,1 @@
+log.sql下面的表全部改为innodb引擎

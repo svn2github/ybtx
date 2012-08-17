@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="连接管理">
+      <UniqueIdentifier>{bb070d12-c993-4194-ac1e-911b84f83abc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="框架">
+      <UniqueIdentifier>{956e0c88-5455-44cc-b4a9-70e2823ed2f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="对象">
+      <UniqueIdentifier>{d2066f56-3a1a-4f4f-9d84-d8fcb165d505}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="时间">
+      <UniqueIdentifier>{2306accb-103e-4e63-a303-2b5d5edea81f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CConnMgrStress.cpp">
+      <Filter>连接管理</Filter>
+    </ClCompile>
+    <ClCompile Include="CConnStress.cpp">
+      <Filter>连接管理</Filter>
+    </ClCompile>
+    <ClCompile Include="CAppConfigStress.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="CAppStress.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="CTraitsStress.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreObjectStress.cpp">
+      <Filter>对象</Filter>
+    </ClCompile>
+    <ClCompile Include="CTimeSystemStress.cpp">
+      <Filter>时间</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\sdk\inc\CConnMgrStress.h">
+      <Filter>连接管理</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CConnStress.h">
+      <Filter>连接管理</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IConnMgrStressHandler.h">
+      <Filter>连接管理</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CAppConfigStress.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CAppStress.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CTraitsStress.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IAppStressHandler.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCoreObjectStress.h">
+      <Filter>对象</Filter>
+    </ClInclude>
+    <ClInclude Include="CTimeSystemStress.h">
+      <Filter>时间</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CConnStress.inl">
+      <Filter>连接管理</Filter>
+    </None>
+  </ItemGroup>
+</Project>

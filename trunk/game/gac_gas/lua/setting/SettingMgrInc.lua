@@ -1,0 +1,1 @@
+CSettingMgr = class()

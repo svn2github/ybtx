@@ -1,0 +1,1147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{1df3dffc-731f-42fa-a863-f441cc3a1a07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Foundation">
+      <UniqueIdentifier>{24091d15-d182-4bd0-8908-e0dc60fe2a2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Foundation\Math">
+      <UniqueIdentifier>{29bdb91e-3b6c-494f-a142-96ff8c9d95b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Foundation\IO">
+      <UniqueIdentifier>{22d7c53a-183f-49d1-8ffc-406af9cfba4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Foundation\Log">
+      <UniqueIdentifier>{d4993db7-6462-4298-886e-b04090d307cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Render">
+      <UniqueIdentifier>{e6b01e8c-6724-4791-a0b5-65d6180ddf6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Render\SceneNode">
+      <UniqueIdentifier>{351e9c53-6d42-4a6a-a40e-a048b2c573de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Render\SceneNode\MapObject">
+      <UniqueIdentifier>{b2f9353a-8028-465e-9d32-fecd5804bef3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Render\SceneNode\MapObjectDialog">
+      <UniqueIdentifier>{6b6e40fa-d2ee-43ac-b427-a3dcbe92f640}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Render\SceneNode\Water">
+      <UniqueIdentifier>{9ab621f4-6150-4075-b5b7-6b4520c605e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Render\SceneNode\Operator">
+      <UniqueIdentifier>{0d847bed-a659-4bac-a306-e20877dfd2e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Render\GUI">
+      <UniqueIdentifier>{a20464b8-7e86-4766-81b0-b10f4e389b0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Render\Lighting">
+      <UniqueIdentifier>{ca32754e-5254-4eba-8728-7f56e5b5ff18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Render\TerrainMesh">
+      <UniqueIdentifier>{5fb64997-28cb-4769-9cb2-322d8b69e754}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Render\TerrainMesh\Scene">
+      <UniqueIdentifier>{4b2e05b3-d107-4d47-8e36-fa31fd471ab9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Render\TerrainMesh\Scene\Coder">
+      <UniqueIdentifier>{85c0c783-e1cb-4ca1-bdf3-fa217445c9c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Render\OffLineBaker">
+      <UniqueIdentifier>{01c3f496-1b50-421d-a266-a597c035e895}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Render\OffLineBaker\Helper">
+      <UniqueIdentifier>{cea27be6-411a-4fc6-86a6-a9968d8f704c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\MapData">
+      <UniqueIdentifier>{f2a1ba1d-c247-4418-ac6d-d00f83bd9447}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\MapData\GameMapData">
+      <UniqueIdentifier>{7bd144f3-b258-4f28-bfae-78b3e90b0134}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\MapData\LocalMapData">
+      <UniqueIdentifier>{d50652fd-631a-4fa0-951c-b17f4e4bf04d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\MapData\Audio">
+      <UniqueIdentifier>{65170c52-1bb5-4d56-a6c1-43fb0dcda3a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\MapData\Login">
+      <UniqueIdentifier>{21327251-94a3-474e-a259-1586d6c6a5f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\MapData\MergeMapData">
+      <UniqueIdentifier>{950da070-51c0-4661-9ba4-6920f35c69ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\MapData\MoveMapData">
+      <UniqueIdentifier>{32b5bec0-dcab-4fa9-a27c-a07c141285d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\MapData\SplitMapData">
+      <UniqueIdentifier>{280f2656-01ae-49d2-95f6-bb57afb9d894}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\MapData\MapCommonDataSaver">
+      <UniqueIdentifier>{a9cc0afb-220c-4c1e-8ce5-4078e7b64e3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\MapData\VertexColorData">
+      <UniqueIdentifier>{b7b93906-222f-4d1f-a63c-bee1ca5f1d70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\MapData\EnlargeMapData">
+      <UniqueIdentifier>{b1601319-45dd-46f3-b01f-bde2f7fdfe2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\MapData\LinkRegion">
+      <UniqueIdentifier>{a096a33a-3dea-4238-bb64-4e353f50f17e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\MapData\VertexDiffuseData">
+      <UniqueIdentifier>{fd1370f5-c95b-4a03-a2ab-c5a8e00c3960}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Camera">
+      <UniqueIdentifier>{745904b4-e414-4b45-9d02-2c5c05ebec39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\ChunkMapData">
+      <UniqueIdentifier>{1f03691a-c568-4672-8726-280d62153321}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\ChunkMapData\TerrainData">
+      <UniqueIdentifier>{3d27a05a-0a07-42b3-ab7c-3fcd478f0574}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\ChunkMapData\ObjectData">
+      <UniqueIdentifier>{880ee194-329a-40c6-9bbe-18411e184b99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\ChunkMapData\RegionData">
+      <UniqueIdentifier>{60ea2823-881b-4354-8824-ad70a848ed74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\ChunkMapData\AudioData">
+      <UniqueIdentifier>{6e1e0ddc-142b-49e3-b407-40fefd3b981b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\ChunkMapData\LightData">
+      <UniqueIdentifier>{6d3df57f-4fd6-453d-a2e0-d3a4418c25ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\ChunkMapData\BlockData">
+      <UniqueIdentifier>{825b5e6d-c51f-4027-abe7-55fe71e8207d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\ChunkMapData\ARS_AMP">
+      <UniqueIdentifier>{c312b6d8-2ee7-4488-9cd7-7de5e475697c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Editor">
+      <UniqueIdentifier>{1ef97b42-1fb2-4048-bf6d-ded3fa010311}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Editor\LogicEvent">
+      <UniqueIdentifier>{7c6ee8fa-7d64-4ba9-a485-5d1f50622d73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Editor\LogicEvent\LogicBrush">
+      <UniqueIdentifier>{0dd32639-9a03-47ef-8276-2ede1ec3d207}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Editor\Command">
+      <UniqueIdentifier>{f6627af6-b593-4c15-b932-720c8b8d1ea0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Editor\Handler">
+      <UniqueIdentifier>{d9528213-276d-4c2c-80ba-4068de5097cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Editor\Audio">
+      <UniqueIdentifier>{2f5d45b0-7b9d-4c50-95ed-846c4797f1f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Editor\Effect">
+      <UniqueIdentifier>{cbcd2335-1659-440d-8259-9ea473955489}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Region">
+      <UniqueIdentifier>{695d73c7-d972-49d3-92cf-9c4670662c17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FormUI">
+      <UniqueIdentifier>{dca3dd6a-1d65-4152-a837-9c6b6913a125}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NewMapEditor">
+      <UniqueIdentifier>{4686130f-0c90-4a91-aefb-1a7581d44014}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{a159555a-98b2-4f05-b9f8-f9880b724f61}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\MapEditorEngine\MEMath.cpp">
+      <Filter>Engine\Foundation\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\AutoSearchFile.cpp">
+      <Filter>Engine\Foundation\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\IO\BinaryReader.cpp">
+      <Filter>Engine\Foundation\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\IO\BinaryWriter.cpp">
+      <Filter>Engine\Foundation\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\IO\FileStream.cpp">
+      <Filter>Engine\Foundation\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\IO\IoSystem.cpp">
+      <Filter>Engine\Foundation\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\IO\Serializer.cpp">
+      <Filter>Engine\Foundation\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\IO\Stream.cpp">
+      <Filter>Engine\Foundation\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\OperationLog.cpp">
+      <Filter>Engine\Foundation\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\Scene.cpp">
+      <Filter>Engine\Render\SceneNode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\Square.cpp">
+      <Filter>Engine\Render\SceneNode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\WireBox.cpp">
+      <Filter>Engine\Render\SceneNode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CMapEditAudioObj.cpp">
+      <Filter>Engine\Render\SceneNode\MapObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CMapEditEffectObj.cpp">
+      <Filter>Engine\Render\SceneNode\MapObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CMapEditLoginObj.cpp">
+      <Filter>Engine\Render\SceneNode\MapObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CMapEditModelObj.cpp">
+      <Filter>Engine\Render\SceneNode\MapObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CMapEditObject.cpp">
+      <Filter>Engine\Render\SceneNode\MapObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CMapEditRgnAmbFxObj.cpp">
+      <Filter>Engine\Render\SceneNode\MapObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CMEModel.cpp">
+      <Filter>Engine\Render\SceneNode\MapObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CTileEditorModel.cpp">
+      <Filter>Engine\Render\SceneNode\MapObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\ModelGroup.cpp">
+      <Filter>Engine\Render\SceneNode\MapObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CMapAudioDialog.cpp">
+      <Filter>Engine\Render\SceneNode\MapObjectDialog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CMapObjBaseDialog.cpp">
+      <Filter>Engine\Render\SceneNode\MapObjectDialog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\River.cpp">
+      <Filter>Engine\Render\SceneNode\Water</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\WaterOperator.cpp">
+      <Filter>Engine\Render\SceneNode\Water</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\Operator.cpp">
+      <Filter>Engine\Render\SceneNode\Operator</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\BluelyGUI.cpp">
+      <Filter>Engine\Render\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\MagicBall.cpp">
+      <Filter>Engine\Render\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\MapGUIManager.cpp">
+      <Filter>Engine\Render\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\RegionLightSettingHandler.cpp">
+      <Filter>Engine\Render\Lighting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\SceneLight.cpp">
+      <Filter>Engine\Render\Lighting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\TerrainMesh.cpp">
+      <Filter>Engine\Render\TerrainMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\TerrainMeshGrid.cpp">
+      <Filter>Engine\Render\TerrainMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\TerrainMeshIO.cpp">
+      <Filter>Engine\Render\TerrainMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\TerrainMeshObject.cpp">
+      <Filter>Engine\Render\TerrainMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\TerrainMeshRegion.cpp">
+      <Filter>Engine\Render\TerrainMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\TerrainMeshVertex.cpp">
+      <Filter>Engine\Render\TerrainMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CMapDataScene.cpp">
+      <Filter>Engine\Render\TerrainMesh\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\Coder\CMapDataCoder.cpp">
+      <Filter>Engine\Render\TerrainMesh\Scene\Coder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\Coder\CMapTerrainCoder.cpp">
+      <Filter>Engine\Render\TerrainMesh\Scene\Coder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\Coder\CMapWaterCoder.cpp">
+      <Filter>Engine\Render\TerrainMesh\Scene\Coder</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\OffLineBaker\BakerBase.cpp">
+      <Filter>Engine\Render\OffLineBaker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\OffLineBaker\BakerMgr.cpp">
+      <Filter>Engine\Render\OffLineBaker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\OffLineBaker\CLightMapFilter.cpp">
+      <Filter>Engine\Render\OffLineBaker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\OffLineBaker\LightMapBaker.cpp">
+      <Filter>Engine\Render\OffLineBaker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\OffLineBaker\LightMapWriter.cpp">
+      <Filter>Engine\Render\OffLineBaker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\OffLineBaker\LogicalHeightBaker.cpp">
+      <Filter>Engine\Render\OffLineBaker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\OffLineBaker\LogicalHeightMeshBuilder.cpp">
+      <Filter>Engine\Render\OffLineBaker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\OffLineBaker\MapBaker.cpp">
+      <Filter>Engine\Render\OffLineBaker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\OffLineBaker\ObjectVertexBaker.cpp">
+      <Filter>Engine\Render\OffLineBaker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\OffLineBaker\OfflineRender.cpp">
+      <Filter>Engine\Render\OffLineBaker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\OffLineBaker\RegionShadowMapBaker.cpp">
+      <Filter>Engine\Render\OffLineBaker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\OffLineBaker\ShadowMapBakerPool.cpp">
+      <Filter>Engine\Render\OffLineBaker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\OffLineBaker\StaticIlluminator.cpp">
+      <Filter>Engine\Render\OffLineBaker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\OffLineBaker\TerrainBaker.cpp">
+      <Filter>Engine\Render\OffLineBaker</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\OffLineBaker\CModelDiffuseColor.cpp">
+      <Filter>Engine\Render\OffLineBaker\Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\OffLineBaker\CModelProcesser.cpp">
+      <Filter>Engine\Render\OffLineBaker\Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\OffLineBaker\MeshColorSmoother.cpp">
+      <Filter>Engine\Render\OffLineBaker\Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\OffLineBaker\VertexShadowJudge.cpp">
+      <Filter>Engine\Render\OffLineBaker\Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\GameCommonMapSaver.cpp">
+      <Filter>Engine\MapData\GameMapData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\GameGacMapSaver.cpp">
+      <Filter>Engine\MapData\GameMapData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\GameGasMapSaver.cpp">
+      <Filter>Engine\MapData\GameMapData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\LoadSaveSceneLight.cpp">
+      <Filter>Engine\MapData\LocalMapData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\LocalMapLoader.cpp">
+      <Filter>Engine\MapData\LocalMapData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\LocalMapSaver.cpp">
+      <Filter>Engine\MapData\LocalMapData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\LocalMapAudioLoader.cpp">
+      <Filter>Engine\MapData\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\LocalMapAudioSaver.cpp">
+      <Filter>Engine\MapData\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\LocalMapLoginLoader.cpp">
+      <Filter>Engine\MapData\Login</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\LocalMapLoginSaver.cpp">
+      <Filter>Engine\MapData\Login</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\LocalMergeMapSaver.cpp">
+      <Filter>Engine\MapData\MergeMapData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\ChangeMoveMapData.cpp">
+      <Filter>Engine\MapData\MoveMapData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\LocalSplitMapSaver.cpp">
+      <Filter>Engine\MapData\SplitMapData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\MapCommonDataLoader.cpp">
+      <Filter>Engine\MapData\MapCommonDataSaver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\MapCommonDataSaver.cpp">
+      <Filter>Engine\MapData\MapCommonDataSaver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\VertexColorLoader.cpp">
+      <Filter>Engine\MapData\VertexColorData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\VertexColorSaver.cpp">
+      <Filter>Engine\MapData\VertexColorData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\EnlargetMapData.cpp">
+      <Filter>Engine\MapData\EnlargeMapData</Filter>
+    </ClCompile>
+    <ClCompile Include="CBarrierData.cpp">
+      <Filter>Engine\MapData\LinkRegion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CLinkRegionBuild.cpp">
+      <Filter>Engine\MapData\LinkRegion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CLinkRegionBuildNode.cpp">
+      <Filter>Engine\MapData\LinkRegion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\VertexDiffuseLoader.cpp">
+      <Filter>Engine\MapData\VertexDiffuseData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\VertexDiffuseSaver.cpp">
+      <Filter>Engine\MapData\VertexDiffuseData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CameraPathEdit.cpp">
+      <Filter>Engine\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CCameraBase.cpp">
+      <Filter>Engine\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CCameraManager.cpp">
+      <Filter>Engine\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CGameGacCamera.cpp">
+      <Filter>Engine\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CGameGacCameraNode.cpp">
+      <Filter>Engine\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CMapEditCamera.cpp">
+      <Filter>Engine\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CMapEditCameraNode.cpp">
+      <Filter>Engine\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CRecordCamera.cpp">
+      <Filter>Engine\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CRecordCameraNode.cpp">
+      <Filter>Engine\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\ChunkData\CreateSceneObjectMgr.cpp">
+      <Filter>Engine\ChunkMapData</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadMapMgr.cpp">
+      <Filter>Engine\ChunkMapData</Filter>
+    </ClCompile>
+    <ClCompile Include="LocalMapResMgr.cpp">
+      <Filter>Engine\ChunkMapData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\ChunkData\CEditorTerrainCoder.cpp">
+      <Filter>Engine\ChunkMapData\TerrainData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\ChunkData\CGameTerrainCoder.cpp">
+      <Filter>Engine\ChunkMapData\TerrainData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\ChunkData\CEditorObjectCoder.cpp">
+      <Filter>Engine\ChunkMapData\ObjectData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\ChunkData\CGameObjectCoder.cpp">
+      <Filter>Engine\ChunkMapData\ObjectData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\ChunkData\CEditorRegionCoder.cpp">
+      <Filter>Engine\ChunkMapData\RegionData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\ChunkData\CEditorAudioCoder.cpp">
+      <Filter>Engine\ChunkMapData\AudioData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\ChunkData\CGameAudioCoder.cpp">
+      <Filter>Engine\ChunkMapData\AudioData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\ChunkData\CEditorLightCoder.cpp">
+      <Filter>Engine\ChunkMapData\LightData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\ChunkData\CGameLightCoder.cpp">
+      <Filter>Engine\ChunkMapData\LightData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\ChunkData\CEditorBlockCoder.cpp">
+      <Filter>Engine\ChunkMapData\BlockData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\ChunkData\CGameBlockCoder.cpp">
+      <Filter>Engine\ChunkMapData\BlockData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\ChunkData\CEditorAmpArsCoder.cpp">
+      <Filter>Engine\ChunkMapData\ARS_AMP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\ChunkData\CGameAmpArsCoder.cpp">
+      <Filter>Engine\ChunkMapData\ARS_AMP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\Console.cpp">
+      <Filter>Engine\Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\Engine.cpp">
+      <Filter>Engine\Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\EngineImpl.cpp">
+      <Filter>Engine\Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\GUIRenderer.cpp">
+      <Filter>Engine\Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\Picker.cpp">
+      <Filter>Engine\Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\Render.cpp">
+      <Filter>Engine\Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\TerrainAdhereRenderer.cpp">
+      <Filter>Engine\Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\TerrainAlgorithm.cpp">
+      <Filter>Engine\Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\EditStateOpertiaonMgr.cpp">
+      <Filter>Engine\Editor\LogicEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\SceneEnvMgr.cpp">
+      <Filter>Engine\Editor\LogicEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\ToolHideTileRegionInView.cpp">
+      <Filter>Engine\Editor\LogicEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\ToolMainPlayer.cpp">
+      <Filter>Engine\Editor\LogicEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\ToolRecord.cpp">
+      <Filter>Engine\Editor\LogicEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\ToolRegion.cpp">
+      <Filter>Engine\Editor\LogicEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\ToolSetLogicHeight.cpp">
+      <Filter>Engine\Editor\LogicEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\ToolSetModel.cpp">
+      <Filter>Engine\Editor\LogicEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\ToolSetTileBlock.cpp">
+      <Filter>Engine\Editor\LogicEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\ToolSetTileHeight.cpp">
+      <Filter>Engine\Editor\LogicEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\ToolSetTileTexture.cpp">
+      <Filter>Engine\Editor\LogicEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\ToolVertex.cpp">
+      <Filter>Engine\Editor\LogicEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CLogicBursh.cpp">
+      <Filter>Engine\Editor\LogicEvent\LogicBrush</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CmdBornObject.cpp">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CmdDeleteObject.cpp">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CmdDeleteTexture.cpp">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CmdHideObject.cpp">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CmdLiftMoveObject.cpp">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CmdMoveObject.cpp">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CmdPlaceObject.cpp">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CmdRotateObject.cpp">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CmdSetHideGrid.cpp">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CmdSetSerialTexture.cpp">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CmdSetSingleTexture.cpp">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CmdSetTileBlock.cpp">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CmdSetVertexAlpha.cpp">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CmdSetVertexColor.cpp">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CmdSetVertexHeight.cpp">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\SceneAudioMgr.cpp">
+      <Filter>Engine\Editor\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CMapEffect.cpp">
+      <Filter>Engine\Editor\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CRegionAmbientEffectMgr.cpp">
+      <Filter>Engine\Region</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\SceneRegionMgr.cpp">
+      <Filter>Engine\Region</Filter>
+    </ClCompile>
+    <ClCompile Include="CLightSetDlg.cpp">
+      <Filter>FormUI</Filter>
+    </ClCompile>
+    <ClCompile Include="MainForm.cpp">
+      <Filter>FormUI</Filter>
+    </ClCompile>
+    <ClCompile Include="MapSetDlg.cpp">
+      <Filter>FormUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapEditorEngine\CMapEditApp.cpp">
+      <Filter>NewMapEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="CMapEditorManage.cpp">
+      <Filter>NewMapEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="CMapMgr.cpp">
+      <Filter>NewMapEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>NewMapEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="MapEditorMain.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\MapEditorEngine\MEMath.h">
+      <Filter>Engine\Foundation\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\AutoSearchFile.h">
+      <Filter>Engine\Foundation\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IO\BinaryReader.h">
+      <Filter>Engine\Foundation\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IO\BinaryWriter.h">
+      <Filter>Engine\Foundation\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IO\FileStream.h">
+      <Filter>Engine\Foundation\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IO\IoSystem.h">
+      <Filter>Engine\Foundation\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IO\Serializer.h">
+      <Filter>Engine\Foundation\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IO\Stream.h">
+      <Filter>Engine\Foundation\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\OperationLog.h">
+      <Filter>Engine\Foundation\Log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\DepathGroupModelInfo.h">
+      <Filter>Engine\Render\SceneNode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\Scene.h">
+      <Filter>Engine\Render\SceneNode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\Square.h">
+      <Filter>Engine\Render\SceneNode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\WireBox.h">
+      <Filter>Engine\Render\SceneNode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CMapEditAudioObj.h">
+      <Filter>Engine\Render\SceneNode\MapObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CMapEditEffectObj.h">
+      <Filter>Engine\Render\SceneNode\MapObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CMapEditLoginObj.h">
+      <Filter>Engine\Render\SceneNode\MapObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CMapEditModelObj.h">
+      <Filter>Engine\Render\SceneNode\MapObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CMapEditModelObjPro.h">
+      <Filter>Engine\Render\SceneNode\MapObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CMapEditObject.h">
+      <Filter>Engine\Render\SceneNode\MapObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CMapEditRgnAmbFxObj.h">
+      <Filter>Engine\Render\SceneNode\MapObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CMEModel.h">
+      <Filter>Engine\Render\SceneNode\MapObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CTileEditorModel.h">
+      <Filter>Engine\Render\SceneNode\MapObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\ModelGroup.h">
+      <Filter>Engine\Render\SceneNode\MapObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CMapAudioDialog.h">
+      <Filter>Engine\Render\SceneNode\MapObjectDialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CMapObjBaseDialog.h">
+      <Filter>Engine\Render\SceneNode\MapObjectDialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\River.h">
+      <Filter>Engine\Render\SceneNode\Water</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\WaterOperator.h">
+      <Filter>Engine\Render\SceneNode\Water</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\Operator.h">
+      <Filter>Engine\Render\SceneNode\Operator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\OperatorProperty.h">
+      <Filter>Engine\Render\SceneNode\Operator</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\BluelyGUI.h">
+      <Filter>Engine\Render\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\MagicBall.h">
+      <Filter>Engine\Render\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\MapGUIManager.h">
+      <Filter>Engine\Render\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\LightHelper.h">
+      <Filter>Engine\Render\Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\RegionLightSettingHandler.h">
+      <Filter>Engine\Render\Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\SceneLight.h">
+      <Filter>Engine\Render\Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\LocalVersion.h">
+      <Filter>Engine\Render\TerrainMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\TerrainMesh.h">
+      <Filter>Engine\Render\TerrainMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\TerrainMeshGrid.h">
+      <Filter>Engine\Render\TerrainMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\TerrainMeshObject.h">
+      <Filter>Engine\Render\TerrainMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\TerrainMeshRegion.h">
+      <Filter>Engine\Render\TerrainMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\TerrainMeshVertex.h">
+      <Filter>Engine\Render\TerrainMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CMapDataScene.h">
+      <Filter>Engine\Render\TerrainMesh\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\Coder\CMapDataCoder.h">
+      <Filter>Engine\Render\TerrainMesh\Scene\Coder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\Coder\CMapTerrainCoder.h">
+      <Filter>Engine\Render\TerrainMesh\Scene\Coder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\Coder\CMapWaterCoder.h">
+      <Filter>Engine\Render\TerrainMesh\Scene\Coder</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\OffLineBaker\BakerBase.h">
+      <Filter>Engine\Render\OffLineBaker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\OffLineBaker\BakerMgr.h">
+      <Filter>Engine\Render\OffLineBaker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\OffLineBaker\CLightMapFilter.h">
+      <Filter>Engine\Render\OffLineBaker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\OffLineBaker\LightMapBaker.h">
+      <Filter>Engine\Render\OffLineBaker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\OffLineBaker\LightMapWriter.h">
+      <Filter>Engine\Render\OffLineBaker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\OffLineBaker\LogicalHeightBaker.h">
+      <Filter>Engine\Render\OffLineBaker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\OffLineBaker\LogicalHeightMeshBuilder.h">
+      <Filter>Engine\Render\OffLineBaker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\OffLineBaker\MapBaker.h">
+      <Filter>Engine\Render\OffLineBaker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\OffLineBaker\ObjectVertexBaker.h">
+      <Filter>Engine\Render\OffLineBaker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\OffLineBaker\OfflineRender.h">
+      <Filter>Engine\Render\OffLineBaker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\OffLineBaker\RegionShadowMapBaker.h">
+      <Filter>Engine\Render\OffLineBaker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\OffLineBaker\ShadowMapBakerPool.h">
+      <Filter>Engine\Render\OffLineBaker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\OffLineBaker\StaticIlluminator.h">
+      <Filter>Engine\Render\OffLineBaker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\OffLineBaker\TerrainBaker.h">
+      <Filter>Engine\Render\OffLineBaker</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\OffLineBaker\CModelDiffuseColor.h">
+      <Filter>Engine\Render\OffLineBaker\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\OffLineBaker\CModelProcesser.h">
+      <Filter>Engine\Render\OffLineBaker\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\OffLineBaker\CVBRef.h">
+      <Filter>Engine\Render\OffLineBaker\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\OffLineBaker\CVertexColor.h">
+      <Filter>Engine\Render\OffLineBaker\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\OffLineBaker\MeshColorSmoother.h">
+      <Filter>Engine\Render\OffLineBaker\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\OffLineBaker\VertexShadowJudge.h">
+      <Filter>Engine\Render\OffLineBaker\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\GameCommonMapSaver.h">
+      <Filter>Engine\MapData\GameMapData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\GameGacMapSaver.h">
+      <Filter>Engine\MapData\GameMapData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\GameGasMapSaver.h">
+      <Filter>Engine\MapData\GameMapData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\LoadSaveSceneLight.h">
+      <Filter>Engine\MapData\LocalMapData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\LocalMapLoader.h">
+      <Filter>Engine\MapData\LocalMapData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\LocalMapSaver.h">
+      <Filter>Engine\MapData\LocalMapData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\LocalMapAudioLoader.h">
+      <Filter>Engine\MapData\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\LocalMapAudioSaver.h">
+      <Filter>Engine\MapData\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\SceneAudio.h">
+      <Filter>Engine\MapData\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\LocalMapLoginLoader.h">
+      <Filter>Engine\MapData\Login</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\LocalMapLoginSaver.h">
+      <Filter>Engine\MapData\Login</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\LocalMergeMapSaver.h">
+      <Filter>Engine\MapData\MergeMapData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\ChangeMoveMapData.h">
+      <Filter>Engine\MapData\MoveMapData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\LocalSplitMapSaver.h">
+      <Filter>Engine\MapData\SplitMapData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\MapCommonDataLoader.h">
+      <Filter>Engine\MapData\MapCommonDataSaver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\MapCommonDataSaver.h">
+      <Filter>Engine\MapData\MapCommonDataSaver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\VertexColorLoader.h">
+      <Filter>Engine\MapData\VertexColorData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\VertexColorSaver.h">
+      <Filter>Engine\MapData\VertexColorData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\EnlargetMapData.h">
+      <Filter>Engine\MapData\EnlargeMapData</Filter>
+    </ClInclude>
+    <ClInclude Include="CBarrierData.h">
+      <Filter>Engine\MapData\LinkRegion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CLinkRegionBuild.h">
+      <Filter>Engine\MapData\LinkRegion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CLinkRegionBuildNode.h">
+      <Filter>Engine\MapData\LinkRegion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\IBarrierInfo.h">
+      <Filter>Engine\MapData\LinkRegion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\VertexDiffuseLoader.h">
+      <Filter>Engine\MapData\VertexDiffuseData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\VertexDiffuseSaver.h">
+      <Filter>Engine\MapData\VertexDiffuseData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CameraPathEdit.h">
+      <Filter>Engine\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CCameraBase.h">
+      <Filter>Engine\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CCameraManager.h">
+      <Filter>Engine\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CGameGacCamera.h">
+      <Filter>Engine\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CGameGacCameraNode.h">
+      <Filter>Engine\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CMapEditCamera.h">
+      <Filter>Engine\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CMapEditCameraNode.h">
+      <Filter>Engine\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CRecordCamera.h">
+      <Filter>Engine\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CRecordCameraNode.h">
+      <Filter>Engine\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\ChunkData\CreateSceneObjectMgr.h">
+      <Filter>Engine\ChunkMapData</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadMapMgr.h">
+      <Filter>Engine\ChunkMapData</Filter>
+    </ClInclude>
+    <ClInclude Include="LocalMapResMgr.h">
+      <Filter>Engine\ChunkMapData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\ChunkData\CEditorTerrainCoder.h">
+      <Filter>Engine\ChunkMapData\TerrainData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\ChunkData\CGameTerrainCoder.h">
+      <Filter>Engine\ChunkMapData\TerrainData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\ChunkData\CEditorObjectCoder.h">
+      <Filter>Engine\ChunkMapData\ObjectData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\ChunkData\CGameObjectCoder.h">
+      <Filter>Engine\ChunkMapData\ObjectData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\ChunkData\CEditorRegionCoder.h">
+      <Filter>Engine\ChunkMapData\RegionData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\ChunkData\CEditorAudioCoder.h">
+      <Filter>Engine\ChunkMapData\AudioData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\ChunkData\CGameAudioCoder.h">
+      <Filter>Engine\ChunkMapData\AudioData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\ChunkData\CEditorLightCoder.h">
+      <Filter>Engine\ChunkMapData\LightData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\ChunkData\CGameLightCoder.h">
+      <Filter>Engine\ChunkMapData\LightData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\ChunkData\CEditorBlockCoder.h">
+      <Filter>Engine\ChunkMapData\BlockData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\ChunkData\CGameBlockCoder.h">
+      <Filter>Engine\ChunkMapData\BlockData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\ChunkData\CEditorAmpArsCoder.h">
+      <Filter>Engine\ChunkMapData\ARS_AMP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\ChunkData\CGameAmpArsCoder.h">
+      <Filter>Engine\ChunkMapData\ARS_AMP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\Console.h">
+      <Filter>Engine\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\Engine.h">
+      <Filter>Engine\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\EngineImpl.h">
+      <Filter>Engine\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\ExsertStructDB.h">
+      <Filter>Engine\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\GUIRenderer.h">
+      <Filter>Engine\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\MEGraphic.h">
+      <Filter>Engine\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\Picker.h">
+      <Filter>Engine\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\Render.h">
+      <Filter>Engine\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\TerrainAdhereRenderer.h">
+      <Filter>Engine\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\TerrainAlgorithm.h">
+      <Filter>Engine\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\EditStateOpertiaonMgr.h">
+      <Filter>Engine\Editor\LogicEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\SceneEnvMgr.h">
+      <Filter>Engine\Editor\LogicEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\ToolHideTileRegionInView.h">
+      <Filter>Engine\Editor\LogicEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\ToolMainPlayer.h">
+      <Filter>Engine\Editor\LogicEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\ToolRecord.h">
+      <Filter>Engine\Editor\LogicEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\ToolRegion.h">
+      <Filter>Engine\Editor\LogicEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\ToolSetLogicHeight.h">
+      <Filter>Engine\Editor\LogicEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\ToolSetModel.h">
+      <Filter>Engine\Editor\LogicEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\ToolSetTileBlock.h">
+      <Filter>Engine\Editor\LogicEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\ToolSetTileHeight.h">
+      <Filter>Engine\Editor\LogicEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\ToolSetTileTexture.h">
+      <Filter>Engine\Editor\LogicEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\ToolVertex.h">
+      <Filter>Engine\Editor\LogicEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CLogicBursh.h">
+      <Filter>Engine\Editor\LogicEvent\LogicBrush</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CmdBornObject.h">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CmdDeleteObject.h">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CmdDeleteTexture.h">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CmdHideObject.h">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CmdLiftMoveObject.h">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CmdMoveObject.h">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CmdPlaceObject.h">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CmdRotateObject.h">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CmdSetHideGrid.h">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CmdSetSerialTexture.h">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CmdSetSingleTexture.h">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CmdSetTileBlock.h">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CmdSetVertexAlpha.h">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CmdSetVertexColor.h">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CmdSetVertexHeight.h">
+      <Filter>Engine\Editor\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\ICamPathHandler.h">
+      <Filter>Engine\Editor\Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\SceneAudioMgr.h">
+      <Filter>Engine\Editor\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CMapEffect.h">
+      <Filter>Engine\Editor\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CRegionAmbientEffectMgr.h">
+      <Filter>Engine\Region</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\SceneRegion.h">
+      <Filter>Engine\Region</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\SceneRegionMgr.h">
+      <Filter>Engine\Region</Filter>
+    </ClInclude>
+    <ClInclude Include="CLightSetDlg.h">
+      <Filter>FormUI</Filter>
+    </ClInclude>
+    <ClInclude Include="MainForm.h">
+      <Filter>FormUI</Filter>
+    </ClInclude>
+    <ClInclude Include="MapSetDlg.h">
+      <Filter>FormUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapEditorEngine\CMapEditApp.h">
+      <Filter>NewMapEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="CMapEditorManage.h">
+      <Filter>NewMapEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="CMapMgr.h">
+      <Filter>NewMapEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>NewMapEditor</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\MapEditorEngine\Operator.inl">
+      <Filter>Engine\Render\SceneNode\Operator</Filter>
+    </None>
+    <None Include="..\MapEditorEngine\CCameraBase.inl">
+      <Filter>Engine\Camera</Filter>
+    </None>
+    <None Include="..\MapEditorEngine\CMapEditCamera.inl">
+      <Filter>Engine\Camera</Filter>
+    </None>
+    <None Include="..\MapEditorEngine\CRecordCamera.inl">
+      <Filter>Engine\Camera</Filter>
+    </None>
+    <None Include="..\MapEditorEngine\SceneEnvMgr.inl">
+      <Filter>Engine\Editor\LogicEvent</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CLightSetDlg.resx" />
+    <EmbeddedResource Include="MainForm.resx" />
+    <EmbeddedResource Include="MapSetDlg.resx" />
+  </ItemGroup>
+</Project>

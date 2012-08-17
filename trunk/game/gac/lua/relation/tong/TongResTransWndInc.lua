@@ -1,0 +1,1 @@
+CTongResTransWnd  = class(SQRDialog, CTongBase)

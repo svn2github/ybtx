@@ -1,0 +1,653 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="网络协议">
+      <UniqueIdentifier>{c3c93a09-924f-4a79-9d3b-9d7d44a27854}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="寻路">
+      <UniqueIdentifier>{04bbe319-48de-48ee-b10c-074c0deaab98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="框架">
+      <UniqueIdentifier>{00d00567-13a2-4d00-acf2-e222acc8255a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景实例">
+      <UniqueIdentifier>{571bc70b-ada4-48ce-9653-b51508fdd93a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="连接">
+      <UniqueIdentifier>{48b3684e-80b4-421f-a3ce-d960ba0646c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="对象">
+      <UniqueIdentifier>{030e279e-bd21-4618-92b3-2188607c3bf0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="对象\事件">
+      <UniqueIdentifier>{d2611230-b6ac-4410-bd8f-f521fa52b1d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="消息">
+      <UniqueIdentifier>{cfae5836-6a13-4295-b5e7-3b81c69efdc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="消息\App Event">
+      <UniqueIdentifier>{02c99204-6e1d-4040-becb-21f3e3783f85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="状态机">
+      <UniqueIdentifier>{4890cf23-a692-4730-951d-f0d3cc962627}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="场景数据">
+      <UniqueIdentifier>{fc1d957b-db09-4b63-94d4-5e77ce3fed7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="时间">
+      <UniqueIdentifier>{50f388fe-30b2-4c2d-8d08-4365c2feeb8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="文件监测">
+      <UniqueIdentifier>{70f9cbd3-2a91-4c71-9517-ccd0465b3b12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="数据同步">
+      <UniqueIdentifier>{146f8842-0743-4517-be22-d3bb71dfb88f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BaseGac2GasPrtl.h">
+      <Filter>网络协议</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CMsgMallocObject.h">
+      <Filter>网络协议</Filter>
+    </ClInclude>
+    <ClInclude Include="PrtlGac2GasGenericDcl.h">
+      <Filter>网络协议</Filter>
+    </ClInclude>
+    <ClInclude Include="PrtlGac2GasGenericDef.h">
+      <Filter>网络协议</Filter>
+    </ClInclude>
+    <ClInclude Include="PrtlGac2GasObjectDcl.h">
+      <Filter>网络协议</Filter>
+    </ClInclude>
+    <ClInclude Include="PrtlGac2GasObjectDef.h">
+      <Filter>网络协议</Filter>
+    </ClInclude>
+    <ClInclude Include="PrtlGac2GasSegment.h">
+      <Filter>网络协议</Filter>
+    </ClInclude>
+    <ClInclude Include="PrtlGas2GacGenericDcl.h">
+      <Filter>网络协议</Filter>
+    </ClInclude>
+    <ClInclude Include="PrtlGas2GacGenericDef.h">
+      <Filter>网络协议</Filter>
+    </ClInclude>
+    <ClInclude Include="PrtlGas2GacObjectDcl.h">
+      <Filter>网络协议</Filter>
+    </ClInclude>
+    <ClInclude Include="PrtlGas2GacObjectDef.h">
+      <Filter>网络协议</Filter>
+    </ClInclude>
+    <ClInclude Include="PrtlGas2GacSegment.h">
+      <Filter>网络协议</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TBasePrtlMsg.h">
+      <Filter>网络协议</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TMsgAllocator.h">
+      <Filter>网络协议</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TMsgDispatcher.h">
+      <Filter>网络协议</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TMsgHandler.h">
+      <Filter>网络协议</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TMsgHandlerContainer.h">
+      <Filter>网络协议</Filter>
+    </ClInclude>
+    <ClInclude Include="BarrierManager.h">
+      <Filter>寻路</Filter>
+    </ClInclude>
+    <ClInclude Include="CAStarData.h">
+      <Filter>寻路</Filter>
+    </ClInclude>
+    <ClInclude Include="CAStarDataMgr.h">
+      <Filter>寻路</Filter>
+    </ClInclude>
+    <ClInclude Include="CDumpEndDrawLine.h">
+      <Filter>寻路</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CFindPathAllocator.h">
+      <Filter>寻路</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CFindPathMallocObject.h">
+      <Filter>寻路</Filter>
+    </ClInclude>
+    <ClInclude Include="CLinkRegionMgr.h">
+      <Filter>寻路</Filter>
+    </ClInclude>
+    <ClInclude Include="CLinkRegionNode.h">
+      <Filter>寻路</Filter>
+    </ClInclude>
+    <ClInclude Include="CNode.h">
+      <Filter>寻路</Filter>
+    </ClInclude>
+    <ClInclude Include="CPath.h">
+      <Filter>寻路</Filter>
+    </ClInclude>
+    <ClInclude Include="CPathDirect.h">
+      <Filter>寻路</Filter>
+    </ClInclude>
+    <ClInclude Include="CPathDirectNode.h">
+      <Filter>寻路</Filter>
+    </ClInclude>
+    <ClInclude Include="CPathFinding.h">
+      <Filter>寻路</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawLine.h">
+      <Filter>寻路</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\FindPathDefs.h">
+      <Filter>寻路</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IPathFinding.h">
+      <Filter>寻路</Filter>
+    </ClInclude>
+    <ClInclude Include="MapInfoManager.h">
+      <Filter>寻路</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CAsyncContext.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CoreCommon.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CoreCommonDef.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\CoreCommonTest.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\ISend.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TApp.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TAppConfig.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TAppHandler.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TAppWithConsole.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TCoreApp.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TExpSafeApp.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TPart.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TWhole.h">
+      <Filter>框架</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCoreSceneMallocObject.h">
+      <Filter>场景实例</Filter>
+    </ClInclude>
+    <ClInclude Include="CDynamicBarrierInfo.h">
+      <Filter>场景实例</Filter>
+    </ClInclude>
+    <ClInclude Include="IDynamicBarrierInfo.h">
+      <Filter>场景实例</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TCoreScene.h">
+      <Filter>场景实例</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TCoreSceneAllocator.h">
+      <Filter>场景实例</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TCoreSceneMgr.h">
+      <Filter>场景实例</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CConnMallocObject.h">
+      <Filter>连接</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CExpCounter.h">
+      <Filter>连接</Filter>
+    </ClInclude>
+    <ClInclude Include="CSlowSigner.h">
+      <Filter>连接</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TClientMsgRegister.h">
+      <Filter>连接</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TConnAllocator.h">
+      <Filter>连接</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TConnection.h">
+      <Filter>连接</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TConnectionMgr.h">
+      <Filter>连接</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TConnMgrHandler.h">
+      <Filter>连接</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CCoreObjMallocObject.h">
+      <Filter>对象</Filter>
+    </ClInclude>
+    <ClInclude Include="CLogCoreObject.h">
+      <Filter>对象</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CoreObjectCommon.h">
+      <Filter>对象</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CoreObjectDefs.h">
+      <Filter>对象</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveCallArgs.h">
+      <Filter>对象</Filter>
+    </ClInclude>
+    <ClInclude Include="TBindObject.h">
+      <Filter>对象</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TCoreObjAllocator.h">
+      <Filter>对象</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TCoreObject.h">
+      <Filter>对象</Filter>
+    </ClInclude>
+    <ClInclude Include="TObjMoveState.h">
+      <Filter>对象</Filter>
+    </ClInclude>
+    <ClInclude Include="TBaseCOEvent.h">
+      <Filter>对象\事件</Filter>
+    </ClInclude>
+    <ClInclude Include="TCOEventMoveBegan.h">
+      <Filter>对象\事件</Filter>
+    </ClInclude>
+    <ClInclude Include="TCOEventMoveEnded.h">
+      <Filter>对象\事件</Filter>
+    </ClInclude>
+    <ClInclude Include="TCOEventMovePathChanged.h">
+      <Filter>对象\事件</Filter>
+    </ClInclude>
+    <ClInclude Include="TCOEventPosChanged.h">
+      <Filter>对象\事件</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoreMsg.h">
+      <Filter>消息</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoreMsgMallocObject.h">
+      <Filter>消息</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoreMsgMgr.h">
+      <Filter>消息</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoreSigMsgMgr.h">
+      <Filter>消息</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoreThreadMsg.h">
+      <Filter>消息</Filter>
+    </ClInclude>
+    <ClInclude Include="TCoreMsgAllocator.h">
+      <Filter>消息</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CAppEvent.h">
+      <Filter>消息\App Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CAppThreadEvent.h">
+      <Filter>消息\App Event</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoreMsgAppEvent.h">
+      <Filter>消息\App Event</Filter>
+    </ClInclude>
+    <ClInclude Include="CCoreThreadMsgAppEvent.h">
+      <Filter>消息\App Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TState.h">
+      <Filter>状态机</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TStateEvent.h">
+      <Filter>状态机</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TStateMachine.h">
+      <Filter>状态机</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TStateMachineTraits.h">
+      <Filter>状态机</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TStateTransitItem.h">
+      <Filter>状态机</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TStateTransitTable.h">
+      <Filter>状态机</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CFindPathMgrTemplate.h">
+      <Filter>场景数据</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CMetaSceneMallocObject.h">
+      <Filter>场景数据</Filter>
+    </ClInclude>
+    <ClInclude Include="CPathTransformer.h">
+      <Filter>场景数据</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CPixelPath.h">
+      <Filter>场景数据</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TMetaScene.h">
+      <Filter>场景数据</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TMetaSceneAllocator.h">
+      <Filter>场景数据</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TMetaSceneMgr.h">
+      <Filter>场景数据</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CDistortedTick.h">
+      <Filter>时间</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CDistortedTimeAllocator.h">
+      <Filter>时间</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CDistortedTimeMallocObject.h">
+      <Filter>时间</Filter>
+    </ClInclude>
+    <ClInclude Include="CDistortedTimeObj.h">
+      <Filter>时间</Filter>
+    </ClInclude>
+    <ClInclude Include="CDistortedTimeScene.h">
+      <Filter>时间</Filter>
+    </ClInclude>
+    <ClInclude Include="CRenderSlot.h">
+      <Filter>时间</Filter>
+    </ClInclude>
+    <ClInclude Include="CTestSuiteRenderSlot.h">
+      <Filter>时间</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\IDistortedTime.h">
+      <Filter>时间</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\TDistortedTickHandler.h">
+      <Filter>时间</Filter>
+    </ClInclude>
+    <ClInclude Include="TTimeSystem.h">
+      <Filter>时间</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\CFileWatcherAdapter.h">
+      <Filter>文件监测</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CFileWatcherData.h">
+      <Filter>文件监测</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\CFileWatcherThread.h">
+      <Filter>文件监测</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjVarDef.h">
+      <Filter>数据同步</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sdk\inc\CObjVarDefCfg.h">
+      <Filter>数据同步</Filter>
+    </ClInclude>
+    <ClInclude Include="TRootVariantPoolMgr.h">
+      <Filter>数据同步</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CMsgMallocObject.cpp">
+      <Filter>网络协议</Filter>
+    </ClCompile>
+    <ClCompile Include="BarrierManager.cpp">
+      <Filter>寻路</Filter>
+    </ClCompile>
+    <ClCompile Include="CAStarData.cpp">
+      <Filter>寻路</Filter>
+    </ClCompile>
+    <ClCompile Include="CAStarDataMgr.cpp">
+      <Filter>寻路</Filter>
+    </ClCompile>
+    <ClCompile Include="CFindPathMallocObject.cpp">
+      <Filter>寻路</Filter>
+    </ClCompile>
+    <ClCompile Include="CLinkRegionMgr.cpp">
+      <Filter>寻路</Filter>
+    </ClCompile>
+    <ClCompile Include="CLinkRegionNode.cpp">
+      <Filter>寻路</Filter>
+    </ClCompile>
+    <ClCompile Include="CNode.cpp">
+      <Filter>寻路</Filter>
+    </ClCompile>
+    <ClCompile Include="CPath.cpp">
+      <Filter>寻路</Filter>
+    </ClCompile>
+    <ClCompile Include="CPathDirect.cpp">
+      <Filter>寻路</Filter>
+    </ClCompile>
+    <ClCompile Include="CPathDirectNode.cpp">
+      <Filter>寻路</Filter>
+    </ClCompile>
+    <ClCompile Include="CPathFinding.cpp">
+      <Filter>寻路</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawLine.cpp">
+      <Filter>寻路</Filter>
+    </ClCompile>
+    <ClCompile Include="MapInfoManager.cpp">
+      <Filter>寻路</Filter>
+    </ClCompile>
+    <ClCompile Include="CAsyncContext.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="CoreCommon.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>框架</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreSceneMallocObject.cpp">
+      <Filter>场景实例</Filter>
+    </ClCompile>
+    <ClCompile Include="CDynamicBarrierInfo.cpp">
+      <Filter>场景实例</Filter>
+    </ClCompile>
+    <ClCompile Include="CConnMallocObject.cpp">
+      <Filter>连接</Filter>
+    </ClCompile>
+    <ClCompile Include="CExpCounter.cpp">
+      <Filter>连接</Filter>
+    </ClCompile>
+    <ClCompile Include="CSlowSigner.cpp">
+      <Filter>连接</Filter>
+    </ClCompile>
+    <ClCompile Include="CLogCoreObject.cpp">
+      <Filter>对象</Filter>
+    </ClCompile>
+    <ClCompile Include="CoreObjectCommon.cpp">
+      <Filter>对象</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreMsg.cpp">
+      <Filter>消息</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreMsgMallocObject.cpp">
+      <Filter>消息</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreMsgMgr.cpp">
+      <Filter>消息</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreSigMsgMgr.cpp">
+      <Filter>消息</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreThreadMsg.cpp">
+      <Filter>消息</Filter>
+    </ClCompile>
+    <ClCompile Include="CAppEvent.cpp">
+      <Filter>消息\App Event</Filter>
+    </ClCompile>
+    <ClCompile Include="CAppThreadEvent.cpp">
+      <Filter>消息\App Event</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreMsgAppEvent.cpp">
+      <Filter>消息\App Event</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreThreadMsgAppEvent.cpp">
+      <Filter>消息\App Event</Filter>
+    </ClCompile>
+    <ClCompile Include="CMetaSceneMallocObject.cpp">
+      <Filter>场景数据</Filter>
+    </ClCompile>
+    <ClCompile Include="CPathTransformer.cpp">
+      <Filter>场景数据</Filter>
+    </ClCompile>
+    <ClCompile Include="CPixelPath.cpp">
+      <Filter>场景数据</Filter>
+    </ClCompile>
+    <ClCompile Include="CDistortedTick.cpp">
+      <Filter>时间</Filter>
+    </ClCompile>
+    <ClCompile Include="CDistortedTimeMallocObject.cpp">
+      <Filter>时间</Filter>
+    </ClCompile>
+    <ClCompile Include="CDistortedTimeObj.cpp">
+      <Filter>时间</Filter>
+    </ClCompile>
+    <ClCompile Include="CDistortedTimeScene.cpp">
+      <Filter>时间</Filter>
+    </ClCompile>
+    <ClCompile Include="CRenderSlot.cpp">
+      <Filter>时间</Filter>
+    </ClCompile>
+    <ClCompile Include="CTestSuiteRenderSlot.cpp">
+      <Filter>时间</Filter>
+    </ClCompile>
+    <ClCompile Include="CFileWatcherData.cpp">
+      <Filter>文件监测</Filter>
+    </ClCompile>
+    <ClCompile Include="CFileWatcherThread.cpp">
+      <Filter>文件监测</Filter>
+    </ClCompile>
+    <ClCompile Include="CCoreObjMallocObject.cpp">
+      <Filter>数据同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjVarDef.cpp">
+      <Filter>数据同步</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjVarDefCfg.cpp">
+      <Filter>数据同步</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\sdk\inc\TMsgDispatcher.inl">
+      <Filter>网络协议</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\TMsgDispatcher_inl.inl">
+      <Filter>网络协议</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\TMsgHandler.inl">
+      <Filter>网络协议</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\TMsgHandlerContainer.inl">
+      <Filter>网络协议</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\TMsgHandlerContainer_inl.inl">
+      <Filter>网络协议</Filter>
+    </None>
+    <None Include="CAStarData.inl">
+      <Filter>寻路</Filter>
+    </None>
+    <None Include="CNode.inl">
+      <Filter>寻路</Filter>
+    </None>
+    <None Include="CPath.inl">
+      <Filter>寻路</Filter>
+    </None>
+    <None Include="MapInfoManager.inl">
+      <Filter>寻路</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\CoreCommon.inl">
+      <Filter>框架</Filter>
+    </None>
+    <None Include="TApp.inl">
+      <Filter>框架</Filter>
+    </None>
+    <None Include="TAppConfig.inl">
+      <Filter>框架</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\TAppConfig_inl.inl">
+      <Filter>框架</Filter>
+    </None>
+    <None Include="TAppWithConsole.inl">
+      <Filter>框架</Filter>
+    </None>
+    <None Include="TCoreApp.inl">
+      <Filter>框架</Filter>
+    </None>
+    <None Include="TExpSafeApp.inl">
+      <Filter>框架</Filter>
+    </None>
+    <None Include="TPart.inl">
+      <Filter>框架</Filter>
+    </None>
+    <None Include="TWhole.inl">
+      <Filter>框架</Filter>
+    </None>
+    <None Include="TCoreScene.inl">
+      <Filter>场景实例</Filter>
+    </None>
+    <None Include="TCoreSceneMgr.inl">
+      <Filter>场景实例</Filter>
+    </None>
+    <None Include="CSlowSigner.inl">
+      <Filter>连接</Filter>
+    </None>
+    <None Include="TClientMsgRegister.inl">
+      <Filter>连接</Filter>
+    </None>
+    <None Include="TConnection.inl">
+      <Filter>连接</Filter>
+    </None>
+    <None Include="TConnection_inl.inl">
+      <Filter>连接</Filter>
+    </None>
+    <None Include="..\..\sdk\inc\TConnectionMgr.inl">
+      <Filter>连接</Filter>
+    </None>
+    <None Include="TBindObject.inl">
+      <Filter>对象</Filter>
+    </None>
+    <None Include="TCoreObject.inl">
+      <Filter>对象</Filter>
+    </None>
+    <None Include="TObjMoveState.inl">
+      <Filter>对象</Filter>
+    </None>
+    <None Include="TBaseCOEvent.inl">
+      <Filter>对象\事件</Filter>
+    </None>
+    <None Include="TCOEventMoveBegan.inl">
+      <Filter>对象\事件</Filter>
+    </None>
+    <None Include="TCOEventMoveEnded.inl">
+      <Filter>对象\事件</Filter>
+    </None>
+    <None Include="TCOEventMovePathChanged.inl">
+      <Filter>对象\事件</Filter>
+    </None>
+    <None Include="TCOEventPosChanged.inl">
+      <Filter>对象\事件</Filter>
+    </None>
+    <None Include="TMetaScene.inl">
+      <Filter>场景数据</Filter>
+    </None>
+    <None Include="TMetaSceneMgr.inl">
+      <Filter>场景数据</Filter>
+    </None>
+    <None Include="CDistortedTimeObj.inl">
+      <Filter>时间</Filter>
+    </None>
+    <None Include="TTimeSystem.inl">
+      <Filter>时间</Filter>
+    </None>
+    <None Include="TRootVariantPoolMgr.inl">
+      <Filter>数据同步</Filter>
+    </None>
+  </ItemGroup>
+</Project>

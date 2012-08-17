@@ -1,0 +1,58 @@
+--gac_require "relation/tong/TongBuyResWndInc"
+--
+--------帮会收购资源------
+--
+--function CreateTongBuyResWnd(Parent)
+--	local Wnd = CTongBuyResWnd:new()
+--	Wnd:Init(Parent)
+--	return Wnd
+--end
+--
+--function CTongBuyResWnd:Init(Parent)
+--	self:CreateFromRes("TongBuyResWnd", Parent)
+--	self:ShowWnd(false)
+--	g_ExcludeWndMgr:InitExcludeWnd(self, 2, false, nil, 1)
+--end
+--
+--function CTongBuyResWnd:OnChildCreated()
+--	self.m_BuyCount = self:GetDlgChild("BuyCount")
+--	self.m_Gold = self:GetDlgChild("jin")
+--	self.m_Silver = self:GetDlgChild("yin")
+--	self.m_Copper = self:GetDlgChild("tong")
+--	self.m_OkBtn = self:GetDlgChild("Btn_Ok")
+--	self.m_CancelBtn = self:GetDlgChild("Btn_Cancel")
+--	--self.m_XBtn = self:GetDlgChild("XBtn")
+--end
+--
+--function CTongBuyResWnd:OpenPanel()
+--	self:ShowWnd(true)
+--end
+--
+----消息
+--function CTongBuyResWnd:OnCtrlmsg(Child, uMsgID, uParam1, uParam2)
+--	if(self:IsShow()) then
+--		if uMsgID == BUTTON_LCLICK then
+--			if Child == self.m_CancelBtn then
+--				self:ShowWnd(false)
+--			elseif(Child == self.m_OkBtn) then
+--				self:AddTongBuyOrder()
+--			end
+--		end
+--	end
+--end
+--
+--function CTongBuyResWnd:AddTongBuyOrder()
+--	if "" == self.m_Gold:GetWndText() or
+--		"" == self.m_Silver:GetWndText() or
+--		"" == self.m_Copper:GetWndText() then
+--		MsgClient(9017)
+--		return
+--	end
+--	local gold = tonumber(self.m_Gold:GetWndText()) * 10000
+--	local silver = tonumber(self.m_Silver:GetWndText()) * 100
+--	local copper = tonumber(self.m_Copper:GetWndText())
+--	local price = gold + silver + copper
+--	local BuyCount = tonumber(self.m_BuyCount:GetWndText())
+--	Gac2Gas:AddTongBuyOrder(g_Conn, BuyCount, price)
+--	self:ShowWnd(false)
+--end

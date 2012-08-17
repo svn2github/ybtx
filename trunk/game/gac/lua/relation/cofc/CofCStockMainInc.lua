@@ -1,0 +1,1 @@
+CCofCStockMainWnd = class( SQRDialog )

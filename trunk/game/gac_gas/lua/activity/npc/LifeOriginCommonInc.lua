@@ -1,0 +1,1 @@
+CLifeOriginCommon = class()

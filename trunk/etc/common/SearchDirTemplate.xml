@@ -1,0 +1,16 @@
+<search_dir>
+	<!-- ³ÌÐò½Å±¾Â·¾¶-->
+	<script_path>
+	</script_path>
+	<load_path>
+		<path alias = "gac">game/gac/lua</path>
+		<path alias = "gac_gas">game/gac_gas/lua</path>		
+		<path alias = "gas">game/gas/lua</path>
+		<path alias = "str">game/str/lua</path>
+		<path alias = "engine">engine/lua</path>
+		<path alias = "etc_gas">etc/gas</path>
+		<path alias = "etc_gac">etc/gac</path>
+		<path alias = "etc_str">etc/str</path>
+		<path alias = "etc_com">etc/common</path>
+	</load_path>
+</search_dir> 

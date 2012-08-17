@@ -1,0 +1,1 @@
+CSmallGameMsgWnd = class(SQRDialog)

@@ -1,0 +1,2 @@
+
+CTongChallengeScene = class(CSceneBase)

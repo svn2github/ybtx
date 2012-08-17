@@ -1,0 +1,1 @@
+alter table tbl_action_team add column at_uIndex tinyint unsigned not null default 0 ;

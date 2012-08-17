@@ -1,0 +1,1 @@
+CAreaMgr = class()

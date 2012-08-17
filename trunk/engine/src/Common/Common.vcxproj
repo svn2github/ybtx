@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{90036735-3231-45A0-965F-3B5467D34FE3}</ProjectGuid>
+    <RootNamespace>Common</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>false</CLRSupport>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../../bin/$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../../bin/$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>..\..\..\implib\inc;..\..\sdk\Inc;..\..\include;..\..\..\implib\inc\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;COMMON_EXPORTS;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/Oy- %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>..\..\..\implib\inc;..\..\sdk\Inc;..\..\include;..\..\..\implib\inc\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;COMMON_EXPORTS;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\sdk\inc\CDataFileAllocator.h" />
+    <ClInclude Include="..\..\sdk\inc\CDataFileMallocObject.h" />
+    <ClInclude Include="..\..\sdk\inc\CDifFile.h" />
+    <ClInclude Include="..\..\sdk\inc\CIniFile.h" />
+    <ClInclude Include="..\..\sdk\inc\COriFileOperate.h" />
+    <ClInclude Include="..\..\sdk\inc\CrcFileCheck.h" />
+    <ClInclude Include="..\..\sdk\inc\CSvsFile.h" />
+    <ClInclude Include="File\CTestSuiteIniFile.h" />
+    <ClInclude Include="..\..\sdk\inc\IOriFileInterface.h" />
+    <ClInclude Include="..\..\sdk\inc\CCoder.h" />
+    <ClInclude Include="..\..\sdk\inc\CDataChunk.h" />
+    <ClInclude Include="..\..\sdk\inc\CFileFormatMgr.h" />
+    <ClInclude Include="File\CCurLangTxtTableFileImp.h" />
+    <ClInclude Include="..\..\sdk\inc\CMultiLangTxtTableFile.h" />
+    <ClInclude Include="File\CMultiLangTxtTableFileImp.h" />
+    <ClInclude Include="File\CRowLeafNodeDataMeta.h" />
+    <ClInclude Include="..\..\sdk\inc\CRowTableFile.h" />
+    <ClInclude Include="File\CRowTableFileImp.h" />
+    <ClInclude Include="File\CRowTableFileKey.h" />
+    <ClInclude Include="..\..\sdk\inc\CRowTableFileNode.h" />
+    <ClInclude Include="..\..\sdk\inc\CTableFileValue.h" />
+    <ClInclude Include="File\CTestSuiteTableFile.h" />
+    <ClInclude Include="..\..\sdk\inc\CTxtTableFile.h" />
+    <ClInclude Include="File\CTxtTableFileImp.h" />
+    <ClInclude Include="..\..\sdk\inc\TableFileHelper.h" />
+    <ClInclude Include="..\..\sdk\inc\TBaseTableFile.h" />
+    <ClInclude Include="File\TBaseTableFileImp.h" />
+    <ClInclude Include="Tick\CTestSuiteTickMgr.h" />
+    <ClInclude Include="..\..\sdk\inc\CTick.h" />
+    <ClInclude Include="Tick\CTickImp.h" />
+    <ClInclude Include="..\..\sdk\inc\CTickMallocAllocator.h" />
+    <ClInclude Include="..\..\sdk\inc\CTickMallocObject.h" />
+    <ClInclude Include="..\..\sdk\inc\CTickMgr.h" />
+    <ClInclude Include="Tick\CTickQueue.h" />
+    <ClInclude Include="Tick\CTickSlot.h" />
+    <ClInclude Include="..\..\sdk\inc\TTickHandler.h" />
+    <ClInclude Include="..\..\sdk\inc\CBufFile.h" />
+    <ClInclude Include="Package\CPackage.h" />
+    <ClInclude Include="..\..\sdk\inc\CPkgDirectory.h" />
+    <ClInclude Include="..\..\sdk\inc\CPkgFile.h" />
+    <ClInclude Include="Package\CReadThread.h" />
+    <ClInclude Include="Package\CTestSuitePkgFile.h" />
+    <ClInclude Include="..\..\sdk\inc\CWinPkgFile.h" />
+    <ClInclude Include="..\..\sdk\inc\PkgCommon.h" />
+    <ClInclude Include="..\..\sdk\inc\PkgStream.h" />
+    <ClInclude Include="..\..\sdk\inc\Algorithm.h" />
+    <ClInclude Include="..\..\sdk\inc\CAxisAlignedBox.h" />
+    <ClInclude Include="..\..\sdk\inc\CBezierCurve.h" />
+    <ClInclude Include="..\..\sdk\inc\CBezierMethod.h" />
+    <ClInclude Include="..\..\sdk\inc\CBitset.h" />
+    <ClInclude Include="..\..\sdk\inc\CCircleMethod.h" />
+    <ClInclude Include="..\..\sdk\inc\CColor.h" />
+    <ClInclude Include="..\..\sdk\inc\CColor3.h" />
+    <ClInclude Include="..\..\sdk\inc\CColor4.h" />
+    <ClInclude Include="..\..\sdk\inc\CDir.h" />
+    <ClInclude Include="..\..\sdk\inc\CGraphPath.h" />
+    <ClInclude Include="..\..\sdk\inc\CHermiteCurve.h" />
+    <ClInclude Include="..\..\sdk\inc\CLine.h" />
+    <ClInclude Include="..\..\sdk\inc\CLineMethod.h" />
+    <ClInclude Include="..\..\sdk\inc\ClipStatus.h" />
+    <ClInclude Include="..\..\sdk\inc\CMath.h" />
+    <ClInclude Include="..\..\sdk\inc\CMathMallocObject.h" />
+    <ClInclude Include="..\..\sdk\inc\CMatrix.h" />
+    <ClInclude Include="..\..\sdk\inc\COrientedBoundingBox.h" />
+    <ClInclude Include="..\..\sdk\inc\CPlane.h" />
+    <ClInclude Include="..\..\sdk\inc\CPos.h" />
+    <ClInclude Include="..\..\sdk\inc\CQuaternion.h" />
+    <ClInclude Include="..\..\sdk\inc\CRectangle.h" />
+    <ClInclude Include="..\..\sdk\inc\CSphere.h" />
+    <ClInclude Include="..\..\sdk\inc\CTinyVector.h" />
+    <ClInclude Include="..\..\sdk\inc\CVector2.h" />
+    <ClInclude Include="..\..\sdk\inc\CVector3.h" />
+    <ClInclude Include="..\..\sdk\inc\CVector4.h" />
+    <ClInclude Include="..\..\sdk\inc\longint.h" />
+    <ClInclude Include="..\..\sdk\inc\MathAlgorithm.h" />
+    <ClInclude Include="..\..\sdk\inc\ModelHelper.h" />
+    <ClInclude Include="..\..\sdk\inc\TGraph.h" />
+    <ClInclude Include="..\..\sdk\inc\TPackedPos.h" />
+    <ClInclude Include="Pattern\CTestSuitePatternCOR.h" />
+    <ClInclude Include="Pattern\CTestSuitePatternDlg.h" />
+    <ClInclude Include="..\..\sdk\inc\CTrMsgBufferSwapper.h" />
+    <ClInclude Include="..\..\sdk\inc\CTrMsgMallocAllocator.h" />
+    <ClInclude Include="..\..\sdk\inc\CTrMsgMallocObject.h" />
+    <ClInclude Include="..\..\sdk\inc\CTrThreadMsgBuffer.h" />
+    <ClInclude Include="..\..\sdk\inc\PatternCOR.h" />
+    <ClInclude Include="..\..\sdk\inc\PatternDlg.h" />
+    <ClInclude Include="..\..\sdk\inc\PatternMQ.h" />
+    <ClInclude Include="..\..\sdk\inc\PatternRef.h" />
+    <ClInclude Include="..\..\sdk\inc\PtRefProxy.h" />
+    <ClInclude Include="..\..\sdk\inc\TSingleton.h" />
+    <ClInclude Include="..\..\sdk\inc\TThreadMsgBuffer.h" />
+    <ClInclude Include="..\..\sdk\inc\TTrThreadMsgBuffer.h" />
+    <ClInclude Include="..\..\sdk\inc\CRefObject.h" />
+    <ClInclude Include="..\..\sdk\inc\TRefPointer.h" />
+    <ClInclude Include="Console\CConsole.h" />
+    <ClInclude Include="..\..\sdk\inc\Console.h" />
+    <ClInclude Include="..\..\sdk\inc\CLog.h" />
+    <ClInclude Include="Log\CLogJob.h" />
+    <ClInclude Include="..\..\sdk\inc\CLogMallocAllocator.h" />
+    <ClInclude Include="..\..\sdk\inc\CLogMallocObject.h" />
+    <ClInclude Include="..\..\sdk\inc\CLogThreadMgr.h" />
+    <ClInclude Include="Log\CSyncLog.h" />
+    <ClInclude Include="..\..\sdk\inc\LogHelper.h" />
+    <ClInclude Include="..\..\sdk\inc\CQuickRand.h" />
+    <ClInclude Include="..\..\sdk\inc\TRandomMersenne.h" />
+    <ClInclude Include="..\..\sdk\inc\uniform.h" />
+    <ClInclude Include="..\..\sdk\inc\StringHelper.h" />
+    <ClInclude Include="..\..\sdk\inc\CallBackHelper.h" />
+    <ClInclude Include="..\..\sdk\inc\CallBackX.h" />
+    <ClInclude Include="..\..\sdk\inc\EFuncParamType.h" />
+    <ClInclude Include="..\..\sdk\inc\TFuncCallHelper.h" />
+    <ClInclude Include="..\..\sdk\inc\CPathMgr.h" />
+    <ClInclude Include="..\..\sdk\inc\CCpuCheckPoint.h" />
+    <ClInclude Include="..\..\sdk\inc\CCpuUsage.h" />
+    <ClInclude Include="..\..\sdk\inc\DebugHelper.h" />
+    <ClInclude Include="..\..\sdk\inc\TraceHelper.h" />
+    <ClInclude Include="..\..\sdk\inc\CMd5Digester.h" />
+    <ClInclude Include="..\..\sdk\inc\CodeCvs.h" />
+    <ClInclude Include="..\..\sdk\inc\CompressBZIP2.h" />
+    <ClInclude Include="..\..\sdk\inc\CompressGZIP.h" />
+    <ClInclude Include="..\..\sdk\inc\CompressLZO.h" />
+    <ClInclude Include="..\..\sdk\inc\CrcAlgorithm.h" />
+    <ClInclude Include="CodeCvs\lzoconf.h" />
+    <ClInclude Include="CodeCvs\lzodefs.h" />
+    <ClInclude Include="CodeCvs\minilzo.h" />
+    <ClInclude Include="..\..\sdk\inc\CValueMallocObject.h" />
+    <ClInclude Include="..\..\sdk\inc\TValueAllocator.h" />
+    <ClInclude Include="..\..\sdk\inc\CBaseCypherVariantInputStream.h" />
+    <ClInclude Include="..\..\sdk\inc\CBaseCypherVariantOutputStream.h" />
+    <ClInclude Include="..\..\sdk\inc\CCypherVariant.h" />
+    <ClInclude Include="..\..\sdk\inc\CCypherVariantCodeTable.h" />
+    <ClInclude Include="..\..\sdk\inc\CCypherVariantHolder.h" />
+    <ClInclude Include="..\..\sdk\inc\CCypherVariantMallocObject.h" />
+    <ClInclude Include="..\..\sdk\inc\CCypherVariantStream.h" />
+    <ClInclude Include="Value\CTestSuiteVariant.h" />
+    <ClInclude Include="..\..\sdk\inc\CVariant.h" />
+    <ClInclude Include="..\..\sdk\inc\CVariantHolderDef.h" />
+    <ClInclude Include="..\..\sdk\inc\CVariantMallocObject.h" />
+    <ClInclude Include="..\..\sdk\inc\CVariantSyncStream.h" />
+    <ClInclude Include="..\..\sdk\inc\CypherVariantDef.h" />
+    <ClInclude Include="..\..\sdk\inc\ICypherVariantHolderHandler.h" />
+    <ClInclude Include="..\..\sdk\inc\TBaseVariant.h" />
+    <ClInclude Include="..\..\sdk\inc\TCypherVariantAllocator.h" />
+    <ClInclude Include="..\..\sdk\inc\TVariantAllocator.h" />
+    <ClInclude Include="..\..\sdk\inc\TVariantStream.h" />
+    <ClInclude Include="..\..\sdk\inc\TVariantTraits.h" />
+    <ClInclude Include="..\..\sdk\inc\ValueVariantDef.h" />
+    <ClInclude Include="..\..\sdk\inc\VariantTypes.h" />
+    <ClInclude Include="..\..\sdk\inc\CValueTable.h" />
+    <ClInclude Include="..\..\sdk\inc\CValueTableData.h" />
+    <ClInclude Include="..\..\sdk\inc\CConstString.h" />
+    <ClInclude Include="Value\CConstStringPool.h" />
+    <ClInclude Include="..\..\sdk\inc\ByteOrder.h" />
+    <ClInclude Include="..\..\sdk\inc\CIdMaker.h" />
+    <ClInclude Include="..\..\sdk\inc\CommonDefs.h" />
+    <ClInclude Include="..\..\include\CommonTest.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="..\..\sdk\inc\CCoordinateContainer.h" />
+    <ClInclude Include="..\..\sdk\inc\CIDMapMallocObject.h" />
+    <ClInclude Include="..\..\sdk\inc\CMemData.h" />
+    <ClInclude Include="Container\CTestSuiteIDPtrMap.h" />
+    <ClInclude Include="Container\CTestSuiteSafeContainer.h" />
+    <ClInclude Include="..\..\sdk\inc\SafeIterator.h" />
+    <ClInclude Include="..\..\sdk\inc\TBinaryHeap.h" />
+    <ClInclude Include="..\..\sdk\inc\TIDMapAllocator.h" />
+    <ClInclude Include="..\..\sdk\inc\TIDPtrMap.h" />
+    <ClInclude Include="..\..\sdk\inc\TIDPtrMapIter.h" />
+    <ClInclude Include="..\..\sdk\inc\TIDStack.h" />
+    <ClInclude Include="..\..\sdk\inc\TList.h" />
+    <ClInclude Include="..\..\sdk\inc\TObjectBank.h" />
+    <ClInclude Include="..\..\sdk\inc\TSafeContainerBase.h" />
+    <ClInclude Include="..\..\sdk\inc\TSafeList.h" />
+    <ClInclude Include="..\..\sdk\inc\TSafeMap.h" />
+    <ClInclude Include="..\..\sdk\inc\TSafeSet.h" />
+    <ClInclude Include="..\..\sdk\inc\CSvnControl.h" />
+    <ClInclude Include="..\..\sdk\inc\CBaseSampler.h" />
+    <ClInclude Include="..\..\sdk\inc\CBezierSampler.h" />
+    <ClInclude Include="..\..\sdk\inc\CCircleSampler.h" />
+    <ClInclude Include="..\..\sdk\inc\CHermiteSampler.h" />
+    <ClInclude Include="..\..\sdk\inc\CLineSampler.h" />
+    <ClInclude Include="..\..\sdk\inc\CSimBezierSampler.h" />
+    <ClInclude Include="..\..\sdk\inc\CSamplerFactory.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="File\CDataFileMallocObject.cpp" />
+    <ClCompile Include="File\CDifFile.cpp" />
+    <ClCompile Include="File\CIniFile.cpp" />
+    <ClCompile Include="File\COriFileOperate.cpp" />
+    <ClCompile Include="File\CrcFileCheck.cpp" />
+    <ClCompile Include="File\CSvsFile.cpp" />
+    <ClCompile Include="File\CTestSuiteIniFile.cpp" />
+    <ClCompile Include="File\ChunkFile\CCoder.cpp" />
+    <ClCompile Include="File\ChunkFile\CDataChunk.cpp" />
+    <ClCompile Include="File\ChunkFile\CFileFormatMgr.cpp" />
+    <ClCompile Include="File\CCurLangTxtTableFileImp.cpp" />
+    <ClCompile Include="File\CMultiLangTxtTableFile.cpp" />
+    <ClCompile Include="File\CMultiLangTxtTableFileBaseInstance.cpp" />
+    <ClCompile Include="File\CMultiLangTxtTableFileImp.cpp" />
+    <ClCompile Include="File\CRowLeafNodeDataMeta.cpp" />
+    <ClCompile Include="File\CRowTableFile.cpp" />
+    <ClCompile Include="File\CRowTableFileImp.cpp" />
+    <ClCompile Include="File\CRowTableFileKey.cpp" />
+    <ClCompile Include="File\CRowTableFileNode.cpp" />
+    <ClCompile Include="File\CTableFileValue.cpp" />
+    <ClCompile Include="File\CTestSuiteTableFile.cpp" />
+    <ClCompile Include="File\CTxtTableFile.cpp" />
+    <ClCompile Include="File\CTxtTableFileImp.cpp" />
+    <ClCompile Include="File\TableFileHelper.cpp" />
+    <ClCompile Include="Tick\CTestSuiteTickMgr.cpp" />
+    <ClCompile Include="Tick\CTick.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="Tick\CTickImp.cpp" />
+    <ClCompile Include="Tick\CTickMallocObject.cpp" />
+    <ClCompile Include="Tick\CTickMgr.cpp" />
+    <ClCompile Include="Tick\CTickSlot.cpp" />
+    <ClCompile Include="Package\CPackage.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="Package\CPkgDirectory.cpp" />
+    <ClCompile Include="Package\CPkgFile.cpp" />
+    <ClCompile Include="Package\CReadThread.cpp" />
+    <ClCompile Include="Package\CTestSuitePkgFile.cpp" />
+    <ClCompile Include="Package\CWinPkgFile.cpp" />
+    <ClCompile Include="Package\PkgCommon.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="Math\CAxisAlignedBox.cpp" />
+    <ClCompile Include="Math\CColor4.cpp" />
+    <ClCompile Include="Math\CGraphPath.cpp" />
+    <ClCompile Include="Math\CHermiteCurve.cpp" />
+    <ClCompile Include="Math\CMath.cpp" />
+    <ClCompile Include="Math\CMathMallocObject.cpp" />
+    <ClCompile Include="Math\CMatrix.cpp" />
+    <ClCompile Include="Math\COrientedBoundingBox.cpp" />
+    <ClCompile Include="Math\CQuaternion.cpp" />
+    <ClCompile Include="Math\CTinyVector.cpp" />
+    <ClCompile Include="Math\CVector3.cpp" />
+    <ClCompile Include="Math\CVector4.cpp" />
+    <ClCompile Include="Math\longint.cpp" />
+    <ClCompile Include="Math\MathAlgorithm.cpp" />
+    <ClCompile Include="Math\ModelHelper.cpp" />
+    <ClCompile Include="Math\TGraph.cpp" />
+    <ClCompile Include="Pattern\CTestSuitePatternCOR.cpp" />
+    <ClCompile Include="Pattern\CTestSuitePatternDlg.cpp" />
+    <ClCompile Include="Pattern\CTrMsgBufferSwapper.cpp" />
+    <ClCompile Include="Pattern\CTrMsgMallocObject.cpp" />
+    <ClCompile Include="Pattern\CTrThreadMsgBuffer.cpp" />
+    <ClCompile Include="Pattern\PatternCOR.cpp" />
+    <ClCompile Include="Pattern\PatternMQ.cpp" />
+    <ClCompile Include="Pattern\PtRefProxy.cpp" />
+    <ClCompile Include="Console\CConsole.cpp" />
+    <ClCompile Include="Log\CLog.cpp" />
+    <ClCompile Include="Log\CLogJob.cpp" />
+    <ClCompile Include="Log\CLogMallocObject.cpp" />
+    <ClCompile Include="Log\CLogThreadMgr.cpp" />
+    <ClCompile Include="Log\CSyncLog.cpp" />
+    <ClCompile Include="Log\LogHelper.cpp" />
+    <ClCompile Include="Random\TRandomMersenne.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Random\uniform.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="String\StringHelper.cpp" />
+    <ClCompile Include="Script\CallBackHelper.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="Path\CPathMgr.cpp" />
+    <ClCompile Include="Trace\CCpuCheckPoint.cpp" />
+    <ClCompile Include="Trace\CCpuUsage.cpp" />
+    <ClCompile Include="Trace\DebugHelper.cpp" />
+    <ClCompile Include="Trace\TraceHelper.cpp" />
+    <ClCompile Include="CodeCvs\CMd5Digester.cpp" />
+    <ClCompile Include="CodeCvs\CodeCvs.cpp" />
+    <ClCompile Include="CodeCvs\CompressBZIP2.cpp" />
+    <ClCompile Include="CodeCvs\CompressGZIP.cpp" />
+    <ClCompile Include="CodeCvs\CompressLZO.cpp" />
+    <ClCompile Include="CodeCvs\CrcAlgorithm.cpp" />
+    <ClCompile Include="CodeCvs\minilzo.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Value\CValueMallocObject.cpp" />
+    <ClCompile Include="Value\CCypherVariant.cpp" />
+    <ClCompile Include="Value\CCypherVariantCodeTable.cpp" />
+    <ClCompile Include="Value\CCypherVariantHolder.cpp" />
+    <ClCompile Include="value\CCypherVariantMallocObject.cpp" />
+    <ClCompile Include="Value\CTestSuiteVariant.cpp" />
+    <ClCompile Include="Value\CVariant.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="Value\CVariantMallocObject.cpp" />
+    <ClCompile Include="Value\CValueTable.cpp" />
+    <ClCompile Include="Value\CValueTableData.cpp" />
+    <ClCompile Include="Value\CConstString.cpp" />
+    <ClCompile Include="Value\CConstStringPool.cpp" />
+    <ClCompile Include="Misc\Common.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Container\CIDMapMallocObject.cpp" />
+    <ClCompile Include="Container\CTestSuiteIDPtrMap.cpp" />
+    <ClCompile Include="Container\CTestSuiteSafeContainer.cpp" />
+    <ClCompile Include="Svn\CSvnControl.cpp" />
+    <ClCompile Include="Sampler\CBaseSampler.cpp" />
+    <ClCompile Include="Sampler\CBezierSampler.cpp" />
+    <ClCompile Include="Sampler\CCircleSampler.cpp" />
+    <ClCompile Include="Sampler\CHermiteSampler.cpp" />
+    <ClCompile Include="Sampler\CLineSampler.cpp" />
+    <ClCompile Include="Sampler\CSimBezierSampler.cpp" />
+    <ClCompile Include="SamplerFactory\CSamplerFactory.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="File\TBaseTableFile.inl" />
+    <None Include="File\TBaseTableFileImp.inl" />
+    <None Include="..\..\sdk\inc\CColor.inl" />
+    <None Include="..\..\sdk\inc\CColor4.inl" />
+    <None Include="..\..\sdk\inc\CVector4.inl" />
+    <None Include="Math\TGraph.inl" />
+    <None Include="..\..\sdk\inc\TPackedPos.inl" />
+    <None Include="..\..\sdk\inc\PatternRef.inl" />
+    <None Include="..\..\sdk\inc\PtRefProxy.inl" />
+    <None Include="..\..\sdk\inc\TThreadMsgBuffer.inl" />
+    <None Include="..\..\sdk\inc\TTrThreadMsgBuffer.inl" />
+    <None Include="..\..\sdk\inc\CCypherVariant.inl" />
+    <None Include="..\..\sdk\inc\CCypherVariantHolder.inl" />
+    <None Include="Value\TBaseVariant.inl" />
+    <None Include="..\..\sdk\inc\TVariantStream.inl" />
+    <None Include="..\..\sdk\inc\CMemData.inl" />
+    <None Include="..\..\sdk\inc\SafeIterator.inl" />
+    <None Include="..\..\sdk\inc\TBinaryHeap.inl" />
+    <None Include="..\..\sdk\inc\TIDPtrMap.inl" />
+    <None Include="..\..\sdk\inc\TIDPtrMapIter.inl" />
+    <None Include="..\..\sdk\inc\TIDStack.inl" />
+    <None Include="..\..\sdk\inc\TObjectBank.inl" />
+    <None Include="..\..\sdk\inc\TSafeContainerBase.inl" />
+    <None Include="..\..\sdk\inc\TSafeList.inl" />
+    <None Include="..\..\sdk\inc\TSafeMap.inl" />
+    <None Include="..\..\sdk\inc\TSafeSet.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Module\Module.vcxproj">
+      <Project>{c347d3b0-2850-4745-b68f-0ab03a51e06c}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

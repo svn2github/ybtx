@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="CLREffectEditor">
+      <UniqueIdentifier>{fb210be2-902a-40d1-b08e-fcccc6bdb7d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CLREffectEditor\EditorCLRForm">
+      <UniqueIdentifier>{ef178aed-47b0-4107-9a90-5f6e74d8b233}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CLREffectEditor\EditorImp">
+      <UniqueIdentifier>{fd092550-f00e-456f-bc38-cdd6d6524afa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CLREffectEditor\EditorMain">
+      <UniqueIdentifier>{26992160-5a1b-45b0-8c15-63a854c8c231}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CLREffectEditor\EditorMisc">
+      <UniqueIdentifier>{a95ec8a1-c381-48b2-881b-f0f69fa3175e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\EffectEditor.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\FX.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\FXGroupNor.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\FXGroupSel.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\FXRoot.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\grid.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="CLREffectEditor.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="EditorMainForm.cpp">
+      <Filter>CLREffectEditor\EditorCLRForm</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorMainFormImp.cpp">
+      <Filter>CLREffectEditor\EditorImp</Filter>
+    </ClCompile>
+    <ClCompile Include="CLREffectEditor.cpp">
+      <Filter>CLREffectEditor\EditorMain</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>CLREffectEditor\EditorMisc</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="EditorMainForm.h">
+      <Filter>CLREffectEditor\EditorCLRForm</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorMainFormImp.h">
+      <Filter>CLREffectEditor\EditorImp</Filter>
+    </ClInclude>
+    <ClInclude Include="CLREffectEditor.h">
+      <Filter>CLREffectEditor\EditorMain</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>CLREffectEditor\EditorMisc</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>CLREffectEditor\EditorMisc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="EditorMainForm.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

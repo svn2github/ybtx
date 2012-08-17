@@ -1,0 +1,1 @@
+CTongPurviewInfoMgr = class()

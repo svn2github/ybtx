@@ -1,0 +1,1 @@
+alter table tbl_item_boxitem_pickup add column ibp_uBindingType tinyint default null after ibp_uCount;

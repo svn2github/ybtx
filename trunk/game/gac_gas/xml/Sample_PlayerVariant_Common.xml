@@ -1,0 +1,95 @@
+<root>
+	<SyncPart>
+		<root>
+			<Attribute/>
+			<Res>
+				<HairResID/>
+				<HairColorResID/>
+				<FaceResID/>
+				<HeadIndexID/>
+				<BodyIndexID/>
+				<ShoulderIndexID/>
+				<ArmIndexID/>
+				<SubVarStateTransmit StateName="SubState1" />
+				<ShoeIndexID/>
+				<WeaponIndexID/>
+				<OffWeaponIndexID/>
+				<OffWeaponBigID/>
+				<BackIndexID/>
+				<HorseResID/>
+				<HandsBehaviorName/>
+				<HorseType/>
+				<BehaviorType/>
+			</Res>
+			<Actor>
+				<MoveState/>
+				<StateForce/>
+				<MoveDir/>
+				<ActionRhythm/>
+				<ActionIndex/>
+				<ActionState/>
+				<DirForce/>
+				<ActionDir/>
+				<NAActionRhythm/>
+				<WalkBackRadius/>
+			</Actor>
+			<CastingProcess>
+				<CastID/>
+				<CastTime/>
+				<GuessStartTime/>
+				<TargetIDOfCast/>
+				<uSkillID/>
+				<bIsFinish/>
+			</CastingProcess>
+		</root>
+	</SyncPart>
+	<ViewPart>
+		<root>
+			<Attribute>
+				<Type/>
+				<UserID/>
+				<CharID/>
+				<CharName/>
+				<State type="Transit">
+					<Transit type="SubTree" name="state1"/>
+					<Transit type="SubTree" name="state2"/>
+				</State>
+				<Sex/>
+
+				<TeamID/>
+				<TroopID/>
+				<TongID/>
+				<TongName/>
+				<CofcID/>
+
+				<MoneyType/>
+
+				<Inherence/>
+				<BattleHorseName/>
+			</Attribute>
+			<AgileValue>
+				<HealthPointAdder/>
+				<HealthPointMutiplier/>
+				<HealthPointAgile/>
+				<ConsumePointAdder/>
+				<ConsumePointMutiplier/>
+				<ConsumePointAgile/>
+			</AgileValue>
+		</root>
+	</ViewPart>
+	<SubTree>
+		<state1 >
+			<hp/>
+			<mp/>
+		</state1>
+		<state2 >
+			<hp/>
+			<mp/>
+			<xp/>
+		</state2>
+	</SubTree>	
+	<SubState1>
+		<TestNode1 />
+		<TestNode2 />
+	</SubState1>
+</root>

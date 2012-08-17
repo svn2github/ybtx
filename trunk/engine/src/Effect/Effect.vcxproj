@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{90857B41-653B-40A4-83CD-A652D0358FD0}</ProjectGuid>
+    <RootNamespace>Effect</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../../../bin/$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../../../bin/$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\engine\sdk\inc;..\..\include;..\..\sdk\inc;..\..\..\implib\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;EFFECT_EXPORTS;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/Oy- %(AdditionalOptions)</AdditionalOptions>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>..\..\..\engine\sdk\inc;..\..\include;..\..\sdk\inc;..\..\..\implib\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;EFFECT_EXPORTS;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="CCameraFilter.cpp" />
+    <ClCompile Include="CCameraShake.cpp" />
+    <ClCompile Include="CCombination.cpp" />
+    <ClCompile Include="CDynamicLight.cpp" />
+    <ClCompile Include="CEffect.cpp" />
+    <ClCompile Include="CEffectClass.cpp" />
+    <ClCompile Include="CEffectClassDesc.cpp" />
+    <ClCompile Include="CEffectCoder.cpp" />
+    <ClCompile Include="CEffectGroup.cpp" />
+    <ClCompile Include="CEffectMallocObject.cpp" />
+    <ClCompile Include="CEffectManager.cpp" />
+    <ClCompile Include="CEffectMgrModule.cpp" />
+    <ClCompile Include="CEffectUnit.cpp" />
+    <ClCompile Include="CFlareSprite.cpp" />
+    <ClCompile Include="CLeading.cpp" />
+    <ClCompile Include="CLightning.cpp" />
+    <ClCompile Include="CModelConsole.cpp" />
+    <ClCompile Include="CModelRenderStyle.cpp" />
+    <ClCompile Include="CNull.cpp" />
+    <ClCompile Include="CParticleSystem.cpp" />
+    <ClCompile Include="CPolyTrail.cpp" />
+    <ClCompile Include="CShake.cpp" />
+    <ClCompile Include="CSprite.cpp" />
+    <ClCompile Include="CTDimAudio.cpp" />
+    <ClCompile Include="Effect.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Effect.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CCameraFilter.h" />
+    <ClInclude Include="CCameraShake.h" />
+    <ClInclude Include="CCombination.h" />
+    <ClInclude Include="CDynamicLight.h" />
+    <ClInclude Include="..\..\sdk\inc\CEffect.h" />
+    <ClInclude Include="CEffectClass.h" />
+    <ClInclude Include="CEffectClassDesc.h" />
+    <ClInclude Include="CEffectCoder.h" />
+    <ClInclude Include="..\..\sdk\inc\CEffectGroup.h" />
+    <ClInclude Include="..\..\sdk\inc\CEffectMallocObject.h" />
+    <ClInclude Include="..\..\sdk\inc\CEffectManager.h" />
+    <ClInclude Include="CEffectMgrModule.h" />
+    <ClInclude Include="CEffectUnit.h" />
+    <ClInclude Include="CFlareSprite.h" />
+    <ClInclude Include="CLeading.h" />
+    <ClInclude Include="CLightning.h" />
+    <ClInclude Include="ClipPlane.h" />
+    <ClInclude Include="CModelConsole.h" />
+    <ClInclude Include="CModelRenderStyle.h" />
+    <ClInclude Include="CNull.h" />
+    <ClInclude Include="CParticleSystem.h" />
+    <ClInclude Include="CPolyTrail.h" />
+    <ClInclude Include="CShake.h" />
+    <ClInclude Include="CSprite.h" />
+    <ClInclude Include="CTDimAudio.h" />
+    <ClInclude Include="..\..\sdk\inc\EffectBase.h" />
+    <ClInclude Include="EffectCommon.h" />
+    <ClInclude Include="..\..\sdk\inc\IEffect.h" />
+    <ClInclude Include="..\..\include\IEffectMgrModule.h" />
+    <ClInclude Include="..\..\sdk\inc\IEffectUnit.h" />
+    <ClInclude Include="..\..\sdk\inc\IEffectUnitProp.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Effect.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Audio\Audio.vcxproj">
+      <Project>{cd208f4a-e7de-40f6-9b73-a2c4fe250c6a}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.vcxproj">
+      <Project>{90036735-3231-45a0-965f-3b5467d34fe3}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

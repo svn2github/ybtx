@@ -1,0 +1,7 @@
+CEquip = class()
+Weapon = class(CEquip)
+Armor = class(CEquip)
+Shield = class(CEquip)
+Ring = class(CEquip)
+Jurley = class(Armor)
+CEquipMgr = class()

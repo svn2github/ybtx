@@ -1,0 +1,2 @@
+GMCommand = {}
+GMCommand.Executor = {}

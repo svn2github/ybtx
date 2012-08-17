@@ -1,0 +1,1 @@
+CTongTechnologyMgr = class()

@@ -1,0 +1,12 @@
+set autocommit=0;
+delete from medi_database.tbl_charid_record;
+delete from medi_database.tbl_all_char;
+delete from medi_database.tbl_char_name;
+delete from medi_database.tbl_char_name_minId;
+delete from medi_database.tbl_tong_name;
+delete from medi_database.tbl_tong_name_minId;
+delete from medi_database.tbl_cofc_name;
+delete from medi_database.tbl_cofc_name_minId;
+delete from medi_database.tbl_user_info;
+delete from medi_database.tbl_log_user_id;
+commit;

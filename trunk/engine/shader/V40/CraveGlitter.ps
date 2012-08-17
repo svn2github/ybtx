@@ -1,0 +1,16 @@
+#include "System_PS_Var.inc"
+float4   gTextureFactor : register( c19 );
+
+float4 CraveGlitter_PS( PS_INPUT i ) : COLOR0		
+{
+	float4 texColor0 = tex2D(Sampler0, i.text0) * gTextureFactor;
+	float4 texColor1 = tex2D(Sampler1, i.text0);
+
+    float3 s = 1.0f;
+    SYS_PS_SHADOW_TRAN
+    s = max(s * i.Diffuse.rgb * 2.0f, gGlobalShadowColor.rgb);
+
+    // 发光的地方不变暗了吧...
+    float3 texColor = texColor0.rgb + texColor1.rgb * s;
+	return float4(texColor, texColor1.a * i.Diffuse.a);
+}

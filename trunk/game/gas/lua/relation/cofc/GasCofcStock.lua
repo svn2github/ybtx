@@ -1,0 +1,312 @@
+--gas_require "relation/cofc/GasCofcStockInc"
+--gas_require "relation/cofc/GasCofcBasic"
+--
+--local CofcStockDB = "CofcStockDB"
+--
+--function CCofcStock:Ctor(player_id)
+--	self.player_id = player_id
+--end
+--------------------------------------------------------------------------------------
+--function CCofcStock:GetCofCStockKMap(Conn,tbl,time_begin,time_end)
+--	if tbl then
+--		Gas2Gac:RetGetCofCStockKMapBegin(Conn)
+--		-- 如果发现数据点的起始时间比预定的起始时间早，证明取起始时间点时正好跨过一个间隔，应修正
+--		for i = 1, #tbl do
+--			if tbl[i][1] < time_begin then
+--				time_begin = tbl[i][1]
+--				time_end = time_begin + (- pre_minute) * 60
+--			end
+--			Gas2Gac:RetGetCofCStockKMap(Conn, tbl[i][1], tbl[i][2], tbl[i][3])
+--		end
+----		print(time_begin,time_end)
+--		Gas2Gac:RetGetCofCStockKMapEnd(Conn, time_begin, time_end)
+--		return
+--	else
+--		return
+--	end
+--end
+----- @brief 得到k线图数据。参数：股票代码；范围分钟数（负值）；间隔分钟数（15、2*60、8*60）
+--function Gac2Gas:GetCofCStockKMap(Conn, cofc_id, pre_minute, delta_minute)
+--	local playerId = Conn.m_Player.m_uID
+--	data = {
+--					["playerId"] = playerId,
+--					["cofc_id"] = cofc_id,
+--					["pre_minute"] = pre_minute,
+--					["delta_minute"] = delta_minute
+--					}
+--					
+--	local function callback(tbl,time_begin,time_end)
+--		CCofcStock:GetCofCStockKMap(Conn,tbl,time_begin,time_end)
+--	end
+--
+--	--local CofcStockDB = (g_DBTransDef["CofcStockDB"])
+--	 CallAccountManualTrans(Conn.m_Account, CofcStockDB, "GetExchangeStatistics", callback, data)
+--end
+--------------------------------------------------------------------------------------
+--function CCofcStock:GetCofCStockInfo(Conn,tbl)
+--	Gas2Gac:RetGetCofCStockInfoBegin(Conn)
+--	if next(tbl) then
+--		for i = 1, #tbl do 
+--			Gas2Gac:RetGetCofCStockInfo(Conn, tbl[i][1], tbl[i][2],
+--			tbl[i][3], tbl[i][4], tbl[i][5], tbl[i][6], 
+--			tbl[i][7], tbl[i][8], tbl[i][9], tbl[i][10])
+--		end
+--	else
+--		MsgToConn(Conn, 110046)
+--	end
+--	Gas2Gac:RetGetCofCStockInfoEnd(Conn)
+--end
+----- @brief 得到主界面所有股票总揽信息
+--function Gac2Gas:GetCofCStockInfo(Conn)
+--local playerId = Conn.m_Player.m_uID
+--	data = {
+--					["playerId"] = playerId
+--					}
+--					
+--	local function callback(result)
+--		CCofcStock:GetCofCStockInfo(Conn,result)
+--	end
+--
+--	--local CofcStockDB = (g_DBTransDef["CofcStockDB"])
+--	 CallAccountManualTrans(Conn.m_Account, CofcStockDB, "GetCofCStockInfo", callback, data)
+--end
+--------------------------------------------------------------------------------------
+--function CCofcStock:GetCofCStockOrderList(Conn,cofc_id,tbl1,tbl2)
+--	Gas2Gac:RetGetCofCStockOrderListBegin(Conn, cofc_id)
+--	if next(tbl1) then
+--		for i = 1, #tbl1 do
+--				Gas2Gac:RetGetCofCStockOrderList(Conn, tbl1[i][1],tbl1[i][2],tbl1[i][3],tbl1[i][4])
+--		end
+--		if next(tbl2) then
+--			for i = 1, #tbl2 do
+--				Gas2Gac:RetGetCofCStockOrderListEnd(Conn, tbl2[i][1] or 0, tbl2[i][2] )
+--			end
+--		end
+--	end
+--end
+----- @brief 得到订单列表
+--function Gac2Gas:GetCofCStockOrderList(Conn, cofc_id)
+--local playerId = Conn.m_Player.m_uID
+--	data = {
+--					["playerId"] = playerId,
+--					["cofc_id"] = cofc_id
+--					}
+--					
+--	local function callback(tbl1,tbl2)
+--		CCofcStock:GetCofCStockOrderList(Conn,cofc_id,tbl1,tbl2)
+--	end
+--
+--	--local CofcStockDB = (g_DBTransDef["CofcStockDB"])
+--	 CallAccountManualTrans(Conn.m_Account, CofcStockDB, "GetCofCStockOrderList", callback, data)
+--end
+--------------------------------------------------------------------------------------
+--function CCofcStock:GetCofCStockMyOrderList(Conn,tbl)
+--	Gas2Gac:RetGetCofCStockMyDealingInfoBegin(Conn)
+--	if next(tbl) then
+--		local row = #tbl
+--		for i = 1, row  do
+--			Gas2Gac:RetGetCofCStockMyDealingInfo(Conn, tbl[i][1], tbl[i][2] , 
+--			tbl[i][3], tbl[i][4] , tbl[i][5], tbl[i][6] , 
+--			tbl[i][7], tbl[i][8] , tbl[i][9] , tbl[i][10], 
+--			tbl[i][11])
+--		end
+--	end
+--	Gas2Gac:RetGetCofCStockMyDealingInfoEnd(Conn)
+--end
+----- @brief 得到我的股票订单消息
+--function Gac2Gas:GetCofCStockMyDealingInfo(Conn)
+--	local playerId = Conn.m_Player.m_uID
+--	data = {
+--					["playerId"] = playerId
+--					}
+--
+--	local function callback(result)
+--		CCofcStock:GetCofCStockMyOrderList(Conn,result)
+--	end
+--
+--	--local CofcStockDB = (g_DBTransDef["CofcStockDB"])
+--	 CallAccountManualTrans(Conn.m_Account, CofcStockDB, "GetCofCStockMyDealingInfo", callback, data)
+--end
+--------------------------------------------------------------------------------------
+--function _GetDataSafe(tbl, row, col, default)
+--	if tbl == nil or row < 0 or row >= #tbl or col < 0 or col >= #tbl[1] then
+--		return default
+--	else
+--		return tbl[row+1][col+1]
+--	end
+--end
+--
+--function CCofcStock:GetCofCFinancialReport(Conn,tbl_have,tbl_rpt,tbl_msh)
+--	local have_price = 0
+--	local have_number = 0
+--	if next(tbl_have) then 
+--		have_number = tbl_have[1][1]
+--		have_price = tbl_have[1][2]
+--	end
+--	if next(tbl_rpt) then
+--			Gas2Gac:RetGetCofCFinancialReport(Conn, tbl_rpt[1][2], tbl_rpt[1][3], 
+--				tbl_rpt[1][4], tbl_rpt[1][5], 
+--				tbl_rpt[1][6], tbl_rpt[1][7], tbl_rpt[1][8], 
+--				tbl_rpt[1][9], tbl_rpt[1][10], tbl_rpt[1][11], 
+--				have_number, have_price, 
+--				tbl_rpt[1][12], tbl_rpt[1][13], 
+--				_GetDataSafe(tbl_msh, 0, 0, ""), _GetDataSafe(tbl_msh, 0, 1, 0), 
+--				_GetDataSafe(tbl_msh, 1, 0, ""), _GetDataSafe(tbl_msh, 1, 1, 0), 
+--				_GetDataSafe(tbl_msh, 2, 0, ""), _GetDataSafe(tbl_msh, 2, 1, 0), 
+--				_GetDataSafe(tbl_msh, 3, 0, ""), _GetDataSafe(tbl_msh, 3, 1, 0), 
+--				_GetDataSafe(tbl_msh, 4, 0, ""), _GetDataSafe(tbl_msh, 4, 1, 0))
+--	else 
+--		MsgToConn(Conn, 110068)
+--	end
+--end
+----- @brief 得到某支股票的财务报告。参数：股票id；距现在的星期偏移（负值）
+--function Gac2Gas:GetCofCFinancialReport(Conn, cofc_id, pre_week)
+--	local playerId = Conn.m_Player.m_uID
+--	data = {
+--					["playerId"] = playerId,
+--					["cofc_id"] = cofc_id,
+--					["pre_week"] = pre_week 
+--					}
+--					
+--	local function callback(tbl_have,tbl_rpt,tbl_msh)
+--		CCofcStock:GetCofCFinancialReport(Conn,tbl_have,tbl_rpt,tbl_msh)
+--	end
+--
+--	--local CofcStockDB = (g_DBTransDef["CofcStockDB"])
+--	 CallAccountManualTrans(Conn.m_Account, CofcStockDB, "GetStockFinancialReport", callback, data)
+--end
+--------------------------------------------------------------------------------------
+--function CCofcStock:GetCofcMyHaveInfo(Conn,tbl)
+--	if next(tbl) then
+--		Gas2Gac:RetGetCofcMyHaveInfo(Conn, tbl[1][1] or 0, tbl[1][2] or 0)
+--	end
+--end
+----- @brief 得到我对某支股票的持有信息
+--function Gac2Gas:GetCofcMyHaveInfo(Conn, cofc_id)
+--	local playerId = Conn.m_Player.m_uID
+--	data = {
+--					["playerId"] = playerId,
+--					["cofc_id"] = cofc_id
+--					}
+--	local function callback(tbl)
+--		CCofcStock:GetCofcMyHaveInfo(Conn,tbl)
+--	end
+--	--local CofcStockDB = (g_DBTransDef["CofcStockDB"])
+--	 CallAccountManualTrans(Conn.m_Account, CofcStockDB, "GetCofcMyHaveInfo", callback, data)
+--end
+--------------------------------------------------------------------------------------
+--function CCofcStock:CofcStockBuy(Conn,ret,code)
+--	if ret == false then
+--		return
+--	elseif IsNumber(ret) and code == nil then
+--		MsgToConn(Conn,ret)
+--	elseif IsNumber(ret) and code ~= nil then
+--		MsgToConn(Conn,ret)
+--		for i = 1,#code do
+--			MsgToConn(Conn,code[i][1],code[i][2],code[i][3])
+--		end
+--	end	
+--end
+--
+----- @brief 购买股票。参数：股票id，交易数量，交易价格
+--function Gac2Gas:CofcStockBuy(Conn, cofc_id, number, price)
+--	local playerId = Conn.m_Player.m_uID
+--	data = {
+--					["playerId"] = playerId,
+--					["cofc_id"] = cofc_id,
+--					["price"] = price,
+--					["number"] = number
+--					}
+--	local function callback(ret,code)
+--		CCofcStock:CofcStockBuy(Conn,ret,code)
+--	end
+--	--local CofcStockDB = (g_DBTransDef["CofcStockDB"])
+--	CallAccountManualTrans(Conn.m_Account, CofcStockDB, "StockBuy", callback, data, Conn.m_Player.m_Properties:GetCofcID())
+--end
+--------------------------------------------------------------------------------------
+--function CCofcStock:CofcStockSell(Conn,ret,code)
+--	if ret == false then
+--		return 
+--	elseif IsNumber(ret) and code == nil then
+--		MsgToConn(Conn,ret)
+--	elseif IsNumber(ret) and code ~= nil then
+--		MsgToConn(Conn,ret)
+--		for i = 1,#code do
+--			MsgToConn(Conn,code[i][1],code[i][2],code[i][3])
+--			if code[i][1] ~= 110064 then
+--			end
+--		end
+--	end
+--end
+----- @brief 销售股票。参数：股票id，交易数量，交易价格
+--function Gac2Gas:CofcStockSell(Conn, cofc_id, number, price)
+--	local playerId = Conn.m_Player.m_uID
+--	data = {
+--					["playerId"] = playerId,
+--					["cofc_id"] = cofc_id,
+--					["price"] = price,
+--					["number"] = number
+--					}
+--	local function callback(ret,code)
+--		CCofcStock:CofcStockSell(Conn,ret,code)
+--	end
+--	--local CofcStockDB = (g_DBTransDef["CofcStockDB"])
+--	CallAccountManualTrans(Conn.m_Account, CofcStockDB, "StockSell", callback, data, Conn.m_Player.m_Properties:GetCofcID())
+--end
+--------------------------------------------------------------------------------------
+--function CCofcStock:RequestOpenCofCStock(Conn,result)
+--	if IsNumber(result) then
+--		MsgToConn(Conn, result)
+--	elseif result == true then
+--		MsgToConn(Conn, 110043)
+--	else
+--		MsgToConn(Conn, 110044)
+--	end
+--end
+----- @brief 请求开通商会股票
+--function Gac2Gas:RequestOpenCofCStock(Conn)
+--local playerId = Conn.m_Player.m_uID
+--	data = {
+--					["playerId"] = playerId
+--					}
+--	local function callback(result)
+--		CCofcStock:RequestOpenCofCStock(Conn,result)
+--	end
+--	
+--	--local CofcStockDB = (g_DBTransDef["CofcStockDB"])
+--	CallAccountManualTrans(Conn.m_Account, CofcStockDB, "RequestOpenCofCStock", callback, data, Conn.m_Player.m_Properties:GetCofcID())
+--end
+--------------------------------------------------------------------------------------
+--function CCofcStock:CofcStockDeleteOrder(Conn,result,money)
+--	if result == true then
+--		MsgToConn(Conn, 110066)
+--	else
+--		MsgToConn(Conn, 110067)
+--		Gas2Gac:RetDeleteOrder(Conn,false)
+--	end
+--end
+----- @brief 撤销股票订单
+--function Gac2Gas:CofcStockDeleteOrder(Conn, order_sid)
+--	local playerId = Conn.m_Player.m_uID
+--	data = {
+--					["order_sid"] = order_sid,
+--					["playerId"] = playerId
+--					}
+--
+--	local function callback(result,money)
+--		CCofcStock:CofcStockDeleteOrder(Conn,result,money)
+--	end
+--
+--	--local CofcStockDB = (g_DBTransDef["CofcStockDB"])
+--	CallAccountManualTrans(Conn.m_Account, CofcStockDB, "DeleteOrder", callback, data, Conn.m_Player.m_Properties:GetCofcID())
+--end
+--------------------------------------------------------------------------------------
+------- @brief 财务结算。分红并生成财务报表
+--
+----function CofcStockFinancialBalance()
+----	local function callback(ret)
+----	end
+----	local CofcStockDB = (g_DBTransDef["CofcStockDB"])
+----end
+--
+--

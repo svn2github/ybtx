@@ -1,0 +1,1 @@
+CYbEducateActionScene = class(CSceneBase)

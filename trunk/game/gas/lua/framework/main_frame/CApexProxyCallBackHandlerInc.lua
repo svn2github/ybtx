@@ -1,0 +1,1 @@
+CApexProxyCallBackHandler = class(IApexProxyCallBackHandler)

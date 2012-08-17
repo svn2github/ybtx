@@ -1,0 +1,2 @@
+
+CDareQuestScene = class(CSceneBase)
