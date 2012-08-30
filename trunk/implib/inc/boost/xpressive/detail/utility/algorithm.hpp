@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // algorithm.hpp
 //
-//  Copyright 2007 Eric Niebler. Distributed under the Boost
+//  Copyright 2008 Eric Niebler. Distributed under the Boost
 //  Software License, Version 1.0. (See accompanying file
 //  LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 
@@ -58,11 +58,11 @@ FwdIter find_nth_if(FwdIter begin, FwdIter end, Diff count, Pred pred)
 // toi
 //
 template<typename InIter, typename Traits>
-int toi(InIter &begin, InIter end, Traits const &traits, int radix = 10, int max = INT_MAX)
+int toi(InIter &begin, InIter end, Traits const &tr, int radix = 10, int max = INT_MAX)
 {
-    detail::ignore_unused(traits);
+    detail::ignore_unused(tr);
     int i = 0, c = 0;
-    for(; begin != end && -1 != (c = traits.value(*begin, radix)); ++begin)
+    for(; begin != end && -1 != (c = tr.value(*begin, radix)); ++begin)
     {
         if(max < ((i *= radix) += c))
             return i / radix;

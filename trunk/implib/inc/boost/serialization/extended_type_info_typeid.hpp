@@ -1,5 +1,6 @@
 #ifndef BOOST_SERIALIZATION_EXTENDED_TYPE_INFO_TYPEID_HPP
 #define BOOST_SERIALIZATION_EXTENDED_TYPE_INFO_TYPEID_HPP
+
 /////////1/////////2/////////3/////////4/////////5/////////6/////////7/////////8
 // MS compatible compilers support #pragma once
 #if defined(_MSC_VER) && (_MSC_VER >= 1020)
@@ -18,97 +19,123 @@
 //  See http://www.boost.org for updates, documentation, and revision history.
 
 #include <typeinfo>
+#include <cstdarg>
+#include <boost/assert.hpp>
 #include <boost/config.hpp>
 
-//#include <boost/static_warning.hpp>
 #include <boost/static_assert.hpp>
+#include <boost/serialization/static_warning.hpp>
 #include <boost/type_traits/is_polymorphic.hpp>
-#include <boost/type_traits/is_const.hpp>
-#include <boost/preprocessor/stringize.hpp>
+#include <boost/type_traits/remove_const.hpp>
 
+#include <boost/serialization/config.hpp>
+#include <boost/serialization/singleton.hpp>
 #include <boost/serialization/extended_type_info.hpp>
+#include <boost/serialization/factory.hpp>
+
+// hijack serialization access
+#include <boost/serialization/access.hpp>
+
+#include <boost/mpl/if.hpp>
 
 #include <boost/config/abi_prefix.hpp> // must be the last header
+
 #ifdef BOOST_MSVC
 #  pragma warning(push)
-#  pragma warning(disable : 4251 4231 4660 4275)
+#  pragma warning(disable : 4251 4231 4660 4275 4511 4512)
 #endif
 
 namespace boost {
 namespace serialization {
-
-namespace detail {
+namespace typeid_system {
 
 class BOOST_SERIALIZATION_DECL(BOOST_PP_EMPTY()) extended_type_info_typeid_0 : 
     public extended_type_info
 {
-private:
-    virtual bool
-    less_than(const extended_type_info &rhs) const;
+    virtual const char * get_debug_info() const {
+        if(static_cast<const std::type_info *>(0) == m_ti)
+            return static_cast<const char *>(0);
+        return m_ti->name();
+    }
 protected:
-    static const extended_type_info *
-    get_derived_extended_type_info(const std::type_info & ti);
-    extended_type_info_typeid_0();
-    // account for bogus gcc warning
-    #if defined(__GNUC__)
-    virtual
-    #endif
+    const std::type_info * m_ti;
+    extended_type_info_typeid_0(const char * key);
     ~extended_type_info_typeid_0();
+    void type_register(const std::type_info & ti);
+    void type_unregister();
+    const extended_type_info *
+    get_extended_type_info(const std::type_info & ti) const;
 public:
-    virtual const std::type_info & get_eti() const = 0;
-};
-
-///////////////////////////////////////////////////////////////////////////////
-// layer to fold T and const T into the same table entry.
-template<class T>
-class extended_type_info_typeid_1 : 
-    public detail::extended_type_info_typeid_0
-{
-private:
-    virtual const std::type_info & get_eti() const {
-        return typeid(T);
-    }
-protected:
-    // private constructor to inhibit any existence other than the 
-    // static one
-    extended_type_info_typeid_1() :
-        detail::extended_type_info_typeid_0()
-    {
-        self_register();    // add type to type table
-    }
-public:
-    struct is_polymorphic
-    {
-        typedef BOOST_DEDUCED_TYPENAME boost::is_polymorphic<T>::type type;
-        BOOST_STATIC_CONSTANT(bool, value = is_polymorphic::type::value);
-    };
-    static const extended_type_info *
-    get_derived_extended_type_info(const T & t){
-        // note: this implementation - based on usage of typeid (rtti)
-        // only works if the class has at least one virtual function.
-//      BOOST_STATIC_WARNING(
-//          static_cast<bool>(is_polymorphic::value)
-//      );
-        return detail::extended_type_info_typeid_0::get_derived_extended_type_info(typeid(t));
-    }
-    static extended_type_info *
-    get_instance(){
-        static extended_type_info_typeid_1<T> instance;
-        return & instance;
-    }
-    static void
-    export_register(const char * key){
-        get_instance()->key_register(key);
+    virtual bool
+    is_less_than(const extended_type_info &rhs) const;
+    virtual bool
+    is_equal(const extended_type_info &rhs) const;
+    const std::type_info & get_typeid() const {
+        return *m_ti;
     }
 };
 
-} // namespace detail
+} // typeid_system
 
-///////////////////////////////////////////////////////////////////////////////
 template<class T>
 class extended_type_info_typeid : 
-    public detail::extended_type_info_typeid_1<const T>
-{};
+    public typeid_system::extended_type_info_typeid_0,
+    public singleton<extended_type_info_typeid< T > >
+{
+public:
+    extended_type_info_typeid() :
+        typeid_system::extended_type_info_typeid_0(get_key())
+    {
+        type_register(typeid(T));
+        key_register();
+    }
+    ~extended_type_info_typeid(){
+        key_unregister();
+        type_unregister();
+    }
+    // get the eti record for the true type of this record
+    // relying upon standard type info implemenation (rtti)
+    const extended_type_info *
+    get_derived_extended_type_info(const T & t) const {
+        // note: this implementation - based on usage of typeid (rtti)
+        // only does something if the class has at least one virtual function.
+        BOOST_STATIC_WARNING(boost::is_polymorphic< T >::value);
+        return 
+            typeid_system::extended_type_info_typeid_0::get_extended_type_info(
+                typeid(t)
+            );
+    }
+    const char * get_key() const {
+        return boost::serialization::guid< T >();
+    }
+    virtual void * construct(unsigned int count, ...) const{
+        // count up the arguments
+        std::va_list ap;
+        va_start(ap, count);
+        switch(count){
+        case 0:
+            return factory<BOOST_DEDUCED_TYPENAME boost::remove_const< T >::type, 0>(ap);
+        case 1:
+            return factory<BOOST_DEDUCED_TYPENAME boost::remove_const< T >::type, 1>(ap);
+        case 2:
+            return factory<BOOST_DEDUCED_TYPENAME boost::remove_const< T >::type, 2>(ap);
+        case 3:
+            return factory<BOOST_DEDUCED_TYPENAME boost::remove_const< T >::type, 3>(ap);
+        case 4:
+            return factory<BOOST_DEDUCED_TYPENAME boost::remove_const< T >::type, 4>(ap);
+        default:
+            BOOST_ASSERT(false); // too many arguments
+            // throw exception here?
+            return NULL;
+        }
+    }
+    virtual void destroy(void const * const p) const {
+        boost::serialization::access::destroy(
+            static_cast<T const *>(p)
+        );
+        //delete static_cast<T const * const>(p);
+    }
+};
 
 } // namespace serialization
 } // namespace boost
@@ -124,7 +151,7 @@ class extended_type_info_typeid :
     template<class T>
     struct extended_type_info_impl {
         typedef BOOST_DEDUCED_TYPENAME 
-            boost::serialization::extended_type_info_typeid<T> type;
+            boost::serialization::extended_type_info_typeid< T > type;
     };
     } // namespace serialization
     } // namespace boost

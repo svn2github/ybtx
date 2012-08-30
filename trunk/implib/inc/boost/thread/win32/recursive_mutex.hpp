@@ -3,25 +3,26 @@
 
 //  recursive_mutex.hpp
 //
-//  (C) Copyright 2006-7 Anthony Williams 
+//  (C) Copyright 2006-7 Anthony Williams
 //
 //  Distributed under the Boost Software License, Version 1.0. (See
 //  accompanying file LICENSE_1_0.txt or copy at
 //  http://www.boost.org/LICENSE_1_0.txt)
 
 
-#include <boost/utility.hpp>
-#include "basic_recursive_mutex.hpp"
+#include <boost/thread/win32/basic_recursive_mutex.hpp>
 #include <boost/thread/exceptions.hpp>
 #include <boost/thread/locks.hpp>
+
+#include <boost/config/abi_prefix.hpp>
 
 namespace boost
 {
     class recursive_mutex:
-        boost::noncopyable,
         public ::boost::detail::basic_recursive_mutex
     {
     public:
+        BOOST_THREAD_NO_COPYABLE(recursive_mutex)
         recursive_mutex()
         {
             ::boost::detail::basic_recursive_mutex::initialize();
@@ -32,16 +33,16 @@ namespace boost
         }
 
         typedef unique_lock<recursive_mutex> scoped_lock;
-        typedef scoped_lock scoped_try_lock;
+        typedef detail::try_lock_wrapper<recursive_mutex> scoped_try_lock;
     };
 
     typedef recursive_mutex recursive_try_mutex;
 
     class recursive_timed_mutex:
-        boost::noncopyable,
         public ::boost::detail::basic_recursive_timed_mutex
     {
     public:
+        BOOST_THREAD_NO_COPYABLE(recursive_timed_mutex)
         recursive_timed_mutex()
         {
             ::boost::detail::basic_recursive_timed_mutex::initialize();
@@ -52,10 +53,11 @@ namespace boost
         }
 
         typedef unique_lock<recursive_timed_mutex> scoped_timed_lock;
-        typedef scoped_timed_lock scoped_try_lock;
+        typedef detail::try_lock_wrapper<recursive_timed_mutex> scoped_try_lock;
         typedef scoped_timed_lock scoped_lock;
     };
 }
 
+#include <boost/config/abi_suffix.hpp>
 
 #endif

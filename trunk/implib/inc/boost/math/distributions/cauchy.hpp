@@ -17,7 +17,7 @@
 #include <boost/math/constants/constants.hpp>
 #include <boost/math/distributions/complement.hpp>
 #include <boost/math/distributions/detail/common_error_handling.hpp>
-#include <cmath>
+#include <boost/config/no_tr1/cmath.hpp>
 
 #include <utility>
 
@@ -56,7 +56,7 @@ RealType cdf_imp(const cauchy_distribution<RealType, Policy>& dist, const RealTy
    //
    BOOST_MATH_STD_USING // for ADL of std functions
    static const char* function = "boost::math::cdf(cauchy<%1%>&, %1%)";
-   RealType result;
+   RealType result = 0;
    RealType location = dist.location();
    RealType scale = dist.scale();
    if(false == detail::check_location(function, location, &result, Policy()))
@@ -105,7 +105,7 @@ RealType quantile_imp(
    static const char* function = "boost::math::quantile(cauchy<%1%>&, %1%)";
    BOOST_MATH_STD_USING // for ADL of std functions
 
-   RealType result;
+   RealType result = 0;
    RealType location = dist.location();
    RealType scale = dist.scale();
    if(false == detail::check_location(function, location, &result, Policy()))
@@ -140,7 +140,7 @@ RealType quantile_imp(
       return location;
    }
    result = -scale / tan(constants::pi<RealType>() * P);
-   return complement ? location - result : location + result;
+   return complement ? RealType(location - result) : RealType(location + result);
 } // quantile
 
 } // namespace detail
@@ -197,7 +197,7 @@ inline RealType pdf(const cauchy_distribution<RealType, Policy>& dist, const Rea
    BOOST_MATH_STD_USING  // for ADL of std functions
 
    static const char* function = "boost::math::pdf(cauchy<%1%>&, %1%)";
-   RealType result;
+   RealType result = 0;
    RealType location = dist.location();
    RealType scale = dist.scale();
    if(false == detail::check_scale("boost::math::pdf(cauchy<%1%>&, %1%)", scale, &result, Policy()))

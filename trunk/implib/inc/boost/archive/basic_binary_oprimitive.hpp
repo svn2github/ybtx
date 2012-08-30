@@ -24,11 +24,11 @@
 // ON PLATFORM APART FROM THE ONE THEY ARE CREATE ON
 
 #include <iosfwd>
-#include <cassert>
+#include <boost/assert.hpp>
 #include <locale>
-#include <cstddef> // size_t
 #include <streambuf> // basic_streambuf
 #include <string>
+#include <cstddef> // size_t
 
 #include <boost/config.hpp>
 #if defined(BOOST_NO_STDC_NAMESPACE)
@@ -38,17 +38,17 @@ namespace std{
 #endif
 
 #include <boost/cstdint.hpp>
-//#include <boost/limits.hpp>
-//#include <boost/io/ios_state.hpp>
+#include <boost/integer.hpp>
+#include <boost/integer_traits.hpp>
 #include <boost/scoped_ptr.hpp>
-#include <boost/throw_exception.hpp>
+#include <boost/serialization/throw_exception.hpp>
 
 #include <boost/archive/basic_streambuf_locale_saver.hpp>
 #include <boost/archive/archive_exception.hpp>
-#include <boost/archive/detail/auto_link_archive.hpp>
 #include <boost/serialization/is_bitwise_serializable.hpp>
 #include <boost/mpl/placeholders.hpp>
 #include <boost/serialization/array.hpp>
+#include <boost/archive/detail/auto_link_archive.hpp>
 #include <boost/archive/detail/abi_prefix.hpp> // must be the last header
 
 namespace boost {
@@ -71,9 +71,10 @@ public:
     Archive * This(){
         return static_cast<Archive *>(this);
     }
+    #ifndef BOOST_NO_STD_LOCALE
     boost::scoped_ptr<std::locale> archive_locale;
     basic_streambuf_locale_saver<Elem, Tr> locale_saver;
-
+    #endif
     // default saving of primitives.
     template<class T>
     void save(const T & t)
@@ -87,8 +88,7 @@ public:
     // trap usage of invalid uninitialized boolean which would
     // otherwise crash on load.
     void save(const bool t){
-        int i = t;
-        assert(0 == i || 1 == i);
+        BOOST_ASSERT(0 == static_cast<int>(t) || 1 == static_cast<int>(t));
         save_binary(& t, sizeof(t));
     }
     BOOST_ARCHIVE_OR_WARCHIVE_DECL(void)
@@ -116,17 +116,23 @@ public:
 
     // we provide an optimized save for all fundamental types
     // typedef serialization::is_bitwise_serializable<mpl::_1> 
-    //  use_array_optimization;
+    // use_array_optimization;
     // workaround without using mpl lambdas
     struct use_array_optimization {
-      template <class T>
-      struct apply : public serialization::is_bitwise_serializable<T> {};
+        template <class T>  
+        #if defined(BOOST_NO_DEPENDENT_NESTED_DERIVATIONS)  
+            struct apply {  
+                typedef BOOST_DEDUCED_TYPENAME boost::serialization::is_bitwise_serializable< T >::type type;  
+            };
+        #else
+            struct apply : public boost::serialization::is_bitwise_serializable< T > {};  
+        #endif
     };
     
 
     // the optimized save_array dispatches to save_binary 
     template <class ValueType>
-    void save_array(serialization::array<ValueType> const& a, unsigned int)
+    void save_array(boost::serialization::array<ValueType> const& a, unsigned int)
     {
       save_binary(a.address(),a.count()*sizeof(ValueType));
     }
@@ -140,7 +146,7 @@ basic_binary_oprimitive<Archive, Elem, Tr>::save_binary(
     const void *address, 
     std::size_t count
 ){
-    //assert(
+    //BOOST_ASSERT(
     //    static_cast<std::size_t>((std::numeric_limits<std::streamsize>::max)()) >= count
     //);
     // note: if the following assertions fail
@@ -148,26 +154,31 @@ basic_binary_oprimitive<Archive, Elem, Tr>::save_binary(
     // mode where by cr characters recieve special treatment.
     // be sure that the output stream is opened with ios::binary
     //if(os.fail())
-    //    boost::throw_exception(archive_exception(archive_exception::stream_error));
+    //    boost::serialization::throw_exception(
+    //        archive_exception(archive_exception::output_stream_error)
+    //    );
     // figure number of elements to output - round up
     count = ( count + sizeof(Elem) - 1) 
         / sizeof(Elem);
+    BOOST_ASSERT(count <= std::size_t(boost::integer_traits<std::streamsize>::const_max));
     std::streamsize scount = m_sb.sputn(
         static_cast<const Elem *>(address), 
-        count
+        static_cast<std::streamsize>(count)
     );
     if(count != static_cast<std::size_t>(scount))
-        boost::throw_exception(archive_exception(archive_exception::stream_error));
+        boost::serialization::throw_exception(
+            archive_exception(archive_exception::output_stream_error)
+        );
     //os.write(
     //    static_cast<const BOOST_DEDUCED_TYPENAME OStream::char_type *>(address), 
     //    count
     //);
-    //assert(os.good());
+    //BOOST_ASSERT(os.good());
 }
 
 } //namespace boost 
 } //namespace archive 
 
-#include <boost/archive/detail/abi_suffix.hpp> // pop pragams
+#include <boost/archive/detail/abi_suffix.hpp> // pop pragmas
 
 #endif // BOOST_ARCHIVE_BASIC_BINARY_OPRIMITIVE_HPP

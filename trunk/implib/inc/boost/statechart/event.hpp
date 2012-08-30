@@ -1,7 +1,7 @@
 #ifndef BOOST_STATECHART_EVENT_HPP_INCLUDED
 #define BOOST_STATECHART_EVENT_HPP_INCLUDED
 //////////////////////////////////////////////////////////////////////////////
-// Copyright 2002-2006 Andreas Huber Doenni
+// Copyright 2002-2007 Andreas Huber Doenni
 // Distributed under the Boost Software License, Version 1.0. (See accompany-
 // ing file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 //////////////////////////////////////////////////////////////////////////////
@@ -48,6 +48,10 @@ class event : public detail::rtti_policy::rtti_derived_type<
     void operator delete( void * pEvent )
     {
       detail::deallocate< MostDerived, Allocator >( pEvent );
+    }
+
+    void operator delete( void * pEvent, void * p )
+    {
     }
 
   protected:

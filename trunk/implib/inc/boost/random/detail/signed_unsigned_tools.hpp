@@ -13,86 +13,11 @@
 
 #include <boost/limits.hpp>
 #include <boost/config.hpp>
+#include <boost/type_traits/make_unsigned.hpp>
 
 namespace boost {
 namespace random {
 namespace detail {
-
-/*
- * Given an (integral) type T, returns the type "unsigned T".
- * (type_traits appears to be lacking the feature)
- */
-
-template<class T>
-struct make_unsigned { };
-
-template<>
-struct make_unsigned<char>
-{
-  typedef unsigned char type;
-};
-
-template<>
-struct make_unsigned<signed char>
-{
-  typedef unsigned char type;
-};
-
-template<>
-struct make_unsigned<unsigned char>
-{
-  typedef unsigned char type;
-};
-
-template<>
-struct make_unsigned<short>
-{
-  typedef unsigned short type;
-};
-
-template<>
-struct make_unsigned<unsigned short>
-{
-  typedef unsigned short type;
-};
-
-template<>
-struct make_unsigned<int>
-{
-  typedef unsigned int type;
-};
-
-template<>
-struct make_unsigned<unsigned int>
-{
-  typedef unsigned int type;
-};
-
-template<>
-struct make_unsigned<long>
-{
-  typedef unsigned long type;
-};
-
-template<>
-struct make_unsigned<unsigned long>
-{
-  typedef unsigned long type;
-};
-
-#ifdef BOOST_HAS_LONG_LONG
-template<>
-struct make_unsigned<long long>
-{
-  typedef unsigned long long type;
-};
-
-template<>
-struct make_unsigned<unsigned long long>
-{
-  typedef unsigned long long type;
-};
-#endif
 
 
 /*
@@ -136,7 +61,7 @@ template<class T1, class T2>
 struct add<T1, T2, /* signed */ false>
 {
   typedef T2 result_type;
-  result_type operator()(T1 x, T2 y) { return x + y; }
+  result_type operator()(T1 x, T2 y) { return T2(x) + y; }
 };
 
 template<class T1, class T2>
@@ -146,9 +71,9 @@ struct add<T1, T2, /* signed */ true>
   result_type operator()(T1 x, T2 y)
   {
     if (y >= 0)
-      return x + y;
+      return T2(x) + y;
     // y < 0
-    if (x >= T1(-(y+1)))  // result >= 0 after subtraction
+    if (x > T1(-(y+1)))  // result >= 0 after subtraction
       // avoid the nasty two's complement edge case for y == min()
       return T2(x - T1(-(y+1)) - 1);
     // abs(x) < abs(y), thus T2 able to represent x

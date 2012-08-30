@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // string_matcher.hpp
 //
-//  Copyright 2007 Eric Niebler. Distributed under the Boost
+//  Copyright 2008 Eric Niebler. Distributed under the Boost
 //  Software License, Version 1.0. (See accompanying file
 //  LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 
@@ -26,17 +26,17 @@ namespace boost { namespace xpressive { namespace detail
     ///////////////////////////////////////////////////////////////////////////////
     // string_matcher
     //
-    template<typename Traits, bool ICase>
+    template<typename Traits, typename ICase>
     struct string_matcher
       : quant_style_fixed_unknown_width
     {
         typedef typename Traits::char_type char_type;
         typedef typename Traits::string_type string_type;
-        typedef mpl::bool_<ICase> icase_type;
+        typedef ICase icase_type;
         string_type str_;
         char_type const *end_;
 
-        string_matcher(string_type const &str, Traits const &traits)
+        string_matcher(string_type const &str, Traits const &tr)
           : str_(str)
           , end_()
         {
@@ -44,7 +44,7 @@ namespace boost { namespace xpressive { namespace detail
             typename range_iterator<string_type>::type end = boost::end(this->str_);
             for(; cur != end; ++cur)
             {
-                *cur = detail::translate(*cur, traits, icase_type());
+                *cur = detail::translate(*cur, tr, icase_type());
             }
             this->end_ = detail::data_end(str_);
         }

@@ -21,6 +21,7 @@
 // for wchar_t based streams on systems for which wchar_t not a true
 // type but rather a synonym for some integer type.
 
+#include <cstddef> // NULL
 #include <istream>
 #include <boost/iterator/iterator_facade.hpp>
 
@@ -60,7 +61,7 @@ class istream_iterator :
 
     void increment(){
         if(NULL != m_istream){
-            m_current_value = m_istream->get();
+            m_current_value = static_cast<Elem>(m_istream->get());
             if(! m_istream->good()){
                 const_cast<this_t *>(this)->m_istream = NULL;
             }

@@ -57,7 +57,23 @@ namespace boost { namespace numeric { namespace ublas {
         }
     }
 
-    // Array based triangular matrix class
+    /** \brief A triangular matrix of values of type \c T.
+     *
+     * For a \f$(n \times n )\f$-dimensional lower triangular matrix and if \f$0 \leq i < n\f$, \f$0 \leq j < n\f$ and \f$i>j\f$ holds, 
+     * \f$m_{i,j}=0\f$. Furthermore if \f$m_{i,i}=1\f$, the matrix is called unit lower triangular.
+     *
+     * For a \f$(n \times n )\f$-dimensional upper triangular matrix and if \f$0 \leq i < n\f$, \f$0 \leq j < n\f$ and \f$i<j\f$ holds, 
+     * \f$m_{i,j}=0\f$. Furthermore if \f$m_{i,i}=1\f$, the matrix is called unit upper triangular.
+     *
+     * The default storage for triangular matrices is packed. Orientation and storage can also be specified. 
+     * Default is \c row_major and and unbounded_array. It is \b not required by the storage to initialize 
+     * elements of the matrix.
+     *
+     * \tparam T the type of object stored in the matrix (like double, float, complex, etc...)
+     * \tparam TRI the type of the triangular matrix. It can either be \c lower or \c upper. Default is \c lower
+     * \tparam L the storage organization. It can be either \c row_major or \c column_major. Default is \c row_major
+     * \tparam A the type of Storage array. Default is \c unbounded_array
+     */
     template<class T, class TRI, class L, class A>
     class triangular_matrix:
         public matrix_container<triangular_matrix<T, TRI, L, A> > {
@@ -295,25 +311,33 @@ namespace boost { namespace numeric { namespace ublas {
         BOOST_UBLAS_INLINE
         const_iterator1 find1 (int rank, size_type i, size_type j) const {
             if (rank == 1)
-                i = triangular_type::restrict1 (i, j);
+                i = triangular_type::restrict1 (i, j, size1_, size2_);
+            if (rank == 0)
+                i = triangular_type::global_restrict1 (i, size1_, j, size2_);
             return const_iterator1 (*this, i, j);
         }
         BOOST_UBLAS_INLINE
         iterator1 find1 (int rank, size_type i, size_type j) {
             if (rank == 1)
-                i = triangular_type::mutable_restrict1 (i, j);
+                i = triangular_type::mutable_restrict1 (i, j, size1_, size2_);
+            if (rank == 0)
+                i = triangular_type::global_mutable_restrict1 (i, size1_, j, size2_);
             return iterator1 (*this, i, j);
         }
         BOOST_UBLAS_INLINE
         const_iterator2 find2 (int rank, size_type i, size_type j) const {
             if (rank == 1)
-                j = triangular_type::restrict2 (i, j);
+                j = triangular_type::restrict2 (i, j, size1_, size2_);
+            if (rank == 0)
+                j = triangular_type::global_restrict2 (i, size1_, j, size2_);
             return const_iterator2 (*this, i, j);
         }
         BOOST_UBLAS_INLINE
         iterator2 find2 (int rank, size_type i, size_type j) {
             if (rank == 1)
-                j = triangular_type::mutable_restrict2 (i, j);
+                j = triangular_type::mutable_restrict2 (i, j, size1_, size2_);
+            if (rank == 0)
+                j = triangular_type::global_mutable_restrict2 (i, size1_, j, size2_);
             return iterator2 (*this, i, j);
         }
 
@@ -1145,25 +1169,33 @@ namespace boost { namespace numeric { namespace ublas {
         BOOST_UBLAS_INLINE
         const_iterator1 find1 (int rank, size_type i, size_type j) const {
             if (rank == 1)
-                i = triangular_type::restrict1 (i, j);
+                i = triangular_type::restrict1 (i, j, size1(), size2());
+            if (rank == 0)
+                i = triangular_type::global_restrict1 (i, size1(), j, size2());
             return const_iterator1 (*this, data ().find1 (rank, i, j));
         }
         BOOST_UBLAS_INLINE
         iterator1 find1 (int rank, size_type i, size_type j) {
             if (rank == 1)
-                i = triangular_type::mutable_restrict1 (i, j);
+                i = triangular_type::mutable_restrict1 (i, j, size1(), size2());
+            if (rank == 0)
+                i = triangular_type::global_mutable_restrict1 (i, size1(), j, size2());
             return iterator1 (*this, data ().find1 (rank, i, j));
         }
         BOOST_UBLAS_INLINE
         const_iterator2 find2 (int rank, size_type i, size_type j) const {
             if (rank == 1)
-                j = triangular_type::restrict2 (i, j);
+                j = triangular_type::restrict2 (i, j, size1(), size2());
+            if (rank == 0)
+                j = triangular_type::global_restrict2 (i, size1(), j, size2());
             return const_iterator2 (*this, data ().find2 (rank, i, j));
         }
         BOOST_UBLAS_INLINE
         iterator2 find2 (int rank, size_type i, size_type j) {
             if (rank == 1)
-                j = triangular_type::mutable_restrict2 (i, j);
+                j = triangular_type::mutable_restrict2 (i, j, size1(), size2());
+            if (rank == 0)
+                j = triangular_type::global_mutable_restrict2 (i, size1(), j, size2());
             return iterator2 (*this, data ().find2 (rank, i, j));
         }
 

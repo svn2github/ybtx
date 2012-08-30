@@ -20,10 +20,21 @@
 
 #include <boost/mpi/datatype.hpp>
 #include <boost/archive/detail/auto_link_archive.hpp>
-#include <boost/archive/basic_binary_oarchive.hpp>
+#include <boost/archive/detail/common_oarchive.hpp>
+#include <boost/archive/shared_ptr_helper.hpp>
 #include <boost/mpi/detail/packed_oprimitive.hpp>
+#include <boost/mpi/detail/binary_buffer_oprimitive.hpp>
+#include <boost/serialization/string.hpp>
+#include <boost/serialization/collection_size_type.hpp>
+#include <boost/serialization/item_version_type.hpp>
 
 namespace boost { namespace mpi {
+
+#ifdef BOOST_MPI_HOMOGENEOUS
+  typedef binary_buffer_oprimitive oprimitive;
+#else
+  typedef packed_oprimitive oprimitive;
+#endif
 
 /** @brief An archive that unpacks binary data from an MPI buffer.
  *
@@ -33,9 +44,11 @@ namespace boost { namespace mpi {
  *  type and will use the @c MPI_Unpack function of the underlying MPI
  *  implementation to perform deserialization.
  */
+  
 class BOOST_MPI_DECL packed_oarchive
-  : public packed_oprimitive,
-    public archive::basic_binary_oarchive<packed_oarchive>
+  : public oprimitive
+  , public archive::detail::common_oarchive<packed_oarchive>
+  , public archive::detail::shared_ptr_helper
 {
 public:
   /**
@@ -53,8 +66,8 @@ public:
    *  default flags.
    */
   packed_oarchive( MPI_Comm const & comm, buffer_type & b, unsigned int flags = boost::archive::no_header)
-         : packed_oprimitive(b,comm),
-           archive::basic_binary_oarchive<packed_oarchive>(flags)
+         : oprimitive(b,comm),
+           archive::detail::common_oarchive<packed_oarchive>(flags)
         {}
 
   /**
@@ -69,10 +82,40 @@ public:
    *  default flags.
    */
   packed_oarchive ( MPI_Comm const & comm, unsigned int flags =  boost::archive::no_header)
-         : packed_oprimitive(internal_buffer_,comm),
-           archive::basic_binary_oarchive<packed_oarchive>(flags)
+         : oprimitive(internal_buffer_,comm),
+           archive::detail::common_oarchive<packed_oarchive>(flags)
         {}
 
+  // Save everything else in the usual way, forwarding on to the Base class
+  template<class T>
+  void save_override(T const& x, int version, mpl::false_)
+  {
+    archive::detail::common_oarchive<packed_oarchive>::save_override(x,version);
+  }
+
+  // Save it directly using the primnivites
+  template<class T>
+  void save_override(T const& x, int /*version*/, mpl::true_)
+  {
+    oprimitive::save(x);
+  }
+
+  // Save all supported datatypes directly
+  template<class T>
+  void save_override(T const& x, int version)
+  {
+    typedef typename mpl::apply1<use_array_optimization,T>::type use_optimized;
+    save_override(x, version, use_optimized());
+  }
+
+  // input archives need to ignore  the optional information 
+  void save_override(const archive::class_id_optional_type & /*t*/, int){}
+
+  // explicitly convert to char * to avoid compile ambiguities
+  void save_override(const archive::class_name_type & t, int){
+      const std::string s(t);
+      * this->This() << s;
+  }
 
 private:
   /// An internal buffer to be used when the user does not supply his
@@ -84,6 +127,8 @@ private:
 
 // required by export
 BOOST_SERIALIZATION_REGISTER_ARCHIVE(boost::mpi::packed_oarchive)
+BOOST_SERIALIZATION_USE_ARRAY_OPTIMIZATION(boost::mpi::packed_oarchive)
+
 
 
 #endif // BOOST_MPI_PACKED_OARCHIVE_HPP

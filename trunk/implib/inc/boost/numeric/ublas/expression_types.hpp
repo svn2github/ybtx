@@ -1,6 +1,6 @@
 //
-//  Copyright (c) 2000-2002
-//  Joerg Walter, Mathias Koch
+//  Copyright (c) 2000-2010
+//  Joerg Walter, Mathias Koch. David Bellot
 //
 //  Distributed under the Boost Software License, Version 1.0. (See
 //  accompanying file LICENSE_1_0.txt or copy at
@@ -22,8 +22,13 @@
 
 namespace boost { namespace numeric { namespace ublas {
 
-    // Base class for uBLAS staticaly derived expressions - see the Barton Nackman trick
-    //  Provides numeric properties for linear algebra
+    /** \brief Base class for uBLAS statically derived expressions using the the Barton Nackman trick
+     *
+     * This is a NonAssignable class
+     * Directly implement nonassignable - simplifes debugging call trace!
+     * 
+     * \tparam E an expression type
+     */
     template<class E>
     class ublas_expression {
     public:
@@ -33,7 +38,6 @@ namespace boost { namespace numeric { namespace ublas {
         typedef typename E::value_type value_type;
         */
         
-        // Directly implement nonassignable - simplifes debugging call trace!
     protected:
         ublas_expression () {}
         ~ublas_expression () {}
@@ -42,11 +46,16 @@ namespace boost { namespace numeric { namespace ublas {
     };
 
 
-    // Base class for Scalar Expression models -
-    //  it does not model the Scalar Expression concept but all derived types should.
-    // The class defines a common base type and some common interface for all
-    // statically derived Scalar Expression classes
-    // We implement the casts to the statically derived type.
+    /** \brief Base class for Scalar Expression models
+     *
+     * It does not model the Scalar Expression concept but all derived types should.
+     * The class defines a common base type and some common interface for all statically 
+     * derived Scalar Expression classes.
+     *
+     * We implement the casts to the statically derived type.
+     *
+     * \tparam E an expression type
+     */
     template<class E>
     class scalar_expression:
         public ublas_expression<E> {
@@ -163,11 +172,13 @@ namespace boost { namespace numeric { namespace ublas {
     };
 
 
-    // Base class for Vector Expression models -
-    //  it does not model the Vector Expression concept but all derived types should.
-    // The class defines a common base type and some common interface for all
-    // statically derived Vector Expression classes
-    // We implement the casts to the statically derived type.
+    /** \brief Base class for Vector Expression models
+     *
+     * it does not model the Vector Expression concept but all derived types should.
+     * The class defines a common base type and some common interface for all
+     * statically derived Vector Expression classes.
+     * We implement the casts to the statically derived type.
+     */
     template<class E>
     class vector_expression:
         public ublas_expression<E> {
@@ -217,13 +228,13 @@ namespace boost { namespace numeric { namespace ublas {
         }
         template<class A>
         BOOST_UBLAS_INLINE
-        const vector_indirect<const E, A> operator () (const indirect_array<A> &ia) const {
-            return vector_indirect<const E, A>  (operator () (), ia);
+        const vector_indirect<const E, indirect_array<A> > operator () (const indirect_array<A> &ia) const {
+            return vector_indirect<const E, indirect_array<A> >  (operator () (), ia);
         }
         template<class A>
         BOOST_UBLAS_INLINE
-        vector_indirect<E, A> operator () (const indirect_array<A> &ia) {
-            return vector_indirect<E, A> (operator () (), ia);
+        vector_indirect<E, indirect_array<A> > operator () (const indirect_array<A> &ia) {
+            return vector_indirect<E, indirect_array<A> > (operator () (), ia);
         }
 
         BOOST_UBLAS_INLINE
@@ -244,22 +255,24 @@ namespace boost { namespace numeric { namespace ublas {
         }
         template<class A>
         BOOST_UBLAS_INLINE
-        const vector_indirect<const E, A> project (const indirect_array<A> &ia) const {
-            return vector_indirect<const E, A> (operator () (), ia);
+        const vector_indirect<const E, indirect_array<A> > project (const indirect_array<A> &ia) const {
+            return vector_indirect<const E, indirect_array<A> > (operator () (), ia);
         }
         template<class A>
         BOOST_UBLAS_INLINE
-        vector_indirect<E, A> project (const indirect_array<A> &ia) {
-            return vector_indirect<E, A> (operator () (), ia);
+        vector_indirect<E, indirect_array<A> > project (const indirect_array<A> &ia) {
+            return vector_indirect<E, indirect_array<A> > (operator () (), ia);
         }
 #endif
     };
 
-    // Base class for Vector container models -
-    //  it does not model the Vector concept but all derived types should.
-    // The class defines a common base type and some common interface for all
-    // statically derived Vector classes
-    // We implement the casts to the statically derived type.
+    /** \brief Base class for Vector container models
+     *
+     * it does not model the Vector concept but all derived types should.
+     * The class defines a common base type and some common interface for all
+     * statically derived Vector classes
+     * We implement the casts to the statically derived type.
+     */
     template<class C>
     class vector_container:
         public vector_expression<C> {
@@ -283,14 +296,18 @@ namespace boost { namespace numeric { namespace ublas {
     };
 
 
-    // Base class for Matrix Expression models -
-    //  it does not model the Matrix Expression concept but all derived types should.
-    // The class defines a common base type and some common interface for all
-    // statically derived Matrix Expression classes
-    // We implement the casts to the statically derived type.
+    /** \brief Base class for Matrix Expression models
+     *
+     * it does not model the Matrix Expression concept but all derived types should.
+     * The class defines a common base type and some common interface for all
+     * statically derived Matrix Expression classes
+     * We implement the casts to the statically derived type.
+     */
     template<class E>
     class matrix_expression:
         public ublas_expression<E> {
+    private:
+        typedef matrix_expression<E> self_type;
     public:
         static const unsigned complexity = 0;
         typedef E expression_type;
@@ -371,13 +388,13 @@ namespace boost { namespace numeric { namespace ublas {
         }
         template<class A>
         BOOST_UBLAS_INLINE
-        const matrix_indirect<const E, A> operator () (const indirect_array<A> &ia1, const indirect_array<A> &ia2) const {
-            return matrix_indirect<const E, A> (operator () (), ia1, ia2);
+        const matrix_indirect<const E, indirect_array<A> > operator () (const indirect_array<A> &ia1, const indirect_array<A> &ia2) const {
+            return matrix_indirect<const E, indirect_array<A> > (operator () (), ia1, ia2);
         }
         template<class A>
         BOOST_UBLAS_INLINE
-        matrix_indirect<E, A> operator () (const indirect_array<A> &ia1, const indirect_array<A> &ia2) {
-            return matrix_indirect<E, A> (operator () (), ia1, ia2);
+        matrix_indirect<E, indirect_array<A> > operator () (const indirect_array<A> &ia1, const indirect_array<A> &ia2) {
+            return matrix_indirect<E, indirect_array<A> > (operator () (), ia1, ia2);
         }
 
         BOOST_UBLAS_INLINE
@@ -398,13 +415,13 @@ namespace boost { namespace numeric { namespace ublas {
         }
         template<class A>
         BOOST_UBLAS_INLINE
-        const matrix_indirect<const E, A> project (const indirect_array<A> &ia1, const indirect_array<A> &ia2) const {
-            return matrix_indirect<const E, A> (operator () (), ia1, ia2);
+        const matrix_indirect<const E, indirect_array<A> > project (const indirect_array<A> &ia1, const indirect_array<A> &ia2) const {
+            return matrix_indirect<const E, indirect_array<A> > (operator () (), ia1, ia2);
         }
         template<class A>
         BOOST_UBLAS_INLINE
-        matrix_indirect<E, A> project (const indirect_array<A> &ia1, const indirect_array<A> &ia2) {
-            return matrix_indirect<E, A> (operator () (), ia1, ia2);
+        matrix_indirect<E, indirect_array<A> > project (const indirect_array<A> &ia1, const indirect_array<A> &ia2) {
+            return matrix_indirect<E, indirect_array<A> > (operator () (), ia1, ia2);
         }
 #endif
     };
@@ -456,11 +473,13 @@ namespace boost { namespace numeric { namespace ublas {
     }
 #endif
 
-    // Base class for Matrix container models -
-    //  it does not model the Matrix concept but all derived types should.
-    // The class defines a common base type and some common interface for all
-    // statically derived Matrix classes
-    // We implement the casts to the statically derived type.
+    /** \brief Base class for Matrix container models
+     *
+     * it does not model the Matrix concept but all derived types should.
+     * The class defines a common base type and some common interface for all
+     * statically derived Matrix classes
+     * We implement the casts to the statically derived type.
+     */
     template<class C>
     class matrix_container:
         public matrix_expression<C> {

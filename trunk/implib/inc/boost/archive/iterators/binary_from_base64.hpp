@@ -16,11 +16,11 @@
 
 //  See http://www.boost.org for updates, documentation, and revision history.
 
-#include <cassert>
+#include <boost/assert.hpp>
 
 #include <boost/config.hpp> // for BOOST_DEDUCED_TYPENAME
-#include <boost/throw_exception.hpp>
-#include <boost/pfto.hpp>
+#include <boost/serialization/throw_exception.hpp>
+#include <boost/serialization/pfto.hpp>
 #include <boost/static_assert.hpp>
 
 #include <boost/iterator/transform_iterator.hpp>
@@ -39,7 +39,7 @@ template<class CharType>
 struct to_6_bit {
     typedef CharType result_type;
     CharType operator()(CharType t) const{
-        const char lookup_table[] = {
+        const signed char lookup_table[] = {
             -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
             -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
             -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,62,-1,-1,-1,63,
@@ -57,7 +57,7 @@ struct to_6_bit {
         if((unsigned)t <= 127)
             value = lookup_table[(unsigned)t];
         if(-1 == value)
-            boost::throw_exception(
+            boost::serialization::throw_exception(
                 dataflow_exception(dataflow_exception::invalid_base64_character)
             );
         return value;
@@ -99,7 +99,7 @@ public:
     template<class T>
     binary_from_base64(BOOST_PFTO_WRAPPER(T)  start) :
         super_t(
-            Base(BOOST_MAKE_PFTO_WRAPPER(static_cast<T>(start))), 
+            Base(BOOST_MAKE_PFTO_WRAPPER(static_cast< T >(start))), 
             detail::to_6_bit<CharType>()
         )
     {}

@@ -14,6 +14,10 @@
 #ifndef BOOST_MATH_ELLINT_1_HPP
 #define BOOST_MATH_ELLINT_1_HPP
 
+#ifdef _MSC_VER
+#pragma once
+#endif
+
 #include <boost/math/special_functions/ellint_rf.hpp>
 #include <boost/math/constants/constants.hpp>
 #include <boost/math/policies/error_handling.hpp>
@@ -84,9 +88,9 @@ T ellint_f_imp(T phi, T k, const Policy& pol)
        // so rewritten to use fmod instead:
        //
        BOOST_MATH_INSTRUMENT_CODE("pi/2 = " << constants::pi<T>() / 2);
-       T rphi = boost::math::tools::fmod_workaround(phi, constants::pi<T>() / 2);
+       T rphi = boost::math::tools::fmod_workaround(phi, T(constants::pi<T>() / 2));
        BOOST_MATH_INSTRUMENT_VARIABLE(rphi);
-       T m = 2 * (phi - rphi) / constants::pi<T>();
+       T m = floor((2 * phi) / constants::pi<T>());
        BOOST_MATH_INSTRUMENT_VARIABLE(m);
        int s = 1;
        if(boost::math::tools::fmod_workaround(m, T(2)) > 0.5)
@@ -100,7 +104,7 @@ T ellint_f_imp(T phi, T k, const Policy& pol)
        T cosp = cos(rphi);
        BOOST_MATH_INSTRUMENT_VARIABLE(sinp);
        BOOST_MATH_INSTRUMENT_VARIABLE(cosp);
-       result = s * sinp * ellint_rf_imp(cosp * cosp, 1 - k * k * sinp * sinp, T(1), pol);
+       result = s * sinp * ellint_rf_imp(T(cosp * cosp), T(1 - k * k * sinp * sinp), T(1), pol);
        BOOST_MATH_INSTRUMENT_VARIABLE(result);
        if(m != 0)
        {
@@ -108,7 +112,7 @@ T ellint_f_imp(T phi, T k, const Policy& pol)
           BOOST_MATH_INSTRUMENT_VARIABLE(result);
        }
     }
-    return invert ? -result : result;
+    return invert ? T(-result) : result;
 }
 
 // Complete elliptic integral (Legendre form) of the first kind
@@ -180,3 +184,4 @@ inline typename tools::promote_args<T1, T2>::type ellint_1(T1 k, T2 phi)
 }} // namespaces
 
 #endif // BOOST_MATH_ELLINT_1_HPP
+

@@ -7,7 +7,7 @@
 #endif
 
 /////////1/////////2/////////3/////////4/////////5/////////6/////////7/////////8
-// vector.hpp: serialization for stl vector templates
+// valarray.hpp: serialization for stl vector templates
 
 // (C) Copyright 2005 Matthias Troyer . 
 // Use, modification and distribution is subject to the Boost Software
@@ -31,13 +31,14 @@
 #define STD std
 #endif
 
-namespace boost { namespace serialization {
+namespace boost { 
+namespace serialization {
 
 /////////1/////////2/////////3/////////4/////////5/////////6/////////7/////////8
-// valarray<T>
+// valarray< T >
 
 template<class Archive, class U>
-void save( Archive & ar, const STD::valarray<U> &t, const unsigned int file_version )
+void save( Archive & ar, const STD::valarray<U> &t, const unsigned int /*file_version*/ )
 {
   const collection_size_type count(t.size());
   ar << BOOST_SERIALIZATION_NVP(count);
@@ -45,9 +46,8 @@ void save( Archive & ar, const STD::valarray<U> &t, const unsigned int file_vers
     ar << make_array(detail::get_data(t), t.size());
 }
 
-
 template<class Archive, class U>
-void load( Archive & ar, STD::valarray<U> &t,  const unsigned int file_version )
+void load( Archive & ar, STD::valarray<U> &t,  const unsigned int /*file_version*/ )
 {
   collection_size_type count;
   ar >> BOOST_SERIALIZATION_NVP(count);

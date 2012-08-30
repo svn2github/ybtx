@@ -1,21 +1,22 @@
 //  Boost config.hpp configuration header file  ------------------------------//
 
-//  (C) Copyright John Maddock 2001 - 2003.
-//  (C) Copyright Darin Adler 2001.
-//  (C) Copyright Peter Dimov 2001.
-//  (C) Copyright Bill Kempf 2002.
-//  (C) Copyright Jens Maurer 2002.
-//  (C) Copyright David Abrahams 2002 - 2003.
-//  (C) Copyright Gennaro Prota 2003.
-//  (C) Copyright Eric Friedman 2003.
-//  Use, modification and distribution are subject to the
-//  Boost Software License, Version 1.0. (See accompanying file
-//  LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
+//  Copyright (c) 2001-2003 John Maddock
+//  Copyright (c) 2001 Darin Adler
+//  Copyright (c) 2001 Peter Dimov
+//  Copyright (c) 2002 Bill Kempf 
+//  Copyright (c) 2002 Jens Maurer
+//  Copyright (c) 2002-2003 David Abrahams
+//  Copyright (c) 2003 Gennaro Prota
+//  Copyright (c) 2003 Eric Friedman
+//  Copyright (c) 2010 Eric Jourdanneau, Joel Falcou
+// Distributed under the Boost Software License, Version 1.0. (See
+// accompanying file LICENSE_1_0.txt or copy at
+// http://www.boost.org/LICENSE_1_0.txt)
 
-//  See http://www.boost.org for most recent version.
+//  See http://www.boost.org/ for most recent version.
 
 //  Boost config.hpp policy and rationale documentation has been moved to
-//  http://www.boost.org/libs/config
+//  http://www.boost.org/libs/config/
 //
 //  This file is intended to be stable, and relatively unchanging.
 //  It should contain boilerplate code only - no compiler specific
@@ -24,17 +25,40 @@
 #ifndef BOOST_CONFIG_SUFFIX_HPP
 #define BOOST_CONFIG_SUFFIX_HPP
 
+#if defined(__GNUC__) && (__GNUC__ >= 4)
+//
+// Some GCC-4.x versions issue warnings even when __extension__ is used,
+// so use this as a workaround:
+//
+#pragma GCC system_header
+#endif
+
+//
+// ensure that visibility macros are always defined, thus symplifying use
+//
+#ifndef BOOST_SYMBOL_EXPORT
+# define BOOST_SYMBOL_EXPORT
+#endif
+#ifndef BOOST_SYMBOL_IMPORT
+# define BOOST_SYMBOL_IMPORT
+#endif
+#ifndef BOOST_SYMBOL_VISIBLE
+# define BOOST_SYMBOL_VISIBLE
+#endif
+
 //
 // look for long long by looking for the appropriate macros in <limits.h>.
 // Note that we use limits.h rather than climits for maximal portability,
 // remember that since these just declare a bunch of macros, there should be
 // no namespace issues from this.
 //
-#if !defined(BOOST_HAS_LONG_LONG)                                               \
+#if !defined(BOOST_HAS_LONG_LONG) && !defined(BOOST_NO_LONG_LONG)                                              \
    && !defined(BOOST_MSVC) && !defined(__BORLANDC__)
 # include <limits.h>
 # if (defined(ULLONG_MAX) || defined(ULONG_LONG_MAX) || defined(ULONGLONG_MAX))
 #   define BOOST_HAS_LONG_LONG
+# else
+#   define BOOST_NO_LONG_LONG
 # endif
 #endif
 
@@ -121,6 +145,15 @@
 #  endif
 
 //
+// Without partial specialization, partial 
+// specialization with default args won't work either:
+//
+#  if defined(BOOST_NO_TEMPLATE_PARTIAL_SPECIALIZATION) \
+      && !defined(BOOST_NO_PARTIAL_SPECIALIZATION_IMPLICIT_DEFAULT_ARGS)
+#     define BOOST_NO_PARTIAL_SPECIALIZATION_IMPLICIT_DEFAULT_ARGS
+#  endif
+
+//
 // Without member template support, we can't have template constructors
 // in the standard library either:
 //
@@ -145,6 +178,13 @@
 //
 #if defined(BOOST_NO_ARGUMENT_DEPENDENT_LOOKUP) && !defined(BOOST_FUNCTION_SCOPE_USING_DECLARATION_BREAKS_ADL)
 #  define BOOST_FUNCTION_SCOPE_USING_DECLARATION_BREAKS_ADL
+#endif
+
+//
+// Without typeid support we have no dynamic RTTI either:
+//
+#if defined(BOOST_NO_TYPEID) && !defined(BOOST_NO_RTTI)
+#  define BOOST_NO_RTTI
 #endif
 
 //
@@ -206,7 +246,8 @@
 // from here then add to the appropriate compiler section):
 //
 #if (defined(__MT__) || defined(_MT) || defined(_REENTRANT) \
-    || defined(_PTHREADS)) && !defined(BOOST_HAS_THREADS)
+    || defined(_PTHREADS) || defined(__APPLE__) || defined(__DragonFly__)) \
+    && !defined(BOOST_HAS_THREADS)
 #  define BOOST_HAS_THREADS
 #endif
 
@@ -232,6 +273,8 @@
 #ifndef BOOST_HAS_THREADS
 #  undef BOOST_HAS_PTHREADS
 #  undef BOOST_HAS_PTHREAD_MUTEXATTR_SETTYPE
+#  undef BOOST_HAS_PTHREAD_YIELD
+#  undef BOOST_HAS_PTHREAD_DELAY_NP
 #  undef BOOST_HAS_WINTHREADS
 #  undef BOOST_HAS_BETHREADS
 #  undef BOOST_HAS_MPTASKS
@@ -255,11 +298,11 @@
 // Define BOOST_NO_SLIST and BOOST_NO_HASH if required.
 // Note that this is for backwards compatibility only.
 //
-#  ifndef BOOST_HAS_SLIST
+#  if !defined(BOOST_HAS_SLIST) && !defined(BOOST_NO_SLIST)
 #     define BOOST_NO_SLIST
 #  endif
 
-#  ifndef BOOST_HAS_HASH
+#  if !defined(BOOST_HAS_HASH) && !defined(BOOST_NO_HASH)
 #     define BOOST_NO_HASH
 #  endif
 
@@ -304,7 +347,7 @@
 //  works as expected with standard conforming compilers.  The resulting
 //  double inclusion of <cstddef> is harmless.
 
-# ifdef BOOST_NO_STDC_NAMESPACE
+# if defined(BOOST_NO_STDC_NAMESPACE) && defined(__cplusplus)
 #   include <cstddef>
     namespace std { using ::ptrdiff_t; using ::size_t; }
 # endif
@@ -323,7 +366,7 @@
 
 //  BOOST_NO_STD_MIN_MAX workaround  -----------------------------------------//
 
-#  ifdef BOOST_NO_STD_MIN_MAX
+#  if defined(BOOST_NO_STD_MIN_MAX) && defined(__cplusplus)
 
 namespace std {
   template <class _Tp>
@@ -361,7 +404,7 @@ namespace std {
 //    with
 //       BOOST_USE_FACET(Type, loc);
 //    Note do not add a std:: prefix to the front of BOOST_USE_FACET!
-//  Use for BOOST_HAS_FACET is analagous.
+//  Use for BOOST_HAS_FACET is analogous.
 
 #if defined(BOOST_NO_STD_USE_FACET)
 #  ifdef BOOST_HAS_TWO_ARG_USE_FACET
@@ -423,12 +466,18 @@ namespace std {
 #  define BOOST_DEDUCED_TYPENAME
 #endif
 
+#ifndef BOOST_NO_TYPENAME_WITH_CTOR
+#  define BOOST_CTOR_TYPENAME typename
+#else
+#  define BOOST_CTOR_TYPENAME
+#endif
+
 // long long workaround ------------------------------------------//
 // On gcc (and maybe other compilers?) long long is alway supported
 // but it's use may generate either warnings (with -ansi), or errors
 // (with -pedantic -ansi) unless it's use is prefixed by __extension__
 //
-#if defined(BOOST_HAS_LONG_LONG)
+#if defined(BOOST_HAS_LONG_LONG) && defined(__cplusplus)
 namespace boost{
 #  ifdef __GNUC__
    __extension__ typedef long long long_long_type;
@@ -442,12 +491,11 @@ namespace boost{
 
 // BOOST_[APPEND_]EXPLICIT_TEMPLATE_[NON_]TYPE macros --------------------------//
 //
-// Some compilers have problems with function templates whose
-// template parameters don't appear in the function parameter
-// list (basically they just link one instantiation of the
-// template in the final executable). These macros provide a
-// uniform way to cope with the problem with no effects on the
-// calling syntax.
+// Some compilers have problems with function templates whose template
+// parameters don't appear in the function parameter list (basically
+// they just link one instantiation of the template in the final
+// executable). These macros provide a uniform way to cope with the
+// problem with no effects on the calling syntax.
 
 // Example:
 //
@@ -483,23 +531,23 @@ namespace boost{
 //
 
 
-#if defined BOOST_NO_EXPLICIT_FUNCTION_TEMPLATE_ARGUMENTS
+#if defined(BOOST_NO_EXPLICIT_FUNCTION_TEMPLATE_ARGUMENTS) && defined(__cplusplus)
 
 #  include "boost/type.hpp"
 #  include "boost/non_type.hpp"
 
-#  define BOOST_EXPLICIT_TEMPLATE_TYPE(t)         boost::type<t>* = 0
-#  define BOOST_EXPLICIT_TEMPLATE_TYPE_SPEC(t)    boost::type<t>*
-#  define BOOST_EXPLICIT_TEMPLATE_NON_TYPE(t, v)  boost::non_type<t, v>* = 0
+#  define BOOST_EXPLICIT_TEMPLATE_TYPE(t)              boost::type<t>* = 0
+#  define BOOST_EXPLICIT_TEMPLATE_TYPE_SPEC(t)         boost::type<t>*
+#  define BOOST_EXPLICIT_TEMPLATE_NON_TYPE(t, v)       boost::non_type<t, v>* = 0
 #  define BOOST_EXPLICIT_TEMPLATE_NON_TYPE_SPEC(t, v)  boost::non_type<t, v>*
 
-#  define BOOST_APPEND_EXPLICIT_TEMPLATE_TYPE(t)         \
+#  define BOOST_APPEND_EXPLICIT_TEMPLATE_TYPE(t)        \
              , BOOST_EXPLICIT_TEMPLATE_TYPE(t)
-#  define BOOST_APPEND_EXPLICIT_TEMPLATE_TYPE_SPEC(t)    \
+#  define BOOST_APPEND_EXPLICIT_TEMPLATE_TYPE_SPEC(t)   \
              , BOOST_EXPLICIT_TEMPLATE_TYPE_SPEC(t)
-#  define BOOST_APPEND_EXPLICIT_TEMPLATE_NON_TYPE(t, v)  \
+#  define BOOST_APPEND_EXPLICIT_TEMPLATE_NON_TYPE(t, v) \
              , BOOST_EXPLICIT_TEMPLATE_NON_TYPE(t, v)
-#  define BOOST_APPEND_EXPLICIT_TEMPLATE_NON_TYPE_SPEC(t, v)  \
+#  define BOOST_APPEND_EXPLICIT_TEMPLATE_NON_TYPE_SPEC(t, v)    \
              , BOOST_EXPLICIT_TEMPLATE_NON_TYPE_SPEC(t, v)
 
 #else
@@ -519,6 +567,12 @@ namespace boost{
 
 #endif // defined BOOST_NO_EXPLICIT_FUNCTION_TEMPLATE_ARGUMENTS
 
+// When BOOST_NO_STD_TYPEINFO is defined, we can just import
+// the global definition into std namespace:
+#if defined(BOOST_NO_STD_TYPEINFO) && defined(__cplusplus)
+#include <typeinfo>
+namespace std{ using ::type_info; }
+#endif
 
 // ---------------------------------------------------------------------------//
 
@@ -561,6 +615,293 @@ namespace boost{
 #     endif
 #  endif
 
+//
+// Set some default values GPU support
+//
+#  ifndef BOOST_GPU_ENABLED
+#  define BOOST_GPU_ENABLED 
+#  endif
+
+// BOOST_FORCEINLINE ---------------------------------------------//
+// Macro to use in place of 'inline' to force a function to be inline
+#if !defined(BOOST_FORCEINLINE)
+#  if defined(_MSC_VER)
+#    define BOOST_FORCEINLINE __forceinline
+#  elif defined(__GNUC__) && __GNUC__ > 3
+#    define BOOST_FORCEINLINE inline __attribute__ ((always_inline))
+#  else
+#    define BOOST_FORCEINLINE inline
+#  endif
+#endif
+
+//
+// Set BOOST_NO_DECLTYPE_N3276 when BOOST_NO_DECLTYPE is defined
+//
+#if defined(BOOST_NO_CXX11_DECLTYPE) && !defined(BOOST_NO_CXX11_DECLTYPE_N3276)
+#define	BOOST_NO_CXX11_DECLTYPE_N3276 BOOST_NO_CXX11_DECLTYPE
+#endif
+
+//  -------------------- Deprecated macros for 1.50 ---------------------------
+//  These will go away in a future release
+
+//  Use BOOST_NO_CXX11_HDR_UNORDERED_SET or BOOST_NO_CXX11_HDR_UNORDERED_MAP
+//           instead of BOOST_NO_STD_UNORDERED
+#if defined(BOOST_NO_CXX11_HDR_UNORDERED_MAP) || defined (BOOST_NO_CXX11_HDR_UNORDERED_SET)
+# ifndef BOOST_NO_STD_UNORDERED
+#  define BOOST_NO_STD_UNORDERED
+# endif
+#endif
+
+//  Use BOOST_NO_CXX11_HDR_INITIALIZER_LIST instead of BOOST_NO_INITIALIZER_LISTS
+#if defined(BOOST_NO_CXX11_HDR_INITIALIZER_LIST) && !defined(BOOST_NO_INITIALIZER_LISTS)
+#  define BOOST_NO_INITIALIZER_LISTS
+#endif
+
+//  Use BOOST_NO_CXX11_HDR_ARRAY instead of BOOST_NO_0X_HDR_ARRAY
+#if defined(BOOST_NO_CXX11_HDR_ARRAY) && !defined(BOOST_NO_BOOST_NO_0X_HDR_ARRAY)
+#  define BOOST_NO_0X_HDR_ARRAY
+#endif
+//  Use BOOST_NO_CXX11_HDR_CHRONO instead of BOOST_NO_0X_HDR_CHRONO
+#if defined(BOOST_NO_CXX11_HDR_CHRONO) && !defined(BOOST_NO_0X_HDR_CHRONO)
+#  define BOOST_NO_0X_HDR_CHRONO
+#endif
+//  Use BOOST_NO_CXX11_HDR_CODECVT instead of BOOST_NO_0X_HDR_CODECVT
+#if defined(BOOST_NO_CXX11_HDR_CODECVT) && !defined(BOOST_NO_0X_HDR_CODECVT)
+#  define BOOST_NO_0X_HDR_CODECVT
+#endif
+//  Use BOOST_NO_CXX11_HDR_CONDITION_VARIABLE instead of BOOST_NO_0X_HDR_CONDITION_VARIABLE
+#if defined(BOOST_NO_CXX11_HDR_CONDITION_VARIABLE) && !defined(BOOST_NO_0X_HDR_CONDITION_VARIABLE)
+#  define BOOST_NO_0X_HDR_CONDITION_VARIABLE
+#endif
+//  Use BOOST_NO_CXX11_HDR_FORWARD_LIST instead of BOOST_NO_0X_HDR_FORWARD_LIST
+#if defined(BOOST_NO_CXX11_HDR_FORWARD_LIST) && !defined(BOOST_NO_0X_HDR_FORWARD_LIST)
+#  define BOOST_NO_0X_HDR_FORWARD_LIST
+#endif
+//  Use BOOST_NO_CXX11_HDR_FUTURE instead of BOOST_NO_0X_HDR_FUTURE
+#if defined(BOOST_NO_CXX11_HDR_FUTURE) && !defined(BOOST_NO_0X_HDR_FUTURE)
+#  define BOOST_NO_0X_HDR_FUTURE
+#endif
+
+//  Use BOOST_NO_CXX11_HDR_INITIALIZER_LIST 
+//  instead of BOOST_NO_0X_HDR_INITIALIZER_LIST or BOOST_NO_INITIALIZER_LISTS
+#ifdef BOOST_NO_CXX11_HDR_INITIALIZER_LIST
+# ifndef BOOST_NO_0X_HDR_INITIALIZER_LIST
+#  define BOOST_NO_0X_HDR_INITIALIZER_LIST
+# endif
+# ifndef BOOST_NO_INITIALIZER_LISTS
+#  define BOOST_NO_INITIALIZER_LISTS
+# endif
+#endif
+
+//  Use BOOST_NO_CXX11_HDR_MUTEX instead of BOOST_NO_0X_HDR_MUTEX
+#if defined(BOOST_NO_CXX11_HDR_MUTEX) && !defined(BOOST_NO_0X_HDR_MUTEX)
+#  define BOOST_NO_0X_HDR_MUTEX
+#endif
+//  Use BOOST_NO_CXX11_HDR_RANDOM instead of BOOST_NO_0X_HDR_RANDOM
+#if defined(BOOST_NO_CXX11_HDR_RANDOM) && !defined(BOOST_NO_0X_HDR_RANDOM)
+#  define BOOST_NO_0X_HDR_RANDOM
+#endif
+//  Use BOOST_NO_CXX11_HDR_RATIO instead of BOOST_NO_0X_HDR_RATIO
+#if defined(BOOST_NO_CXX11_HDR_RATIO) && !defined(BOOST_NO_0X_HDR_RATIO)
+#  define BOOST_NO_0X_HDR_RATIO
+#endif
+//  Use BOOST_NO_CXX11_HDR_REGEX instead of BOOST_NO_0X_HDR_REGEX
+#if defined(BOOST_NO_CXX11_HDR_REGEX) && !defined(BOOST_NO_0X_HDR_REGEX)
+#  define BOOST_NO_0X_HDR_REGEX
+#endif
+//  Use BOOST_NO_CXX11_HDR_SYSTEM_ERROR instead of BOOST_NO_0X_HDR_SYSTEM_ERROR
+#if defined(BOOST_NO_CXX11_HDR_SYSTEM_ERROR) && !defined(BOOST_NO_0X_HDR_SYSTEM_ERROR)
+#  define BOOST_NO_0X_HDR_SYSTEM_ERROR
+#endif
+//  Use BOOST_NO_CXX11_HDR_THREAD instead of BOOST_NO_0X_HDR_THREAD
+#if defined(BOOST_NO_CXX11_HDR_THREAD) && !defined(BOOST_NO_0X_HDR_THREAD)
+#  define BOOST_NO_0X_HDR_THREAD
+#endif
+//  Use BOOST_NO_CXX11_HDR_TUPLE instead of BOOST_NO_0X_HDR_TUPLE
+#if defined(BOOST_NO_CXX11_HDR_TUPLE) && !defined(BOOST_NO_0X_HDR_TUPLE)
+#  define BOOST_NO_0X_HDR_TUPLE
+#endif
+//  Use BOOST_NO_CXX11_HDR_TYPE_TRAITS instead of BOOST_NO_0X_HDR_TYPE_TRAITS
+#if defined(BOOST_NO_CXX11_HDR_TYPE_TRAITS) && !defined(BOOST_NO_0X_HDR_TYPE_TRAITS)
+#  define BOOST_NO_0X_HDR_TYPE_TRAITS
+#endif
+//  Use BOOST_NO_CXX11_HDR_TYPEINDEX instead of BOOST_NO_0X_HDR_TYPEINDEX
+#if defined(BOOST_NO_CXX11_HDR_TYPEINDEX) && !defined(BOOST_NO_0X_HDR_TYPEINDEX)
+#  define BOOST_NO_0X_HDR_TYPEINDEX
+#endif
+//  Use BOOST_NO_CXX11_HDR_UNORDERED_MAP instead of BOOST_NO_0X_HDR_UNORDERED_MAP
+#if defined(BOOST_NO_CXX11_HDR_UNORDERED_MAP) && !defined(BOOST_NO_0X_HDR_UNORDERED_MAP)
+#  define BOOST_NO_0X_HDR_UNORDERED_MAP
+#endif
+//  Use BOOST_NO_CXX11_HDR_UNORDERED_SET instead of BOOST_NO_0X_HDR_UNORDERED_SET
+#if defined(BOOST_NO_CXX11_HDR_UNORDERED_SET) && !defined(BOOST_NO_0X_HDR_UNORDERED_SET)
+#  define BOOST_NO_0X_HDR_UNORDERED_SET
+#endif
+
+//  ------------------ End of deprecated macros for 1.50 ---------------------------
+
+//  -------------------- Deprecated macros for 1.51 ---------------------------
+//  These will go away in a future release
+
+//  Use     BOOST_NO_CXX11_AUTO_DECLARATIONS instead of   BOOST_NO_AUTO_DECLARATIONS
+#if defined(BOOST_NO_CXX11_AUTO_DECLARATIONS) && !defined(BOOST_NO_AUTO_DECLARATIONS)
+#  define BOOST_NO_AUTO_DECLARATIONS
+#endif
+//  Use     BOOST_NO_CXX11_AUTO_MULTIDECLARATIONS instead of   BOOST_NO_AUTO_MULTIDECLARATIONS
+#if defined(BOOST_NO_CXX11_AUTO_MULTIDECLARATIONS) && !defined(BOOST_NO_AUTO_MULTIDECLARATIONS)
+#  define BOOST_NO_AUTO_MULTIDECLARATIONS
+#endif
+//  Use     BOOST_NO_CXX11_CHAR16_T instead of   BOOST_NO_CHAR16_T
+#if defined(BOOST_NO_CXX11_CHAR16_T) && !defined(BOOST_NO_CHAR16_T)
+#  define BOOST_NO_CHAR16_T
+#endif
+//  Use     BOOST_NO_CXX11_CHAR32_T instead of   BOOST_NO_CHAR32_T
+#if defined(BOOST_NO_CXX11_CHAR32_T) && !defined(BOOST_NO_CHAR32_T)
+#  define BOOST_NO_CHAR32_T
+#endif
+//  Use     BOOST_NO_CXX11_TEMPLATE_ALIASES instead of   BOOST_NO_TEMPLATE_ALIASES
+#if defined(BOOST_NO_CXX11_TEMPLATE_ALIASES) && !defined(BOOST_NO_TEMPLATE_ALIASES)
+#  define BOOST_NO_TEMPLATE_ALIASES
+#endif
+//  Use     BOOST_NO_CXX11_CONSTEXPR instead of   BOOST_NO_CONSTEXPR
+#if defined(BOOST_NO_CXX11_CONSTEXPR) && !defined(BOOST_NO_CONSTEXPR)
+#  define BOOST_NO_CONSTEXPR
+#endif
+//  Use     BOOST_NO_CXX11_DECLTYPE_N3276 instead of   BOOST_NO_DECLTYPE_N3276
+#if defined(BOOST_NO_CXX11_DECLTYPE_N3276) && !defined(BOOST_NO_DECLTYPE_N3276)
+#  define BOOST_NO_DECLTYPE_N3276
+#endif
+//  Use     BOOST_NO_CXX11_DECLTYPE instead of   BOOST_NO_DECLTYPE
+#if defined(BOOST_NO_CXX11_DECLTYPE) && !defined(BOOST_NO_DECLTYPE)
+#  define BOOST_NO_DECLTYPE
+#endif
+//  Use     BOOST_NO_CXX11_DEFAULTED_FUNCTIONS instead of   BOOST_NO_DEFAULTED_FUNCTIONS
+#if defined(BOOST_NO_CXX11_DEFAULTED_FUNCTIONS) && !defined(BOOST_NO_DEFAULTED_FUNCTIONS)
+#  define BOOST_NO_DEFAULTED_FUNCTIONS
+#endif
+//  Use     BOOST_NO_CXX11_DELETED_FUNCTIONS instead of   BOOST_NO_DELETED_FUNCTIONS
+#if defined(BOOST_NO_CXX11_DELETED_FUNCTIONS) && !defined(BOOST_NO_DELETED_FUNCTIONS)
+#  define BOOST_NO_DELETED_FUNCTIONS
+#endif
+//  Use     BOOST_NO_CXX11_EXPLICIT_CONVERSION_OPERATORS instead of   BOOST_NO_EXPLICIT_CONVERSION_OPERATORS
+#if defined(BOOST_NO_CXX11_EXPLICIT_CONVERSION_OPERATORS) && !defined(BOOST_NO_EXPLICIT_CONVERSION_OPERATORS)
+#  define BOOST_NO_EXPLICIT_CONVERSION_OPERATORS
+#endif
+//  Use     BOOST_NO_CXX11_EXTERN_TEMPLATE instead of   BOOST_NO_EXTERN_TEMPLATE
+#if defined(BOOST_NO_CXX11_EXTERN_TEMPLATE) && !defined(BOOST_NO_EXTERN_TEMPLATE)
+#  define BOOST_NO_EXTERN_TEMPLATE
+#endif
+//  Use     BOOST_NO_CXX11_FUNCTION_TEMPLATE_DEFAULT_ARGS instead of   BOOST_NO_FUNCTION_TEMPLATE_DEFAULT_ARGS
+#if defined(BOOST_NO_CXX11_FUNCTION_TEMPLATE_DEFAULT_ARGS) && !defined(BOOST_NO_FUNCTION_TEMPLATE_DEFAULT_ARGS)
+#  define BOOST_NO_FUNCTION_TEMPLATE_DEFAULT_ARGS
+#endif
+//  Use     BOOST_NO_CXX11_LAMBDAS instead of   BOOST_NO_LAMBDAS
+#if defined(BOOST_NO_CXX11_LAMBDAS) && !defined(BOOST_NO_LAMBDAS)
+#  define BOOST_NO_LAMBDAS
+#endif
+//  Use     BOOST_NO_CXX11_LOCAL_CLASS_TEMPLATE_PARAMETERS instead of   BOOST_NO_LOCAL_CLASS_TEMPLATE_PARAMETERS
+#if defined(BOOST_NO_CXX11_LOCAL_CLASS_TEMPLATE_PARAMETERS) && !defined(BOOST_NO_LOCAL_CLASS_TEMPLATE_PARAMETERS)
+#  define BOOST_NO_LOCAL_CLASS_TEMPLATE_PARAMETERS
+#endif
+//  Use     BOOST_NO_CXX11_NOEXCEPT instead of   BOOST_NO_NOEXCEPT
+#if defined(BOOST_NO_CXX11_NOEXCEPT) && !defined(BOOST_NO_NOEXCEPT)
+#  define BOOST_NO_NOEXCEPT
+#endif
+//  Use     BOOST_NO_CXX11_NULLPTR instead of   BOOST_NO_NULLPTR
+#if defined(BOOST_NO_CXX11_NULLPTR) && !defined(BOOST_NO_NULLPTR)
+#  define BOOST_NO_NULLPTR
+#endif
+//  Use     BOOST_NO_CXX11_RAW_LITERALS instead of   BOOST_NO_RAW_LITERALS
+#if defined(BOOST_NO_CXX11_RAW_LITERALS) && !defined(BOOST_NO_RAW_LITERALS)
+#  define BOOST_NO_RAW_LITERALS
+#endif
+//  Use     BOOST_NO_CXX11_RVALUE_REFERENCES instead of   BOOST_NO_RVALUE_REFERENCES
+#if defined(BOOST_NO_CXX11_RVALUE_REFERENCES) && !defined(BOOST_NO_RVALUE_REFERENCES)
+#  define BOOST_NO_RVALUE_REFERENCES
+#endif
+//  Use     BOOST_NO_CXX11_SCOPED_ENUMS instead of   BOOST_NO_SCOPED_ENUMS
+#if defined(BOOST_NO_CXX11_SCOPED_ENUMS) && !defined(BOOST_NO_SCOPED_ENUMS)
+#  define BOOST_NO_SCOPED_ENUMS
+#endif
+//  Use     BOOST_NO_CXX11_STATIC_ASSERT instead of   BOOST_NO_STATIC_ASSERT
+#if defined(BOOST_NO_CXX11_STATIC_ASSERT) && !defined(BOOST_NO_STATIC_ASSERT)
+#  define BOOST_NO_STATIC_ASSERT
+#endif
+//  Use     BOOST_NO_CXX11_STD_UNORDERD instead of   BOOST_NO_STD_UNORDERD
+#if defined(BOOST_NO_CXX11_STD_UNORDERD) && !defined(BOOST_NO_STD_UNORDERD)
+#  define BOOST_NO_STD_UNORDERD
+#endif
+//  Use     BOOST_NO_CXX11_UNICODE_LITERALS instead of   BOOST_NO_UNICODE_LITERALS
+#if defined(BOOST_NO_CXX11_UNICODE_LITERALS) && !defined(BOOST_NO_UNICODE_LITERALS)
+#  define BOOST_NO_UNICODE_LITERALS
+#endif
+//  Use     BOOST_NO_CXX11_UNIFIED_INITIALIZATION_SYNTAX instead of   BOOST_NO_UNIFIED_INITIALIZATION_SYNTAX
+#if defined(BOOST_NO_CXX11_UNIFIED_INITIALIZATION_SYNTAX) && !defined(BOOST_NO_UNIFIED_INITIALIZATION_SYNTAX)
+#  define BOOST_NO_UNIFIED_INITIALIZATION_SYNTAX
+#endif
+//  Use     BOOST_NO_CXX11_VARIADIC_TEMPLATES instead of   BOOST_NO_VARIADIC_TEMPLATES
+#if defined(BOOST_NO_CXX11_VARIADIC_TEMPLATES) && !defined(BOOST_NO_VARIADIC_TEMPLATES)
+#  define BOOST_NO_VARIADIC_TEMPLATES
+#endif
+//  Use     BOOST_NO_CXX11_VARIADIC_MACROS instead of   BOOST_NO_VARIADIC_MACROS
+#if defined(BOOST_NO_CXX11_VARIADIC_MACROS) && !defined(BOOST_NO_VARIADIC_MACROS)
+#  define BOOST_NO_VARIADIC_MACROS
+#endif
+//  Use     BOOST_NO_CXX11_NUMERIC_LIMITS instead of   BOOST_NO_NUMERIC_LIMITS_LOWEST
+#if defined(BOOST_NO_CXX11_NUMERIC_LIMITS) && !defined(BOOST_NO_NUMERIC_LIMITS_LOWEST)
+#  define BOOST_NO_NUMERIC_LIMITS_LOWEST
+#endif
+//  ------------------ End of deprecated macros for 1.51 ---------------------------
+
+
+
+//
+// Helper macros BOOST_NOEXCEPT, BOOST_NOEXCEPT_IF, BOOST_NOEXCEPT_EXPR
+// These aid the transition to C++11 while still supporting C++03 compilers
+//
+#ifdef BOOST_NO_NOEXCEPT
+#  define BOOST_NOEXCEPT
+#  define BOOST_NOEXCEPT_IF(Predicate)
+#  define BOOST_NOEXCEPT_EXPR(Expression) false
+#else
+#  define BOOST_NOEXCEPT noexcept
+#  define BOOST_NOEXCEPT_IF(Predicate) noexcept((Predicate))
+#  define BOOST_NOEXCEPT_EXPR(Expression) noexcept((Expression))
+#endif
+
+//
+// Normalize BOOST_NO_STATIC_ASSERT and (depricated) BOOST_HAS_STATIC_ASSERT:
+//
+#if !defined(BOOST_NO_STATIC_ASSERT) && !defined(BOOST_HAS_STATIC_ASSERT)
+#  define BOOST_HAS_STATIC_ASSERT
+#endif
+
+//
+// constexpr workarounds
+// 
+#if defined(BOOST_NO_CONSTEXPR)
+#define BOOST_CONSTEXPR
+#define BOOST_CONSTEXPR_OR_CONST const
+#else
+#define BOOST_CONSTEXPR constexpr
+#define BOOST_CONSTEXPR_OR_CONST constexpr
+#endif
+
+#define BOOST_STATIC_CONSTEXPR  static BOOST_CONSTEXPR_OR_CONST
+
+//
+// Set BOOST_HAS_RVALUE_REFS when BOOST_NO_RVALUE_REFERENCES is not defined
+//
+#if !defined(BOOST_NO_RVALUE_REFERENCES) && !defined(BOOST_HAS_RVALUE_REFS)
+#define BOOST_HAS_RVALUE_REFS
+#endif
+
+//
+// Set BOOST_HAS_VARIADIC_TMPL when BOOST_NO_VARIADIC_TEMPLATES is not defined
+//
+#if !defined(BOOST_NO_VARIADIC_TEMPLATES) && !defined(BOOST_HAS_VARIADIC_TMPL)
+#define BOOST_HAS_VARIADIC_TMPL
 #endif
 
 
+#endif

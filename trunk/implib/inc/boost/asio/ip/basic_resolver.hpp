@@ -1,8 +1,8 @@
 //
-// basic_resolver.hpp
-// ~~~~~~~~~~~~~~~~~~
+// ip/basic_resolver.hpp
+// ~~~~~~~~~~~~~~~~~~~~~
 //
-// Copyright (c) 2003-2008 Christopher M. Kohlhoff (chris at kohlhoff dot com)
+// Copyright (c) 2003-2012 Christopher M. Kohlhoff (chris at kohlhoff dot com)
 //
 // Distributed under the Boost Software License, Version 1.0. (See accompanying
 // file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -15,12 +15,16 @@
 # pragma once
 #endif // defined(_MSC_VER) && (_MSC_VER >= 1200)
 
-#include <boost/asio/detail/push_options.hpp>
-
+#include <boost/asio/detail/config.hpp>
 #include <boost/asio/basic_io_object.hpp>
-#include <boost/asio/error.hpp>
-#include <boost/asio/ip/resolver_service.hpp>
+#include <boost/asio/detail/handler_type_requirements.hpp>
 #include <boost/asio/detail/throw_error.hpp>
+#include <boost/asio/error.hpp>
+#include <boost/asio/ip/basic_resolver_iterator.hpp>
+#include <boost/asio/ip/basic_resolver_query.hpp>
+#include <boost/asio/ip/resolver_service.hpp>
+
+#include <boost/asio/detail/push_options.hpp>
 
 namespace boost {
 namespace asio {
@@ -48,10 +52,10 @@ public:
   typedef typename InternetProtocol::endpoint endpoint_type;
 
   /// The query type.
-  typedef typename InternetProtocol::resolver_query query;
+  typedef basic_resolver_query<InternetProtocol> query;
 
   /// The iterator type.
-  typedef typename InternetProtocol::resolver_iterator iterator;
+  typedef basic_resolver_iterator<InternetProtocol> iterator;
 
   /// Constructor.
   /**
@@ -76,7 +80,7 @@ public:
     return this->service.cancel(this->implementation);
   }
 
-  /// Resolve a query to a list of entries.
+  /// Perform forward resolution of a query to a list of entries.
   /**
    * This function is used to resolve a query into a list of endpoint entries.
    *
@@ -96,11 +100,11 @@ public:
   {
     boost::system::error_code ec;
     iterator i = this->service.resolve(this->implementation, q, ec);
-    boost::asio::detail::throw_error(ec);
+    boost::asio::detail::throw_error(ec, "resolve");
     return i;
   }
 
-  /// Resolve a query to a list of entries.
+  /// Perform forward resolution of a query to a list of entries.
   /**
    * This function is used to resolve a query into a list of endpoint entries.
    *
@@ -122,7 +126,7 @@ public:
     return this->service.resolve(this->implementation, q, ec);
   }
 
-  /// Asynchronously resolve a query to a list of entries.
+  /// Asynchronously perform forward resolution of a query to a list of entries.
   /**
    * This function is used to asynchronously resolve a query into a list of
    * endpoint entries.
@@ -149,12 +153,19 @@ public:
    * the handler.
    */
   template <typename ResolveHandler>
-  void async_resolve(const query& q, ResolveHandler handler)
+  void async_resolve(const query& q,
+      BOOST_ASIO_MOVE_ARG(ResolveHandler) handler)
   {
-    return this->service.async_resolve(this->implementation, q, handler);
+    // If you get an error on the following line it means that your handler does
+    // not meet the documented type requirements for a ResolveHandler.
+    BOOST_ASIO_RESOLVE_HANDLER_CHECK(
+        ResolveHandler, handler, iterator) type_check;
+
+    return this->service.async_resolve(this->implementation, q,
+        BOOST_ASIO_MOVE_CAST(ResolveHandler)(handler));
   }
 
-  /// Resolve an endpoint to a list of entries.
+  /// Perform reverse resolution of an endpoint to a list of entries.
   /**
    * This function is used to resolve an endpoint into a list of endpoint
    * entries.
@@ -176,11 +187,11 @@ public:
   {
     boost::system::error_code ec;
     iterator i = this->service.resolve(this->implementation, e, ec);
-    boost::asio::detail::throw_error(ec);
+    boost::asio::detail::throw_error(ec, "resolve");
     return i;
   }
 
-  /// Resolve an endpoint to a list of entries.
+  /// Perform reverse resolution of an endpoint to a list of entries.
   /**
    * This function is used to resolve an endpoint into a list of endpoint
    * entries.
@@ -204,7 +215,8 @@ public:
     return this->service.resolve(this->implementation, e, ec);
   }
 
-  /// Asynchronously resolve an endpoint to a list of entries.
+  /// Asynchronously perform reverse resolution of an endpoint to a list of
+  /// entries.
   /**
    * This function is used to asynchronously resolve an endpoint into a list of
    * endpoint entries.
@@ -232,9 +244,16 @@ public:
    * the handler.
    */
   template <typename ResolveHandler>
-  void async_resolve(const endpoint_type& e, ResolveHandler handler)
+  void async_resolve(const endpoint_type& e,
+      BOOST_ASIO_MOVE_ARG(ResolveHandler) handler)
   {
-    return this->service.async_resolve(this->implementation, e, handler);
+    // If you get an error on the following line it means that your handler does
+    // not meet the documented type requirements for a ResolveHandler.
+    BOOST_ASIO_RESOLVE_HANDLER_CHECK(
+        ResolveHandler, handler, iterator) type_check;
+
+    return this->service.async_resolve(this->implementation, e,
+        BOOST_ASIO_MOVE_CAST(ResolveHandler)(handler));
   }
 };
 

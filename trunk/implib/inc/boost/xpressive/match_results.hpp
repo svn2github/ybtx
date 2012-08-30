@@ -4,11 +4,11 @@
 /// The match_results type holds the results of a regex_match() or
 /// regex_search() operation.
 //
-//  Copyright 2007 Eric Niebler. Distributed under the Boost
+//  Copyright 2008 Eric Niebler. Distributed under the Boost
 //  Software License, Version 1.0. (See accompanying file
 //  LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 //
-// Acknowledgements: Thanks to Markus Sch\:opflin for helping to track down
+// Acknowledgements: Thanks to Markus Schoepflin for helping to track down
 // a tricky formatting bug on HP Tru64, and to Steven Watanabe for suggesting
 // the fix.
 
@@ -21,6 +21,7 @@
 #endif
 
 #include <map>
+#include <string>
 #include <vector>
 #include <utility>
 #include <iterator>
@@ -29,11 +30,22 @@
 #include <boost/config.hpp>
 #include <boost/assert.hpp>
 #include <boost/integer.hpp>
+#include <boost/mpl/if.hpp>
+#include <boost/mpl/not.hpp>
+#include <boost/mpl/size_t.hpp>
 #include <boost/mpl/assert.hpp>
 #include <boost/intrusive_ptr.hpp>
 #include <boost/throw_exception.hpp>
 #include <boost/iterator_adaptors.hpp>
+#include <boost/utility/enable_if.hpp>
+#include <boost/detail/workaround.hpp>
 #include <boost/numeric/conversion/converter.hpp>
+#include <boost/optional.hpp>
+#include <boost/range/end.hpp>
+#include <boost/range/begin.hpp>
+#include <boost/range/as_literal.hpp>
+#include <boost/range/const_iterator.hpp>
+#include <boost/type_traits/is_function.hpp>
 #if BOOST_ITERATOR_ADAPTORS_VERSION >= 0x0200
 # include <boost/iterator/filter_iterator.hpp>
 #endif
@@ -46,6 +58,11 @@
 #include <boost/xpressive/detail/utility/literals.hpp>
 #include <boost/xpressive/detail/utility/algorithm.hpp>
 #include <boost/xpressive/detail/utility/counted_base.hpp>
+// Doxygen can't handle proto :-(
+#ifndef BOOST_XPRESSIVE_DOXYGEN_INVOKED
+# include <boost/proto/proto_fwd.hpp>
+# include <boost/proto/traits.hpp>
+#endif
 
 namespace boost { namespace xpressive { namespace detail
 {
@@ -89,7 +106,7 @@ struct char_overflow_handler_
     {
         if(numeric::cInRange != result)
         {
-            boost::throw_exception(
+            BOOST_THROW_EXCEPTION(
                 regex_error(
                     regex_constants::error_escape
                   , "character escape too large to fit in target character type"
@@ -112,9 +129,9 @@ template<typename OutputIterator, typename Char>
 struct case_converting_iterator
   : std::iterator<std::output_iterator_tag, Char, void, void, case_converting_iterator<OutputIterator, Char> >
 {
-    case_converting_iterator(OutputIterator const &out, traits<Char> const *traits)
+    case_converting_iterator(OutputIterator const &out, traits<Char> const *tr)
       : out_(out)
-      , traits_(traits)
+      , traits_(tr)
       , next_(None)
       , rest_(None)
     {}
@@ -212,6 +229,111 @@ struct noop_output_iterator
     }
 };
 
+struct any_type { any_type(...); };
+typedef char no_type;
+typedef char (&unary_type)[2];
+typedef char (&binary_type)[3];
+typedef char (&ternary_type)[4];
+
+no_type check_is_formatter(unary_type, binary_type, ternary_type);
+
+template<typename T>
+unary_type check_is_formatter(T const &, binary_type, ternary_type);
+
+template<typename T>
+binary_type check_is_formatter(unary_type, T const &, ternary_type);
+
+template<typename T, typename U>
+binary_type check_is_formatter(T const &, U const &, ternary_type);
+
+template<typename T>
+ternary_type check_is_formatter(unary_type, binary_type, T const &);
+
+template<typename T, typename U>
+ternary_type check_is_formatter(T const &, binary_type, U const &);
+
+template<typename T, typename U>
+ternary_type check_is_formatter(unary_type, T const &, U const &);
+
+template<typename T, typename U, typename V>
+ternary_type check_is_formatter(T const &, U const &, V const &);
+
+struct unary_binary_ternary
+{
+    typedef unary_type (*unary_fun)(any_type);
+    typedef binary_type (*binary_fun)(any_type, any_type);
+    typedef ternary_type (*ternary_fun)(any_type, any_type, any_type);
+    operator unary_fun();
+    operator binary_fun();
+    operator ternary_fun();
+};
+
+template<typename Formatter, bool IsFunction = is_function<Formatter>::value>
+struct formatter_wrapper
+  : Formatter
+  , unary_binary_ternary
+{
+    formatter_wrapper();
+};
+
+template<typename Formatter>
+struct formatter_wrapper<Formatter, true>
+  : unary_binary_ternary
+{
+    operator Formatter *();
+};
+
+template<typename Formatter>
+struct formatter_wrapper<Formatter *, false>
+  : unary_binary_ternary
+{
+    operator Formatter *();
+};
+
+template<typename Formatter, typename What, typename Out, typename Void = void>
+struct formatter_arity
+{
+    static formatter_wrapper<Formatter> &formatter;
+    static What &what;
+    static Out &out;
+    BOOST_STATIC_CONSTANT(
+        std::size_t
+      , value = sizeof(
+            check_is_formatter(
+                formatter(what)
+              , formatter(what, out)
+              , formatter(what, out, regex_constants::format_default)
+            )
+        ) - 1
+    );
+    typedef mpl::size_t<value> type;
+};
+
+template<typename Formatter, typename What, typename Out>
+struct formatter_arity<Formatter, What, Out, typename Formatter::proto_is_expr_>
+  : mpl::size_t<4>
+{};
+
+template<typename T>
+struct is_char_ptr
+  : mpl::false_
+{};
+
+template<typename T>
+struct is_char_ptr<T *>
+  : mpl::not_<is_function<T> >
+{};
+
+#if BOOST_WORKAROUND(__GNUC__, == 4) && (__GNUC_MINOR__ == 0)
+// work around gcc-4.0.1 compiler bug wrt function references
+template<typename T>
+typename mpl::if_<is_function<T>, T *, T const &>::type
+as_callable(T const &t)
+{
+    return t;
+}
+#endif
+
 } // detail
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -292,14 +414,14 @@ public:
         {
             extras_type &extras = this->get_extras_();
             std::size_t size = that.sub_matches_.size();
-            detail::sub_match_impl<BidiIter> *sub_matches = extras.sub_match_stack_.push_sequence(size);
+            detail::sub_match_impl<BidiIter> *sub_matches = extras.sub_match_stack_.push_sequence(size, detail::sub_match_impl<BidiIter>(*that.base_), detail::fill);
             detail::core_access<BidiIter>::init_sub_match_vector(this->sub_matches_, sub_matches, size, that.sub_matches_);
 
-            // BUGBUG this doesn't share the extras::sequence_stack
-            this->nested_results_ = that.nested_results_;
+            this->base_ = that.base_;
             this->prefix_ = that.prefix_;
             this->suffix_ = that.suffix_;
-            this->base_ = that.base_;
+            // BUGBUG this doesn't share the extras::sequence_stack
+            this->nested_results_ = that.nested_results_;
             this->traits_ = that.traits_;
         }
     }
@@ -324,8 +446,8 @@ public:
         return *this;
     }
 
-    /// Returns one plus the number of marked sub-expressions in the regular 
-    /// expression that was matched if *this represents the result of a 
+    /// Returns one plus the number of marked sub-expressions in the regular
+    /// expression that was matched if *this represents the result of a
     /// successful match. Otherwise returns 0.
     size_type size() const
     {
@@ -351,7 +473,7 @@ public:
     /// of a repeated search with a regex_iterator then base is the same as prefix().first - end note]
     difference_type position(size_type sub = 0) const
     {
-        return this->sub_matches_[ sub ].matched ? std::distance(this->base_, this->sub_matches_[ sub ].first) : -1;
+        return this->sub_matches_[ sub ].matched ? std::distance(*this->base_, this->sub_matches_[ sub ].first) : -1;
     }
 
     /// Returns (*this)[sub].str().
@@ -375,17 +497,19 @@ public:
     /// Returns a reference to the sub_match object representing the character sequence from
     /// the start of the string being matched/searched, to the start of the match found.
     ///
+    /// \pre (*this)[0].matched is true
     const_reference prefix() const
     {
-        return this->prefix_;
+        return this->prefix_ ? *this->prefix_ : this->sub_matches_[this->sub_matches_.size()];
     }
 
     /// Returns a reference to the sub_match object representing the character sequence from
     /// the end of the match found to the end of the string being matched/searched.
     ///
+    /// \pre (*this)[0].matched is true
     const_reference suffix() const
     {
-        return this->suffix_;
+        return this->suffix_ ? *this->suffix_ : this->sub_matches_[this->sub_matches_.size()];
     }
 
     /// Returns a starting iterator that enumerates over all the marked sub-expression matches
@@ -408,7 +532,7 @@ public:
     ///
     operator bool_type() const
     {
-        return this->sub_matches_[ 0 ].matched ? &dummy::i_ : 0;
+        return (!this->empty() && this->sub_matches_[ 0 ].matched) ? &dummy::i_ : 0;
     }
 
     /// Returns true if empty() || !(*this)[0].matched, else returns false.
@@ -432,50 +556,95 @@ public:
         return this->nested_results_;
     }
 
-    /// Copies the character sequence [fmt.begin(), fmt.end()) to OutputIterator out. For each format
-    /// specifier or escape sequence in fmt, replace that sequence with either the character(s) it
-    /// represents, or the sequence within *this to which it refers. The bitmasks specified in flags
-    /// determines what format specifiers or escape sequences are recognized, by default this is the
+    /// If \c Format models \c ForwardRange or is a null-terminated string, this function
+    /// copies the character sequence in \c fmt to \c OutputIterator \c out. For each format
+    /// specifier or escape sequence in \c fmt, replace that sequence with either the character(s) it
+    /// represents, or the sequence within <tt>*this</tt> to which it refers. The bitmasks specified in flags
+    /// determines what format specifiers or escape sequences are recognized. By default, this is the
     /// format used by ECMA-262, ECMAScript Language Specification, Chapter 15 part 5.4.11 String.prototype.replace.
+    ///
+    /// Otherwise, if \c Format models <tt>Callable\<match_results\<BidiIter\>, OutputIterator, regex_constants::match_flag_type\></tt>,
+    /// this function returns <tt>fmt(*this, out, flags)</tt>.
+    ///
+    /// Otherwise, if \c Format models <tt>Callable\<match_results\<BidiIter\>, OutputIterator\></tt>, this function
+    /// returns <tt>fmt(*this, out)</tt>.
+    ///
+    /// Otherwise, if \c Format models <tt>Callable\<match_results\<BidiIter\> \></tt>, this function
+    /// returns <tt>std::copy(x.begin(), x.end(), out)</tt>, where \c x is the result of
+    /// calling <tt>fmt(*this)</tt>.
+    template<typename Format, typename OutputIterator>
+    OutputIterator format
+    (
+        OutputIterator out
+      , Format const &fmt
+      , regex_constants::match_flag_type flags = regex_constants::format_default
+      , typename disable_if<detail::is_char_ptr<Format> >::type * = 0
+    ) const
+    {
+        // Is this a formatter object, or a format string?
+        typedef
+            typename detail::formatter_arity<
+                Format
+              , match_results<BidiIter>
+              , OutputIterator
+            >::type
+        arity;
+
+        return this->format_(out, fmt, flags, arity());
+    }
+
+    /// \overload
+    ///
     template<typename OutputIterator>
     OutputIterator format
     (
         OutputIterator out
-      , const string_type &fmt
+      , char_type const *fmt
       , regex_constants::match_flag_type flags = regex_constants::format_default
     ) const
     {
-        typename string_type::const_iterator cur = fmt.begin(), end = fmt.end();
-
-        if(0 != (regex_constants::format_literal & flags))
-        {
-            return std::copy(cur, end, out);
-        }
-        else if(0 != (regex_constants::format_perl & flags))
-        {
-            return this->format_perl_(cur, end, out);
-        }
-        else if(0 != (regex_constants::format_sed & flags))
-        {
-            return this->format_sed_(cur, end, out);
-        }
-        else if(0 != (regex_constants::format_all & flags))
-        {
-            return this->format_all_(cur, end, out);
-        }
-
-        return this->format_ecma_262_(cur, end, out);
+        return this->format_(out, boost::as_literal(fmt), flags, mpl::size_t<0>());
     }
 
-    /// Returns a copy of the string fmt. For each format specifier or escape sequence in fmt,
+    /// If \c Format models \c ForwardRange or is a null-terminated string, this function
+    /// returns a copy of the character sequence \c fmt. For each format specifier or escape sequence in \c fmt,
     /// replace that sequence with either the character(s) it represents, or the sequence within
-    /// *this to which it refers. The bitmasks specified in flags determines what format specifiers
-    /// or escape sequences are recognized, by default this is the format used by ECMA-262,
+    /// <tt>*this</tt> to which it refers. The bitmasks specified in \c flags determines what format specifiers
+    /// or escape sequences are recognized. By default this is the format used by ECMA-262,
     /// ECMAScript Language Specification, Chapter 15 part 5.4.11 String.prototype.replace.
-    string_type format(string_type const &fmt, regex_constants::match_flag_type flags = regex_constants::format_default) const
+    ///
+    /// Otherwise, if \c Format models <tt>Callable\<match_results\<BidiIter\>, OutputIterator, regex_constants::match_flag_type\></tt>,
+    /// this function returns a \c string_type object \c x populated by calling <tt>fmt(*this, out, flags)</tt>,
+    /// where \c out is a \c back_insert_iterator into \c x.
+    ///
+    /// Otherwise, if \c Format models <tt>Callable\<match_results\<BidiIter\>, OutputIterator\></tt>, this function
+    /// returns a \c string_type object \c x populated by calling <tt>fmt(*this, out)</tt>,
+    /// where \c out is a \c back_insert_iterator into \c x.
+    ///
+    /// Otherwise, if \c Format models <tt>Callable\<match_results\<BidiIter\> \></tt>, this function
+    /// returns <tt>fmt(*this)</tt>.
+    template<typename Format, typename OutputIterator>
+    string_type format
+    (
+        Format const &fmt
+      , regex_constants::match_flag_type flags = regex_constants::format_default
+      , typename disable_if<detail::is_char_ptr<Format> >::type * = 0
+    ) const
     {
         string_type result;
-        result.reserve(fmt.length() * 2);
+        this->format(std::back_inserter(result), fmt, flags);
+        return result;
+    }
+
+    /// \overload
+    ///
+    string_type format
+    (
+        char_type const *fmt
+      , regex_constants::match_flag_type flags = regex_constants::format_default
+    ) const
+    {
+        string_type result;
         this->format(std::back_inserter(result), fmt, flags);
         return result;
     }
@@ -487,11 +656,12 @@ public:
     /// \throw nothrow
     void swap(match_results<BidiIter> &that) // throw()
     {
-        std::swap(this->regex_id_, that.regex_id_);
+        using std::swap;
+        swap(this->regex_id_, that.regex_id_);
         this->sub_matches_.swap(that.sub_matches_);
-        std::swap(this->base_, that.base_);
-        std::swap(this->prefix_, that.prefix_);
-        std::swap(this->suffix_, that.suffix_);
+        this->base_.swap(that.base_);
+        this->prefix_.swap(that.prefix_);
+        this->suffix_.swap(that.suffix_);
         this->nested_results_.swap(that.nested_results_);
         this->extras_ptr_.swap(that.extras_ptr_);
         this->traits_.swap(that.traits_);
@@ -505,11 +675,11 @@ public:
     {
         typedef typename proto::result_of::left<Arg>::type left_type;
         typedef typename proto::result_of::right<Arg>::type right_type;
-        typedef typename proto::result_of::arg<left_type>::type arg_left_type;
-        typedef typename proto::result_of::arg<right_type>::type arg_right_type;
+        typedef typename proto::result_of::value<left_type>::type arg_left_type;
+        typedef typename proto::result_of::value<right_type>::type arg_right_type;
         BOOST_MPL_ASSERT((proto::matches<Arg, detail::ActionArgBinding>));
         BOOST_MPL_ASSERT((is_same<typename arg_left_type::type, arg_right_type>));
-        this->args_[&typeid(proto::arg(proto::left(arg)))] = &proto::arg(proto::right(arg));
+        this->args_[&typeid(proto::value(proto::left(arg)))] = &proto::value(proto::right(arg));
         return *this;
     }
 
@@ -546,13 +716,13 @@ private:
     void init_
     (
         regex_id_type regex_id
-      , intrusive_ptr<detail::traits<char_type> const> const &traits
+      , intrusive_ptr<detail::traits<char_type> const> const &tr
       , detail::sub_match_impl<BidiIter> *sub_matches
       , size_type size
       , std::vector<detail::named_mark<char_type> > const &named_marks
     )
     {
-        this->traits_ = traits;
+        this->traits_ = tr;
         this->regex_id_ = regex_id;
         this->named_marks_ = named_marks;
         detail::core_access<BidiIter>::init_sub_match_vector(this->sub_matches_, sub_matches, size);
@@ -575,14 +745,8 @@ private:
     void set_prefix_suffix_(BidiIter begin, BidiIter end)
     {
         this->base_ = begin;
-
-        this->prefix_.first = begin;
-        this->prefix_.second = this->sub_matches_[ 0 ].first;
-        this->prefix_.matched = this->prefix_.first != this->prefix_.second;
-
-        this->suffix_.first = this->sub_matches_[ 0 ].second;
-        this->suffix_.second = end;
-        this->suffix_.matched = this->suffix_.first != this->suffix_.second;
+        this->prefix_ = sub_match<BidiIter>(begin, this->sub_matches_[ 0 ].first, begin != this->sub_matches_[ 0 ].first);
+        this->suffix_ = sub_match<BidiIter>(this->sub_matches_[ 0 ].second, end, this->sub_matches_[ 0 ].second != end);
 
         typename nested_results_type::iterator ibegin = this->nested_results_.begin();
         typename nested_results_type::iterator iend = this->nested_results_.end();
@@ -638,7 +802,7 @@ private:
                 return this->sub_matches_[ this->named_marks_[i].mark_nbr_ ];
             }
         }
-        boost::throw_exception(
+        BOOST_THROW_EXCEPTION(
             regex_error(regex_constants::error_badmark, "invalid named back-reference")
         );
         // Should never execute, but if it does, this returns
@@ -651,6 +815,133 @@ private:
     const_reference at_(string_type const &name) const
     {
         return (*this)[name.c_str()];
+    }
+
+    /// INTERNAL ONLY
+    ///
+    template<typename OutputIterator, typename ForwardRange>
+    OutputIterator format2_(OutputIterator out, ForwardRange const &result) const
+    {
+        return std::copy(boost::begin(result), boost::end(result), out);
+    }
+
+    /// INTERNAL ONLY
+    ///
+    template<typename OutputIterator, typename Char>
+    OutputIterator format2_(OutputIterator out, Char const *const &result) const
+    {
+        Char const *tmp = result;
+        BOOST_ASSERT(0 != tmp);
+        for(; 0 != *tmp; ++tmp, ++out)
+        {
+            *out = *tmp;
+        }
+        return out;
+    }
+
+    /// INTERNAL ONLY
+    ///
+    template<typename OutputIterator, typename ForwardRange>
+    OutputIterator format_
+    (
+        OutputIterator out
+      , ForwardRange const &format
+      , regex_constants::match_flag_type flags
+      , mpl::size_t<0>
+    ) const
+    {
+        typedef typename range_const_iterator<ForwardRange>::type iterator;
+        iterator cur = boost::begin(format), end = boost::end(format);
+
+        if(0 != (regex_constants::format_literal & flags))
+        {
+            return std::copy(cur, end, out);
+        }
+        else if(0 != (regex_constants::format_perl & flags))
+        {
+            return this->format_perl_(cur, end, out);
+        }
+        else if(0 != (regex_constants::format_sed & flags))
+        {
+            return this->format_sed_(cur, end, out);
+        }
+        else if(0 != (regex_constants::format_all & flags))
+        {
+            return this->format_all_(cur, end, out);
+        }
+
+        return this->format_ecma_262_(cur, end, out);
+    }
+
+    /// INTERNAL ONLY
+    ///
+    template<typename OutputIterator, typename Callable1>
+    OutputIterator format_
+    (
+        OutputIterator out
+      , Callable1 const &format
+      , regex_constants::match_flag_type
+      , mpl::size_t<1>
+    ) const
+    {
+        #if BOOST_WORKAROUND(__GNUC__, == 4) && (__GNUC_MINOR__ == 0)
+        return this->format2_(out, detail::as_callable(format)(*this));
+        #else
+        return this->format2_(out, format(*this));
+        #endif
+    }
+
+    /// INTERNAL ONLY
+    ///
+    template<typename OutputIterator, typename Callable2>
+    OutputIterator format_
+    (
+        OutputIterator out
+      , Callable2 const &format
+      , regex_constants::match_flag_type
+      , mpl::size_t<2>
+    ) const
+    {
+        #if BOOST_WORKAROUND(__GNUC__, == 4) && (__GNUC_MINOR__ == 0)
+        return detail::as_callable(format)(*this, out);
+        #else
+        return format(*this, out);
+        #endif
+    }
+
+    /// INTERNAL ONLY
+    ///
+    template<typename OutputIterator, typename Callable3>
+    OutputIterator format_
+    (
+        OutputIterator out
+      , Callable3 const &format
+      , regex_constants::match_flag_type flags
+      , mpl::size_t<3>
+    ) const
+    {
+        #if BOOST_WORKAROUND(__GNUC__, == 4) && (__GNUC_MINOR__ == 0)
+        return detail::as_callable(format)(*this, out, flags);
+        #else
+        return format(*this, out, flags);
+        #endif
+    }
+
+    /// INTERNAL ONLY
+    ///
+    template<typename OutputIterator, typename Expr>
+    OutputIterator format_
+    (
+        OutputIterator out
+      , Expr const &format
+      , regex_constants::match_flag_type flags
+      , mpl::size_t<4>
+    ) const
+    {
+        // detail::ReplaceAlgo may be an incomplete type at this point, so
+        // we can't construct it directly.
+        typedef typename mpl::if_c<true, detail::ReplaceAlgo, OutputIterator>::type ReplaceAlgo;
+        return this->format2_(out, ReplaceAlgo()(format, 0, *this));
     }
 
     /// INTERNAL ONLY
@@ -744,7 +1035,7 @@ private:
     {
         detail::case_converting_iterator<OutputIterator, char_type> iout(out, this->traits_.get());
         iout = this->format_all_impl_(cur, end, iout);
-        detail::ensure(cur == end
+        BOOST_XPR_ENSURE_(cur == end
           , regex_constants::error_paren, "unbalanced parentheses in format string");
         return iout.base();
     }
@@ -778,16 +1069,16 @@ private:
 
             case BOOST_XPR_CHAR_(char_type, '('):
                 out = this->format_all_impl_(++cur, end, out);
-                detail::ensure(BOOST_XPR_CHAR_(char_type, ')') == *(cur-1)
+                BOOST_XPR_ENSURE_(BOOST_XPR_CHAR_(char_type, ')') == *(cur-1)
                   , regex_constants::error_paren, "unbalanced parentheses in format string");
                 break;
 
             case BOOST_XPR_CHAR_(char_type, '?'):
-                detail::ensure(++cur != end
+                BOOST_XPR_ENSURE_(++cur != end
                   , regex_constants::error_subreg, "malformed conditional in format string");
                 max = static_cast<int>(this->size() - 1);
                 sub = detail::toi(cur, end, *this->traits_, 10, max);
-                detail::ensure(0 != sub, regex_constants::error_subreg, "invalid back-reference");
+                BOOST_XPR_ENSURE_(0 != sub, regex_constants::error_subreg, "invalid back-reference");
                 if(this->sub_matches_[ sub ].matched)
                 {
                     out = this->format_all_impl_(cur, end, out, true);
@@ -822,11 +1113,11 @@ private:
 
     /// INTERNAL ONLY
     ///
-    template<typename OutputIterator>
+    template<typename ForwardIterator, typename OutputIterator>
     OutputIterator format_backref_
     (
-        typename string_type::const_iterator &cur
-      , typename string_type::const_iterator end
+        ForwardIterator &cur
+      , ForwardIterator end
       , OutputIterator out
     ) const
     {
@@ -857,7 +1148,7 @@ private:
         {
             int max = static_cast<int>(this->size() - 1);
             int sub = detail::toi(cur, end, *this->traits_, 10, max);
-            detail::ensure(0 != sub, regex_constants::error_subreg, "invalid back-reference");
+            BOOST_XPR_ENSURE_(0 != sub, regex_constants::error_subreg, "invalid back-reference");
             if(this->sub_matches_[ sub ].matched)
                 out = std::copy(this->sub_matches_[ sub ].first, this->sub_matches_[ sub ].second, out);
         }
@@ -872,16 +1163,16 @@ private:
 
     /// INTERNAL ONLY
     ///
-    template<typename OutputIterator>
+    template<typename ForwardIterator, typename OutputIterator>
     OutputIterator format_escape_
     (
-        typename string_type::const_iterator &cur
-      , typename string_type::const_iterator end
+        ForwardIterator &cur
+      , ForwardIterator end
       , OutputIterator out
     ) const
     {
         using namespace regex_constants;
-        typename string_type::const_iterator tmp;
+        ForwardIterator tmp;
         // define an unsigned type the same size as char_type
         typedef typename boost::uint_t<CHAR_BIT * sizeof(char_type)>::least uchar_t;
         BOOST_MPL_ASSERT_RELATION(sizeof(uchar_t), ==, sizeof(char_type));
@@ -926,27 +1217,27 @@ private:
             break;
 
         case BOOST_XPR_CHAR_(char_type, 'x'):
-            detail::ensure(cur != end, error_escape, "unexpected end of format found");
+            BOOST_XPR_ENSURE_(cur != end, error_escape, "unexpected end of format found");
             if(BOOST_XPR_CHAR_(char_type, '{') == *cur)
             {
-                detail::ensure(++cur != end, error_escape, "unexpected end of format found");
+                BOOST_XPR_ENSURE_(++cur != end, error_escape, "unexpected end of format found");
                 tmp = cur;
                 *out++ = converter(detail::toi(cur, end, *this->traits_, 16, 0xffff));
-                detail::ensure(4 == std::distance(tmp, cur) && cur != end && BOOST_XPR_CHAR_(char_type, '}') == *cur++
+                BOOST_XPR_ENSURE_(4 == std::distance(tmp, cur) && cur != end && BOOST_XPR_CHAR_(char_type, '}') == *cur++
                   , error_escape, "invalid hex escape : must be \\x { HexDigit HexDigit HexDigit HexDigit }");
             }
             else
             {
                 tmp = cur;
                 *out++ = converter(detail::toi(cur, end, *this->traits_, 16, 0xff));
-                detail::ensure(2 == std::distance(tmp, cur), error_escape
+                BOOST_XPR_ENSURE_(2 == std::distance(tmp, cur), error_escape
                   , "invalid hex escape : must be \\x HexDigit HexDigit");
             }
             break;
 
         case BOOST_XPR_CHAR_(char_type, 'c'):
-            detail::ensure(cur != end, error_escape, "unexpected end of format found");
-            detail::ensure
+            BOOST_XPR_ENSURE_(cur != end, error_escape, "unexpected end of format found");
+            BOOST_XPR_ENSURE_
             (
                 this->traits_->in_range(BOOST_XPR_CHAR_(char_type, 'a'), BOOST_XPR_CHAR_(char_type, 'z'), *cur)
              || this->traits_->in_range(BOOST_XPR_CHAR_(char_type, 'A'), BOOST_XPR_CHAR_(char_type, 'Z'), *cur)
@@ -1013,21 +1304,21 @@ private:
 
     /// INTERNAL ONLY
     ///
-    template<typename OutputIterator>
+    template<typename ForwardIterator, typename OutputIterator>
     OutputIterator format_named_backref_
     (
-        typename string_type::const_iterator &cur
-      , typename string_type::const_iterator end
+        ForwardIterator &cur
+      , ForwardIterator end
       , OutputIterator out
     ) const
     {
         using namespace regex_constants;
-        detail::ensure(cur != end && BOOST_XPR_CHAR_(char_type, '<') == *cur++
+        BOOST_XPR_ENSURE_(cur != end && BOOST_XPR_CHAR_(char_type, '<') == *cur++
             , error_badmark, "invalid named back-reference");
-        typename string_type::const_iterator begin = cur;
+        ForwardIterator begin = cur;
         for(; cur != end && BOOST_XPR_CHAR_(char_type, '>') != *cur; ++cur)
         {}
-        detail::ensure(cur != begin && cur != end && BOOST_XPR_CHAR_(char_type, '>') == *cur
+        BOOST_XPR_ENSURE_(cur != begin && cur != end && BOOST_XPR_CHAR_(char_type, '>') == *cur
             , error_badmark, "invalid named back-reference");
 
         string_type name(begin, cur++);
@@ -1040,16 +1331,16 @@ private:
             }
         }
 
-        boost::throw_exception(regex_error(error_badmark, "invalid named back-reference"));
+        BOOST_THROW_EXCEPTION(regex_error(error_badmark, "invalid named back-reference"));
         // Should never get here
         return out;
     }
 
     regex_id_type regex_id_;
     detail::sub_match_vector<BidiIter> sub_matches_;
-    BidiIter base_;
-    sub_match<BidiIter> prefix_;
-    sub_match<BidiIter> suffix_;
+    boost::optional<BidiIter> base_;
+    boost::optional<sub_match<BidiIter> > prefix_;
+    boost::optional<sub_match<BidiIter> > suffix_;
     nested_results_type nested_results_;
     intrusive_ptr<extras_type> extras_ptr_;
     intrusive_ptr<detail::traits<char_type> const> traits_;

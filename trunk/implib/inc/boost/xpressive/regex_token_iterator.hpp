@@ -3,7 +3,7 @@
 /// Contains the definition of regex_token_iterator, and STL-compatible iterator
 /// for tokenizing a string using a regular expression.
 //
-//  Copyright 2007 Eric Niebler. Distributed under the Boost
+//  Copyright 2008 Eric Niebler. Distributed under the Boost
 //  Software License, Version 1.0. (See accompanying file
 //  LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 
@@ -39,13 +39,14 @@ struct regex_token_iterator_impl
         BidiIter begin
       , BidiIter cur
       , BidiIter end
-      , basic_regex<BidiIter> const *rex
+      , BidiIter next_search
+      , basic_regex<BidiIter> const &rex
       , regex_constants::match_flag_type flags = regex_constants::match_default
       , std::vector<int> subs = std::vector<int>(1, 0)
       , int n = -2
       , bool not_null = false
     )
-      : iter_(begin, cur, end, rex, flags, not_null)
+      : iter_(begin, cur, end, next_search, rex, flags, not_null)
       , result_()
       , n_((-2 == n) ? (int)subs.size() - 1 : n)
       , subs_()
@@ -92,14 +93,14 @@ inline int get_mark_number(int i)
     return i;
 }
 
-inline std::vector<int> to_vector(int sub_match)
+inline std::vector<int> to_vector(int subs)
 {
-    return std::vector<int>(1, sub_match);
+    return std::vector<int>(1, subs);
 }
 
-inline std::vector<int> const &to_vector(std::vector<int> const &sub_matches)
+inline std::vector<int> const &to_vector(std::vector<int> const &subs)
 {
-    return sub_matches;
+    return subs;
 }
 
 template<typename Int, std::size_t Size>
@@ -158,9 +159,13 @@ struct regex_token_iterator
       , BidiIter end
       , basic_regex<BidiIter> const &rex
     )
-      : impl_(new impl_type_(begin, begin, end, &rex))
+      : impl_()
     {
-        this->next_();
+        if(0 != rex.regex_id())
+        {
+            this->impl_ = new impl_type_(begin, begin, end, begin, rex);
+            this->next_();
+        }
     }
 
     /// \param begin The beginning of the character range to search.
@@ -176,10 +181,14 @@ struct regex_token_iterator
       , basic_regex<BidiIter> const &rex
       , detail::let_<LetExpr> const &args
     )
-      : impl_(new impl_type_(begin, begin, end, &rex))
+      : impl_()
     {
-        detail::bind_args(args, this->impl_->iter_.what_);
-        this->next_();
+        if(0 != rex.regex_id())
+        {
+            this->impl_ = new impl_type_(begin, begin, end, begin, rex);
+            detail::bind_args(args, this->impl_->iter_.what_);
+            this->next_();
+        }
     }
 
     /// \param begin The beginning of the character range to search.
@@ -198,9 +207,13 @@ struct regex_token_iterator
       , Subs const &subs
       , regex_constants::match_flag_type flags = regex_constants::match_default
     )
-      : impl_(new impl_type_(begin, begin, end, &rex, flags, detail::to_vector(subs)))
+      : impl_()
     {
-        this->next_();
+        if(0 != rex.regex_id())
+        {
+            this->impl_ = new impl_type_(begin, begin, end, begin, rex, flags, detail::to_vector(subs));
+            this->next_();
+        }
     }
 
     /// \param begin The beginning of the character range to search.
@@ -221,10 +234,14 @@ struct regex_token_iterator
       , detail::let_<LetExpr> const &args
       , regex_constants::match_flag_type flags = regex_constants::match_default
     )
-      : impl_(new impl_type_(begin, begin, end, &rex, flags, detail::to_vector(subs)))
+      : impl_()
     {
-        detail::bind_args(args, this->impl_->iter_.what_);
-        this->next_();
+        if(0 != rex.regex_id())
+        {
+            this->impl_ = new impl_type_(begin, begin, end, begin, rex, flags, detail::to_vector(subs));
+            detail::bind_args(args, this->impl_->iter_.what_);
+            this->next_();
+        }
     }
 
     /// \post <tt>*this == that</tt>
@@ -307,6 +324,7 @@ private:
                 this->impl_->iter_.state_.begin_
               , this->impl_->iter_.state_.cur_
               , this->impl_->iter_.state_.end_
+              , this->impl_->iter_.state_.next_search_
               , this->impl_->iter_.rex_
               , this->impl_->iter_.flags_
               , this->impl_->subs_

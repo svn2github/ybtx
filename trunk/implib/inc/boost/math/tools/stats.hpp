@@ -6,7 +6,11 @@
 #ifndef BOOST_MATH_TOOLS_STATS_INCLUDED
 #define BOOST_MATH_TOOLS_STATS_INCLUDED
 
-#include <cmath>
+#ifdef _MSC_VER
+#pragma once
+#endif
+
+#include <boost/config/no_tr1/cmath.hpp>
 #include <boost/cstdint.hpp>
 #include <boost/math/tools/precision.hpp>
 
@@ -81,3 +85,4 @@ private:
 } // namespace boost
 
 #endif
+

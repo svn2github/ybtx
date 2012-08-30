@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 // attr_matcher.hpp
 //
-//  Copyright 2007 Eric Niebler.
-//  Copyright 2007 David Jenkins.
+//  Copyright 2008 Eric Niebler.
+//  Copyright 2008 David Jenkins.
 //
 //  Distributed under the Boost Software License, Version 1.0. (See
 //  accompanying file LICENSE_1_0.txt or copy at
@@ -33,14 +33,16 @@ namespace boost { namespace xpressive { namespace detail
         typedef typename Traits::char_type char_type;
         Traits const &traits_;
 
-        explicit char_translate(Traits const &traits)
-          : traits_(traits)
+        explicit char_translate(Traits const &tr)
+          : traits_(tr)
         {}
 
         char_type operator ()(char_type ch1) const
         {
             return this->traits_.translate(ch1);
         }
+    private:
+        char_translate &operator =(char_translate const &);
     };
 
     ///////////////////////////////////////////////////////////////////////////////
@@ -52,29 +54,31 @@ namespace boost { namespace xpressive { namespace detail
         typedef typename Traits::char_type char_type;
         Traits const &traits_;
 
-        explicit char_translate(Traits const &traits)
-          : traits_(traits)
+        explicit char_translate(Traits const &tr)
+          : traits_(tr)
         {}
 
         char_type operator ()(char_type ch1) const
         {
             return this->traits_.translate_nocase(ch1);
         }
+    private:
+        char_translate &operator =(char_translate const &);
     };
 
     ///////////////////////////////////////////////////////////////////////////////
     // attr_matcher
     //  Note: the Matcher is a std::map
-    template<typename Matcher, typename Traits, bool ICase>
+    template<typename Matcher, typename Traits, typename ICase>
     struct attr_matcher
       : quant_style<quant_none, 0, false>
     {
         typedef typename Matcher::value_type::second_type const* result_type;
 
-        attr_matcher(int slot, Matcher const &matcher, Traits const& traits)
+        attr_matcher(int slot, Matcher const &matcher, Traits const& tr)
           : slot_(slot-1)
         {
-            char_translate<Traits, ICase> trans(traits);
+            char_translate<Traits, ICase::value> trans(tr);
             this->sym_.load(matcher, trans);
         }
 
@@ -82,7 +86,7 @@ namespace boost { namespace xpressive { namespace detail
         bool match(match_state<BidiIter> &state, Next const &next) const
         {
             BidiIter tmp = state.cur_;
-            char_translate<Traits, ICase> trans(traits_cast<Traits>(state));
+            char_translate<Traits, ICase::value> trans(traits_cast<Traits>(state));
             result_type const &result = this->sym_(state.cur_, state.end_, trans);
             if(result)
             {

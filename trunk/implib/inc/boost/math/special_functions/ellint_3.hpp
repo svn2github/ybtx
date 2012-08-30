@@ -14,6 +14,10 @@
 #ifndef BOOST_MATH_ELLINT_3_HPP
 #define BOOST_MATH_ELLINT_3_HPP
 
+#ifdef _MSC_VER
+#pragma once
+#endif
+
 #include <boost/math/special_functions/ellint_rf.hpp>
 #include <boost/math/special_functions/ellint_rj.hpp>
 #include <boost/math/special_functions/ellint_1.hpp>
@@ -27,9 +31,6 @@
 // Carlson, Numerische Mathematik, vol 33, 1 (1979)
 
 namespace boost { namespace math { 
-   
-template <class T1, class T2, class T3, class Policy>
-typename tools::promote_args<T1, T2, T3>::type ellint_3(T1 k, T2 v, T3 phi, const Policy& pol);
    
 namespace detail{
 
@@ -181,8 +182,8 @@ T ellint_pi_imp(T v, T phi, T k, T vc, const Policy& pol)
     }
     else
     {
-       T rphi = boost::math::tools::fmod_workaround(fabs(phi), constants::pi<T>() / 2);
-       T m = 2 * (fabs(phi) - rphi) / constants::pi<T>();
+       T rphi = boost::math::tools::fmod_workaround(T(fabs(phi)), T(constants::pi<T>() / 2));
+       T m = floor((2 * fabs(phi)) / constants::pi<T>());
        int sign = 1;
        if(boost::math::tools::fmod_workaround(m, T(2)) > 0.5)
        {
@@ -190,17 +191,6 @@ T ellint_pi_imp(T v, T phi, T k, T vc, const Policy& pol)
           sign = -1;
           rphi = constants::pi<T>() / 2 - rphi;
        }
-
-       if((m > 0) && (v > 1))
-       {
-          //
-          // The region with v > 1 and phi outside [0, pi/2] is
-          // currently unsupported:
-          //
-          return policies::raise_domain_error<T>(
-            function,
-            "Got v = %1%, but this is only supported for 0 <= phi <= pi/2", v, pol);
-       }  
        T sinp = sin(rphi);
        T cosp = cos(rphi);
        x = cosp * cosp;
@@ -212,7 +202,7 @@ T ellint_pi_imp(T v, T phi, T k, T vc, const Policy& pol)
        else
            p = x + vc * t;
        value = sign * sinp * (ellint_rf_imp(x, y, z, pol) + v * t * ellint_rj_imp(x, y, z, p, pol) / 3);
-       if(m > 0)
+       if((m > 0) && (vc > 0))
          value += m * ellint_pi_imp(v, k, vc, pol);
     }
 
@@ -310,7 +300,7 @@ inline typename tools::promote_args<T1, T2, T3>::type ellint_3(T1 k, T2 v, T3 ph
 }
 
 template <class T1, class T2, class T3>
-inline typename tools::promote_args<T1, T2, T3>::type ellint_3(T1 k, T2 v, T3 phi)
+typename detail::ellint_3_result<T1, T2, T3>::type ellint_3(T1 k, T2 v, T3 phi)
 {
    typedef typename policies::is_policy<T3>::type tag_type;
    return detail::ellint_3(k, v, phi, tag_type());
@@ -325,3 +315,4 @@ inline typename tools::promote_args<T1, T2>::type ellint_3(T1 k, T2 v)
 }} // namespaces
 
 #endif // BOOST_MATH_ELLINT_3_HPP
+

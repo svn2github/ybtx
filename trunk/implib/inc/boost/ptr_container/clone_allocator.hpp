@@ -38,6 +38,19 @@ namespace boost
     }
 
     template< class T >
+    inline T* new_clone( const T* r )
+    {
+        return r ? new_clone( *r ) : 0;
+    }
+
+    // 
+    // @remark: to make new_clone() work
+    //          with scope_ptr/shared_ptr ect.
+    //          simply overload for those types
+    //          in the appropriate namespace.
+    // 
+    
+    template< class T >
     inline void delete_clone( const T* r )
     {
         checked_delete( r );
@@ -70,11 +83,11 @@ namespace boost
         template< class U >
         static U* allocate_clone( const U& r )
         {
-            return const_cast<U*>( &r );
+            return const_cast<U*>(&r);
         }
 
         template< class U >
-        static void deallocate_clone( const U* r )
+        static void deallocate_clone( const U* /*r*/ )
         {
             // do nothing
         }

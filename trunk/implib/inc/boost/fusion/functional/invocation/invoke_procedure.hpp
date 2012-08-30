@@ -1,8 +1,8 @@
 /*=============================================================================
-    Copyright (c) 2005-2006 João Abecasis
+    Copyright (c) 2005-2006 Joao Abecasis
     Copyright (c) 2006-2007 Tobias Schwinger
-  
-    Use modification and distribution are subject to the Boost Software 
+
+    Use modification and distribution are subject to the Boost Software
     License, Version 1.0. (See accompanying file LICENSE_1_0.txt or copy at
     http://www.boost.org/LICENSE_1_0.txt).
 ==============================================================================*/
@@ -58,8 +58,8 @@ namespace boost { namespace fusion
     {
         namespace ft = function_types;
 
-        template< 
-            typename Function, class Sequence, 
+        template<
+            typename Function, class Sequence,
             int N = result_of::size<Sequence>::value,
             bool MFP = ft::is_member_function_pointer<Function>::value,
             bool RandomAccess = traits::is_random_access<Sequence>::value
@@ -106,10 +106,23 @@ namespace boost { namespace fusion
         template <typename Function, class Sequence>
         struct invoke_procedure_impl<Function,Sequence,N,false,true>
         {
+
+#if N > 0
+
             static inline void call(Function & f, Sequence & s)
             {
                 f(BOOST_PP_ENUM(N,M,~));
             }
+
+#else
+
+            static inline void call(Function & f, Sequence & /*s*/)
+            {
+                f();
+            }
+
+#endif
+
         };
 
 #if N > 0
@@ -135,15 +148,25 @@ namespace boost { namespace fusion
         template <typename Function, class Sequence>
         struct invoke_procedure_impl<Function,Sequence,N,false,false>
         {
+
+#if N > 0
+
             static inline void call(Function & f, Sequence & s)
             {
-#if N > 0
                 typedef typename result_of::begin<Sequence>::type I0;
                 I0 i0 = fusion::begin(s);
                 BOOST_PP_REPEAT_FROM_TO(1,N,M,~)
-#endif
                 f( BOOST_PP_ENUM_PARAMS(N,*i) );
             }
+
+#else
+            static inline void call(Function & f, Sequence & /*s*/)
+            {
+                f();
+            }
+
+#endif
+
         };
 
 #if N > 0
@@ -167,5 +190,5 @@ namespace boost { namespace fusion
 
 #undef N
 #endif // defined(BOOST_PP_IS_ITERATING)
-#endif 
+#endif
 

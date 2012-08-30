@@ -21819,7 +21819,7 @@ void __RPC_STUB IAMCertifiedOutputProtection_ProtectionStatus_Stub(
 /* interface __MIDL_itf_strmif_0369 */
 /* [local] */ 
 
-#include <ddraw.h>
+#include <../../../dxsdk_mar2008/Include/ddraw.h>
 
 
 
@@ -27580,7 +27580,7 @@ typedef /* [public][public][public][public][public][public] */ struct __MIDL___M
 typedef DDCOLORKEY *LPDDCOLORKEY;
 
 #endif
-#include <ddraw.h>
+#include <../../../dxsdk_mar2008/include/ddraw.h>
 
 
 

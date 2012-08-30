@@ -7,8 +7,12 @@
 #ifndef BOOST_MATH_TOOLS_MINIMA_HPP
 #define BOOST_MATH_TOOLS_MINIMA_HPP
 
+#ifdef _MSC_VER
+#pragma once
+#endif
+
 #include <utility>
-#include <cmath>
+#include <boost/config/no_tr1/cmath.hpp>
 #include <boost/math/tools/precision.hpp>
 #include <boost/math/policies/policy.hpp>
 #include <boost/cstdint.hpp>
@@ -73,7 +77,7 @@ std::pair<T, T> brent_find_minima(F f, T min, T max, int bits, boost::uintmax_t&
             delta = p / q;
             u = x + delta;
             if(((u - min) < fract2) || ((max- u) < fract2))
-               delta = (mid - x) < 0 ? -fabs(fract1) : fabs(fract1);
+               delta = (mid - x) < 0 ? (T)-fabs(fract1) : (T)fabs(fract1);
          }
       }
       else
@@ -83,7 +87,7 @@ std::pair<T, T> brent_find_minima(F f, T min, T max, int bits, boost::uintmax_t&
          delta = golden * delta2;
       }
       // update current position:
-      u = (fabs(delta) >= fract1) ? x + delta : (delta > 0 ? x + fabs(fract1) : x - fabs(fract1));
+      u = (fabs(delta) >= fract1) ? T(x + delta) : (delta > 0 ? T(x + fabs(fract1)) : T(x - fabs(fract1)));
       fu = f(u);
       if(fu <= fx)
       {
@@ -142,6 +146,7 @@ inline std::pair<T, T> brent_find_minima(F f, T min, T max, int digits)
 }}} // namespaces
 
 #endif
+
 
 
 

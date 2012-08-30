@@ -32,6 +32,7 @@
 #include <boost/mpi/detail/ignore_iprimitive.hpp>
 #include <boost/mpi/detail/ignore_oprimitive.hpp>
 #include <boost/shared_ptr.hpp>
+#include <boost/archive/detail/register_archive.hpp>
 
 namespace boost { namespace mpi {
 
@@ -384,5 +385,8 @@ BOOST_SERIALIZATION_REGISTER_ARCHIVE(boost::mpi::packed_skeleton_oarchive)
 BOOST_SERIALIZATION_REGISTER_ARCHIVE(boost::mpi::packed_skeleton_iarchive)
 BOOST_SERIALIZATION_REGISTER_ARCHIVE(boost::mpi::detail::type1)
 BOOST_SERIALIZATION_REGISTER_ARCHIVE(boost::mpi::detail::type2)
+
+BOOST_SERIALIZATION_USE_ARRAY_OPTIMIZATION(boost::mpi::packed_skeleton_oarchive)
+BOOST_SERIALIZATION_USE_ARRAY_OPTIMIZATION(boost::mpi::packed_skeleton_iarchive)
 
 #endif // BOOST_MPI_SKELETON_AND_CONTENT_HPP

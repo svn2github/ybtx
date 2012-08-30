@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // assert_word_matcher.hpp
 //
-//  Copyright 2007 Eric Niebler. Distributed under the Boost
+//  Copyright 2008 Eric Niebler. Distributed under the Boost
 //  Software License, Version 1.0. (See accompanying file
 //  LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 
@@ -16,6 +16,7 @@
 #include <boost/assert.hpp>
 #include <boost/xpressive/detail/detail_fwd.hpp>
 #include <boost/xpressive/detail/core/quant_style.hpp>
+#include <boost/xpressive/detail/utility/ignore_unused.hpp>
 #include <boost/xpressive/detail/core/state.hpp>
 
 namespace boost { namespace xpressive { namespace detail
@@ -24,7 +25,7 @@ namespace boost { namespace xpressive { namespace detail
     ///////////////////////////////////////////////////////////////////////////////
     // word_boundary
     //
-    template<bool IsBoundary>
+    template<typename IsBoundary>
     struct word_boundary
     {
         template<typename BidiIter>
@@ -32,10 +33,10 @@ namespace boost { namespace xpressive { namespace detail
         {
             if((state.flags_.match_not_bow_ && state.bos()) || (state.flags_.match_not_eow_ && state.eos()))
             {
-                return !IsBoundary;
+                return !IsBoundary::value;
             }
 
-            return IsBoundary == (prevword != thisword);
+            return IsBoundary::value == (prevword != thisword);
         }
     };
 
@@ -83,8 +84,8 @@ namespace boost { namespace xpressive { namespace detail
         typedef typename Traits::char_type char_type;
         typedef typename Traits::char_class_type char_class_type;
 
-        assert_word_matcher(Traits const &traits)
-          : word_(lookup_classname(traits, "w"))
+        assert_word_matcher(Traits const &tr)
+          : word_(lookup_classname(tr, "w"))
         {
             BOOST_ASSERT(0 != this->word_);
         }
@@ -93,9 +94,10 @@ namespace boost { namespace xpressive { namespace detail
           : word_(word)
         {}
 
-        bool is_word(Traits const &traits, char_type ch) const
+        bool is_word(Traits const &tr, char_type ch) const
         {
-            return traits.isctype(traits.translate(ch), this->word_);
+            detail::ignore_unused(tr);
+            return tr.isctype(tr.translate(ch), this->word_);
         }
 
         template<typename BidiIter, typename Next>

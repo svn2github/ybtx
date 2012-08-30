@@ -1,7 +1,7 @@
 /*=============================================================================
-    Copyright (c) 2001-2006 Joel de Guzman
+    Copyright (c) 2001-2011 Joel de Guzman
 
-    Distributed under the Boost Software License, Version 1.0. (See accompanying 
+    Distributed under the Boost Software License, Version 1.0. (See accompanying
     file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 ==============================================================================*/
 #ifndef BOOST_PP_IS_ITERATING
@@ -17,10 +17,30 @@
 #include <boost/fusion/support/detail/as_fusion_element.hpp>
 #include <boost/fusion/support/pair.hpp>
 
+#if !defined(BOOST_FUSION_DONT_USE_PREPROCESSED_FILES)
+#include <boost/fusion/container/generation/detail/preprocessed/make_map.hpp>
+#else
+#if defined(__WAVE__) && defined(BOOST_FUSION_CREATE_PREPROCESSED_FILES)
+#pragma wave option(preserve: 2, line: 0, output: "detail/preprocessed/make_map" FUSION_MAX_MAP_SIZE_STR".hpp")
+#endif
+
+/*=============================================================================
+    Copyright (c) 2001-2011 Joel de Guzman
+
+    Distributed under the Boost Software License, Version 1.0. (See accompanying
+    file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
+
+    This is an auto-generated file. Do not edit!
+==============================================================================*/
+
+#if defined(__WAVE__) && defined(BOOST_FUSION_CREATE_PREPROCESSED_FILES)
+#pragma wave option(preserve: 1)
+#endif
+
 namespace boost { namespace fusion
 {
     struct void_;
-        
+
     namespace result_of
     {
         template <
@@ -31,14 +51,14 @@ namespace boost { namespace fusion
           , typename Extra = void_
         >
         struct make_map;
-            
+
         template <>
         struct make_map<>
         {
             typedef map<> type;
         };
     }
-    
+
     inline map<>
     make_map()
     {
@@ -62,6 +82,12 @@ namespace boost { namespace fusion
 
 }}
 
+#if defined(__WAVE__) && defined(BOOST_FUSION_CREATE_PREPROCESSED_FILES)
+#pragma wave option(output: null)
+#endif
+
+#endif // BOOST_FUSION_DONT_USE_PREPROCESSED_FILES
+
 #endif
 #else // defined(BOOST_PP_IS_ITERATING)
 ///////////////////////////////////////////////////////////////////////////////
@@ -78,7 +104,7 @@ namespace boost { namespace fusion
             BOOST_PP_ENUM_PARAMS(N, typename K)
           , BOOST_PP_ENUM_PARAMS(N, typename D)
         >
-#if defined(BOOST_PARTIAL_SPECIALIZATION_EXPLICT_ARGS)
+#if defined(BOOST_NO_PARTIAL_SPECIALIZATION_IMPLICIT_DEFAULT_ARGS)
          #define TEXT(z, n, text) , text
          struct make_map<BOOST_PP_ENUM_PARAMS(N, K), BOOST_PP_ENUM_PARAMS(N, D) BOOST_PP_REPEAT_FROM_TO(N, FUSION_MAX_VECTOR_SIZE, TEXT, void_) BOOST_PP_REPEAT_FROM_TO(BOOST_PP_DEC(N), FUSION_MAX_VECTOR_SIZE, TEXT, void_)>
          #undef TEXT

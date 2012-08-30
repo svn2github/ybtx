@@ -6,11 +6,15 @@
 #ifndef BOOST_MATH_HYPOT_INCLUDED
 #define BOOST_MATH_HYPOT_INCLUDED
 
+#ifdef _MSC_VER
+#pragma once
+#endif
+
 #include <boost/math/tools/config.hpp>
 #include <boost/math/tools/precision.hpp>
 #include <boost/math/policies/error_handling.hpp>
 #include <boost/math/special_functions/math_fwd.hpp>
-#include <cmath>
+#include <boost/config/no_tr1/cmath.hpp>
 #include <algorithm> // for swap
 
 #ifdef BOOST_NO_STDC_NAMESPACE
@@ -77,5 +81,6 @@ inline typename tools::promote_args<T1, T2>::type
 } // namespace boost
 
 #endif // BOOST_MATH_HYPOT_INCLUDED
+
 
 

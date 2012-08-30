@@ -2,7 +2,7 @@
 /// \file regex_actions.hpp
 /// Defines the syntax elements of xpressive's action expressions.
 //
-//  Copyright 2007 Eric Niebler. Distributed under the Boost
+//  Copyright 2008 Eric Niebler. Distributed under the Boost
 //  Software License, Version 1.0. (See accompanying file
 //  LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 
@@ -14,18 +14,23 @@
 # pragma once
 #endif
 
+#include <boost/config.hpp>
+#include <boost/preprocessor/punctuation/comma_if.hpp>
 #include <boost/ref.hpp>
 #include <boost/mpl/if.hpp>
 #include <boost/mpl/or.hpp>
 #include <boost/mpl/int.hpp>
+#include <boost/mpl/assert.hpp>
 #include <boost/noncopyable.hpp>
 #include <boost/lexical_cast.hpp>
 #include <boost/throw_exception.hpp>
 #include <boost/utility/enable_if.hpp>
+#include <boost/type_traits/is_same.hpp>
 #include <boost/type_traits/is_const.hpp>
 #include <boost/type_traits/is_integral.hpp>
 #include <boost/type_traits/remove_cv.hpp>
 #include <boost/type_traits/remove_reference.hpp>
+#include <boost/range/iterator_range.hpp>
 #include <boost/xpressive/detail/detail_fwd.hpp>
 #include <boost/xpressive/detail/core/state.hpp>
 #include <boost/xpressive/detail/core/matcher/attr_matcher.hpp>
@@ -33,6 +38,7 @@
 #include <boost/xpressive/detail/core/matcher/attr_begin_matcher.hpp>
 #include <boost/xpressive/detail/core/matcher/predicate_matcher.hpp>
 #include <boost/xpressive/detail/utility/ignore_unused.hpp>
+#include <boost/xpressive/detail/static/type_traits.hpp>
 
 // These are very often needed by client code.
 #include <boost/typeof/std/map.hpp>
@@ -40,7 +46,8 @@
 
 // Doxygen can't handle proto :-(
 #ifndef BOOST_XPRESSIVE_DOXYGEN_INVOKED
-# include <boost/xpressive/proto/transform/fold.hpp>
+# include <boost/proto/core.hpp>
+# include <boost/proto/transform.hpp>
 # include <boost/xpressive/detail/core/matcher/action_matcher.hpp>
 #endif
 
@@ -51,6 +58,13 @@
 /// INTERNAL ONLY
 ///
 #define UNCVREF(x)  typename remove_cv<typename remove_reference<x>::type>::type
+
+#if BOOST_MSVC
+#pragma warning(push)
+#pragma warning(disable : 4510) // default constructor could not be generated
+#pragma warning(disable : 4512) // assignment operator could not be generated
+#pragma warning(disable : 4610) // can never be instantiated - user defined constructor required
+#endif
 
 namespace boost { namespace xpressive
 {
@@ -71,6 +85,7 @@ namespace boost { namespace xpressive
 
         template<typename T>
         struct value_wrapper
+          : private noncopyable
         {
             value_wrapper()
               : value()
@@ -86,32 +101,38 @@ namespace boost { namespace xpressive
         struct check_tag
         {};
 
-        template<typename Grammar>
         struct BindArg
-          : Grammar
         {
-            template<typename Expr, typename State, typename Visitor>
-            struct apply
+            BOOST_PROTO_CALLABLE()
+            template<typename Sig>
+            struct result;
+
+            template<typename This, typename MatchResults, typename Expr>
+            struct result<This(MatchResults, Expr)>
             {
-                typedef State type;
+                typedef Expr type;
             };
 
-            template<typename Expr, typename State, typename Visitor>
-            static State call(Expr const &expr, State const &state, Visitor &visitor)
+            template<typename MatchResults, typename Expr>
+            Expr const & operator ()(MatchResults &what, Expr const &expr) const
             {
-                visitor.let(expr);
-                return state;
+                what.let(expr);
+                return expr;
             }
         };
 
         struct let_tag
         {};
 
+        // let(_a = b, _c = d)
         struct BindArgs
-          : boost::proto::transform::fold<
-                boost::proto::function<
-                    boost::proto::transform::state<boost::proto::terminal<let_tag> >
-                  , boost::proto::vararg< BindArg< boost::proto::assign<boost::proto::_, boost::proto::_> > > 
+          : proto::function<
+                proto::terminal<let_tag>
+              , proto::vararg<
+                    proto::when<
+                        proto::assign<proto::_, proto::_>
+                      , proto::call<BindArg(proto::_data, proto::_)>
+                    >
                 >
             >
         {};
@@ -123,21 +144,61 @@ namespace boost { namespace xpressive
         template<typename Expr>
         struct let_
         {
-            BOOST_PROTO_EXTENDS(Expr, let_<Expr>, let_domain)
-            BOOST_PROTO_EXTENDS_FUNCTION(Expr, let_<Expr>, let_domain)
+            BOOST_PROTO_BASIC_EXTENDS(Expr, let_<Expr>, let_domain)
+            BOOST_PROTO_EXTENDS_FUNCTION()
         };
 
         template<typename Args, typename BidiIter>
         void bind_args(let_<Args> const &args, match_results<BidiIter> &what)
         {
-            BindArgs::call(args, 0, what);
+            BindArgs()(args, 0, what);
         }
+
+        typedef boost::proto::functional::make_expr<proto::tag::function, proto::default_domain> make_function;
     }
 
     namespace op
     {
+        struct at
+        {
+            BOOST_PROTO_CALLABLE()
+            template<typename Sig>
+            struct result;
+
+            template<typename This, typename Cont, typename Idx>
+            struct result<This(Cont, Idx)>
+              : result<This(Cont const &, Idx)>
+            {
+            };
+
+            template<typename This, typename Cont, typename Idx>
+            struct result<This(Cont &, Idx)>
+            {
+                typedef typename Cont::reference type;
+            };
+
+            template<typename This, typename Cont, typename Idx>
+            struct result<This(Cont const &, Idx)>
+            {
+                typedef typename Cont::const_reference type;
+            };
+
+            template<typename Cont, typename Idx>
+            typename Cont::reference operator()(Cont &c, Idx idx BOOST_PROTO_DISABLE_IF_IS_CONST(Cont)) const
+            {
+                return c[idx];
+            }
+
+            template<typename Cont, typename Idx>
+            typename Cont::const_reference operator()(Cont const &c, Idx idx) const
+            {
+                return c[idx];
+            }
+        };
+
         struct push
         {
+            BOOST_PROTO_CALLABLE()
             typedef void result_type;
 
             template<typename Sequence, typename Value>
@@ -149,6 +210,7 @@ namespace boost { namespace xpressive
 
         struct push_back
         {
+            BOOST_PROTO_CALLABLE()
             typedef void result_type;
 
             template<typename Sequence, typename Value>
@@ -160,6 +222,7 @@ namespace boost { namespace xpressive
 
         struct push_front
         {
+            BOOST_PROTO_CALLABLE()
             typedef void result_type;
 
             template<typename Sequence, typename Value>
@@ -171,6 +234,7 @@ namespace boost { namespace xpressive
 
         struct pop
         {
+            BOOST_PROTO_CALLABLE()
             typedef void result_type;
 
             template<typename Sequence>
@@ -182,6 +246,7 @@ namespace boost { namespace xpressive
 
         struct pop_back
         {
+            BOOST_PROTO_CALLABLE()
             typedef void result_type;
 
             template<typename Sequence>
@@ -193,6 +258,7 @@ namespace boost { namespace xpressive
 
         struct pop_front
         {
+            BOOST_PROTO_CALLABLE()
             typedef void result_type;
 
             template<typename Sequence>
@@ -204,6 +270,7 @@ namespace boost { namespace xpressive
 
         struct front
         {
+            BOOST_PROTO_CALLABLE()
             template<typename Sig>
             struct result {};
 
@@ -212,8 +279,8 @@ namespace boost { namespace xpressive
             {
                 typedef UNREF(Sequence) sequence_type;
                 typedef
-                    typename mpl::if_<
-                        is_const<sequence_type>
+                    typename mpl::if_c<
+                        is_const<sequence_type>::value
                       , typename sequence_type::const_reference
                       , typename sequence_type::reference
                     >::type
@@ -229,6 +296,7 @@ namespace boost { namespace xpressive
 
         struct back
         {
+            BOOST_PROTO_CALLABLE()
             template<typename Sig>
             struct result {};
 
@@ -237,8 +305,8 @@ namespace boost { namespace xpressive
             {
                 typedef UNREF(Sequence) sequence_type;
                 typedef
-                    typename mpl::if_<
-                        is_const<sequence_type>
+                    typename mpl::if_c<
+                        is_const<sequence_type>::value
                       , typename sequence_type::const_reference
                       , typename sequence_type::reference
                     >::type
@@ -254,6 +322,7 @@ namespace boost { namespace xpressive
 
         struct top
         {
+            BOOST_PROTO_CALLABLE()
             template<typename Sig>
             struct result {};
 
@@ -262,8 +331,8 @@ namespace boost { namespace xpressive
             {
                 typedef UNREF(Sequence) sequence_type;
                 typedef
-                    typename mpl::if_<
-                        is_const<sequence_type>
+                    typename mpl::if_c<
+                        is_const<sequence_type>::value
                       , typename sequence_type::value_type const &
                       , typename sequence_type::value_type &
                     >::type
@@ -279,6 +348,7 @@ namespace boost { namespace xpressive
 
         struct first
         {
+            BOOST_PROTO_CALLABLE()
             template<typename Sig>
             struct result {};
 
@@ -297,6 +367,7 @@ namespace boost { namespace xpressive
 
         struct second
         {
+            BOOST_PROTO_CALLABLE()
             template<typename Sig>
             struct result {};
 
@@ -315,6 +386,7 @@ namespace boost { namespace xpressive
 
         struct matched
         {
+            BOOST_PROTO_CALLABLE()
             typedef bool result_type;
 
             template<typename Sub>
@@ -326,6 +398,7 @@ namespace boost { namespace xpressive
 
         struct length
         {
+            BOOST_PROTO_CALLABLE()
             template<typename Sig>
             struct result {};
 
@@ -344,6 +417,7 @@ namespace boost { namespace xpressive
 
         struct str
         {
+            BOOST_PROTO_CALLABLE()
             template<typename Sig>
             struct result {};
 
@@ -365,6 +439,7 @@ namespace boost { namespace xpressive
         // associative containers, and strings.
         struct insert
         {
+            BOOST_PROTO_CALLABLE()
             template<typename Sig, typename EnableIf = void>
             struct result
             {};
@@ -460,6 +535,7 @@ namespace boost { namespace xpressive
 
         struct make_pair
         {
+            BOOST_PROTO_CALLABLE()
             template<typename Sig>
             struct result {};
 
@@ -479,18 +555,66 @@ namespace boost { namespace xpressive
         template<typename T>
         struct as
         {
+            BOOST_PROTO_CALLABLE()
             typedef T result_type;
 
             template<typename Value>
             T operator()(Value const &val) const
             {
-                return lexical_cast<T>(val);
+                return boost::lexical_cast<T>(val);
+            }
+
+            // Hack around some limitations in boost::lexical_cast
+            T operator()(csub_match const &val) const
+            {
+                return val.matched
+                  ? boost::lexical_cast<T>(boost::make_iterator_range(val.first, val.second))
+                  : boost::lexical_cast<T>("");
+            }
+
+            #ifndef BOOST_XPRESSIVE_NO_WREGEX
+            T operator()(wcsub_match const &val) const
+            {
+                return val.matched
+                  ? boost::lexical_cast<T>(boost::make_iterator_range(val.first, val.second))
+                  : boost::lexical_cast<T>("");
+            }
+            #endif
+
+            template<typename BidiIter>
+            T operator()(sub_match<BidiIter> const &val) const
+            {
+                // If this assert fires, you're trying to coerce a sequences of non-characters
+                // to some other type. Xpressive doesn't know how to do that.
+                typedef typename iterator_value<BidiIter>::type char_type;
+                BOOST_MPL_ASSERT_MSG(
+                    (xpressive::detail::is_char<char_type>::value)
+                  , CAN_ONLY_CONVERT_FROM_CHARACTER_SEQUENCES
+                  , (char_type)
+                );
+                return this->impl(val, xpressive::detail::is_string_iterator<BidiIter>());
+            }
+
+        private:
+            template<typename RandIter>
+            T impl(sub_match<RandIter> const &val, mpl::true_) const
+            {
+                return val.matched
+                  ? boost::lexical_cast<T>(boost::make_iterator_range(&*val.first, &*val.first + (val.second - val.first)))
+                  : boost::lexical_cast<T>("");
+            }
+
+            template<typename BidiIter>
+            T impl(sub_match<BidiIter> const &val, mpl::false_) const
+            {
+                return boost::lexical_cast<T>(val.str());
             }
         };
 
         template<typename T>
         struct static_cast_
         {
+            BOOST_PROTO_CALLABLE()
             typedef T result_type;
 
             template<typename Value>
@@ -503,6 +627,7 @@ namespace boost { namespace xpressive
         template<typename T>
         struct dynamic_cast_
         {
+            BOOST_PROTO_CALLABLE()
             typedef T result_type;
 
             template<typename Value>
@@ -515,6 +640,7 @@ namespace boost { namespace xpressive
         template<typename T>
         struct const_cast_
         {
+            BOOST_PROTO_CALLABLE()
             typedef T result_type;
 
             template<typename Value>
@@ -527,6 +653,7 @@ namespace boost { namespace xpressive
         template<typename T>
         struct construct
         {
+            BOOST_PROTO_CALLABLE()
             typedef T result_type;
 
             T operator()() const
@@ -556,29 +683,55 @@ namespace boost { namespace xpressive
         template<typename Except>
         struct throw_
         {
+            BOOST_PROTO_CALLABLE()
             typedef void result_type;
 
             void operator()() const
             {
-                boost::throw_exception(Except());
+                BOOST_THROW_EXCEPTION(Except());
             }
 
             template<typename A0>
             void operator()(A0 const &a0) const
             {
-                boost::throw_exception(Except(a0));
+                BOOST_THROW_EXCEPTION(Except(a0));
             }
 
             template<typename A0, typename A1>
             void operator()(A0 const &a0, A1 const &a1) const
             {
-                boost::throw_exception(Except(a0, a1));
+                BOOST_THROW_EXCEPTION(Except(a0, a1));
             }
 
             template<typename A0, typename A1, typename A2>
             void operator()(A0 const &a0, A1 const &a1, A2 const &a2) const
             {
-                boost::throw_exception(Except(a0, a1, a2));
+                BOOST_THROW_EXCEPTION(Except(a0, a1, a2));
+            }
+        };
+
+        struct unwrap_reference
+        {
+            BOOST_PROTO_CALLABLE()
+            template<typename Sig>
+            struct result;
+
+            template<typename This, typename Ref>
+            struct result<This(Ref)>
+            {
+                typedef typename boost::unwrap_reference<Ref>::type &type;
+            };
+
+            template<typename This, typename Ref>
+            struct result<This(Ref &)>
+            {
+                typedef typename boost::unwrap_reference<Ref>::type &type;
+            };
+
+            template<typename T>
+            T &operator()(boost::reference_wrapper<T> r) const
+            {
+                return static_cast<T &>(r);
             }
         };
     }
@@ -589,6 +742,7 @@ namespace boost { namespace xpressive
         typedef typename proto::terminal<Fun>::type type;
     };
 
+    function<op::at>::type const at = {{}};
     function<op::push>::type const push = {{}};
     function<op::push_back>::type const push_back = {{}};
     function<op::push_front>::type const push_front = {{}};
@@ -605,6 +759,7 @@ namespace boost { namespace xpressive
     function<op::str>::type const str = {{}};
     function<op::insert>::type const insert = {{}};
     function<op::make_pair>::type const make_pair = {{}};
+    function<op::unwrap_reference>::type const unwrap_reference = {{}};
 
     template<typename T>
     struct value
@@ -624,12 +779,12 @@ namespace boost { namespace xpressive
 
         T &get()
         {
-            return proto::arg(*this);
+            return proto::value(*this);
         }
 
         T const &get() const
         {
-            return proto::arg(*this);
+            return proto::value(*this);
         }
     };
 
@@ -647,27 +802,24 @@ namespace boost { namespace xpressive
 
         T &get() const
         {
-            return proto::arg(*this).get();
+            return proto::value(*this).get();
         }
     };
 
     template<typename T>
     struct local
-      : private noncopyable
-      , detail::value_wrapper<T>
+      : detail::value_wrapper<T>
       , proto::terminal<reference_wrapper<T> >::type
     {
         typedef typename proto::terminal<reference_wrapper<T> >::type base_type;
 
         local()
-          : noncopyable()
-          , detail::value_wrapper<T>()
+          : detail::value_wrapper<T>()
           , base_type(base_type::make(boost::ref(detail::value_wrapper<T>::value)))
         {}
 
         explicit local(T const &t)
-          : noncopyable()
-          , detail::value_wrapper<T>(t)
+          : detail::value_wrapper<T>(t)
           , base_type(base_type::make(boost::ref(detail::value_wrapper<T>::value)))
         {}
 
@@ -675,54 +827,50 @@ namespace boost { namespace xpressive
 
         T &get()
         {
-            return proto::arg(*this);
+            return proto::value(*this);
         }
 
         T const &get() const
         {
-            return proto::arg(*this);
+            return proto::value(*this);
         }
     };
 
     /// as (a.k.a., lexical_cast)
     ///
-    BOOST_PROTO_DEFINE_FUNCTION_TEMPLATE(
-        1
-      , as
-      , boost::proto::default_domain
-      , (boost::proto::tag::function)
-      , ((op::as)(typename))
-    )
+    template<typename X2_0, typename A0>
+    typename detail::make_function::impl<op::as<X2_0> const, A0 const &>::result_type const
+    as(A0 const &a0)
+    {
+        return detail::make_function::impl<op::as<X2_0> const, A0 const &>()((op::as<X2_0>()), a0);
+    }
 
     /// static_cast_
     ///
-    BOOST_PROTO_DEFINE_FUNCTION_TEMPLATE(
-        1
-      , static_cast_
-      , boost::proto::default_domain
-      , (boost::proto::tag::function)
-      , ((op::static_cast_)(typename))
-    )
+    template<typename X2_0, typename A0>
+    typename detail::make_function::impl<op::static_cast_<X2_0> const, A0 const &>::result_type const
+    static_cast_(A0 const &a0)
+    {
+        return detail::make_function::impl<op::static_cast_<X2_0> const, A0 const &>()((op::static_cast_<X2_0>()), a0);
+    }
 
     /// dynamic_cast_
     ///
-    BOOST_PROTO_DEFINE_FUNCTION_TEMPLATE(
-        1
-      , dynamic_cast_
-      , boost::proto::default_domain
-      , (boost::proto::tag::function)
-      , ((op::dynamic_cast_)(typename))
-    )
+    template<typename X2_0, typename A0>
+    typename detail::make_function::impl<op::dynamic_cast_<X2_0> const, A0 const &>::result_type const
+    dynamic_cast_(A0 const &a0)
+    {
+        return detail::make_function::impl<op::dynamic_cast_<X2_0> const, A0 const &>()((op::dynamic_cast_<X2_0>()), a0);
+    }
 
     /// const_cast_
     ///
-    BOOST_PROTO_DEFINE_FUNCTION_TEMPLATE(
-        1
-      , const_cast_
-      , boost::proto::default_domain
-      , (boost::proto::tag::function)
-      , ((op::const_cast_)(typename))
-    )
+    template<typename X2_0, typename A0>
+    typename detail::make_function::impl<op::const_cast_<X2_0> const, A0 const &>::result_type const
+    const_cast_(A0 const &a0)
+    {
+        return detail::make_function::impl<op::const_cast_<X2_0> const, A0 const &>()((op::const_cast_<X2_0>()), a0);
+    }
 
     /// val()
     ///
@@ -766,57 +914,95 @@ namespace boost { namespace xpressive
         typedef typename proto::terminal<detail::action_arg<T, mpl::int_<I> > >::type action_arg_type;
 
         BOOST_PROTO_EXTENDS(action_arg_type, this_type, proto::default_domain)
-        BOOST_PROTO_EXTENDS_ASSIGN(action_arg_type, this_type, proto::default_domain)
-        BOOST_PROTO_EXTENDS_SUBSCRIPT(action_arg_type, this_type, proto::default_domain)
-        BOOST_PROTO_EXTENDS_FUNCTION(action_arg_type, this_type, proto::default_domain)
     };
 
     /// Usage: construct\<Type\>(arg1, arg2)
     ///
-    BOOST_PROTO_DEFINE_VARARG_FUNCTION_TEMPLATE(
-        construct
-      , boost::proto::default_domain
-      , (boost::proto::tag::function)
-      , ((op::construct)(typename))
-    )
-
     /// Usage: throw_\<Exception\>(arg1, arg2)
     ///
-    BOOST_PROTO_DEFINE_VARARG_FUNCTION_TEMPLATE(
-        throw_
-      , boost::proto::default_domain
-      , (boost::proto::tag::function)
-      , ((op::throw_)(typename))
-    )
+    #define BOOST_PROTO_LOCAL_MACRO(N, typename_A, A_const_ref, A_const_ref_a, a)\
+    \
+    template<typename X2_0 BOOST_PP_COMMA_IF(N) typename_A(N)>\
+    typename detail::make_function::impl<op::construct<X2_0> const BOOST_PP_COMMA_IF(N) A_const_ref(N)>::result_type const\
+    construct(A_const_ref_a(N))\
+    {\
+        return detail::make_function::impl<op::construct<X2_0> const BOOST_PP_COMMA_IF(N) A_const_ref(N)>()((op::construct<X2_0>()) BOOST_PP_COMMA_IF(N) a(N));\
+    }\
+    \
+    template<typename X2_0 BOOST_PP_COMMA_IF(N) typename_A(N)>\
+    typename detail::make_function::impl<op::throw_<X2_0> const BOOST_PP_COMMA_IF(N) A_const_ref(N)>::result_type const\
+    throw_(A_const_ref_a(N))\
+    {\
+        return detail::make_function::impl<op::throw_<X2_0> const BOOST_PP_COMMA_IF(N) A_const_ref(N)>()((op::throw_<X2_0>()) BOOST_PP_COMMA_IF(N) a(N));\
+    }\
+    /**/
+
+    #define BOOST_PROTO_LOCAL_a       BOOST_PROTO_a
+    #define BOOST_PROTO_LOCAL_LIMITS  (0, BOOST_PP_DEC(BOOST_PROTO_MAX_ARITY))
+    #include BOOST_PROTO_LOCAL_ITERATE()
 
     namespace detail
     {
         inline void ignore_unused_regex_actions()
         {
-            ignore_unused(xpressive::push);
-            ignore_unused(xpressive::push_back);
-            ignore_unused(xpressive::push_front);
-            ignore_unused(xpressive::pop);
-            ignore_unused(xpressive::pop_back);
-            ignore_unused(xpressive::pop_front);
-            ignore_unused(xpressive::top);
-            ignore_unused(xpressive::back);
-            ignore_unused(xpressive::front);
-            ignore_unused(xpressive::first);
-            ignore_unused(xpressive::second);
-            ignore_unused(xpressive::matched);
-            ignore_unused(xpressive::length);
-            ignore_unused(xpressive::str);
-            ignore_unused(xpressive::insert);
-            ignore_unused(xpressive::make_pair);
-            ignore_unused(xpressive::check);
-            ignore_unused(xpressive::let);
+            detail::ignore_unused(xpressive::at);
+            detail::ignore_unused(xpressive::push);
+            detail::ignore_unused(xpressive::push_back);
+            detail::ignore_unused(xpressive::push_front);
+            detail::ignore_unused(xpressive::pop);
+            detail::ignore_unused(xpressive::pop_back);
+            detail::ignore_unused(xpressive::pop_front);
+            detail::ignore_unused(xpressive::top);
+            detail::ignore_unused(xpressive::back);
+            detail::ignore_unused(xpressive::front);
+            detail::ignore_unused(xpressive::first);
+            detail::ignore_unused(xpressive::second);
+            detail::ignore_unused(xpressive::matched);
+            detail::ignore_unused(xpressive::length);
+            detail::ignore_unused(xpressive::str);
+            detail::ignore_unused(xpressive::insert);
+            detail::ignore_unused(xpressive::make_pair);
+            detail::ignore_unused(xpressive::unwrap_reference);
+            detail::ignore_unused(xpressive::check);
+            detail::ignore_unused(xpressive::let);
         }
-    }
 
+        struct mark_nbr
+        {
+            BOOST_PROTO_CALLABLE()
+            typedef int result_type;
+
+            int operator()(mark_placeholder m) const
+            {
+                return m.mark_number_;
+            }
+        };
+
+        struct ReplaceAlgo
+          : proto::or_<
+                proto::when<
+                    proto::terminal<mark_placeholder>
+                  , op::at(proto::_data, proto::call<mark_nbr(proto::_value)>)
+                >
+              , proto::when<
+                    proto::terminal<any_matcher>
+                  , op::at(proto::_data, proto::size_t<0>)
+                >
+              , proto::when<
+                    proto::terminal<reference_wrapper<proto::_> >
+                  , op::unwrap_reference(proto::_value)
+                >
+              , proto::_default<ReplaceAlgo>
+            >
+        {};
+    }
 }}
 
 #undef UNREF
 #undef UNCVREF
+
+#if BOOST_MSVC
+#pragma warning(pop)
+#endif
 
 #endif // BOOST_XPRESSIVE_ACTIONS_HPP_EAN_03_22_2007

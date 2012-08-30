@@ -16,15 +16,22 @@
 
 //  See http://www.boost.org for updates, documentation, and revision history.
 
+#include <boost/config.hpp>
+
 #include <boost/archive/detail/basic_iarchive.hpp>
+#include <boost/archive/detail/basic_pointer_iserializer.hpp>
 #include <boost/archive/detail/interface_iarchive.hpp>
-#include <boost/archive/detail/iserializer.hpp>
-#include <boost/archive/detail/register_archive.hpp>
-#include <boost/pfto.hpp>
+
+#ifdef BOOST_MSVC
+#  pragma warning(push)
+#  pragma warning(disable : 4511 4512)
+#endif
 
 namespace boost {
 namespace archive {
 namespace detail {
+
+class extended_type_info;
 
 // note: referred to as Curiously Recurring Template Patter (CRTP)
 template<class Archive>
@@ -60,8 +67,8 @@ protected:
     }
     // default implementations of functions which emit start/end tags for
     // archive types that require them.
-    void load_start(const char *name){}
-    void load_end(const char *name){}
+    void load_start(const char * /*name*/){}
+    void load_end(const char * /*name*/){}
     // default archive initialization
     common_iarchive(unsigned int flags = 0) : 
         basic_iarchive(flags),
@@ -72,6 +79,10 @@ protected:
 } // namespace detail
 } // namespace archive
 } // namespace boost
+
+#ifdef BOOST_MSVC
+#pragma warning(pop)
+#endif
 
 #endif // BOOST_ARCHIVE_DETAIL_COMMON_IARCHIVE_HPP
 

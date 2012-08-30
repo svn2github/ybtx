@@ -17,9 +17,15 @@
 //  See http://www.boost.org for updates, documentation, and revision history.
 
 #include <ostream>
-#include <boost/pfto.hpp>
+#include <boost/config.hpp>
+#include <boost/serialization/pfto.hpp>
 #include <boost/archive/basic_binary_oprimitive.hpp>
 #include <boost/archive/basic_binary_oarchive.hpp>
+
+#ifdef BOOST_MSVC
+#  pragma warning(push)
+#  pragma warning(disable : 4511 4512)
+#endif
 
 namespace boost { 
 namespace archive {
@@ -42,7 +48,7 @@ protected:
     // make this protected so it can be called from a derived archive
     template<class T>
     void save_override(T & t, BOOST_PFTO int){
-        basic_binary_oarchive<Archive>::save_override(t, 0);
+        this->basic_binary_oarchive<Archive>::save_override(t, 0L);
     }
     void init(unsigned int flags) {
         if(0 != (flags & no_header))
@@ -83,5 +89,9 @@ protected:
 
 } // namespace archive
 } // namespace boost
+
+#ifdef BOOST_MSVC
+#pragma warning(pop)
+#endif
 
 #endif // BOOST_ARCHIVE_BINARY_OARCHIVE_IMPL_HPP

@@ -16,9 +16,11 @@
 
 #include <cassert>
 #include <cstddef>
+#include <cstring>
 #include <algorithm>
 #include <iterator>
 #include <memory>
+#include <typeinfo>
 #include "gil_config.hpp"
 #include "gil_concept.hpp"
 #include "color_base_algorithm.hpp"
@@ -31,7 +33,7 @@
 /// \brief Some basic STL-style algorithms when applied to image views
 /// \author Lubomir Bourdev and Hailin Jin \n
 ///         Adobe Systems Incorporated
-/// \date   2005-2007 \n Last updated on May 6, 2007
+/// \date   2005-2008 \n Last updated on March 12, 2008
 ///
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -446,7 +448,7 @@ void destruct_range_impl(It first, It last, mpl::true_) {
     }
 }
 template <typename It> GIL_FORCEINLINE
-void destruct_range_impl(It first, It last, mpl::false_) {}
+void destruct_range_impl(It, It, mpl::false_) {}
 
 template <typename It> GIL_FORCEINLINE
 void destruct_range(It first, It last) {
@@ -581,7 +583,7 @@ void default_construct_range_impl(It first, It last, mpl::true_) {
 }
 
 template <typename It> GIL_FORCEINLINE 
-void default_construct_range_impl(It first, It last, mpl::false_) {}
+void default_construct_range_impl(It, It, mpl::false_) {}
 
 template <typename It> GIL_FORCEINLINE 
 void default_construct_range(It first, It last) { default_construct_range_impl(first, last, typename is_pointer<It>::type()); }

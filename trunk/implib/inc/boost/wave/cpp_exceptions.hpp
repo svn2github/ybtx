@@ -3,7 +3,7 @@
 
     http://www.boost.org/
 
-    Copyright (c) 2001-2008 Hartmut Kaiser. Distributed under the Boost
+    Copyright (c) 2001-2012 Hartmut Kaiser. Distributed under the Boost
     Software License, Version 1.0. (See accompanying file
     LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 =============================================================================*/
@@ -62,7 +62,7 @@ namespace util {
 
 ///////////////////////////////////////////////////////////////////////////////
 //  cpp_exception, the base class for all specific C preprocessor exceptions 
-class cpp_exception
+class BOOST_SYMBOL_VISIBLE cpp_exception
 :   public std::exception
 {
 public:
@@ -95,7 +95,7 @@ protected:
 
 ///////////////////////////////////////////////////////////////////////////////
 // preprocessor error
-class preprocess_exception :
+class BOOST_SYMBOL_VISIBLE preprocess_exception :
     public cpp_exception
 {
 public:
@@ -283,7 +283,7 @@ public:
             "a macro or scope name",                    // alreadydefined_name
             "undefined macro or scope name may not be imported", // undefined_macroname
             "ill formed macro name",                    // invalid_macroname
-            "qualified names are supported in C++0x mode only",  // unexpected_qualified_name
+            "qualified names are supported in C++11 mode only",  // unexpected_qualified_name
             "division by zero in preprocessor expression",       // division_by_zero
             "integer overflow in preprocessor expression",       // integer_overflow
             "this cannot be used as a macro name as it is "
@@ -366,7 +366,7 @@ private:
 
 ///////////////////////////////////////////////////////////////////////////////
 //  Error during macro handling, this exception contains the related macro name
-class macro_handling_exception :
+class BOOST_SYMBOL_VISIBLE macro_handling_exception :
     public preprocess_exception
 {
 public:

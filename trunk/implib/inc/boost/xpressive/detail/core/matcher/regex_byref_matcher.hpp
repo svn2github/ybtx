@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // regex_byref_matcher.hpp
 //
-//  Copyright 2007 Eric Niebler. Distributed under the Boost
+//  Copyright 2008 Eric Niebler. Distributed under the Boost
 //  Software License, Version 1.0. (See accompanying file
 //  LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 
@@ -52,7 +52,7 @@ namespace boost { namespace xpressive { namespace detail
         bool match(match_state<BidiIter> &state, Next const &next) const
         {
             BOOST_ASSERT(this->pimpl_ == this->wimpl_.lock().get());
-            ensure(this->pimpl_->xpr_, regex_constants::error_badref, "bad regex reference");
+            BOOST_XPR_ENSURE_(this->pimpl_->xpr_, regex_constants::error_badref, "bad regex reference");
 
             return push_context_match(*this->pimpl_, state, this->wrap_(next, is_static_xpression<Next>()));
         }

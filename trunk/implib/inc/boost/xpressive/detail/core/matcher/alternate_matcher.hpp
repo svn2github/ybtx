@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // alternate_matcher.hpp
 //
-//  Copyright 2007 Eric Niebler. Distributed under the Boost
+//  Copyright 2008 Eric Niebler. Distributed under the Boost
 //  Software License, Version 1.0. (See accompanying file
 //  LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 
@@ -121,9 +121,9 @@ namespace boost { namespace xpressive { namespace detail
     private:
         alternate_matcher &operator =(alternate_matcher const &);
 
-        bool can_match_(char_type ch, Traits const &traits) const
+        bool can_match_(char_type ch, Traits const &tr) const
         {
-            return this->bset_.test(ch, traits);
+            return this->bset_.test(ch, tr);
         }
     };
 

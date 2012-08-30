@@ -7,7 +7,7 @@
 #endif
 
 /////////1/////////2/////////3/////////4/////////5/////////6/////////7/////////8
-// binary_from_base64.hpp
+// insert_linebreaks.hpp
 
 // (C) Copyright 2002 Robert Ramey - http://www.rrsd.com . 
 // Use, modification and distribution is subject to the Boost Software
@@ -16,14 +16,14 @@
 
 //  See http://www.boost.org for updates, documentation, and revision history.
 
-#include <cassert>
+#include <boost/assert.hpp>
 
 #include <boost/config.hpp> // for BOOST_DEDUCED_TYPENAME
 #if defined(BOOST_NO_STDC_NAMESPACE)
 namespace std{ using ::memcpy; }
 #endif
 
-#include <boost/pfto.hpp>
+#include <boost/serialization/pfto.hpp>
 
 #include <boost/iterator/iterator_adaptor.hpp>
 #include <boost/iterator/iterator_traits.hpp>
@@ -84,7 +84,7 @@ public:
     // make composible buy using templated constructor
     template<class T>
     insert_linebreaks(BOOST_PFTO_WRAPPER(T)  start) :
-        super_t(Base(BOOST_MAKE_PFTO_WRAPPER(static_cast<T>(start)))),
+        super_t(Base(BOOST_MAKE_PFTO_WRAPPER(static_cast< T >(start)))),
         m_count(0)
     {}
     // intel 7.1 doesn't like default copy constructor

@@ -3,7 +3,7 @@
 /// Contains definitions for the syntax_option_type, match_flag_type and
 /// error_type enumerations.
 //
-//  Copyright 2007 Eric Niebler. Distributed under the Boost
+//  Copyright 2008 Eric Niebler. Distributed under the Boost
 //  Software License, Version 1.0. (See accompanying file
 //  LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 
@@ -232,7 +232,7 @@ enum error_type
                                 ///<
     error_badattr,              ///< Tried to read from an uninitialized attribute.
                                 ///<
-    error_internal              ///< An internal error has occured.
+    error_internal              ///< An internal error has occurred.
                                 ///<
 };
 

@@ -9,13 +9,16 @@
 #ifndef BOOST_TT_IS_BASE_AND_DERIVED_HPP_INCLUDED
 #define BOOST_TT_IS_BASE_AND_DERIVED_HPP_INCLUDED
 
+#include <boost/type_traits/intrinsics.hpp>
+#ifndef BOOST_IS_BASE_OF
 #include <boost/type_traits/is_class.hpp>
 #include <boost/type_traits/is_same.hpp>
 #include <boost/type_traits/is_convertible.hpp>
 #include <boost/type_traits/detail/ice_and.hpp>
-#include <boost/type_traits/remove_cv.hpp>
 #include <boost/config.hpp>
 #include <boost/static_assert.hpp>
+#endif
+#include <boost/type_traits/remove_cv.hpp>
 
 // should be the last #include
 #include <boost/type_traits/detail/bool_trait_def.hpp>
@@ -24,6 +27,7 @@ namespace boost {
 
 namespace detail {
 
+#ifndef BOOST_IS_BASE_OF
 #if !BOOST_WORKAROUND(__BORLANDC__, BOOST_TESTED_AT(0x581)) \
  && !BOOST_WORKAROUND(__SUNPRO_CC , <= 0x540) \
  && !BOOST_WORKAROUND(__EDG_VERSION__, <= 243) \
@@ -129,7 +133,7 @@ struct bd_helper
 template<typename B, typename D>
 struct is_base_and_derived_impl2
 {
-#if BOOST_WORKAROUND(BOOST_MSVC, >= 1400)
+#if BOOST_WORKAROUND(BOOST_MSVC_FULL_VER, >= 140050000)
 #pragma warning(push)
 #pragma warning(disable:6334)
 #endif
@@ -152,7 +156,7 @@ struct is_base_and_derived_impl2
 
     BOOST_STATIC_CONSTANT(bool, value =
         sizeof(bd_helper<B,D>::check_sig(Host(), 0)) == sizeof(type_traits::yes_type));
-#if BOOST_WORKAROUND(BOOST_MSVC, >= 1400)
+#if BOOST_WORKAROUND(BOOST_MSVC_FULL_VER, >= 140050000)
 #pragma warning(pop)
 #endif
 };
@@ -208,13 +212,22 @@ struct is_base_and_derived_impl
     typedef is_base_and_derived_select<
        ::boost::is_class<B>::value,
        ::boost::is_class<D>::value,
-       ::boost::is_same<B,D>::value> selector;
+       ::boost::is_same<ncvB,ncvD>::value> selector;
     typedef typename selector::template rebind<ncvB,ncvD> binder;
     typedef typename binder::type bound_type;
 
     BOOST_STATIC_CONSTANT(bool, value = bound_type::value);
 };
+#else
+template <typename B, typename D>
+struct is_base_and_derived_impl
+{
+    typedef typename remove_cv<B>::type ncvB;
+    typedef typename remove_cv<D>::type ncvD;
 
+    BOOST_STATIC_CONSTANT(bool, value = (BOOST_IS_BASE_OF(B,D) && ! ::boost::is_same<ncvB,ncvD>::value));
+};
+#endif
 } // namespace detail
 
 BOOST_TT_AUX_BOOL_TRAIT_DEF2(
@@ -228,6 +241,10 @@ BOOST_TT_AUX_BOOL_TRAIT_DEF2(
 BOOST_TT_AUX_BOOL_TRAIT_PARTIAL_SPEC2_2(typename Base,typename Derived,is_base_and_derived,Base&,Derived,false)
 BOOST_TT_AUX_BOOL_TRAIT_PARTIAL_SPEC2_2(typename Base,typename Derived,is_base_and_derived,Base,Derived&,false)
 BOOST_TT_AUX_BOOL_TRAIT_PARTIAL_SPEC2_2(typename Base,typename Derived,is_base_and_derived,Base&,Derived&,false)
+#endif
+
+#if BOOST_WORKAROUND(__CODEGEARC__, BOOST_TESTED_AT(0x610))
+BOOST_TT_AUX_BOOL_TRAIT_PARTIAL_SPEC2_1(typename Base,is_base_and_derived,Base,Base,false)
 #endif
 
 } // namespace boost

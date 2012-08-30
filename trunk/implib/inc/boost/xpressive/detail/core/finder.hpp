@@ -1,6 +1,6 @@
 /// Contains the definition of the basic_regex\<\> class template and its associated helper functions.
 //
-//  Copyright 2007 Eric Niebler. Distributed under the Boost
+//  Copyright 2008 Eric Niebler. Distributed under the Boost
 //  Software License, Version 1.0. (See accompanying file
 //  LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 
@@ -43,8 +43,8 @@ struct boyer_moore_finder
 
     bool operator ()(match_state<BidiIter> &state) const
     {
-        Traits const &traits = traits_cast<Traits>(state);
-        state.cur_ = this->bm_.find(state.cur_, state.end_, traits);
+        Traits const &tr = traits_cast<Traits>(state);
+        state.cur_ = this->bm_.find(state.cur_, state.end_, tr);
         return state.cur_ != state.end_;
     }
 
@@ -71,10 +71,10 @@ struct hash_peek_finder
 
     bool operator ()(match_state<BidiIter> &state) const
     {
-        Traits const &traits = traits_cast<Traits>(state);
+        Traits const &tr = traits_cast<Traits>(state);
         state.cur_ = (this->bset_.icase()
-            ? this->find_(state.cur_, state.end_, traits, mpl::true_())
-            : this->find_(state.cur_, state.end_, traits, mpl::false_()));
+            ? this->find_(state.cur_, state.end_, tr, mpl::true_())
+            : this->find_(state.cur_, state.end_, tr, mpl::false_()));
         return state.cur_ != state.end_;
     }
 
@@ -83,9 +83,9 @@ private:
     hash_peek_finder &operator =(hash_peek_finder const &);
 
     template<typename ICase>
-    BidiIter find_(BidiIter begin, BidiIter end, Traits const &traits, ICase) const
+    BidiIter find_(BidiIter begin, BidiIter end, Traits const &tr, ICase) const
     {
-        for(; begin != end && !this->bset_.test(*begin, traits, ICase()); ++begin)
+        for(; begin != end && !this->bset_.test(*begin, tr, ICase()); ++begin)
             ;
         return begin;
     }
@@ -104,8 +104,8 @@ struct line_start_finder
     typedef typename iterator_difference<BidiIter>::type diff_type;
     typedef typename Traits::char_class_type char_class_type;
 
-    line_start_finder(Traits const &traits)
-      : newline_(lookup_classname(traits, "newline"))
+    line_start_finder(Traits const &tr)
+      : newline_(lookup_classname(tr, "newline"))
     {
     }
 
@@ -116,14 +116,14 @@ struct line_start_finder
             return true;
         }
 
-        Traits const &traits = traits_cast<Traits>(state);
+        Traits const &tr = traits_cast<Traits>(state);
         BidiIter cur = state.cur_;
         BidiIter const end = state.end_;
         std::advance(cur, static_cast<diff_type>(-!state.bos()));
 
         for(; cur != end; ++cur)
         {
-            if(traits.isctype(*cur, this->newline_))
+            if(tr.isctype(*cur, this->newline_))
             {
                 state.cur_ = ++cur;
                 return true;
@@ -151,12 +151,12 @@ struct line_start_finder<BidiIter, Traits, 1u>
     typedef typename iterator_difference<BidiIter>::type diff_type;
     typedef typename Traits::char_class_type char_class_type;
 
-    line_start_finder(Traits const &traits)
+    line_start_finder(Traits const &tr)
     {
-        char_class_type newline = lookup_classname(traits, "newline");
+        char_class_type newline = lookup_classname(tr, "newline");
         for(int j = 0; j < 256; ++j)
         {
-            this->bits_[j] = traits.isctype(static_cast<char_type>(static_cast<unsigned char>(j)), newline);
+            this->bits_[j] = tr.isctype(static_cast<char_type>(static_cast<unsigned char>(j)), newline);
         }
     }
 
@@ -188,6 +188,28 @@ private:
     line_start_finder &operator =(line_start_finder const &);
 
     bool bits_[256];
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// leading_simple_repeat_finder
+//
+template<typename BidiIter>
+struct leading_simple_repeat_finder
+  : finder<BidiIter>
+{
+    leading_simple_repeat_finder()
+      : finder<BidiIter>()
+    {}
+
+    bool operator ()(match_state<BidiIter> &state) const
+    {
+        state.cur_ = state.next_search_;
+        return true;
+    }
+
+private:
+    leading_simple_repeat_finder(leading_simple_repeat_finder const &);
+    leading_simple_repeat_finder &operator =(leading_simple_repeat_finder const &);
 };
 
 }}}

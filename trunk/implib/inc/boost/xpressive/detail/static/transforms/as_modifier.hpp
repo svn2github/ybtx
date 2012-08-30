@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // as_modifier.hpp
 //
-//  Copyright 2007 Eric Niebler. Distributed under the Boost
+//  Copyright 2008 Eric Niebler. Distributed under the Boost
 //  Software License, Version 1.0. (See accompanying file
 //  LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 
@@ -16,58 +16,70 @@
 #include <boost/mpl/sizeof.hpp>
 #include <boost/xpressive/detail/detail_fwd.hpp>
 #include <boost/xpressive/detail/static/static.hpp>
-#include <boost/xpressive/proto/proto.hpp>
-#include <boost/xpressive/proto/transform/arg.hpp>
+#include <boost/proto/core.hpp>
+
+#define UNCV(x) typename remove_const<x>::type
+#define UNREF(x) typename remove_reference<x>::type
+#define UNCVREF(x) UNCV(UNREF(x))
 
 namespace boost { namespace xpressive { namespace detail
 {
-
     ///////////////////////////////////////////////////////////////////////////////
     // regex operator tags
     struct modifier_tag
-    {
-    };
+    {};
 
-    ///////////////////////////////////////////////////////////////////////////////
-    // scoped_swap
-    //  for swapping state back after proto::compile returns
-    template<typename Old, typename New>
-    struct scoped_swap
-    {
-        ~scoped_swap() { this->old_->swap(*this->new_); }
-        Old *old_;
-        New *new_;
-    };
+}}}
+
+namespace boost { namespace xpressive { namespace grammar_detail
+{
 
     ///////////////////////////////////////////////////////////////////////////////
     // as_modifier
-    template<typename Grammar>
-    struct as_modifier
-      : Grammar
+    template<typename Grammar, typename Callable = proto::callable>
+    struct as_modifier : proto::transform<as_modifier<Grammar, Callable> >
     {
-        as_modifier();
-
-        template<typename Expr, typename State, typename Visitor>
-        struct apply
+        template<typename Expr, typename State, typename Data>
+        struct impl : proto::transform_impl<Expr, State, Data>
         {
-            typedef typename proto::result_of::arg<typename proto::result_of::left<Expr>::type>::type modifier_type;
-            typedef typename modifier_type::BOOST_NESTED_TEMPLATE apply<Visitor>::type visitor_type;
-            typedef typename proto::transform::right<Grammar>::template apply<Expr, State, visitor_type>::type type;
+            typedef
+                typename proto::result_of::value<
+                    typename proto::result_of::left<typename impl::expr>::type
+                >::type
+            modifier_type;
+
+            typedef
+                typename modifier_type::template apply<typename impl::data>::type
+            visitor_type;
+
+            typedef
+                typename proto::result_of::right<Expr>::type
+            expr_type;
+
+            typedef
+                typename Grammar::template impl<expr_type, State, visitor_type &>::result_type
+            result_type;
+
+            result_type operator ()(
+                typename impl::expr_param expr
+              , typename impl::state_param state
+              , typename impl::data_param data
+            ) const
+            {
+                visitor_type new_visitor(proto::value(proto::left(expr)).call(data));
+                return typename Grammar::template impl<expr_type, State, visitor_type &>()(
+                    proto::right(expr)
+                  , state
+                  , new_visitor
+                );
+            }
         };
-
-        template<typename Expr, typename State, typename Visitor>
-        static typename apply<Expr, State, Visitor>::type
-        call(Expr const &expr, State const &state, Visitor &visitor)
-        {
-            typedef typename apply<Expr, State, Visitor>::visitor_type new_visitor_type;
-            new_visitor_type new_visitor(proto::arg(proto::left(expr)).call(visitor));
-            new_visitor.swap(visitor);
-            scoped_swap<Visitor, new_visitor_type> const undo = {&visitor, &new_visitor};
-            detail::ignore_unused(undo);
-            return proto::transform::right<Grammar>::call(expr, state, new_visitor);
-        }
     };
 
 }}}
+
+#undef UNCV
+#undef UNREF
+#undef UNCVREF
 
 #endif

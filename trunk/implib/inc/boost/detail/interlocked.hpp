@@ -54,11 +54,27 @@ extern "C" long __cdecl InterlockedExchangeAdd( long*, long );
 
 #elif defined( BOOST_MSVC ) || defined( BOOST_INTEL_WIN )
 
+#if defined( BOOST_MSVC ) && BOOST_MSVC >= 1600
+
+#include <intrin.h>
+
+#elif defined( __CLRCALL_PURE_OR_CDECL )
+
+extern "C" long __CLRCALL_PURE_OR_CDECL _InterlockedIncrement( long volatile * );
+extern "C" long __CLRCALL_PURE_OR_CDECL _InterlockedDecrement( long volatile * );
+extern "C" long __CLRCALL_PURE_OR_CDECL _InterlockedCompareExchange( long volatile *, long, long );
+extern "C" long __CLRCALL_PURE_OR_CDECL _InterlockedExchange( long volatile *, long );
+extern "C" long __CLRCALL_PURE_OR_CDECL _InterlockedExchangeAdd( long volatile *, long );
+
+#else
+
 extern "C" long __cdecl _InterlockedIncrement( long volatile * );
 extern "C" long __cdecl _InterlockedDecrement( long volatile * );
 extern "C" long __cdecl _InterlockedCompareExchange( long volatile *, long, long );
-extern "C" long __cdecl _InterlockedExchange( long volatile *, long);
-extern "C" long __cdecl _InterlockedExchangeAdd( long volatile *, long);
+extern "C" long __cdecl _InterlockedExchange( long volatile *, long );
+extern "C" long __cdecl _InterlockedExchangeAdd( long volatile *, long );
+
+#endif
 
 # pragma intrinsic( _InterlockedIncrement )
 # pragma intrinsic( _InterlockedDecrement )
@@ -92,7 +108,14 @@ extern "C" void* __cdecl _InterlockedExchangePointer( void* volatile *, void* );
 # define BOOST_INTERLOCKED_EXCHANGE _InterlockedExchange
 # define BOOST_INTERLOCKED_EXCHANGE_ADD _InterlockedExchangeAdd
 
-#elif defined( WIN32 ) || defined( _WIN32 ) || defined( __WIN32__ )
+#elif defined( WIN32 ) || defined( _WIN32 ) || defined( __WIN32__ ) || defined( __CYGWIN__ )
+
+#if defined(__MINGW64__)
+#define BOOST_INTERLOCKED_IMPORT
+#else
+#define BOOST_INTERLOCKED_IMPORT __declspec(dllimport)
+#endif
+
 
 namespace boost
 {
@@ -100,11 +123,16 @@ namespace boost
 namespace detail
 {
 
-extern "C" __declspec(dllimport) long __stdcall InterlockedIncrement( long volatile * );
-extern "C" __declspec(dllimport) long __stdcall InterlockedDecrement( long volatile * );
-extern "C" __declspec(dllimport) long __stdcall InterlockedCompareExchange( long volatile *, long, long );
-extern "C" __declspec(dllimport) long __stdcall InterlockedExchange( long volatile *, long );
-extern "C" __declspec(dllimport) long __stdcall InterlockedExchangeAdd( long volatile *, long );
+extern "C" BOOST_INTERLOCKED_IMPORT long __stdcall InterlockedIncrement( long volatile * );
+extern "C" BOOST_INTERLOCKED_IMPORT long __stdcall InterlockedDecrement( long volatile * );
+extern "C" BOOST_INTERLOCKED_IMPORT long __stdcall InterlockedCompareExchange( long volatile *, long, long );
+extern "C" BOOST_INTERLOCKED_IMPORT long __stdcall InterlockedExchange( long volatile *, long );
+extern "C" BOOST_INTERLOCKED_IMPORT long __stdcall InterlockedExchangeAdd( long volatile *, long );
+
+# if defined(_M_IA64) || defined(_M_AMD64)
+extern "C" BOOST_INTERLOCKED_IMPORT void* __stdcall InterlockedCompareExchangePointer( void* volatile *, void*, void* );
+extern "C" BOOST_INTERLOCKED_IMPORT void* __stdcall InterlockedExchangePointer( void* volatile *, void* );
+# endif
 
 } // namespace detail
 
@@ -116,10 +144,15 @@ extern "C" __declspec(dllimport) long __stdcall InterlockedExchangeAdd( long vol
 # define BOOST_INTERLOCKED_EXCHANGE ::boost::detail::InterlockedExchange
 # define BOOST_INTERLOCKED_EXCHANGE_ADD ::boost::detail::InterlockedExchangeAdd
 
-# define BOOST_INTERLOCKED_COMPARE_EXCHANGE_POINTER(dest,exchange,compare) \
+# if defined(_M_IA64) || defined(_M_AMD64)
+#  define BOOST_INTERLOCKED_COMPARE_EXCHANGE_POINTER ::boost::detail::InterlockedCompareExchangePointer
+#  define BOOST_INTERLOCKED_EXCHANGE_POINTER ::boost::detail::InterlockedExchangePointer
+# else
+#  define BOOST_INTERLOCKED_COMPARE_EXCHANGE_POINTER(dest,exchange,compare) \
     ((void*)BOOST_INTERLOCKED_COMPARE_EXCHANGE((long volatile*)(dest),(long)(exchange),(long)(compare)))
-# define BOOST_INTERLOCKED_EXCHANGE_POINTER(dest,exchange) \
+#  define BOOST_INTERLOCKED_EXCHANGE_POINTER(dest,exchange) \
     ((void*)BOOST_INTERLOCKED_EXCHANGE((long volatile*)(dest),(long)(exchange)))
+# endif
 
 #else
 

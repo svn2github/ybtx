@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // logical_newline_matcher.hpp
 //
-//  Copyright 2007 Eric Niebler. Distributed under the Boost
+//  Copyright 2008 Eric Niebler. Distributed under the Boost
 //  Software License, Version 1.0. (See accompanying file
 //  LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 
@@ -30,10 +30,10 @@ namespace boost { namespace xpressive { namespace detail
         typedef typename Traits::char_type char_type;
         typedef typename Traits::char_class_type char_class_type;
 
-        logical_newline_matcher(Traits const &traits)
-          : newline_(lookup_classname(traits, "newline"))
-          , nl_(traits.widen('\n'))
-          , cr_(traits.widen('\r'))
+        logical_newline_matcher(Traits const &tr)
+          : newline_(lookup_classname(tr, "newline"))
+          , nl_(tr.widen('\n'))
+          , cr_(tr.widen('\r'))
         {
         }
 

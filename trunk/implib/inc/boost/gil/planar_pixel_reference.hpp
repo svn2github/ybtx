@@ -5,7 +5,7 @@
     Version 1.0. (See accompanying file LICENSE_1_0.txt or copy at
     http://www.boost.org/LICENSE_1_0.txt).
 
-    See http://opensource.adobe.com/gil for most recent version including documentation.
+    See http://stlab.adobe.com/gil for most recent version including documentation.
 */
 
 /*************************************************************************************************/
@@ -78,6 +78,18 @@ public:
 
     const planar_pixel_reference&                             operator=(const planar_pixel_reference& p)  const { static_copy(p,*this); return *this; }
     template <typename P> const planar_pixel_reference&       operator=(const P& p)           const { check_compatible<P>(); static_copy(p,*this); return *this; }
+
+// This overload is necessary for a compiler implementing Core Issue 574
+// to prevent generation of an implicit copy assignment operator (the reason
+// for generating implicit copy assignment operator is that according to
+// Core Issue 574, a cv-qualified assignment operator is not considered
+// "copy assignment operator").
+// EDG implemented Core Issue 574 starting with EDG Version 3.8. I'm not
+// sure why they did it for a template member function as well.
+#if BOOST_WORKAROUND(__HP_aCC, >= 61700) || BOOST_WORKAROUND(__INTEL_COMPILER, >= 1000)
+    const planar_pixel_reference& operator=(const planar_pixel_reference& p) { static_copy(p,*this); return *this; }
+    template <typename P> const planar_pixel_reference& operator=(const P& p) { check_compatible<P>(); static_copy(p,*this); return *this; }
+#endif
 
     template <typename P> bool                    operator==(const P& p)    const { check_compatible<P>(); return static_equal(*this,p); }
     template <typename P> bool                    operator!=(const P& p)    const { return !(*this==p); }
@@ -162,7 +174,7 @@ namespace std {
 /// \brief  swap for planar_pixel_reference
 /// \ingroup PixelModelPlanarRef
 template <typename CR, typename CS, typename R> inline
-void swap(boost::gil::planar_pixel_reference<CR,CS> x, R& y) { 
+void swap(const boost::gil::planar_pixel_reference<CR,CS> x, R& y) { 
     boost::gil::swap_proxy<typename boost::gil::planar_pixel_reference<CR,CS>::value_type>(x,y); 
 }
 
@@ -170,7 +182,7 @@ void swap(boost::gil::planar_pixel_reference<CR,CS> x, R& y) {
 /// \brief  swap for planar_pixel_reference
 /// \ingroup PixelModelPlanarRef
 template <typename CR, typename CS> inline
-void swap(typename boost::gil::planar_pixel_reference<CR,CS>::value_type& x, boost::gil::planar_pixel_reference<CR,CS> y) { 
+void swap(typename boost::gil::planar_pixel_reference<CR,CS>::value_type& x, const boost::gil::planar_pixel_reference<CR,CS> y) { 
     boost::gil::swap_proxy<typename boost::gil::planar_pixel_reference<CR,CS>::value_type>(x,y); 
 }
 
@@ -178,7 +190,7 @@ void swap(typename boost::gil::planar_pixel_reference<CR,CS>::value_type& x, boo
 /// \brief  swap for planar_pixel_reference
 /// \ingroup PixelModelPlanarRef
 template <typename CR, typename CS> inline
-void swap(boost::gil::planar_pixel_reference<CR,CS> x, boost::gil::planar_pixel_reference<CR,CS> y) { 
+void swap(const boost::gil::planar_pixel_reference<CR,CS> x, const boost::gil::planar_pixel_reference<CR,CS> y) { 
     boost::gil::swap_proxy<typename boost::gil::planar_pixel_reference<CR,CS>::value_type>(x,y); 
 }
 }   // namespace std

@@ -17,26 +17,28 @@
 //  See http://www.boost.org for updates, documentation, and revision history.
 
 #include <locale>
-#include <cstddef>
-
+#include <cstddef> // NULL, size_t
+#include <cwchar>   // for mbstate_t
 #include <boost/config.hpp>
 #include <boost/archive/detail/auto_link_archive.hpp>
+#include <boost/archive/detail/abi_prefix.hpp> // must be the last header
 
-namespace std{
-    #if defined(__LIBCOMO__)
-        using ::mbstate_t;
-    #elif defined(__QNXNTO__)
-        //using std::mbstate_t;
-    #elif defined(BOOST_DINKUMWARE_STDLIB) && BOOST_DINKUMWARE_STDLIB == 1
-        using ::mbstate_t;
-    #elif defined(__SGI_STL_PORT)
-    #elif defined(BOOST_NO_STDC_NAMESPACE)
-        using ::codecvt;
-        using ::mbstate_t;
-    #elif defined(BOOST_RWSTD_VER)
-        using ::mbstate_t;
-   #endif
-} // namespace std
+#if defined(BOOST_NO_STDC_NAMESPACE)
+namespace std {
+// For STLport on WinCE, BOOST_NO_STDC_NAMESPACE can get defined if STLport is putting symbols in its own namespace.
+// In the case of codecvt, however, this does not mean that codecvt is in the global namespace (it will be in STLport's namespace)
+#  if !defined(__SGI_STL_PORT) && !defined(_STLPORT_VERSION)
+    using ::codecvt;
+#  endif
+    using ::mbstate_t;
+    using ::size_t;
+} // namespace
+#endif
+
+#ifdef BOOST_MSVC
+#  pragma warning(push)
+#  pragma warning(disable : 4511 4512)
+#endif
 
 namespace boost {
 namespace archive {
@@ -59,7 +61,7 @@ public:
 template<>
 class codecvt_null<wchar_t> : public std::codecvt<wchar_t, char, std::mbstate_t>
 {
-    virtual BOOST_ARCHIVE_DECL(std::codecvt_base::result)
+    virtual BOOST_WARCHIVE_DECL(std::codecvt_base::result)
     do_out(
         std::mbstate_t & state,
         const wchar_t * first1,
@@ -69,7 +71,7 @@ class codecvt_null<wchar_t> : public std::codecvt<wchar_t, char, std::mbstate_t>
         char * last2,
         char * & next2
     ) const;
-    virtual BOOST_ARCHIVE_DECL(std::codecvt_base::result)
+    virtual BOOST_WARCHIVE_DECL(std::codecvt_base::result)
     do_in(
         std::mbstate_t & state,
         const char * first1,
@@ -89,5 +91,10 @@ class codecvt_null<wchar_t> : public std::codecvt<wchar_t, char, std::mbstate_t>
 
 } // namespace archive
 } // namespace boost
+
+#ifdef BOOST_MSVC
+#  pragma warning(pop)
+#endif
+#include <boost/archive/detail/abi_suffix.hpp> // pop pragmas
 
 #endif //BOOST_ARCHIVE_CODECVT_NULL_HPP

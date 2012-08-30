@@ -6,6 +6,10 @@
 #ifndef BOOST_MATH_SF_BINOMIAL_HPP
 #define BOOST_MATH_SF_BINOMIAL_HPP
 
+#ifdef _MSC_VER
+#pragma once
+#endif
+
 #include <boost/math/special_functions/factorials.hpp>
 #include <boost/math/special_functions/beta.hpp>
 #include <boost/math/policies/error_handling.hpp>
@@ -15,6 +19,7 @@ namespace boost{ namespace math{
 template <class T, class Policy>
 T binomial_coefficient(unsigned n, unsigned k, const Policy& pol)
 {
+   BOOST_STATIC_ASSERT(!boost::is_integral<T>::value);
    BOOST_MATH_STD_USING
    static const char* function = "boost::math::binomial_coefficient<%1%>(unsigned, unsigned)";
    if(k > n)
@@ -71,5 +76,6 @@ inline T binomial_coefficient(unsigned n, unsigned k)
 
 
 #endif // BOOST_MATH_SF_BINOMIAL_HPP
+
 
 

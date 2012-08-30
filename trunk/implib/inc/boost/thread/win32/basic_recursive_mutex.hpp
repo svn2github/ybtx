@@ -3,14 +3,21 @@
 
 //  basic_recursive_mutex.hpp
 //
-//  (C) Copyright 2006-7 Anthony Williams 
+//  (C) Copyright 2006-8 Anthony Williams
+//  (C) Copyright 2011-2012 Vicente J. Botet Escriba
 //
 //  Distributed under the Boost Software License, Version 1.0. (See
 //  accompanying file LICENSE_1_0.txt or copy at
 //  http://www.boost.org/LICENSE_1_0.txt)
 
-#include "thread_primitives.hpp"
-#include "basic_timed_mutex.hpp"
+#include <boost/thread/win32/thread_primitives.hpp>
+#include <boost/thread/win32/basic_timed_mutex.hpp>
+#ifdef BOOST_THREAD_USES_CHRONO
+#include <boost/chrono/system_clocks.hpp>
+#include <boost/chrono/ceil.hpp>
+#endif
+
+#include <boost/config/abi_prefix.hpp>
 
 namespace boost
 {
@@ -40,7 +47,7 @@ namespace boost
                 long const current_thread_id=win32::GetCurrentThreadId();
                 return try_recursive_lock(current_thread_id) || try_basic_lock(current_thread_id);
             }
-            
+
             void lock()
             {
                 long const current_thread_id=win32::GetCurrentThreadId();
@@ -62,11 +69,20 @@ namespace boost
                 return timed_lock(get_system_time()+timeout);
             }
 
-            long get_active_count()
-            {
-                return mutex.get_active_count();
-            }
-
+#ifdef BOOST_THREAD_USES_CHRONO
+        template <class Rep, class Period>
+        bool try_lock_for(const chrono::duration<Rep, Period>& rel_time)
+        {
+                long const current_thread_id=win32::GetCurrentThreadId();
+                return try_recursive_lock(current_thread_id) || try_timed_lock_for(current_thread_id,rel_time);
+        }
+        template <class Clock, class Duration>
+        bool try_lock_until(const chrono::time_point<Clock, Duration>& t)
+        {
+                long const current_thread_id=win32::GetCurrentThreadId();
+                return try_recursive_lock(current_thread_id) || try_timed_lock_until(current_thread_id,t);
+        }
+#endif
             void unlock()
             {
                 if(!--recursion_count)
@@ -76,11 +92,6 @@ namespace boost
                 }
             }
 
-            bool locked()
-            {
-                return mutex.locked();
-            }
-            
         private:
             bool try_recursive_lock(long current_thread_id)
             {
@@ -91,7 +102,7 @@ namespace boost
                 }
                 return false;
             }
-            
+
             bool try_basic_lock(long current_thread_id)
             {
                 if(mutex.try_lock())
@@ -102,7 +113,7 @@ namespace boost
                 }
                 return false;
             }
-            
+
             bool try_timed_lock(long current_thread_id,::boost::system_time const& target)
             {
                 if(mutex.timed_lock(target))
@@ -113,7 +124,28 @@ namespace boost
                 }
                 return false;
             }
-            
+            template <typename TP>
+            bool try_timed_lock_until(long current_thread_id,TP const& target)
+            {
+                if(mutex.try_lock_until(target))
+                {
+                    BOOST_INTERLOCKED_EXCHANGE(&locking_thread_id,current_thread_id);
+                    recursion_count=1;
+                    return true;
+                }
+                return false;
+            }
+            template <typename D>
+            bool try_timed_lock_for(long current_thread_id,D const& target)
+            {
+                if(mutex.try_lock_for(target))
+                {
+                    BOOST_INTERLOCKED_EXCHANGE(&locking_thread_id,current_thread_id);
+                    recursion_count=1;
+                    return true;
+                }
+                return false;
+            }
         };
 
         typedef basic_recursive_mutex_impl<basic_timed_mutex> basic_recursive_mutex;
@@ -122,5 +154,7 @@ namespace boost
 }
 
 #define BOOST_BASIC_RECURSIVE_MUTEX_INITIALIZER {0}
+
+#include <boost/config/abi_suffix.hpp>
 
 #endif

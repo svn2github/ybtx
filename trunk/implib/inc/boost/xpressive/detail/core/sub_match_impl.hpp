@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // sub_match_impl.hpp
 //
-//  Copyright 2007 Eric Niebler. Distributed under the Boost
+//  Copyright 2008 Eric Niebler. Distributed under the Boost
 //  Software License, Version 1.0. (See accompanying file
 //  LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 
@@ -33,10 +33,10 @@ struct sub_match_impl
     BidiIter begin_;
     bool zero_width_;
 
-    sub_match_impl()
-      : sub_match<BidiIter>()
+    sub_match_impl(BidiIter const &begin)
+      : sub_match<BidiIter>(begin, begin)
       , repeat_count_(0)
-      , begin_()
+      , begin_(begin)
       , zero_width_(false)
     {
     }

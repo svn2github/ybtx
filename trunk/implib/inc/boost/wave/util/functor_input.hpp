@@ -3,7 +3,7 @@
 
     http://www.boost.org/
 
-    Copyright (c) 2001-2008 Hartmut Kaiser. Distributed under the Boost
+    Copyright (c) 2001-2012 Hartmut Kaiser. Distributed under the Boost
     Software License, Version 1.0. (See accompanying file
     LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 =============================================================================*/
@@ -12,7 +12,7 @@
 #define FUNCTOR_INPUT_HPP_ED3A4C21_8F8A_453F_B438_08214FAC106A_INCLUDED
 
 #include <boost/assert.hpp>
-#include <boost/spirit/iterator/multi_pass.hpp>
+#include <boost/spirit/include/classic_multi_pass.hpp>
 #include <boost/wave/wave_config.hpp>
 
 // this must occur after all of the includes and before any code appears
@@ -62,7 +62,7 @@ struct functor_input {
             value_type curtok;
             bool was_initialized;
         };
-        
+
        // Needed by compilers not implementing the resolution to DR45. For
        // reference, see
        // http://www.open-std.org/JTC1/SC22/WG21/docs/cwg_defects.html#45.
@@ -100,9 +100,9 @@ struct functor_input {
 
         void swap(inner &x)
         {
-            boost::spirit::impl::mp_swap(data, x.data);
+            boost::spirit::classic::impl::mp_swap(data, x.data);
         }
-        
+
         void ensure_initialized() const
         {
             if (data && !data->was_initialized) {
@@ -110,7 +110,7 @@ struct functor_input {
                 data->was_initialized = true;
             }
         }
-        
+
     public:
         reference get_input() const
         {

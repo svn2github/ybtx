@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // regex_matcher.hpp
 //
-//  Copyright 2007 Eric Niebler. Distributed under the Boost
+//  Copyright 2008 Eric Niebler. Distributed under the Boost
 //  Software License, Version 1.0. (See accompanying file
 //  LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 
@@ -42,7 +42,7 @@ namespace boost { namespace xpressive { namespace detail
             this->impl_.mark_count_ = impl->mark_count_;
             this->impl_.hidden_mark_count_ = impl->hidden_mark_count_;
 
-            ensure(this->impl_.xpr_, regex_constants::error_badref, "bad regex reference");
+            BOOST_XPR_ENSURE_(this->impl_.xpr_, regex_constants::error_badref, "bad regex reference");
         }
 
         template<typename Next>

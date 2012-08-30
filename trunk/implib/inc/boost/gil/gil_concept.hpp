@@ -35,7 +35,7 @@ namespace boost { namespace gil {
 template <typename T> struct channel_traits;
 template <typename P> struct is_pixel;
 template <typename dstT, typename srcT>
-typename channel_traits<dstT>::value_type channel_convert(srcT val);
+typename channel_traits<dstT>::value_type channel_convert(const srcT& val);
 template <typename T> class point2;
 template <std::size_t K, typename T> const T& axis_value(const point2<T>& p);
 template <std::size_t K, typename T>       T& axis_value(      point2<T>& p);
@@ -702,8 +702,8 @@ struct HomogeneousColorBaseConcept {
         typedef typename kth_element_type<ColorBase,num_elements-1>::type TN; 
 
         BOOST_STATIC_ASSERT((is_same<T0,TN>::value));   // better than nothing
-        typedef typename kth_element_const_reference_type<ColorBase,0>::type CR0; 
-        CR0 e0=dynamic_at_c(cb,0);
+        typedef typename kth_element_const_reference_type<ColorBase,0>::type CRef0; 
+        CRef0 e0=dynamic_at_c(cb,0);
     }
     ColorBase cb;
 };

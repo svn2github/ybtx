@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // as_matcher.hpp
 //
-//  Copyright 2007 Eric Niebler. Distributed under the Boost
+//  Copyright 2008 Eric Niebler. Distributed under the Boost
 //  Software License, Version 1.0. (See accompanying file
 //  LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 
@@ -14,32 +14,33 @@
 #endif
 
 #include <boost/mpl/assert.hpp>
-#include <boost/type_traits/is_same.hpp>
 #include <boost/xpressive/detail/detail_fwd.hpp>
 #include <boost/xpressive/detail/static/static.hpp>
 
-namespace boost { namespace xpressive { namespace detail
+namespace boost { namespace xpressive { namespace grammar_detail
 {
-
-    template<typename Grammar>
-    struct as_matcher
-      : Grammar
+    struct as_matcher : proto::transform<as_matcher>
     {
-        as_matcher();
-
-        template<typename Expr, typename State, typename Visitor>
-        struct apply
-          : Visitor::template apply<
-                typename proto::result_of::arg<Expr>::type
-            >
-        {};
-
-        template<typename Expr, typename State, typename Visitor>
-        static typename apply<Expr, State, Visitor>::type
-        call(Expr const &expr, State const &, Visitor &visitor)
+        template<typename Expr, typename State, typename Data>
+        struct impl : proto::transform_impl<Expr, State, Data>
         {
-            return visitor.call(proto::arg(expr));
-        }
+            typedef typename impl::data data_type;
+
+            typedef
+                typename data_type::template apply<
+                    typename proto::result_of::value<typename impl::expr>::type
+                >::type
+            result_type;
+
+            result_type operator ()(
+                typename impl::expr_param expr
+              , typename impl::state_param
+              , typename impl::data_param data
+            ) const
+            {
+                return data.call(proto::value(expr));
+            }
+        };
     };
 
 }}}

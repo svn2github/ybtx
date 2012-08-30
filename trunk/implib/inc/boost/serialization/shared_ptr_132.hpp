@@ -23,17 +23,16 @@
 #include <boost/config.hpp>
 
 #include <list>
+#include <cstddef> // NULL
 
-#include <boost/serialization/detail/shared_ptr_132.hpp>
-
-#include <boost/serialization/is_abstract.hpp>
+#include <boost/serialization/assume_abstract.hpp>
 #include <boost/serialization/split_free.hpp>
 #include <boost/serialization/nvp.hpp>
 #include <boost/serialization/tracking.hpp>
 #include <boost/serialization/void_cast.hpp>
 
 // mark base class as an (uncreatable) base class
-BOOST_IS_ABSTRACT(boost_132::detail::sp_counted_base)
+#include <boost/serialization/detail/shared_ptr_132.hpp>
 
 /////////////////////////////////////////////////////////////
 // Maintain a couple of lists of loaded shared pointers of the old previous
@@ -77,8 +76,9 @@ inline void serialize(
 template<class Archive, class P, class D>
 inline void save_construct_data(
     Archive & ar,
-    const boost_132::detail::sp_counted_base_impl<P, D> *t, 
-    const unsigned int /* file_version */
+    const 
+    boost_132::detail::sp_counted_base_impl<P, D> *t, 
+    const BOOST_PFTO unsigned int /* file_version */
 ){
     // variables used for construction
     ar << boost::serialization::make_nvp("ptr", t->ptr);
@@ -147,7 +147,7 @@ inline void load(
 BOOST_SERIALIZATION_SPLIT_FREE(boost_132::detail::shared_count)
 
 /////////////////////////////////////////////////////////////
-// implement serialization for shared_ptr<T>
+// implement serialization for shared_ptr< T >
 
 namespace boost { 
 namespace serialization {
@@ -155,13 +155,13 @@ namespace serialization {
 template<class Archive, class T>
 inline void save(
     Archive & ar,
-    const boost_132::shared_ptr<T> &t,
+    const boost_132::shared_ptr< T > &t,
     const unsigned int /* file_version */
 ){
     // only the raw pointer has to be saved
     // the ref count is maintained automatically as shared pointers are loaded
     ar.register_type(static_cast<
-        boost_132::detail::sp_counted_base_impl<T *, boost::checked_deleter<T> > *
+        boost_132::detail::sp_counted_base_impl<T *, boost::checked_deleter< T > > *
     >(NULL));
     ar << boost::serialization::make_nvp("px", t.px);
     ar << boost::serialization::make_nvp("pn", t.pn);
@@ -170,13 +170,13 @@ inline void save(
 template<class Archive, class T>
 inline void load(
     Archive & ar,
-    boost_132::shared_ptr<T> &t,
+    boost_132::shared_ptr< T > &t,
     const unsigned int /* file_version */
 ){
     // only the raw pointer has to be saved
     // the ref count is maintained automatically as shared pointers are loaded
     ar.register_type(static_cast<
-        boost_132::detail::sp_counted_base_impl<T *, boost::checked_deleter<T> > *
+        boost_132::detail::sp_counted_base_impl<T *, boost::checked_deleter< T > > *
     >(NULL));
     ar >> boost::serialization::make_nvp("px", t.px);
     ar >> boost::serialization::make_nvp("pn", t.pn);
@@ -185,13 +185,13 @@ inline void load(
 template<class Archive, class T>
 inline void serialize(
     Archive & ar,
-    boost_132::shared_ptr<T> &t,
+    boost_132::shared_ptr< T > &t,
     const unsigned int file_version
 ){
     // correct shared_ptr serialization depends upon object tracking
     // being used.
     BOOST_STATIC_ASSERT(
-        boost::serialization::tracking_level<T>::value
+        boost::serialization::tracking_level< T >::value
         != boost::serialization::track_never
     );
     boost::serialization::split_free(ar, t, file_version);
@@ -209,7 +209,7 @@ inline void serialize(
         boost::checked_deleter< T >                                \
     > __shared_ptr_ ## T;                                          \
     BOOST_CLASS_EXPORT_GUID(__shared_ptr_ ## T, "__shared_ptr_" K) \
-    BOOST_CLASS_EXPORT_GUID_1(T, K)                                \
+    BOOST_CLASS_EXPORT_GUID(T, K)                                  \
     /**/
 
 #define BOOST_SHARED_POINTER_EXPORT(T)                             \

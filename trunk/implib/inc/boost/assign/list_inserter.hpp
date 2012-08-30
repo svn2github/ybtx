@@ -40,7 +40,7 @@ namespace assign_detail
         std::size_t  sz;
         T            val;
 
-        repeater( std::size_t sz, T r ) : sz( sz ), val( r )
+        repeater( std::size_t sz_, T r ) : sz( sz_ ), val( r )
         { }
     };
     
@@ -50,7 +50,7 @@ namespace assign_detail
         std::size_t  sz;
         Fun          val;
         
-        fun_repeater( std::size_t sz, Fun r ) : sz( sz ), val( r )
+        fun_repeater( std::size_t sz_, Fun r ) : sz( sz_ ), val( r )
         { }
     };
     
@@ -203,10 +203,6 @@ namespace assign
         template< class Nullary_function >
         list_inserter& operator=( const assign_detail::fun_repeater<Nullary_function>& r )
         {
-            //BOOST_STATIC_ASSERT( function_traits<Nullary_function>::arity == 0 );
-            //BOOST_STATIC_ASSERT( is_convertible< BOOST_DEDUCED_TYPENAME function_traits<
-            //                      Nullary_function>::result_type >,T>::value );
-
             return operator,( r );
         }
         

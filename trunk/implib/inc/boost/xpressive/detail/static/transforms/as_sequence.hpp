@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // as_sequence.hpp
 //
-//  Copyright 2007 Eric Niebler. Distributed under the Boost
+//  Copyright 2008 Eric Niebler. Distributed under the Boost
 //  Software License, Version 1.0. (See accompanying file
 //  LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 
@@ -18,33 +18,33 @@
 #include <boost/xpressive/detail/detail_fwd.hpp>
 #include <boost/xpressive/detail/static/static.hpp>
 
-namespace boost { namespace xpressive { namespace detail
+namespace boost { namespace xpressive { namespace grammar_detail
 {
-
-    template<typename Grammar>
-    struct in_sequence
-      : Grammar
+    template<typename Grammar, typename Callable = proto::callable>
+    struct in_sequence : proto::transform<in_sequence<Grammar, Callable> >
     {
-        in_sequence();
-
-        template<typename Expr, typename State, typename Visitor>
-        struct apply
+        template<typename Expr, typename State, typename Data>
+        struct impl : proto::transform_impl<Expr, State, Data>
         {
-            typedef static_xpression<
-                typename Grammar::template apply<Expr, State, Visitor>::type
-              , State
-            > type;
+            typedef
+                detail::static_xpression<
+                    typename Grammar::template impl<Expr, State, Data>::result_type
+                  , State
+                >
+            result_type;
+
+            result_type operator ()(
+                typename impl::expr_param expr
+              , typename impl::state_param state
+              , typename impl::data_param data
+            ) const
+            {
+                return result_type(
+                    typename Grammar::template impl<Expr, State, Data>()(expr, state, data)
+                  , state
+                );
+            }
         };
-
-        template<typename Expr, typename State, typename Visitor>
-        static typename apply<Expr, State, Visitor>::type
-        call(Expr const &expr, State const &state, Visitor &visitor)
-        {
-            return typename apply<Expr, State, Visitor>::type(
-                Grammar::call(expr, state, visitor)
-              , state
-            );
-        }
     };
 
 }}}

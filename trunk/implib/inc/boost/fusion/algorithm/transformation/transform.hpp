@@ -1,5 +1,5 @@
 /*=============================================================================
-    Copyright (c) 2001-2006 Joel de Guzman
+    Copyright (c) 2001-2011 Joel de Guzman
 
     Distributed under the Boost Software License, Version 1.0. (See accompanying 
     file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
@@ -22,7 +22,7 @@ namespace boost { namespace fusion
         };
 
         template <typename Sequence, typename F>
-#if defined(BOOST_PARTIAL_SPECIALIZATION_EXPLICT_ARGS)
+#if defined(BOOST_NO_PARTIAL_SPECIALIZATION_IMPLICIT_DEFAULT_ARGS)
         struct transform<Sequence, F, void_>
 #else
         struct transform<Sequence, F>

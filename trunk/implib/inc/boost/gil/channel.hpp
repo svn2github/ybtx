@@ -5,7 +5,7 @@
     Version 1.0. (See accompanying file LICENSE_1_0.txt or copy at
     http://www.boost.org/LICENSE_1_0.txt).
 
-    See http://opensource.adobe.com/gil for most recent version including documentation.
+    See http://stlab.adobe.com/gil for most recent version including documentation.
 */
 
 /*************************************************************************************************/
@@ -155,6 +155,8 @@ struct scoped_channel_value {
     typedef const value_type*       const_pointer;
     BOOST_STATIC_CONSTANT(bool, is_mutable=channel_traits<BaseChannelValue>::is_mutable);
 
+    typedef BaseChannelValue base_channel_t;
+
     static value_type min_value() { return MinVal::apply(); }
     static value_type max_value() { return MaxVal::apply(); }
 
@@ -206,6 +208,18 @@ namespace detail {
                     >::type
             >::type
           > {};
+
+    template <int NumBits>
+    struct num_value_fn : public mpl::if_c< ( NumBits < 32 )
+                                          , uint32_t
+                                          , uint64_t
+                                          > {};
+
+    template <int NumBits>
+    struct max_value_fn : public mpl::if_c< ( NumBits <= 32 )
+                                          , uint32_t
+                                          , uint64_t
+                                          > {};
 }
 
 /**
@@ -228,9 +242,13 @@ BOOST_STATIC_ASSERT((boost::is_integral<bits4>::value));
 /// \brief The value of a subbyte channel. Models: ChannelValueConcept
 template <int NumBits>
 class packed_channel_value {
-    static const std::size_t num_values = 1<<NumBits;
+
+    typedef  typename detail::num_value_fn< NumBits >::type num_value_t;
+    static const num_value_t num_values = static_cast< num_value_t >( 1 ) << NumBits ;
+   
 public:
     typedef typename detail::min_fast_uint<NumBits>::type integer_t;
+
 
     typedef packed_channel_value   value_type;
     typedef value_type&            reference;
@@ -243,9 +261,12 @@ public:
     BOOST_STATIC_CONSTANT(bool, is_mutable=true);
 
     packed_channel_value() {}
-    packed_channel_value(integer_t v) : _value(v % num_values) {}
+    packed_channel_value(integer_t v) { _value = static_cast< integer_t >( v % num_values ); }
     packed_channel_value(const packed_channel_value& v) : _value(v._value) {}
-    template <typename Scalar> packed_channel_value(Scalar v) : _value(integer_t(v) % num_values) {}     // suppress GCC implicit conversion warnings in channel regression file 
+    template <typename Scalar> packed_channel_value(Scalar v) { _value = static_cast< integer_t >( v ) % num_values; }
+
+    static unsigned int num_bits() { return NumBits; }
+
 
     operator integer_t() const { return _value; }
 private:
@@ -256,15 +277,15 @@ namespace detail {
 
 template <std::size_t K>
 struct static_copy_bytes {
-	void operator()(const unsigned char* from, unsigned char* to) const {
-		*to = *from;
-		static_copy_bytes<K-1>()(++from,++to);
-	}
+    void operator()(const unsigned char* from, unsigned char* to) const {
+        *to = *from;
+        static_copy_bytes<K-1>()(++from,++to);
+    }
 };
 
 template <>
 struct static_copy_bytes<0> {
-	void operator()(const unsigned char* from, unsigned char* to) const {}
+    void operator()(const unsigned char* , unsigned char*) const {}
 };
 
 template <typename Derived, typename BitField, int NumBits, bool Mutable>
@@ -305,20 +326,25 @@ public:
     operator integer_t() const { return get(); }
     data_ptr_t operator &() const {return _data_ptr;}
 protected:
-    static const integer_t max_val    = (1<<NumBits) - 1;
 
+    typedef  typename detail::num_value_fn< NumBits >::type num_value_t;
+    typedef  typename detail::max_value_fn< NumBits >::type max_value_t;
+    
+    static const num_value_t num_values = static_cast< num_value_t >( 1 ) << NumBits ;
+    static const max_value_t max_val    = static_cast< max_value_t >( num_values - 1 );
+    
 #ifdef GIL_NONWORD_POINTER_ALIGNMENT_SUPPORTED
-	const bitfield_t& get_data()                      const { return *static_cast<const bitfield_t*>(_data_ptr); }
-	void              set_data(const bitfield_t& val) const {        *static_cast<      bitfield_t*>(_data_ptr) = val; }
+    const bitfield_t& get_data()                      const { return *static_cast<const bitfield_t*>(_data_ptr); }
+    void              set_data(const bitfield_t& val) const {        *static_cast<      bitfield_t*>(_data_ptr) = val; }
 #else
-	bitfield_t get_data() const {
-		bitfield_t ret;
-		static_copy_bytes<sizeof(bitfield_t) >()(gil_reinterpret_cast_c<const unsigned char*>(_data_ptr),gil_reinterpret_cast<unsigned char*>(&ret));
-		return ret;
-	}
-	void set_data(const bitfield_t& val) const {
-		static_copy_bytes<sizeof(bitfield_t) >()(gil_reinterpret_cast_c<const unsigned char*>(&val),gil_reinterpret_cast<unsigned char*>(_data_ptr));
-	}
+    bitfield_t get_data() const {
+        bitfield_t ret;
+        static_copy_bytes<sizeof(bitfield_t) >()(gil_reinterpret_cast_c<const unsigned char*>(_data_ptr),gil_reinterpret_cast<unsigned char*>(&ret));
+        return ret;
+    }
+    void set_data(const bitfield_t& val) const {
+        static_copy_bytes<sizeof(bitfield_t) >()(gil_reinterpret_cast_c<const unsigned char*>(&val),gil_reinterpret_cast<unsigned char*>(_data_ptr));
+    }
 #endif
 
 private:
@@ -365,7 +391,8 @@ class packed_channel_reference<BitField,FirstBit,NumBits,false>
     typedef detail::packed_channel_reference_base<packed_channel_reference<BitField,FirstBit,NumBits,false>,BitField,NumBits,false> parent_t;
     friend class packed_channel_reference<BitField,FirstBit,NumBits,true>;
 
-    static const BitField channel_mask = parent_t::max_val<<FirstBit;
+    static const BitField channel_mask = static_cast< BitField >( parent_t::max_val ) << FirstBit;
+
     void operator=(const packed_channel_reference&);
 public:
     typedef const packed_channel_reference<BitField,FirstBit,NumBits,false> const_reference;
@@ -389,7 +416,8 @@ class packed_channel_reference<BitField,FirstBit,NumBits,true>
     typedef detail::packed_channel_reference_base<packed_channel_reference<BitField,FirstBit,NumBits,true>,BitField,NumBits,true> parent_t;
     friend class packed_channel_reference<BitField,FirstBit,NumBits,false>;
 
-    static const BitField channel_mask = parent_t::max_val<<FirstBit;
+    static const BitField channel_mask = static_cast< BitField >( parent_t::max_val ) << FirstBit;
+
 public:
     typedef const packed_channel_reference<BitField,FirstBit,NumBits,false> const_reference;
     typedef const packed_channel_reference<BitField,FirstBit,NumBits,true>  mutable_reference;
@@ -407,8 +435,8 @@ public:
 
     unsigned first_bit() const { return FirstBit; }
 
-    integer_t get()                               const { return integer_t((this->get_data()&channel_mask) >> FirstBit); }
-    void set_unsafe(integer_t value)              const { this->set_data((this->get_data() & ~channel_mask) | (value<<FirstBit)); }
+    integer_t get()                  const { return integer_t((this->get_data()&channel_mask) >> FirstBit); }
+    void set_unsafe(integer_t value) const { this->set_data((this->get_data() & ~channel_mask) | (( static_cast< BitField >( value )<<FirstBit))); }
 private:
     void set_from_reference(const BitField& other_bits) const { this->set_data((this->get_data() & ~channel_mask) | (other_bits & channel_mask)); }
 };
@@ -425,7 +453,7 @@ namespace std {
 /// \ingroup PackedChannelReferenceModel
 /// \brief swap for packed_channel_reference
 template <typename BF, int FB, int NB, bool M, typename R> inline
-void swap(boost::gil::packed_channel_reference<BF,FB,NB,M> x, R& y) { 
+void swap(const boost::gil::packed_channel_reference<BF,FB,NB,M> x, R& y) { 
     boost::gil::swap_proxy<typename boost::gil::packed_channel_reference<BF,FB,NB,M>::value_type>(x,y); 
 }
 
@@ -433,7 +461,7 @@ void swap(boost::gil::packed_channel_reference<BF,FB,NB,M> x, R& y) {
 /// \ingroup PackedChannelReferenceModel
 /// \brief swap for packed_channel_reference
 template <typename BF, int FB, int NB, bool M> inline
-void swap(typename boost::gil::packed_channel_reference<BF,FB,NB,M>::value_type& x, boost::gil::packed_channel_reference<BF,FB,NB,M> y) { 
+void swap(typename boost::gil::packed_channel_reference<BF,FB,NB,M>::value_type& x, const boost::gil::packed_channel_reference<BF,FB,NB,M> y) { 
     boost::gil::swap_proxy<typename boost::gil::packed_channel_reference<BF,FB,NB,M>::value_type>(x,y); 
 }
 
@@ -441,7 +469,7 @@ void swap(typename boost::gil::packed_channel_reference<BF,FB,NB,M>::value_type&
 /// \ingroup PackedChannelReferenceModel
 /// \brief swap for packed_channel_reference
 template <typename BF, int FB, int NB, bool M> inline
-void swap(boost::gil::packed_channel_reference<BF,FB,NB,M> x, boost::gil::packed_channel_reference<BF,FB,NB,M> y) { 
+void swap(const boost::gil::packed_channel_reference<BF,FB,NB,M> x, const boost::gil::packed_channel_reference<BF,FB,NB,M> y) { 
     boost::gil::swap_proxy<typename boost::gil::packed_channel_reference<BF,FB,NB,M>::value_type>(x,y); 
 }
 }   // namespace std
@@ -489,8 +517,8 @@ public:
     unsigned first_bit() const { return _first_bit; }
 
     integer_t get() const { 
-        const BitField channel_mask = parent_t::max_val<<_first_bit;
-        return (this->get_data()&channel_mask) >> _first_bit; 
+        const BitField channel_mask = static_cast< integer_t >( parent_t::max_val ) <<_first_bit;
+        return static_cast< integer_t >(( this->get_data()&channel_mask ) >> _first_bit );
     }
 };
 
@@ -524,11 +552,12 @@ public:
     unsigned first_bit() const { return _first_bit; }
 
     integer_t get() const { 
-        const BitField channel_mask = parent_t::max_val<<_first_bit;
-        return (this->get_data()&channel_mask) >> _first_bit; 
+        const BitField channel_mask = static_cast< integer_t >( parent_t::max_val ) << _first_bit;
+        return static_cast< integer_t >(( this->get_data()&channel_mask ) >> _first_bit );
     }
+
     void set_unsafe(integer_t value) const { 
-        const BitField channel_mask = parent_t::max_val<<_first_bit;
+        const BitField channel_mask = static_cast< integer_t >( parent_t::max_val ) << _first_bit;
         this->set_data((this->get_data() & ~channel_mask) | value<<_first_bit); 
     }
 };
@@ -545,7 +574,7 @@ namespace std {
 /// \ingroup PackedChannelDynamicReferenceModel
 /// \brief swap for packed_dynamic_channel_reference
 template <typename BF, int NB, bool M, typename R> inline
-void swap(boost::gil::packed_dynamic_channel_reference<BF,NB,M> x, R& y) { 
+void swap(const boost::gil::packed_dynamic_channel_reference<BF,NB,M> x, R& y) { 
     boost::gil::swap_proxy<typename boost::gil::packed_dynamic_channel_reference<BF,NB,M>::value_type>(x,y); 
 }
 
@@ -553,7 +582,7 @@ void swap(boost::gil::packed_dynamic_channel_reference<BF,NB,M> x, R& y) {
 /// \ingroup PackedChannelDynamicReferenceModel
 /// \brief swap for packed_dynamic_channel_reference
 template <typename BF, int NB, bool M> inline
-void swap(typename boost::gil::packed_dynamic_channel_reference<BF,NB,M>::value_type& x, boost::gil::packed_dynamic_channel_reference<BF,NB,M> y) { 
+void swap(typename boost::gil::packed_dynamic_channel_reference<BF,NB,M>::value_type& x, const boost::gil::packed_dynamic_channel_reference<BF,NB,M> y) { 
     boost::gil::swap_proxy<typename boost::gil::packed_dynamic_channel_reference<BF,NB,M>::value_type>(x,y); 
 }
 
@@ -561,7 +590,7 @@ void swap(typename boost::gil::packed_dynamic_channel_reference<BF,NB,M>::value_
 /// \ingroup PackedChannelDynamicReferenceModel
 /// \brief swap for packed_dynamic_channel_reference
 template <typename BF, int NB, bool M> inline
-void swap(boost::gil::packed_dynamic_channel_reference<BF,NB,M> x, boost::gil::packed_dynamic_channel_reference<BF,NB,M> y) { 
+void swap(const boost::gil::packed_dynamic_channel_reference<BF,NB,M> x, const boost::gil::packed_dynamic_channel_reference<BF,NB,M> y) { 
     boost::gil::swap_proxy<typename boost::gil::packed_dynamic_channel_reference<BF,NB,M>::value_type>(x,y); 
 }
 }   // namespace std
